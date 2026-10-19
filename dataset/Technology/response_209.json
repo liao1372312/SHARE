@@ -1,0 +1,32 @@
+{
+"user_query":"I want to organize a climate change awareness event in my city and I need some resources to educate the attendees. Can you fetch the individual news source news from The Guardian about climate change? Additionally, provide me with some relevant articles from scientific journals and research papers.",
+"domain":"technology",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Fetch news articles about climate change from The Guardian.",
+        "domain": "technology",
+        "required_inputs": ["topic"]
+    },
+    {
+        "id": 2,
+        "description": "Search for relevant articles from scientific journals on climate change.",
+        "domain": "technology",
+        "required_inputs": ["topic", "journal_database"]
+    },
+    {
+        "id": 3,
+        "description": "Compile a list of fetched articles and resources for the event.",
+        "domain": "technology",
+        "required_inputs": ["news_articles", "scientific_articles"],
+        "dependencies": [1, 2]
+    },
+    {
+        "id": 4,
+        "description": "Create an informative document or presentation for attendees based on the gathered resources.",
+        "domain": "technology",
+        "required_inputs": ["compiled_articles"],
+        "dependencies": [3]
+    }
+]
+}

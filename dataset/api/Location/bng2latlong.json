@@ -1,0 +1,74 @@
+{
+    "product_id": "api_3d59d47f-b71e-42c4-b258-9a93a3762dba",
+    "tool_description": "Convert an OSGB36 easting and northing (British National Grid) to WGS84 latitude and longitude.",
+    "home_url": "https://rapidapi.com/danwinchester/api/bng2latlong/",
+    "name": "bng2latlong",
+    "title": "bng2latlong",
+    "pricing": "FREE",
+    "tool_name": "bng2latlong",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 873,
+        "avgSuccessRate": 100,
+        "popularityScore": 7.6,
+        "__typename": "Score"
+    },
+    "host": "bng2latlong.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Convert",
+            "url": "https://bng2latlong.p.rapidapi.com/529090/179645",
+            "description": "Convert easting and northing to latitude and longitude",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "northing",
+                    "type": "NUMBER",
+                    "description": "The northing",
+                    "default": "179645"
+                },
+                {
+                    "name": "easting",
+                    "type": "NUMBER",
+                    "description": "The easting",
+                    "default": "529090"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://bng2latlong.p.rapidapi.com/529090/179645\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"bng2latlong.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://bng2latlong.p.rapidapi.com/{easting}/{northing}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"bng2latlong.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "status": "ok",
+                "easting": 529090,
+                "northing": 179645,
+                "latitude": 51.50101,
+                "longitude": -0.14158
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "get": {
+                        "type": "string"
+                    },
+                    "parameters": {
+                        "type": "array"
+                    },
+                    "errors": {
+                        "type": "array"
+                    },
+                    "results": {
+                        "type": "integer"
+                    },
+                    "response": {
+                        "type": "array",
+                        "items": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "standardized_name": "bng2latlong"
+}

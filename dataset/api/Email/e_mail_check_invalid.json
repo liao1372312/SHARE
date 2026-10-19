@@ -1,0 +1,48 @@
+{
+    "product_id": "api_c9910cae-aaa5-41d2-a61f-0ca8445c2ba6",
+    "tool_description": " The Email Check Invalid API is used to verify the validity of an email address.",
+    "home_url": "https://rapidapi.com/tvhaudev/api/e-mail-check-invalid/",
+    "name": "E-mail Check Invalid",
+    "title": "E-mail Check Invalid",
+    "pricing": "FREEMIUM",
+    "tool_name": "E-mail Check Invalid",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 416,
+        "avgSuccessRate": 100,
+        "popularityScore": 8.3,
+        "__typename": "Score"
+    },
+    "host": "e-mail-check-invalid.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "mailCheck",
+            "url": "https://e-mail-check-invalid.p.rapidapi.com/WebAPIs/mail/emailValidator",
+            "description": "\u2611 Filter domain\n\u2611 Not start with a special character and must begin with a letter, \ndigit, or certain special characters like +, _, ., -.\n\u2611 Followed by the @ symbol to separate the username part and the domain part of the email address.\n\u2611 Domain part does not start or end with a dot or hyphen and only contains alphanumeric characters or dots.\n\u2611 Email string ends after the domain part and there are no additional characters.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "email",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "tvh81.dev@gmail.com"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "domain",
+                    "type": "STRING",
+                    "description": "Filter domain\nMultiple domains can be entered, separated by commas.\nEx: gmail.com, example.com, yahoo.com",
+                    "default": "gmail.com, gmail.com, outlook.com"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://e-mail-check-invalid.p.rapidapi.com/WebAPIs/mail/emailValidator\"\nquerystring = {\"domain\": \"gmail.com, gmail.com, outlook.com\", \"email\": \"tvh81.dev@gmail.com\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"e-mail-check-invalid.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://e-mail-check-invalid.p.rapidapi.com/WebAPIs/mail/emailValidator\"\nquerystring = {\"domain\": \"gmail.com, gmail.com, outlook.com\", \"email\": \"tvh81.dev@gmail.com\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"e-mail-check-invalid.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "valid": true,
+                "email": "tvh81.dev@gmail.com"
+            }
+        }
+    ],
+    "standardized_name": "e_mail_check_invalid"
+}

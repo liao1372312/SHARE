@@ -1,0 +1,146 @@
+{
+    "product_id": "570b7013e4b02d863afd9a47",
+    "tool_description": "A text extraction, manipulation, and analysis api. Putting the power of natural language processing (nlp) in every developers hands.",
+    "home_url": "https://rapidapi.com/textapi/api/textapi/",
+    "name": "TextAPI",
+    "title": "TextAPI",
+    "pricing": "FREEMIUM",
+    "tool_name": "TextAPI",
+    "score": {
+        "avgServiceLevel": 92,
+        "avgLatency": 75694,
+        "avgSuccessRate": 89,
+        "popularityScore": 9.3,
+        "__typename": "Score"
+    },
+    "host": "textapis.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Display Entities",
+            "url": "https://textapis.p.rapidapi.com/ner/display",
+            "description": "Renders the extracted entity types on submitted text or spans defined manually.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "text",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "An October post from Dylan that may be saving you a Google search."
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "model",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "spans",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://textapis.p.rapidapi.com/ner/display\"\nquerystring = {\"text\": \"An October post from Dylan that may be saving you a Google search.\", \"model\": \"\", \"spans\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"textapis.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://textapis.p.rapidapi.com/ner/display\"\nquerystring = {\"text\": \"An October post from Dylan that may be saving you a Google search.\", \"model\": \"\", \"spans\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"textapis.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "Extract Entities",
+            "url": "https://textapis.p.rapidapi.com/ner",
+            "description": "Extracts named entities from text.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "text",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "U.S. stocks rallied Thursday, with the Dow Jones Industrial Average up 2.9% in a tempestuous first half of the year."
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "model",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://textapis.p.rapidapi.com/ner\"\nquerystring = {\"text\": \"U.S. stocks rallied Thursday, with the Dow Jones Industrial Average up 2.9% in a tempestuous first half of the year.\", \"model\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"textapis.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://textapis.p.rapidapi.com/ner\"\nquerystring = {\"text\": \"U.S. stocks rallied Thursday, with the Dow Jones Industrial Average up 2.9% in a tempestuous first half of the year.\", \"model\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"textapis.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "spans": [
+                    {
+                        "text": "U.S.",
+                        "start": 0,
+                        "end": 4,
+                        "label": "GPE"
+                    },
+                    {
+                        "text": "Thursday",
+                        "start": 20,
+                        "end": 28,
+                        "label": "DATE"
+                    },
+                    {
+                        "text": "2.9%",
+                        "start": 71,
+                        "end": 75,
+                        "label": "PERCENT"
+                    },
+                    {
+                        "text": "a tempestuous first half of the year",
+                        "start": 79,
+                        "end": 115,
+                        "label": "DATE"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Sentiment",
+            "url": "https://textapis.p.rapidapi.com/sentiment",
+            "description": "Get the sentiment of submitted text using VADER (Valence Aware Dictionary and sEntiment Reasoner) is a lexicon and rule-based sentiment analysis tool that is specifically attuned to sentiments expressed in social media.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "text",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "I really hate this!"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://textapis.p.rapidapi.com/sentiment\"\nquerystring = {\"text\": \"I really hate this!\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"textapis.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://textapis.p.rapidapi.com/sentiment\"\nquerystring = {\"text\": \"I really hate this!\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"textapis.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "neg": 0.588,
+                "neu": 0.412,
+                "pos": 0.0,
+                "compound": -0.6468
+            }
+        },
+        {
+            "name": "Extract Text [From Webpage]",
+            "url": "https://textapis.p.rapidapi.com/text",
+            "description": "Extract text from the webpage linked with the url query parameter.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "url",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "https://www.theguardian.com/world/2020/oct/24/thousands-join-poland-protests-against-strict-abortion-laws"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://textapis.p.rapidapi.com/text\"\nquerystring = {\"url\": \"https://www.theguardian.com/world/2020/oct/24/thousands-join-poland-protests-against-strict-abortion-laws\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"textapis.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://textapis.p.rapidapi.com/text\"\nquerystring = {\"url\": \"https://www.theguardian.com/world/2020/oct/24/thousands-join-poland-protests-against-strict-abortion-laws\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"textapis.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "text": "Thousands join Poland protests against strict abortion laws | Poland | The Guardian : Thousands of people marched in cities across Poland on Saturday in the third straight day of protests against a near-total ban on abortion, with some promising further action in the coming days.The protesters were reacting to Thursday\u2019s ruling by Poland\u2019s highest court that an existing law allowing the abortion of malformed foetuses was incompatible with the constitution.The ruling has provoked an outcry from rights groups in and outside the deeply Catholic country of 38 million people. Some protesters chanted: \u201cFreedom, equality, women\u2019s rights.\u201dMany of the banners and placards, bearing slogans such as \u201cdisgrace!\u201d and \u201cwar on women\u201d, also carried the red lightning image that has become a symbol of the protests.Opponents of the ruling have called for a referendum on the right to abort malformed foetuses, and some have announced they will block traffic nationwide on Monday.The ruling means abortions will only be allowed in instances of rape, incest or if there is a threat to the woman\u2019s life.There are already fewer than 2,000 legal abortions a year in Poland, and the vast majority take place because of malformed foetuses.Women\u2019s groups estimate that as many as 200,000 procedures are performed illegally or abroad each year.The demonstrations went ahead in defiance of a government ban on public gatherings imposed as part of measures designed to reduce the rising number of coronavirus cases in the country.Poland\u2019s president, Andrzej Duda, tested positive for the virus on Saturday as health authorities reported a near-record 13,628 cases over the last 24 hours and a record daily death toll of 179.The constitutional court\u2019s verdict is in line with what Poland\u2019s Roman Catholic episcopate and the governing rightwing Law and Justice (PiS) party wanted.The court has been reformed by the PiS government, and has since been accused of counting many judges loyal to the party in its ranks.The changes at the court are part of controversial judicial reforms that have put Poland on a collision course with the EU over concerns they undermine judicial independence and the rule of law.Thousands of mainly young protesters gathered on Friday night near the Warsaw home of Jaros\u0142aw Kaczy\u0144ski, considered Poland\u2019s ultimate powerbroker as leader of the PiS. Ranks of police in riot gear barred their way.Elsewhere in Poland protesters gathered in main squares, outside PiS premises or near churches.The abortion ruling drew immediate condemnation from the Council of Europe, the continent\u2019s leading human rights body. Its commissioner for human rights, Dunja Mijatovi\u0107, called it \u201ca sad day for #WomensRights\u201d.Amnesty International and Human Rights Watch have also condemned the ruling."
+            }
+        }
+    ],
+    "standardized_name": "textapi"
+}

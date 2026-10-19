@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "kind": "share_swebench_ai_patch_generation_artifact",
+  "instance_id": "astropy__astropy-14309",
+  "branch": "ai",
+  "generated_at": "2026-08-20T00:24:44.422450+00:00",
+  "started_at": "2026-08-20T00:24:27.689074+00:00",
+  "profile": "primary",
+  "model": "gpt-5.4-mini",
+  "api_root_sha256": "8350a46cba5dae5daf04685d754664810f0dc8753cbaa51d27b359cdf06a5c37",
+  "image": "swebench/sweb.eval.x86_64.astropy_1776_astropy-14309:latest",
+  "image_id": "sha256:ff1ebfee93f088e4c838ac29e3ac2c86016a061ac62b8824ccfb89b5653fd61e",
+  "base_commit": "cdb66059a2feb44ee49021874605ba90801f9986",
+  "initial_tracked_diff_sha256": "1bbd7cc0bb1e26a91e7a69990a7e1aa81fa687047cac3b1a3bceea33e1a2795d",
+  "initial_tracked_changes_reset": true,
+  "clean_tracked_baseline_verified": true,
+  "container_network": "none",
+  "gold_patch_withheld": true,
+  "test_patch_withheld": true,
+  "turns_used": 4,
+  "final_summary": "Implemented a minimal fix in `astropy/io/fits/connect.py` by changing `is_fits` to guard against an empty `args` tuple: `return bool(args) and isinstance(args[0], ...)`. This prevents the `IndexError` in `identify_format` when called with no extra positional args, while preserving existing behavior for HDU-based identification. Verified with the reproducer that `identify_format('write', Table, 'bububu.ecsv', None, [], {})` now returns `['ascii.ecsv']` instead of crashing.",
+  "generation_error": null,
+  "patch_empty": false,
+  "files": {
+    "model_patch": {
+      "path": "model.patch",
+      "sha256": "a6b4288e02da10561ef2ba095865996cb46fb3f2782c4fc6330ade1033c713c5"
+    },
+    "prediction": {
+      "path": "prediction.jsonl",
+      "sha256": "da5576ac08a60741c02cbb00e6bbf490f9b813d2cb2e48bd4bbbc7b7937f756a"
+    },
+    "transcript": {
+      "path": "transcript.jsonl",
+      "sha256": "00e58a59bcc3e7162bb6c407a82b5ba6b76f51f4ea97a49790000dd1bb7f0a0a"
+    }
+  },
+  "evidence_status": "generated_ai_patch_awaiting_swebench_execution"
+}

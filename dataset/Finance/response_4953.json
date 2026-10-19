@@ -1,0 +1,32 @@
+{
+"user_query":"I'm working on a financial report for Apple (AAPL), and I need some key metrics. Can you fetch me the average metrics of Apple's peers? Additionally, I'm interested in the discounted cash flow models (DCF's) for Apple. Can you provide me with those?",
+"domain":"Finance",
+"TaskList": [
+{
+"id": 1,
+"description": "Fetch the key financial metrics of Apple's peers (e.g., other technology companies in the same sector).",
+"domain": "finance",
+"required_inputs": ["list_of_peers", "metrics_to_fetch"]
+},
+{
+"id": 2,
+"description": "Calculate the average metrics from the fetched data of Apple's peers.",
+"domain": "finance",
+"required_inputs": ["metrics_data_from_step1"],
+"dependencies": [1]
+},
+{
+"id": 3,
+"description": "Obtain the discounted cash flow model (DCF) data for Apple (AAPL).",
+"domain": "finance",
+"required_inputs": ["ticker_symbol", "DCF_parameters"]
+},
+{
+"id": 4,
+"description": "Compile the average metrics of Apple's peers and the DCF data into the financial report.",
+"domain": "finance",
+"required_inputs": ["average_metrics_from_step2", "DCF_data_from_step3"],
+"dependencies": [2, 3]
+}
+]
+}

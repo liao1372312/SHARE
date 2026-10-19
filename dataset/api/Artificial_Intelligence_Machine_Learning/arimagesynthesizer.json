@@ -1,0 +1,116 @@
+{
+    "product_id": "api_16fd7ac3-e8d4-46f3-9d8b-ecdb682ede9a",
+    "tool_description": "Text to image generator.",
+    "home_url": "https://rapidapi.com/ArdicAITeam/api/arimagesynthesizer/",
+    "name": "ARImageSynthesizer",
+    "title": "ARImageSynthesizer",
+    "pricing": "FREE",
+    "tool_name": "ARImageSynthesizer",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 885,
+        "avgSuccessRate": 98,
+        "popularityScore": 9.6,
+        "__typename": "Score"
+    },
+    "host": "arimagesynthesizer.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Get Image",
+            "url": "https://arimagesynthesizer.p.rapidapi.com/get",
+            "description": "Retrieve generated image with given `hash`.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "hash",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "returnType",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "image"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://arimagesynthesizer.p.rapidapi.com/get\"\nquerystring = {\"returnType\": \"image\", \"hash\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"arimagesynthesizer.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://arimagesynthesizer.p.rapidapi.com/get\"\nquerystring = {\"returnType\": \"image\", \"hash\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"arimagesynthesizer.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "Hash is not set."
+            }
+        },
+        {
+            "name": "My Images",
+            "url": "https://arimagesynthesizer.p.rapidapi.com/my_images",
+            "description": "Get all generated images' information in a JSON response. Images can be accessed at `/get` endpoint with the given hash.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://arimagesynthesizer.p.rapidapi.com/my_images\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"arimagesynthesizer.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://arimagesynthesizer.p.rapidapi.com/my_images\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"arimagesynthesizer.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "image": [
+                    {
+                        "engine": "stable-diffusion",
+                        "guidanceScale": 7.5,
+                        "hash": "8a7b06fd53a37be58e4063a405082c75",
+                        "height": 768,
+                        "img2img_image": null,
+                        "img2img_strength": null,
+                        "inferenceSteps": 50,
+                        "negativePrompt": "",
+                        "prompt": "",
+                        "ready": false,
+                        "requestTime": 1687163861,
+                        "style": "",
+                        "uniqueID": "",
+                        "userName": "free000",
+                        "width": 768
+                    }
+                ]
+            }
+        },
+        {
+            "name": "My Images by ID",
+            "url": "https://arimagesynthesizer.p.rapidapi.com/my_images_by_id",
+            "description": "Similar to `/my_images` endpoint, returns generated images' information in a JSON response filtered by given `id`.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "uniqueID",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://arimagesynthesizer.p.rapidapi.com/my_images_by_id\"\nquerystring = {\"uniqueID\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"arimagesynthesizer.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://arimagesynthesizer.p.rapidapi.com/my_images_by_id\"\nquerystring = {\"uniqueID\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"arimagesynthesizer.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "image": [
+                    {
+                        "engine": "stable-diffusion",
+                        "guidanceScale": 7.5,
+                        "hash": "8a7b06fd53a37be58e4063a405082c75",
+                        "height": 768,
+                        "img2img_image": null,
+                        "img2img_strength": null,
+                        "inferenceSteps": 50,
+                        "negativePrompt": "",
+                        "prompt": "",
+                        "ready": false,
+                        "requestTime": 1687163861,
+                        "style": "",
+                        "uniqueID": "",
+                        "userName": "free000",
+                        "width": 768
+                    }
+                ]
+            }
+        }
+    ],
+    "standardized_name": "arimagesynthesizer"
+}

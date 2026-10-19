@@ -1,0 +1,365 @@
+{
+    "product_id": "api_7c28e492-755e-437c-be31-b53b2c161a0e",
+    "tool_description": "Parse and validate GS1 barcode data",
+    "home_url": "https://rapidapi.com/alex-datawise/api/gs1parser/",
+    "name": "GS1Parser",
+    "title": "GS1Parser",
+    "pricing": "FREE",
+    "tool_name": "GS1Parser",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 2318,
+        "avgSuccessRate": 100,
+        "popularityScore": 8.5,
+        "__typename": "Score"
+    },
+    "host": "gs1parser.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "/parse",
+            "url": "https://gs1parser.p.rapidapi.com/parse",
+            "description": " ",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "q",
+                    "type": "STRING",
+                    "description": "Machine- or human-readable GS1 barcode data.",
+                    "default": "(01)12345678901231(10)ABCD-123(30)27(11)211015"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://gs1parser.p.rapidapi.com/parse\"\nquerystring = {\"q\": \"(01)12345678901231(10)ABCD-123(30)27(11)211015\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"gs1parser.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://gs1parser.p.rapidapi.com/parse\"\nquerystring = {\"q\": \"(01)12345678901231(10)ABCD-123(30)27(11)211015\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"gs1parser.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "parser": {
+                    "request": {
+                        "data": "(01)12345678901231(10)ABCD-123(30)27(11)211015",
+                        "service-level": 20,
+                        "invocation-id": "7d1bdb4a-272c-4889-8a3c-0a4f890c7ea0",
+                        "source": "GS1_HRI",
+                        "genspec-compliance": "20.0",
+                        "doc-version": "0.2"
+                    },
+                    "response": {
+                        "state": true,
+                        "application-identifiers": [
+                            {
+                                "AI01": {
+                                    "identifier": "01",
+                                    "datacontent": "12345678901231",
+                                    "hri": "(01)12345678901231",
+                                    "mri": "0112345678901231",
+                                    "rendered-content": {
+                                        "description": "GTIN 12345678901231",
+                                        "issuing country": "None, restricted circulation within geographic region"
+                                    },
+                                    "description": "Global Trade Item Number (GTIN)",
+                                    "datatitle": "GTIN",
+                                    "state": true,
+                                    "aiformat": {
+                                        "identifierlength": 2,
+                                        "mindatalength": 14,
+                                        "maxdatalength": 14,
+                                        "allowalphanumeric": false,
+                                        "terminatorrequired": false,
+                                        "gs1formatstring": "N2+N14",
+                                        "datatype": "IDENTIFIER",
+                                        "unit": "NONE"
+                                    },
+                                    "messages": []
+                                }
+                            },
+                            {
+                                "AI10": {
+                                    "identifier": "10",
+                                    "datacontent": "ABCD-123",
+                                    "hri": "(10)ABCD-123",
+                                    "mri": "10ABCD-123\u001d",
+                                    "rendered-content": {
+                                        "description": "BATCH/LOT ABCD-123"
+                                    },
+                                    "description": "Batch or lot number",
+                                    "datatitle": "BATCH/LOT",
+                                    "state": true,
+                                    "aiformat": {
+                                        "identifierlength": 2,
+                                        "mindatalength": 1,
+                                        "maxdatalength": 20,
+                                        "allowalphanumeric": true,
+                                        "terminatorrequired": true,
+                                        "gs1formatstring": "N2+X..20",
+                                        "datatype": "TEXT",
+                                        "unit": "NONE"
+                                    },
+                                    "messages": []
+                                }
+                            },
+                            {
+                                "AI30": {
+                                    "identifier": "30",
+                                    "datacontent": "27",
+                                    "hri": "(30)27",
+                                    "mri": "3027\u001d",
+                                    "rendered-content": {
+                                        "description": "VAR. COUNT 27"
+                                    },
+                                    "description": "Count of items (variable measure trade item)",
+                                    "datatitle": "VAR. COUNT",
+                                    "state": true,
+                                    "aiformat": {
+                                        "identifierlength": 2,
+                                        "mindatalength": 1,
+                                        "maxdatalength": 8,
+                                        "allowalphanumeric": false,
+                                        "terminatorrequired": true,
+                                        "gs1formatstring": "N2+N..8",
+                                        "datatype": "NUMBER",
+                                        "unit": "NONE"
+                                    },
+                                    "messages": []
+                                }
+                            },
+                            {
+                                "AI11": {
+                                    "identifier": "11",
+                                    "datacontent": "211015",
+                                    "hri": "(11)211015",
+                                    "mri": "11211015",
+                                    "rendered-content": {
+                                        "description": "PROD DATE 2021-10-15T00:00:00"
+                                    },
+                                    "description": "Production date (YYMMDD)",
+                                    "datatitle": "PROD DATE",
+                                    "state": true,
+                                    "aiformat": {
+                                        "identifierlength": 2,
+                                        "mindatalength": 6,
+                                        "maxdatalength": 6,
+                                        "allowalphanumeric": false,
+                                        "terminatorrequired": false,
+                                        "gs1formatstring": "N2+N6",
+                                        "datatype": "DATE",
+                                        "unit": "NONE"
+                                    },
+                                    "messages": []
+                                }
+                            }
+                        ],
+                        "messages": []
+                    }
+                }
+            },
+            "statuscode": 200,
+            "schema": {
+                "properties": {
+                    "request": {
+                        "properties": {
+                            "data": {
+                                "type": "string"
+                            },
+                            "doc-version": {
+                                "type": "string"
+                            },
+                            "genspec-compliance": {
+                                "type": "string"
+                            },
+                            "invocation-id": {
+                                "format": "uuid",
+                                "type": "string"
+                            },
+                            "service-level": {
+                                "type": "integer"
+                            },
+                            "source": {
+                                "enum": [
+                                    "UNKNOWN",
+                                    "GS1_HRI",
+                                    "GS1_DATABAR",
+                                    "GS1_ITF14",
+                                    "GS1_128",
+                                    "GS1_DATAMATRIX",
+                                    "GS1_QRCODE"
+                                ],
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "response": {
+                        "properties": {
+                            "application-identifiers": {
+                                "items": {
+                                    "additionalProperties": {
+                                        "properties": {
+                                            "aiformat": {
+                                                "properties": {
+                                                    "allowalphanumeric": {
+                                                        "type": "boolean"
+                                                    },
+                                                    "datatype": {
+                                                        "enum": [
+                                                            "UNKNOWN",
+                                                            "DATE",
+                                                            "IDENTIFIER",
+                                                            "NUMBER",
+                                                            "TEXT",
+                                                            "TRADE_MEASURE",
+                                                            "LOGISTIC_MEASURE"
+                                                        ],
+                                                        "type": "string"
+                                                    },
+                                                    "gs1formatstring": {
+                                                        "type": "string"
+                                                    },
+                                                    "identifierlength": {
+                                                        "type": "integer"
+                                                    },
+                                                    "maxdatalength": {
+                                                        "type": "integer"
+                                                    },
+                                                    "mindatalength": {
+                                                        "type": "integer"
+                                                    },
+                                                    "terminatorrequired": {
+                                                        "type": "boolean"
+                                                    },
+                                                    "unit": {
+                                                        "enum": [
+                                                            "NONE",
+                                                            "CUBIC_FEET",
+                                                            "CUBIC_INCHES",
+                                                            "CUBIC_METERS",
+                                                            "CUBIC_YARDS",
+                                                            "FEET",
+                                                            "GALLONS",
+                                                            "INCHES",
+                                                            "KILOGRAMS",
+                                                            "KILOGRAMS_PER_SQUARE_METER",
+                                                            "LITERS",
+                                                            "METERS",
+                                                            "OUNCES",
+                                                            "POUNDS",
+                                                            "QUARTS",
+                                                            "SQUARE_FEET",
+                                                            "SQUARE_INCHES",
+                                                            "SQUARE_METERS",
+                                                            "SQUARE_YARDS",
+                                                            "TROY_OUNCES",
+                                                            "YARDS"
+                                                        ],
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            },
+                                            "datacontent": {
+                                                "type": "string"
+                                            },
+                                            "datatitle": {
+                                                "type": "string"
+                                            },
+                                            "description": {
+                                                "type": "string"
+                                            },
+                                            "hri": {
+                                                "type": "string"
+                                            },
+                                            "identifier": {
+                                                "pattern": "^(\\d{2,4})$",
+                                                "type": "string"
+                                            },
+                                            "messages": {
+                                                "items": {
+                                                    "additionalProperties": {
+                                                        "properties": {
+                                                            "content": {
+                                                                "type": "string"
+                                                            },
+                                                            "msgid": {
+                                                                "type": "string"
+                                                            },
+                                                            "severity": {
+                                                                "enum": [
+                                                                    "ERROR",
+                                                                    "WARNING",
+                                                                    "INFORMATION",
+                                                                    "FATAL_ERROR"
+                                                                ],
+                                                                "type": "string"
+                                                            },
+                                                            "source": {
+                                                                "type": "string"
+                                                            },
+                                                            "timestamp": {
+                                                                "format": "date-time",
+                                                                "type": "string"
+                                                            }
+                                                        },
+                                                        "type": "object"
+                                                    },
+                                                    "type": "object"
+                                                },
+                                                "type": "array"
+                                            },
+                                            "mri": {
+                                                "type": "string"
+                                            },
+                                            "rendered-content": {
+                                                "type": "string"
+                                            },
+                                            "state": {
+                                                "type": "boolean"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "messages": {
+                                "items": {
+                                    "additionalProperties": {
+                                        "properties": {
+                                            "content": {
+                                                "type": "string"
+                                            },
+                                            "msgid": {
+                                                "type": "string"
+                                            },
+                                            "severity": {
+                                                "enum": [
+                                                    "ERROR",
+                                                    "WARNING",
+                                                    "INFORMATION",
+                                                    "FATAL_ERROR"
+                                                ],
+                                                "type": "string"
+                                            },
+                                            "source": {
+                                                "type": "string"
+                                            },
+                                            "timestamp": {
+                                                "format": "date-time",
+                                                "type": "string"
+                                            }
+                                        },
+                                        "type": "object"
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "state": {
+                                "type": "boolean"
+                            }
+                        },
+                        "type": "object"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    ],
+    "standardized_name": "gs1parser"
+}

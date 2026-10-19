@@ -1,0 +1,40 @@
+{
+"user_query":"I want to ensure the email addresses in my company's database are valid and deliverable. Can you help me validate the syntax and deliverability of these email addresses? Additionally, check if any of them are associated with disposable domains. Please provide me with the validation results and information about the disposable domains.",
+"domain":"Technology",
+"TaskList": [
+{
+"id": 1,
+"description": "Fetch the list of email addresses from the company's database.",
+"domain": "technology",
+"required_inputs": ["database_credentials"]
+},
+{
+"id": 2,
+"description": "Validate the syntax of the fetched email addresses using a validation API.",
+"domain": "technology",
+"required_inputs": ["email_addresses"],
+"dependencies": [1]
+},
+{
+"id": 3,
+"description": "Check the deliverability of the valid email addresses using a deliverability check API.",
+"domain": "technology",
+"required_inputs": ["valid_email_addresses"],
+"dependencies": [2]
+},
+{
+"id": 4,
+"description": "Check if any valid email addresses are associated with disposable domains using a disposable domain API.",
+"domain": "technology",
+"required_inputs": ["valid_email_addresses"],
+"dependencies": [2]
+},
+{
+"id": 5,
+"description": "Compile the results of the validation and deliverability checks, including any disposable domain associations, into a report.",
+"domain": "technology",
+"required_inputs": ["validation_results", "deliverability_results", "disposable_domains"],
+"dependencies": [3, 4]
+}
+]
+}

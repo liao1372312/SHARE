@@ -1,0 +1,32 @@
+{
+"user_query":"I want to write an article about the history of a specific song.",
+"domain":"Technology",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Search for the lyrics of the specific song on Chart Lyrics.",
+        "domain": "technology",
+        "required_inputs": ["song_title", "artist_name"]
+    },
+    {
+        "id": 2,
+        "description": "Retrieve relevant information about the song's lyrics from the search.",
+        "domain": "technology",
+        "required_inputs": ["lyrics_search_results"],
+        "dependencies": [1]
+    },
+    {
+        "id": 3,
+        "description": "Find the song on Soundcloud and gather basic information about it.",
+        "domain": "technology",
+        "required_inputs": ["song_title", "artist_name"]
+    },
+    {
+        "id": 4,
+        "description": "Compile the information gathered from Chart Lyrics and Soundcloud for the article.",
+        "domain": "technology",
+        "required_inputs": ["lyrics_information", "soundcloud_information"],
+        "dependencies": [2, 3]
+    }
+]
+}

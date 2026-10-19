@@ -1,0 +1,162 @@
+{
+    "product_id": "api_7b1bf68d-7435-428d-85eb-7267f1a986ee",
+    "tool_description": "Live prices for Gold, Silver, Palladium and Platinum in 160+ currencies including USD, GBP and EUR.",
+    "home_url": "https://rapidapi.com/solutionsbynotnull/api/live-metal-prices/",
+    "name": "Live Metal Prices",
+    "title": "Live Metal Prices",
+    "pricing": "FREEMIUM",
+    "tool_name": "Live Metal Prices",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 162,
+        "avgSuccessRate": 100,
+        "popularityScore": 9.8,
+        "__typename": "Score"
+    },
+    "host": "live-metal-prices.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Latest In chosen currency",
+            "url": "https://live-metal-prices.p.rapidapi.com/v1/latest/XAU,XAG,PA,PL,GBP,EUR/EUR",
+            "description": "Select what you need for a smaller payload! Real-time Gold, Silver, Palladium, Platinum and 160+ currency rates based on selected Currency",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "requestedSymbols",
+                    "type": "string",
+                    "description": "",
+                    "default": "XAU,XAG,PA,PL,GBP,EUR"
+                },
+                {
+                    "name": "requestedCurrency",
+                    "type": "string",
+                    "description": "",
+                    "default": "EUR"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://live-metal-prices.p.rapidapi.com/v1/latest/XAU,XAG,PA,PL,GBP,EUR/EUR\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"live-metal-prices.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://live-metal-prices.p.rapidapi.com/v1/latest/{requestedsymbols}/{requestedcurrency}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"live-metal-prices.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "success": true,
+                "validationMessage": [],
+                "baseCurrency": "EUR",
+                "unit": "ounce",
+                "rates": {
+                    "XAU": 1791.0953253,
+                    "XAG": 21.9597263,
+                    "PA": 1298.2235025,
+                    "PL": 898.2068125000001,
+                    "GBP": 0.8528900881610715,
+                    "EUR": 1
+                }
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Latest Selected Metals in Selected Currency In Grams",
+            "url": "https://live-metal-prices.p.rapidapi.com/v1/latest/XAU,XAG,PA,PL,GBP,EUR/EUR/gram",
+            "description": "Select what you need for a smaller payload! Real-time Gold, Silver, Palladium, Platinum and 160+ currency rates based on selected Currency",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "requestedUnitOfWeight",
+                    "type": "string",
+                    "description": "",
+                    "default": "gram"
+                },
+                {
+                    "name": "requestedCurrency",
+                    "type": "string",
+                    "description": "",
+                    "default": "EUR"
+                },
+                {
+                    "name": "requestedSymbols",
+                    "type": "string",
+                    "description": "",
+                    "default": "XAU,XAG,PA,PL,GBP,EUR"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://live-metal-prices.p.rapidapi.com/v1/latest/XAU,XAG,PA,PL,GBP,EUR/EUR/gram\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"live-metal-prices.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://live-metal-prices.p.rapidapi.com/v1/latest/{requestedsymbols}/{requestedcurrency}/{requestedunitofweight}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"live-metal-prices.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "success": true,
+                "validationMessage": [],
+                "baseCurrency": "EUR",
+                "unit": "gram",
+                "rates": {
+                    "XAU": 57.58496847512271,
+                    "XAG": 0.70602057235341,
+                    "PA": 41.73879436182675,
+                    "PL": 28.87797776664375,
+                    "GBP": 0.8528900881610715,
+                    "EUR": 1
+                }
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Latest (retrieve XAU, XAG, PA, PL, EUR, GBP, USD)",
+            "url": "https://live-metal-prices.p.rapidapi.com/v1/latest",
+            "description": "Real-time Gold, Silver, Palladium and Platinum prices delivered in USD, GBP and EUR.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://live-metal-prices.p.rapidapi.com/v1/latest\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"live-metal-prices.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://live-metal-prices.p.rapidapi.com/v1/latest\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"live-metal-prices.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "success": true,
+                "validationMessage": [],
+                "baseCurrency": "USD",
+                "unit": "ounce",
+                "rates": {
+                    "XAU": 1956.66,
+                    "XAG": 23.99,
+                    "PA": 1418.25,
+                    "PL": 981.1,
+                    "USD": 1,
+                    "GBP": 0.78071,
+                    "EUR": 0.91537
+                }
+            }
+        },
+        {
+            "name": "Latest (retrieve selected 160+ Symbols)",
+            "url": "https://live-metal-prices.p.rapidapi.com/v1/latest/XAU,XAG,PA,PL,GBP,EUR",
+            "description": "Select what you need for a smaller payload! Real-time Gold, Silver, Palladium, and Platinum provided in 160+ currencies including USD, GBP and EUR.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "requestedSymbols",
+                    "type": "string",
+                    "description": "",
+                    "default": "XAU,XAG,PA,PL,GBP,EUR"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://live-metal-prices.p.rapidapi.com/v1/latest/XAU,XAG,PA,PL,GBP,EUR\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"live-metal-prices.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://live-metal-prices.p.rapidapi.com/v1/latest/{requestedsymbols}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"live-metal-prices.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "success": true,
+                "validationMessage": [],
+                "baseCurrency": "USD",
+                "unit": "ounce",
+                "rates": {
+                    "XAU": 1956.66,
+                    "XAG": 23.99,
+                    "PA": 1418.25,
+                    "PL": 981.1,
+                    "GBP": 0.78071,
+                    "EUR": 0.91537
+                }
+            },
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "live_metal_prices"
+}

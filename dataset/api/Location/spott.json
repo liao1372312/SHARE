@@ -1,0 +1,443 @@
+{
+    "product_id": "api_3aa87f54-528d-4b25-99db-d11da640013f",
+    "tool_description": "Search cities, countries and administrative divisions by name, autocompletion or IP.",
+    "home_url": "https://rapidapi.com/Spott/api/spott/",
+    "name": "Spott",
+    "title": "Spott",
+    "pricing": "FREEMIUM",
+    "tool_name": "Spott",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 231,
+        "avgSuccessRate": 97,
+        "popularityScore": 9.8,
+        "__typename": "Score"
+    },
+    "host": "spott.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Autocomplete places",
+            "url": "https://spott.p.rapidapi.com/places/autocomplete",
+            "description": "Returns a list of places matching a prefix and specified filter properties. Useful to create \"search as you type\" inputs.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "limit",
+                    "type": "NUMBER",
+                    "description": "Maximum number of places to return. Used together with \\\"skip\\\" to paginate results. Defaults to 10, maximum is 100.",
+                    "default": "10"
+                },
+                {
+                    "name": "skip",
+                    "type": "NUMBER",
+                    "description": "Amount of places to ignore before beginning to return results. Used together with \\\"limit\\\" to paginate results. Defaults to 0.",
+                    "default": "0"
+                },
+                {
+                    "name": "language",
+                    "type": "ENUM",
+                    "description": "Specifies a language (ISO 639-1) to get the localized name of the place. If translation is not available, \\\"localizedName\\\" property will be null.",
+                    "default": ""
+                },
+                {
+                    "name": "country",
+                    "type": "STRING",
+                    "description": "Filters places by their country \\\"id\\\". It's possible to specify multiple values separating them with commas (Ex. ?country=US,CA,MX).",
+                    "default": "US,CA"
+                },
+                {
+                    "name": "adminDivision1",
+                    "type": "STRING",
+                    "description": "Filters places by their adminDivision1 \\\"id\\\". It's possible to specify multiple values separating them with commas (Ex. ?country=US.CA,US.DE).",
+                    "default": ""
+                },
+                {
+                    "name": "accuracyRadiusKm",
+                    "type": "NUMBER",
+                    "description": "Maximum radius from the point specified by \\\"latitude\\\" and \\\"longitude\\\" to filter places located within the area. The value must be expressed in Kilometers. Defaults to 100km.",
+                    "default": ""
+                },
+                {
+                    "name": "latitude",
+                    "type": "NUMBER",
+                    "description": "Latitude component of a coordinates set to filter places by their location. This parameter is ignored if \\\"longitude\\\" is not specified.",
+                    "default": ""
+                },
+                {
+                    "name": "adminDivision2",
+                    "type": "STRING",
+                    "description": "Filters places by their adminDivision2 \\\"id\\\". It's possible to specify multiple values separating them with commas.",
+                    "default": ""
+                },
+                {
+                    "name": "q",
+                    "type": "STRING",
+                    "description": "Query string to find places which name starts with this prefix.",
+                    "default": "Sea"
+                },
+                {
+                    "name": "longitude",
+                    "type": "NUMBER",
+                    "description": "Longitude component of a coordinates set to filter places by their location. This parameter is ignored if \\\"latitude\\\" is not specified.",
+                    "default": ""
+                },
+                {
+                    "name": "type",
+                    "type": "STRING",
+                    "description": "Filters places by their \\\"type\\\". It's possible to specify multiple values separating them with commas. Valid types are CITY, ADMIN_DIVISION_1, ADMIN_DIVISION_2 and COUNTRY.",
+                    "default": "CITY"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://spott.p.rapidapi.com/places/autocomplete\"\nquerystring = {\"limit\": \"10\", \"skip\": \"0\", \"language\": \"\", \"country\": \"US,CA\", \"adminDivision1\": \"\", \"accuracyRadiusKm\": \"\", \"latitude\": \"\", \"adminDivision2\": \"\", \"q\": \"Sea\", \"longitude\": \"\", \"type\": \"CITY\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"spott.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://spott.p.rapidapi.com/places/autocomplete\"\nquerystring = {\"limit\": \"10\", \"skip\": \"0\", \"language\": \"\", \"country\": \"US,CA\", \"adminDivision1\": \"\", \"accuracyRadiusKm\": \"\", \"latitude\": \"\", \"adminDivision2\": \"\", \"q\": \"Sea\", \"longitude\": \"\", \"type\": \"CITY\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"spott.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "error": {
+                    "code": "BAD_INPUT",
+                    "message": "\"query.adminDivision1\" is not allowed to be empty"
+                }
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "get": {
+                        "type": "string"
+                    },
+                    "parameters": {
+                        "type": "array"
+                    },
+                    "errors": {
+                        "type": "array"
+                    },
+                    "results": {
+                        "type": "integer"
+                    },
+                    "response": {
+                        "type": "array",
+                        "items": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Search places",
+            "url": "https://spott.p.rapidapi.com/places",
+            "description": "Returns a list of places (either countries, cities or administrative divisions) matching a query and filtered by properties.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "type",
+                    "type": "STRING",
+                    "description": "Filters places by \\\"type\\\". It's possible to specify multiple values separating them with commas. Valid types are CITY, ADMIN_DIVISION_1, ADMIN_DIVISION_2 and COUNTRY.",
+                    "default": "CITY"
+                },
+                {
+                    "name": "language",
+                    "type": "ENUM",
+                    "description": "Specifies a language (ISO 639-1) to get the localized name of the place. If translation is not available, \"localizedName\" property will be null.",
+                    "default": ""
+                },
+                {
+                    "name": "skip",
+                    "type": "NUMBER",
+                    "description": "Amount of places to ignore before beginning to return results. Used together with \\\"limit\\\" to paginate results. Defaults to 0.",
+                    "default": "0"
+                },
+                {
+                    "name": "country",
+                    "type": "STRING",
+                    "description": "Filters places by their country \\\"id\\\". It's possible to specify multiple values separating them with commas (Ex. ?country=US,CA,MX).",
+                    "default": "US,CA"
+                },
+                {
+                    "name": "limit",
+                    "type": "NUMBER",
+                    "description": "Maximum number of places to return. Used together with \\\"skip\\\" to paginate results. Defaults to 10, maximum is 100.",
+                    "default": "10"
+                },
+                {
+                    "name": "adminDivision1",
+                    "type": "STRING",
+                    "description": "Filters places by their adminDivision1 \\\"id\\\". It's possible to specify multiple values separating them with commas (Ex. ?country=US.CA,US.DE).",
+                    "default": ""
+                },
+                {
+                    "name": "adminDivision2",
+                    "type": "STRING",
+                    "description": "Filters places by their adminDivision2 \\\"id\\\". It's possible to specify multiple values separating them with commas.",
+                    "default": ""
+                },
+                {
+                    "name": "accuracyRadiusKm",
+                    "type": "NUMBER",
+                    "description": "Maximum radius from the point specified by \\\"latitude\\\" and \\\"longitude\\\" to filter places located within the area. The value must be expressed in Kilometers. Defaults to 100km.",
+                    "default": ""
+                },
+                {
+                    "name": "latitude",
+                    "type": "NUMBER",
+                    "description": "Latitude component of a coordinates set to filter places by their location. This parameter is ignored if \\\"longitude\\\" is not specified.",
+                    "default": ""
+                },
+                {
+                    "name": "q",
+                    "type": "STRING",
+                    "description": "Query string to find places with a similar name.",
+                    "default": "New York"
+                },
+                {
+                    "name": "longitude",
+                    "type": "NUMBER",
+                    "description": "Longitude component of a coordinates set to filter places by their location. This parameter is ignored if \\\"latitude\\\" is not specified.",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://spott.p.rapidapi.com/places\"\nquerystring = {\"type\": \"CITY\", \"language\": \"\", \"skip\": \"0\", \"country\": \"US,CA\", \"limit\": \"10\", \"adminDivision1\": \"\", \"adminDivision2\": \"\", \"accuracyRadiusKm\": \"\", \"latitude\": \"\", \"q\": \"New York\", \"longitude\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"spott.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://spott.p.rapidapi.com/places\"\nquerystring = {\"type\": \"CITY\", \"language\": \"\", \"skip\": \"0\", \"country\": \"US,CA\", \"limit\": \"10\", \"adminDivision1\": \"\", \"adminDivision2\": \"\", \"accuracyRadiusKm\": \"\", \"latitude\": \"\", \"q\": \"New York\", \"longitude\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"spott.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "error": {
+                    "code": "BAD_INPUT",
+                    "message": "\"query.adminDivision1\" is not allowed to be empty"
+                }
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "get": {
+                        "type": "string"
+                    },
+                    "parameters": {
+                        "type": "array"
+                    },
+                    "errors": {
+                        "type": "array"
+                    },
+                    "results": {
+                        "type": "integer"
+                    },
+                    "response": {
+                        "type": "array",
+                        "items": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Get place by IP",
+            "url": "https://spott.p.rapidapi.com/places/ip/200.194.51.97",
+            "description": "Returns the Place where a given IP Address is located. Returns \"Not Found\" error when no place is related to the IP. When sending '127.0.0.1' or '0.0.0.0' IP Addresses it will return the Place from the request was performed.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "id",
+                    "type": "STRING",
+                    "description": "IP Address (v4 and v6 are supported).",
+                    "default": "200.194.51.97"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "language",
+                    "type": "ENUM",
+                    "description": "Specifies a language (ISO 639-1) to get the localized name of the place. If translation is not available, \"localizedName\" property will be null.",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://spott.p.rapidapi.com/places/ip/200.194.51.97\"\nquerystring = {\"language\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"spott.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://spott.p.rapidapi.com/places/ip/{id}\"\nquerystring = {\"language\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"spott.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "error": {
+                    "code": "BAD_INPUT",
+                    "message": "\"query.language\" is not allowed to be empty"
+                }
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "get": {
+                        "type": "string"
+                    },
+                    "parameters": {
+                        "type": "array"
+                    },
+                    "errors": {
+                        "type": "array"
+                    },
+                    "results": {
+                        "type": "integer"
+                    },
+                    "response": {
+                        "type": "array",
+                        "items": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Get place by my IP",
+            "url": "https://spott.p.rapidapi.com/places/ip/me",
+            "description": "Returns the place related to the IP where the request was performed. Returns \"Not Found\" error when no place is related to the IP.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "language",
+                    "type": "ENUM",
+                    "description": "Specifies a language (ISO 639-1) to get the localized name of the place. If translation is not available, \"localizedName\" property will be null.",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://spott.p.rapidapi.com/places/ip/me\"\nquerystring = {\"language\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"spott.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://spott.p.rapidapi.com/places/ip/me\"\nquerystring = {\"language\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"spott.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "error": {
+                    "code": "BAD_INPUT",
+                    "message": "\"query.language\" is not allowed to be empty"
+                }
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "get": {
+                        "type": "string"
+                    },
+                    "parameters": {
+                        "type": "array"
+                    },
+                    "errors": {
+                        "type": "array"
+                    },
+                    "results": {
+                        "type": "integer"
+                    },
+                    "response": {
+                        "type": "array",
+                        "items": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Get place by ID",
+            "url": "https://spott.p.rapidapi.com/places/US",
+            "description": "Returns a single Place identified by an ID.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "id",
+                    "type": "STRING",
+                    "description": "ID of the Place.",
+                    "default": "US"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "language",
+                    "type": "ENUM",
+                    "description": "Specifies a language (ISO 639-1) to get the localized name of the place. If translation is not available, \"localizedName\" property will be null.",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://spott.p.rapidapi.com/places/US\"\nquerystring = {\"language\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"spott.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://spott.p.rapidapi.com/places/{id}\"\nquerystring = {\"language\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"spott.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "error": {
+                    "code": "BAD_INPUT",
+                    "message": "\"query.language\" is not allowed to be empty"
+                }
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "get": {
+                        "type": "string"
+                    },
+                    "parameters": {
+                        "type": "array"
+                    },
+                    "errors": {
+                        "type": "array"
+                    },
+                    "results": {
+                        "type": "integer"
+                    },
+                    "response": {
+                        "type": "array",
+                        "items": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Get place by Geoname ID",
+            "url": "https://spott.p.rapidapi.com/places/geoname-id/5391959",
+            "description": "Returns a single Place identified by a Geoname ID.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "geonameId",
+                    "type": "NUMBER",
+                    "description": "Unique identificator given by Geonames",
+                    "default": "5391959"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "language",
+                    "type": "ENUM",
+                    "description": "Specifies a language (ISO 639-1) to get the localized name of the place. If translation is not available, \\\"localizedName\\\" property will be null.",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://spott.p.rapidapi.com/places/geoname-id/5391959\"\nquerystring = {\"language\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"spott.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://spott.p.rapidapi.com/places/geoname-id/{geonameid}\"\nquerystring = {\"language\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"spott.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "error": {
+                    "code": "BAD_INPUT",
+                    "message": "\"query.language\" is not allowed to be empty"
+                }
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "get": {
+                        "type": "string"
+                    },
+                    "parameters": {
+                        "type": "array"
+                    },
+                    "errors": {
+                        "type": "array"
+                    },
+                    "results": {
+                        "type": "integer"
+                    },
+                    "response": {
+                        "type": "array",
+                        "items": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "standardized_name": "spott"
+}

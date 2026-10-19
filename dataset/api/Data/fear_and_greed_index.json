@@ -1,0 +1,95 @@
+{
+    "product_id": "api_43375e9a-38cf-42ec-8f2b-2f70ac402955",
+    "tool_description": "Fear and Greed index. Historical data.",
+    "home_url": "https://rapidapi.com/apimaker/api/fear-and-greed-index2/",
+    "name": "Fear and Greed index",
+    "title": "Fear and Greed index",
+    "pricing": "FREEMIUM",
+    "tool_name": "Fear and Greed index",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 482,
+        "avgSuccessRate": 100,
+        "popularityScore": 7.4,
+        "__typename": "Score"
+    },
+    "host": "fear-and-greed-index2.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "/index",
+            "url": "https://fear-and-greed-index2.p.rapidapi.com/index",
+            "description": "Actual Fear and Greed index",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://fear-and-greed-index2.p.rapidapi.com/index\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"fear-and-greed-index2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://fear-and-greed-index2.p.rapidapi.com/index\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"fear-and-greed-index2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "score": 81.9714285714286,
+                "rating": "extreme greed",
+                "timestamp": "2023-06-16T18:14:35+00:00",
+                "previous_close": 81.4857142857143,
+                "previous_1_week": 77.2,
+                "previous_1_month": 56.3428571428572,
+                "previous_1_year": 17.700000000000003
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "score": {
+                        "type": "number"
+                    },
+                    "rating": {
+                        "type": "string"
+                    },
+                    "timestamp": {
+                        "type": "string"
+                    },
+                    "previous_close": {
+                        "type": "number"
+                    },
+                    "previous_1_week": {
+                        "type": "number"
+                    },
+                    "previous_1_month": {
+                        "type": "number"
+                    },
+                    "previous_1_year": {
+                        "type": "integer"
+                    }
+                }
+            }
+        },
+        {
+            "name": "/historical",
+            "url": "https://fear-and-greed-index2.p.rapidapi.com/historical",
+            "description": "Get the index for the given date.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "date",
+                    "type": "DATE (YYYY-MM-DD)",
+                    "description": "",
+                    "default": "2022-06-01"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://fear-and-greed-index2.p.rapidapi.com/historical\"\nquerystring = {\"date\": \"2022-06-01\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"fear-and-greed-index2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://fear-and-greed-index2.p.rapidapi.com/historical\"\nquerystring = {\"date\": \"2022-06-01\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"fear-and-greed-index2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per second for your plan, BASIC, by the API provider"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "fear": {
+                        "type": "number"
+                    }
+                }
+            }
+        }
+    ],
+    "standardized_name": "fear_and_greed_index"
+}

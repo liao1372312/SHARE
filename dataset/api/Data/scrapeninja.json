@@ -1,0 +1,58 @@
+{
+    "product_id": "api_55fb5531-d850-467b-b3b5-9d10407c4c35",
+    "tool_description": "High performance API for web scraping. Emulates Chrome TLS fingerprint, backed by rotating proxies (geos: US, EU, Brazil, France, Germany, 4g residential proxies available!) and smart retries. Use this when node.js/curl/python fails to load the website even with headers fully identical to Chrome, but you still need fast scraping and want to avoid using Puppeteer and JS evaluation (ScrapeNinja returns raw HTTP responses by default). Javascript rendering is available, as well! Read more: https:...",
+    "home_url": "https://rapidapi.com/restyler/api/scrapeninja/",
+    "name": "ScrapeNinja",
+    "title": "ScrapeNinja",
+    "pricing": "FREEMIUM",
+    "tool_name": "ScrapeNinja",
+    "score": {
+        "avgServiceLevel": 98,
+        "avgLatency": 2418,
+        "avgSuccessRate": 98,
+        "popularityScore": 9.9,
+        "__typename": "Score"
+    },
+    "host": "scrapeninja.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "/scrape (legacy)",
+            "url": "https://scrapeninja.p.rapidapi.com/scrape",
+            "description": "Scrape via GET method. Not recommended for production, you'd better use POST requests.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "url",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "https://apiroad.net/ajax-test.html"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://scrapeninja.p.rapidapi.com/scrape\"\nquerystring = {\"url\": \"https://apiroad.net/ajax-test.html\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"scrapeninja.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://scrapeninja.p.rapidapi.com/scrape\"\nquerystring = {\"url\": \"https://apiroad.net/ajax-test.html\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"scrapeninja.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "info": {
+                    "version": "2",
+                    "statusCode": 200,
+                    "statusMessage": "",
+                    "headers": {
+                        "date": "Fri, 16 Jun 2023 23:29:42 GMT",
+                        "content-type": "text/html",
+                        "last-modified": "Tue, 05 Jul 2022 09:17:24 GMT",
+                        "vary": "Accept-Encoding",
+                        "cf-cache-status": "DYNAMIC",
+                        "report-to": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=yKJSpKvpxzX8no9qQneCxxuE7v%2BYj%2BduFl0cZ9A3Ig5C%2BGU%2ByzRE%2B73LtrAVIgvQDilIoeMsXvOSFKyYheg1IWC8zFgdfYGHNS2HXqZFNh%2FHWKWAkibchnlKFLBb7Q%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+                        "nel": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+                        "server": "cloudflare",
+                        "cf-ray": "7d86d61cca161f51-DEN",
+                        "content-encoding": "br",
+                        "alt-svc": "h3=\":443\"; ma=86400"
+                    }
+                },
+                "body": "<html>\n    <body>\n\n        <script>\n\n            \n            let sendReq = async () => {\n\n                let form = document.querySelector('form');\n                let validationResult = form.reportValidity();\n\n                if (!validationResult) {\n                    return false;\n                }\n\n                var data = {\n                    \"search\": document.getElementById('q').value,\n                    \"some-val\": \"random value\"\n                }\n\n                let headers = {};\n\n                let start = new Date();\n\n                fetch(\"https://apiroad.net/sample-search.php\", {\n                    method: \"POST\",\n                    headers: headers,\n                    body:  JSON.stringify(data)\n                })\n                .then(function(response){ \n                    return response.json(); \n                })\n                .then(function(data){ \n                    //console.log(data);\n\n                    document.getElementById('response').innerHTML = '<h1 style=\"color:green\" class=\"search-results-heading\">Search results:</h1><div class=\"search-results-items\">' + \n                        (data.results.map(v => `<div><h3>${v.title}</h3><p>${v.description}</p></div>` )).join('') +\n                        '</div>';\n                        document.getElementById('search-results-stats').innerHTML = `Latency: ${(new Date() - start)}ms` ; \n                })\n                .catch((e) => {\n                    document.getElementById('response').innerHTML = '<h1 style=\"color:red\">Error happened:</h1>' + (e.toString());\n                })\n                ;\n            }\n\n            \n\n        </script>\n        <form>\n            <input type=\"text\" autocomplete=\"off\" required=\"true\" placeholder=\"enter search query\" id=\"q\" />\n            <button id=\"search-button\" onclick=\"sendReq();return false;\">Click me to search</button>\n\n            <div id=\"response\" class=\"search-results-container\"></div>\n            <div id=\"search-results-stats\" style=\"font-size: smaller; color: #777\"></div>\n        </form>\n\n\n        <a href=\"ajax-test2.html\" style=\"margin-top: 10em;display:inline-block;\" class=\"nav-link\">Just a link</a>\n    </body>\n</html>"
+            }
+        }
+    ],
+    "standardized_name": "scrapeninja"
+}

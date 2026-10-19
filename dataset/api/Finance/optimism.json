@@ -1,0 +1,211 @@
+{
+    "product_id": "api_9aa7687c-601c-49d6-a23e-7e31f2ef59bc",
+    "tool_description": "All-In-One access to the Optimism blockchain data!\n\nMore features are coming soon!\n\nFeedback and feature requests should be sent to:\nangleitnerchristoph123@gmail.com",
+    "home_url": "https://rapidapi.com/angleitnerchristoph123/api/optimism/",
+    "name": "Optimism",
+    "title": "Optimism",
+    "pricing": "FREEMIUM",
+    "tool_name": "Optimism",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 1040,
+        "avgSuccessRate": 100,
+        "popularityScore": 7.2,
+        "__typename": "Score"
+    },
+    "host": "optimism.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Block",
+            "url": "https://optimism.p.rapidapi.com/blockchain_block",
+            "description": "Get full data from a specific block on the Optimism blockchain.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "block",
+                    "type": "STRING",
+                    "description": "Block you want to scan!",
+                    "default": "123"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "network",
+                    "type": "STRING",
+                    "description": "Specify wich network you wanna use! (mainnet/testnet)",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://optimism.p.rapidapi.com/blockchain_block\"\nquerystring = {\"block\": \"123\", \"network\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"optimism.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://optimism.p.rapidapi.com/blockchain_block\"\nquerystring = {\"block\": \"123\", \"network\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"optimism.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "_type": "Block",
+                "baseFeePerGas": null,
+                "difficulty": "2",
+                "extraData": "0xd98301090a846765746889676f312e31352e3133856c696e75780000000000004d19402cb44d8a0228ab653328e89a5388feb95cef2e9ff6d1f0301b20f56f1a7c1247f21771a9006ed1c5d2524ab5b7f361f21b911b203d1b9780b38399120e00",
+                "gasLimit": "15000000",
+                "gasUsed": "29748",
+                "hash": "0xbf0d6ce56fc6455d61a63bfed1390202fa471a6a30658562ae060e14014f5702",
+                "miner": "0x0000000000000000000000000000000000000000",
+                "nonce": "0x0000000000000000",
+                "number": 123,
+                "parentHash": "0xd8fbb6700b047a82fb90d8246a407f26c67aff7b549922480c5f8d02c1e77e64",
+                "timestamp": 1636667631,
+                "transactions": [
+                    "0x6a216dd7082933a203290d98cc7132f4678888c40fcf6ad777d401f1001749c2"
+                ]
+            }
+        },
+        {
+            "name": "Account Transaction History",
+            "url": "https://optimism.p.rapidapi.com/account_transaction_history",
+            "description": "Get an array of all transactions of an address on the Optimism blockchain.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "address",
+                    "type": "STRING",
+                    "description": "Address you want to scan!",
+                    "default": "0x0000000000000000000000000000000000000123"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "network",
+                    "type": "STRING",
+                    "description": "Specify wich network you wanna use! (mainnet/testnet)",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://optimism.p.rapidapi.com/account_transaction_history\"\nquerystring = {\"network\": \"\", \"address\": \"0x0000000000000000000000000000000000000123\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"optimism.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://optimism.p.rapidapi.com/account_transaction_history\"\nquerystring = {\"network\": \"\", \"address\": \"0x0000000000000000000000000000000000000123\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"optimism.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "status": "0",
+                "message": "No transactions found",
+                "result": []
+            }
+        },
+        {
+            "name": "Account Balance",
+            "url": "https://optimism.p.rapidapi.com/account_balance",
+            "description": "Get the OP balance for an address on the Optimism blockchain.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "address",
+                    "type": "STRING",
+                    "description": "Address you want to scan!",
+                    "default": "0x0000000000000000000000000000000000000123"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "network",
+                    "type": "STRING",
+                    "description": "Specify wich network you wanna use! (mainnet/testnet)",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://optimism.p.rapidapi.com/account_balance\"\nquerystring = {\"address\": \"0x0000000000000000000000000000000000000123\", \"network\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"optimism.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://optimism.p.rapidapi.com/account_balance\"\nquerystring = {\"address\": \"0x0000000000000000000000000000000000000123\", \"network\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"optimism.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per second for your plan, BASIC, by the API provider"
+            }
+        },
+        {
+            "name": "Account Transaction Count",
+            "url": "https://optimism.p.rapidapi.com/account_transaction_count",
+            "description": "Get the number of transactions done by an address on the  Optimism blockchain.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "address",
+                    "type": "STRING",
+                    "description": "Address you want to scan!",
+                    "default": "0x0000000000000000000000000000000000000123"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "network",
+                    "type": "STRING",
+                    "description": "Specify wich network you wanna use! (mainnet/testnet)",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://optimism.p.rapidapi.com/account_transaction_count\"\nquerystring = {\"network\": \"\", \"address\": \"0x0000000000000000000000000000000000000123\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"optimism.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://optimism.p.rapidapi.com/account_transaction_count\"\nquerystring = {\"network\": \"\", \"address\": \"0x0000000000000000000000000000000000000123\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"optimism.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": 0
+        },
+        {
+            "name": "Current Block Number",
+            "url": "https://optimism.p.rapidapi.com/blockchain_block_number",
+            "description": "Get the current block number of the Optimism blockchain.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "network",
+                    "type": "STRING",
+                    "description": "Specify wich network you wanna use! (mainnet/testnet)",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://optimism.p.rapidapi.com/blockchain_block_number\"\nquerystring = {\"network\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"optimism.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://optimism.p.rapidapi.com/blockchain_block_number\"\nquerystring = {\"network\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"optimism.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per second for your plan, BASIC, by the API provider"
+            }
+        },
+        {
+            "name": "Transaction",
+            "url": "https://optimism.p.rapidapi.com/blockchain_transaction",
+            "description": "Get full data from a specific transaction on the Optimism blockchain!",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "hash",
+                    "type": "STRING",
+                    "description": "Transaction you want to scan!",
+                    "default": "0xc3f239bae81d78c344f475955801bf2a491430009f171c34a4937dc89ad88d9f"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "network",
+                    "type": "STRING",
+                    "description": "Specify wich network you wanna use! (mainnet/testnet)",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://optimism.p.rapidapi.com/blockchain_transaction\"\nquerystring = {\"network\": \"\", \"hash\": \"0xc3f239bae81d78c344f475955801bf2a491430009f171c34a4937dc89ad88d9f\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"optimism.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://optimism.p.rapidapi.com/blockchain_transaction\"\nquerystring = {\"network\": \"\", \"hash\": \"0xc3f239bae81d78c344f475955801bf2a491430009f171c34a4937dc89ad88d9f\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"optimism.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "_type": "TransactionReceipt",
+                "accessList": null,
+                "blockNumber": 85247111,
+                "blockHash": "0xe50e0e24582313d55449f7b501f5a82b970aab90f7a3e1224b3acf9fd8ded902",
+                "chainId": "10",
+                "data": "0x4e86ba3c0000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000006ce542200000000000000000000000000000000000000000000000000dd99f4eb31468000000000000000000000000000000000000000000000000000000000064275433",
+                "from": "0x77a67FA69907b95BD693D2a97BF3Deea7C84d4a9",
+                "gasLimit": "300000",
+                "gasPrice": "1300000",
+                "hash": "0xc3f239bae81d78c344f475955801bf2a491430009f171c34a4937dc89ad88d9f",
+                "maxFeePerGas": null,
+                "maxPriorityFeePerGas": null,
+                "nonce": 28862,
+                "signature": {
+                    "_type": "signature",
+                    "networkV": "55",
+                    "r": "0x3cec18c65270cc2505f9a1cb3274efc5b4b1455a35fe74c0bcb40f40a114ddf5",
+                    "s": "0x0d9f3967d415f41fe652b64c77e7207f8cdf4a1300b5572ec394a56ad3676e01",
+                    "v": 27
+                },
+                "to": "0xEd49212af69C1E29601E23D0fbF385c510e4BB15",
+                "type": 0,
+                "value": "0"
+            }
+        }
+    ],
+    "standardized_name": "optimism"
+}

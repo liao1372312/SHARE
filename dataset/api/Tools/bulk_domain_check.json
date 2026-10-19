@@ -1,0 +1,47 @@
+{
+    "product_id": "5ab3a224e4b0a62b51d0a684",
+    "tool_description": "Bulk Domain Availability Check. All tlds supported. ",
+    "home_url": "https://rapidapi.com/backend_box/api/bulk-domain-check/",
+    "name": "Bulk Domain Check",
+    "title": "Bulk Domain Check",
+    "pricing": "FREEMIUM",
+    "tool_name": "Bulk Domain Check",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 1543,
+        "avgSuccessRate": 100,
+        "popularityScore": 9.1,
+        "__typename": "Score"
+    },
+    "host": "pointsdb-bulk-domain-check-v1.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "/domain_check",
+            "url": "https://pointsdb-bulk-domain-check-v1.p.rapidapi.com/domain_check",
+            "description": "Returns domain availability status",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "domains",
+                    "type": "STRING",
+                    "description": "Coma separated list of domains.",
+                    "default": "foo.com,example.org,somefoobardomain.io"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "domain",
+                    "type": "STRING",
+                    "description": "domain name",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://pointsdb-bulk-domain-check-v1.p.rapidapi.com/domain_check\"\nquerystring = {\"domain\": \"\", \"domains\": \"foo.com,example.org,somefoobardomain.io\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"pointsdb-bulk-domain-check-v1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://pointsdb-bulk-domain-check-v1.p.rapidapi.com/domain_check\"\nquerystring = {\"domain\": \"\", \"domains\": \"foo.com,example.org,somefoobardomain.io\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"pointsdb-bulk-domain-check-v1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "": false
+            }
+        }
+    ],
+    "standardized_name": "bulk_domain_check"
+}

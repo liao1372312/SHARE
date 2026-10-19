@@ -1,0 +1,289 @@
+{
+    "product_id": "api_d3f33ac6-7289-4f95-8fa3-0cc4dbc93e11",
+    "tool_description": "Implement SMS notifications, OTP, reminders, etc. into your workflow and build apps that send SMS with our redundant SSL SMS API.",
+    "home_url": "https://rapidapi.com/intergo-telecom-ltd-intergo-telecom-ltd-default/api/smsto/",
+    "name": "SMSto",
+    "title": "SMSto",
+    "pricing": "FREE",
+    "tool_name": "SMSto",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 1000,
+        "avgSuccessRate": 0,
+        "popularityScore": 0.3,
+        "__typename": "Score"
+    },
+    "host": "smsto.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Get messages",
+            "url": "https://smsto.p.rapidapi.com/messages",
+            "description": "Fetch paginated messages.\n\nPlease note that the messages will be sorted by the date of creating (sending) - latest first.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "created_at",
+                    "type": "STRING",
+                    "description": "Filter by created at",
+                    "default": "2022-08-19"
+                },
+                {
+                    "name": "order_by",
+                    "type": "STRING",
+                    "description": "Field to sort by",
+                    "default": "created_at"
+                },
+                {
+                    "name": "to",
+                    "type": "STRING",
+                    "description": "Filter by recipient number",
+                    "default": "+3579865333"
+                },
+                {
+                    "name": "order_direction",
+                    "type": "STRING",
+                    "description": "Sort messages.",
+                    "default": "desc"
+                },
+                {
+                    "name": "status",
+                    "type": "STRING",
+                    "description": "Filter by status",
+                    "default": "REJECTED"
+                },
+                {
+                    "name": "limit",
+                    "type": "NUMBER",
+                    "description": "The number of messages per page.",
+                    "default": "15"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://smsto.p.rapidapi.com/messages\"\nquerystring = {\"created_at\": \"2022-08-19\", \"order_by\": \"created_at\", \"to\": \"+3579865333\", \"order_direction\": \"desc\", \"status\": \"REJECTED\", \"limit\": \"15\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"smsto.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://smsto.p.rapidapi.com/messages\"\nquerystring = {\"created_at\": \"2022-08-19\", \"order_by\": \"created_at\", \"to\": \"+3579865333\", \"order_direction\": \"desc\", \"status\": \"REJECTED\", \"limit\": \"15\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"smsto.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "success": false,
+                "message": "Invalid API Key or Token",
+                "data": []
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "current_page": {
+                        "type": "integer"
+                    },
+                    "data": {
+                        "type": "array"
+                    },
+                    "first_page_url": {
+                        "type": "string"
+                    },
+                    "from": {
+                        "type": "null"
+                    },
+                    "last_page": {
+                        "type": "integer"
+                    },
+                    "last_page_url": {
+                        "type": "string"
+                    },
+                    "links": {
+                        "type": "array",
+                        "items": {
+                            "type": "object"
+                        }
+                    },
+                    "next_page_url": {
+                        "type": "null"
+                    },
+                    "path": {
+                        "type": "string"
+                    },
+                    "per_page": {
+                        "type": "string"
+                    },
+                    "prev_page_url": {
+                        "type": "null"
+                    },
+                    "to": {
+                        "type": "null"
+                    },
+                    "total": {
+                        "type": "integer"
+                    }
+                }
+            }
+        },
+        {
+            "name": "Get last campaign",
+            "url": "https://smsto.p.rapidapi.com/last/campaign",
+            "description": "Get the last campaign that you have sent",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://smsto.p.rapidapi.com/last/campaign\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"smsto.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://smsto.p.rapidapi.com/last/campaign\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"smsto.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "success": false,
+                "message": "Invalid API Key or Token",
+                "data": []
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer"
+                    },
+                    "_id": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "string"
+                    },
+                    "user_id": {
+                        "type": "integer"
+                    },
+                    "sender_id": {
+                        "type": "string"
+                    },
+                    "template_id": {
+                        "type": "null"
+                    },
+                    "message": {
+                        "type": "string"
+                    },
+                    "list_id": {
+                        "type": "null"
+                    },
+                    "status": {
+                        "type": "string"
+                    },
+                    "client_total_cost": {
+                        "type": "integer"
+                    },
+                    "estimated_cost": {
+                        "type": "integer"
+                    },
+                    "delivered_messages": {
+                        "type": "integer"
+                    },
+                    "failed_messages": {
+                        "type": "integer"
+                    },
+                    "pending_messages": {
+                        "type": "integer"
+                    },
+                    "sent_messages": {
+                        "type": "integer"
+                    },
+                    "bypass_optout": {
+                        "type": "null"
+                    },
+                    "callback_url": {
+                        "type": "string"
+                    },
+                    "scheduled_for": {
+                        "type": "integer"
+                    },
+                    "timezone": {
+                        "type": "string"
+                    },
+                    "created_at": {
+                        "type": "string"
+                    },
+                    "updated_at": {
+                        "type": "string"
+                    },
+                    "sms_count": {
+                        "type": "integer"
+                    },
+                    "is_api": {
+                        "type": "integer"
+                    },
+                    "canceled_at": {
+                        "type": "null"
+                    }
+                }
+            }
+        },
+        {
+            "name": "Get message by id",
+            "url": "https://smsto.p.rapidapi.com/message/11ed-072c-2e295590-89fe-02420a000287",
+            "description": "Get the message that you have sent by ID",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "id",
+                    "type": "string",
+                    "description": "",
+                    "default": "11ed-072c-2e295590-89fe-02420a000287"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://smsto.p.rapidapi.com/message/11ed-072c-2e295590-89fe-02420a000287\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"smsto.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://smsto.p.rapidapi.com/message/{id}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"smsto.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "success": false,
+                "message": "Invalid API Key or Token",
+                "data": []
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "campaign_id": {
+                        "type": "null"
+                    },
+                    "sender_id": {
+                        "type": "string"
+                    },
+                    "message": {
+                        "type": "string"
+                    },
+                    "to": {
+                        "type": "string"
+                    },
+                    "status": {
+                        "type": "string"
+                    },
+                    "cost": {
+                        "type": "integer"
+                    },
+                    "sms_count": {
+                        "type": "integer"
+                    },
+                    "type": {
+                        "type": "string"
+                    },
+                    "callback_url": {
+                        "type": "string"
+                    },
+                    "scheduled_for": {
+                        "type": "null"
+                    },
+                    "timezone": {
+                        "type": "null"
+                    },
+                    "updated_at": {
+                        "type": "string"
+                    },
+                    "created_at": {
+                        "type": "string"
+                    },
+                    "sent_at": {
+                        "type": "string"
+                    },
+                    "is_api": {
+                        "type": "boolean"
+                    }
+                }
+            }
+        }
+    ],
+    "standardized_name": "smsto"
+}

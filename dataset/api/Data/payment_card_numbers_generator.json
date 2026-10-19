@@ -1,0 +1,55 @@
+{
+    "product_id": "api_9b2179fa-01f1-453a-8232-0af942c57bae",
+    "tool_description": "A simple service to generate random credit/debit card numbers",
+    "home_url": "https://rapidapi.com/a.neprokin/api/payment-card-numbers-generator/",
+    "name": "Payment card numbers generator",
+    "title": "Payment card numbers generator",
+    "pricing": "FREEMIUM",
+    "tool_name": "Payment card numbers generator",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 602,
+        "avgSuccessRate": 100,
+        "popularityScore": 8.2,
+        "__typename": "Score"
+    },
+    "host": "payment-card-numbers-generator.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Generate",
+            "url": "https://payment-card-numbers-generator.p.rapidapi.com/generate",
+            "description": "# Generate payment card numbers\n\n## Default values\n\n**scheme**: \"visa\"\n**count**: 5",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "quantity",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "5"
+                },
+                {
+                    "name": "scheme",
+                    "type": "ENUM",
+                    "description": "",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://payment-card-numbers-generator.p.rapidapi.com/generate\"\nquerystring = {\"quantity\": \"5\", \"scheme\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"payment-card-numbers-generator.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://payment-card-numbers-generator.p.rapidapi.com/generate\"\nquerystring = {\"quantity\": \"5\", \"scheme\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"payment-card-numbers-generator.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "scheme": "VISA",
+                "cards": [
+                    "4716539296589645",
+                    "4024007159744647",
+                    "4532089648240978",
+                    "4659926791827001",
+                    "4929566248457756"
+                ]
+            },
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "payment_card_numbers_generator"
+}

@@ -1,0 +1,43 @@
+{
+    "product_id": "api_cbfd86eb-f414-4cc1-bae3-38d239d83d5b",
+    "tool_description": "An API that gets you the real-time stock price of any NASDAQ-listed stock, along with some other parameters.",
+    "home_url": "https://rapidapi.com/amansharma2910/api/realstonks/",
+    "name": "RealStonks",
+    "title": "RealStonks",
+    "pricing": "FREEMIUM",
+    "tool_name": "RealStonks",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 6197,
+        "avgSuccessRate": 98,
+        "popularityScore": 9.8,
+        "__typename": "Score"
+    },
+    "host": "realstonks.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Stock Information",
+            "url": "https://realstonks.p.rapidapi.com/TSLA",
+            "description": "This endpoint gets you the real-time stock information.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "name",
+                    "type": "string",
+                    "description": "",
+                    "default": "TSLA"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://realstonks.p.rapidapi.com/TSLA\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"realstonks.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://realstonks.p.rapidapi.com/{name}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"realstonks.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "price": 258.74,
+                "change_point": 2.84,
+                "change_percentage": 1.11,
+                "total_vol": "75.11M"
+            }
+        }
+    ],
+    "standardized_name": "realstonks"
+}

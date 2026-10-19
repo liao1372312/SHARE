@@ -1,0 +1,367 @@
+{
+    "product_id": "api_eb01ef7b-c4d5-4fff-b0cd-b97f44739b3f",
+    "tool_description": "Shopee product search api & product details api",
+    "home_url": "https://rapidapi.com/kangazib/api/shopeeapi2/",
+    "name": "ShopeeApi",
+    "title": "ShopeeApi",
+    "pricing": "FREEMIUM",
+    "tool_name": "ShopeeApi",
+    "score": {
+        "avgServiceLevel": 98,
+        "avgLatency": 810,
+        "avgSuccessRate": 98,
+        "popularityScore": 9,
+        "__typename": "Score"
+    },
+    "host": "shopeeapi2.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Search products",
+            "url": "https://shopeeapi2.p.rapidapi.com/id/search",
+            "description": "Search product & Paginate",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "region",
+                    "type": "string",
+                    "description": "The region must one of [\\\\\\\"en\\\\\\\", \\\\\\\"sg\\\\\\\", \\\\\\\"my\\\\\\\", \\\\\\\"id\\\\\\\", \\\\\\\"th\\\\\\\", \\\\\\\"vn\\\\\\\", \\\\\\\"ph\\\\\\\", \\\\\\\"tw\\\\\\\", \\\\\\\"br\\\\\\\", \\\\\\\"cl\\\\\\\", \\\\\\\"mx\\\\\\\", \\\\\\\"co\\\\\\\"]",
+                    "default": "id"
+                },
+                {
+                    "name": "q",
+                    "type": "STRING",
+                    "description": "A product search query",
+                    "default": "Keripik Kentang"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "p",
+                    "type": "NUMBER",
+                    "description": "Page number",
+                    "default": "1"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://shopeeapi2.p.rapidapi.com/id/search\"\nquerystring = {\"p\": \"1\", \"q\": \"Keripik Kentang\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"shopeeapi2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://shopeeapi2.p.rapidapi.com/{region}/search\"\nquerystring = {\"p\": \"1\", \"q\": \"Keripik Kentang\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"shopeeapi2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "query": "Keripik Kentang",
+                "region": "Indonesia",
+                "total": 7340,
+                "results": [
+                    {
+                        "title": "KERIPIK KENTANG PEDAS MANIS CAP LOMBOK 200GR ASLI BALI",
+                        "path": "KERIPIK-KENTANG-PEDAS-MANIS-CAP-LOMBOK-200GR-ASLI-BALI-i.36460485.11048061287",
+                        "image": "https://down-id.img.susercontent.com/file/03315bbba76e1d6e4df4aa3309a529d6",
+                        "price": 3800000000,
+                        "location": "KOTA DENPASAR",
+                        "rating": 5,
+                        "sold": 2
+                    },
+                    {
+                        "title": "Keripik Kentang Rasa Keju 500 gr/Keripik Kentang  Keju/Kentang Rasa Keju/Kentang Keju",
+                        "path": "Keripik-Kentang-Rasa-Keju-500-grKeripik-Kentang-KejuKentang-Rasa-KejuKentang-Keju-i.164775856.5977843059",
+                        "image": "https://down-id.img.susercontent.com/file/d484e246f0bf682d8a4a9fcb18dad370",
+                        "price": 4900000000,
+                        "location": "KOTA BANDUNG",
+                        "rating": 4.900943396226415,
+                        "sold": 6
+                    },
+                    {
+                        "title": "keripik kentang asli dieng khas wonosobo 1kg",
+                        "path": "keripik-kentang-asli-dieng-khas-wonosobo-1kg-i.506428385.11137932390",
+                        "image": "https://down-id.img.susercontent.com/file/id-11134207-7quky-lfgmgmqjl3tu9f",
+                        "price": 17700000000,
+                        "location": "KAB. WONOSOBO",
+                        "rating": 4.954545454545454,
+                        "sold": 3
+                    },
+                    {
+                        "title": "KERIPIK KENTANG CRISPY | KERIPIK SAYUR BUAH PREMIUM",
+                        "path": "KERIPIK-KENTANG-CRISPY-KERIPIK-SAYUR-BUAH-PREMIUM-i.618544113.15542709128",
+                        "image": "https://down-id.img.susercontent.com/file/962dd673a16a96abdb6b25f98834943d",
+                        "price": 2900000000,
+                        "location": "KOTA PROBOLINGGO",
+                        "rating": 4.831460674157303,
+                        "sold": 10
+                    },
+                    {
+                        "title": "Keripik kentang Home Made 500gr",
+                        "path": "Keripik-kentang-Home-Made-500gr-i.81877924.1739325313",
+                        "image": "https://down-id.img.susercontent.com/file/sg-11134201-22120-f9ztugndpjlv1e",
+                        "price": 8150000000,
+                        "location": "KOTA JAKARTA TIMUR",
+                        "rating": 4.956942003514938,
+                        "sold": 13
+                    },
+                    {
+                        "title": "PRINGLES POTATO CHIPS / KERIPIK KENTANG 107 GRAM",
+                        "path": "PRINGLES-POTATO-CHIPS-KERIPIK-KENTANG-107-GRAM-i.264345385.14807683135",
+                        "image": "https://down-id.img.susercontent.com/file/9fd0387b0dea98ac1b2ed4aa5b5650a4",
+                        "price": 1699900000,
+                        "location": "KAB. TANGERANG",
+                        "rating": 4.878619839802834,
+                        "sold": 929
+                    },
+                    {
+                        "title": "KERIPIK KENTANG KERING KENTANG PEDAS DAUN JERUK CEMILAN  OLEH OLEH",
+                        "path": "KERIPIK-KENTANG-KERING-KENTANG-PEDAS-DAUN-JERUK-CEMILAN-OLEH-OLEH-i.36780982.22543803239",
+                        "image": "https://down-id.img.susercontent.com/file/id-11134207-7qukz-lhhah5qfr6r458",
+                        "price": 2550000000,
+                        "location": "KOTA BANDUNG",
+                        "rating": 0,
+                        "sold": 0
+                    },
+                    {
+                        "title": "PAQUI Mister Potato Ghost Pepper X Daeblak Mamee Keripik Kentang Pedas Hot Spicy Exp 2024",
+                        "path": "PAQUI-Mister-Potato-Ghost-Pepper-X-Daeblak-Mamee-Keripik-Kentang-Pedas-Hot-Spicy-Exp-2024-i.36011889.8501714964",
+                        "image": "https://down-id.img.susercontent.com/file/7a38b7348e6552076eda8ca20f40ef06",
+                        "price": 1250000000,
+                        "location": "KAB. KEDIRI",
+                        "rating": 4.596072931276297,
+                        "sold": 59
+                    },
+                    {
+                        "title": "Kripik | Keripik Kentang Mentah Asli Bromo | Potato Chips Gurih 250gr | Kripik Kentang Asli | Kripik Kentang Mentah | Kripik Khas Bromo | Kripik Kentang Asli | Kripik Kentang Probolinggo",
+                        "path": "Kripik-Keripik-Kentang-Mentah-Asli-Bromo-Potato-Chips-Gurih-250gr-Kripik-Kentang-Asli-Kripik-Kentang-Mentah-Kripik-Khas-Bromo-Kripik-Kentang-Asli-Kripik-Kentang-Probolinggo-i.34724392.9270683366",
+                        "image": "https://down-id.img.susercontent.com/file/306267621afb0c8045ba7889d2be832b",
+                        "price": 1500000000,
+                        "location": "KAB. PROBOLINGGO",
+                        "rating": 4.927536231884058,
+                        "sold": 12
+                    },
+                    {
+                        "title": "snack kilon stik kentang 125 gram free saus makanan ringan  cemilan camilan jajanan",
+                        "path": "snack-kilon-stik-kentang-125-gram-free-saus-makanan-ringan-cemilan-camilan-jajanan-i.253603093.15496329358",
+                        "image": "https://down-id.img.susercontent.com/file/sg-11134201-23020-8zwv7iwmj9mv24",
+                        "price": 807500000,
+                        "location": "KAB. BOGOR",
+                        "rating": 4.634297520661157,
+                        "sold": 344
+                    },
+                    {
+                        "title": "Kentang chip premium 250g / keripik kentang asli",
+                        "path": "Kentang-chip-premium-250g-keripik-kentang-asli-i.8335196.6242770545",
+                        "image": "https://down-id.img.susercontent.com/file/id-11134207-7qul7-lhm6eme0o3nj1d",
+                        "price": 3000000000,
+                        "location": "KOTA MEDAN",
+                        "rating": 4.851851851851852,
+                        "sold": 1
+                    },
+                    {
+                        "title": "[ TERLARIS ] SNACK KILOAN LAYS / CHITATO LITE KERIPIK KENTANG RASA RUMPUT LAUT",
+                        "path": "TERLARIS-SNACK-KILOAN-LAYS-CHITATO-LITE-KERIPIK-KENTANG-RASA-RUMPUT-LAUT-i.17800927.7653793998",
+                        "image": "https://down-id.img.susercontent.com/file/f5a36004aebfbae426888cebc9eb9772",
+                        "price": 2950000000,
+                        "location": "KAB. BEKASI",
+                        "rating": 4.660377358490566,
+                        "sold": 5
+                    },
+                    {
+                        "title": "Mister potato crisps kripik kentang 85g",
+                        "path": "Mister-potato-crisps-kripik-kentang-85g-i.21224681.17839835328",
+                        "image": "https://down-id.img.susercontent.com/file/02c3b750192c9ce38fef8afd2e258266",
+                        "price": 1399000000,
+                        "location": "KAB. JOMBANG",
+                        "rating": 4.796610169491525,
+                        "sold": 15
+                    },
+                    {
+                        "title": "Keripik Kentang Ny.Lay",
+                        "path": "Keripik-Kentang-NyLay-i.16999547.1391973354",
+                        "image": "https://down-id.img.susercontent.com/file/65deefca07bb31d55205cbc7dfe70248",
+                        "price": 6500000000,
+                        "location": "KOTA JAKARTA BARAT",
+                        "rating": 4.967005076142132,
+                        "sold": 47
+                    },
+                    {
+                        "title": "Keripik kentang balado / kripik / camilan cemilan snack makanan ringan / keripik pedas original crispy kriuk Kriz Kraz",
+                        "path": "Keripik-kentang-balado-kripik-camilan-cemilan-snack-makanan-ringan-keripik-pedas-original-crispy-kriuk-Kriz-Kraz-i.493931257.10033367403",
+                        "image": "https://down-id.img.susercontent.com/file/9ef9af4940161bbd5941b51585818510",
+                        "price": 3120000000,
+                        "location": "KOTA JAKARTA BARAT",
+                        "rating": 4.897183098591549,
+                        "sold": 25
+                    },
+                    {
+                        "title": "keripik kentang mentah",
+                        "path": "keripik-kentang-mentah-i.23336323.20872359903",
+                        "image": "https://down-id.img.susercontent.com/file/sg-11134201-23020-w89nq4dn83mv42",
+                        "price": 500000000,
+                        "location": "KAB. BONDOWOSO",
+                        "rating": 5,
+                        "sold": 0
+                    },
+                    {
+                        "title": "Keripik kentang krispi 1 kg varian rasa",
+                        "path": "Keripik-kentang-krispi-1-kg-varian-rasa-i.64262501.22343916294",
+                        "image": "https://down-id.img.susercontent.com/file/id-11134207-7qul1-lhdeiw89m2xf51",
+                        "price": 9300000000,
+                        "location": "KOTA JAKARTA UTARA",
+                        "rating": 5,
+                        "sold": 2
+                    },
+                    {
+                        "title": "Keripik / Keripik Kentang / Kentang Dieng",
+                        "path": "Keripik-Keripik-Kentang-Kentang-Dieng-i.330633053.10224999618",
+                        "image": "https://down-id.img.susercontent.com/file/6c741c3767af67bc7f61f6352fb86c89",
+                        "price": 2600000000,
+                        "location": "KAB. WONOSOBO",
+                        "rating": 5,
+                        "sold": 0
+                    },
+                    {
+                        "title": "KERIPIK SAYUR MIX TOPLES VOLUME 800 ML SUPER PREMIUM VARIAN ISI LENGKAP | WORTEL, BUNCIS, EDAMAME (KEDELAI JEPANG) WHITE TALAS, KENTANG, HONEY POTATOES, PURPLE POTATOES",
+                        "path": "KERIPIK-SAYUR-MIX-TOPLES-VOLUME-800-ML-SUPER-PREMIUM-VARIAN-ISI-LENGKAP-WORTEL-BUNCIS-EDAMAME-KEDELAI-JEPANG-WHITE-TALAS-KENTANG-HONEY-POTATOES-PURPLE-POTATOES-i.69108440.15661646218",
+                        "image": "https://down-id.img.susercontent.com/file/0e65f8b2bedc3fc899ded608690a9438",
+                        "price": 4500000000,
+                        "location": "KAB. MALANG",
+                        "rating": 4.676056338028169,
+                        "sold": 62
+                    },
+                    {
+                        "title": "Keripik Kentang Mustofa 1kg Khas Bandung Kripik Kentang Kiloan Kentang Kering Mustofa Makanan Ringan",
+                        "path": "Keripik-Kentang-Mustofa-1kg-Khas-Bandung-Kripik-Kentang-Kiloan-Kentang-Kering-Mustofa-Makanan-Ringan-i.499654939.21268689396",
+                        "image": "https://down-id.img.susercontent.com/file/sg-11134201-22120-t1v7q731o4kv96",
+                        "price": 4950000000,
+                        "location": "KAB. BANDUNG",
+                        "rating": 4.75,
+                        "sold": 9
+                    }
+                ]
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object"
+            }
+        },
+        {
+            "name": "Product details",
+            "url": "https://shopeeapi2.p.rapidapi.com/id/Min-order-2pcs-Kentang-Mustofa-100g-Kering-Kentang-Kripik-Kentang-Kentang-Garing-i.179967476.7583210867",
+            "description": "Get shopee product details",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "region",
+                    "type": "string",
+                    "description": "The region. must be one of [\\\\\\\"en\\\\\\\", \\\\\\\"sg\\\\\\\", \\\\\\\"my\\\\\\\", \\\\\\\"id\\\\\\\", \\\\\\\"th\\\\\\\", \\\\\\\"vn\\\\\\\", \\\\\\\"ph\\\\\\\", \\\\\\\"tw\\\\\\\", \\\\\\\"br\\\\\\\", \\\\\\\"cl\\\\\\\", \\\\\\\"mx\\\\\\\", \\\\\\\"co\\\\\\\"]",
+                    "default": "id"
+                },
+                {
+                    "name": "path",
+                    "type": "string",
+                    "description": "Path parameters",
+                    "default": "Min-order-2pcs-Kentang-Mustofa-100g-Kering-Kentang-Kripik-Kentang-Kentang-Garing-i.179967476.7583210867"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://shopeeapi2.p.rapidapi.com/id/Min-order-2pcs-Kentang-Mustofa-100g-Kering-Kentang-Kripik-Kentang-Kentang-Garing-i.179967476.7583210867\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"shopeeapi2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://shopeeapi2.p.rapidapi.com/{region}/{path}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"shopeeapi2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "region": "Indonesia",
+                "itemId": "7583210867",
+                "shopId": "179967476",
+                "name": "(Min order 2pcs) Kentang Mustofa 100g Kering Kentang Kripik Kentang Kentang Garing",
+                "ctime": 1616603157,
+                "brand": null,
+                "item_rating": {
+                    "rating_star": 2.773279261662061,
+                    "rating_count": [
+                        249,
+                        1,
+                        3,
+                        7,
+                        26,
+                        212
+                    ]
+                },
+                "condition": 1,
+                "description": "Bismillah \nAssalamu'alaikum kakak /abg awq....\n\nREADY KENTANG MUSTOFA \n Keistimewaan Kentang Mustofa\n1. Menggunakan 100% Kentang.\n2. Menggunakan bumbu balado karamel dari cabe segar, bukan cabe bubukd\n3. Enak, krispy, pedas manis gurih, tidak berminyak. \n4. No MSG, No pengawet, pengeras ataupun pewarna yang berbahaya untuk kesehatan. Sehat untuk dikonsumsi anak2 \n5. Produk yang dikirim Fresh. Setiap hari produksi dan produk yg dikirim adalah produk yg baru diproduksi (made by order) \n6. Cocok buat stok bekal pondok, anak cost2an, Lauk kering praktis, stok puasa (penggugah selera disaat sahur) atau hidangan pelengkap acara lainnya. \n\n\nKomposisi: Kentang, Bawang, Cabai, Garam, Gula, dan Minyak \n\nNetto:100gr\n\nKemasan : Standing pouch transparan 12x20cm\nFree Packing Dus + buble (dimohon pembelian minimal 2 bungkus ya kakak) \n\nVarian \n- Original= 100% kentang polos tanpa campuran\n- Full kentang=100% kentang, tanpa campuran kacang dan teri.\n- Kacang= kentang + kacang\n- Teri Kacang= kentang + kacang + teri medan \n- Teri= kentang + teri medan\n\nRasa: \n\u00a4 Pedas (pedas manis sedang) \n\u00a4 Pedas manis (dominan manis)\n\u00a4 Pedas gila (100% cabe rawit merah)\n\n#kentangmustofapedas #kentangmustofaterikacang #kentangmustofa #kentangmustofaoriginal #cemilan #kentangbalado #kentangmustofatidakpedas #kentangmustofanonmsg #keringkentangmustofa #kentangkeringbalado #kentangbaladokering #kentangkeringmustofa #keringkentangbalado ",
+                "image": "https://down-id.img.susercontent.com/file/aff602c63d851b35b110cd8f8d3b0fa2",
+                "images": [
+                    "https://down-id.img.susercontent.com/file/aff602c63d851b35b110cd8f8d3b0fa2",
+                    "https://down-id.img.susercontent.com/file/b1622bab1464a32dd68d537bcfea4706",
+                    "https://down-id.img.susercontent.com/file/c9b1dd5eaa197975c5d8d208569aec81",
+                    "https://down-id.img.susercontent.com/file/e869ffa1f88741e0b107649ebbcd0682"
+                ],
+                "attributes": [
+                    {
+                        "name": "Tipe Paket",
+                        "value": "Multipack"
+                    },
+                    {
+                        "name": "Masa Penyimpanan",
+                        "value": "1 Bulan"
+                    },
+                    {
+                        "name": "Negara Asal",
+                        "value": "Indonesia"
+                    },
+                    {
+                        "name": "Jenis Makanan",
+                        "value": "Home-made"
+                    },
+                    {
+                        "name": "Berat Produk",
+                        "value": "100g"
+                    },
+                    {
+                        "name": "Menyebabkan Alergi",
+                        "value": "Tidak"
+                    },
+                    {
+                        "name": "Menu Makanan Khusus",
+                        "value": "Halal, Menu Sehat, Rendah Lemak"
+                    },
+                    {
+                        "name": "Ukuran Per Produk",
+                        "value": "12CM"
+                    },
+                    {
+                        "name": "Tanggal Kedaluwarsa",
+                        "value": "1686330000"
+                    },
+                    {
+                        "name": "Rasa",
+                        "value": "Aneka rasa"
+                    },
+                    {
+                        "name": "Jumlah Produk Dalam Kemasan",
+                        "value": "1"
+                    }
+                ],
+                "categories": [
+                    {
+                        "name": "Makanan & Minuman",
+                        "is_default_subcat": false,
+                        "no_sub": false
+                    },
+                    {
+                        "name": "Makanan Ringan",
+                        "is_default_subcat": false,
+                        "no_sub": false
+                    },
+                    {
+                        "name": "Keripik & Kerupuk",
+                        "is_default_subcat": false,
+                        "no_sub": true
+                    }
+                ],
+                "price": 1628049347,
+                "price_max": 2003753043,
+                "price_min": 1628049347,
+                "discount": null,
+                "discount_stock": 0,
+                "raw_discount": 0,
+                "location": "KOTA MEDAN",
+                "stock": 11844,
+                "sold": 123,
+                "is_mart": false
+            },
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "shopeeapi"
+}

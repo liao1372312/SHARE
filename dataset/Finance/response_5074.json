@@ -1,0 +1,33 @@
+{
+"user_query":"I am a professional sports bettor and I am always looking for the best odds and matches to place my bets. Can you provide me with the latest odds and matches available on Betmaster? I am particularly interested in football, basketball, and tennis. It would be great if you could also provide some statistics on the win rates of different teams and players. Thank you!",
+"domain":"Finance",
+"TaskList": [
+{
+"id": 1,
+"description": "Retrieve the latest odds and matches for football, basketball, and tennis from Betmaster.",
+"domain": "finance",
+"required_inputs": ["sports_type"]
+},
+{
+"id": 2,
+"description": "Analyze the odds data to identify the best matches for betting.",
+"domain": "finance",
+"required_inputs": ["odds_data"],
+"dependencies": [1]
+},
+{
+"id": 3,
+"description": "Gather win rate statistics for different teams and players in the specified sports.",
+"domain": "finance",
+"required_inputs": ["sports_type"],
+"dependencies": [1]
+},
+{
+"id": 4,
+"description": "Present an overview of the best odds, matches, and team/player statistics for betting decisions.",
+"domain": "finance",
+"required_inputs": ["best_matches", "stats"],
+"dependencies": [2, 3]
+}
+]
+}

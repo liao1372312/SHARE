@@ -1,0 +1,31 @@
+{
+  "user_query": "I want to organize a charity event with uplifting music, a trivia fact, and a motivational track from Deezer.",
+  "domain": "entertainment",
+  "TaskList": [
+    {
+      "id": 1,
+      "description": "Search for a playlist containing inspirational and uplifting tracks suitable for a charity event.",
+      "domain": "entertainment",
+      "required_inputs": ["music genre", "playlist theme"]
+    },
+    {
+      "id": 2,
+      "description": "Retrieve a random trivia fact to share with participants.",
+      "domain": "entertainment",
+      "required_inputs": ["trivia category"]
+    },
+    {
+      "id": 3,
+      "description": "Get a random motivational track from Deezer to play during the event.",
+      "domain": "entertainment",
+      "required_inputs": ["music platform", "track type"]
+    }
+  ],
+  "dependencies": [
+    {
+      "from": 1,
+      "to": 3,
+      "description": "The playlist information from task 1 can be used to select or confirm the motivational track from Deezer."
+    }
+  ]
+}

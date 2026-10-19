@@ -1,0 +1,32 @@
+{
+"user_query":"I need to analyze the stock market trends, specifically for certain stock symbols. Can you fetch the real-time stock data for multiple stock companies? Additionally, provide me with the key metrics of a single stock company. Furthermore, I'm interested in the options data for a specific stock.",
+"domain":"Finance",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Fetch real-time stock data for multiple stock symbols.",
+        "domain": "finance",
+        "required_inputs": ["stock_symbols"]
+    },
+    {
+        "id": 2,
+        "description": "Retrieve key metrics for a specific stock company.",
+        "domain": "finance",
+        "required_inputs": ["specific_stock_symbol"],
+        "dependency": {
+            "step": 1,
+            "condition": "Relevant stock symbol should be provided."
+        }
+    },
+    {
+        "id": 3,
+        "description": "Fetch options data for a specific stock.",
+        "domain": "finance",
+        "required_inputs": ["options_stock_symbol"],
+        "dependency": {
+            "step": 1,
+            "condition": "Options stock symbol should be one of the fetched stock symbols."
+        }
+    }
+]
+}

@@ -1,0 +1,175 @@
+{
+    "product_id": "api_48a5697f-c864-4796-9f63-146e011d074c",
+    "tool_description": "BUY/SELL signals and trends from a range of popular technical indicators (24 total)",
+    "home_url": "https://rapidapi.com/XCram/api/greenlight3/",
+    "name": "Greenlight",
+    "title": "Greenlight",
+    "pricing": "FREEMIUM",
+    "tool_name": "Greenlight",
+    "score": {
+        "avgServiceLevel": 88,
+        "avgLatency": 608,
+        "avgSuccessRate": 88,
+        "popularityScore": 8.5,
+        "__typename": "Score"
+    },
+    "host": "greenlight3.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Get Signals",
+            "url": "https://greenlight3.p.rapidapi.com/signals",
+            "description": "**Provides BUY/SELL signals and trends for BTC/USDT, ETH/USDT, TRX/USDT 1 hour timeframe.**\n- Types of signals: BUY, SELL, HOLD\n- Types of trends: UP, DOWN, FLAT\n**Use telegram bot for extended functionality**\nAny pair, 6 different timeframes, indicator settings and much more:\nhttps://t.me/crypto_greenlight_bot?start=CEB66C31",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "coin",
+                    "type": "STRING",
+                    "description": "BTC, ETH or TRX",
+                    "default": "BTC"
+                },
+                {
+                    "name": "exchange",
+                    "type": "STRING",
+                    "description": "Binance, Bybit, Huobi, Kucoin, Coinex, MXC, Gate",
+                    "default": "Bybit"
+                },
+                {
+                    "name": "market_type",
+                    "type": "STRING",
+                    "description": "SPOT or FUTURES",
+                    "default": "SPOT"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://greenlight3.p.rapidapi.com/signals\"\nquerystring = {\"coin\": \"BTC\", \"exchange\": \"Bybit\", \"market_type\": \"SPOT\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"greenlight3.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://greenlight3.p.rapidapi.com/signals\"\nquerystring = {\"coin\": \"BTC\", \"exchange\": \"Bybit\", \"market_type\": \"SPOT\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"greenlight3.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "detail": "Success",
+                "data": {
+                    "RSI": [
+                        "UP",
+                        "HOLD"
+                    ],
+                    "WILLR": [
+                        "UP",
+                        "BUY"
+                    ],
+                    "DONCH": [
+                        "FLAT",
+                        "HOLD"
+                    ],
+                    "BBANDS": [
+                        "DOWN",
+                        "HOLD"
+                    ],
+                    "KC": [
+                        "DOWN",
+                        "HOLD"
+                    ],
+                    "HA": [
+                        "UP",
+                        "HOLD"
+                    ],
+                    "EMA": [
+                        "DOWN",
+                        "HOLD"
+                    ],
+                    "VWMA": [
+                        "DOWN",
+                        "HOLD"
+                    ],
+                    "ADX": [
+                        "DOWN",
+                        "HOLD"
+                    ],
+                    "VI": [
+                        "DOWN",
+                        "HOLD"
+                    ],
+                    "AO": [
+                        "DOWN",
+                        "HOLD"
+                    ],
+                    "RVGI": [
+                        "DOWN",
+                        "HOLD"
+                    ],
+                    "EMV": [
+                        "FLAT",
+                        "HOLD"
+                    ],
+                    "CMF": [
+                        "FLAT",
+                        "HOLD"
+                    ],
+                    "WILLF": [
+                        "FLAT",
+                        "HOLD"
+                    ],
+                    "STOCH": [
+                        "FLAT",
+                        "HOLD"
+                    ],
+                    "KST": [
+                        "DOWN",
+                        "HOLD"
+                    ],
+                    "MACD": [
+                        "FLAT",
+                        "HOLD"
+                    ],
+                    "PSAR": [
+                        "DOWN",
+                        "HOLD"
+                    ],
+                    "FISHER": [
+                        "DOWN",
+                        "HOLD"
+                    ],
+                    "HMA": [
+                        "DOWN",
+                        "HOLD"
+                    ],
+                    "ALMA": [
+                        "DOWN",
+                        "HOLD"
+                    ],
+                    "CC": [
+                        "DOWN",
+                        "HOLD"
+                    ],
+                    "FI": [
+                        "UP",
+                        "HOLD"
+                    ]
+                },
+                "time": "Jun 16, 2023 04:23 PM"
+            },
+            "statuscode": 200,
+            "schema": {
+                "title": "SignalsOut",
+                "required": [
+                    "detail",
+                    "data",
+                    "time"
+                ],
+                "type": "object",
+                "properties": {
+                    "detail": {
+                        "title": "Detail",
+                        "type": "string"
+                    },
+                    "data": {
+                        "title": "Data",
+                        "type": "object"
+                    },
+                    "time": {
+                        "title": "Time",
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    ],
+    "standardized_name": "greenlight"
+}

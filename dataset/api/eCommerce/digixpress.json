@@ -1,0 +1,123 @@
+{
+    "product_id": "api_da6aae88-ddff-4155-8775-3de4de1ae9f9",
+    "tool_description": "DigiXpress is a solution for shipping and delivering parcels and letters through a vast network of relay points and door-to-door; based on a parcel rating algorithm knowing only the name of the parcel.",
+    "home_url": "https://rapidapi.com/digiplusproject-G9v0ZOM6bnj/api/digixpress/",
+    "name": "DigiXpress",
+    "title": "DigiXpress",
+    "pricing": "FREE",
+    "tool_name": "DigiXpress",
+    "score": null,
+    "host": "digixpress.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "liste des pays villes, quartiers, secteurs et localit\u00e9s",
+            "url": "https://digixpress.p.rapidapi.com/api/localisations/",
+            "description": "Base de localisation.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://digixpress.p.rapidapi.com/api/localisations/\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"digixpress.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://digixpress.p.rapidapi.com/api/localisations/\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"digixpress.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "Missing required parameters"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "id": {
+                            "type": "integer"
+                        },
+                        "reference": {
+                            "type": "string"
+                        },
+                        "libelle_pays": {
+                            "type": "string"
+                        },
+                        "villes": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "id": {
+                                        "type": "integer"
+                                    },
+                                    "reference": {
+                                        "type": "string"
+                                    },
+                                    "libelle_ville": {
+                                        "type": "string"
+                                    },
+                                    "Pays": {
+                                        "type": "integer"
+                                    },
+                                    "regions": {
+                                        "type": "integer"
+                                    },
+                                    "quartierss": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "id": {
+                                                    "type": "integer"
+                                                },
+                                                "reference": {
+                                                    "type": "string"
+                                                },
+                                                "libelle_quartier": {
+                                                    "type": "string"
+                                                },
+                                                "Ville": {
+                                                    "type": "integer"
+                                                },
+                                                "secteurs": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "id": {
+                                                                "type": "integer"
+                                                            },
+                                                            "reference": {
+                                                                "type": "string"
+                                                            },
+                                                            "libelle_secteur": {
+                                                                "type": "string"
+                                                            },
+                                                            "lattitude": {
+                                                                "type": "string"
+                                                            },
+                                                            "longitude": {
+                                                                "type": "string"
+                                                            },
+                                                            "Quartier": {
+                                                                "type": "integer"
+                                                            },
+                                                            "localites": {
+                                                                "type": "array"
+                                                            },
+                                                            "point_relaiss": {
+                                                                "type": "array"
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "cluster": {
+                                                    "type": "null"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "standardized_name": "digixpress"
+}

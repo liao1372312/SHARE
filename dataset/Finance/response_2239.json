@@ -1,0 +1,26 @@
+{
+"user_query":"I'm a real estate developer looking for investment opportunities in San Jose, California. Can you provide me with a list of properties for sale, including the listing ID, list price, address, and photos? Additionally, I would like to know the agent details and branding associated with each property.",
+"domain":"Finance",
+"TaskList": [
+{
+"id": 1,
+"description": "Query real estate listings in San Jose, California to retrieve available properties for sale.",
+"domain": "finance",
+"required_inputs": ["location", "property_type", "status"]
+},
+{
+"id": 2,
+"description": "Extract listing ID, list price, address, and photos from the retrieved property data.",
+"domain": "finance",
+"required_inputs": ["property_data"],
+"dependencies": [1]
+},
+{
+"id": 3,
+"description": "Query agent details and branding associated with each retrieved property.",
+"domain": "finance",
+"required_inputs": ["listing_id"],
+"dependencies": [2]
+}
+]
+}

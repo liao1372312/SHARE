@@ -1,0 +1,40 @@
+{
+"user_query":"I'm planning a surprise party for my sister's birthday. Can you help me create email invitations for our friends? To ensure the emails are valid, please use the Easy Email Validation API. Additionally, I want to check if any of our friends have role accounts using the Fast Email Verifier API.",
+"domain":"Technology",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Gather a list of email addresses of friends to send the invitations.",
+        "domain": "technology",
+        "required_inputs": ["friends_list"]
+    },
+    {
+        "id": 2,
+        "description": "Validate the collected email addresses using the Easy Email Validation API.",
+        "domain": "technology",
+        "required_inputs": ["validated_email_list"],
+        "dependencies": [1]
+    },
+    {
+        "id": 3,
+        "description": "Check if any of the validated email addresses have role accounts using the Fast Email Verifier API.",
+        "domain": "technology",
+        "required_inputs": ["role_account_check_list"],
+        "dependencies": [2]
+    },
+    {
+        "id": 4,
+        "description": "Create email invitations for the birthday party based on the validated emails.",
+        "domain": "technology",
+        "required_inputs": ["invitation_details", "recipient_list"],
+        "dependencies": [3]
+    },
+    {
+        "id": 5,
+        "description": "Send email invitations to the friends using an email sending API.",
+        "domain": "technology",
+        "required_inputs": ["email_invitations"],
+        "dependencies": [4]
+    }
+]
+}

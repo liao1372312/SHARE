@@ -1,0 +1,47 @@
+{
+    "product_id": "582b79cde4b0036abc91e96e",
+    "tool_description": "Convert your modern day English phrases into Shakespeare style old English. Thou shalt try this API!",
+    "home_url": "https://rapidapi.com/orthosie/api/shakespeare-translator/",
+    "name": "Shakespeare Translator",
+    "title": "Shakespeare Translator",
+    "pricing": "FREE",
+    "tool_name": "Shakespeare Translator",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 356,
+        "avgSuccessRate": 100,
+        "popularityScore": 9.3,
+        "__typename": "Score"
+    },
+    "host": "shakespeare.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "shakespeare",
+            "url": "https://shakespeare.p.rapidapi.com/shakespeare.json",
+            "description": "Shakespeare Translator",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "text",
+                    "type": "STRING",
+                    "description": "Text to convert to Shakespeare style English.",
+                    "default": "You asked Mr. Weasely to do magic!"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://shakespeare.p.rapidapi.com/shakespeare.json\"\nquerystring = {\"text\": \"You asked Mr. Weasely to do magic!\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"shakespeare.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://shakespeare.p.rapidapi.com/shakespeare.json\"\nquerystring = {\"text\": \"You asked Mr. Weasely to do magic!\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"shakespeare.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "success": {
+                    "total": 1
+                },
+                "contents": {
+                    "translated": "Thee did doth ask mr. Weasely to doth charm!",
+                    "text": "You asked Mr. Weasely to do magic!",
+                    "translation": "shakespeare"
+                }
+            }
+        }
+    ],
+    "standardized_name": "shakespeare_translator"
+}

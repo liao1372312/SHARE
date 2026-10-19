@@ -1,0 +1,26 @@
+{
+"user_query":"I'm a travel blogger and I want to write an article about the best hiking trails in Colorado. Can you provide me with a list of postcodes within a radius of 20 kilometers from each trailhead? Additionally, give me the latitude and longitude coordinates for each trailhead.",
+"domain":"Tourism",
+"TaskList": [
+{
+"id": 1,
+"description": "Gather a list of the best hiking trails in Colorado along with their trailhead locations.",
+"domain":"tourism",
+"required_inputs":[]
+},
+{
+"id": 2,
+"description": "For each trailhead obtained from Step 1, retrieve the latitude and longitude coordinates.",
+"domain":"tourism",
+"required_inputs":["trailhead_locations"],
+"dependency":1
+},
+{
+"id": 3,
+"description": "For each trailhead, find and list postcodes within a 20-kilometer radius.",
+"domain":"tourism",
+"required_inputs":["trailhead_latitude","trailhead_longitude"],
+"dependency":2
+}
+]
+}

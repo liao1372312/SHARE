@@ -1,0 +1,33 @@
+{
+"user_query":"I need a workout plan that targets my legs. I am a beginner and have access to a gym. Can you generate a plan for me that lasts for 45 minutes?",
+"domain":"Medical",
+"TaskList": [
+{
+"id": 1,
+"description": "Assess the user's current fitness level and specific needs for a leg workout plan.",
+"domain": "medical",
+"required_inputs": ["user fitness level", "workout goals"]
+},
+{
+"id": 2,
+"description": "Design a 45-minute leg workout plan suitable for a beginner, including exercises and rest periods.",
+"domain": "medical",
+"required_inputs": ["exercise selection", "duration of each exercise", "rest time between exercises"],
+"dependencies": [1]
+},
+{
+"id": 3,
+"description": "Provide a detailed description of each exercise in the workout plan, including form and safety tips.",
+"domain": "medical",
+"required_inputs": ["exercise description", "safety guidelines"],
+"dependencies": [2]
+},
+{
+"id": 4,
+"description": "Compile the workout plan into an easy-to-follow format for the user.",
+"domain": "medical",
+"required_inputs": ["formatted workout plan"],
+"dependencies": [3]
+}
+]
+}

@@ -1,0 +1,87 @@
+{
+    "product_id": "api_63523625-dd07-46a6-ac76-8354b810c595",
+    "tool_description": "Get TikTok Video data along with detailed information about Author, User Feed, Music .",
+    "home_url": "https://rapidapi.com/TerminalWarlord/api/tiktok-info/",
+    "name": "TikTok Info",
+    "title": "TikTok Info",
+    "pricing": "FREEMIUM",
+    "tool_name": "TikTok Info",
+    "score": {
+        "avgServiceLevel": 72,
+        "avgLatency": 3434,
+        "avgSuccessRate": 71,
+        "popularityScore": 9.5,
+        "__typename": "Score"
+    },
+    "host": "tiktok-info.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "getMusic",
+            "url": "https://tiktok-info.p.rapidapi.com/music/6818239458366753542",
+            "description": "Get all the TikTok videos that are using a specific music along with the information about original music",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "getMusic",
+                    "type": "string",
+                    "description": "",
+                    "default": "6818239458366753542"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://tiktok-info.p.rapidapi.com/music/6818239458366753542\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"tiktok-info.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://tiktok-info.p.rapidapi.com/music/{getmusic}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"tiktok-info.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "detail": "Not Found"
+            }
+        },
+        {
+            "name": "getVideo",
+            "url": "https://tiktok-info.p.rapidapi.com/dl/",
+            "description": "Get all the video information like Play URL, Cover, Stats, Codec along with Author and Music details",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "link",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "https://www.tiktok.com/@sidemen/video/6818257229477645573"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://tiktok-info.p.rapidapi.com/dl/\"\nquerystring = {\"link\": \"https://www.tiktok.com/@sidemen/video/6818257229477645573\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"tiktok-info.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://tiktok-info.p.rapidapi.com/dl/\"\nquerystring = {\"link\": \"https://www.tiktok.com/@sidemen/video/6818257229477645573\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"tiktok-info.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "status": "failed"
+            }
+        },
+        {
+            "name": "getUserVideos",
+            "url": "https://tiktok-info.p.rapidapi.com/user/sidemen/",
+            "description": "Get all the videos of an user. By default the **limit** has been set to 10. You can customize it.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "getUserVideos",
+                    "type": "string",
+                    "description": "",
+                    "default": "sidemen"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "limit",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "10"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://tiktok-info.p.rapidapi.com/user/sidemen/\"\nquerystring = {\"limit\": \"10\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"tiktok-info.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://tiktok-info.p.rapidapi.com/user/{getuservideos}/\"\nquerystring = {\"limit\": \"10\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"tiktok-info.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "detail": "Not Found"
+            }
+        }
+    ],
+    "standardized_name": "tiktok_info"
+}

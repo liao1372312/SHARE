@@ -1,0 +1,26 @@
+{
+"user_query":"I'm planning a surprise birthday party for my best friend. Can you suggest some unique venues in our city, along with the distances from our homes? Also, provide me with the URL to access the live feed from traffic cameras near the venues to ensure smooth transportation for the guests.",
+"domain":"Tourism",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Research and list unique venues for a birthday party in the city.",
+        "domain": "tourism",
+        "required_inputs": ["city_name", "party_size", "party_theme"]
+    },
+    {
+        "id": 2,
+        "description": "Calculate the distances from the homes to the selected venues.",
+        "domain": "tourism",
+        "required_inputs": ["user_home_location", "venue_locations"],
+        "dependencies": [1]
+    },
+    {
+        "id": 3,
+        "description": "Retrieve live traffic camera URLs for the venues to check real-time traffic conditions.",
+        "domain": "technology",
+        "required_inputs": ["venue_locations"],
+        "dependencies": [1]
+    }
+]
+}

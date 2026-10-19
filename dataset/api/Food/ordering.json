@@ -1,0 +1,119 @@
+{
+    "product_id": "api_1f37a970-63df-400a-aa83-840ffd1e6607",
+    "tool_description": "Ordering Stack - Ordering API.  Provides functionalities for order lifecycle. Create new order, add items, remove items, abandon order...",
+    "home_url": "https://rapidapi.com/ordering-stack-ordering-stack-default/api/ordering1/",
+    "name": "Ordering",
+    "title": "Ordering",
+    "pricing": "FREE",
+    "tool_name": "Ordering",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 969,
+        "avgSuccessRate": 0,
+        "popularityScore": 0.3,
+        "__typename": "Score"
+    },
+    "host": "ordering1.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "listLast",
+            "url": "https://ordering1.p.rapidapi.com/ordering-api/api/orders/last",
+            "description": "Get last orders for user (all states included).",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://ordering1.p.rapidapi.com/ordering-api/api/orders/last\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ordering1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ordering1.p.rapidapi.com/ordering-api/api/orders/last\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ordering1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "error": "unauthorized",
+                "error_description": "Full authentication is required to access this resource"
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "getList",
+            "url": "https://ordering1.p.rapidapi.com/ordering-api/api/orders",
+            "description": "Get paginated list of orders. This endpoint is compatible with React AdminOnRest framework to provide DataSource.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "filter",
+                    "type": "OBJECT",
+                    "description": "",
+                    "default": "{\n  \"_sort\": [],\n  \"_order\": [\n    \"ASC\"\n  ],\n  \"_start\": 0,\n  \"_end\": 0,\n  \"id\": \"\",\n  \"extId\": \"\",\n  \"status\": \"\",\n  \"type\": \"DELIVERY\",\n  \"completed\": true,\n  \"closed\": true,\n  \"phone\": \"\",\n  \"mail\": \"\",\n  \"createdFrom\": \"\",\n  \"createdTo\": \"\",\n  \"completedFrom\": \"\",\n  \"completedTo\": \"\",\n  \"venue\": \"\"\n}"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://ordering1.p.rapidapi.com/ordering-api/api/orders\"\nquerystring = {\"filter\": \"{\\n  \\\"_sort\\\": [],\\n  \\\"_order\\\": [\\n    \\\"ASC\\\"\\n  ],\\n  \\\"_start\\\": 0,\\n  \\\"_end\\\": 0,\\n  \\\"id\\\": \\\"\\\",\\n  \\\"extId\\\": \\\"\\\",\\n  \\\"status\\\": \\\"\\\",\\n  \\\"type\\\": \\\"DELIVERY\\\",\\n  \\\"completed\\\": true,\\n  \\\"closed\\\": true,\\n  \\\"phone\\\": \\\"\\\",\\n  \\\"mail\\\": \\\"\\\",\\n  \\\"createdFrom\\\": \\\"\\\",\\n  \\\"createdTo\\\": \\\"\\\",\\n  \\\"completedFrom\\\": \\\"\\\",\\n  \\\"completedTo\\\": \\\"\\\",\\n  \\\"venue\\\": \\\"\\\"\\n}\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ordering1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ordering1.p.rapidapi.com/ordering-api/api/orders\"\nquerystring = {\"filter\": \"{\\n  \\\"_sort\\\": [],\\n  \\\"_order\\\": [\\n    \\\"ASC\\\"\\n  ],\\n  \\\"_start\\\": 0,\\n  \\\"_end\\\": 0,\\n  \\\"id\\\": \\\"\\\",\\n  \\\"extId\\\": \\\"\\\",\\n  \\\"status\\\": \\\"\\\",\\n  \\\"type\\\": \\\"DELIVERY\\\",\\n  \\\"completed\\\": true,\\n  \\\"closed\\\": true,\\n  \\\"phone\\\": \\\"\\\",\\n  \\\"mail\\\": \\\"\\\",\\n  \\\"createdFrom\\\": \\\"\\\",\\n  \\\"createdTo\\\": \\\"\\\",\\n  \\\"completedFrom\\\": \\\"\\\",\\n  \\\"completedTo\\\": \\\"\\\",\\n  \\\"venue\\\": \\\"\\\"\\n}\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ordering1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "error": "unauthorized",
+                "error_description": "Full authentication is required to access this resource"
+            }
+        },
+        {
+            "name": "listOpenedVenue",
+            "url": "https://ordering1.p.rapidapi.com/ordering-api/api/orders/venue/{uid}",
+            "description": "Get opened orders in venue. Used by KDS, queue displays etc.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "uid",
+                    "type": "STRING",
+                    "description": "Venue id",
+                    "default": ""
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://ordering1.p.rapidapi.com/ordering-api/api/orders/venue/{uid}\"\nquerystring = {\"uid\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ordering1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ordering1.p.rapidapi.com/ordering-api/api/orders/venue/{uid}\"\nquerystring = {\"uid\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ordering1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "error": "unauthorized",
+                "error_description": "Full authentication is required to access this resource"
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "listOpened",
+            "url": "https://ordering1.p.rapidapi.com/ordering-api/api/orders/opened",
+            "description": "Get opened orders for user.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://ordering1.p.rapidapi.com/ordering-api/api/orders/opened\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ordering1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ordering1.p.rapidapi.com/ordering-api/api/orders/opened\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ordering1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "error": "unauthorized",
+                "error_description": "Full authentication is required to access this resource"
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "get",
+            "url": "https://ordering1.p.rapidapi.com/ordering-api/api/orders/{uid}",
+            "description": "Get single order by ID.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "uid",
+                    "type": "STRING",
+                    "description": "Order id",
+                    "default": ""
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://ordering1.p.rapidapi.com/ordering-api/api/orders/{uid}\"\nquerystring = {\"uid\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ordering1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ordering1.p.rapidapi.com/ordering-api/api/orders/{uid}\"\nquerystring = {\"uid\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ordering1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "error": "unauthorized",
+                "error_description": "Full authentication is required to access this resource"
+            },
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "ordering"
+}

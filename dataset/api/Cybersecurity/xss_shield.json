@@ -1,0 +1,41 @@
+{
+    "product_id": "api_0db6006b-1342-4b9b-974b-11b73d78f498",
+    "tool_description": "The XSS Shield API provides a realtime cross-site scripting (XSS) detection service that scans input data for suspicious characters and prevents XSS attacks. It offers two endpoints for handling GET and POST requests.",
+    "home_url": "https://rapidapi.com/kidddevs/api/xss-shield/",
+    "name": "XSS Shield",
+    "title": "XSS Shield",
+    "pricing": "FREEMIUM",
+    "tool_name": "XSS Shield",
+    "score": {
+        "avgServiceLevel": 95,
+        "avgLatency": 198,
+        "avgSuccessRate": 38,
+        "popularityScore": 8.2,
+        "__typename": "Score"
+    },
+    "host": "xss-shield.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "GET Detect",
+            "url": "https://xss-shield.p.rapidapi.com/detect",
+            "description": "This endpoint detects and prevents XSS attacks in input data sent via query parameters.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "data",
+                    "type": "STRING",
+                    "description": "The input data to be checked for XSS.",
+                    "default": "John Doe"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://xss-shield.p.rapidapi.com/detect\"\nquerystring = {\"data\": \"John Doe\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"xss-shield.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://xss-shield.p.rapidapi.com/detect\"\nquerystring = {\"data\": \"John Doe\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"xss-shield.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "Input data is safe.",
+                "status": "success"
+            }
+        }
+    ],
+    "standardized_name": "xss_shield"
+}

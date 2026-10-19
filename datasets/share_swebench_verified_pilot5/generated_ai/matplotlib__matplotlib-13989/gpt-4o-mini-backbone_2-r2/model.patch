@@ -1,0 +1,13 @@
+diff --git a/lib/matplotlib/axes/_axes.py b/lib/matplotlib/axes/_axes.py
+index 4b73d52293..18b34b4481 100644
+--- a/lib/matplotlib/axes/_axes.py
++++ b/lib/matplotlib/axes/_axes.py
+@@ -54,7 +54,7 @@ except ImportError:
+             if bins is None:
+                 # hard-code numpy's default
+                 bins = 10
+-            if range is None:
++            if range is None and density:
+                 range = np.min(arr), np.max(arr)
+ 
+             return np.linspace(*range, bins + 1)

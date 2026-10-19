@@ -1,0 +1,68 @@
+{
+    "product_id": "api_6ee94927-baa9-44ca-a956-413c4ed7685e",
+    "tool_description": "This is a simple API that will return the human readable version of DTC codes (OBD-II Trouble Codes).",
+    "home_url": "https://rapidapi.com/alexandremeylan92/api/car-code/",
+    "name": "car code",
+    "title": "car code",
+    "pricing": "FREEMIUM",
+    "tool_name": "car code",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 52,
+        "avgSuccessRate": 87,
+        "popularityScore": 9.6,
+        "__typename": "Score"
+    },
+    "host": "car-code.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "/obd2/{code}",
+            "url": "https://car-code.p.rapidapi.com/obd2/P0001",
+            "description": "This endpoint will provide the human readable version of a requested obd2 code",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "code",
+                    "type": "string",
+                    "description": "",
+                    "default": "P0001"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://car-code.p.rapidapi.com/obd2/P0001\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"car-code.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://car-code.p.rapidapi.com/obd2/{code}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"car-code.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "code": "P0001",
+                "definition": "Fuel Volume Regulator Control Circuit/Open",
+                "cause": [
+                    "Wiring harness",
+                    "Faulty Fuel Volume Regulator solenoid",
+                    "Connector disconnected from the fuel regulator",
+                    "Possible corrosion in the sensor connector",
+                    "Damage to the sensor wiring to the ECM",
+                    "Leaking fuel pressure regulator",
+                    "Damaged fuel pump"
+                ]
+            },
+            "statuscode": 200,
+            "schema": {
+                "properties": {
+                    "cause": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "code": {
+                        "type": "string"
+                    },
+                    "definition": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    ],
+    "standardized_name": "car_code"
+}

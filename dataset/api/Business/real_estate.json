@@ -1,0 +1,196 @@
+{
+    "product_id": "api_89de4ce8-b93a-498d-b125-5ee63a7eacd6",
+    "tool_description": "Real Estate and commercial property for sale and for rent in the United States",
+    "home_url": "https://rapidapi.com/sparior/api/real-estate12/",
+    "name": "Real Estate",
+    "title": "Real Estate",
+    "pricing": "FREEMIUM",
+    "tool_name": "Real Estate",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 2331,
+        "avgSuccessRate": 100,
+        "popularityScore": 7.7,
+        "__typename": "Score"
+    },
+    "host": "real-estate12.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "properties/rent",
+            "url": "https://real-estate12.p.rapidapi.com/listings/rent",
+            "description": "U.S properties for rent",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "city",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "Los Angeles"
+                },
+                {
+                    "name": "state",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "CA"
+                },
+                {
+                    "name": "page",
+                    "type": "STRING",
+                    "description": "Enter the starting page number, default (1)",
+                    "default": "1"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "beds",
+                    "type": "STRING",
+                    "description": "Minimum number of beds",
+                    "default": ""
+                },
+                {
+                    "name": "status",
+                    "type": "STRING",
+                    "description": "Choose one: `foreclosure` |`hide-new-constuction`|`show-new-constuction`|`show-55-plus`",
+                    "default": ""
+                },
+                {
+                    "name": "sort",
+                    "type": "STRING",
+                    "description": "Choose one: `new_listing`|`newest`|`affordable`|`luxury`",
+                    "default": "newest"
+                },
+                {
+                    "name": "type",
+                    "type": "STRING",
+                    "description": "Choose from the following: `single-family,multi-family,mobile,farm,condo,townhome,land`",
+                    "default": ""
+                },
+                {
+                    "name": "price_h",
+                    "type": "STRING",
+                    "description": "Filter by the maximum price of the property",
+                    "default": "2000"
+                },
+                {
+                    "name": "baths",
+                    "type": "STRING",
+                    "description": "Minimum number of baths",
+                    "default": ""
+                },
+                {
+                    "name": "price_l",
+                    "type": "STRING",
+                    "description": "Filter by the minimum price of the property",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://real-estate12.p.rapidapi.com/listings/rent\"\nquerystring = {\"city\": \"Los Angeles\", \"beds\": \"\", \"status\": \"\", \"state\": \"CA\", \"sort\": \"newest\", \"type\": \"\", \"price_h\": \"2000\", \"baths\": \"\", \"page\": \"1\", \"price_l\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"real-estate12.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://real-estate12.p.rapidapi.com/listings/rent\"\nquerystring = {\"city\": \"Los Angeles\", \"beds\": \"\", \"status\": \"\", \"state\": \"CA\", \"sort\": \"newest\", \"type\": \"\", \"price_h\": \"2000\", \"baths\": \"\", \"page\": \"1\", \"price_l\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"real-estate12.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "error": "No property found, please check your parameters and try again!"
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "property/details",
+            "url": "https://real-estate12.p.rapidapi.com/listings-details",
+            "description": "Get detailed information on U.S properties",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "property_id",
+                    "type": "STRING",
+                    "description": "Enter property ID. (This information can be found on sales and rent endpoints results)",
+                    "default": "2625415443"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://real-estate12.p.rapidapi.com/listings-details\"\nquerystring = {\"property_id\": \"2625415443\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"real-estate12.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://real-estate12.p.rapidapi.com/listings-details\"\nquerystring = {\"property_id\": \"2625415443\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"real-estate12.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "error": "No property found, please check your parameters and try again!"
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "properties/sale",
+            "url": "https://real-estate12.p.rapidapi.com/listings/sale",
+            "description": "U.S properties for sale",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "state",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "CA"
+                },
+                {
+                    "name": "city",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "Los Angeles"
+                },
+                {
+                    "name": "page",
+                    "type": "STRING",
+                    "description": "Enter the starting page number, default (1)",
+                    "default": "1"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "sort",
+                    "type": "STRING",
+                    "description": "Choose one: `relevant`|`newest`|`price_low`|`price_high`|`open_house_date`|`price_reduce`|`largest_sqft`|`lot_size`",
+                    "default": "relevant"
+                },
+                {
+                    "name": "price_l",
+                    "type": "STRING",
+                    "description": "Filter by the minimum price of the property",
+                    "default": ""
+                },
+                {
+                    "name": "status",
+                    "type": "STRING",
+                    "description": "Choose one: `foreclosure` |`hide-new-constuction`|`show-new-constuction`|`show-55-plus`",
+                    "default": ""
+                },
+                {
+                    "name": "price_h",
+                    "type": "STRING",
+                    "description": "Filter by the maximum price of the property",
+                    "default": ""
+                },
+                {
+                    "name": "beds",
+                    "type": "STRING",
+                    "description": "Minimum number of beds",
+                    "default": ""
+                },
+                {
+                    "name": "type",
+                    "type": "STRING",
+                    "description": "Choose from the following: `single-family,multi-family,mobile,farm,condo,townhome,land`",
+                    "default": "single-family,multi-family"
+                },
+                {
+                    "name": "baths",
+                    "type": "STRING",
+                    "description": "Minimum number of baths",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://real-estate12.p.rapidapi.com/listings/sale\"\nquerystring = {\"state\": \"CA\", \"sort\": \"relevant\", \"price_l\": \"\", \"status\": \"\", \"city\": \"Los Angeles\", \"price_h\": \"\", \"beds\": \"\", \"type\": \"single-family,multi-family\", \"page\": \"1\", \"baths\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"real-estate12.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://real-estate12.p.rapidapi.com/listings/sale\"\nquerystring = {\"state\": \"CA\", \"sort\": \"relevant\", \"price_l\": \"\", \"status\": \"\", \"city\": \"Los Angeles\", \"price_h\": \"\", \"beds\": \"\", \"type\": \"single-family,multi-family\", \"page\": \"1\", \"baths\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"real-estate12.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "error": "No property found, please check your parameters and try again!"
+            },
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "real_estate"
+}

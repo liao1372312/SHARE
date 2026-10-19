@@ -1,0 +1,927 @@
+{
+    "product_id": "api_d148a6a5-e732-4a4f-8ec6-59faf8721822",
+    "tool_description": "With this API you can find out the key number of over ~30,000 vehicles. The available vehicle data includes: \nInsurance classes (liability, partial, comprehensive), vehicle name, year of manufacture, power (hp), engine displacement (cc), fuel, HSN and TSN.\n\nSupported manufacturers are: \nAiways, Alfa Romeo, Alpina, Audi, Barkas, BMW, Borgward, Buick, Cadillac, Chevrolet, Chrysler, Citro\u00ebn, Cupra, Dacia, Daewoo, DAF, Daihatsu, Datsun, Dodge, DS, e. GO, Fiat, Ford, Genesis, Glass, Great Wall, Ha...",
+    "home_url": "https://rapidapi.com/webmonkey/api/hsn-tsn1/",
+    "name": "HSN TSN",
+    "title": "HSN TSN",
+    "pricing": "FREEMIUM",
+    "tool_name": "HSN TSN",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 1165,
+        "avgSuccessRate": 100,
+        "popularityScore": 7.7,
+        "__typename": "Score"
+    },
+    "host": "hsn-tsn1.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Get Models",
+            "url": "https://hsn-tsn1.p.rapidapi.com/getModels/",
+            "description": "Returns all models based on manufacturer.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "manufacturer",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "Audi"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://hsn-tsn1.p.rapidapi.com/getModels/\"\nquerystring = {\"manufacturer\": \"Audi\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"hsn-tsn1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://hsn-tsn1.p.rapidapi.com/getModels/\"\nquerystring = {\"manufacturer\": \"Audi\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"hsn-tsn1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "name": "100"
+                },
+                {
+                    "name": "200"
+                },
+                {
+                    "name": "50"
+                },
+                {
+                    "name": "80"
+                },
+                {
+                    "name": "90"
+                },
+                {
+                    "name": "A1"
+                },
+                {
+                    "name": "A2"
+                },
+                {
+                    "name": "A3"
+                },
+                {
+                    "name": "A4"
+                },
+                {
+                    "name": "A4 allroad"
+                },
+                {
+                    "name": "A5"
+                },
+                {
+                    "name": "A6"
+                },
+                {
+                    "name": "A6 allroad"
+                },
+                {
+                    "name": "A7"
+                },
+                {
+                    "name": "A8"
+                },
+                {
+                    "name": "Allroad"
+                },
+                {
+                    "name": "Cabriolet"
+                },
+                {
+                    "name": "Coupe"
+                },
+                {
+                    "name": "e-tron"
+                },
+                {
+                    "name": "e-tron GT"
+                },
+                {
+                    "name": "Q2"
+                },
+                {
+                    "name": "Q3"
+                },
+                {
+                    "name": "Q4 e-tron"
+                },
+                {
+                    "name": "Q5"
+                },
+                {
+                    "name": "Q7"
+                },
+                {
+                    "name": "Q8"
+                },
+                {
+                    "name": "QUATTRO"
+                },
+                {
+                    "name": "R8"
+                },
+                {
+                    "name": "RS"
+                },
+                {
+                    "name": "RS Q3"
+                },
+                {
+                    "name": "RS Q8"
+                },
+                {
+                    "name": "RS2"
+                },
+                {
+                    "name": "RS3"
+                },
+                {
+                    "name": "RS4"
+                },
+                {
+                    "name": "RS5"
+                },
+                {
+                    "name": "RS6"
+                },
+                {
+                    "name": "RS7"
+                },
+                {
+                    "name": "S1"
+                },
+                {
+                    "name": "S2"
+                },
+                {
+                    "name": "S3"
+                },
+                {
+                    "name": "S4"
+                },
+                {
+                    "name": "S5"
+                },
+                {
+                    "name": "S6"
+                },
+                {
+                    "name": "S7"
+                },
+                {
+                    "name": "S8"
+                },
+                {
+                    "name": "SQ2"
+                },
+                {
+                    "name": "SQ3"
+                },
+                {
+                    "name": "SQ5"
+                },
+                {
+                    "name": "SQ7"
+                },
+                {
+                    "name": "SQ8"
+                },
+                {
+                    "name": "TT"
+                },
+                {
+                    "name": "TT RS"
+                },
+                {
+                    "name": "TTS"
+                },
+                {
+                    "name": "V8"
+                }
+            ]
+        },
+        {
+            "name": "Get HSN TSN",
+            "url": "https://hsn-tsn1.p.rapidapi.com/getHSNTSN/",
+            "description": "Search for dedicated car. Year is optional. Records are limited by 100 rows.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "query",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "Audi A6"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "year",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "2018"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://hsn-tsn1.p.rapidapi.com/getHSNTSN/\"\nquerystring = {\"query\": \"Audi A6\", \"year\": \"2018\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"hsn-tsn1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://hsn-tsn1.p.rapidapi.com/getHSNTSN/\"\nquerystring = {\"query\": \"Audi A6\", \"year\": \"2018\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"hsn-tsn1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "id": "10446",
+                    "haftpficht": "15",
+                    "teilkasko": "24",
+                    "vollkasko": "24",
+                    "vehicletype": "Audi A6 35 2.0 TDI Avant",
+                    "yearFrom": "2018",
+                    "yearTo": null,
+                    "power": "163",
+                    "ccm": "1968",
+                    "fuel": "Diesel",
+                    "hsn": "0588",
+                    "tsn": "BQD"
+                },
+                {
+                    "id": "10456",
+                    "haftpficht": "15",
+                    "teilkasko": "24",
+                    "vollkasko": "24",
+                    "vehicletype": "Audi A6 40 2.0 TDI Avant",
+                    "yearFrom": "2018",
+                    "yearTo": null,
+                    "power": "204",
+                    "ccm": "1968",
+                    "fuel": "Diesel",
+                    "hsn": "0588",
+                    "tsn": "BNE"
+                },
+                {
+                    "id": "10462",
+                    "haftpficht": "15",
+                    "teilkasko": "24",
+                    "vollkasko": "25",
+                    "vehicletype": "Audi A6 40 2.0 TDI Quattro Avant",
+                    "yearFrom": "2018",
+                    "yearTo": null,
+                    "power": "204",
+                    "ccm": "1968",
+                    "fuel": "Diesel",
+                    "hsn": "0588",
+                    "tsn": "BNF"
+                },
+                {
+                    "id": "10463",
+                    "haftpficht": "15",
+                    "teilkasko": "24",
+                    "vollkasko": "25",
+                    "vehicletype": "Audi A6 40 3.0 TDI Quattro Avant Allroad",
+                    "yearFrom": "2018",
+                    "yearTo": null,
+                    "power": "211",
+                    "ccm": "2967",
+                    "fuel": "Diesel",
+                    "hsn": "0588",
+                    "tsn": "BPS"
+                },
+                {
+                    "id": "10556",
+                    "haftpficht": "15",
+                    "teilkasko": "26",
+                    "vollkasko": "26",
+                    "vehicletype": "Audi A6 45 3.0 TDI Quattro Avant",
+                    "yearFrom": "2018",
+                    "yearTo": null,
+                    "power": "231",
+                    "ccm": "2967",
+                    "fuel": "Diesel",
+                    "hsn": "0588",
+                    "tsn": "BNG"
+                },
+                {
+                    "id": "10560",
+                    "haftpficht": "15",
+                    "teilkasko": "26",
+                    "vollkasko": "26",
+                    "vehicletype": "Audi A6 50 3.0 TDI Quattro Avant",
+                    "yearFrom": "2018",
+                    "yearTo": null,
+                    "power": "286",
+                    "ccm": "2967",
+                    "fuel": "Diesel",
+                    "hsn": "0588",
+                    "tsn": "BNH"
+                },
+                {
+                    "id": "13722",
+                    "haftpficht": "16",
+                    "teilkasko": "28",
+                    "vollkasko": "27",
+                    "vehicletype": "Audi S6 3.0 TDI Avant, A6 55 3.0 TDI Allroad",
+                    "yearFrom": "2018",
+                    "yearTo": null,
+                    "power": "349",
+                    "ccm": "2967",
+                    "fuel": "Diesel",
+                    "hsn": "0588",
+                    "tsn": "BQE"
+                },
+                {
+                    "id": "16789",
+                    "haftpficht": "17",
+                    "teilkasko": "24",
+                    "vollkasko": "23",
+                    "vehicletype": "Audi A6 1.8 TFSI Avant",
+                    "yearFrom": "2014",
+                    "yearTo": "2018",
+                    "power": "190",
+                    "ccm": "1798",
+                    "fuel": "Benzin",
+                    "hsn": "0588",
+                    "tsn": "BBR"
+                },
+                {
+                    "id": "16791",
+                    "haftpficht": "17",
+                    "teilkasko": "24",
+                    "vollkasko": "23",
+                    "vehicletype": "Audi A6 2.0 TFSI Avant",
+                    "yearFrom": "2014",
+                    "yearTo": "2018",
+                    "power": "252",
+                    "ccm": "1984",
+                    "fuel": "Benzin",
+                    "hsn": "0588",
+                    "tsn": "BBS"
+                },
+                {
+                    "id": "16792",
+                    "haftpficht": "17",
+                    "teilkasko": "24",
+                    "vollkasko": "23",
+                    "vehicletype": "Audi A6 2.0 TFSI Quattro Avant",
+                    "yearFrom": "2015",
+                    "yearTo": "2018",
+                    "power": "252",
+                    "ccm": "1984",
+                    "fuel": "Benzin",
+                    "hsn": "0588",
+                    "tsn": "BEF"
+                },
+                {
+                    "id": "16793",
+                    "haftpficht": "17",
+                    "teilkasko": "24",
+                    "vollkasko": "23",
+                    "vehicletype": "Audi A6 2.0 TFSI Quattro Avant",
+                    "yearFrom": "2015",
+                    "yearTo": "2018",
+                    "power": "249",
+                    "ccm": "1984",
+                    "fuel": "Benzin",
+                    "hsn": "0588",
+                    "tsn": "BEO"
+                },
+                {
+                    "id": "16938",
+                    "haftpficht": "17",
+                    "teilkasko": "25",
+                    "vollkasko": "24",
+                    "vehicletype": "Audi A6 3.0 TFSI Quattro Avant Allroad",
+                    "yearFrom": "2014",
+                    "yearTo": "2018",
+                    "power": "333",
+                    "ccm": "2995",
+                    "fuel": "Benzin",
+                    "hsn": "0588",
+                    "tsn": "BBT"
+                },
+                {
+                    "id": "17039",
+                    "haftpficht": "17",
+                    "teilkasko": "27",
+                    "vollkasko": "26",
+                    "vehicletype": "Audi A6 45 2.0 TFSI Avant",
+                    "yearFrom": "2018",
+                    "yearTo": null,
+                    "power": "245",
+                    "ccm": "1984",
+                    "fuel": "Benzin",
+                    "hsn": "0588",
+                    "tsn": "BOR"
+                },
+                {
+                    "id": "17044",
+                    "haftpficht": "17",
+                    "teilkasko": "27",
+                    "vollkasko": "26",
+                    "vehicletype": "Audi A6 45 2.0 TFSI Quattro Avant",
+                    "yearFrom": "2018",
+                    "yearTo": null,
+                    "power": "245",
+                    "ccm": "1984",
+                    "fuel": "Benzin",
+                    "hsn": "0588",
+                    "tsn": "BOS"
+                },
+                {
+                    "id": "17047",
+                    "haftpficht": "17",
+                    "teilkasko": "27",
+                    "vollkasko": "26",
+                    "vehicletype": "Audi A6 55 3.0 TFSI Quattro Avant",
+                    "yearFrom": "2018",
+                    "yearTo": null,
+                    "power": "340",
+                    "ccm": "2995",
+                    "fuel": "Benzin",
+                    "hsn": "0588",
+                    "tsn": "BNI"
+                },
+                {
+                    "id": "20490",
+                    "haftpficht": "18",
+                    "teilkasko": "24",
+                    "vollkasko": "23",
+                    "vehicletype": "Audi A6 2.0 TDI Avant",
+                    "yearFrom": "2011",
+                    "yearTo": "2018",
+                    "power": "163",
+                    "ccm": "1968",
+                    "fuel": "Diesel",
+                    "hsn": "0588",
+                    "tsn": "ART"
+                },
+                {
+                    "id": "20491",
+                    "haftpficht": "18",
+                    "teilkasko": "24",
+                    "vollkasko": "23",
+                    "vehicletype": "Audi A6 2.0 TDI Avant",
+                    "yearFrom": "2012",
+                    "yearTo": "2018",
+                    "power": "136",
+                    "ccm": "1968",
+                    "fuel": "Diesel",
+                    "hsn": "0588",
+                    "tsn": "AUT"
+                },
+                {
+                    "id": "20492",
+                    "haftpficht": "18",
+                    "teilkasko": "24",
+                    "vollkasko": "23",
+                    "vehicletype": "Audi A6 2.0 TDI Avant",
+                    "yearFrom": "2013",
+                    "yearTo": "2018",
+                    "power": "190",
+                    "ccm": "1968",
+                    "fuel": "Diesel",
+                    "hsn": "0588",
+                    "tsn": "AYU"
+                },
+                {
+                    "id": "20493",
+                    "haftpficht": "18",
+                    "teilkasko": "24",
+                    "vollkasko": "23",
+                    "vehicletype": "Audi A6 2.0 TDI Avant",
+                    "yearFrom": "2014",
+                    "yearTo": "2018",
+                    "power": "150",
+                    "ccm": "1968",
+                    "fuel": "Diesel",
+                    "hsn": "0588",
+                    "tsn": "BBV"
+                },
+                {
+                    "id": "20494",
+                    "haftpficht": "18",
+                    "teilkasko": "24",
+                    "vollkasko": "23",
+                    "vehicletype": "Audi A6 3.0 TDI Avant",
+                    "yearFrom": "2014",
+                    "yearTo": "2018",
+                    "power": "218",
+                    "ccm": "2967",
+                    "fuel": "Diesel",
+                    "hsn": "0588",
+                    "tsn": "BBW"
+                },
+                {
+                    "id": "20548",
+                    "haftpficht": "18",
+                    "teilkasko": "24",
+                    "vollkasko": "26",
+                    "vehicletype": "Audi A6 2.0 TDI Quattro Avant",
+                    "yearFrom": "2015",
+                    "yearTo": "2018",
+                    "power": "190",
+                    "ccm": "1968",
+                    "fuel": "Diesel",
+                    "hsn": "0588",
+                    "tsn": "BED"
+                },
+                {
+                    "id": "20814",
+                    "haftpficht": "18",
+                    "teilkasko": "26",
+                    "vollkasko": "26",
+                    "vehicletype": "Audi A6 3.0 TDI Quattro Allroad",
+                    "yearFrom": "2015",
+                    "yearTo": "2018",
+                    "power": "190",
+                    "ccm": "2967",
+                    "fuel": "Diesel",
+                    "hsn": "0588",
+                    "tsn": "BES"
+                },
+                {
+                    "id": "20816",
+                    "haftpficht": "18",
+                    "teilkasko": "26",
+                    "vollkasko": "26",
+                    "vehicletype": "Audi A6 3.0 TDI Quattro Avant Allroad",
+                    "yearFrom": "2014",
+                    "yearTo": "2018",
+                    "power": "218",
+                    "ccm": "2967",
+                    "fuel": "Diesel",
+                    "hsn": "0588",
+                    "tsn": "BBX"
+                },
+                {
+                    "id": "20817",
+                    "haftpficht": "18",
+                    "teilkasko": "26",
+                    "vollkasko": "26",
+                    "vehicletype": "Audi A6 3.0 TDI Quattro Avant Allroad",
+                    "yearFrom": "2014",
+                    "yearTo": "2018",
+                    "power": "211",
+                    "ccm": "2967",
+                    "fuel": "Diesel",
+                    "hsn": "0588",
+                    "tsn": "BCJ"
+                },
+                {
+                    "id": "24622",
+                    "haftpficht": "19",
+                    "teilkasko": "26",
+                    "vollkasko": "27",
+                    "vehicletype": "Audi A6 3.0 TFSI Quattro",
+                    "yearFrom": "2014",
+                    "yearTo": "2018",
+                    "power": "333",
+                    "ccm": "2995",
+                    "fuel": "Benzin",
+                    "hsn": "0588",
+                    "tsn": "BBJ"
+                },
+                {
+                    "id": "24623",
+                    "haftpficht": "19",
+                    "teilkasko": "26",
+                    "vollkasko": "27",
+                    "vehicletype": "Audi A6 3.5 TDI",
+                    "yearFrom": "2018",
+                    "yearTo": null,
+                    "power": "163",
+                    "ccm": "1968",
+                    "fuel": "Diesel",
+                    "hsn": "0588",
+                    "tsn": "BQF"
+                },
+                {
+                    "id": "24627",
+                    "haftpficht": "19",
+                    "teilkasko": "26",
+                    "vollkasko": "27",
+                    "vehicletype": "Audi A6 40 2.0 TDI",
+                    "yearFrom": "2018",
+                    "yearTo": null,
+                    "power": "204",
+                    "ccm": "1968",
+                    "fuel": "Diesel",
+                    "hsn": "0588",
+                    "tsn": "BMY"
+                },
+                {
+                    "id": "24629",
+                    "haftpficht": "19",
+                    "teilkasko": "26",
+                    "vollkasko": "27",
+                    "vehicletype": "Audi A6 40 2.0 TDI Quattro",
+                    "yearFrom": "2018",
+                    "yearTo": null,
+                    "power": "204",
+                    "ccm": "1968",
+                    "fuel": "Diesel",
+                    "hsn": "0588",
+                    "tsn": "BND"
+                },
+                {
+                    "id": "24780",
+                    "haftpficht": "19",
+                    "teilkasko": "28",
+                    "vollkasko": "26",
+                    "vehicletype": "Audi A6 3.0 TDI Quattro Avant Allroad",
+                    "yearFrom": "2014",
+                    "yearTo": "2018",
+                    "power": "272",
+                    "ccm": "2967",
+                    "fuel": "Diesel",
+                    "hsn": "0588",
+                    "tsn": "BBY"
+                },
+                {
+                    "id": "24787",
+                    "haftpficht": "19",
+                    "teilkasko": "28",
+                    "vollkasko": "27",
+                    "vehicletype": "Audi A6 45 2.0 TFSI",
+                    "yearFrom": "2018",
+                    "yearTo": null,
+                    "power": "245",
+                    "ccm": "1984",
+                    "fuel": "Benzin",
+                    "hsn": "0588",
+                    "tsn": "BOP"
+                },
+                {
+                    "id": "24790",
+                    "haftpficht": "19",
+                    "teilkasko": "28",
+                    "vollkasko": "27",
+                    "vehicletype": "Audi A6 45 2.0 TFSI Quattro",
+                    "yearFrom": "2018",
+                    "yearTo": null,
+                    "power": "245",
+                    "ccm": "1984",
+                    "fuel": "Benzin",
+                    "hsn": "0588",
+                    "tsn": "BOQ"
+                },
+                {
+                    "id": "24794",
+                    "haftpficht": "19",
+                    "teilkasko": "28",
+                    "vollkasko": "27",
+                    "vehicletype": "Audi A6 55 3.0 TFSI Quattro Avant",
+                    "yearFrom": "2018",
+                    "yearTo": null,
+                    "power": "340",
+                    "ccm": "2995",
+                    "fuel": "Benzin",
+                    "hsn": "0588",
+                    "tsn": "BNB"
+                },
+                {
+                    "id": "26435",
+                    "haftpficht": "20",
+                    "teilkasko": "23",
+                    "vollkasko": "23",
+                    "vehicletype": "Audi A6 1.8 TFSI",
+                    "yearFrom": "2014",
+                    "yearTo": "2018",
+                    "power": "190",
+                    "ccm": "1798",
+                    "fuel": "Benzin",
+                    "hsn": "0588",
+                    "tsn": "BBH"
+                },
+                {
+                    "id": "26437",
+                    "haftpficht": "20",
+                    "teilkasko": "23",
+                    "vollkasko": "23",
+                    "vehicletype": "Audi A6 2.0 TFSI",
+                    "yearFrom": "2014",
+                    "yearTo": "2018",
+                    "power": "252",
+                    "ccm": "1984",
+                    "fuel": "Benzin",
+                    "hsn": "0588",
+                    "tsn": "BBI"
+                },
+                {
+                    "id": "26438",
+                    "haftpficht": "20",
+                    "teilkasko": "23",
+                    "vollkasko": "23",
+                    "vehicletype": "Audi A6 2.0 TFSI Quattro",
+                    "yearFrom": "2015",
+                    "yearTo": "2018",
+                    "power": "252",
+                    "ccm": "1984",
+                    "fuel": "Benzin",
+                    "hsn": "0588",
+                    "tsn": "BEE"
+                },
+                {
+                    "id": "26439",
+                    "haftpficht": "20",
+                    "teilkasko": "23",
+                    "vollkasko": "23",
+                    "vehicletype": "Audi A6 2.0 TFSI Quattro",
+                    "yearFrom": "2015",
+                    "yearTo": "2018",
+                    "power": "249",
+                    "ccm": "1984",
+                    "fuel": "Benzin",
+                    "hsn": "0588",
+                    "tsn": "BEP"
+                },
+                {
+                    "id": "26872",
+                    "haftpficht": "20",
+                    "teilkasko": "28",
+                    "vollkasko": "28",
+                    "vehicletype": "Audi A6 50 3.0 TDI Quattro Avant",
+                    "yearFrom": "2018",
+                    "yearTo": null,
+                    "power": "286",
+                    "ccm": "2967",
+                    "fuel": "Diesel",
+                    "hsn": "0588",
+                    "tsn": "BNA"
+                },
+                {
+                    "id": "26905",
+                    "haftpficht": "20",
+                    "teilkasko": "29",
+                    "vollkasko": "28",
+                    "vehicletype": "Audi A6 3.0 TDI Quattro",
+                    "yearFrom": "2014",
+                    "yearTo": "2018",
+                    "power": "320",
+                    "ccm": "2967",
+                    "fuel": "Diesel",
+                    "hsn": "0588",
+                    "tsn": "BBP"
+                },
+                {
+                    "id": "26906",
+                    "haftpficht": "20",
+                    "teilkasko": "29",
+                    "vollkasko": "28",
+                    "vehicletype": "Audi A6 3.0 TDI Quattro",
+                    "yearFrom": "2014",
+                    "yearTo": "2018",
+                    "power": "326",
+                    "ccm": "2967",
+                    "fuel": "Diesel",
+                    "hsn": "0588",
+                    "tsn": "BBQ"
+                },
+                {
+                    "id": "26908",
+                    "haftpficht": "20",
+                    "teilkasko": "29",
+                    "vollkasko": "28",
+                    "vehicletype": "Audi A6 3.0 TDI Quattro Avant Allroad",
+                    "yearFrom": "2014",
+                    "yearTo": "2018",
+                    "power": "320",
+                    "ccm": "2967",
+                    "fuel": "Diesel",
+                    "hsn": "0588",
+                    "tsn": "BBZ"
+                },
+                {
+                    "id": "26909",
+                    "haftpficht": "20",
+                    "teilkasko": "29",
+                    "vollkasko": "28",
+                    "vehicletype": "Audi A6 3.0 TDI Quattro Avant Allroad",
+                    "yearFrom": "2014",
+                    "yearTo": "2018",
+                    "power": "326",
+                    "ccm": "2967",
+                    "fuel": "Diesel",
+                    "hsn": "0588",
+                    "tsn": "BCA"
+                },
+                {
+                    "id": "28554",
+                    "haftpficht": "21",
+                    "teilkasko": "26",
+                    "vollkasko": "28",
+                    "vehicletype": "Audi A6 45 3.0 TDI Quattro Avant",
+                    "yearFrom": "2018",
+                    "yearTo": null,
+                    "power": "231",
+                    "ccm": "2967",
+                    "fuel": "Diesel",
+                    "hsn": "0588",
+                    "tsn": "BMZ"
+                },
+                {
+                    "id": "30870",
+                    "haftpficht": "23",
+                    "teilkasko": "25",
+                    "vollkasko": "25",
+                    "vehicletype": "Audi A6 2.0 TDI",
+                    "yearFrom": "2012",
+                    "yearTo": "2018",
+                    "power": "136",
+                    "ccm": "1968",
+                    "fuel": "Diesel",
+                    "hsn": "0588",
+                    "tsn": "AUU"
+                },
+                {
+                    "id": "30871",
+                    "haftpficht": "23",
+                    "teilkasko": "25",
+                    "vollkasko": "25",
+                    "vehicletype": "Audi A6 2.0 TDI",
+                    "yearFrom": "2013",
+                    "yearTo": "2018",
+                    "power": "190",
+                    "ccm": "1968",
+                    "fuel": "Diesel",
+                    "hsn": "0588",
+                    "tsn": "AYT"
+                },
+                {
+                    "id": "30872",
+                    "haftpficht": "23",
+                    "teilkasko": "25",
+                    "vollkasko": "25",
+                    "vehicletype": "Audi A6 2.0 TDI",
+                    "yearFrom": "2014",
+                    "yearTo": "2018",
+                    "power": "150",
+                    "ccm": "1968",
+                    "fuel": "Diesel",
+                    "hsn": "0588",
+                    "tsn": "BBL"
+                },
+                {
+                    "id": "30932",
+                    "haftpficht": "23",
+                    "teilkasko": "25",
+                    "vollkasko": "27",
+                    "vehicletype": "Audi A6 2.0 TDI Quattro",
+                    "yearFrom": "2015",
+                    "yearTo": "2018",
+                    "power": "190",
+                    "ccm": "1968",
+                    "fuel": "Diesel",
+                    "hsn": "0588",
+                    "tsn": "BEC"
+                },
+                {
+                    "id": "30942",
+                    "haftpficht": "23",
+                    "teilkasko": "26",
+                    "vollkasko": "25",
+                    "vehicletype": "Audi A6 3.0 TDI",
+                    "yearFrom": "2014",
+                    "yearTo": "2018",
+                    "power": "218",
+                    "ccm": "2967",
+                    "fuel": "Diesel",
+                    "hsn": "0588",
+                    "tsn": "BBM"
+                },
+                {
+                    "id": "30943",
+                    "haftpficht": "23",
+                    "teilkasko": "26",
+                    "vollkasko": "25",
+                    "vehicletype": "Audi A6 3.0 TDI",
+                    "yearFrom": "2014",
+                    "yearTo": "2018",
+                    "power": "211",
+                    "ccm": "2967",
+                    "fuel": "Diesel",
+                    "hsn": "0588",
+                    "tsn": "BCM"
+                },
+                {
+                    "id": "30964",
+                    "haftpficht": "23",
+                    "teilkasko": "26",
+                    "vollkasko": "27",
+                    "vehicletype": "Audi A6 3.0 TDI Quattro",
+                    "yearFrom": "2014",
+                    "yearTo": "2018",
+                    "power": "218",
+                    "ccm": "2967",
+                    "fuel": "Diesel",
+                    "hsn": "0588",
+                    "tsn": "BBN"
+                },
+                {
+                    "id": "30965",
+                    "haftpficht": "23",
+                    "teilkasko": "26",
+                    "vollkasko": "27",
+                    "vehicletype": "Audi A6 3.0 TDI Quattro",
+                    "yearFrom": "2014",
+                    "yearTo": "2018",
+                    "power": "272",
+                    "ccm": "2967",
+                    "fuel": "Diesel",
+                    "hsn": "0588",
+                    "tsn": "BBO"
+                }
+            ]
+        }
+    ],
+    "standardized_name": "hsn_tsn"
+}

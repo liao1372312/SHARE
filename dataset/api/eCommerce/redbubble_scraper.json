@@ -1,0 +1,86 @@
+{
+    "product_id": "api_08853ced-b247-4953-b0f7-b90a4a2fe2ac",
+    "tool_description": "With this API, you can quickly and easily extract valuable data from Redbubble listings, including the title, price, product link, images, and tags. This data can help you optimize your product listings, track pricing trends, and stay on top of your competitors.\n\nThis API is easy to use, with simple commands that allow you to access the data you need in real-time. Plus, our API is highly customizable, so you can tailor it to your specific needs and preferences.\n\nSome key features of our Redbu...",
+    "home_url": "https://rapidapi.com/johannes475/api/redbubble-scraper/",
+    "name": "Redbubble scraper",
+    "title": "Redbubble scraper",
+    "pricing": "FREEMIUM",
+    "tool_name": "Redbubble scraper",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 994,
+        "avgSuccessRate": 100,
+        "popularityScore": 8.2,
+        "__typename": "Score"
+    },
+    "host": "redbubble-scraper.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "/redbubble",
+            "url": "https://redbubble-scraper.p.rapidapi.com/redbubble",
+            "description": "Get items per page, you can optionally specify a search term, specific categories or ordering",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "page",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "1"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "category",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "all-departments"
+                },
+                {
+                    "name": "search_term",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "orange cat"
+                },
+                {
+                    "name": "sort_order",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "relevant"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://redbubble-scraper.p.rapidapi.com/redbubble\"\nquerystring = {\"category\": \"all-departments\", \"page\": \"1\", \"search_term\": \"orange cat\", \"sort_order\": \"relevant\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"redbubble-scraper.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://redbubble-scraper.p.rapidapi.com/redbubble\"\nquerystring = {\"category\": \"all-departments\", \"page\": \"1\", \"search_term\": \"orange cat\", \"sort_order\": \"relevant\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"redbubble-scraper.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You are not subscribed to this API."
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "title": {
+                            "type": "string"
+                        },
+                        "price": {
+                            "type": "string"
+                        },
+                        "links": {
+                            "type": "string"
+                        },
+                        "image": {
+                            "type": "string"
+                        },
+                        "tags": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "standardized_name": "redbubble_scraper"
+}

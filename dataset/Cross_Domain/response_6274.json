@@ -1,0 +1,35 @@
+{
+  "user_query": "Find product offers for Nike shoes and sort them by the lowest price. Also, retrieve product reviews for the shoes and display the reviews along with their ratings.",
+  "domain": "shopping",
+  "TaskList": [
+    {
+      "id": 1,
+      "description": "搜索Nike鞋子的商品信息，包括价格和优惠信息。",
+      "domain": "none",
+      "required_inputs": ["品牌名称", "商品类别"]
+    },
+    {
+      "id": 2,
+      "description": "按价格对Nike鞋子商品进行排序，找出最低价格的商品。",
+      "domain": "none",
+      "required_inputs": ["商品信息"]
+    },
+    {
+      "id": 3,
+      "description": "获取所选Nike鞋子的用户评价和评分信息。",
+      "domain": "none",
+      "required_inputs": ["商品ID"]
+    },
+    {
+      "id": 4,
+      "description": "展示Nike鞋子商品的评论和评分。",
+      "domain": "none",
+      "required_inputs": ["评论数据"]
+    }
+  ],
+  "dependencies": [
+    {"from": 1, "to": 2},
+    {"from": 2, "to": 3},
+    {"from": 3, "to": 4}
+  ]
+}

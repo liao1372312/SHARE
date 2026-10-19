@@ -1,0 +1,32 @@
+{
+"user_query":"I'm organizing a company event for my colleagues. Can you suggest some programming memes from Reddit to include in the event presentation? Additionally, find some popular posts from Reddit about team building activities for inspiration.",
+"domain":"Cross-Domain",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Search for popular programming memes on Reddit to include in the presentation.",
+        "domain": "technology",
+        "required_inputs": ["subreddit name", "search keywords"]
+    },
+    {
+        "id": 2,
+        "description": "Fetch the content of the programming memes found in step 1.",
+        "domain": "technology",
+        "required_inputs": ["meme links", "meme descriptions"],
+        "dependencies": [1]
+    },
+    {
+        "id": 3,
+        "description": "Search for popular posts about team building activities on Reddit for inspiration.",
+        "domain": "Cross-Domain",
+        "required_inputs": ["subreddit name", "search keywords"]
+    },
+    {
+        "id": 4,
+        "description": "Collect and summarize the content of the team building posts retrieved in step 3.",
+        "domain": "Cross-Domain",
+        "required_inputs": ["post links", "post content"],
+        "dependencies": [3]
+    }
+]
+}

@@ -1,0 +1,924 @@
+{
+    "product_id": "api_2657e23f-d0cc-45b1-a5bf-5a547d747e8d",
+    "tool_description": "The Cameroon API provides endpoints to lookup locations, find facilities and perform geospatial operations such as distance calculation and directions between two locations in Cameroon.",
+    "home_url": "https://rapidapi.com/kidddevs/api/cameroon1/",
+    "name": "Cameroon",
+    "title": "Cameroon",
+    "pricing": "FREE",
+    "tool_name": "Cameroon",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 922,
+        "avgSuccessRate": 100,
+        "popularityScore": 8.7,
+        "__typename": "Score"
+    },
+    "host": "cameroon1.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Measure Distance Reverse",
+            "url": "https://cameroon1.p.rapidapi.com/reverse_distance",
+            "description": "This endpoint calculates the distance between two addresses in Cameroon.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "stop_address",
+                    "type": "STRING",
+                    "description": "The destination address for which the distance needs to be calculated",
+                    "default": "Bonamoussadi, Douala"
+                },
+                {
+                    "name": "start_address",
+                    "type": "STRING",
+                    "description": "The starting address for which the distance needs to be calculated.",
+                    "default": "Molyko, Buea"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "unit",
+                    "type": "STRING",
+                    "description": "Unit of distance measurement, valid options are **km** (default), **mi**, **ft**, and **yd**.\n",
+                    "default": "km"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://cameroon1.p.rapidapi.com/reverse_distance\"\nquerystring = {\"unit\": \"km\", \"stop_address\": \"Bonamoussadi, Douala\", \"start_address\": \"Molyko, Buea\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"cameroon1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://cameroon1.p.rapidapi.com/reverse_distance\"\nquerystring = {\"unit\": \"km\", \"stop_address\": \"Bonamoussadi, Douala\", \"start_address\": \"Molyko, Buea\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"cameroon1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "distance": "67.93km",
+                "distance_unit": "kilometer",
+                "duration": "55min:37s",
+                "start": "Molyko, Buea, Fako, Southwest, Cameroun",
+                "stop": "Bonamoussadi, Bonagang, Douala V, Communaut\u00e9 urbaine de Douala, Wouri, Cameroun"
+            }
+        },
+        {
+            "name": "Measure Distance",
+            "url": "https://cameroon1.p.rapidapi.com/distance",
+            "description": "This endpoint calculates the distance between two locations based on their latitude and longitude coordinates, while allowing the user to specify the unit of measurement.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "lon2",
+                    "type": "NUMBER",
+                    "description": "Longitude of the second location (required)",
+                    "default": "11.50293"
+                },
+                {
+                    "name": "lat2",
+                    "type": "NUMBER",
+                    "description": "Latitude of the second location (required)",
+                    "default": "3.84803"
+                },
+                {
+                    "name": "lat1",
+                    "type": "NUMBER",
+                    "description": "Latitude of the first location (required)",
+                    "default": "4.05048"
+                },
+                {
+                    "name": "lon1",
+                    "type": "NUMBER",
+                    "description": "Longitude of the first location (required)",
+                    "default": "9.70428"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "unit",
+                    "type": "STRING",
+                    "description": "Unit of distance measurement, valid options are **km** (default), **mi**, **ft**, and **yd**.\n",
+                    "default": "km"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://cameroon1.p.rapidapi.com/distance\"\nquerystring = {\"lon2\": \"11.50293\", \"unit\": \"km\", \"lat2\": \"3.84803\", \"lat1\": \"4.05048\", \"lon1\": \"9.70428\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"cameroon1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://cameroon1.p.rapidapi.com/distance\"\nquerystring = {\"lon2\": \"11.50293\", \"unit\": \"km\", \"lat2\": \"3.84803\", \"lat1\": \"4.05048\", \"lon1\": \"9.70428\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"cameroon1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "distance": "243.18km",
+                "duration": "3h 4min",
+                "unit": "km"
+            }
+        },
+        {
+            "name": "Reverse Geocode",
+            "url": "https://cameroon1.p.rapidapi.com/georev",
+            "description": "This endpoint allows you to perform reverse geocoding in Cameroon by providing query parameters for latitude and longitude. It returns the name of the city where the location is located.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "lat",
+                    "type": "STRING",
+                    "description": "The latitude of the location.",
+                    "default": "4.1591154"
+                },
+                {
+                    "name": "lon",
+                    "type": "STRING",
+                    "description": "The longitude of the location.",
+                    "default": "9.2805172"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://cameroon1.p.rapidapi.com/georev\"\nquerystring = {\"lat\": \"4.1591154\", \"lon\": \"9.2805172\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"cameroon1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://cameroon1.p.rapidapi.com/georev\"\nquerystring = {\"lat\": \"4.1591154\", \"lon\": \"9.2805172\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"cameroon1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "amenity": "",
+                "boundingbox": [
+                    "4.1588386",
+                    "4.1594934",
+                    "9.2744545",
+                    "9.2808422"
+                ],
+                "category": "highway",
+                "city": "Buea",
+                "country": "Cameroun",
+                "display_name": "GCE Board Avenue [D61], Molyko, Buea, Fako, Southwest, Cameroun",
+                "region": "Southwest",
+                "suburb": ""
+            }
+        },
+        {
+            "name": "Facilities Lookup",
+            "url": "https://cameroon1.p.rapidapi.com/facility",
+            "description": "This endpoint allows you to get facilities in Cameroon like hospital, bank, college, etc. by providing optional query parameters for facility type, region and city. It returns a list of facilities that match the query parameters.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "type",
+                    "type": "STRING",
+                    "description": "The type of amenity facility to search for (default: **hospital**)\nOptions:\n**aerodrome, bar, cafe, fast_food, pub, restaurant, college, driving_school, school, university, bank, atm, pharmacy,** etc..        \n\n[More options->](https://wiki.openstreetmap.org/wiki/Map_features#Amenity)",
+                    "default": "hospital"
+                },
+                {
+                    "name": "region",
+                    "type": "STRING",
+                    "description": "The region where the facility is located",
+                    "default": "littoral"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "city",
+                    "type": "STRING",
+                    "description": "The city where the facility is located",
+                    "default": "douala"
+                },
+                {
+                    "name": "limit",
+                    "type": "NUMBER",
+                    "description": "The number of facilities to query.",
+                    "default": "10"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://cameroon1.p.rapidapi.com/facility\"\nquerystring = {\"type\": \"hospital\", \"city\": \"douala\", \"limit\": \"10\", \"region\": \"littoral\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"cameroon1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://cameroon1.p.rapidapi.com/facility\"\nquerystring = {\"type\": \"hospital\", \"city\": \"douala\", \"limit\": \"10\", \"region\": \"littoral\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"cameroon1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "results": [
+                    {
+                        "address": "Route Akwa Nord, Douala I, Cameroun",
+                        "amenity": "Saint Padre Pio Hospital",
+                        "category": "hospital",
+                        "country": "cm",
+                        "display_name": "Saint Padre Pio Hospital, Route Akwa Nord, Bonamouang, Deido, Douala I, Communaut\u00e9 urbaine de Douala, Wouri, Cameroun",
+                        "division": "Wouri",
+                        "latitude": "4.07574025",
+                        "longitude": "9.717684756140143",
+                        "municipality": "Communaut\u00e9 urbaine de Douala",
+                        "region": "",
+                        "road": "Route Akwa Nord",
+                        "suburb": "Bonamouang",
+                        "website": ""
+                    },
+                    {
+                        "address": "Avenue de l'ind\u00e9pendance, Douala, Cameroun",
+                        "amenity": "Centre Hospitalier",
+                        "category": "hospital",
+                        "country": "cm",
+                        "display_name": "Centre Hospitalier, Avenue de l'ind\u00e9pendance, New-Bell, Douala, Douala II, Communaut\u00e9 urbaine de Douala, Wouri, Cameroun",
+                        "division": "Wouri",
+                        "latitude": "4.0341086",
+                        "longitude": "9.706173624728434",
+                        "municipality": "Communaut\u00e9 urbaine de Douala",
+                        "region": "",
+                        "road": "Avenue de l'ind\u00e9pendance",
+                        "suburb": "New-Bell",
+                        "website": ""
+                    },
+                    {
+                        "address": "Boulevard des Nations Unies, Douala, Cameroun",
+                        "amenity": "Maternit\u00e9 Saint Paul de Nylon",
+                        "category": "hospital",
+                        "country": "cm",
+                        "display_name": "Maternit\u00e9 Saint Paul de Nylon, Boulevard des Nations Unies, New-Bell, Douala, Douala III, Communaut\u00e9 urbaine de Douala, Wouri, Cameroun",
+                        "division": "Wouri",
+                        "latitude": "4.0379819",
+                        "longitude": "9.725439239651811",
+                        "municipality": "Communaut\u00e9 urbaine de Douala",
+                        "region": "",
+                        "road": "Boulevard des Nations Unies",
+                        "suburb": "New-Bell",
+                        "website": ""
+                    },
+                    {
+                        "address": "Rue du Gouverneur Carras, Douala I, Cameroun",
+                        "amenity": "H\u00f4pital Militaire",
+                        "category": "hospital",
+                        "country": "cm",
+                        "display_name": "H\u00f4pital Militaire, Rue du Gouverneur Carras, Koumassi, Douala I, Communaut\u00e9 urbaine de Douala, Wouri, Cameroun",
+                        "division": "Wouri",
+                        "latitude": "4.033879600000001",
+                        "longitude": "9.68506723153094",
+                        "municipality": "Communaut\u00e9 urbaine de Douala",
+                        "region": "",
+                        "road": "Rue du Gouverneur Carras",
+                        "suburb": "Koumassi",
+                        "website": ""
+                    },
+                    {
+                        "address": "N3, Douala I, Cameroun",
+                        "amenity": "PAD Centre Medico-Social",
+                        "category": "hospital",
+                        "country": "cm",
+                        "display_name": "PAD Centre Medico-Social, N3, Bonatene, Deido, Douala I, Communaut\u00e9 urbaine de Douala, Wouri, Cameroun",
+                        "division": "Wouri",
+                        "latitude": "4.0661092",
+                        "longitude": "9.703852288828461",
+                        "municipality": "Communaut\u00e9 urbaine de Douala",
+                        "region": "",
+                        "road": "N3",
+                        "suburb": "Bonatene",
+                        "website": ""
+                    },
+                    {
+                        "address": "Rue Dika Mpondo(N\u00b01151), Douala I, Cameroun",
+                        "amenity": "H\u00f4pital Laquintinie",
+                        "category": "hospital",
+                        "country": "cm",
+                        "display_name": "H\u00f4pital Laquintinie, Rue Dika Mpondo(N\u00b01151), Bali, Deido, Douala I, Communaut\u00e9 urbaine de Douala, Wouri, Cameroun",
+                        "division": "Wouri",
+                        "latitude": "4.0478363",
+                        "longitude": "9.703103600097243",
+                        "municipality": "Communaut\u00e9 urbaine de Douala",
+                        "region": "",
+                        "road": "Rue Dika Mpondo(N\u00b01151)",
+                        "suburb": "Bali",
+                        "website": ""
+                    },
+                    {
+                        "address": "Rue 4.672, Douala IV, Cameroun",
+                        "amenity": "H\u00f4pital Protestant Bonaberi CEBEC",
+                        "category": "hospital",
+                        "country": "cm",
+                        "display_name": "H\u00f4pital Protestant Bonaberi CEBEC, Rue 4.672, Ngwele, Douala IV, Communaut\u00e9 urbaine de Douala, Wouri, Cameroun",
+                        "division": "Wouri",
+                        "latitude": "4.0936764",
+                        "longitude": "9.653078989788021",
+                        "municipality": "Communaut\u00e9 urbaine de Douala",
+                        "region": "",
+                        "road": "Rue 4.672",
+                        "suburb": "Ngwele",
+                        "website": ""
+                    },
+                    {
+                        "address": "Rue 4.355, Douala IV, Cameroun",
+                        "amenity": "H\u00f4pital de District de Bonassama",
+                        "category": "hospital",
+                        "country": "cm",
+                        "display_name": "H\u00f4pital de District de Bonassama, Rue 4.355, Besseke, Douala IV, Communaut\u00e9 urbaine de Douala, Wouri, Cameroun",
+                        "division": "Wouri",
+                        "latitude": "4.07179945",
+                        "longitude": "9.685793625264482",
+                        "municipality": "Communaut\u00e9 urbaine de Douala",
+                        "region": "",
+                        "road": "Rue 4.355",
+                        "suburb": "Besseke",
+                        "website": ""
+                    },
+                    {
+                        "address": "Rue Drouot (N\u00b0 1.412), Douala I, Cameroun",
+                        "amenity": "Centre de P\u00e9diatrie Emilie Saker",
+                        "category": "hospital",
+                        "country": "cm",
+                        "display_name": "Centre de P\u00e9diatrie Emilie Saker, Rue Drouot (N\u00b0 1.412), Vall\u00e9e Bessengu\u00e9, Deido, Douala I, Communaut\u00e9 urbaine de Douala, Wouri, Cameroun",
+                        "division": "Wouri",
+                        "latitude": "4.05484435",
+                        "longitude": "9.701849440821137",
+                        "municipality": "Communaut\u00e9 urbaine de Douala",
+                        "region": "",
+                        "road": "Rue Drouot (N\u00b0 1.412)",
+                        "suburb": "Vall\u00e9e Bessengu\u00e9",
+                        "website": ""
+                    },
+                    {
+                        "address": "Avenue Japoma, Douala III, Cameroun",
+                        "amenity": "H\u00f4pital Protestant Cit\u00e9 SIC",
+                        "category": "hospital",
+                        "country": "cm",
+                        "display_name": "H\u00f4pital Protestant Cit\u00e9 SIC, Avenue Japoma, Bassa, Douala III, Communaut\u00e9 urbaine de Douala, Wouri, Cameroun",
+                        "division": "Wouri",
+                        "latitude": "4.0487119",
+                        "longitude": "9.7276385",
+                        "municipality": "Communaut\u00e9 urbaine de Douala",
+                        "region": "",
+                        "road": "Avenue Japoma",
+                        "suburb": "Bassa",
+                        "website": ""
+                    },
+                    {
+                        "address": "Autoroute de l'aviation, Douala III, Cameroun",
+                        "amenity": "H\u00f4pital de District de Nylon",
+                        "category": "hospital",
+                        "country": "cm",
+                        "display_name": "H\u00f4pital de District de Nylon, Autoroute de l'aviation, Nkolminta, Douala III, Communaut\u00e9 urbaine de Douala, Wouri, Cameroun",
+                        "division": "Wouri",
+                        "latitude": "4.030894",
+                        "longitude": "9.731579831892754",
+                        "municipality": "Communaut\u00e9 urbaine de Douala",
+                        "region": "",
+                        "road": "Autoroute de l'aviation",
+                        "suburb": "Nkolminta",
+                        "website": ""
+                    },
+                    {
+                        "address": "Route de Douala Nord, Douala I, Cameroun",
+                        "amenity": "H\u00f4pital de Bonamoussadi",
+                        "category": "hospital",
+                        "country": "cm",
+                        "display_name": "H\u00f4pital de Bonamoussadi, Route de Douala Nord, Bonamouang, Deido, Douala I, Communaut\u00e9 urbaine de Douala, Wouri, Cameroun",
+                        "division": "Wouri",
+                        "latitude": "4.08334655",
+                        "longitude": "9.725287382612148",
+                        "municipality": "Communaut\u00e9 urbaine de Douala",
+                        "region": "",
+                        "road": "Route de Douala Nord",
+                        "suburb": "Bonamouang",
+                        "website": ""
+                    },
+                    {
+                        "address": "Logbaba Route de Japoma 3c.660, Douala III, Cameroun",
+                        "amenity": "H\u00f4pital de District de Logbaba",
+                        "category": "hospital",
+                        "country": "cm",
+                        "display_name": "H\u00f4pital de District de Logbaba, Logbaba Route de Japoma 3c.660, Ndogmbe, Douala III, Communaut\u00e9 urbaine de Douala, Wouri, Cameroun",
+                        "division": "Wouri",
+                        "latitude": "4.03585775",
+                        "longitude": "9.754053423117618",
+                        "municipality": "Communaut\u00e9 urbaine de Douala",
+                        "region": "",
+                        "road": "Logbaba Route de Japoma 3c.660",
+                        "suburb": "Ndogmbe",
+                        "website": ""
+                    },
+                    {
+                        "address": "Rue du Roi Njoya, Douala, Cameroun",
+                        "amenity": "H\u00f4pital de District de New Bell",
+                        "category": "hospital",
+                        "country": "cm",
+                        "display_name": "H\u00f4pital de District de New Bell, Rue du Roi Njoya, New-Bell, Douala, Douala II, Communaut\u00e9 urbaine de Douala, Wouri, Cameroun",
+                        "division": "Wouri",
+                        "latitude": "4.02929985",
+                        "longitude": "9.711032143479398",
+                        "municipality": "Communaut\u00e9 urbaine de Douala",
+                        "region": "",
+                        "road": "Rue du Roi Njoya",
+                        "suburb": "New-Bell",
+                        "website": ""
+                    },
+                    {
+                        "address": "Avenue Douala Manga Bell, Douala I, Cameroun",
+                        "amenity": "H\u00f4pital Ad Lucem de Bali",
+                        "category": "hospital",
+                        "country": "cm",
+                        "display_name": "H\u00f4pital Ad Lucem de Bali, Avenue Douala Manga Bell, Koumassi, Douala I, Communaut\u00e9 urbaine de Douala, Wouri, Cameroun",
+                        "division": "Wouri",
+                        "latitude": "4.0361711",
+                        "longitude": "9.6994779",
+                        "municipality": "Communaut\u00e9 urbaine de Douala",
+                        "region": "",
+                        "road": "Avenue Douala Manga Bell",
+                        "suburb": "Koumassi",
+                        "website": ""
+                    },
+                    {
+                        "address": "Boulevard de la R\u00e9publique(N\u00b0 1.729), Douala I, Cameroun",
+                        "amenity": "H\u00f4pital de District de Deido",
+                        "category": "hospital",
+                        "country": "cm",
+                        "display_name": "H\u00f4pital de District de Deido, Boulevard de la R\u00e9publique(N\u00b0 1.729), Bonajinje, Deido, Douala I, Communaut\u00e9 urbaine de Douala, Wouri, Cameroun",
+                        "division": "Wouri",
+                        "latitude": "4.06461295",
+                        "longitude": "9.713896234819963",
+                        "municipality": "Communaut\u00e9 urbaine de Douala",
+                        "region": "",
+                        "road": "Boulevard de la R\u00e9publique(N\u00b0 1.729)",
+                        "suburb": "Bonajinje",
+                        "website": ""
+                    }
+                ],
+                "total_pages": 2,
+                "total_results": 16
+            }
+        },
+        {
+            "name": "Geocode",
+            "url": "https://cameroon1.p.rapidapi.com/geofy",
+            "description": "This endpoint allows you to lookup locations in Cameroon by providing an address query parameter. It returns the latitude, longitude and city name of the location.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "address",
+                    "type": "STRING",
+                    "description": "Name of address",
+                    "default": "Molyko Buea"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://cameroon1.p.rapidapi.com/geofy\"\nquerystring = {\"address\": \"Molyko Buea\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"cameroon1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://cameroon1.p.rapidapi.com/geofy\"\nquerystring = {\"address\": \"Molyko Buea\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"cameroon1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "display_name": "Molyko, Buea, Fako, Southwest, Cameroun",
+                "latitude": "4.1591154",
+                "longitude": "9.2805172"
+            }
+        },
+        {
+            "name": "Directions Between 2 Locations",
+            "url": "https://cameroon1.p.rapidapi.com/directions",
+            "description": "This endpoint returns information about the route between two locations in terms of distance, duration, and steps.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "end_lat",
+                    "type": "NUMBER",
+                    "description": "Latitude of the ending point (required)",
+                    "default": "3.87598"
+                },
+                {
+                    "name": "end_lon",
+                    "type": "NUMBER",
+                    "description": "Longitude of the ending point (required)",
+                    "default": "11.51148"
+                },
+                {
+                    "name": "start_lat",
+                    "type": "NUMBER",
+                    "description": "Latitude of the starting point (required)",
+                    "default": "4.03966"
+                },
+                {
+                    "name": "start_lon",
+                    "type": "NUMBER",
+                    "description": "Longitude of the starting point (required)",
+                    "default": "9.69295"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "distance_unit",
+                    "type": "STRING",
+                    "description": "Unit of distance measurement, valid options are **km** (default), and **mi**.",
+                    "default": "km"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://cameroon1.p.rapidapi.com/directions\"\nquerystring = {\"distance_unit\": \"km\", \"end_lat\": \"3.87598\", \"end_lon\": \"11.51148\", \"start_lat\": \"4.03966\", \"start_lon\": \"9.69295\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"cameroon1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://cameroon1.p.rapidapi.com/directions\"\nquerystring = {\"distance_unit\": \"km\", \"end_lat\": \"3.87598\", \"end_lon\": \"11.51148\", \"start_lat\": \"4.03966\", \"start_lon\": \"9.69295\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"cameroon1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "distance": "247.88km",
+                "duration": "3h 4min",
+                "steps": [
+                    {
+                        "direction": "depart",
+                        "distance": "0.13km",
+                        "duration": "0min:25s",
+                        "instruction": "",
+                        "location": [
+                            9.692942,
+                            4.039575
+                        ]
+                    },
+                    {
+                        "direction": "end of road",
+                        "distance": "1.00km",
+                        "duration": "1min:8s",
+                        "instruction": "",
+                        "location": [
+                            9.691739,
+                            4.039688
+                        ]
+                    },
+                    {
+                        "direction": "turn",
+                        "distance": "0.71km",
+                        "duration": "0min:38s",
+                        "instruction": "",
+                        "location": [
+                            9.69034,
+                            4.031074
+                        ]
+                    },
+                    {
+                        "direction": "new name",
+                        "distance": "2.58km",
+                        "duration": "1min:49s",
+                        "instruction": "",
+                        "location": [
+                            9.692306,
+                            4.025391
+                        ]
+                    },
+                    {
+                        "direction": "new name",
+                        "distance": "2.19km",
+                        "duration": "1min:32s",
+                        "instruction": "",
+                        "location": [
+                            9.709844,
+                            4.01301
+                        ]
+                    },
+                    {
+                        "direction": "new name",
+                        "distance": "0.78km",
+                        "duration": "0min:33s",
+                        "instruction": "",
+                        "location": [
+                            9.725861,
+                            4.017075
+                        ]
+                    },
+                    {
+                        "direction": "new name",
+                        "distance": "0.30km",
+                        "duration": "0min:12s",
+                        "instruction": "",
+                        "location": [
+                            9.731183,
+                            4.012503
+                        ]
+                    },
+                    {
+                        "direction": "new name",
+                        "distance": "1.63km",
+                        "duration": "1min:8s",
+                        "instruction": "",
+                        "location": [
+                            9.733582,
+                            4.011247
+                        ]
+                    },
+                    {
+                        "direction": "roundabout",
+                        "distance": "0.06km",
+                        "duration": "0min:2s",
+                        "instruction": "",
+                        "location": [
+                            9.747862,
+                            4.008403
+                        ]
+                    },
+                    {
+                        "direction": "exit roundabout",
+                        "distance": "1.01km",
+                        "duration": "0min:42s",
+                        "instruction": "",
+                        "location": [
+                            9.748278,
+                            4.008352
+                        ]
+                    },
+                    {
+                        "direction": "roundabout",
+                        "distance": "0.03km",
+                        "duration": "0min:1s",
+                        "instruction": "",
+                        "location": [
+                            9.75602,
+                            4.004065
+                        ]
+                    },
+                    {
+                        "direction": "exit roundabout",
+                        "distance": "1.26km",
+                        "duration": "0min:53s",
+                        "instruction": "",
+                        "location": [
+                            9.756233,
+                            4.003887
+                        ]
+                    },
+                    {
+                        "direction": "roundabout",
+                        "distance": "0.09km",
+                        "duration": "0min:3s",
+                        "instruction": "",
+                        "location": [
+                            9.766448,
+                            3.999075
+                        ]
+                    },
+                    {
+                        "direction": "exit roundabout",
+                        "distance": "0.10km",
+                        "duration": "0min:4s",
+                        "instruction": "",
+                        "location": [
+                            9.767134,
+                            3.998747
+                        ]
+                    },
+                    {
+                        "direction": "turn",
+                        "distance": "6.08km",
+                        "duration": "4min:32s",
+                        "instruction": "",
+                        "location": [
+                            9.767978,
+                            3.998552
+                        ]
+                    },
+                    {
+                        "direction": "turn",
+                        "distance": "1.02km",
+                        "duration": "1min:13s",
+                        "instruction": "",
+                        "location": [
+                            9.819382,
+                            4.000806
+                        ]
+                    },
+                    {
+                        "direction": "roundabout",
+                        "distance": "0.02km",
+                        "duration": "0min:1s",
+                        "instruction": "",
+                        "location": [
+                            9.821365,
+                            4.009707
+                        ]
+                    },
+                    {
+                        "direction": "exit roundabout",
+                        "distance": "0.45km",
+                        "duration": "0min:29s",
+                        "instruction": "",
+                        "location": [
+                            9.821503,
+                            4.009794
+                        ]
+                    },
+                    {
+                        "direction": "new name",
+                        "distance": "0.28km",
+                        "duration": "0min:18s",
+                        "instruction": "",
+                        "location": [
+                            9.825382,
+                            4.008484
+                        ]
+                    },
+                    {
+                        "direction": "roundabout",
+                        "distance": "0.04km",
+                        "duration": "0min:3s",
+                        "instruction": "",
+                        "location": [
+                            9.827726,
+                            4.007646
+                        ]
+                    },
+                    {
+                        "direction": "exit roundabout",
+                        "distance": "2.06km",
+                        "duration": "2min:18s",
+                        "instruction": "",
+                        "location": [
+                            9.828005,
+                            4.007599
+                        ]
+                    },
+                    {
+                        "direction": "turn",
+                        "distance": "47.93km",
+                        "duration": "39min:37s",
+                        "instruction": "",
+                        "location": [
+                            9.840805,
+                            3.99828
+                        ]
+                    },
+                    {
+                        "direction": "continue",
+                        "distance": "167.62km",
+                        "duration": "1h 58min",
+                        "instruction": "",
+                        "location": [
+                            10.143831,
+                            3.787447
+                        ]
+                    },
+                    {
+                        "direction": "roundabout",
+                        "distance": "0.07km",
+                        "duration": "0min:3s",
+                        "instruction": "",
+                        "location": [
+                            11.501358,
+                            3.798096
+                        ]
+                    },
+                    {
+                        "direction": "exit roundabout",
+                        "distance": "0.77km",
+                        "duration": "0min:35s",
+                        "instruction": "",
+                        "location": [
+                            11.501736,
+                            3.798266
+                        ]
+                    },
+                    {
+                        "direction": "continue",
+                        "distance": "2.77km",
+                        "duration": "1min:58s",
+                        "instruction": "",
+                        "location": [
+                            11.507364,
+                            3.80225
+                        ]
+                    },
+                    {
+                        "direction": "new name",
+                        "distance": "1.12km",
+                        "duration": "0min:47s",
+                        "instruction": "",
+                        "location": [
+                            11.516832,
+                            3.825227
+                        ]
+                    },
+                    {
+                        "direction": "new name",
+                        "distance": "0.88km",
+                        "duration": "0min:37s",
+                        "instruction": "",
+                        "location": [
+                            11.519084,
+                            3.834891
+                        ]
+                    },
+                    {
+                        "direction": "new name",
+                        "distance": "0.68km",
+                        "duration": "0min:30s",
+                        "instruction": "",
+                        "location": [
+                            11.514103,
+                            3.840027
+                        ]
+                    },
+                    {
+                        "direction": "roundabout",
+                        "distance": "0.01km",
+                        "duration": "0min:0s",
+                        "instruction": "",
+                        "location": [
+                            11.517469,
+                            3.845045
+                        ]
+                    },
+                    {
+                        "direction": "exit roundabout",
+                        "distance": "0.46km",
+                        "duration": "0min:20s",
+                        "instruction": "",
+                        "location": [
+                            11.517525,
+                            3.845103
+                        ]
+                    },
+                    {
+                        "direction": "new name",
+                        "distance": "1.19km",
+                        "duration": "0min:50s",
+                        "instruction": "",
+                        "location": [
+                            11.520864,
+                            3.847485
+                        ]
+                    },
+                    {
+                        "direction": "new name",
+                        "distance": "0.29km",
+                        "duration": "0min:12s",
+                        "instruction": "",
+                        "location": [
+                            11.522076,
+                            3.857928
+                        ]
+                    },
+                    {
+                        "direction": "new name",
+                        "distance": "0.11km",
+                        "duration": "0min:7s",
+                        "instruction": "",
+                        "location": [
+                            11.521575,
+                            3.860462
+                        ]
+                    },
+                    {
+                        "direction": "rotary",
+                        "distance": "0.18km",
+                        "duration": "0min:18s",
+                        "instruction": "",
+                        "location": [
+                            11.520856,
+                            3.861197
+                        ]
+                    },
+                    {
+                        "direction": "exit rotary",
+                        "distance": "0.70km",
+                        "duration": "0min:29s",
+                        "instruction": "",
+                        "location": [
+                            11.520289,
+                            3.861651
+                        ]
+                    },
+                    {
+                        "direction": "rotary",
+                        "distance": "0.10km",
+                        "duration": "0min:4s",
+                        "instruction": "",
+                        "location": [
+                            11.515691,
+                            3.865879
+                        ]
+                    },
+                    {
+                        "direction": "exit rotary",
+                        "distance": "0.34km",
+                        "duration": "0min:14s",
+                        "instruction": "",
+                        "location": [
+                            11.515219,
+                            3.866577
+                        ]
+                    },
+                    {
+                        "direction": "new name",
+                        "distance": "0.25km",
+                        "duration": "0min:11s",
+                        "instruction": "",
+                        "location": [
+                            11.514419,
+                            3.869536
+                        ]
+                    },
+                    {
+                        "direction": "turn",
+                        "distance": "0.16km",
+                        "duration": "0min:10s",
+                        "instruction": "",
+                        "location": [
+                            11.514744,
+                            3.871617
+                        ]
+                    },
+                    {
+                        "direction": "fork",
+                        "distance": "0.40km",
+                        "duration": "0min:26s",
+                        "instruction": "",
+                        "location": [
+                            11.514192,
+                            3.872948
+                        ]
+                    },
+                    {
+                        "direction": "turn",
+                        "distance": "0.05km",
+                        "duration": "0min:4s",
+                        "instruction": "",
+                        "location": [
+                            11.511883,
+                            3.875693
+                        ]
+                    },
+                    {
+                        "direction": "arrive",
+                        "distance": "0.00km",
+                        "duration": "0min:0s",
+                        "instruction": "",
+                        "location": [
+                            11.511468,
+                            3.875711
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "standardized_name": "cameroon"
+}

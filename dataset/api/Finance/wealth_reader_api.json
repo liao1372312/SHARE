@@ -1,0 +1,132 @@
+{
+    "product_id": "api_c44d2044-5a93-4fce-8355-2db2b846cb37",
+    "tool_description": "API providing standardised, real-time access to any entity's financial assets.",
+    "home_url": "https://rapidapi.com/wealth-reader-wealth-reader-default/api/wealth-reader-api/",
+    "name": "Wealth Reader API",
+    "title": "Wealth Reader API",
+    "pricing": "FREE",
+    "tool_name": "Wealth Reader API",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 602,
+        "avgSuccessRate": 100,
+        "popularityScore": 7.1,
+        "__typename": "Score"
+    },
+    "host": "wealth-reader-api.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "/entities",
+            "url": "https://wealth-reader-api.p.rapidapi.com/entities",
+            "description": "Obtiene el listado de entidades soportadas y la informaci\u00f3n necesaria para dibujar el formulario de login de la entidad.\n",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://wealth-reader-api.p.rapidapi.com/entities\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"wealth-reader-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://wealth-reader-api.p.rapidapi.com/entities\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"wealth-reader-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "code": "bancamarch",
+                    "name": "Bancamarch",
+                    "logo": "https://cdn.wealthreader.com/bancamarch.svg",
+                    "bic": "BMARES2M",
+                    "inputs": {
+                        "document_type": {
+                            "required": false,
+                            "name": "DNI;Pasaporte",
+                            "placeholder": "",
+                            "validation_rule": ""
+                        },
+                        "user": {
+                            "required": false,
+                            "name": "Nombre de usuario",
+                            "placeholder": "Email",
+                            "validation_rule": "type='email'"
+                        },
+                        "password": {
+                            "required": false,
+                            "name": "Clave de acceso",
+                            "placeholder": "",
+                            "validation_rule": "type='password'"
+                        },
+                        "second_password": {
+                            "required": false,
+                            "name": "",
+                            "placeholder": "",
+                            "validation_rule": ""
+                        }
+                    },
+                    "statistics": {
+                        "SESSION": "3463754e3540884",
+                        "execution_time": 0.958119869232178,
+                        "operation_id": "1827C79229",
+                        "token": "FRJ0mHlaqZwLzu"
+                    }
+                }
+            ],
+            "statuscode": 200,
+            "schema": {
+                "type": "array",
+                "items": {
+                    "required": [
+                        "name"
+                    ],
+                    "properties": {
+                        "name": {
+                            "type": "string"
+                        },
+                        "homePage": {
+                            "type": "string",
+                            "format": "url"
+                        },
+                        "phone": {
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                }
+            }
+        },
+        {
+            "name": "/error-codes",
+            "url": "https://wealth-reader-api.p.rapidapi.com/error-codes",
+            "description": "Listado de c\u00f3digos de error. Presta especial atenci\u00f3n a que no todos los c\u00f3digos de error deben recibir el mismo tratamiento por parte de tu aplicaci\u00f3n. Ante un error de password incorrecto no debes reintentar la llamada con los mismos par\u00e1metros, pero ante un error que te indique que la entidad est\u00e1 en mantenimiento s\u00ed puedes reintentarlo. Pide una sesi\u00f3n t\u00e9cnica con nuestro equipo para resolver cualquier duda sobre la gesti\u00f3n de errores.\n",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://wealth-reader-api.p.rapidapi.com/error-codes\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"wealth-reader-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://wealth-reader-api.p.rapidapi.com/error-codes\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"wealth-reader-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "code": 2,
+                    "description": "Llamada incorrecta",
+                    "possible_reasons": "Alguno de los par\u00e1metros requeridos no se ha enviado o se ha enviado en un formato incorrecto",
+                    "how_to_proceed": "El texto recibido en \"message\" detallar\u00e1 el motivo del error. Por ejemplo, \"El par\u00e1metro \"api_key\" es obligatorio\"."
+                }
+            ],
+            "statuscode": 200,
+            "schema": {
+                "type": "array",
+                "items": {
+                    "required": [
+                        "name"
+                    ],
+                    "properties": {
+                        "name": {
+                            "type": "string"
+                        },
+                        "homePage": {
+                            "type": "string",
+                            "format": "url"
+                        },
+                        "phone": {
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                }
+            }
+        }
+    ],
+    "standardized_name": "wealth_reader_api"
+}

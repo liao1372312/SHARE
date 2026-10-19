@@ -1,0 +1,79 @@
+{
+    "product_id": "api_c38d7146-1306-456c-8266-d74391636e14",
+    "tool_description": "Generate HTML image-tag with base64-image-string as QR code of input text.",
+    "home_url": "https://rapidapi.com/ezzatelbadrawy/api/qr-generator-api/",
+    "name": "QR-Generator-Api",
+    "title": "QR-Generator-Api",
+    "pricing": "FREEMIUM",
+    "tool_name": "QR-Generator-Api",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 712,
+        "avgSuccessRate": 95,
+        "popularityScore": 9.3,
+        "__typename": "Score"
+    },
+    "host": "qr-generator-api.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Generate",
+            "url": "https://qr-generator-api.p.rapidapi.com/api/qrcode/generate",
+            "description": "Generate HTML image-tag with base64-image-string as QR code of input text (Query Parameter)",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "text",
+                    "type": "STRING",
+                    "description": "QR Code Text Content",
+                    "default": "enter-your-text-here"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "backColor",
+                    "type": "STRING",
+                    "description": "(Optional) Background color in hexadecimal value (Default: White = #ffffff). Note: Should start with # prefix, and each basic-color (red, green, blue) should has two hex-digits.",
+                    "default": "#ffffff"
+                },
+                {
+                    "name": "foreColor",
+                    "type": "STRING",
+                    "description": "(Optional) Foreground color in hexadecimal value (Default: Black = #000000). Note: Should start with # prefix, and each basic-color (red, green, blue) should has two hex-digits.",
+                    "default": "#000000"
+                },
+                {
+                    "name": "pixel",
+                    "type": "NUMBER",
+                    "description": "(Optional) QR Code pixel (Default: 10)",
+                    "default": 10
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://qr-generator-api.p.rapidapi.com/api/qrcode/generate\"\nquerystring = {\"backColor\": \"#ffffff\", \"foreColor\": \"#000000\", \"text\": \"enter-your-text-here\", \"pixel\": 10}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"qr-generator-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://qr-generator-api.p.rapidapi.com/api/qrcode/generate\"\nquerystring = {\"backColor\": \"#ffffff\", \"foreColor\": \"#000000\", \"text\": \"enter-your-text-here\", \"pixel\": 10}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"qr-generator-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "status": "Success",
+                "result": "<img src=\"data:image/;base64,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\" />"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "type": [
+                            "string",
+                            "null"
+                        ]
+                    },
+                    "result": {
+                        "type": [
+                            "string",
+                            "null"
+                        ]
+                    }
+                },
+                "additionalProperties": false
+            }
+        }
+    ],
+    "standardized_name": "qr_generator_api"
+}

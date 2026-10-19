@@ -1,0 +1,188 @@
+{
+    "product_id": "api_be8e1891-21bb-404a-809a-2cc333de9994",
+    "tool_description": "Blackbox is a Proxy, Tor, Hosting, Cloud, Bogon detection service for IP addresses. Utilize Blackbox to protect your game-servers, user front-ends, and much more. ",
+    "home_url": "https://rapidapi.com/CMunroe/api/blackbox/",
+    "name": "Blackbox",
+    "title": "Blackbox",
+    "pricing": "FREEMIUM",
+    "tool_name": "Blackbox",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 88,
+        "avgSuccessRate": 100,
+        "popularityScore": 9.8,
+        "__typename": "Score"
+    },
+    "host": "blackbox.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Legacy | V1",
+            "url": "https://blackbox.p.rapidapi.com/v1/1.1.1.1",
+            "description": "This is a legacy and free IP checked. We provide a simply non-json style response to requests. Responses are cached for 7 days. \n\nCheck out our Documentation for more information.\n\nResponses will be (Y,E,N):\n\n(Y) : Yes, we have determined the IP address to be used by either or multiple of the following: Cloud, Hosting, Tor, Proxy. \n\n(E) : Error, something has gone wrong with the request.\n\n(N) : No, we have determined the IP address to be NOT used by any of the following: Cloud, Hosting, Tor, Proxy.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "ips",
+                    "type": "string",
+                    "description": "",
+                    "default": "1.1.1.1"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://blackbox.p.rapidapi.com/v1/1.1.1.1\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"blackbox.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://blackbox.p.rapidapi.com/v1/{ips}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"blackbox.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Multiple Array | V2",
+            "url": "https://blackbox.p.rapidapi.com/v2/1.1.1.1,8.8.8.8",
+            "description": "Using the GET method you can request an IP specific detections, and other IP information.\n\nCheck out our documentation for more info on our different detections.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "ips",
+                    "type": "string",
+                    "description": "",
+                    "default": "1.1.1.1,8.8.8.8"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://blackbox.p.rapidapi.com/v2/1.1.1.1,8.8.8.8\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"blackbox.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://blackbox.p.rapidapi.com/v2/{ips}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"blackbox.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "ip": "1.1.1.1",
+                    "error": null,
+                    "asn": {
+                        "name": "CLOUDFLARENET",
+                        "number": 13335,
+                        "network": "1.1.1.0",
+                        "cidr": 24
+                    },
+                    "detection": {
+                        "bogon": false,
+                        "cloud": false,
+                        "hosting": true,
+                        "proxy": false,
+                        "spamhaus": false,
+                        "tor": false
+                    },
+                    "suggestion": "block"
+                },
+                {
+                    "ip": "8.8.8.8",
+                    "error": null,
+                    "asn": {
+                        "name": "GOOGLE",
+                        "number": 15169,
+                        "network": "8.8.8.0",
+                        "cidr": 24
+                    },
+                    "detection": {
+                        "bogon": false,
+                        "cloud": true,
+                        "hosting": true,
+                        "proxy": false,
+                        "spamhaus": false,
+                        "tor": false
+                    },
+                    "suggestion": "block"
+                }
+            ],
+            "statuscode": 200,
+            "schema": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "ip": {
+                            "type": "string"
+                        },
+                        "asn": {
+                            "type": "object",
+                            "properties": {
+                                "name": {
+                                    "type": "string"
+                                },
+                                "number": {
+                                    "type": "integer"
+                                },
+                                "network": {
+                                    "type": "string"
+                                },
+                                "cidr": {
+                                    "type": "integer"
+                                }
+                            }
+                        },
+                        "detection": {
+                            "type": "object",
+                            "properties": {
+                                "bogon": {
+                                    "type": "boolean"
+                                },
+                                "cloud": {
+                                    "type": "boolean"
+                                },
+                                "hosting": {
+                                    "type": "boolean"
+                                },
+                                "proxy": {
+                                    "type": "boolean"
+                                },
+                                "spamhaus": {
+                                    "type": "boolean"
+                                },
+                                "tor": {
+                                    "type": "boolean"
+                                }
+                            }
+                        },
+                        "suggestion": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Singular Object | V2",
+            "url": "https://blackbox.p.rapidapi.com/v2/obj/8.8.8.8",
+            "description": "Note: This will work only with singular IP lookups.\n\nIf you are unkeen to lookup multiple IP addresses at the same time, and want a simpler request. This might be for you. \n\nWe will return a singular IP object, that will minimize your request complexity, but with the loss of flexibility.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "ip",
+                    "type": "string",
+                    "description": "",
+                    "default": "8.8.8.8"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://blackbox.p.rapidapi.com/v2/obj/8.8.8.8\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"blackbox.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://blackbox.p.rapidapi.com/v2/obj/{ip}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"blackbox.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "ip": "8.8.8.8",
+                "error": null,
+                "asn": {
+                    "name": "GOOGLE",
+                    "number": 15169,
+                    "network": "8.8.8.0",
+                    "cidr": 24
+                },
+                "detection": {
+                    "bogon": false,
+                    "cloud": true,
+                    "hosting": true,
+                    "proxy": false,
+                    "spamhaus": false,
+                    "tor": false
+                },
+                "suggestion": "block"
+            }
+        }
+    ],
+    "standardized_name": "blackbox"
+}

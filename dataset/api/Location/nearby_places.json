@@ -1,0 +1,1086 @@
+{
+    "product_id": "api_15992f9c-a057-4563-9395-1555c5d32b0d",
+    "tool_description": "Get nearby establishments.",
+    "home_url": "https://rapidapi.com/NovusAPI/api/nearby-places/",
+    "name": "Nearby Places",
+    "title": "Nearby Places",
+    "pricing": "FREEMIUM",
+    "tool_name": "Nearby Places",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 902,
+        "avgSuccessRate": 91,
+        "popularityScore": 9.2,
+        "__typename": "Score"
+    },
+    "host": "nearby-places.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Nearby - (ArcGIS)",
+            "url": "https://nearby-places.p.rapidapi.com/v2/nearby",
+            "description": "Returns nearby places sorted by distance from the origin coordinates in ascending order.\n\nOnly type values from **/v2/types (ArcGIS)** are valid.\n\nMaximum returned places is 50.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "lng",
+                    "type": "NUMBER",
+                    "description": "Longitude",
+                    "default": "-123.0413988"
+                },
+                {
+                    "name": "lat",
+                    "type": "NUMBER",
+                    "description": "Latitude",
+                    "default": "49.2803703"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "radius",
+                    "type": "NUMBER",
+                    "description": "**Meters**\nDefault: 200\nMaximum: 50000",
+                    "default": "500"
+                },
+                {
+                    "name": "type",
+                    "type": "STRING",
+                    "description": "Default: 'coffee shop'",
+                    "default": "coffee shop"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://nearby-places.p.rapidapi.com/v2/nearby\"\nquerystring = {\"radius\": \"500\", \"lng\": \"-123.0413988\", \"type\": \"coffee shop\", \"lat\": \"49.2803703\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"nearby-places.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://nearby-places.p.rapidapi.com/v2/nearby\"\nquerystring = {\"radius\": \"500\", \"lng\": \"-123.0413988\", \"type\": \"coffee shop\", \"lat\": \"49.2803703\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"nearby-places.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "status": "OK",
+                "results": [
+                    {
+                        "location": {
+                            "lat": "49.2825380",
+                            "lng": "-123.0430090"
+                        },
+                        "name": "Forum Cafe",
+                        "address": "Vancouver, British Columbia, V5K",
+                        "phone": "",
+                        "distanceMeter": "267.85"
+                    },
+                    {
+                        "location": {
+                            "lat": "49.2814050",
+                            "lng": "-123.0464940"
+                        },
+                        "name": "Tim Hortons",
+                        "address": "2801 Hastings St E, Vancouver, British Columbia, V5K 2A1",
+                        "phone": "(604) 254-2735",
+                        "distanceMeter": "387.09"
+                    },
+                    {
+                        "location": {
+                            "lat": "49.2813330",
+                            "lng": "-123.0470280"
+                        },
+                        "name": "Starbucks",
+                        "address": "2795 East Hastings St, Vancouver, British Columbia, V5K 1Z8",
+                        "phone": "(604) 215-2424",
+                        "distanceMeter": "422.13"
+                    }
+                ]
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "type": "string"
+                    },
+                    "results": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "location": {
+                                    "type": "object",
+                                    "properties": {
+                                        "lat": {
+                                            "type": "number"
+                                        },
+                                        "lng": {
+                                            "type": "number"
+                                        }
+                                    }
+                                },
+                                "name": {
+                                    "type": "string"
+                                },
+                                "address": {
+                                    "type": "string"
+                                },
+                                "phone": {
+                                    "type": "string"
+                                },
+                                "distanceMeter": {
+                                    "type": "number"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Nearby - (Google)",
+            "url": "https://nearby-places.p.rapidapi.com/nearby",
+            "description": "Returns a **JSON array of nearby places** sorted by distance from the origin coordinates in ascending order.\n\nOnly values from **/types (Google)** are valid types.\n\nMaximum places returned per request is 20.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "lat",
+                    "type": "NUMBER",
+                    "description": "Latitude",
+                    "default": "49.283030"
+                },
+                {
+                    "name": "lng",
+                    "type": "NUMBER",
+                    "description": "Longitude",
+                    "default": "-123.118990"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "type",
+                    "type": "STRING",
+                    "description": "Default is **cafe**.",
+                    "default": "cafe"
+                },
+                {
+                    "name": "radius",
+                    "type": "NUMBER",
+                    "description": "**Meters**\nDefault: 200\nMax: 50000",
+                    "default": "200"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://nearby-places.p.rapidapi.com/nearby\"\nquerystring = {\"type\": \"cafe\", \"lat\": \"49.283030\", \"lng\": \"-123.118990\", \"radius\": \"200\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"nearby-places.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://nearby-places.p.rapidapi.com/nearby\"\nquerystring = {\"type\": \"cafe\", \"lat\": \"49.283030\", \"lng\": \"-123.118990\", \"radius\": \"200\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"nearby-places.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "name": "Bel Caf\u00e9 Downtown",
+                    "place_id": "ChIJgQmKXX9xhlQRtBNq5dIMxZw",
+                    "location": {
+                        "lat": 49.28336249999999,
+                        "lng": -123.1190853
+                    },
+                    "address": "801 West Georgia Street, Vancouver",
+                    "rating": 4,
+                    "distanceMeter": 37.61
+                },
+                {
+                    "name": "Starbucks",
+                    "place_id": "ChIJFwL8DX9xhlQRYt1ciIJkOUg",
+                    "location": {
+                        "lat": 49.28207450000001,
+                        "lng": -123.1184392
+                    },
+                    "address": "Centre, 720 Granville Street, Vancouver",
+                    "rating": 3.9,
+                    "distanceMeter": 113.51
+                },
+                {
+                    "name": "Trees Organic Coffee 738 Granville",
+                    "place_id": "ChIJ-ZMU_A9xhlQRRYUEa_ml-4g",
+                    "location": {
+                        "lat": 49.2819205,
+                        "lng": -123.1186515
+                    },
+                    "address": "738 Granville Street, Vancouver",
+                    "rating": 3.8,
+                    "distanceMeter": 125.79
+                },
+                {
+                    "name": "My Honey's Buns",
+                    "place_id": "ChIJG7Fu3YFxhlQRAbENE7Xs2G4",
+                    "location": {
+                        "lat": 49.2839974,
+                        "lng": -123.1199192
+                    },
+                    "address": "925 West Georgia Street #1600, Vancouver",
+                    "rating": 4.5,
+                    "distanceMeter": 126.94
+                },
+                {
+                    "name": "Nero",
+                    "place_id": "ChIJw6BFBbFxhlQRrj2yJGkgjd4",
+                    "location": {
+                        "lat": 49.2827498,
+                        "lng": -123.1207057
+                    },
+                    "address": "Vancouver",
+                    "distanceMeter": 128.29
+                },
+                {
+                    "name": "Bread x Butter Cafe Downtown",
+                    "place_id": "ChIJCYQyqCtxhlQREqhtqpfP_Y4",
+                    "location": {
+                        "lat": 49.2841412,
+                        "lng": -123.1199368
+                    },
+                    "address": "925 West Georgia Street #140, Vancouver",
+                    "rating": 4.4,
+                    "distanceMeter": 141.36
+                },
+                {
+                    "name": "Take Five Cafe",
+                    "place_id": "ChIJp-ZjgXhxhlQRSDGmDvFqt1U",
+                    "location": {
+                        "lat": 49.2834188,
+                        "lng": -123.1171163
+                    },
+                    "address": "CF Pacific Centre, 609 Granville Street, Vancouver",
+                    "rating": 3.8,
+                    "distanceMeter": 142.62
+                },
+                {
+                    "name": "FortePiano Vancouver Floral Art Gallery",
+                    "place_id": "ChIJyTCq3YFxhlQRPoSSjaxa3no",
+                    "location": {
+                        "lat": 49.28418180000001,
+                        "lng": -123.1199862
+                    },
+                    "address": "925 West Georgia Street #120, Vancouver",
+                    "rating": 5,
+                    "distanceMeter": 147.05
+                },
+                {
+                    "name": "Starbucks",
+                    "place_id": "ChIJazhys3hxhlQRkaSKqLFzyNU",
+                    "location": {
+                        "lat": 49.2822988,
+                        "lng": -123.1171864
+                    },
+                    "address": "674 Granville Street, Vancouver",
+                    "rating": 2.2,
+                    "distanceMeter": 154.03
+                },
+                {
+                    "name": "Tim Hortons",
+                    "place_id": "ChIJx7q9G39xhlQRpTJlYCSyvQA",
+                    "location": {
+                        "lat": 49.28181499999999,
+                        "lng": -123.117732
+                    },
+                    "address": "650 West Georgia Street, Vancouver",
+                    "rating": 3.7,
+                    "distanceMeter": 163.03
+                },
+                {
+                    "name": "Shinkinedou",
+                    "place_id": "ChIJEXrL3nVxhlQRKvTNQpYFwuY",
+                    "location": {
+                        "lat": 49.2821562,
+                        "lng": -123.116988
+                    },
+                    "address": "674 Granville Street, Vancouver",
+                    "distanceMeter": 174.72
+                },
+                {
+                    "name": "Xing Fu Tang down town",
+                    "place_id": "ChIJUXp5roVxhlQRmzkaFvzHLxg",
+                    "location": {
+                        "lat": 49.2831479,
+                        "lng": -123.1165547
+                    },
+                    "address": "80-678 Dunsmuir Street, Vancouver",
+                    "rating": 4.5,
+                    "distanceMeter": 177.13
+                },
+                {
+                    "name": "Faubourg",
+                    "place_id": "ChIJw08HKoBxhlQRc_IB-YyPgMk",
+                    "location": {
+                        "lat": 49.2831054,
+                        "lng": -123.1214493
+                    },
+                    "address": "769 Hornby Street, Vancouver",
+                    "rating": 4.1,
+                    "distanceMeter": 178.58
+                },
+                {
+                    "name": "Artigiano",
+                    "place_id": "ChIJpQR3KoBxhlQRQdtpRzxDL8o",
+                    "location": {
+                        "lat": 49.28315720000001,
+                        "lng": -123.1214928
+                    },
+                    "address": "763 Hornby Street, Vancouver",
+                    "rating": 4,
+                    "distanceMeter": 182.09
+                },
+                {
+                    "name": "Presotea",
+                    "place_id": "ChIJowr4Un9xhlQRsEiSSJiVDHg",
+                    "location": {
+                        "lat": 49.2840479,
+                        "lng": -123.1169431
+                    },
+                    "address": "777 Dunsmuir Street, Vancouver",
+                    "rating": 3.4,
+                    "distanceMeter": 186.69
+                },
+                {
+                    "name": "Tim Hortons",
+                    "place_id": "ChIJqRpYzHhxhlQR7BYMAR02Ilc",
+                    "location": {
+                        "lat": 49.283213,
+                        "lng": -123.1164223
+                    },
+                    "address": "678 Dunsmuir Street Unit 10, Vancouver",
+                    "rating": 3.6,
+                    "distanceMeter": 187.36
+                },
+                {
+                    "name": "Caf\u00e9 Cr\u00eape Express",
+                    "place_id": "ChIJJbN3r39xhlQRYR8a21PBf2M",
+                    "location": {
+                        "lat": 49.2813598,
+                        "lng": -123.1194749
+                    },
+                    "address": "796 Granville Street, Vancouver",
+                    "rating": 3.8,
+                    "distanceMeter": 189.02
+                },
+                {
+                    "name": "Crossroads Cafe",
+                    "place_id": "ChIJjfyDh39xhlQRgTqe5Bpi2nQ",
+                    "location": {
+                        "lat": 49.28293799999999,
+                        "lng": -123.1216439
+                    },
+                    "address": "777 Hornby Street #160, Vancouver",
+                    "rating": 4.9,
+                    "distanceMeter": 192.77
+                }
+            ],
+            "statuscode": 200,
+            "schema": {
+                "type": "array",
+                "items": {
+                    "type": "object"
+                }
+            }
+        },
+        {
+            "name": "Types - (Google)",
+            "url": "https://nearby-places.p.rapidapi.com/types",
+            "description": "Get a list of establishment types.\n\nThese types will only work with **/nearby (Google)**.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://nearby-places.p.rapidapi.com/types\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"nearby-places.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://nearby-places.p.rapidapi.com/types\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"nearby-places.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": [
+                "accounting",
+                "airport",
+                "amusement_park",
+                "aquarium",
+                "art_gallery",
+                "atm",
+                "bakery",
+                "bank",
+                "bar",
+                "beauty_salon",
+                "bicycle_store",
+                "book_store",
+                "bowling_alley",
+                "bus_station",
+                "cafe",
+                "campground",
+                "car_dealer",
+                "car_rental",
+                "car_repair",
+                "car_wash",
+                "casino",
+                "cemetery",
+                "church",
+                "city_hall",
+                "clothing_store",
+                "convenience_store",
+                "courthouse",
+                "dentist",
+                "department_store",
+                "doctor",
+                "drugstore",
+                "electrician",
+                "electronics_store",
+                "embassy",
+                "fire_station",
+                "florist",
+                "funeral_home",
+                "furniture_store",
+                "gas_station",
+                "gym",
+                "hair_care",
+                "hardware_store",
+                "hindu_temple",
+                "home_goods_store",
+                "hospital",
+                "insurance_agency",
+                "jewelry_store",
+                "laundry",
+                "lawyer",
+                "library",
+                "light_rail_station",
+                "liquor_store",
+                "local_government_office",
+                "locksmith",
+                "lodging",
+                "meal_delivery",
+                "meal_takeaway",
+                "mosque",
+                "movie_rental",
+                "movie_theater",
+                "moving_company",
+                "museum",
+                "night_club",
+                "painter",
+                "park",
+                "parking",
+                "pet_store",
+                "pharmacy",
+                "physiotherapist",
+                "plumber",
+                "police",
+                "post_office",
+                "primary_school",
+                "real_estate_agency",
+                "restaurant",
+                "roofing_contractor",
+                "rv_park",
+                "school",
+                "secondary_school",
+                "shoe_store",
+                "shopping_mall",
+                "spa",
+                "stadium",
+                "storage",
+                "store",
+                "subway_station",
+                "supermarket",
+                "synagogue",
+                "taxi_stand",
+                "tourist_attraction",
+                "train_station",
+                "transit_station",
+                "travel_agency",
+                "university",
+                "veterinary_care",
+                "zoo"
+            ],
+            "statuscode": 200,
+            "schema": {
+                "type": "array",
+                "items": {
+                    "type": "string"
+                }
+            }
+        },
+        {
+            "name": "Random (Google)",
+            "url": "https://nearby-places.p.rapidapi.com/random",
+            "description": "Return a random place nearby.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "lat",
+                    "type": "NUMBER",
+                    "description": "Latitude",
+                    "default": "49.2803703"
+                },
+                {
+                    "name": "lng",
+                    "type": "NUMBER",
+                    "description": "Longitude",
+                    "default": "-123.0413988"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "type",
+                    "type": "STRING",
+                    "description": "Default: 'cafe'",
+                    "default": "cafe"
+                },
+                {
+                    "name": "radius",
+                    "type": "NUMBER",
+                    "description": "**Meters**\nDefault: 200\nMax: 50000\n",
+                    "default": "500"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://nearby-places.p.rapidapi.com/random\"\nquerystring = {\"type\": \"cafe\", \"lat\": \"49.2803703\", \"lng\": \"-123.0413988\", \"radius\": \"500\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"nearby-places.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://nearby-places.p.rapidapi.com/random\"\nquerystring = {\"type\": \"cafe\", \"lat\": \"49.2803703\", \"lng\": \"-123.0413988\", \"radius\": \"500\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"nearby-places.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "name": "Tim Hortons",
+                "place_id": "ChIJn_EpISRxhlQRovcNw0rM5CI",
+                "location": {
+                    "lat": 49.28127920000001,
+                    "lng": -123.0465055
+                },
+                "rating": 3.5,
+                "address": "2801 East Hastings Street Unit #1, Vancouver",
+                "distanceMeter": 383.97
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "place_id": {
+                        "type": "string"
+                    },
+                    "location": {
+                        "type": "object",
+                        "properties": {
+                            "lat": {
+                                "type": "number"
+                            },
+                            "lng": {
+                                "type": "number"
+                            }
+                        }
+                    },
+                    "address": {
+                        "type": "string"
+                    },
+                    "distanceMeter": {
+                        "type": "number"
+                    }
+                }
+            }
+        },
+        {
+            "name": "Place Details - (Google)",
+            "url": "https://nearby-places.p.rapidapi.com/details",
+            "description": "Get contact and opening hours for a place.\n\nRequires a **place id** provided by **/nearby (Google)**.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "id",
+                    "type": "STRING",
+                    "description": "Place ID.\nThis value can be retrieved from */nearby* or */random* endpoints.",
+                    "default": "ChIJCxzX9tpwhlQRIFVwULOI2FM"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://nearby-places.p.rapidapi.com/details\"\nquerystring = {\"id\": \"ChIJCxzX9tpwhlQRIFVwULOI2FM\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"nearby-places.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://nearby-places.p.rapidapi.com/details\"\nquerystring = {\"id\": \"ChIJCxzX9tpwhlQRIFVwULOI2FM\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"nearby-places.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "name": "Just Waffles Restaurant",
+                "place_id": "ChIJCxzX9tpwhlQRIFVwULOI2FM",
+                "location": {
+                    "lat": 49.2813406,
+                    "lng": -123.0274422
+                },
+                "address": "3531 E Hastings St, Vancouver, BC V5K 2A8, Canada",
+                "types": [
+                    "restaurant",
+                    "cafe",
+                    "food",
+                    "point_of_interest",
+                    "establishment"
+                ],
+                "map_url": "https://maps.google.com/?cid=6041729203847583008",
+                "phone": "(604) 518-9041",
+                "opening_hours": {
+                    "open_now": false,
+                    "periods": [
+                        {
+                            "close": {
+                                "day": 0,
+                                "time": "1500"
+                            },
+                            "open": {
+                                "day": 0,
+                                "time": "0900"
+                            }
+                        },
+                        {
+                            "close": {
+                                "day": 4,
+                                "time": "1500"
+                            },
+                            "open": {
+                                "day": 4,
+                                "time": "1000"
+                            }
+                        },
+                        {
+                            "close": {
+                                "day": 5,
+                                "time": "1500"
+                            },
+                            "open": {
+                                "day": 5,
+                                "time": "1000"
+                            }
+                        },
+                        {
+                            "close": {
+                                "day": 6,
+                                "time": "1500"
+                            },
+                            "open": {
+                                "day": 6,
+                                "time": "0900"
+                            }
+                        }
+                    ],
+                    "weekday_text": [
+                        "Monday: Closed",
+                        "Tuesday: Closed",
+                        "Wednesday: Closed",
+                        "Thursday: 10:00\u202fAM\u2009\u2013\u20093:00\u202fPM",
+                        "Friday: 10:00\u202fAM\u2009\u2013\u20093:00\u202fPM",
+                        "Saturday: 9:00\u202fAM\u2009\u2013\u20093:00\u202fPM",
+                        "Sunday: 9:00\u202fAM\u2009\u2013\u20093:00\u202fPM"
+                    ]
+                },
+                "website": "https://www.justwaffles.ca/"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "place_id": {
+                        "type": "string"
+                    },
+                    "location": {
+                        "type": "object",
+                        "properties": {
+                            "lat": {
+                                "type": "number"
+                            },
+                            "lng": {
+                                "type": "number"
+                            }
+                        }
+                    },
+                    "address": {
+                        "type": "string"
+                    },
+                    "types": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "map_url": {
+                        "type": "string"
+                    },
+                    "phone": {
+                        "type": "string"
+                    },
+                    "opening_hours": {
+                        "type": "object",
+                        "properties": {
+                            "open_now": {
+                                "type": "boolean"
+                            },
+                            "periods": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "close": {
+                                            "type": "object",
+                                            "properties": {
+                                                "day": {
+                                                    "type": "integer"
+                                                },
+                                                "time": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        },
+                                        "open": {
+                                            "type": "object",
+                                            "properties": {
+                                                "day": {
+                                                    "type": "integer"
+                                                },
+                                                "time": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "weekday_text": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "website": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        {
+            "name": "Types - (ArcGIS)",
+            "url": "https://nearby-places.p.rapidapi.com/v2/types",
+            "description": "Types (categories) of establishments. These types will only work with **/v2/nearby (ArcGIS)**.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://nearby-places.p.rapidapi.com/v2/types\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"nearby-places.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://nearby-places.p.rapidapi.com/v2/types\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"nearby-places.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": [
+                "Amusement Park",
+                "Aquarium",
+                "Art Gallery",
+                "Art Museum",
+                "Billiards",
+                "Bowling Alley",
+                "Casino",
+                "Cinema",
+                "Historical Monument",
+                "History Museum",
+                "Indoor Sports",
+                "Jazz Club",
+                "Landmark",
+                "Library",
+                "Live Music",
+                "Museum",
+                "Other Arts and Entertainment",
+                "Performing Arts",
+                "Ruin",
+                "Science Museum",
+                "Tourist Attraction",
+                "Wild Animal Park",
+                "Zoo",
+                "College",
+                "Fine Arts School",
+                "Other Education",
+                "School",
+                "Vocational School",
+                "African Food",
+                "American Food",
+                "Argentinean Food",
+                "Australian Food",
+                "Austrian Food",
+                "Bakery",
+                "BBQ and Southern Food",
+                "Balkan Food",
+                "Belgian Food",
+                "Bistro",
+                "Brazilian Food",
+                "Breakfast",
+                "Brewpub",
+                "British Isles Food",
+                "Burgers",
+                "Cajun and Creole Food",
+                "Caribbean Food",
+                "Chicken Restaurant",
+                "Chilean Food",
+                "Chinese Food",
+                "Coffee Shop",
+                "Continental Food",
+                "Creperie",
+                "East European Food",
+                "Fast Food",
+                "Filipino Food",
+                "French Food",
+                "Fusion Food",
+                "German Food",
+                "Greek Food",
+                "Grill",
+                "Ice Cream Shop",
+                "Indian Food",
+                "Indonesian Food",
+                "International Food",
+                "Irish Food",
+                "Italian Food",
+                "Japanese Food",
+                "Korean Food",
+                "Latin American Food",
+                "Malaysian Food",
+                "Mexican Food",
+                "Middle Eastern Food",
+                "Moroccan Food",
+                "Other Restaurant",
+                "Pastries",
+                "Pizza",
+                "Polish Food",
+                "Portuguese Food",
+                "Restaurant",
+                "Russian Food",
+                "Sandwich Shop",
+                "Scandinavian Food",
+                "Seafood",
+                "Snacks",
+                "South American Food",
+                "Southeast Asian Food",
+                "Spanish Food",
+                "Steak House",
+                "Sushi",
+                "Swiss Food",
+                "Tapas",
+                "Thai Food",
+                "Turkish Food",
+                "Vegetarian Food",
+                "Vietnamese Food",
+                "Winery",
+                "Atoll",
+                "Basin",
+                "Butte",
+                "Canyon",
+                "Cape",
+                "Cave",
+                "Cliff",
+                "Continent",
+                "Desert",
+                "Dune",
+                "Flat",
+                "Forest",
+                "Glacier",
+                "Grassland",
+                "Hill",
+                "Island",
+                "Isthmus",
+                "Lava",
+                "Marsh",
+                "Meadow",
+                "Mesa",
+                "Mountain",
+                "Mountain Range",
+                "Oasis",
+                "Other Land Feature",
+                "Peninsula",
+                "Plain",
+                "Plateau",
+                "Point",
+                "Ravine",
+                "Ridge",
+                "Rock",
+                "Scrubland",
+                "Swamp",
+                "Valley",
+                "Volcano",
+                "Wetland",
+                "Bar or Pub",
+                "Dancing",
+                "Karaoke",
+                "Night Club",
+                "Nightlife",
+                "Basketball",
+                "Beach",
+                "Campground",
+                "Diving Center",
+                "Fishing",
+                "Garden",
+                "Golf Course",
+                "Golf Driving Range",
+                "Harbor",
+                "Hockey",
+                "Ice Skating Rink",
+                "Nature Reserve",
+                "Other Parks and Outdoors",
+                "Park",
+                "Racetrack",
+                "Scenic Overlook",
+                "Shooting Range",
+                "Ski Lift",
+                "Ski Resort",
+                "Soccer",
+                "Sports Center",
+                "Sports Field",
+                "Swimming Pool",
+                "Tennis Court",
+                "Trail",
+                "Wildlife Reserve",
+                "Ashram",
+                "Banquet Hall",
+                "Border Crossing",
+                "Building",
+                "Business Facility",
+                "Cemetery",
+                "Church",
+                "City Hall",
+                "Civic Center",
+                "Convention Center",
+                "Court House",
+                "Dentist",
+                "Doctor",
+                "Embassy",
+                "Factory",
+                "Farm",
+                "Fire Station",
+                "Government Office",
+                "Gurdwara",
+                "Hospital",
+                "Industrial Zone",
+                "Insurance",
+                "Livestock",
+                "Medical Clinic",
+                "Military Base",
+                "Mine",
+                "Mosque",
+                "Observatory",
+                "Oil Facility",
+                "Orchard",
+                "Other Professional Place",
+                "Other Religious Place",
+                "Place of Worship",
+                "Plantation",
+                "Police Station",
+                "Post Office",
+                "Power Station",
+                "Prison",
+                "Public Restroom",
+                "Radio Station",
+                "Ranch",
+                "Recreation Facility",
+                "Religious Center",
+                "Scientific Research",
+                "Shrine",
+                "Storage",
+                "Synagogue",
+                "Telecom",
+                "Temple",
+                "Tower",
+                "Veterinarian",
+                "Vineyard",
+                "Warehouse",
+                "Water Tank",
+                "Water Treatment",
+                "Estate",
+                "House",
+                "Nursing Home",
+                "Residential Area",
+                "ATM",
+                "Auto Dealership",
+                "Auto Maintenance",
+                "Auto Parts",
+                "Bank",
+                "Beauty Salon",
+                "Beauty Supplies",
+                "Bookstore",
+                "Business Facility",
+                "Butcher",
+                "Candy Store",
+                "Car Wash",
+                "Childrens Apparel",
+                "Clothing Store",
+                "Consumer Electronics Store",
+                "Convenience Store",
+                "Delivery Service",
+                "Department Store",
+                "Electrical",
+                "Fitness Center",
+                "Flea Market",
+                "Food and Beverage Shop",
+                "Footwear",
+                "Furniture Store",
+                "Gas Station",
+                "Grocery",
+                "Home Improvement Store",
+                "Jewelry",
+                "Laundry",
+                "Market",
+                "Mens Apparel",
+                "Mobile Phone Shop",
+                "Motorcycle Shop",
+                "Office Supplies Store",
+                "Optical",
+                "Other Shops and Service",
+                "Pet Store",
+                "Pharmacy",
+                "Plumbing",
+                "Real Estate",
+                "Repair Services",
+                "Shopping Center",
+                "Spa",
+                "Specialty Store",
+                "Sporting Goods Store",
+                "Tire Store",
+                "Toy Store",
+                "Used Car Dealership",
+                "Wholesale Warehouse",
+                "Wine and Liquor",
+                "Womens Apparel",
+                "Airport",
+                "Bed and Breakfast",
+                "Bridge",
+                "Bus Station",
+                "Cargo Center",
+                "Dock",
+                "Ferry",
+                "Heliport",
+                "Hostel",
+                "Hotel",
+                "Marina",
+                "Metro Station",
+                "Motel",
+                "Other Travel",
+                "Parking",
+                "Pier",
+                "Port",
+                "Railyard",
+                "Rental Cars",
+                "Resort",
+                "Rest Area",
+                "Taxi",
+                "Tollbooth",
+                "Tourist Information",
+                "Train Station",
+                "Transportation Service",
+                "Travel Agency",
+                "Truck Stop",
+                "Tunnel",
+                "Weigh Station",
+                "Bay",
+                "Canal",
+                "Channel",
+                "Cove",
+                "Dam",
+                "Delta",
+                "Estuary",
+                "Fjord",
+                "Gulf",
+                "Hot Spring",
+                "Irrigation",
+                "Jetty",
+                "Lagoon",
+                "Lake",
+                "Ocean",
+                "Other Water Feature",
+                "Reef",
+                "Reservoir",
+                "Sea",
+                "Sound",
+                "Spring",
+                "Strait",
+                "Stream",
+                "Waterfall",
+                "Well",
+                "Wharf"
+            ],
+            "statuscode": 200,
+            "schema": {
+                "type": "array",
+                "items": {
+                    "type": "string"
+                }
+            }
+        }
+    ],
+    "standardized_name": "nearby_places"
+}

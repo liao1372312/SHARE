@@ -1,0 +1,28 @@
+{
+  "user_query": "I want to read the latest manga releases in the Harem and Fantasy genres. Please fetch the latest manga and provide me with the chapter list and images for each manga.",
+  "domain": "entertainment",
+  "TaskList": [
+    {
+      "id": 1,
+      "description": "查询最新的Harem和Fantasy类别的漫画列表",
+      "domain": "entertainment",
+      "required_inputs": ["genre1", "genre2"]
+    },
+    {
+      "id": 2,
+      "description": "获取每部漫画的章节列表",
+      "domain": "entertainment",
+      "required_inputs": ["manga_id"]
+    },
+    {
+      "id": 3,
+      "description": "获取每个章节的封面图片和内容预览",
+      "domain": "entertainment",
+      "required_inputs": ["chapter_id"]
+    }
+  ],
+  "dependencies": [
+    {"from": 1, "to": 2},
+    {"from": 2, "to": 3}
+  ]
+}

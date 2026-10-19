@@ -1,0 +1,26 @@
+{
+"user_query":"I want to plan a camping trip to Yellowstone National Park. Can you fetch the 5-day weather forecast for that location? Additionally, provide me with the current weather data to help me prepare for the trip. Lastly, check for any severe weather alerts in the area during my visit.",
+"domain":"Tourism",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Fetch the current weather data for Yellowstone National Park.",
+        "domain": "tourism",
+        "required_inputs": ["location", "current_weather"]
+    },
+    {
+        "id": 2,
+        "description": "Fetch the 5-day weather forecast for Yellowstone National Park.",
+        "domain": "tourism",
+        "required_inputs": ["location", "5_day_forecast"],
+        "dependencies": [1]
+    },
+    {
+        "id": 3,
+        "description": "Check for any severe weather alerts in the Yellowstone National Park area.",
+        "domain": "tourism",
+        "required_inputs": ["location", "severe_weather_alerts"],
+        "dependencies": [1]
+    }
+]
+}

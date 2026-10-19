@@ -1,0 +1,32 @@
+{
+"user_query":"Help me find some funny memes to brighten up my day. Show me the top memes from the 'funny' subreddit and provide me with the details of the most upvoted post. Also, search for comments related to that post and display them.",
+"domain":"technology",
+"TaskList": [
+{
+"id": 1,
+"description": "Fetch the top memes from the 'funny' subreddit.",
+"domain": "technology",
+"required_inputs": []
+},
+{
+"id": 2,
+"description": "Identify the most upvoted post from the fetched memes.",
+"domain": "technology",
+"required_inputs": ["list_of_memes"]
+},
+{
+"id": 3,
+"description": "Retrieve the details of the most upvoted post.",
+"domain": "technology",
+"required_inputs": ["most_upvoted_post_id"], 
+"dependencies": [2]
+},
+{
+"id": 4,
+"description": "Search for comments related to the most upvoted post.",
+"domain": "technology",
+"required_inputs": ["most_upvoted_post_id"],
+"dependencies": [3]
+}
+]
+}

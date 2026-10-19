@@ -1,0 +1,288 @@
+{
+    "product_id": "api_d2b7bca7-7934-4ed6-9cac-44d01d480d7d",
+    "tool_description": "Fast and Simple search for product offers and reviews from all major sources, in a single API.",
+    "home_url": "https://rapidapi.com/letscrape-6bRBa3QguO5/api/real-time-product-search/",
+    "name": "Real-Time Product Search",
+    "title": "Real-Time Product Search",
+    "pricing": "FREEMIUM",
+    "tool_name": "Real-Time Product Search",
+    "score": {
+        "avgServiceLevel": 97,
+        "avgLatency": 2633,
+        "avgSuccessRate": 97,
+        "popularityScore": 9.8,
+        "__typename": "Score"
+    },
+    "host": "real-time-product-search.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Search",
+            "url": "https://real-time-product-search.p.rapidapi.com/search",
+            "description": "Search for product offers - both free-form queries and GTIN/EAN are supported. Each page contains up to 30 product offers. Infinite pagination/scrolling is supported using the *page* parameter.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "q",
+                    "type": "STRING",
+                    "description": "Free-form search query or a GTIN/EAN (e.g. *0194252014233*).",
+                    "default": "Nike shoes"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "store_id",
+                    "type": "STRING",
+                    "description": "Only return product offers from a specific store. Store IDs can be obtained from the Google Shopping URL after using the **Seller** filter by taking the first part of the `merchagg` variable (until the first *|*) within the `tbs` parameter.\n\n**Example**\nafter filtering for eBay, the following URL is shown on the address bar: `https://www.google.com/search?gl=us&tbm=shop&q=shoes&tbs=mr:1,merchagg:g6296794|m6296724|m133929137`, in that case, the extracted eBay Store ID is  **g6296794**.",
+                    "default": ""
+                },
+                {
+                    "name": "sort_by",
+                    "type": "ENUM",
+                    "description": "Sort product offers by best match, top rated, lowest or highest price.\nPossible values: `BEST_MATCH`, `TOP_RATED`, `LOWEST_PRICE`, `HIGHEST_PRICE`.\nDefault: `BEST_MATCH`.",
+                    "default": ""
+                },
+                {
+                    "name": "max_shipping_days",
+                    "type": "NUMBER",
+                    "description": "Only return product offers that offer shipping/delivery of up to specific number of days (i.e. shipping speed).",
+                    "default": ""
+                },
+                {
+                    "name": "page",
+                    "type": "NUMBER",
+                    "description": "Results page to return.\nDefault: `1`.",
+                    "default": ""
+                },
+                {
+                    "name": "on_sale",
+                    "type": "BOOLEAN",
+                    "description": "Only return product offers that are currently on sale.\nDefault: `false`.",
+                    "default": ""
+                },
+                {
+                    "name": "product_condition",
+                    "type": "ENUM",
+                    "description": "Only return products with a specific condition.\nPossible values: `NEW`, `USED`, `REFURBISHED`.",
+                    "default": ""
+                },
+                {
+                    "name": "free_shipping",
+                    "type": "BOOLEAN",
+                    "description": "Only return product offers that offer free shipping/delivery.\nDefault: `false`.",
+                    "default": ""
+                },
+                {
+                    "name": "language",
+                    "type": "STRING",
+                    "description": "The language of the results.\nValid values: see https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes\nDefault: `en`.",
+                    "default": "en"
+                },
+                {
+                    "name": "country",
+                    "type": "STRING",
+                    "description": "Country code of the region/country to return offers for.\nValid values: see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2\nDefault: `us`.",
+                    "default": "us"
+                },
+                {
+                    "name": "free_returns",
+                    "type": "BOOLEAN",
+                    "description": "Only return product offers that offer free returns.\nDefault: `false`.",
+                    "default": ""
+                },
+                {
+                    "name": "max_price",
+                    "type": "NUMBER",
+                    "description": "Only return product offers with price lower than a certain value.",
+                    "default": ""
+                },
+                {
+                    "name": "min_price",
+                    "type": "NUMBER",
+                    "description": "Only return product offers with price greater than a certain value.",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://real-time-product-search.p.rapidapi.com/search\"\nquerystring = {\"store_id\": \"\", \"sort_by\": \"\", \"max_shipping_days\": \"\", \"page\": \"\", \"on_sale\": \"\", \"product_condition\": \"\", \"free_shipping\": \"\", \"language\": \"en\", \"country\": \"us\", \"free_returns\": \"\", \"q\": \"Nike shoes\", \"max_price\": \"\", \"min_price\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"real-time-product-search.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://real-time-product-search.p.rapidapi.com/search\"\nquerystring = {\"store_id\": \"\", \"sort_by\": \"\", \"max_shipping_days\": \"\", \"page\": \"\", \"on_sale\": \"\", \"product_condition\": \"\", \"free_shipping\": \"\", \"language\": \"en\", \"country\": \"us\", \"free_returns\": \"\", \"q\": \"Nike shoes\", \"max_price\": \"\", \"min_price\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"real-time-product-search.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You are not subscribed to this API."
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "type": "string"
+                    },
+                    "request_id": {
+                        "type": "string"
+                    },
+                    "data": {
+                        "type": "array",
+                        "items": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Product Reviews",
+            "url": "https://real-time-product-search.p.rapidapi.com/product-reviews",
+            "description": "Get all product reviews. Infinite pagination/scrolling is supported using the *limit* and *offset* parameters.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "product_id",
+                    "type": "STRING",
+                    "description": "Product id of the product for which to fetch reviews.",
+                    "default": "11577822456427762145"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "country",
+                    "type": "STRING",
+                    "description": "Country code of the region/country.\nValid values: see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2\nDefault: `us`.",
+                    "default": "us"
+                },
+                {
+                    "name": "language",
+                    "type": "STRING",
+                    "description": "The language of the results.\nValid values: see https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes\nDefault: `en`.",
+                    "default": "en"
+                },
+                {
+                    "name": "offset",
+                    "type": "STRING",
+                    "description": "Number of reviews to skip.\nValid values: integers from 0-30000\nDefault: `0`.",
+                    "default": ""
+                },
+                {
+                    "name": "rating",
+                    "type": "STRING",
+                    "description": "Only return reviews with user rating greater than the specified value.\nValid values: 1-5.",
+                    "default": ""
+                },
+                {
+                    "name": "limit",
+                    "type": "STRING",
+                    "description": "Maximum number of product reviews to return.\nValid values: integers from 0-100.\nDefault: `10`.",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://real-time-product-search.p.rapidapi.com/product-reviews\"\nquerystring = {\"country\": \"us\", \"language\": \"en\", \"offset\": \"\", \"product_id\": \"11577822456427762145\", \"rating\": \"\", \"limit\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"real-time-product-search.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://real-time-product-search.p.rapidapi.com/product-reviews\"\nquerystring = {\"country\": \"us\", \"language\": \"en\", \"offset\": \"\", \"product_id\": \"11577822456427762145\", \"rating\": \"\", \"limit\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"real-time-product-search.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "status": "ERROR",
+                "request_id": "85994fbc-c770-4434-93a5-fe46fc249904",
+                "error": {
+                    "message": "The 'rating' parameter should be an integer from 1-5.",
+                    "code": 400
+                }
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "type": "string"
+                    },
+                    "request_id": {
+                        "type": "string"
+                    },
+                    "data": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "review_id": {
+                                    "type": "string"
+                                },
+                                "review_title": {
+                                    "type": "string"
+                                },
+                                "review_author": {
+                                    "type": "string"
+                                },
+                                "review_source": {
+                                    "type": "string"
+                                },
+                                "review_source_url": {
+                                    "type": "string"
+                                },
+                                "review_text": {
+                                    "type": "string"
+                                },
+                                "rating": {
+                                    "type": "integer"
+                                },
+                                "review_datetime_utc": {
+                                    "type": "string"
+                                },
+                                "review_language": {
+                                    "type": "string"
+                                },
+                                "photos": {
+                                    "type": "array"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Product Offers",
+            "url": "https://real-time-product-search.p.rapidapi.com/product-offers",
+            "description": "Get all offers available for a product.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "product_id",
+                    "type": "STRING",
+                    "description": "Product id of the product for which to fetch offers.",
+                    "default": "11577822456427762145"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "country",
+                    "type": "STRING",
+                    "description": "Country code of the region/country to return offers for.\nValid values: see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2\nDefault: `us`.",
+                    "default": "us"
+                },
+                {
+                    "name": "language",
+                    "type": "STRING",
+                    "description": "The language of the results.\nValid values: see https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes\nDefault: `en`.",
+                    "default": "en"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://real-time-product-search.p.rapidapi.com/product-offers\"\nquerystring = {\"country\": \"us\", \"product_id\": \"11577822456427762145\", \"language\": \"en\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"real-time-product-search.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://real-time-product-search.p.rapidapi.com/product-offers\"\nquerystring = {\"country\": \"us\", \"product_id\": \"11577822456427762145\", \"language\": \"en\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"real-time-product-search.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per minute for your plan, BASIC, by the API provider"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "type": "string"
+                    },
+                    "request_id": {
+                        "type": "string"
+                    },
+                    "data": {
+                        "type": "array",
+                        "items": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "standardized_name": "real_time_product_search"
+}

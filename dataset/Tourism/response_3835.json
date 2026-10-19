@@ -1,0 +1,56 @@
+{
+"user_query":"I'm planning a vacation with my friends and want to explore new and exciting apps for entertainment. Provide me with a list of popular apps in different categories like music, games, and social networking. Also, generate a QR code for a random app from each category to try out during our trip.",
+"domain":"Tourism",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Fetch a list of popular music apps.",
+        "domain": "tourism",
+        "required_inputs": []
+    },
+    {
+        "id": 2,
+        "description": "Fetch a list of popular game apps.",
+        "domain": "tourism",
+        "required_inputs": []
+    },
+    {
+        "id": 3,
+        "description": "Fetch a list of popular social networking apps.",
+        "domain": "tourism",
+        "required_inputs": []
+    },
+    {
+        "id": 4,
+        "description": "Select a random app from the list of music apps and generate a QR code for it.",
+        "domain": "tourism",
+        "required_inputs": ["music app list"]
+    },
+    {
+        "id": 5,
+        "description": "Select a random app from the list of game apps and generate a QR code for it.",
+        "domain": "tourism",
+        "required_inputs": ["game app list"]
+    },
+    {
+        "id": 6,
+        "description": "Select a random app from the list of social networking apps and generate a QR code for it.",
+        "domain": "tourism",
+        "required_inputs": ["social networking app list"]
+    }
+],
+"dependencies": [
+    {
+        "subtask_id": 4,
+        "depends_on": 1
+    },
+    {
+        "subtask_id": 5,
+        "depends_on": 2
+    },
+    {
+        "subtask_id": 6,
+        "depends_on": 3
+    }
+]
+}

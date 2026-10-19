@@ -1,0 +1,39 @@
+{
+"user_query":"I'm planning a camping trip with my family and we want to ensure a safe and enjoyable experience. Find the nearest named place from our camping location and provide us with the current weather data, a 1-hour forecast, and a list of essential camping supplies. Additionally, suggest some nearby hiking trails.",
+"domain":"Tourism",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Find the nearest named place from the camping location.",
+        "domain": "tourism",
+        "required_inputs": ["camping_location_coordinates"]
+    },
+    {
+        "id": 2,
+        "description": "Get the current weather data for the nearest named place.",
+        "domain": "tourism",
+        "required_inputs": ["nearest_named_place_id"],
+        "dependencies": [1] 
+    },
+    {
+        "id": 3,
+        "description": "Get a 1-hour weather forecast for the nearest named place.",
+        "domain": "tourism",
+        "required_inputs": ["nearest_named_place_id"],
+        "dependencies": [2]
+    },
+    {
+        "id": 4,
+        "description": "Provide a list of essential camping supplies.",
+        "domain": "tourism",
+        "required_inputs": []
+    },
+    {
+        "id": 5,
+        "description": "Suggest nearby hiking trails based on the nearest named place.",
+        "domain": "tourism",
+        "required_inputs": ["nearest_named_place_id"],
+        "dependencies": [1]
+    }
+]
+}

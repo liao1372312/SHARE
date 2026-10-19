@@ -1,0 +1,144 @@
+{
+    "product_id": "api_162f1d8f-7779-432d-8819-1f7ec5264ab3",
+    "tool_description": "Free API to get Amazon product metadata. Product details, Reviews, Offers, and Search Queries.",
+    "home_url": "https://rapidapi.com/marwantaman87/api/basic-amazon-scraper/",
+    "name": "Basic Amazon Scraper",
+    "title": "Basic Amazon Scraper",
+    "pricing": "FREEMIUM",
+    "tool_name": "Basic Amazon Scraper",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 2608,
+        "avgSuccessRate": 100,
+        "popularityScore": 8.5,
+        "__typename": "Score"
+    },
+    "host": "basic-amazon-scraper.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "GET Product Search Results",
+            "url": "https://basic-amazon-scraper.p.rapidapi.com/search/macbook air",
+            "description": "GET Product Search Results: Get product offers from a search query.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "searchQuery",
+                    "type": "string",
+                    "description": "",
+                    "default": "macbook air"
+                },
+                {
+                    "name": "api_key",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "f03399e151f471ce4a771f1se2f5yg3d"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://basic-amazon-scraper.p.rapidapi.com/search/macbook air\"\nquerystring = {\"api_key\": \"f03399e151f471ce4a771f1se2f5yg3d\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"basic-amazon-scraper.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://basic-amazon-scraper.p.rapidapi.com/search/{searchquery}\"\nquerystring = {\"api_key\": \"f03399e151f471ce4a771f1se2f5yg3d\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"basic-amazon-scraper.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You are not subscribed to this API."
+            }
+        },
+        {
+            "name": "GET Product Offers",
+            "url": "https://basic-amazon-scraper.p.rapidapi.com/products/B08N5LNQCX/offers",
+            "description": "GET Product Offers: Get all offers available for a product.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "productId",
+                    "type": "string",
+                    "description": "",
+                    "default": "B08N5LNQCX"
+                },
+                {
+                    "name": "api_key",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "f03399e151471ce4a771f6dsdfdjfoev87"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://basic-amazon-scraper.p.rapidapi.com/products/B08N5LNQCX/offers\"\nquerystring = {\"api_key\": \"f03399e151471ce4a771f6dsdfdjfoev87\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"basic-amazon-scraper.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://basic-amazon-scraper.p.rapidapi.com/products/{productid}/offers\"\nquerystring = {\"api_key\": \"f03399e151471ce4a771f6dsdfdjfoev87\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"basic-amazon-scraper.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "name": "StatusCodeError",
+                "statusCode": 401,
+                "message": "401 - \"Unauthorized request, please make sure your API key is valid.\"",
+                "error": "Unauthorized request, please make sure your API key is valid.",
+                "options": {
+                    "uri": "http://api.scraperapi.com?api_key=f03399e151471ce4a771f6dsdfdjfoev87&autoparse=true&url=https://www.amazon.com/gp/offer-listing/B08N5LNQCX",
+                    "simple": true,
+                    "resolveWithFullResponse": false,
+                    "transform2xxOnly": false
+                },
+                "response": {
+                    "statusCode": 401,
+                    "body": "Unauthorized request, please make sure your API key is valid.",
+                    "headers": {
+                        "date": "Fri, 16 Jun 2023 20:48:37 GMT",
+                        "content-type": "text/html; charset=utf-8",
+                        "content-length": "61",
+                        "connection": "close",
+                        "x-powered-by": "Express",
+                        "access-control-allow-origin": "undefined",
+                        "access-control-allow-headers": "Origin, X-Requested-With, Content-Type, Accept",
+                        "access-control-allow-methods": "HEAD,GET,POST,DELETE,OPTIONS,PUT",
+                        "access-control-allow-credentials": "true",
+                        "x-robots-tag": "none",
+                        "etag": "W/\"3d-jr2uHCCFu/XcPLkZtEYX1XNsziQ\"",
+                        "vary": "Accept-Encoding"
+                    },
+                    "request": {
+                        "uri": {
+                            "protocol": "http:",
+                            "slashes": true,
+                            "auth": null,
+                            "host": "api.scraperapi.com",
+                            "port": 80,
+                            "hostname": "api.scraperapi.com",
+                            "hash": null,
+                            "search": "?api_key=f03399e151471ce4a771f6dsdfdjfoev87&autoparse=true&url=https://www.amazon.com/gp/offer-listing/B08N5LNQCX",
+                            "query": "api_key=f03399e151471ce4a771f6dsdfdjfoev87&autoparse=true&url=https://www.amazon.com/gp/offer-listing/B08N5LNQCX",
+                            "pathname": "/",
+                            "path": "/?api_key=f03399e151471ce4a771f6dsdfdjfoev87&autoparse=true&url=https://www.amazon.com/gp/offer-listing/B08N5LNQCX",
+                            "href": "http://api.scraperapi.com/?api_key=f03399e151471ce4a771f6dsdfdjfoev87&autoparse=true&url=https://www.amazon.com/gp/offer-listing/B08N5LNQCX"
+                        },
+                        "method": "GET",
+                        "headers": {}
+                    }
+                }
+            }
+        },
+        {
+            "name": "Get Amazon Product Details",
+            "url": "https://basic-amazon-scraper.p.rapidapi.com/products/B08N5LNQCX",
+            "description": "GET Product Details: Get all details pertaining to a product ID (ASIN)",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "productId",
+                    "type": "string",
+                    "description": "",
+                    "default": "B08N5LNQCX"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "api_key",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "f03399e151f471ce4a71f6jshdy76543"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://basic-amazon-scraper.p.rapidapi.com/products/B08N5LNQCX\"\nquerystring = {\"api_key\": \"f03399e151f471ce4a71f6jshdy76543\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"basic-amazon-scraper.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://basic-amazon-scraper.p.rapidapi.com/products/{productid}\"\nquerystring = {\"api_key\": \"f03399e151f471ce4a71f6jshdy76543\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"basic-amazon-scraper.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the MONTHLY quota for Buy me Coffee on your current plan, BASIC. Upgrade your plan at https://rapidapi.com/marwantaman87/api/basic-amazon-scraper"
+            }
+        }
+    ],
+    "standardized_name": "basic_amazon_scraper"
+}

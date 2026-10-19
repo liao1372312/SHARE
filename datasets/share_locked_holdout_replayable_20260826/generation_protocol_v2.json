@@ -1,0 +1,107 @@
+{
+  "schema_version": 2,
+  "kind": "share_locked_holdout_data_generation_preregistration",
+  "protocol_id": "share-locked-replayable-400-v2",
+  "supersedes": "share-locked-replayable-400-v1",
+  "reason_for_supersession": "v1 fixed the design but did not enumerate every numeric simulation coefficient; v2 removes that residual discretion before any episode or branch outcome is generated",
+  "frozen_at_utc": "2026-08-26T00:05:00Z",
+  "pre_freeze_access_disclosure": {
+    "candidate_schema_and_two_example_records_inspected": true,
+    "candidate_selection_performed": false,
+    "episodes_or_branch_outcomes_generated": false,
+    "method_artifacts_or_method_outcomes_accessed": false
+  },
+  "scope": "data_generation_and_provenance_only",
+  "prohibitions": [
+    "do_not_load_or_run_SHARE_or_comparator_artifacts",
+    "do_not_read_method_level_outcomes",
+    "do_not_bind_or_run_the_locked_evaluator",
+    "do_not_relabel_simulated_branch_outcomes_as_real"
+  ],
+  "target": {
+    "episodes": 400,
+    "unique_workflow_groups": 400,
+    "episodes_per_group": 1,
+    "split": "locked_holdout_unbound",
+    "failure_type_order_and_counts": [["planning_failure",67],["service_selection_failure",67],["parameter_binding_failure",67],["tool_execution_failure",67],["supervisor_failure",66],["answer_grounding_failure",66]],
+    "complexity_order_and_counts": [["low",134],["medium",133],["high",133]]
+  },
+  "source": {
+    "path": "datasets/share_public_api_workflow_input.jsonl",
+    "sha256": "64125bb8750c07a0c2d53e555c1a7070aff4fdc77be395c93ee056d05f3f133f",
+    "kind": "repository_public_api_document_corpus",
+    "expected_records": 3000,
+    "expected_groups": 884,
+    "source_records_synthetic": false,
+    "evidence_scope": "public_api_document_review_not_observed_service_execution_or_paired_outcome",
+    "representative_rule": "one record per group: argmin SHA256('2026082601:' || canonical_record)",
+    "selection_rule": "after exclusions, sort representatives by (complexity_score, SHA256('2026082601:' || group_id)); choose positions 0..133 as low, 134..266 as medium, and the final 133 as high",
+    "identifier_rule": "episode_id='locked-replay-' + first24(SHA256('2026082601:' || workflow_id)); preserve source workflow_id and group_id in metadata"
+  },
+  "seeds": {"selection":2026082601,"failure_assignment":2026082602,"branch_construction":2026082603,"labeling":2026082604},
+  "source_feature_rules": {
+    "mutating_method": "1 for POST or PUT, else 0",
+    "destructive_method": "1 for PATCH or DELETE, else 0",
+    "required_parameter_count": "length of context.operation.required_parameters",
+    "risk_lexicon": ["delete","remove","revoke","disable","terminate","write","update","create","payment","secret","token","credential","admin"],
+    "risk_lexicon_hits": "number of distinct lexicon entries present case-insensitively in operation_name + description + endpoint_path, capped at 3",
+    "complexity_score": "4*destructive_method + 2*mutating_method + min(required_parameter_count,6) + min(description_character_count/300,2) + risk_lexicon_hits"
+  },
+  "failure_assignment": "sort selected groups by SHA256('2026082602:' || group_id); expand failure_type_order_and_counts in listed order and assign positionally",
+  "simulation": {
+    "version": "share-replay-sim-v2",
+    "synthetic": true,
+    "uniform": "u(key)=int(first13hex(SHA256('2026082603:' || key)),16)/16^13",
+    "clip": "clip every probability/state scalar to [0,1]",
+    "complexity_value": {"low":0.30,"medium":0.65,"high":0.90},
+    "horizon": {"low":2,"medium":3,"high":5},
+    "failure_ai_offset": {"planning_failure":-0.08,"service_selection_failure":-0.02,"parameter_binding_failure":0.04,"tool_execution_failure":0.00,"supervisor_failure":-0.12,"answer_grounding_failure":-0.06},
+    "failure_unsafe_offset": {"planning_failure":0.03,"service_selection_failure":0.02,"parameter_binding_failure":0.01,"tool_execution_failure":0.05,"supervisor_failure":0.06,"answer_grounding_failure":0.04},
+    "state_formulas": {
+      "localization_score": "clip(0.82 - 0.12*c - 0.05*step + 0.08*u(ep:step:localization))",
+      "repair_utility": "clip(0.72 - 0.08*c + 0.10*u(ep:step:utility))",
+      "affected_ratio": "clip(0.15 + 0.35*c + 0.10*min(required_parameter_count/6,1))",
+      "downstream_impact": "clip(affected_ratio*(1+0.6*c))",
+      "drift_risk": "clip(0.10 + 0.35*c + 0.20*method_mutability + 0.05*step)",
+      "previous_failures": "step/max(horizon-1,1)",
+      "uncertainty": "clip(0.15 + 0.25*c + 0.12*step + 0.15*u(ep:step:uncertainty))",
+      "evidence_conflict": "0.55 if answer_grounding_failure else 0.10*u(ep:step:conflict)",
+      "remaining_budget": "(horizon-step)/horizon"
+    },
+    "branch_formulas": {
+      "ai_success_probability": "clip(0.70 + failure_ai_offset - 0.18*c - 0.07*step - 0.10*method_mutability + 0.08*u(ep:step:ai:p))",
+      "ai_success": "u(ep:step:ai:success) < ai_success_probability",
+      "ai_unsafe_probability_given_failure": "clip(0.10 + failure_unsafe_offset + 0.25*c + 0.20*method_mutability + 0.05*step)",
+      "ai_unsafe": "not ai_success and u(ep:step:ai:unsafe) < ai_unsafe_probability_given_failure",
+      "ai_terminal": "ai_success or step==horizon-1",
+      "ai_quality_latency_cost": "quality=0.8 if success else -0.35; latency=0.15+0.25*affected_ratio; cost=0.12+0.35*affected_ratio; human_minutes=0",
+      "human_success_probability": "clip(0.93 - 0.08*c - 0.03*step + 0.04*u(ep:step:human:p))",
+      "human_success": "u(ep:step:human:success) < human_success_probability",
+      "human_unsafe_probability_given_failure": "clip(0.01 + 0.03*c + 0.02*method_mutability)",
+      "human_unsafe": "not human_success and u(ep:step:human:unsafe) < human_unsafe_probability_given_failure",
+      "human_terminal": "true",
+      "human_quality_latency_cost": "quality=0.9 if success else -0.15; latency=0.55+0.35*c; cost=0.18; human_minutes=4+8*c+2*step",
+      "stop": "success=false; unsafe=false; quality=-0.1; latency=0.05; cost=0.02; human_minutes=0; terminal=true"
+    }
+  },
+  "labeling": {
+    "reward_config": {"quality_weight":1.0,"latency_weight":0.1,"execution_weight":0.1,"ineffective_weight":0.25,"success_reward":1.0,"unsafe_penalty":2.0,"rollback_penalty":0.25},
+    "gamma": 0.95,
+    "margin": 0.1,
+    "rule": "human_beneficial iff Human base reward minus AI policy's downstream discounted return is strictly greater than 0.1",
+    "source": "deterministic_simulation_not_human_annotation"
+  },
+  "audit": {
+    "historical_identifier_sources": ["datasets/share_guard_development/historical_identifiers.json","datasets/share_synthetic/episodes.jsonl","datasets/share_guard_development/episodes.jsonl","datasets/share_synthetic_augmented_guard_development/episodes.jsonl"],
+    "dimensions": ["episode_id","workflow_id","group_id","source_document_sha256","normalized_source_fingerprint"],
+    "normalized_source_fingerprint": "SHA256(canonical JSON of source, group_id, operation_name, method, endpoint_path, required_parameters)",
+    "duplicates": ["episode_id","workflow_id","group_id","source_record_sha256","normalized_source_fingerprint"],
+    "abort_conditions": ["source_hash_mismatch","source_count_mismatch","source_group_count_mismatch","any_overlap","any_duplicate","quota_mismatch","schema_error","any_episode_synthetic_not_true"]
+  },
+  "eligibility": {
+    "locked_evaluator_binding": false,
+    "evidence_kind": "real_source_replayable_simulated_paired_outcomes",
+    "reason": "outcomes are simulated counterfactual branches over real documentation cases",
+    "upgrade_requirement": "immutable observed AI/Human/Stop execution artifacts for every branch and successful real-paired import"
+  }
+}

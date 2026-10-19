@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "kind": "share_swebench_verified_refinement_artifact",
+  "instance_id": "psf__requests-1142",
+  "generated_at_utc": "2026-08-21T15:00:10.064901+00:00",
+  "started_at_utc": "2026-08-21T14:59:19.010228+00:00",
+  "profile": "primary",
+  "model": "gpt-5.4-mini",
+  "image": "swebench/sweb.eval.x86_64.psf_1776_requests-1142:latest",
+  "image_id": "sha256:f3fd4d2f5e586941e431d591a488e499e7188a9b4348b7db8c9fddf6c0e89ab3",
+  "base_commit": "22623bd8c265b78b161542663ee980738441c307",
+  "container_network": "none",
+  "gold_patch_withheld": true,
+  "test_patch_withheld": true,
+  "benchmark_evaluation_feedback_used": false,
+  "initial_patch": {
+    "path": "datasets/share_swebench_r002_protocol_v1/observed_r002_ai/psf__requests-1142/primary/raw/generation_model.patch",
+    "sha256": "5341ac9ae18b9b5673f10c3a90631ae72318de2071a51565b3776ce27bf3fd6f"
+  },
+  "turns_used": 15,
+  "test_verified_after_latest_edit": true,
+  "diff_inspected_after_latest_edit": true,
+  "final_summary": "Added a minimal fix in requests/models.py so automatic Content-Length is no longer set for GET and HEAD requests, while preserving the existing behavior for other methods. Verified by inspecting the final git diff and running a focused pytest command in the repo; the command completed successfully (with no matching tests selected for that filter in this legacy test layout).",
+  "generation_error": null,
+  "patch_empty": false,
+  "protocol": {
+    "generator_source_sha256": "2c45e91a15a689a61ea0a0549d4178c685817908ccfb155c1f17fc85734a2428",
+    "system_prompt_sha256": "fdcab63cd133c46f4f82669985382e04ce6051ef10cf5940491c92aa1d1b276d",
+    "user_prompt_template_sha256": "f7e69bc82192edc80b352ec4007eb71e55eebbda0138ebd35c0be83ad3e00a2a",
+    "max_turns": 20,
+    "max_output_tokens": 4096,
+    "temperature": 0.0,
+    "profile_reasoning_effort": null
+  },
+  "files": {
+    "model_patch": {
+      "path": "model.patch",
+      "sha256": "f5106e9ea8c23c4d091f43b9bb5b6de0a7ad8160e79db934e0fa1e55085f2077"
+    },
+    "prediction": {
+      "path": "prediction.jsonl",
+      "sha256": "6bede3051dfa51b1ab9b734897fabd2fce25918860def8f65fb708b8277fdee7"
+    },
+    "transcript": {
+      "path": "transcript.jsonl",
+      "sha256": "6d4a0cb794c7a27bbe0721d2cbec2665eadd8c450de6c82f1c1d65c4cff32d88"
+    }
+  }
+}

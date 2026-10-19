@@ -1,0 +1,26 @@
+{
+"user_query":"I'm planning a family vacation in France and I'm interested in renting a villa in the south of France. Can you help me find available properties in cities like Nice, Cannes, and Saint-Tropez? I would prefer properties with at least 3 bedrooms and a maximum price of 10,000 euros per week.",
+"domain":"Tourism",
+"TaskList": [
+{
+"id": 1,
+"description": "Search for available villas in Nice, Cannes, and Saint-Tropez with at least 3 bedrooms and a maximum price of 10,000 euros per week.",
+"domain":"tourism",
+"required_inputs": ["city", "bedrooms", "max_price"]
+},
+{
+"id": 2,
+"description": "Filter the search results to show only properties that meet the user's criteria.",
+"domain":"tourism",
+"required_inputs": ["property_list", "bedrooms", "max_price"],
+"dependency": "Step 1"
+},
+{
+"id": 3,
+"description": "Present the filtered list of available villas to the user.",
+"domain":"tourism",
+"required_inputs": ["filtered_property_list"],
+"dependency": "Step 2"
+}
+]
+}

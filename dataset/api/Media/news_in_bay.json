@@ -1,0 +1,49 @@
+{
+    "product_id": "api_ce4a3f8c-6c71-42bf-9131-e06d31461c40",
+    "tool_description": "*for my personal study purposes*\nAn API showing all front-page news in the Bay area for the day, keyword can be customized.\neg:  https://sfnews-api.herokuapp.com/news/safe (keyword \"safe\")\nScrapping from San Francisco Chronicle / SFGATE / abc7News\nHeroku: https://sfnews-api.herokuapp.com/",
+    "home_url": "https://rapidapi.com/alice886/api/news-in-bay/",
+    "name": "News In Bay",
+    "title": "News In Bay",
+    "pricing": "FREE",
+    "tool_name": "News In Bay",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 5344,
+        "avgSuccessRate": 40,
+        "popularityScore": 7.4,
+        "__typename": "Score"
+    },
+    "host": "news-in-bay.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Get San Francisco Chronicle news",
+            "url": "https://news-in-bay.p.rapidapi.com/news/sfchronicle",
+            "description": "Get all news titled with keyword (sources via San Francisco Chronicle )",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "sfchronicle",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://news-in-bay.p.rapidapi.com/news/sfchronicle\"\nquerystring = {\"sfchronicle\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"news-in-bay.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://news-in-bay.p.rapidapi.com/news/sfchronicle\"\nquerystring = {\"sfchronicle\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"news-in-bay.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": []
+        },
+        {
+            "name": "Get All News",
+            "url": "https://news-in-bay.p.rapidapi.com/news",
+            "description": "Get all news titled with keyword (sources via San Francisco Chronicle / SFGATE / abc7News)",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://news-in-bay.p.rapidapi.com/news\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"news-in-bay.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://news-in-bay.p.rapidapi.com/news\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"news-in-bay.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": ""
+        }
+    ],
+    "standardized_name": "news_in_bay"
+}

@@ -1,0 +1,26 @@
+{
+  "user_query": "I'm organizing a company picnic in the park next month. Can you provide me with the 5-day weather forecast for the park location? Also, fetch the historical weather data for the same location on the same dates last year. Additionally, recommend some outdoor activities for the picnic.",
+  "domain": "Technology",
+  "TaskList": [
+    {
+      "id": 1,
+      "description": "Fetch the 5-day weather forecast for the park location.",
+      "domain": "technology",
+      "required_inputs": ["park_location", "date_range"]
+    },
+    {
+      "id": 2,
+      "description": "Fetch the historical weather data for the same park location on the same dates last year.",
+      "domain": "technology",
+      "required_inputs": ["park_location", "last_year_date_range"],
+      "dependencies": [1]
+    },
+    {
+      "id": 3,
+      "description": "Recommend outdoor activities suitable for a picnic based on the weather forecast and historical data.",
+      "domain": "technology",
+      "required_inputs": ["weather_forecast", "historical_weather_data"],
+      "dependencies": [1, 2]
+    }
+  ]
+}

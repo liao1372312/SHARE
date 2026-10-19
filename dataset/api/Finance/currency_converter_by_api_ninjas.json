@@ -1,0 +1,55 @@
+{
+    "product_id": "api_4b2a97f4-1d99-4dc3-b6fa-1f1f868d8695",
+    "tool_description": "Convert currencies using the latest exchange rates. See more info at https://api-ninjas.com/api/convertcurrency.",
+    "home_url": "https://rapidapi.com/apininjas/api/currency-converter-by-api-ninjas/",
+    "name": "Currency Converter by API-Ninjas",
+    "title": "Currency Converter by API-Ninjas",
+    "pricing": "FREEMIUM",
+    "tool_name": "Currency Converter by API-Ninjas",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 317,
+        "avgSuccessRate": 52,
+        "popularityScore": 9.9,
+        "__typename": "Score"
+    },
+    "host": "currency-converter-by-api-ninjas.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "/v1/convertcurrency",
+            "url": "https://currency-converter-by-api-ninjas.p.rapidapi.com/v1/convertcurrency",
+            "description": "API Ninjas Convert Currency API endpoint.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "amount",
+                    "type": "NUMBER",
+                    "description": "Amount of currency to convert.",
+                    "default": "5000"
+                },
+                {
+                    "name": "have",
+                    "type": "STRING",
+                    "description": "Currency you currently hold. Must be 3-character currency code (e.g. **USD**).",
+                    "default": "USD"
+                },
+                {
+                    "name": "want",
+                    "type": "STRING",
+                    "description": "Currency you want to convert to. Must be 3-character currency code (e.g. **EUR**)",
+                    "default": "EUR"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://currency-converter-by-api-ninjas.p.rapidapi.com/v1/convertcurrency\"\nquerystring = {\"amount\": \"5000\", \"have\": \"USD\", \"want\": \"EUR\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"currency-converter-by-api-ninjas.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://currency-converter-by-api-ninjas.p.rapidapi.com/v1/convertcurrency\"\nquerystring = {\"amount\": \"5000\", \"have\": \"USD\", \"want\": \"EUR\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"currency-converter-by-api-ninjas.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "new_amount": 4574.75,
+                "new_currency": "EUR",
+                "old_currency": "USD",
+                "old_amount": 5000.0
+            }
+        }
+    ],
+    "standardized_name": "currency_converter_by_api_ninjas"
+}

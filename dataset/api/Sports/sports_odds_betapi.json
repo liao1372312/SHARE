@@ -1,0 +1,480 @@
+{
+    "product_id": "api_9bd01b0e-0e34-42b2-a823-e1da30395280",
+    "tool_description": "Sports data and odds Bets Api for all sports: football, basketball, hockey, tennis, cricket, eSports",
+    "home_url": "https://rapidapi.com/cefey24/api/sports-odds-betapi/",
+    "name": "Sports odds BetApi",
+    "title": "Sports odds BetApi",
+    "pricing": "FREEMIUM",
+    "tool_name": "Sports odds BetApi",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 788,
+        "avgSuccessRate": 100,
+        "popularityScore": 9.3,
+        "__typename": "Score"
+    },
+    "host": "sports-odds-betapi.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Data Country All",
+            "url": "https://sports-odds-betapi.p.rapidapi.com/v1/countries/0/live/en",
+            "description": "Data from all countries for all sports",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "TypeOdds",
+                    "type": "STRING",
+                    "description": "line or live",
+                    "default": "live"
+                },
+                {
+                    "name": "LangOdds",
+                    "type": "STRING",
+                    "description": "en, ru, fr ....",
+                    "default": "en"
+                },
+                {
+                    "name": "SportId",
+                    "type": "STRING",
+                    "description": "0 - it is all countries for all sports",
+                    "default": "0"
+                },
+                {
+                    "name": "TypeParams",
+                    "type": "STRING",
+                    "description": "PArams: countries",
+                    "default": "countries"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://sports-odds-betapi.p.rapidapi.com/v1/countries/0/live/en\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sports-odds-betapi.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://sports-odds-betapi.p.rapidapi.com/v1/{typeparams}/{sportid}/{typeodds}/{langodds}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sports-odds-betapi.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "status": 99,
+                "page": "/v1/sports",
+                "body": "Error in you package!"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "get": {
+                        "type": "string"
+                    },
+                    "parameters": {
+                        "type": "array"
+                    },
+                    "errors": {
+                        "type": "array"
+                    },
+                    "results": {
+                        "type": "integer"
+                    },
+                    "response": {
+                        "type": "array",
+                        "items": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Data Events",
+            "url": "https://sports-odds-betapi.p.rapidapi.com/v1/events/1/0/list/20/line/ru",
+            "description": "Data Events api",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "list_type",
+                    "type": "string",
+                    "description": "Way of formation of a conclusion. There may be two kinds: sub - events will be as sub-items of tournaments. list - all items are displayed, simply by a common list.",
+                    "default": "list"
+                },
+                {
+                    "name": "sport_id",
+                    "type": "NUMBER",
+                    "description": "sport ID, if ID = 0, all matches for all sports will be returning",
+                    "default": "1"
+                },
+                {
+                    "name": "tournament_id",
+                    "type": "NUMBER",
+                    "description": "tournament ID, if ID = 0, all matches for all tournament will be returning",
+                    "default": "0"
+                },
+                {
+                    "name": "page_length",
+                    "type": "NUMBER",
+                    "description": "Number of events in answer.It must be a multiple of five. If it 's not like that. That, the system itself will occlude it to the greater side of the multiplicity.",
+                    "default": "20"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://sports-odds-betapi.p.rapidapi.com/v1/events/1/0/list/20/line/ru\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sports-odds-betapi.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://sports-odds-betapi.p.rapidapi.com/v1/events/{sport_id}/{tournament_id}/{list_type}/{page_length}/line/ru\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sports-odds-betapi.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "status": 99,
+                "page": "/v1/sports",
+                "body": "Error in you package!"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "get": {
+                        "type": "string"
+                    },
+                    "parameters": {
+                        "type": "array"
+                    },
+                    "errors": {
+                        "type": "array"
+                    },
+                    "results": {
+                        "type": "integer"
+                    },
+                    "response": {
+                        "type": "array",
+                        "items": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Data Country",
+            "url": "https://sports-odds-betapi.p.rapidapi.com/v1/countries/1/line/en",
+            "description": "Data Country params",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "TypeOdds",
+                    "type": "STRING",
+                    "description": "line, live",
+                    "default": "line"
+                },
+                {
+                    "name": "SportId",
+                    "type": "NUMBER",
+                    "description": "number sport [1 or 2 or 3]. All data = 0",
+                    "default": "1"
+                },
+                {
+                    "name": "LangOdds",
+                    "type": "STRING",
+                    "description": "en, ru, fr ....",
+                    "default": "en"
+                },
+                {
+                    "name": "TypeParams",
+                    "type": "STRING",
+                    "description": "sports, countries, tournaments",
+                    "default": "countries"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://sports-odds-betapi.p.rapidapi.com/v1/countries/1/line/en\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sports-odds-betapi.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://sports-odds-betapi.p.rapidapi.com/v1/{typeparams}/{sportid}/{typeodds}/{langodds}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sports-odds-betapi.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "status": 99,
+                "page": "/v1/sports",
+                "body": "Error in you package!"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "get": {
+                        "type": "string"
+                    },
+                    "parameters": {
+                        "type": "array"
+                    },
+                    "errors": {
+                        "type": "array"
+                    },
+                    "results": {
+                        "type": "integer"
+                    },
+                    "response": {
+                        "type": "array",
+                        "items": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Data Sport",
+            "url": "https://sports-odds-betapi.p.rapidapi.com/v1/sports/line/en",
+            "description": "Data Sport params",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "LangOdds",
+                    "type": "STRING",
+                    "description": "en, ru",
+                    "default": "en"
+                },
+                {
+                    "name": "TypeOdds",
+                    "type": "STRING",
+                    "description": "line, live",
+                    "default": "line"
+                },
+                {
+                    "name": "TypeParams",
+                    "type": "STRING",
+                    "description": "sports, countries, tournaments",
+                    "default": "sports"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://sports-odds-betapi.p.rapidapi.com/v1/sports/line/en\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sports-odds-betapi.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://sports-odds-betapi.p.rapidapi.com/v1/{typeparams}/{typeodds}/{langodds}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sports-odds-betapi.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "status": 99,
+                "page": "/v1/sports",
+                "body": "Error in you package!"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "get": {
+                        "type": "string"
+                    },
+                    "parameters": {
+                        "type": "array"
+                    },
+                    "errors": {
+                        "type": "array"
+                    },
+                    "results": {
+                        "type": "integer"
+                    },
+                    "response": {
+                        "type": "array",
+                        "items": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Data Tournaments",
+            "url": "https://sports-odds-betapi.p.rapidapi.com/v1/tournaments/1/223/line/en",
+            "description": "Data Tournaments",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "LangOdds",
+                    "type": "STRING",
+                    "description": "en, ru",
+                    "default": "en"
+                },
+                {
+                    "name": "SportId",
+                    "type": "NUMBER",
+                    "description": "number sport [1 or 2 or 3]. All data = 0",
+                    "default": "1"
+                },
+                {
+                    "name": "TypeOdds",
+                    "type": "STRING",
+                    "description": "line, live",
+                    "default": "line"
+                },
+                {
+                    "name": "TypeParams",
+                    "type": "STRING",
+                    "description": "sports, countries, tournaments",
+                    "default": "tournaments"
+                },
+                {
+                    "name": "CountryId",
+                    "type": "STRING",
+                    "description": "number Country[1 or 2 or 3]. All data = 0",
+                    "default": "223"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://sports-odds-betapi.p.rapidapi.com/v1/tournaments/1/223/line/en\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sports-odds-betapi.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://sports-odds-betapi.p.rapidapi.com/v1/{typeparams}/{sportid}/{countryid}/{typeodds}/{langodds}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sports-odds-betapi.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "status": 99,
+                "page": "/v1/tournaments",
+                "body": "Error in you package!"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "get": {
+                        "type": "string"
+                    },
+                    "parameters": {
+                        "type": "array"
+                    },
+                    "errors": {
+                        "type": "array"
+                    },
+                    "results": {
+                        "type": "integer"
+                    },
+                    "response": {
+                        "type": "array",
+                        "items": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Data Tournaments All",
+            "url": "https://sports-odds-betapi.p.rapidapi.com/v1/tournaments/0/0/live/en",
+            "description": "Data Tournaments All Sports & All Countries",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "TypeParams",
+                    "type": "STRING",
+                    "description": "sports, countries, tournaments",
+                    "default": "tournaments"
+                },
+                {
+                    "name": "SportId",
+                    "type": "STRING",
+                    "description": "All data = 0",
+                    "default": "0"
+                },
+                {
+                    "name": "LangOdds",
+                    "type": "STRING",
+                    "description": "en, ru",
+                    "default": "en"
+                },
+                {
+                    "name": "CountryId",
+                    "type": "NUMBER",
+                    "description": "All data = 0",
+                    "default": "0"
+                },
+                {
+                    "name": "TypeOdds",
+                    "type": "STRING",
+                    "description": "line, live",
+                    "default": "live"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://sports-odds-betapi.p.rapidapi.com/v1/tournaments/0/0/live/en\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sports-odds-betapi.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://sports-odds-betapi.p.rapidapi.com/v1/{typeparams}/{sportid}/{countryid}/{typeodds}/{langodds}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sports-odds-betapi.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "status": 99,
+                "page": "/v1/tournaments",
+                "body": "Error in you package!"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "get": {
+                        "type": "string"
+                    },
+                    "parameters": {
+                        "type": "array"
+                    },
+                    "errors": {
+                        "type": "array"
+                    },
+                    "results": {
+                        "type": "integer"
+                    },
+                    "response": {
+                        "type": "array",
+                        "items": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Concrete match",
+            "url": "https://sports-odds-betapi.p.rapidapi.com/v1/event/222332411/list/line/en",
+            "description": "data of  concrete match",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "dataApi",
+                    "type": "string",
+                    "description": "The \"event\" parameter indicates that we return a match with a specific id",
+                    "default": "event"
+                },
+                {
+                    "name": "dataType",
+                    "type": "string",
+                    "description": "line or live",
+                    "default": "line"
+                },
+                {
+                    "name": "game_id",
+                    "type": "NUMBER",
+                    "description": "enter the match id",
+                    "default": "222332411"
+                },
+                {
+                    "name": "dataLang",
+                    "type": "string",
+                    "description": "ru, en",
+                    "default": "en"
+                },
+                {
+                    "name": "list_type",
+                    "type": "string",
+                    "description": "Way of formation of a conclusion. There may be two kinds: sub - events will be grouped into groups. list - all events are displayed, just a general list.",
+                    "default": "list"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://sports-odds-betapi.p.rapidapi.com/v1/event/222332411/list/line/en\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sports-odds-betapi.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://sports-odds-betapi.p.rapidapi.com/v1/{dataapi}/{game_id}/{list_type}/{datatype}/{datalang}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sports-odds-betapi.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "status": 99,
+                "page": "/v1/sports",
+                "body": "Error in you package!"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "get": {
+                        "type": "string"
+                    },
+                    "parameters": {
+                        "type": "array"
+                    },
+                    "errors": {
+                        "type": "array"
+                    },
+                    "results": {
+                        "type": "integer"
+                    },
+                    "response": {
+                        "type": "array",
+                        "items": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "standardized_name": "sports_odds_betapi"
+}

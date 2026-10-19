@@ -1,0 +1,32 @@
+{
+"user_query":"I am planning a family vacation and would like to know the public holidays in the destination country during that time. Can you provide me with the public holidays for that country? Additionally, I would like to gather real-time data for a specific stock to monitor its performance.",
+"domain":"Cross-Domain",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Determine the destination country for the vacation.",
+        "domain": "tourism",
+        "required_inputs": []
+    },
+    {
+        "id": 2,
+        "description": "Fetch the public holidays data for the destination country.",
+        "domain": "tourism",
+        "required_inputs": ["destination_country"]  ,
+        "dependencies": [1]
+    },
+    {
+        "id": 3,
+        "description": "Identify the specific stock to monitor its performance.",
+        "domain": "finance",
+        "required_inputs": []
+    },
+    {
+        "id": 4,
+        "description": "Gather real-time performance data for the identified stock.",
+        "domain": "finance",
+        "required_inputs": ["stock_symbol"],
+        "dependencies": [3]
+    }
+]
+}

@@ -1,0 +1,125 @@
+{
+    "product_id": "api_e9bf0991-33f1-43a0-9acb-b42fe928be57",
+    "tool_description": "Get live and historical data from 60+ fiat and crypto currencies via a modern REST API",
+    "home_url": "https://rapidapi.com/standingapi-standingapi-default/api/currency-exchange-rates3/",
+    "name": "Currency Exchange Rates",
+    "title": "Currency Exchange Rates",
+    "pricing": "FREEMIUM",
+    "tool_name": "Currency Exchange Rates",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 787,
+        "avgSuccessRate": 73,
+        "popularityScore": 9,
+        "__typename": "Score"
+    },
+    "host": "currency-exchange-rates3.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Getting the latest exchange rate(s)",
+            "url": "https://currency-exchange-rates3.p.rapidapi.com/v1/live",
+            "description": "The /live/ endpoint returns the most recent exchange rate(s) for a given set of currencies. The base currency is the currency you're converting FROM, while the target currency or currencies are what you're converting TO.\n\nIf no target currency or currencies are specified, then all available currencies are returned. You can see a full list of supported currencies at the bottom of this documentation.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "base",
+                    "type": "STRING",
+                    "description": "The base currency used to get the latest exchange rate(s) for. Uses the ISO 4217 currency standard (e.g., USD for United States Dollars), like all currency parameters in this API. You can see a full list of supported currencies here.",
+                    "default": "USD"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "target",
+                    "type": "STRING",
+                    "description": "The target currency or currencies to get the exchange rate of versus the base currency. Like the base parameters, any currency passed here follows the ISO 4217 standard. If multiple currencies are passed in the target, they should be separated by commas (e.g., &target=EUR,CAD,AUD).",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://currency-exchange-rates3.p.rapidapi.com/v1/live\"\nquerystring = {\"target\": \"\", \"base\": \"USD\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"currency-exchange-rates3.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://currency-exchange-rates3.p.rapidapi.com/v1/live\"\nquerystring = {\"target\": \"\", \"base\": \"USD\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"currency-exchange-rates3.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per second for your plan, BASIC, by the API provider"
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Converting currencies",
+            "url": "https://currency-exchange-rates3.p.rapidapi.com/v1/convert",
+            "description": "The /convert/ endpoint is similar to the /live/ and /historical/ endpoints, except it allows you to convert an arbitrary amount of currency.\n\nFor example, it calculates how many EUR you would get for 1,337.99 USD today, or how many GBP and CAD you'd get for that amount on January 1, 2020.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "base",
+                    "type": "STRING",
+                    "description": "The base currency used to get the latest exchange rate(s) for. Uses the ISO 4217 currency standard (e.g., USD for United States Dollars), like all currency parameters in this API. You can see a full list of supported currencies here.",
+                    "default": "USD"
+                },
+                {
+                    "name": "target",
+                    "type": "STRING",
+                    "description": "The target currency or currencies to get the exchange rate of versus the base currency. Like the base parameters, any currency passed here follows the ISO 4217 standard. Note that unlinke the other endpoints, /convert/ only accepts one target currency at a time.",
+                    "default": "SGD"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "date",
+                    "type": "STRING",
+                    "description": "The historical date you'd like to get rates from, in the format of YYYY-MM-DD. If you leave this blank, it will use the latest available rate(s).",
+                    "default": "2020-01-01"
+                },
+                {
+                    "name": "base_amount",
+                    "type": "STRING",
+                    "description": "The amount of the base currency you would like to convert to the target currency.",
+                    "default": "500"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://currency-exchange-rates3.p.rapidapi.com/v1/convert\"\nquerystring = {\"base\": \"USD\", \"target\": \"SGD\", \"date\": \"2020-01-01\", \"base_amount\": \"500\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"currency-exchange-rates3.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://currency-exchange-rates3.p.rapidapi.com/v1/convert\"\nquerystring = {\"base\": \"USD\", \"target\": \"SGD\", \"date\": \"2020-01-01\", \"base_amount\": \"500\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"currency-exchange-rates3.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per second for your plan, BASIC, by the API provider"
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Getting historical exchange rate(s)",
+            "url": "https://currency-exchange-rates3.p.rapidapi.com/v1/historical",
+            "description": "The /historical/ endpoint functions almost exactly like the /live/ endpoint, except it requires you to request a date parameter, and subsequently returns the returns the most recent exchange rate(s) for a given set of currencies.\n\nAs with the /live/ endpoint, the base currency is the currency you're converting FROM, while the target currency or currencies are what you're converting TO. Also, if no target currency or currencies are specified, then all available currencies are returned. You can see a full list of supported currencies at the bottom of this documentation.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "date",
+                    "type": "STRING",
+                    "description": "The historical date you'd like to get rates from, in the format of YYYY-MM-DD",
+                    "default": "2020-01-01"
+                },
+                {
+                    "name": "base",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "USD"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "target",
+                    "type": "STRING",
+                    "description": "The target currency or currencies to get the exchange rate of versus the base currency. Like the base parameters, any currency passed here follows the ISO 4217 standard. If multiple currencies are passed in the target, they should be separated by commas (e.g., &target=EUR,CAD,AUD).",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://currency-exchange-rates3.p.rapidapi.com/v1/historical\"\nquerystring = {\"date\": \"2020-01-01\", \"target\": \"\", \"base\": \"USD\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"currency-exchange-rates3.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://currency-exchange-rates3.p.rapidapi.com/v1/historical\"\nquerystring = {\"date\": \"2020-01-01\", \"target\": \"\", \"base\": \"USD\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"currency-exchange-rates3.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per second for your plan, BASIC, by the API provider"
+            },
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "currency_exchange_rates"
+}

@@ -1,0 +1,232 @@
+{
+    "product_id": "api_477f2d43-dd13-459b-b85c-333eb47821f8",
+    "tool_description": "Find nutrition facts by food name or by UPC (barcode). API supports English, Russian, Polish, Spanish, Bulgarian, Ukrainian",
+    "home_url": "https://rapidapi.com/bulat.yauheni/api/dietagram/",
+    "name": "DietaGram",
+    "title": "DietaGram",
+    "pricing": "FREEMIUM",
+    "tool_name": "DietaGram",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 917,
+        "avgSuccessRate": 100,
+        "popularityScore": 9.3,
+        "__typename": "Score"
+    },
+    "host": "dietagram.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Food Api",
+            "url": "https://dietagram.p.rapidapi.com/apiFood.php",
+            "description": "Find food info by name",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "name",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "Jab\u0142ko"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "lang",
+                    "type": "STRING",
+                    "description": "Lang is necessary for search in the certain lang food base.  It will be detected automatically or you could set manually from this set of values (\\\\\\\"en\\\\\\\", \\\\\\\"ru\\\\\\\", \\\\\\\"pl\\\\\\\", \\\\\\\"bg\\\\\\\", \\\\\\\"de\\\\\\\", \\\\\\\"es\\\\\\\", \\\\\\\"ua\\\\\\\", \\\\\\\"by\\\\\\\")",
+                    "default": "pl"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://dietagram.p.rapidapi.com/apiFood.php\"\nquerystring = {\"lang\": \"pl\", \"name\": \"Jab\u0142ko\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"dietagram.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://dietagram.p.rapidapi.com/apiFood.php\"\nquerystring = {\"lang\": \"pl\", \"name\": \"Jab\u0142ko\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"dietagram.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "dishes": [
+                    {
+                        "id": "28",
+                        "name": "jab\u0142ko ",
+                        "caloric": "48",
+                        "type": "f",
+                        "fat": "0.4",
+                        "carbon": "12.1",
+                        "protein": "0.4",
+                        "category_id": "1"
+                    },
+                    {
+                        "id": "15395",
+                        "name": "Jab\u0142ko Sok",
+                        "caloric": "45",
+                        "type": "x",
+                        "fat": "0",
+                        "carbon": "11",
+                        "protein": "0",
+                        "category_id": "500"
+                    },
+                    {
+                        "id": "441",
+                        "name": "jab\u0142ko mus ",
+                        "caloric": "120",
+                        "type": "f",
+                        "fat": "1",
+                        "carbon": "25.7",
+                        "protein": "2.5",
+                        "category_id": "1"
+                    },
+                    {
+                        "id": "6523",
+                        "name": "Jab\u0142ko 100g",
+                        "caloric": "50",
+                        "type": "x",
+                        "fat": "0",
+                        "carbon": "11",
+                        "protein": "0",
+                        "category_id": "500"
+                    },
+                    {
+                        "id": "1409",
+                        "name": "sok jab\u0142kowy",
+                        "caloric": "47",
+                        "type": "f",
+                        "fat": "0.1",
+                        "carbon": "11.7",
+                        "protein": "0.1",
+                        "category_id": "6"
+                    },
+                    {
+                        "id": "7086",
+                        "name": "Jab\u0142ko Arbuz",
+                        "caloric": "38",
+                        "type": "x",
+                        "fat": "0",
+                        "carbon": "10",
+                        "protein": "0",
+                        "category_id": "500"
+                    },
+                    {
+                        "id": "6882",
+                        "name": "Chrup Jab\u0142ko",
+                        "caloric": "364",
+                        "type": "x",
+                        "fat": "0",
+                        "carbon": "812",
+                        "protein": "2",
+                        "category_id": "500"
+                    },
+                    {
+                        "id": "2098",
+                        "name": "sos jab\u0142kowy ",
+                        "caloric": "53",
+                        "type": "s",
+                        "fat": "2.4",
+                        "carbon": "8.3",
+                        "protein": "0.6",
+                        "category_id": "12"
+                    },
+                    {
+                        "id": "2172",
+                        "name": "Ocet jab\u0142kowy",
+                        "caloric": "16",
+                        "type": "s",
+                        "fat": "0",
+                        "carbon": "0.6",
+                        "protein": "0.4",
+                        "category_id": "12"
+                    },
+                    {
+                        "id": "15741",
+                        "name": "Jab\u0142ko-mi\u0119ta",
+                        "caloric": "38",
+                        "type": "x",
+                        "fat": "0",
+                        "carbon": "9",
+                        "protein": "0",
+                        "category_id": "500"
+                    },
+                    {
+                        "id": "321",
+                        "name": "jab\u0142ko suszone",
+                        "caloric": "255",
+                        "type": "f",
+                        "fat": "2.1",
+                        "carbon": "62.3",
+                        "protein": "2.1",
+                        "category_id": "1"
+                    },
+                    {
+                        "id": "2459",
+                        "name": "zupa jab\u0142kowa ",
+                        "caloric": "32",
+                        "type": "m",
+                        "fat": "0.2",
+                        "carbon": "7.9",
+                        "protein": "0.3",
+                        "category_id": "14"
+                    },
+                    {
+                        "id": "10289",
+                        "name": "Jab\u0142ko  agrest",
+                        "caloric": "37",
+                        "type": "x",
+                        "fat": "0",
+                        "carbon": "9",
+                        "protein": "0",
+                        "category_id": "500"
+                    },
+                    {
+                        "id": "14416",
+                        "name": "Zielone Jab\u0142ko",
+                        "caloric": "46",
+                        "type": "x",
+                        "fat": "0",
+                        "carbon": "12",
+                        "protein": "0",
+                        "category_id": "500"
+                    },
+                    {
+                        "id": "29",
+                        "name": "jab\u0142ko gotowane",
+                        "caloric": "45",
+                        "type": "f",
+                        "fat": "0.5",
+                        "carbon": "11.1",
+                        "protein": "0.7",
+                        "category_id": "1"
+                    }
+                ]
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "UPC Api",
+            "url": "https://dietagram.p.rapidapi.com/apiBarcode.php",
+            "description": "Find food info by UPC (barcode)",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "name",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "4019300005154"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://dietagram.p.rapidapi.com/apiBarcode.php\"\nquerystring = {\"name\": \"4019300005154\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"dietagram.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://dietagram.p.rapidapi.com/apiBarcode.php\"\nquerystring = {\"name\": \"4019300005154\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"dietagram.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "dishes": [
+                    {
+                        "name": "Exquisa Joghurt",
+                        "caloric": "169",
+                        "type": "",
+                        "fat": "14",
+                        "carbon": "3",
+                        "protein": "7",
+                        "category_id": "101"
+                    }
+                ]
+            },
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "dietagram"
+}

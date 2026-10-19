@@ -1,0 +1,40 @@
+{
+"user_query":"I want to monitor the sentiment of the crypto market by fetching the latest news articles and tweets about bitcoin, and extracting keywords from these sources.",
+"domain":"Finance",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Fetch the latest news articles about bitcoin from trusted news sources.",
+        "domain": "finance",
+        "required_inputs": ["keywords: bitcoin", "news sources list"]
+    },
+    {
+        "id": 2,
+        "description": "Fetch the latest tweets about bitcoin.",
+        "domain": "finance",
+        "required_inputs": ["keywords: bitcoin", "twitter handles or search parameters"]
+    },
+    {
+        "id": 3,
+        "description": "Extract keywords from the fetched news articles.",
+        "domain": "finance",
+        "required_inputs": ["news articles data"]
+    },
+    {
+        "id": 4,
+        "description": "Extract keywords from the fetched tweets.",
+        "domain": "finance",
+        "required_inputs": ["tweets data"]
+    },
+    {
+        "id": 5,
+        "description": "Compile and analyze the extracted keywords from both news articles and tweets to identify trending topics.",
+        "domain": "finance",
+        "required_inputs": ["keywords from news", "keywords from tweets"],
+        "dependencies": [
+            {"dependency_id": 3},
+            {"dependency_id": 4}
+        ]
+    }
+]
+}

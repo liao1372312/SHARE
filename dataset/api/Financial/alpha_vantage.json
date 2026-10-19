@@ -1,0 +1,58 @@
+{
+    "product_id": "api_cde6666b-3132-4766-ad46-681dbf04360d",
+    "tool_description": "Bolsa de valores",
+    "home_url": "https://rapidapi.com/danilo.nobrega88/api/alpha-vantage12/",
+    "name": "Alpha Vantage",
+    "title": "Alpha Vantage",
+    "pricing": "FREE",
+    "tool_name": "Alpha Vantage",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 1182,
+        "avgSuccessRate": 100,
+        "popularityScore": 7.9,
+        "__typename": "Score"
+    },
+    "host": "alpha-vantage12.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Busca por simbolo",
+            "url": "https://alpha-vantage12.p.rapidapi.com/query",
+            "description": "buscar dados pelo simbolo",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "function",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "TIME_SERIES_DAILY"
+                },
+                {
+                    "name": "apikey",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "NMITMJSJJ77WJPCF"
+                },
+                {
+                    "name": "outputsize",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "compact"
+                },
+                {
+                    "name": "symbol",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "VINO11.SA"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://alpha-vantage12.p.rapidapi.com/query\"\nquerystring = {\"function\": \"TIME_SERIES_DAILY\", \"apikey\": \"NMITMJSJJ77WJPCF\", \"outputsize\": \"compact\", \"symbol\": \"VINO11.SA\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"alpha-vantage12.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://alpha-vantage12.p.rapidapi.com/query\"\nquerystring = {\"function\": \"TIME_SERIES_DAILY\", \"apikey\": \"NMITMJSJJ77WJPCF\", \"outputsize\": \"compact\", \"symbol\": \"VINO11.SA\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"alpha-vantage12.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "Information": "Thank you for using Alpha Vantage! This is a premium endpoint. You may subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to instantly unlock all premium endpoints"
+            }
+        }
+    ],
+    "standardized_name": "alpha_vantage"
+}

@@ -1,0 +1,82 @@
+{
+    "product_id": "api_ae7e3107-c328-4ccb-b3fc-9d92725f3006",
+    "tool_description": "Encrypt/Decrypt String/File Using these Algorithms (AES, DES, TripleDES, RC2, Rijndael).",
+    "home_url": "https://rapidapi.com/ezzatelbadrawy/api/encryption-api1/",
+    "name": "Encryption-Api",
+    "title": "Encryption-Api",
+    "pricing": "FREEMIUM",
+    "tool_name": "Encryption-Api",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 817,
+        "avgSuccessRate": 89,
+        "popularityScore": 8.5,
+        "__typename": "Score"
+    },
+    "host": "encryption-api1.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "DecryptString",
+            "url": "https://encryption-api1.p.rapidapi.com/api/Cryptor/decryptstring",
+            "description": "Decrypt encrypted-text (base64-format) using input secret-key according to selected crypt-algorithm and cipher-mode (optional with CBC as default value).",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "cryptAlgorithm",
+                    "type": "STRING",
+                    "description": "Decryption Algorithm (AES [default], DES, TripleDES, RC2, Rijndael).",
+                    "default": "AES"
+                },
+                {
+                    "name": "secretKey",
+                    "type": "STRING",
+                    "description": "Secret-Key string which will be used on decryption process, and it should be same secret-key which used on encryption process.",
+                    "default": "my-secret-key"
+                },
+                {
+                    "name": "encryptedText",
+                    "type": "STRING",
+                    "description": "Encrypted text on base64-string format.",
+                    "default": "base64-encrypted-text"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "cipherMode",
+                    "type": "STRING",
+                    "description": "Decryption Cipher-Mode (CBC [default], ECB, CFB).",
+                    "default": "CBC"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://encryption-api1.p.rapidapi.com/api/Cryptor/decryptstring\"\nquerystring = {\"cryptAlgorithm\": \"AES\", \"secretKey\": \"my-secret-key\", \"cipherMode\": \"CBC\", \"encryptedText\": \"base64-encrypted-text\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"encryption-api1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://encryption-api1.p.rapidapi.com/api/Cryptor/decryptstring\"\nquerystring = {\"cryptAlgorithm\": \"AES\", \"secretKey\": \"my-secret-key\", \"cipherMode\": \"CBC\", \"encryptedText\": \"base64-encrypted-text\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"encryption-api1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "status": "Failure",
+                "result": "Exception: The input is not a valid Base-64 string as it contains a non-base 64 character, more than two padding characters, or an illegal character among the padding characters."
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "type": [
+                            "string",
+                            "null"
+                        ],
+                        "description": "Response Status : Success/Failure"
+                    },
+                    "result": {
+                        "type": [
+                            "string",
+                            "null"
+                        ],
+                        "description": "Respons Result : Expected output with 'Success' status OR error description with 'Failure' status"
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Custom Response Object"
+            }
+        }
+    ],
+    "standardized_name": "encryption_api"
+}

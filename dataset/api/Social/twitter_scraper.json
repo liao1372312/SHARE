@@ -1,0 +1,91 @@
+{
+    "product_id": "api_f58f18ef-89c8-4d93-a651-8fd9e7e6bafa",
+    "tool_description": "Search and extract Twitter data at scale \ud83d\ude80 Extract up to 2,000 tweets per search query",
+    "home_url": "https://rapidapi.com/microworlds/api/twitter-scraper2/",
+    "name": "Twitter Scraper",
+    "title": "Twitter Scraper",
+    "pricing": "FREEMIUM",
+    "tool_name": "Twitter Scraper",
+    "score": {
+        "avgServiceLevel": 98,
+        "avgLatency": 34418,
+        "avgSuccessRate": 92,
+        "popularityScore": 9.4,
+        "__typename": "Score"
+    },
+    "host": "twitter-scraper2.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "search",
+            "url": "https://twitter-scraper2.p.rapidapi.com/search",
+            "description": "Search Twitter by keyword, hashtag or URL",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "toDate",
+                    "type": "DATE (YYYY-MM-DD)",
+                    "description": "Check the About tab for more info",
+                    "default": ""
+                },
+                {
+                    "name": "near",
+                    "type": "STRING",
+                    "description": "Check the About tab for more info",
+                    "default": ""
+                },
+                {
+                    "name": "url",
+                    "type": "STRING",
+                    "description": "Check the About tab for more info",
+                    "default": ""
+                },
+                {
+                    "name": "fromDate",
+                    "type": "DATE (YYYY-MM-DD)",
+                    "description": "Check the About tab for more info",
+                    "default": ""
+                },
+                {
+                    "name": "lang",
+                    "type": "STRING",
+                    "description": "Check the About tab for more info",
+                    "default": ""
+                },
+                {
+                    "name": "maxTweets",
+                    "type": "NUMBER",
+                    "description": "Check the About tab for more info",
+                    "default": "100"
+                },
+                {
+                    "name": "searchMode",
+                    "type": "STRING",
+                    "description": "Check the About tab for more info",
+                    "default": ""
+                },
+                {
+                    "name": "searchTerms",
+                    "type": "STRING",
+                    "description": "Check the About tab for more info",
+                    "default": "wikipedia"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://twitter-scraper2.p.rapidapi.com/search\"\nquerystring = {\"toDate\": \"\", \"near\": \"\", \"url\": \"\", \"fromDate\": \"\", \"lang\": \"\", \"maxTweets\": \"100\", \"searchMode\": \"\", \"searchTerms\": \"wikipedia\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"twitter-scraper2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://twitter-scraper2.p.rapidapi.com/search\"\nquerystring = {\"toDate\": \"\", \"near\": \"\", \"url\": \"\", \"fromDate\": \"\", \"lang\": \"\", \"maxTweets\": \"100\", \"searchMode\": \"\", \"searchTerms\": \"wikipedia\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"twitter-scraper2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "success": false,
+                "total": 0,
+                "message": {
+                    "error": [
+                        "\"searchMode\" must be one of [top, live, user, image, video]"
+                    ]
+                },
+                "data": []
+            },
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "twitter_scraper"
+}

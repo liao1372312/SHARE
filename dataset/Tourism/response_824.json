@@ -1,0 +1,25 @@
+{
+"user_query":"I'm planning a cross-country trip with my friends in the United States. Can you fetch the gas prices in different states? We would like to know the gas prices in Washington (WA). Additionally, provide us with the list of cities in the USA along with their corresponding gas prices.",
+"domain":"tourism",
+"TaskList": [
+{
+"id": 1,
+"description": "Fetch the current gas prices in Washington (WA).",
+"domain": "tourism",
+"required_inputs": ["state=Washington"]
+},
+{
+"id": 2,
+"description": "Fetch the gas prices in various cities across the United States.",
+"domain": "tourism",
+"required_inputs": ["countries=USA"]
+},
+{
+"id": 3,
+"description": "Compile the gas prices data from the first two subtasks into a comprehensive format for the users.",
+"domain": "tourism",
+"required_inputs": ["gas_prices_WA_result", "gas_prices_cities_result"],
+"dependencies": [1, 2]
+}
+]
+}

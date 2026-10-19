@@ -1,0 +1,68 @@
+{
+    "product_id": "api_bbd26508-f9bf-44b9-a3c0-ffbbc8880699",
+    "tool_description": "A bank card bin number verification service is a system that can help verify the authenticity of a bank card by validating the first six digits, known as the Bank Identification Number (BIN) of the card. The BIN number, also known as the issuer identification number (IIN), is used to identify the institution that issued the card and can provide important information such as the card type, country of issuance, and card network.",
+    "home_url": "https://rapidapi.com/blackbunny/api/bank-card-bin-num-check/",
+    "name": "Bank Card Bin Num Check",
+    "title": "Bank Card Bin Num Check",
+    "pricing": "FREEMIUM",
+    "tool_name": "Bank Card Bin Num Check",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 214,
+        "avgSuccessRate": 100,
+        "popularityScore": 9.4,
+        "__typename": "Score"
+    },
+    "host": "bank-card-bin-num-check.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Check",
+            "url": "https://bank-card-bin-num-check.p.rapidapi.com/api/v1/bins/b/535177",
+            "description": " ",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "binnum",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": 535177
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://bank-card-bin-num-check.p.rapidapi.com/api/v1/bins/b/535177\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"bank-card-bin-num-check.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://bank-card-bin-num-check.p.rapidapi.com/api/v1/bins/b/{binnum}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"bank-card-bin-num-check.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "bin_number": 535177,
+                "bank": "Finansbank A.S.",
+                "scheme": "MASTERCARD",
+                "type": "Debit",
+                "country": "Turkey"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "get": {
+                        "type": "string"
+                    },
+                    "parameters": {
+                        "type": "array"
+                    },
+                    "errors": {
+                        "type": "array"
+                    },
+                    "results": {
+                        "type": "integer"
+                    },
+                    "response": {
+                        "type": "array",
+                        "items": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "standardized_name": "bank_card_bin_num_check"
+}

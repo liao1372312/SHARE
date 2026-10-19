@@ -1,0 +1,266 @@
+{
+    "product_id": "api_bb16ab32-9dae-4f5a-8f25-43a1e64a9a6b",
+    "tool_description": "This API will return golf courses within a mile radius of the passed latitude and longitude. It will also return the place details from Google.",
+    "home_url": "https://rapidapi.com/golfambit-golfambit-default/api/golf-course-finder/",
+    "name": "Golf Course Finder",
+    "title": "Golf Course Finder",
+    "pricing": "FREEMIUM",
+    "tool_name": "Golf Course Finder",
+    "score": {
+        "avgServiceLevel": 98,
+        "avgLatency": 522,
+        "avgSuccessRate": 98,
+        "popularityScore": 9.4,
+        "__typename": "Score"
+    },
+    "host": "golf-course-finder.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Get Courses",
+            "url": "https://golf-course-finder.p.rapidapi.com/courses",
+            "description": "This endpoint will return courses within a mile radius of the passed latitude and longitude",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "lng",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "-121.95035631683683"
+                },
+                {
+                    "name": "radius",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "10"
+                },
+                {
+                    "name": "lat",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "36.56910381018662"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://golf-course-finder.p.rapidapi.com/courses\"\nquerystring = {\"lng\": \"-121.95035631683683\", \"radius\": \"10\", \"lat\": \"36.56910381018662\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"golf-course-finder.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://golf-course-finder.p.rapidapi.com/courses\"\nquerystring = {\"lng\": \"-121.95035631683683\", \"radius\": \"10\", \"lat\": \"36.56910381018662\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"golf-course-finder.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "courses": [
+                    {
+                        "name": "Golf Links Course at Pebble Beach Golf Links",
+                        "zip_code": "93953",
+                        "distance": 0.0
+                    },
+                    {
+                        "name": "Cypress Point Club",
+                        "zip_code": "93953",
+                        "distance": 0.3
+                    },
+                    {
+                        "name": "Cypress Point Club",
+                        "zip_code": "93953",
+                        "distance": 0.3
+                    },
+                    {
+                        "name": "Spyglass Hill Golf Course",
+                        "zip_code": "93953",
+                        "distance": 1.0
+                    },
+                    {
+                        "name": "Spyglass Hill Golf Course",
+                        "zip_code": "93953",
+                        "distance": 1.0
+                    },
+                    {
+                        "name": "Poppy Hills Golf Course",
+                        "zip_code": "93953",
+                        "distance": 1.2
+                    },
+                    {
+                        "name": "Dunes Course at Monterey Peninsula Country Club",
+                        "zip_code": "93953",
+                        "distance": 2.2
+                    },
+                    {
+                        "name": "The Links at Spanish Bay",
+                        "zip_code": "93953",
+                        "distance": 2.9
+                    },
+                    {
+                        "name": "West Course at Rancho Canada Golf Club",
+                        "zip_code": "93923",
+                        "distance": 3.9
+                    },
+                    {
+                        "name": "Pacific Grove Municipal Golf Course",
+                        "zip_code": "93950",
+                        "distance": 4.6
+                    },
+                    {
+                        "name": "Del Monte Golf Course",
+                        "zip_code": "93940",
+                        "distance": 4.7
+                    },
+                    {
+                        "name": "Naval Postgraduate School Golf Course",
+                        "zip_code": "93940",
+                        "distance": 5.0
+                    },
+                    {
+                        "name": "Quail Lodge Resort & Golf Club",
+                        "zip_code": "93923",
+                        "distance": 6.0
+                    },
+                    {
+                        "name": "The Bayonet Course at Bayonet/Black Horse Golf Course",
+                        "zip_code": "93955",
+                        "distance": 8.4
+                    },
+                    {
+                        "name": "Carmel Valley Ranch Resort",
+                        "zip_code": "93923",
+                        "distance": 8.7
+                    },
+                    {
+                        "name": "Tehama Golf Club",
+                        "zip_code": "93923",
+                        "distance": 8.8
+                    },
+                    {
+                        "name": "Laguna Seca Ranch Golf Club",
+                        "zip_code": "93940",
+                        "distance": 9.0
+                    },
+                    {
+                        "name": "Pasadera Country Club",
+                        "zip_code": "93940",
+                        "distance": 9.8
+                    }
+                ]
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Course Details",
+            "url": "https://golf-course-finder.p.rapidapi.com/course/details",
+            "description": "This endpoint will return the course details from Google Places",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "zip",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "93953"
+                },
+                {
+                    "name": "name",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "Pebble Beach Golf Links"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://golf-course-finder.p.rapidapi.com/course/details\"\nquerystring = {\"zip\": \"93953\", \"name\": \"Pebble Beach Golf Links\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"golf-course-finder.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://golf-course-finder.p.rapidapi.com/course/details\"\nquerystring = {\"zip\": \"93953\", \"name\": \"Pebble Beach Golf Links\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"golf-course-finder.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "course_details": {
+                    "html_attributions": [],
+                    "result": {
+                        "formatted_address": "1700 17 Mile Dr, Pebble Beach, CA 93953, USA",
+                        "formatted_phone_number": "(831) 574-5609",
+                        "name": "Pebble Beach Golf Links",
+                        "photos": [
+                            {
+                                "height": 1366,
+                                "html_attributions": [
+                                    "<a href=\"https://maps.google.com/maps/contrib/106444081518198894268\">CHAU Tran Vinh</a>"
+                                ],
+                                "photo_reference": "AZose0n-tgC-qA416rNBAMi0ve60eaPQBUJjy_55pgwZXi7JAJ698lskL29bPX8mG1gpbYb5qVp8xz34UoFSfNSbl2YajLHNR6z3W9ee7_Do4KHhRJUrHcPpF2o2nRrrsxrx07H6J1UomTc4_nxDvOJNEV9sgMZOR8PtHDLym5WqWUnJ6htT",
+                                "width": 2048
+                            },
+                            {
+                                "height": 3024,
+                                "html_attributions": [
+                                    "<a href=\"https://maps.google.com/maps/contrib/112461639022622347224\">MKS Channel</a>"
+                                ],
+                                "photo_reference": "AZose0lVS9-CIXnoWozeWg74T5DCaPd3D2TDQnNgMGSDzQxRx2tC_G152CEHlJsmDLbb5LbqkryYSdZamkvCLE0KKpWRKeaDYRrera8huaSUncTomd1Oj4cJx6Drq10XLkpTxr6tq-liXZx0YvHwuPvhA1vHQCCy0bj7xZQ4OCzJMz-o58LP",
+                                "width": 4032
+                            },
+                            {
+                                "height": 4032,
+                                "html_attributions": [
+                                    "<a href=\"https://maps.google.com/maps/contrib/117437730373436705835\">Rushad Hodiwala</a>"
+                                ],
+                                "photo_reference": "AZose0kV8l-a9HZ7bOZ2YDHgkhhltt2yNO6CSRpFc5eLeKOWphoZuUf7AIliTVcAtzxqXlqtG349gylVAqPy0xwU4sRP2pFJv9zt6beTWFcpzLAWm9w59XODsr-nyl_EKTvAUWT15YuSfiR9_aAEkCzopaUhrgd1sI0p5tHeUp3753Zh71Qn",
+                                "width": 2268
+                            },
+                            {
+                                "height": 1104,
+                                "html_attributions": [
+                                    "<a href=\"https://maps.google.com/maps/contrib/113482343908983147932\">Randolfo Santos</a>"
+                                ],
+                                "photo_reference": "AZose0lD9I4UDBjdVGppCDVS5VqOwlekBJHPH6Yw_e-VZrCeNuEZ0KqXZxKY1zhHjP-9_91Gg1loJ2kOPapeq1ClgsYunmjFbKhna2tj-BUdYQvGwi8uxrgzuQUjJB6ou98L8Ej0Wk2zC2osPe_kYerB-uVtu4M_cv9zM61hR3c7nOGHXiso",
+                                "width": 736
+                            },
+                            {
+                                "height": 6000,
+                                "html_attributions": [
+                                    "<a href=\"https://maps.google.com/maps/contrib/113139711715616759689\">Donald Cleavinger</a>"
+                                ],
+                                "photo_reference": "AZose0nAf6LcHCZzqdF7mOKl5jc-8jUn9vQjL7EUKu2z_VbEeQVhbEpr72tAQMuvu7vp4BQSL9dgAPKL9fXXu047bVfFOm9i-RH4X9y6fHtAXQ1qHnQUxN5tEvrroPzQAIw47wO7sL7zPbtIxNHpDuXxk9_FvXRFZi3Ze5r4ubKhwAd4Tv4",
+                                "width": 4000
+                            },
+                            {
+                                "height": 1365,
+                                "html_attributions": [
+                                    "<a href=\"https://maps.google.com/maps/contrib/107736964102048637637\">Pebble Beach Golf Links</a>"
+                                ],
+                                "photo_reference": "AZose0ktYTcfA8jeCfc1GmUMZjUH49VXdTYC_0Z3r5HygN5hLxkhjctgW_OImUgNH3v9xntj9QK5nUGcwLRPIIPyuf7XHZg6gTEZIQqkyA_5VaLafzmbsjM12EzQT63WhJITqdk72l6DDLcg-YmjUlMBulZyWhxkCf9OM6JA65zxRl92HhMK",
+                                "width": 2048
+                            },
+                            {
+                                "height": 1536,
+                                "html_attributions": [
+                                    "<a href=\"https://maps.google.com/maps/contrib/106444081518198894268\">CHAU Tran Vinh</a>"
+                                ],
+                                "photo_reference": "AZose0nwjzOMvx4f4fRsUK7MGvYIu9xM6Jie-bS7w86NExUTqx7IypFJKfp9dS9p0SKmNYXvEZvq8wxzl3BQBUYcLtFzM54k9Hf5FX43dJk7thqmyNhLOT09pU5Gis63VWCKi72zJL8mxABydoSTXEWwNK5e213GridzFMqXFtXWTE9SJYnq",
+                                "width": 2048
+                            },
+                            {
+                                "height": 3024,
+                                "html_attributions": [
+                                    "<a href=\"https://maps.google.com/maps/contrib/117652493810374499538\">Olivia Wang</a>"
+                                ],
+                                "photo_reference": "AZose0mLF7pd33I2Q7Mj290bqOk3ee9GBs54CxEtj3vjphzQ9Dxy9qK1_FrtrGk0tgQTYDbt-oU5ke4USX9fVC1O_6uIvukgwzoXTrqQU6FdR3VeKdAOiSc4KsaCN4LEcFZz_EiAWRNBMn1iHWpfvQ2VrC-49h551lQsHLNx9nU4VYIKESpI",
+                                "width": 4032
+                            },
+                            {
+                                "height": 3024,
+                                "html_attributions": [
+                                    "<a href=\"https://maps.google.com/maps/contrib/117180590105916165915\">Corianna Lane</a>"
+                                ],
+                                "photo_reference": "AZose0ms5S2cpIy8GX5gRd8ksU1SNFNuaJqGNXSaqgqUIDP8L7lD-mDIv9lVHfLWtIHUY0JQ1RL6gaRofev1el6ekagdRu95lR9IpQwk4l45MpC-GNMCR6MUk8KfbMBf8lk9HCFkZcVB-cnaWCKgS59bQd61szbKPcy9FNbbiO-F3vU6g72T",
+                                "width": 4032
+                            },
+                            {
+                                "height": 3024,
+                                "html_attributions": [
+                                    "<a href=\"https://maps.google.com/maps/contrib/115133418871623287885\">Ray Hou</a>"
+                                ],
+                                "photo_reference": "AZose0kgHcncFBBJC7zHK_eO8C0AREN1kIrI6S-ih_ctAOXcUZsVJP1U_GbezTXB_D19ZOrSMIu68vsPmM6JCbeArQkdJXcT5VNuYLaVp3nBlRyG9IHvoys_RJxySzRymulGffjEae0b5DJXZid1iRlQa9Lp9N3KntCW6RQej2tyLuuh6U0m",
+                                "width": 4032
+                            }
+                        ],
+                        "rating": 4.8,
+                        "url": "https://maps.google.com/?cid=15094594552774239886",
+                        "website": "http://www.pebblebeach.com/golf/pebble-beach-golf-links"
+                    },
+                    "status": "OK"
+                }
+            },
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "golf_course_finder"
+}

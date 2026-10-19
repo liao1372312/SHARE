@@ -1,0 +1,35 @@
+{
+  "user_query": "I want to create a personalized playlist for a surprise party, including downloading a specific song, getting artist info, top tracks, and lyrics.",
+  "domain": "entertainment",
+  "TaskList": [
+    {
+      "id": 1,
+      "description": "Download the song 'The Phoenix' by user-977421934 from Soundcloud.",
+      "domain": "music",
+      "required_inputs": ["song_title", "artist_id", "platform"]
+    },
+    {
+      "id": 2,
+      "description": "Retrieve basic information about the artist behind the song.",
+      "domain": "music",
+      "required_inputs": ["artist_id"]
+    },
+    {
+      "id": 3,
+      "description": "Fetch the top tracks of the artist.",
+      "domain": "music",
+      "required_inputs": ["artist_id"]
+    },
+    {
+      "id": 4,
+      "description": "Find the lyrics for 'The Phoenix'.",
+      "domain": "music",
+      "required_inputs": ["song_title", "artist_id"]
+    }
+  ],
+  "dependencies": [
+    {"from": 1, "to": 2},
+    {"from": 1, "to": 3},
+    {"from": 1, "to": 4}
+  ]
+}

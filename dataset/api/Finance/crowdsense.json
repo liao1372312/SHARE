@@ -1,0 +1,1324 @@
+{
+    "product_id": "api_63c372c6-8359-4031-9fad-68763800b5c1",
+    "tool_description": "The most comprehensive real-time alpha-generating data feed API for cryptocurrencies, that analyzes social media sentiment, weighted sentiment, mentions, reach, top coins, spikes, influencer posts, and other chatter updates. Based on 100,000,000s of feeds per day from billions of unique sources across Twitter, Telegram, and Reddit for 1000+ cryptocurrencies. Start now for free...",
+    "home_url": "https://rapidapi.com/crowdsense-ai-crowdsense-ai-default/api/crowdsense1/",
+    "name": "Crowdsense",
+    "title": "Crowdsense",
+    "pricing": "FREEMIUM",
+    "tool_name": "Crowdsense",
+    "score": {
+        "avgServiceLevel": 99,
+        "avgLatency": 6414,
+        "avgSuccessRate": 98,
+        "popularityScore": 9.1,
+        "__typename": "Score"
+    },
+    "host": "crowdsense1.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Get Predictive Spikes by Coin Name",
+            "url": "https://crowdsense1.p.rapidapi.com/api/socialnews/getpredictivespikesbycoinname",
+            "description": "Retrieve predictive social media spikes in the last 24 hours by Coin Name. Results will contain Sentiment, Weighted Sentiment, Mentions and Followers spikes both positive and negative. \n\nThis brings predictive spikes (that went through another machine learning model to predict likelihood of market change within the next 24 hours). These spikes are colored as red and orange.\n\n**Input:**\n\n- Coin Name (Required)\n\n**Output:**\n- EventId\n- EventType\n- Event Time\n- Related coins\n- Event Color\n- Event text\n\n**Definitions:**\n\n- Related coins: Coins mentioned in the post\n- Event type: Determines the type of spike (Sentiment, Weighted sentiment, Mentions or Followers) and the timeframe of the spike (1 hour, 8 hours or 1 day)\n- Event Color: Shows the magnitude of the event (From most important to less important: Red, Orange, Yellow, Gray and Black)\n- Mentions: Number of posts related to the coin in tracked social media sources.\n- Sentiment: Democratic Sentiment Score out of 100 Points (100 for the most positive, 50 for neutral and 0 for the most negative). [Democratic Sentiment is a sentiment that gives the same weight to each mention related to the coin despite the number of followers for each mention]\n- WeightedSentiment: Weighted Sentiment Score out of 100 Points (100 for the most positive, 50 for neutral and 0 for the most negative). [ Weighted Sentiment is a sentiment that gives more weight to mentions with more followers]\n- Followers: Sum of followers reached by coin related mentions\n\n**Details:**\n\n- Results are up to 100\n- All dates are UTC\n- Coins in this endpoint are 3 Billion market cap and more",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "coinName",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "Bitcoin"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://crowdsense1.p.rapidapi.com/api/socialnews/getpredictivespikesbycoinname\"\nquerystring = {\"coinName\": \"Bitcoin\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"crowdsense1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://crowdsense1.p.rapidapi.com/api/socialnews/getpredictivespikesbycoinname\"\nquerystring = {\"coinName\": \"Bitcoin\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"crowdsense1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": []
+        },
+        {
+            "name": "Get Recent News By Coin Ticker",
+            "url": "https://crowdsense1.p.rapidapi.com/api/socialnews/getrecentnewsbycointicker",
+            "description": "Get Recent News By Coin Ticker",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "coinTicker",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "btc"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://crowdsense1.p.rapidapi.com/api/socialnews/getrecentnewsbycointicker\"\nquerystring = {\"coinTicker\": \"btc\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"crowdsense1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://crowdsense1.p.rapidapi.com/api/socialnews/getrecentnewsbycointicker\"\nquerystring = {\"coinTicker\": \"btc\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"crowdsense1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "EventId": 48634746,
+                    "EventType": "Prices Update",
+                    "EventTime": "2023-06-16T16:16:26.0545424Z",
+                    "Publisher": "Diesel gasoil",
+                    "Source": "WebSites",
+                    "RelatedCoins": "Bitcoin",
+                    "EventColor": "Yellow",
+                    "EventText": "Bitcoin price eases downside as traders demand $24.5K support holds DG Verifications & Stats"
+                },
+                {
+                    "EventId": 48634740,
+                    "EventType": "None",
+                    "EventTime": "2023-06-16T16:10:19.9144007Z",
+                    "Publisher": "Crypto Ticker",
+                    "Source": "WebSites",
+                    "RelatedCoins": "Bitcoin",
+                    "EventColor": "Yellow",
+                    "EventText": "Why are Cryptos UP? It might have to do with Blackrock and Coinbase..."
+                },
+                {
+                    "EventId": 48634701,
+                    "EventType": "None",
+                    "EventTime": "2023-06-16T15:30:16.9141891Z",
+                    "Publisher": "Crypto Slate",
+                    "Source": "WebSites",
+                    "RelatedCoins": "Bitcoin",
+                    "EventColor": "Yellow",
+                    "EventText": "BlackRock spot Bitcoin ETF happening, application politically motivated, says Noelle Acheson"
+                },
+                {
+                    "EventId": 48634698,
+                    "EventType": "Cryptocurrency Trade",
+                    "EventTime": "2023-06-16T15:23:14.2734564Z",
+                    "Publisher": "Seeking Alpha",
+                    "Source": "WebSites",
+                    "RelatedCoins": "Bitcoin",
+                    "EventColor": "Yellow",
+                    "EventText": "Bitcoin: Likely To Decline Further (BTC-USD)"
+                },
+                {
+                    "EventId": 48634690,
+                    "EventType": "Cryptocurrency Trade",
+                    "EventTime": "2023-06-16T15:09:31.0615294Z",
+                    "Publisher": "Cointelegraph",
+                    "Source": "WebSites",
+                    "RelatedCoins": "Bitcoin",
+                    "EventColor": "Yellow",
+                    "EventText": "Self-custody Bitcoin amount unmeasurable so far, says Santiment exec"
+                },
+                {
+                    "EventId": 48634687,
+                    "EventType": "Influencer 1M+ Post",
+                    "EventTime": "2023-06-16T15:00:42Z",
+                    "Publisher": "TheCryptoLark",
+                    "Source": "TwitterScraping",
+                    "RelatedCoins": "Ethereum;Bitcoin",
+                    "EventColor": "Orange",
+                    "EventText": "Influencer TheCryptoLark (1M+): Trade #bitcoin, #ethereum, and loads of other top #crypto coins on Bybit! Use the link below to get: Exclusive Fee Discounts Up To $30,030 In Deposit Bonuses Yes, $30,030 Sign up now"
+                },
+                {
+                    "EventId": 48634659,
+                    "EventType": "Whale Trades",
+                    "EventTime": "2023-06-16T14:25:13.4880096Z",
+                    "Publisher": "Zycrypto",
+                    "Source": "WebSites",
+                    "RelatedCoins": "Bitcoin",
+                    "EventColor": "Yellow",
+                    "EventText": "Satoshi-Era Bitcoin Whale Moves $1.2 Million Worth Of BTC After 13 Years ZyCrypto"
+                },
+                {
+                    "EventId": 48634657,
+                    "EventType": "Social Media Positive Weighted Sentiment Regular Spike 1 Day",
+                    "EventTime": "2023-06-16T14:17:21.4903503Z",
+                    "Publisher": "Crowdsense",
+                    "Source": "Crowdsense",
+                    "RelatedCoins": "Bitcoin",
+                    "EventColor": "Yellow",
+                    "EventText": "Bitcoin daily social media weighted sentiment climbed 1.5 points and is now neutral with 4.8 out of 10"
+                },
+                {
+                    "EventId": 48634651,
+                    "EventType": "Prices Update",
+                    "EventTime": "2023-06-16T14:06:04Z",
+                    "Publisher": "Crypto Shared Links(U)",
+                    "Source": "Telegram|Financial News",
+                    "RelatedCoins": "Bitcoin",
+                    "EventColor": "Yellow",
+                    "EventText": "Bitcoin price eases downside as traders demand $24.5K support holds"
+                },
+                {
+                    "EventId": 48634640,
+                    "EventType": "Cryptocurrency Funding",
+                    "EventTime": "2023-06-16T14:01:10.7256417Z",
+                    "Publisher": "Decrypt",
+                    "Source": "WebSites",
+                    "RelatedCoins": "Bitcoin",
+                    "EventColor": "Yellow",
+                    "EventText": "Jack Dorsey Pledges $5M to Help Bitcoin Core Developers - Decrypt"
+                },
+                {
+                    "EventId": 48634645,
+                    "EventType": "Influencer 100K+ Post",
+                    "EventTime": "2023-06-16T13:54:45Z",
+                    "Publisher": "rektcapital",
+                    "Source": "TwitterScraping",
+                    "RelatedCoins": "Chainlink;Injective;Bitcoin",
+                    "EventColor": "Yellow",
+                    "EventText": "Influencer rektcapital (100K+): I've published a new Altcoin Newsletter I share my charts & analysis on 8 Altcoins These Altcoins are $INJ $LINK I share an Altcoin Newsletter like this every Friday Sign up & read here: #BTC #Crypto"
+                },
+                {
+                    "EventId": 48634633,
+                    "EventType": "Government Bailout",
+                    "EventTime": "2023-06-16T13:37:22.057546Z",
+                    "Publisher": "CryptoPost",
+                    "Source": "WebSites",
+                    "RelatedCoins": "Bitcoin",
+                    "EventColor": "Yellow",
+                    "EventText": "Credit Suisse Crisis Bailout 2023 + Peter Schiff Gold vs Bitcoin? - CryptoPost.com"
+                },
+                {
+                    "EventId": 48634629,
+                    "EventType": "Investment Update",
+                    "EventTime": "2023-06-16T13:37:22.057546Z",
+                    "Publisher": "CryptoPost",
+                    "Source": "WebSites",
+                    "RelatedCoins": "Bitcoin",
+                    "EventColor": "Yellow",
+                    "EventText": "Best Cryptocurrency App In India 2022"
+                },
+                {
+                    "EventId": 48634632,
+                    "EventType": "Trade Signals",
+                    "EventTime": "2023-06-16T13:37:22.057546Z",
+                    "Publisher": "CryptoPost",
+                    "Source": "WebSites",
+                    "RelatedCoins": "Bitcoin",
+                    "EventColor": "Yellow",
+                    "EventText": "Has Bitcoin Just Bottomed Out?? [new signal] Bitcoin Price Prediction 2023 // Bitcoin News Today - CryptoPost.com"
+                },
+                {
+                    "EventId": 48634631,
+                    "EventType": "Halving",
+                    "EventTime": "2023-06-16T13:37:22.057546Z",
+                    "Publisher": "CryptoPost",
+                    "Source": "WebSites",
+                    "RelatedCoins": "Bitcoin",
+                    "EventColor": "Yellow",
+                    "EventText": "Bitcoin Will Hit $100,000 A Coin THIS December 2023 - BTC Halving 2024 - CryptoPost.com"
+                },
+                {
+                    "EventId": 48634621,
+                    "EventType": "None",
+                    "EventTime": "2023-06-16T13:31:29.6095142Z",
+                    "Publisher": "Crypto Slate",
+                    "Source": "WebSites",
+                    "RelatedCoins": "Bitcoin",
+                    "EventColor": "Yellow",
+                    "EventText": "Damus says there is &quot;nothing Apple can do&quot; to stop its Bitcoin Lightning tips"
+                },
+                {
+                    "EventId": 48634619,
+                    "EventType": "None",
+                    "EventTime": "2023-06-16T13:30:28.0297232Z",
+                    "Publisher": "CryptoMode",
+                    "Source": "WebSites",
+                    "RelatedCoins": "Bitcoin",
+                    "EventColor": "Yellow",
+                    "EventText": "Bitkey Bitcoin Wallet by Block Kicks Off Open Beta Integration with Coinbase and Cash App &ndash; CryptoMode"
+                },
+                {
+                    "EventId": 48634613,
+                    "EventType": "None",
+                    "EventTime": "2023-06-16T13:24:19.8611837Z",
+                    "Publisher": "AzCoinNews",
+                    "Source": "WebSites",
+                    "RelatedCoins": "Bitcoin",
+                    "EventColor": "Yellow",
+                    "EventText": "BlackRock Bitcoin ETF Proposal: A History of Approvals and One Rejection in ETF Applications"
+                },
+                {
+                    "EventId": 48634608,
+                    "EventType": "Attack Update",
+                    "EventTime": "2023-06-16T13:11:45.7151666Z",
+                    "Publisher": "CoinGape",
+                    "Source": "WebSites",
+                    "RelatedCoins": "Bitcoin",
+                    "EventColor": "Yellow",
+                    "EventText": "US House Chair Supports BlackRock Bitcoin ETF, Schedules SEC Oversight Hearings"
+                },
+                {
+                    "EventId": 48634590,
+                    "EventType": "Company Crypto Acquisition",
+                    "EventTime": "2023-06-16T12:52:42.5557862Z",
+                    "Publisher": "Token Hell",
+                    "Source": "WebSites",
+                    "RelatedCoins": "Bitcoin",
+                    "EventColor": "Yellow",
+                    "EventText": "Why Buying Bitcoin Is More Profitable Than Mining BTC \u2013 Analysis Tokenhell"
+                }
+            ]
+        },
+        {
+            "name": "Get Recent News By Coin Name",
+            "url": "https://crowdsense1.p.rapidapi.com/api/socialnews/getrecentnewsbycoinname",
+            "description": "Get Recent News By Coin Name",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "coinName",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "Bitcoin"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://crowdsense1.p.rapidapi.com/api/socialnews/getrecentnewsbycoinname\"\nquerystring = {\"coinName\": \"Bitcoin\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"crowdsense1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://crowdsense1.p.rapidapi.com/api/socialnews/getrecentnewsbycoinname\"\nquerystring = {\"coinName\": \"Bitcoin\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"crowdsense1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "EventId": 48634746,
+                    "EventType": "Prices Update",
+                    "EventTime": "2023-06-16T16:16:26.0545424Z",
+                    "Publisher": "Diesel gasoil",
+                    "Source": "WebSites",
+                    "RelatedCoins": "Bitcoin",
+                    "EventColor": "Yellow",
+                    "EventText": "Bitcoin price eases downside as traders demand $24.5K support holds DG Verifications & Stats"
+                },
+                {
+                    "EventId": 48634740,
+                    "EventType": "None",
+                    "EventTime": "2023-06-16T16:10:19.9144007Z",
+                    "Publisher": "Crypto Ticker",
+                    "Source": "WebSites",
+                    "RelatedCoins": "Bitcoin",
+                    "EventColor": "Yellow",
+                    "EventText": "Why are Cryptos UP? It might have to do with Blackrock and Coinbase..."
+                },
+                {
+                    "EventId": 48634701,
+                    "EventType": "None",
+                    "EventTime": "2023-06-16T15:30:16.9141891Z",
+                    "Publisher": "Crypto Slate",
+                    "Source": "WebSites",
+                    "RelatedCoins": "Bitcoin",
+                    "EventColor": "Yellow",
+                    "EventText": "BlackRock spot Bitcoin ETF happening, application politically motivated, says Noelle Acheson"
+                },
+                {
+                    "EventId": 48634698,
+                    "EventType": "Cryptocurrency Trade",
+                    "EventTime": "2023-06-16T15:23:14.2734564Z",
+                    "Publisher": "Seeking Alpha",
+                    "Source": "WebSites",
+                    "RelatedCoins": "Bitcoin",
+                    "EventColor": "Yellow",
+                    "EventText": "Bitcoin: Likely To Decline Further (BTC-USD)"
+                },
+                {
+                    "EventId": 48634690,
+                    "EventType": "Cryptocurrency Trade",
+                    "EventTime": "2023-06-16T15:09:31.0615294Z",
+                    "Publisher": "Cointelegraph",
+                    "Source": "WebSites",
+                    "RelatedCoins": "Bitcoin",
+                    "EventColor": "Yellow",
+                    "EventText": "Self-custody Bitcoin amount unmeasurable so far, says Santiment exec"
+                },
+                {
+                    "EventId": 48634687,
+                    "EventType": "Influencer 1M+ Post",
+                    "EventTime": "2023-06-16T15:00:42Z",
+                    "Publisher": "TheCryptoLark",
+                    "Source": "TwitterScraping",
+                    "RelatedCoins": "Ethereum;Bitcoin",
+                    "EventColor": "Orange",
+                    "EventText": "Influencer TheCryptoLark (1M+): Trade #bitcoin, #ethereum, and loads of other top #crypto coins on Bybit! Use the link below to get: Exclusive Fee Discounts Up To $30,030 In Deposit Bonuses Yes, $30,030 Sign up now"
+                },
+                {
+                    "EventId": 48634659,
+                    "EventType": "Whale Trades",
+                    "EventTime": "2023-06-16T14:25:13.4880096Z",
+                    "Publisher": "Zycrypto",
+                    "Source": "WebSites",
+                    "RelatedCoins": "Bitcoin",
+                    "EventColor": "Yellow",
+                    "EventText": "Satoshi-Era Bitcoin Whale Moves $1.2 Million Worth Of BTC After 13 Years ZyCrypto"
+                },
+                {
+                    "EventId": 48634657,
+                    "EventType": "Social Media Positive Weighted Sentiment Regular Spike 1 Day",
+                    "EventTime": "2023-06-16T14:17:21.4903503Z",
+                    "Publisher": "Crowdsense",
+                    "Source": "Crowdsense",
+                    "RelatedCoins": "Bitcoin",
+                    "EventColor": "Yellow",
+                    "EventText": "Bitcoin daily social media weighted sentiment climbed 1.5 points and is now neutral with 4.8 out of 10"
+                },
+                {
+                    "EventId": 48634651,
+                    "EventType": "Prices Update",
+                    "EventTime": "2023-06-16T14:06:04Z",
+                    "Publisher": "Crypto Shared Links(U)",
+                    "Source": "Telegram|Financial News",
+                    "RelatedCoins": "Bitcoin",
+                    "EventColor": "Yellow",
+                    "EventText": "Bitcoin price eases downside as traders demand $24.5K support holds"
+                },
+                {
+                    "EventId": 48634640,
+                    "EventType": "Cryptocurrency Funding",
+                    "EventTime": "2023-06-16T14:01:10.7256417Z",
+                    "Publisher": "Decrypt",
+                    "Source": "WebSites",
+                    "RelatedCoins": "Bitcoin",
+                    "EventColor": "Yellow",
+                    "EventText": "Jack Dorsey Pledges $5M to Help Bitcoin Core Developers - Decrypt"
+                },
+                {
+                    "EventId": 48634645,
+                    "EventType": "Influencer 100K+ Post",
+                    "EventTime": "2023-06-16T13:54:45Z",
+                    "Publisher": "rektcapital",
+                    "Source": "TwitterScraping",
+                    "RelatedCoins": "Chainlink;Injective;Bitcoin",
+                    "EventColor": "Yellow",
+                    "EventText": "Influencer rektcapital (100K+): I've published a new Altcoin Newsletter I share my charts & analysis on 8 Altcoins These Altcoins are $INJ $LINK I share an Altcoin Newsletter like this every Friday Sign up & read here: #BTC #Crypto"
+                },
+                {
+                    "EventId": 48634633,
+                    "EventType": "Government Bailout",
+                    "EventTime": "2023-06-16T13:37:22.057546Z",
+                    "Publisher": "CryptoPost",
+                    "Source": "WebSites",
+                    "RelatedCoins": "Bitcoin",
+                    "EventColor": "Yellow",
+                    "EventText": "Credit Suisse Crisis Bailout 2023 + Peter Schiff Gold vs Bitcoin? - CryptoPost.com"
+                },
+                {
+                    "EventId": 48634629,
+                    "EventType": "Investment Update",
+                    "EventTime": "2023-06-16T13:37:22.057546Z",
+                    "Publisher": "CryptoPost",
+                    "Source": "WebSites",
+                    "RelatedCoins": "Bitcoin",
+                    "EventColor": "Yellow",
+                    "EventText": "Best Cryptocurrency App In India 2022"
+                },
+                {
+                    "EventId": 48634631,
+                    "EventType": "Halving",
+                    "EventTime": "2023-06-16T13:37:22.057546Z",
+                    "Publisher": "CryptoPost",
+                    "Source": "WebSites",
+                    "RelatedCoins": "Bitcoin",
+                    "EventColor": "Yellow",
+                    "EventText": "Bitcoin Will Hit $100,000 A Coin THIS December 2023 - BTC Halving 2024 - CryptoPost.com"
+                },
+                {
+                    "EventId": 48634632,
+                    "EventType": "Trade Signals",
+                    "EventTime": "2023-06-16T13:37:22.057546Z",
+                    "Publisher": "CryptoPost",
+                    "Source": "WebSites",
+                    "RelatedCoins": "Bitcoin",
+                    "EventColor": "Yellow",
+                    "EventText": "Has Bitcoin Just Bottomed Out?? [new signal] Bitcoin Price Prediction 2023 // Bitcoin News Today - CryptoPost.com"
+                },
+                {
+                    "EventId": 48634621,
+                    "EventType": "None",
+                    "EventTime": "2023-06-16T13:31:29.6095142Z",
+                    "Publisher": "Crypto Slate",
+                    "Source": "WebSites",
+                    "RelatedCoins": "Bitcoin",
+                    "EventColor": "Yellow",
+                    "EventText": "Damus says there is &quot;nothing Apple can do&quot; to stop its Bitcoin Lightning tips"
+                },
+                {
+                    "EventId": 48634619,
+                    "EventType": "None",
+                    "EventTime": "2023-06-16T13:30:28.0297232Z",
+                    "Publisher": "CryptoMode",
+                    "Source": "WebSites",
+                    "RelatedCoins": "Bitcoin",
+                    "EventColor": "Yellow",
+                    "EventText": "Bitkey Bitcoin Wallet by Block Kicks Off Open Beta Integration with Coinbase and Cash App &ndash; CryptoMode"
+                },
+                {
+                    "EventId": 48634613,
+                    "EventType": "None",
+                    "EventTime": "2023-06-16T13:24:19.8611837Z",
+                    "Publisher": "AzCoinNews",
+                    "Source": "WebSites",
+                    "RelatedCoins": "Bitcoin",
+                    "EventColor": "Yellow",
+                    "EventText": "BlackRock Bitcoin ETF Proposal: A History of Approvals and One Rejection in ETF Applications"
+                },
+                {
+                    "EventId": 48634608,
+                    "EventType": "Attack Update",
+                    "EventTime": "2023-06-16T13:11:45.7151666Z",
+                    "Publisher": "CoinGape",
+                    "Source": "WebSites",
+                    "RelatedCoins": "Bitcoin",
+                    "EventColor": "Yellow",
+                    "EventText": "US House Chair Supports BlackRock Bitcoin ETF, Schedules SEC Oversight Hearings"
+                },
+                {
+                    "EventId": 48634590,
+                    "EventType": "Company Crypto Acquisition",
+                    "EventTime": "2023-06-16T12:52:42.5557862Z",
+                    "Publisher": "Token Hell",
+                    "Source": "WebSites",
+                    "RelatedCoins": "Bitcoin",
+                    "EventColor": "Yellow",
+                    "EventText": "Why Buying Bitcoin Is More Profitable Than Mining BTC \u2013 Analysis Tokenhell"
+                }
+            ]
+        },
+        {
+            "name": "Get Recent Updates",
+            "url": "https://crowdsense1.p.rapidapi.com/api/socialnews/getrecentnews",
+            "description": "Get Recent Updates",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://crowdsense1.p.rapidapi.com/api/socialnews/getrecentnews\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"crowdsense1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://crowdsense1.p.rapidapi.com/api/socialnews/getrecentnews\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"crowdsense1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "EventId": 48634746,
+                    "EventType": "Prices Update",
+                    "EventTime": "2023-06-16T16:16:26.0545424Z",
+                    "Publisher": "Diesel gasoil",
+                    "Source": "WebSites",
+                    "RelatedCoins": "Bitcoin",
+                    "EventColor": "Yellow",
+                    "EventText": "Bitcoin price eases downside as traders demand $24.5K support holds DG Verifications & Stats"
+                },
+                {
+                    "EventId": 48634740,
+                    "EventType": "None",
+                    "EventTime": "2023-06-16T16:10:19.9144007Z",
+                    "Publisher": "Crypto Ticker",
+                    "Source": "WebSites",
+                    "RelatedCoins": "Bitcoin",
+                    "EventColor": "Yellow",
+                    "EventText": "Why are Cryptos UP? It might have to do with Blackrock and Coinbase..."
+                },
+                {
+                    "EventId": 48634739,
+                    "EventType": "Cryptocurrency Trade",
+                    "EventTime": "2023-06-16T16:09:06.397525Z",
+                    "Publisher": "CoinGape",
+                    "Source": "WebSites",
+                    "RelatedCoins": "Celsius",
+                    "EventColor": "Yellow",
+                    "EventText": "Rug Pull Alert: List Of Altcoins Celsius Network Will Sell On July 1st"
+                },
+                {
+                    "EventId": 48634738,
+                    "EventType": "Bankruptcy",
+                    "EventTime": "2023-06-16T16:03:57.897379Z",
+                    "Publisher": "CryptoNews,Crypto New",
+                    "Source": "WebSites",
+                    "RelatedCoins": null,
+                    "EventColor": "Yellow",
+                    "EventText": "FTX Founder Sam Bankman-Fried Attempt to Dismiss Charges Stumbles in Court"
+                },
+                {
+                    "EventId": 48634737,
+                    "EventType": "Cryptocurrency Trade",
+                    "EventTime": "2023-06-16T16:02:57.13014Z",
+                    "Publisher": "U Today",
+                    "Source": "WebSites",
+                    "RelatedCoins": "Cardano;XRP;BNB",
+                    "EventColor": "Yellow",
+                    "EventText": "XRP, ADA and BNB Price Analysis for June 16"
+                },
+                {
+                    "EventId": 48634731,
+                    "EventType": "Prices Update",
+                    "EventTime": "2023-06-16T15:53:05.9095411Z",
+                    "Publisher": "Zycrypto",
+                    "Source": "WebSites",
+                    "RelatedCoins": "Cardano",
+                    "EventColor": "Yellow",
+                    "EventText": "Cardano at $5? \u2014 Analysts Set Huge ADA Price Expectations for 2023 as Key Metrics Surge ZyCrypto"
+                },
+                {
+                    "EventId": 48634730,
+                    "EventType": "Airport Update",
+                    "EventTime": "2023-06-16T15:51:20.6483571Z",
+                    "Publisher": "NY Post",
+                    "Source": "WebSites",
+                    "RelatedCoins": null,
+                    "EventColor": "Yellow",
+                    "EventText": "Airline fined $15,625 after ground crew worker 'ingested' into plane engine"
+                },
+                {
+                    "EventId": 48634729,
+                    "EventType": "None",
+                    "EventTime": "2023-06-16T15:48:17.3038404Z",
+                    "Publisher": "U Today",
+                    "Source": "WebSites",
+                    "RelatedCoins": "DogeCoin;SHIBA INU",
+                    "EventColor": "Yellow",
+                    "EventText": "Shiba Inu (SHIB), Dogecoin (DOGE) Exempted as Bakkt Delists Tokens"
+                },
+                {
+                    "EventId": 48634725,
+                    "EventType": "Prices Update",
+                    "EventTime": "2023-06-16T15:42:42.6654095Z",
+                    "Publisher": "CoinGape",
+                    "Source": "WebSites",
+                    "RelatedCoins": "Polygon",
+                    "EventColor": "Yellow",
+                    "EventText": "MATIC Price Analysis: $MATIC Price Faces Risk of Losing $0.5 Support; Sell or Hold?"
+                },
+                {
+                    "EventId": 48634724,
+                    "EventType": "Mining",
+                    "EventTime": "2023-06-16T15:41:12.605301Z",
+                    "Publisher": "CoinPedia",
+                    "Source": "WebSites",
+                    "RelatedCoins": "Tether;SHIBA INU",
+                    "EventColor": "Yellow",
+                    "EventText": "Trillions of Shib Transferred and Billions of USDT Minted -What\u2019s Going on in Crypto Space?"
+                },
+                {
+                    "EventId": 48634706,
+                    "EventType": "Prices Update",
+                    "EventTime": "2023-06-16T15:33:04.3222172Z",
+                    "Publisher": "U Today",
+                    "Source": "WebSites",
+                    "RelatedCoins": "FRAX;Ethereum;Frax Share",
+                    "EventColor": "Yellow",
+                    "EventText": "FXS Price Spikes Over $5 as Ethereum (ETH) Gets Closer to Frax Finance L2"
+                },
+                {
+                    "EventId": 48634700,
+                    "EventType": "None",
+                    "EventTime": "2023-06-16T15:30:17.8985225Z",
+                    "Publisher": "Tronweekly",
+                    "Source": "WebSites",
+                    "RelatedCoins": "KuCoin Token",
+                    "EventColor": "Yellow",
+                    "EventText": "KuCoin Token (KCS) Defies Bearish Tide: Surging 12% Amidst Market Turmoil"
+                },
+                {
+                    "EventId": 48634701,
+                    "EventType": "None",
+                    "EventTime": "2023-06-16T15:30:16.9141891Z",
+                    "Publisher": "Crypto Slate",
+                    "Source": "WebSites",
+                    "RelatedCoins": "Bitcoin",
+                    "EventColor": "Yellow",
+                    "EventText": "BlackRock spot Bitcoin ETF happening, application politically motivated, says Noelle Acheson"
+                },
+                {
+                    "EventId": 48634704,
+                    "EventType": "Influencer 100K+ Post",
+                    "EventTime": "2023-06-16T15:29:25Z",
+                    "Publisher": "CryptoWizardd",
+                    "Source": "TwitterScraping",
+                    "RelatedCoins": null,
+                    "EventColor": "Yellow",
+                    "EventText": "Influencer CryptoWizardd (100K+): If binance goes down. Start calling mac donalds"
+                },
+                {
+                    "EventId": 48634699,
+                    "EventType": "Investigation",
+                    "EventTime": "2023-06-16T15:27:45.1870183Z",
+                    "Publisher": "CryptoNews",
+                    "Source": "WebSites",
+                    "RelatedCoins": null,
+                    "EventColor": "Yellow",
+                    "EventText": "Binance Is Being Investigated by French Authorities: Bloomberg News"
+                },
+                {
+                    "EventId": 48634698,
+                    "EventType": "Cryptocurrency Trade",
+                    "EventTime": "2023-06-16T15:23:14.2734564Z",
+                    "Publisher": "Seeking Alpha",
+                    "Source": "WebSites",
+                    "RelatedCoins": "Bitcoin",
+                    "EventColor": "Yellow",
+                    "EventText": "Bitcoin: Likely To Decline Further (BTC-USD)"
+                },
+                {
+                    "EventId": 48634690,
+                    "EventType": "Cryptocurrency Trade",
+                    "EventTime": "2023-06-16T15:09:31.0615294Z",
+                    "Publisher": "Cointelegraph",
+                    "Source": "WebSites",
+                    "RelatedCoins": "Bitcoin",
+                    "EventColor": "Yellow",
+                    "EventText": "Self-custody Bitcoin amount unmeasurable so far, says Santiment exec"
+                },
+                {
+                    "EventId": 48634688,
+                    "EventType": "None",
+                    "EventTime": "2023-06-16T15:05:25.4984359Z",
+                    "Publisher": "U Today,AzCoinNews",
+                    "Source": "WebSites",
+                    "RelatedCoins": null,
+                    "EventColor": "Yellow",
+                    "EventText": "FUD Alert: Binance CZ Quashes French Rumors"
+                },
+                {
+                    "EventId": 48634687,
+                    "EventType": "Influencer 1M+ Post",
+                    "EventTime": "2023-06-16T15:00:42Z",
+                    "Publisher": "TheCryptoLark",
+                    "Source": "TwitterScraping",
+                    "RelatedCoins": "Ethereum;Bitcoin",
+                    "EventColor": "Orange",
+                    "EventText": "Influencer TheCryptoLark (1M+): Trade #bitcoin, #ethereum, and loads of other top #crypto coins on Bybit! Use the link below to get: Exclusive Fee Discounts Up To $30,030 In Deposit Bonuses Yes, $30,030 Sign up now"
+                },
+                {
+                    "EventId": 48634682,
+                    "EventType": "Prices Update",
+                    "EventTime": "2023-06-16T14:56:58.2735744Z",
+                    "Publisher": "CoinPedia",
+                    "Source": "WebSites",
+                    "RelatedCoins": "Polygon",
+                    "EventColor": "Yellow",
+                    "EventText": "Polygon Price Makes Bullish Reversal From $0.55 Amid SEC Trouble! Here\u2019s Next MATIC Price Move - Coinpedia Fintech News"
+                }
+            ]
+        },
+        {
+            "name": "Get All Social Spikes by Coin Ticker",
+            "url": "https://crowdsense1.p.rapidapi.com/api/socialnews/getsocialspikesbycointicker",
+            "description": "Retrieve social media spikes in the last 24 hours by Coin Ticker. Results will contain Sentiment, Weighted Sentiment, Mentions and Followers spikes both positive and negative. \n\nThis brings all spikes including:\n\n- Predictive spikes (that went through another machine learning model to predict likelihood of market change within the next 24 hours). These spikes are colored as red and orange.\n- Other spikes in social media metrics that did not go through another layer of market moving prediction. These include spikes that are colored as yellow, gray, and black.\n\n**Input:**\n\n- Coin Ticker (Required)\n\n**Output:**\n\n- EventId\n- EventType\n- Event Time\n- Related coins\n- Event Color\n- Event text\n\n**Definitions:**\n\n- Related coins: Coins mentioned in the post\n- Event type: Determines the type of spike (Sentiment, Weighted sentiment, Mentions or Followers) and the timeframe of the spike (1 hour, 8 hours or 1 day)\n- Event Color: Shows the magnitude of the event (From most important to less important: Red, Orange, Yellow, Gray and Black)\n- Mentions: Number of posts related to the coin in tracked social media sources.\n- Sentiment: Democratic Sentiment Score out of 100 Points (100 for the most positive, 50 for neutral and 0 for the most negative). [Democratic Sentiment is a sentiment that gives the same weight to each mention related to the coin despite the number of followers for each mention]\n- WeightedSentiment: Weighted Sentiment Score out of 100 Points (100 for the most positive, 50 for neutral and 0 for the most negative). [ Weighted Sentiment is a sentiment that gives more weight to mentions with more followers]\n- Followers: Sum of followers reached by coin related mentions\n\n**Details:**\n\n- Results are up to 100\n- All dates are UTC",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "coinTicker",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "BTC"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://crowdsense1.p.rapidapi.com/api/socialnews/getsocialspikesbycointicker\"\nquerystring = {\"coinTicker\": \"BTC\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"crowdsense1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://crowdsense1.p.rapidapi.com/api/socialnews/getsocialspikesbycointicker\"\nquerystring = {\"coinTicker\": \"BTC\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"crowdsense1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "EventId": 48634657,
+                    "EventType": "Social Media Positive Weighted Sentiment Regular Spike 1 Day",
+                    "EventTime": "2023-06-16T14:17:21.4903503Z",
+                    "RelatedCoins": "Bitcoin",
+                    "EventColor": "Yellow",
+                    "EventText": "Bitcoin daily social media weighted sentiment climbed 1.5 points and is now neutral with 4.8 out of 10"
+                },
+                {
+                    "EventId": 48634401,
+                    "EventType": "Social Media Positive Weighted Sentiment Regular Spike 1 Day",
+                    "EventTime": "2023-06-16T08:15:39.1143785Z",
+                    "RelatedCoins": "Bitcoin",
+                    "EventColor": "Yellow",
+                    "EventText": "Bitcoin daily social media weighted sentiment climbed 1 points and is now neutral with 4.3 out of 10"
+                },
+                {
+                    "EventId": 48634286,
+                    "EventType": "Social Media Positive Weighted Sentiment Regular Spike 1 Day",
+                    "EventTime": "2023-06-16T04:03:50.3290748Z",
+                    "RelatedCoins": "Bitcoin",
+                    "EventColor": "Yellow",
+                    "EventText": "Bitcoin daily social media weighted sentiment climbed 1 points and is now neutral with 4.3 out of 10"
+                },
+                {
+                    "EventId": 48634139,
+                    "EventType": "Social Media Positive Weighted Sentiment Regular Spike 1 Day",
+                    "EventTime": "2023-06-15T22:01:28.1091307Z",
+                    "RelatedCoins": "Bitcoin",
+                    "EventColor": "Yellow",
+                    "EventText": "Bitcoin daily social media weighted sentiment climbed 1 points and is now neutral with 4.3 out of 10"
+                }
+            ]
+        },
+        {
+            "name": "Get Predictive Spikes by Coin Ticker",
+            "url": "https://crowdsense1.p.rapidapi.com/api/socialnews/getpredictivespikesbycointicker",
+            "description": "Retrieve predictive social media spikes in the last 24 hours by Coin Ticker. Results will contain Sentiment, Weighted Sentiment, Mentions and Followers spikes both positive and negative. \n\nThis brings predictive spikes (that went through another machine learning model to predict likelihood of market change within the next 24 hours). These spikes are colored as red and orange.\n\n**Input:**\n\n- Coin Ticker (Required)\n\n**Output:**\n\n- EventId\n- EventType\n- Event Time\n- Related coins\n- Event Color\n- Event text\n\n\n**Definitions:**\n\n- Related coins: Coins mentioned in the post\n- Event type: Determines the type of spike (Sentiment, Weighted sentiment, Mentions or Followers) and the timeframe of the spike (1 hour, 8 hours or 1 day)\n- Event Color: Shows the magnitude of the event (From most important to less important: Red, Orange, Yellow, Gray and Black)\n- Mentions: Number of posts related to the coin in tracked social media sources.\n- Sentiment: Democratic Sentiment Score out of 100 Points (100 for the most positive, 50 for neutral and 0 for the most negative). [Democratic Sentiment is a sentiment that gives the same weight to each mention related to the coin despite the number of followers for each mention]\n- WeightedSentiment: Weighted Sentiment Score out of 100 Points (100 for the most positive, 50 for neutral and 0 for the most negative). [ Weighted Sentiment is a sentiment that gives more weight to mentions with more followers]\n- Followers: Sum of followers reached by coin related mentions\n\n**Details:**\n\n- Results are up to 100\n- All dates are UTC\n- Coins in this endpoint are 3 Billion market cap and more",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "coinTicker",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "BTC"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://crowdsense1.p.rapidapi.com/api/socialnews/getpredictivespikesbycointicker\"\nquerystring = {\"coinTicker\": \"BTC\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"crowdsense1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://crowdsense1.p.rapidapi.com/api/socialnews/getpredictivespikesbycointicker\"\nquerystring = {\"coinTicker\": \"BTC\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"crowdsense1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": []
+        },
+        {
+            "name": "Get All Social Spikes by Coin Name",
+            "url": "https://crowdsense1.p.rapidapi.com/api/socialnews/getsocialspikesbycoinname",
+            "description": "Retrieve social media spikes in the last 24 hours by Coin Name. Results will contain Sentiment, Weighted Sentiment, Mentions and Followers spikes both positive and negative. \n\nThis brings all spikes including:\n\n- Predictive spikes (that went through another machine learning model to predict likelihood of market change within the next 24 hours). These spikes are colored as red and orange.\n- Other spikes in social media metrics that did not go through another layer of market moving prediction. These include spikes that are colored as yellow, gray, and black.\n\n**Input:**\n\n- Coin Name (Required)\n\n**Output:**\n\n- EventId\n- EventType\n- Event Time\n- Related coins\n- Event Color\n- Event text\n\n**Definitions:**\n\n- Related coins: Coins mentioned in the post\n- Event type: Determines the type of spike (Sentiment, Weighted sentiment, Mentions or Followers) and the timeframe of the spike (1 hour, 8 hours or 1 day)\n- Event Color: Shows the magnitude of the event (From most important to less important: Red, Orange, Yellow, Gray and Black)\n- Mentions: Number of posts related to the coin in tracked social media sources.\n- Sentiment: Democratic Sentiment Score out of 100 Points (100 for the most positive, 50 for neutral and 0 for the most negative). [Democratic Sentiment is a sentiment that gives the same weight to each mention related to the coin despite the number of followers for each mention]\n- WeightedSentiment: Weighted Sentiment Score out of 100 Points (100 for the most positive, 50 for neutral and 0 for the most negative). [ Weighted Sentiment is a sentiment that gives more weight to mentions with more followers]\n- Followers: Sum of followers reached by coin related mentions\n\n**Details:**\n\n- Results are up to 100\n- All dates are UTC",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "coinName",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "Bitcoin"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://crowdsense1.p.rapidapi.com/api/socialnews/getsocialspikesbycoinname\"\nquerystring = {\"coinName\": \"Bitcoin\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"crowdsense1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://crowdsense1.p.rapidapi.com/api/socialnews/getsocialspikesbycoinname\"\nquerystring = {\"coinName\": \"Bitcoin\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"crowdsense1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "EventId": 48634657,
+                    "EventType": "Social Media Positive Weighted Sentiment Regular Spike 1 Day",
+                    "EventTime": "2023-06-16T14:17:21.4903503Z",
+                    "RelatedCoins": "Bitcoin",
+                    "EventColor": "Yellow",
+                    "EventText": "Bitcoin daily social media weighted sentiment climbed 1.5 points and is now neutral with 4.8 out of 10"
+                },
+                {
+                    "EventId": 48634401,
+                    "EventType": "Social Media Positive Weighted Sentiment Regular Spike 1 Day",
+                    "EventTime": "2023-06-16T08:15:39.1143785Z",
+                    "RelatedCoins": "Bitcoin",
+                    "EventColor": "Yellow",
+                    "EventText": "Bitcoin daily social media weighted sentiment climbed 1 points and is now neutral with 4.3 out of 10"
+                },
+                {
+                    "EventId": 48634286,
+                    "EventType": "Social Media Positive Weighted Sentiment Regular Spike 1 Day",
+                    "EventTime": "2023-06-16T04:03:50.3290748Z",
+                    "RelatedCoins": "Bitcoin",
+                    "EventColor": "Yellow",
+                    "EventText": "Bitcoin daily social media weighted sentiment climbed 1 points and is now neutral with 4.3 out of 10"
+                },
+                {
+                    "EventId": 48634139,
+                    "EventType": "Social Media Positive Weighted Sentiment Regular Spike 1 Day",
+                    "EventTime": "2023-06-15T22:01:28.1091307Z",
+                    "RelatedCoins": "Bitcoin",
+                    "EventColor": "Yellow",
+                    "EventText": "Bitcoin daily social media weighted sentiment climbed 1 points and is now neutral with 4.3 out of 10"
+                }
+            ]
+        },
+        {
+            "name": "Get Daily Influencer Posts by Coin Name",
+            "url": "https://crowdsense1.p.rapidapi.com/api/socialnews/getinfluencersnewsbycoinname",
+            "description": "Retrieve news and posts from Top Influencers in social media ordered by date by coin name\nThis endpoint contains results on a specific coin. To search for influencer posts on all coins coins check \"Get Daily Influencer Posts\"\n\n**Input:**\n\n- Coin Name (Required)\n\n\n**Output:**\n\n- EventId\n- EventType\n- Event Time\n- Publisher\n- Source\n- Related coins\n- Event Color\n- Number of followers\n- Event text\n\n**Definitions:**\n\n- Publisher: User name of the publisher of the event in social media\n- Source: Social media where the post was published\n- Related coins: Coins mentioned in the post\n- Event Color: Shows the magnitude of the event (From most important to less important: Red, Orange, Yellow, Gray and Black)\n- Number of followers: Influencer\u00b4s number of followers in social media\n\n**Details:**\n\n- Results are up to 100\n- All dates are UTC",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "coinName",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "Bitcoin"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://crowdsense1.p.rapidapi.com/api/socialnews/getinfluencersnewsbycoinname\"\nquerystring = {\"coinName\": \"Bitcoin\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"crowdsense1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://crowdsense1.p.rapidapi.com/api/socialnews/getinfluencersnewsbycoinname\"\nquerystring = {\"coinName\": \"Bitcoin\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"crowdsense1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "EventId": 48634687,
+                    "EventType": "Influencer 1M+ Post",
+                    "EventTime": "2023-06-16T15:00:42Z",
+                    "Publisher": "TheCryptoLark",
+                    "Source": "TwitterScraping",
+                    "RelatedCoins": "Ethereum;Bitcoin",
+                    "EventColor": "Orange",
+                    "NumOfFollowers": 1119053,
+                    "EventText": "Influencer TheCryptoLark (1M+): Trade #bitcoin, #ethereum, and loads of other top #crypto coins on Bybit! Use the link below to get: Exclusive Fee Discounts Up To $30,030 In Deposit Bonuses Yes, $30,030 Sign up now"
+                },
+                {
+                    "EventId": 48634645,
+                    "EventType": "Influencer 100K+ Post",
+                    "EventTime": "2023-06-16T13:54:45Z",
+                    "Publisher": "rektcapital",
+                    "Source": "TwitterScraping",
+                    "RelatedCoins": "Chainlink;Injective;Bitcoin",
+                    "EventColor": "Yellow",
+                    "NumOfFollowers": 346483,
+                    "EventText": "Influencer rektcapital (100K+): I've published a new Altcoin Newsletter I share my charts & analysis on 8 Altcoins These Altcoins are $INJ $LINK I share an Altcoin Newsletter like this every Friday Sign up & read here: #BTC #Crypto"
+                },
+                {
+                    "EventId": 48634508,
+                    "EventType": "Influencer 500K+ Post",
+                    "EventTime": "2023-06-16T11:13:15Z",
+                    "Publisher": "trader1sz",
+                    "Source": "TwitterScraping",
+                    "RelatedCoins": "Polygon;Bitcoin",
+                    "EventColor": "Yellow",
+                    "NumOfFollowers": 539742,
+                    "EventText": "Influencer trader1sz (500K+): $MATIC one of the heavier ones this morning. If btc turns, this is going down one of the hardest."
+                },
+                {
+                    "EventId": 48634355,
+                    "EventType": "Influencer 100K+ Post",
+                    "EventTime": "2023-06-16T06:26:35Z",
+                    "Publisher": "WhaleChart",
+                    "Source": "TwitterScraping",
+                    "RelatedCoins": "Bitcoin",
+                    "EventColor": "Yellow",
+                    "NumOfFollowers": 330613,
+                    "EventText": "Influencer WhaleChart (100K+): 68.4% of the bitcoin supply has not moved in at least 1 year despite: - Price dumping - Fastest rate hikes in history - BlockFi/Celsius/Voyager implosion - FTX implosion - Coinbase + Binance lawsuit Are you bullish?"
+                },
+                {
+                    "EventId": 48634037,
+                    "EventType": "Influencer 100K+ Post",
+                    "EventTime": "2023-06-15T19:09:29Z",
+                    "Publisher": "cryptorecruitr",
+                    "Source": "TwitterScraping",
+                    "RelatedCoins": "Bitcoin;Cardano",
+                    "EventColor": "Yellow",
+                    "NumOfFollowers": 241929,
+                    "EventText": "Influencer cryptorecruitr (100K+): It seems slow around here. Did everyone leave again? #Bitcoin #Cardano"
+                }
+            ]
+        },
+        {
+            "name": "Get Daily Influencer Posts",
+            "url": "https://crowdsense1.p.rapidapi.com/api/socialnews/getinfluencersnews",
+            "description": "Retrieve news and posts from Top Influencers in social media ordered by date\nThis endpoint contains results from all coins. To search for posts on a specific coins check \"Get Daily Influencer Posts by Coin Name\" or \"Get Daily Influencer Posts by Coin Ticker\"\n\n**Output:**\n\n- EventId \n- EventType\n- Event Time\n- Publisher\n- Source\n- Related coins\n- Event Color\n- Number of followers\n- Event text\n\n**Definitions:** \n\n- Publisher: User name of the publisher of the event in social media\n- Source: Social media where the post was published\n- Related coins: Coins mentioned in the post\n- Event Color: Shows the magnitude of the event (From most important to less important: Red, Orange, Yellow, Gray and Black)\n- Number of followers:  Influencer\u00b4s number of followers in social media\n\n**Details:**\n\n- Results are up to 100\n- All dates are UTC",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://crowdsense1.p.rapidapi.com/api/socialnews/getinfluencersnews\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"crowdsense1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://crowdsense1.p.rapidapi.com/api/socialnews/getinfluencersnews\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"crowdsense1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "EventId": 48634704,
+                    "EventType": "Influencer 100K+ Post",
+                    "EventTime": "2023-06-16T15:29:25Z",
+                    "Publisher": "CryptoWizardd",
+                    "Source": "TwitterScraping",
+                    "RelatedCoins": null,
+                    "EventColor": "Yellow",
+                    "NumOfFollowers": 481255,
+                    "EventText": "Influencer CryptoWizardd (100K+): If binance goes down. Start calling mac donalds"
+                },
+                {
+                    "EventId": 48634687,
+                    "EventType": "Influencer 1M+ Post",
+                    "EventTime": "2023-06-16T15:00:42Z",
+                    "Publisher": "TheCryptoLark",
+                    "Source": "TwitterScraping",
+                    "RelatedCoins": "Ethereum;Bitcoin",
+                    "EventColor": "Orange",
+                    "NumOfFollowers": 1119053,
+                    "EventText": "Influencer TheCryptoLark (1M+): Trade #bitcoin, #ethereum, and loads of other top #crypto coins on Bybit! Use the link below to get: Exclusive Fee Discounts Up To $30,030 In Deposit Bonuses Yes, $30,030 Sign up now"
+                },
+                {
+                    "EventId": 48634645,
+                    "EventType": "Influencer 100K+ Post",
+                    "EventTime": "2023-06-16T13:54:45Z",
+                    "Publisher": "rektcapital",
+                    "Source": "TwitterScraping",
+                    "RelatedCoins": "Chainlink;Injective;Bitcoin",
+                    "EventColor": "Yellow",
+                    "NumOfFollowers": 346483,
+                    "EventText": "Influencer rektcapital (100K+): I've published a new Altcoin Newsletter I share my charts & analysis on 8 Altcoins These Altcoins are $INJ $LINK I share an Altcoin Newsletter like this every Friday Sign up & read here: #BTC #Crypto"
+                },
+                {
+                    "EventId": 48634595,
+                    "EventType": "Influencer 1M+ Post",
+                    "EventTime": "2023-06-16T13:00:16Z",
+                    "Publisher": "TheCryptoLark",
+                    "Source": "TwitterScraping",
+                    "RelatedCoins": "Ethereum;Solana",
+                    "EventColor": "Orange",
+                    "NumOfFollowers": 1119027,
+                    "EventText": "Influencer TheCryptoLark (1M+): Will Solana be the next cycle's Ethereum or the next cycle's NEO?"
+                },
+                {
+                    "EventId": 48634603,
+                    "EventType": "Influencer 5M+ Post",
+                    "EventTime": "2023-06-16T12:55:44Z",
+                    "Publisher": "cz_binance",
+                    "Source": "TwitterScraping",
+                    "RelatedCoins": null,
+                    "EventColor": "Orange",
+                    "NumOfFollowers": 8508177,
+                    "EventText": "Influencer cz_binance (5M+): 4. FUD. In France, surprise (no advanced notice) on-site inspections of regulated businesses are the norm, for banks, and now for crypto too. The surprise visit for Binance France happened a couple of weeks ago. It's not \"news\". Binance France cooperated fully. Binance also"
+                },
+                {
+                    "EventId": 48634508,
+                    "EventType": "Influencer 500K+ Post",
+                    "EventTime": "2023-06-16T11:13:15Z",
+                    "Publisher": "trader1sz",
+                    "Source": "TwitterScraping",
+                    "RelatedCoins": "Polygon;Bitcoin",
+                    "EventColor": "Yellow",
+                    "NumOfFollowers": 539742,
+                    "EventText": "Influencer trader1sz (500K+): $MATIC one of the heavier ones this morning. If btc turns, this is going down one of the hardest."
+                },
+                {
+                    "EventId": 48634419,
+                    "EventType": "Influencer 500K+ Post",
+                    "EventTime": "2023-06-16T08:43:13Z",
+                    "Publisher": "CryptoMichNL",
+                    "Source": "TwitterScraping",
+                    "RelatedCoins": null,
+                    "EventColor": "Yellow",
+                    "NumOfFollowers": 657685,
+                    "EventText": "Influencer CryptoMichNL (500K+): NEWS: binance leaves the Dutch markets. Dutch clients will only be able to withdraw their funds by immediate effect."
+                },
+                {
+                    "EventId": 48634393,
+                    "EventType": "Influencer 100K+ Post",
+                    "EventTime": "2023-06-16T07:55:48Z",
+                    "Publisher": "crypto_rand",
+                    "Source": "TwitterScraping",
+                    "RelatedCoins": "Tether",
+                    "EventColor": "Yellow",
+                    "NumOfFollowers": 301191,
+                    "EventText": "Influencer crypto_rand (100K+): GM Crypto Twitter #Tether repegged #SEC has not filed any #Crypto lawsuits this week #BlackRock filing for #BitcoinETF Waking up to mostly green this morning Its Friday LFG"
+                },
+                {
+                    "EventId": 48634355,
+                    "EventType": "Influencer 100K+ Post",
+                    "EventTime": "2023-06-16T06:26:35Z",
+                    "Publisher": "WhaleChart",
+                    "Source": "TwitterScraping",
+                    "RelatedCoins": "Bitcoin",
+                    "EventColor": "Yellow",
+                    "NumOfFollowers": 330613,
+                    "EventText": "Influencer WhaleChart (100K+): 68.4% of the bitcoin supply has not moved in at least 1 year despite: - Price dumping - Fastest rate hikes in history - BlockFi/Celsius/Voyager implosion - FTX implosion - Coinbase + Binance lawsuit Are you bullish?"
+                },
+                {
+                    "EventId": 48634293,
+                    "EventType": "Influencer 100K+ Post",
+                    "EventTime": "2023-06-16T04:08:27Z",
+                    "Publisher": "RichardHeartWin",
+                    "Source": "TwitterScraping",
+                    "RelatedCoins": "Ethereum;Uniswap",
+                    "EventColor": "Yellow",
+                    "NumOfFollowers": 327909,
+                    "EventText": "Influencer RichardHeartWin (100K+): Imagine deploying #Ethereum (geth, erigon, lighthouse, prism), infura, uniswap, and etherscan. Then imagine: ETH: Burning 25% of block rewards & increasing throughput 17% UNI: Buy and burn & yield farms etherscan: removing the ads infura: just making it free"
+                },
+                {
+                    "EventId": 48634267,
+                    "EventType": "Influencer 100K+ Post",
+                    "EventTime": "2023-06-16T03:23:04Z",
+                    "Publisher": "RichardHeartWin",
+                    "Source": "TwitterScraping",
+                    "RelatedCoins": "Ethereum;Uniswap",
+                    "EventColor": "Yellow",
+                    "NumOfFollowers": 327908,
+                    "EventText": "Influencer RichardHeartWin (100K+): Imagine deploying #Ethereum (geth, erigon, lighthouse, prism), infura, uniswap, and etherscan. Then imagine: ETH: Reducing burning 25% of block rewards increasing throughput 17% UNI: Buy and burn and yield farms etherscan: removing the ads infura: just making it free"
+                },
+                {
+                    "EventId": 48634078,
+                    "EventType": "Influencer 100K+ Post",
+                    "EventTime": "2023-06-15T20:00:09Z",
+                    "Publisher": "MessariCrypto",
+                    "Source": "TwitterScraping",
+                    "RelatedCoins": "Ethereum;Solana",
+                    "EventColor": "Yellow",
+                    "NumOfFollowers": 316446,
+                    "EventText": "Influencer MessariCrypto (100K+): Concerning validator concentration, #Ethereum's dominance of go_ethereum and prylabs caused network instability at times. Solana experienced downtime due to reliance on a single client but is developing new clients like jito_labs and jump_firedancer."
+                },
+                {
+                    "EventId": 48634037,
+                    "EventType": "Influencer 100K+ Post",
+                    "EventTime": "2023-06-15T19:09:29Z",
+                    "Publisher": "cryptorecruitr",
+                    "Source": "TwitterScraping",
+                    "RelatedCoins": "Bitcoin;Cardano",
+                    "EventColor": "Yellow",
+                    "NumOfFollowers": 241929,
+                    "EventText": "Influencer cryptorecruitr (100K+): It seems slow around here. Did everyone leave again? #Bitcoin #Cardano"
+                },
+                {
+                    "EventId": 48634001,
+                    "EventType": "Influencer 100K+ Post",
+                    "EventTime": "2023-06-15T18:07:14Z",
+                    "Publisher": "ShibaInuHodler",
+                    "Source": "TwitterScraping",
+                    "RelatedCoins": null,
+                    "EventColor": "Yellow",
+                    "NumOfFollowers": 408122,
+                    "EventText": "Influencer ShibaInuHodler (100K+): BREAKING\u203c\ufe0f Coinbase & Cash App to integrate Jack Dorsey's #Bitcoin\u00a0self-custody wallet. Remember \u2014 not your keys, not your coins."
+                }
+            ]
+        },
+        {
+            "name": "Get Top Coins By Followers",
+            "url": "https://crowdsense1.p.rapidapi.com/api/toptrendingcoins/gettopcoinsbyfollowers",
+            "description": "Retrieve real time top 10 coins by Followers\n\n**Output:**\nEach item contains:\n- Rank number\n- Coin name\n- Coin ticker\n- Followers value\n\n**Definitions:**\n- Followers: Sum of followers reached by coin related mentions\n\n**Details:**\n- All results are in real time",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://crowdsense1.p.rapidapi.com/api/toptrendingcoins/gettopcoinsbyfollowers\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"crowdsense1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://crowdsense1.p.rapidapi.com/api/toptrendingcoins/gettopcoinsbyfollowers\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"crowdsense1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "Rank": 1,
+                    "CoinName": "Bitcoin",
+                    "CoinTicker": "BTC",
+                    "Value": 23284559.0
+                },
+                {
+                    "Rank": 2,
+                    "CoinName": "Ethereum",
+                    "CoinTicker": "ETH",
+                    "Value": 16259649.0
+                },
+                {
+                    "Rank": 3,
+                    "CoinName": "BNB",
+                    "CoinTicker": "BNB",
+                    "Value": 8688061.0
+                },
+                {
+                    "Rank": 4,
+                    "CoinName": "Solana",
+                    "CoinTicker": "SOL",
+                    "Value": 5604318.0
+                },
+                {
+                    "Rank": 5,
+                    "CoinName": "XRP",
+                    "CoinTicker": "XRP",
+                    "Value": 5545604.0
+                },
+                {
+                    "Rank": 6,
+                    "CoinName": "Polygon",
+                    "CoinTicker": "MATIC",
+                    "Value": 5193416.0
+                },
+                {
+                    "Rank": 7,
+                    "CoinName": "SHIBA INU",
+                    "CoinTicker": "SHIB",
+                    "Value": 3212521.0
+                },
+                {
+                    "Rank": 8,
+                    "CoinName": "Uniswap",
+                    "CoinTicker": "UNI",
+                    "Value": 3091554.0
+                },
+                {
+                    "Rank": 9,
+                    "CoinName": "Cardano",
+                    "CoinTicker": "ADA",
+                    "Value": 2443549.0
+                },
+                {
+                    "Rank": 10,
+                    "CoinName": "DogeCoin",
+                    "CoinTicker": "DOGE",
+                    "Value": 2309527.0
+                }
+            ]
+        },
+        {
+            "name": "Get Top Coins By Sentiment",
+            "url": "https://crowdsense1.p.rapidapi.com/api/toptrendingcoins/gettopcoinsbysentiment",
+            "description": "Retrieve real time top 10 coins by Sentiment\n\n**Output:**\nEach item contains:\n- Rank number\n- Coin name\n- Coin ticker\n- Sentiment value\n\n**Definitions:**\n\n- Sentiment: Democratic Sentiment Score out of 100 Points (100 for the most positive, 50 for neutral and 0 for the most negative). Democratic Sentiment is a sentiment that gives the same weight to each mention related to the coin despite the number of followers for each mention]\n\n**Details:**\n- All results are in real time",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://crowdsense1.p.rapidapi.com/api/toptrendingcoins/gettopcoinsbysentiment\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"crowdsense1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://crowdsense1.p.rapidapi.com/api/toptrendingcoins/gettopcoinsbysentiment\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"crowdsense1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per hour for your plan, BASIC, by the API provider"
+            }
+        },
+        {
+            "name": "Get Daily Influencer Posts by Coin Ticker",
+            "url": "https://crowdsense1.p.rapidapi.com/api/socialnews/getinfluencersnewsbycointicker",
+            "description": "Retrieve news and posts from Top Influencers in social media ordered by date by coin ticker\nThis endpoint contains results on a specific coin. To search for influencer posts on all coins coins check \"Get Daily Influencer Posts\"\n\n**Input:**\n\n- Coin Ticker (Required)\n\n**Output:**\n\n- EventId\n- EventType\n- Event Time\n- Publisher\n- Source\n- Related coins\n- Event Color\n- Number of followers\n- Event text\n\n**Definitions:**\n\n- Publisher: User name of the publisher of the event in social media\n- Source: Social media where the post was published\n- Related coins: Coins mentioned in the post\n- Event Color: Shows the magnitude of the event (From most important to less important: Red, Orange, Yellow, Gray and Black)\n- Number of followers: Influencer\u00b4s number of followers in social media\n\n**Details:**\n\n- Results are up to 100\n- All dates are UTC",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "coinTicker",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "BTC"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://crowdsense1.p.rapidapi.com/api/socialnews/getinfluencersnewsbycointicker\"\nquerystring = {\"coinTicker\": \"BTC\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"crowdsense1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://crowdsense1.p.rapidapi.com/api/socialnews/getinfluencersnewsbycointicker\"\nquerystring = {\"coinTicker\": \"BTC\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"crowdsense1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per hour for your plan, BASIC, by the API provider"
+            }
+        },
+        {
+            "name": "Get Coin Metrics By Name",
+            "url": "https://crowdsense1.p.rapidapi.com/api/tokenmetrics/getcoinmetricsbyname",
+            "description": "Retrieve  coin\u00b4s real time social media metrics by Coin name\nIn the case you want to retrieve historical data check \"Get Coin Historical Metrics by Name\" or \"Get Coin Historical Metrics by Ticker\"\n\n**Input:** \n- Security Name: Coin Name (Required)\n\n**Output:**\n\n- Sentiment\n- Sentiment change\n- Followers\n- Followers change\n- Mentions\n- Mentions change\n- Security ticker\n- Security name\n- DataTimeStamp\n\n**Definitions:**\n\n\u2022\tMentions - Number of posts related to the coin in tracked social media sources in the requested date with TimeFrame required.\n\u2022\tMentionsChange - Percentage change of Mentions in the requested date vs the average of the same metric in the past 14 days.\n\u2022\tSentiment - Democratic Sentiment Score out of 100 Points (100 for the most positive, 50 for neutral and 0 for the most negative)in the requested date with TimeFrame required.  [Democratic Sentiment is a sentiment that gives the same weight to each mention related to the coin despite the number of followers for each mention]\n\u2022\tSentimentChange - Percentage change of Democratic Sentiment in the requested date vs the average of the same metric in the past 14 days.\n\u2022\tFollowers - Sum of followers reached by coin related mentions in the requested date with TimeFrame required.\n\u2022\tFollowersChange - Percentage change of Followers Reach in the requested date vs the average of the same metric in the past 14 days.\n\n**Details:**\n- All dates are in UTC\n- Results are on 1 day timeframe",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "securityName",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "bitcoin"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://crowdsense1.p.rapidapi.com/api/tokenmetrics/getcoinmetricsbyname\"\nquerystring = {\"securityName\": \"bitcoin\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"crowdsense1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://crowdsense1.p.rapidapi.com/api/tokenmetrics/getcoinmetricsbyname\"\nquerystring = {\"securityName\": \"bitcoin\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"crowdsense1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per hour for your plan, BASIC, by the API provider"
+            }
+        },
+        {
+            "name": "Get Coin Metrics By Ticker",
+            "url": "https://crowdsense1.p.rapidapi.com/api/tokenmetrics/getcoinmetricsbyticker",
+            "description": "Retrieve coin\u00b4s  real time social media metrics by Coin ticker\nIn the case you want to retrieve historical data check \"Get Coin Historical Metrics by Name\" or \"Get Coin Historical Metrics by Ticker\"\n\n**Input:** \n- Security Ticker: Coin Ticker (Required)\n\n**Output:**\n\n- Sentiment\n- Sentiment change\n- Followers\n- Followers change\n- Mentions\n- Mentions change\n- Security ticker\n- Security name\n- DataTimeStamp\n\n**Definitions:**\n\n\u2022\tMentions - Number of posts related to the coin in tracked social media sources in the requested date with TimeFrame required.\n\u2022\tMentionsChange - Percentage change of Mentions in the requested date vs the average of the same metric in the past 14 days.\n\u2022\tSentiment - Democratic Sentiment Score out of 100 Points (100 for the most positive, 50 for neutral and 0 for the most negative)in the requested date with TimeFrame required.  [Democratic Sentiment is a sentiment that gives the same weight to each mention related to the coin despite the number of followers for each mention]\n\u2022\tSentimentChange - Percentage change of Democratic Sentiment in the requested date vs the average of the same metric in the past 14 days.\n\u2022\tFollowers - Sum of followers reached by coin related mentions in the requested date with TimeFrame required.\n\u2022\tFollowersChange - Percentage change of Followers Reach in the requested date vs the average of the same metric in the past 14 days.\n\n**Details:**\n\n- All dates are in UTC\n- Results are on 1 day timeframe",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "securityTicker",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "eth"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://crowdsense1.p.rapidapi.com/api/tokenmetrics/getcoinmetricsbyticker\"\nquerystring = {\"securityTicker\": \"eth\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"crowdsense1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://crowdsense1.p.rapidapi.com/api/tokenmetrics/getcoinmetricsbyticker\"\nquerystring = {\"securityTicker\": \"eth\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"crowdsense1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per hour for your plan, BASIC, by the API provider"
+            }
+        },
+        {
+            "name": "Get Top Coins By Followers Change",
+            "url": "https://crowdsense1.p.rapidapi.com/api/toptrendingcoins/gettopcoinsbyfollowerschange",
+            "description": "Retrieve real time top 10 coins by Mentions change in the last 24 hours\n\n**Output:**\nEach item contains:\n- Rank number\n- Coin name\n- Coin ticker\n- Followers change value\n\n**Definitions:**\n\n- FollowersChange: Percentage change of Followers Reach in the requested date vs the average of the same metric in the past 14 days\n\n\n**Details:**\n- All results are in real time",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://crowdsense1.p.rapidapi.com/api/toptrendingcoins/gettopcoinsbyfollowerschange\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"crowdsense1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://crowdsense1.p.rapidapi.com/api/toptrendingcoins/gettopcoinsbyfollowerschange\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"crowdsense1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per hour for your plan, BASIC, by the API provider"
+            }
+        },
+        {
+            "name": "Get Top Coins By Mentions Change",
+            "url": "https://crowdsense1.p.rapidapi.com/api/toptrendingcoins/gettopcoinsbymentionschange",
+            "description": "Retrieve real time top 10 coins by Mentions change in the last 24 hours\n\n**Output:**\nEach item contains:\n- Rank number\n- Coin name\n- Coin ticker\n- Mentions change value\n\n**Definitions:**\n- MentionsChange: Percentage change of Mentions in the requested date vs the average of the same metric in the past 14 days.\n\n**Details:**\n- All results are in real time",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://crowdsense1.p.rapidapi.com/api/toptrendingcoins/gettopcoinsbymentionschange\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"crowdsense1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://crowdsense1.p.rapidapi.com/api/toptrendingcoins/gettopcoinsbymentionschange\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"crowdsense1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per hour for your plan, BASIC, by the API provider"
+            }
+        },
+        {
+            "name": "Get Top Coins By Mentions",
+            "url": "https://crowdsense1.p.rapidapi.com/api/toptrendingcoins/gettopcoinsbymentions",
+            "description": "Retrieve real time top 10 coins by Mentions\n\n**Output:**\nEach item contains:\n- Rank number\n- Coin name\n- Coin ticker\n- Mentions value\n\n**Definitions:**\n- Mentions: Number of posts related to the coin in tracked social media sources in the requested date with TimeFrame required.\n\n**Details:**\n- All results are in real time",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://crowdsense1.p.rapidapi.com/api/toptrendingcoins/gettopcoinsbymentions\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"crowdsense1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://crowdsense1.p.rapidapi.com/api/toptrendingcoins/gettopcoinsbymentions\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"crowdsense1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per hour for your plan, BASIC, by the API provider"
+            }
+        },
+        {
+            "name": "Get Top Coins By Sentiment Change",
+            "url": "https://crowdsense1.p.rapidapi.com/api/toptrendingcoins/gettopcoinsbysentimentchange",
+            "description": "Retrieve real time top 10 coins by Sentiment change in the last 24 hours\n\n**Output:**\nEach item contains:\n- Rank number\n- Coin name\n- Coin ticker\n- Sentiment change value\n\n**Definitions:**\n- Sentiment Change: Percentage change of Democratic Sentiment in the requested date vs the average of the same metric in the past 14 days.\n\n**Details:**\n- All results are in real time",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://crowdsense1.p.rapidapi.com/api/toptrendingcoins/gettopcoinsbysentimentchange\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"crowdsense1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://crowdsense1.p.rapidapi.com/api/toptrendingcoins/gettopcoinsbysentimentchange\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"crowdsense1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per hour for your plan, BASIC, by the API provider"
+            }
+        },
+        {
+            "name": "Get Coin Historical Metrics By Name",
+            "url": "https://crowdsense1.p.rapidapi.com/api/tokenhistmetrics/gethistoricalcoinmetricsbyname",
+            "description": "Retrieve  coin\u00b4s historical social media metrics by Coin Name\nIn the case you want to retrieve real time data check \"Get Coin Metrics by Name\" or \"Get Coin Metrics by Ticker\"\n\n**Input:** \n-  Date (MM/DD/YYYY HH:HH AM/PM) (Required)\n- Security Name: Coin Name (Required)\n- TimeFrame: 1d, 1h, 8h (Optional)\n\n**Output:**\n\n- Sentiment\n- Sentiment change\n- Weighted Sentiment\n- Weighted sentiment change\n- Followers\n- Followers change\n- Mentions\n- Mentions change\n- Security ticker\n- Security Name\n- TimeFrame\n- DataTimeStamp\n\n**Definitions:**\n\n\u2022\tMentions - Number of posts related to the coin in tracked social media sources in the requested date with TimeFrame required.\n\u2022\tMentionsChange - Percentage change of Mentions in the requested date vs the average of the same metric in the past 14 days.\n\u2022\tSentiment - Democratic Sentiment Score out of 100 Points (100 for the most positive, 50 for neutral and 0 for the most negative)in the requested date with TimeFrame required.  [Democratic Sentiment is a sentiment that gives the same weight to each mention related to the coin despite the number of followers for each mention]\n\u2022\tSentimentChange - Percentage change of Democratic Sentiment in the requested date vs the average of the same metric in the past 14 days.\n\u2022\tWeightedSentiment \u2013  Weighted Sentiment Score out of 100 Points (100 for the most positive, 50 for neutral and 0 for the most negative)  in the requested date with TimeFrame required. [ Weighted Sentiment is a sentiment that gives more weight to mentions with more followers] \n\u2022\tWeightedSentimentChange - Percentage change of Weighted Sentiment in the requested date vs the average of the same metric in the past 14 days.\n\u2022\tFollowers - Sum of followers reached by coin related mentions in the requested date with TimeFrame required.\n\u2022\tFollowersChange - Percentage change of Followers Reach in the requested date vs the average of the same metric in the past 14 days.\n\n**Details:**\n\n- All dates are in UTC\n- Historical date is only avaliable from 7 days back",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "securityName",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "bitcoin"
+                },
+                {
+                    "name": "date",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "04/26/2022 06:00 PM"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "timeFrame",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "1D"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://crowdsense1.p.rapidapi.com/api/tokenhistmetrics/gethistoricalcoinmetricsbyname\"\nquerystring = {\"timeFrame\": \"1D\", \"securityName\": \"bitcoin\", \"date\": \"04/26/2022 06:00 PM\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"crowdsense1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://crowdsense1.p.rapidapi.com/api/tokenhistmetrics/gethistoricalcoinmetricsbyname\"\nquerystring = {\"timeFrame\": \"1D\", \"securityName\": \"bitcoin\", \"date\": \"04/26/2022 06:00 PM\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"crowdsense1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per hour for your plan, BASIC, by the API provider"
+            }
+        },
+        {
+            "name": "Get Coin Historical Metrics By Ticker",
+            "url": "https://crowdsense1.p.rapidapi.com/api/tokenhistmetrics/gethistoricalcoinmetricsbyticker",
+            "description": "Retrieve  coin\u00b4s historical social media metrics by Coin ticker\nIn the case you want to retrieve real time data check \"Get Coin Metrics by Name\" or \"Get Coin Metrics by Ticker\"\n\n**Input:** \n-  Date (MM/DD/YYYY HH:HH AM/PM) (Required)\n- Security Ticker: Coin Ticker (Required)\n- TimeFrame: 1d, 1h, 8h (Optional)\n\n**Output:**\n\n- Sentiment\n- Sentiment change\n- Weighted sentiment\n- Weighted sentiment change\n- Followers\n- Followers change\n- Mentions\n- Mentions change\n- Security ticker\n- Security name\n- TimeFrame\n- DataTimeStamp\n\n**Definitions:**\n\n\u2022\tMentions - Number of posts related to the coin in tracked social media sources in the requested date with TimeFrame required.\n\u2022\tMentionsChange - Percentage change of Mentions in the requested date vs the average of the same metric in the past 14 days.\n\u2022\tSentiment - Democratic Sentiment Score out of 100 Points (100 for the most positive, 50 for neutral and 0 for the most negative)in the requested date with TimeFrame required.  [Democratic Sentiment is a sentiment that gives the same weight to each mention related to the coin despite the number of followers for each mention]\n\u2022\tSentimentChange - Percentage change of Democratic Sentiment in the requested date vs the average of the same metric in the past 14 days.\n\u2022\tWeightedSentiment \u2013  Weighted Sentiment Score out of 100 Points (100 for the most positive, 50 for neutral and 0 for the most negative)  in the requested date with TimeFrame required. [ Weighted Sentiment is a sentiment that gives more weight to mentions with more followers] \n\u2022\tWeightedSentimentChange - Percentage change of Weighted Sentiment in the requested date vs the average of the same metric in the past 14 days.\n\u2022\tFollowers - Sum of followers reached by coin related mentions in the requested date with TimeFrame required.\n\u2022\tFollowersChange - Percentage change of Followers Reach in the requested date vs the average of the same metric in the past 14 days.\n\n**Details:**\n\n- All dates are in UTC\n- Historical date is only avaliable from 7 days back",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "securityTicker",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "btc"
+                },
+                {
+                    "name": "date",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "04/26/2022 06:00 PM"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "timeFrame",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "1D"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://crowdsense1.p.rapidapi.com/api/tokenhistmetrics/gethistoricalcoinmetricsbyticker\"\nquerystring = {\"securityTicker\": \"btc\", \"date\": \"04/26/2022 06:00 PM\", \"timeFrame\": \"1D\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"crowdsense1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://crowdsense1.p.rapidapi.com/api/tokenhistmetrics/gethistoricalcoinmetricsbyticker\"\nquerystring = {\"securityTicker\": \"btc\", \"date\": \"04/26/2022 06:00 PM\", \"timeFrame\": \"1D\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"crowdsense1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per hour for your plan, BASIC, by the API provider"
+            }
+        },
+        {
+            "name": "Get Supported Coins",
+            "url": "https://crowdsense1.p.rapidapi.com/api/tokenmetrics/getsupportedcoins",
+            "description": "Get all the supported coins, the result contains pairs of Name and Ticker of each coin ordered alphabetically",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://crowdsense1.p.rapidapi.com/api/tokenmetrics/getsupportedcoins\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"crowdsense1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://crowdsense1.p.rapidapi.com/api/tokenmetrics/getsupportedcoins\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"crowdsense1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per hour for your plan, BASIC, by the API provider"
+            }
+        }
+    ],
+    "standardized_name": "crowdsense"
+}

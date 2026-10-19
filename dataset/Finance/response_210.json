@@ -1,0 +1,40 @@
+{
+"user_query":"I need to find the specific order with ID '24680'. Once found, I would like to know the translation rates for English to German and English to French. Additionally, retrieve the account details and all the orders associated with the account.",
+"domain":"Finance",
+"TaskList": [
+{
+"id": 1,
+"description": "Retrieve the order details for the specific order ID '24680'.",
+"domain": "finance",
+"required_inputs": ["order_id"]
+},
+{
+"id": 2,
+"description": "Once the order is found, retrieve the account details associated with that order.",
+"domain": "finance",
+"required_inputs": ["order_details"],
+"dependency": "step 1"
+},
+{
+"id": 3,
+"description": "Retrieve all orders associated with the retrieved account details.",
+"domain": "finance",
+"required_inputs": ["account_details"],
+"dependency": "step 2"
+},
+{
+"id": 4,
+"description": "Retrieve the translation rates for English to German.",
+"domain": "finance",
+"required_inputs": ["source_language", "target_language"],
+"dependency": "step 1"
+},
+{
+"id": 5,
+"description": "Retrieve the translation rates for English to French.",
+"domain": "finance",
+"required_inputs": ["source_language", "target_language"],
+"dependency": "step 1"
+}
+]
+}

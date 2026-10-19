@@ -1,0 +1,54 @@
+{
+    "product_id": "api_7db17f98-cb2e-4509-b18d-9bf5b76e6dc2",
+    "tool_description": "Real-time, data-driven and transparent ESG scores for over 17,500 companies",
+    "home_url": "https://rapidapi.com/gaialens-gaialens-default/api/gaialens-esg-scores/",
+    "name": "GaiaLens ESG Scores",
+    "title": "GaiaLens ESG Scores",
+    "pricing": "FREEMIUM",
+    "tool_name": "GaiaLens ESG Scores",
+    "score": {
+        "avgServiceLevel": 94,
+        "avgLatency": 2285,
+        "avgSuccessRate": 77,
+        "popularityScore": 8.6,
+        "__typename": "Score"
+    },
+    "host": "gaialens-esg-scores.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "getESGScores",
+            "url": "https://gaialens-esg-scores.p.rapidapi.com/scores",
+            "description": "This API provides real-time Environmental, Social, Governance and Overall scores for companies on a scale of 0 to 100. In addition to this, the API also provides other relevant metrics like Global Rank, Industry Rank and more.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "isin",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "sedol",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "companyname",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "Apple Inc."
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://gaialens-esg-scores.p.rapidapi.com/scores\"\nquerystring = {\"isin\": \"\", \"sedol\": \"\", \"companyname\": \"Apple Inc.\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"gaialens-esg-scores.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://gaialens-esg-scores.p.rapidapi.com/scores\"\nquerystring = {\"isin\": \"\", \"sedol\": \"\", \"companyname\": \"Apple Inc.\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"gaialens-esg-scores.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "request_id": 34054,
+                "status": "Failed",
+                "message": "Bad request syntax or unsupported method - please remove extra parameter(s)"
+            }
+        }
+    ],
+    "standardized_name": "gaialens_esg_scores"
+}

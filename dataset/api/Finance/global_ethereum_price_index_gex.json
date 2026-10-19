@@ -1,0 +1,378 @@
+{
+    "product_id": "57ec4000e4b005ac6f42a9dc",
+    "tool_description": "Ethereum Price Index supplied by BitcoinAverage\r\n\r\nThe GEX data accessed via the BitcoinAverage API features:\r\n\r\nUp to 1 second refresh rate\r\nRates for 165+ currencies\r\nDaily rates at preferred lock in time or live rates\r\nHistoric daily rates dating back to 2010\r\nJSON or CSV formats\r\n\r\n-------\r\n\r\nAbout BitcoinAverage\r\n\r\nBitcoinAverage.com is proud of the fact that we were the first global price index in the cryptocurrency and blockchain industry, and have proven over the years to also be one of the most reliable. It is considered by most as the de facto standard bitcoin price index.\r\n\r\nIt is trusted by thousands of users across hundreds the world\u2019s leading websites, apps, services and businesses. With our historical bitcoin price data stretching back to 2010, this index is perfect for a multitude of uses from reporting, invoicing, payment processing, analysis and accounting, as well as a plethora of integrations with different types of software.\r\n\r\nUsers receive a weighted price calculated by our algorithms that factor in exchange activity, liquidity and different fee methodologies.",
+    "home_url": "https://rapidapi.com/blockchain-data-ltd-blockchain-data-ltd-default/api/global-ethereum-price-index-gex/",
+    "name": "Global Ethereum Price Index - GEX",
+    "title": "Global Ethereum Price Index - GEX",
+    "pricing": "FREEMIUM",
+    "tool_name": "Global Ethereum Price Index - GEX",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 438,
+        "avgSuccessRate": 100,
+        "popularityScore": 9.1,
+        "__typename": "Score"
+    },
+    "host": "bitcoinaverage-global-ethereum-index-v1.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Custom Ticker",
+            "url": "https://bitcoinaverage-global-ethereum-index-v1.p.rapidapi.com/indices/ticker/custom/include/ETHUSD",
+            "description": "This endpoint can be used to generate a custom index in a certain currency. The \u201cinex\u201d path parameter represents \u201cinclude\u201d or \u201cexclude\u201d, you can choose to generate an index removing specified exchanges, or only including the few that you require.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "inex",
+                    "type": "STRING",
+                    "description": "include - if you want the ticker to be calculated using only the exchanges sent as query parameter; exclude - if you want the price to be calculated using all exchanges, but the ones sent as query parameter.",
+                    "default": "include"
+                },
+                {
+                    "name": "symbol",
+                    "type": "STRING",
+                    "description": "ETH<fiat> where <fiat> is valid ISO currency (ex. ETHUSD)",
+                    "default": "ETHUSD"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "exchanges",
+                    "type": "STRING",
+                    "description": "Comma separated list of exchanges.",
+                    "default": "bitfinex,bitstamp"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://bitcoinaverage-global-ethereum-index-v1.p.rapidapi.com/indices/ticker/custom/include/ETHUSD\"\nquerystring = {\"exchanges\": \"bitfinex,bitstamp\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"bitcoinaverage-global-ethereum-index-v1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://bitcoinaverage-global-ethereum-index-v1.p.rapidapi.com/indices/ticker/custom/{inex}/{symbol}\"\nquerystring = {\"exchanges\": \"bitfinex,bitstamp\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"bitcoinaverage-global-ethereum-index-v1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "timestamp": 1686931279,
+                "last": {
+                    "price": 1675.04912838
+                },
+                "bid": {
+                    "price": 1674.60024494
+                },
+                "ask": {
+                    "price": 1675.5535946
+                }
+            },
+            "statuscode": 1,
+            "schema": ""
+        },
+        {
+            "name": "Ticker Per Symbol",
+            "url": "https://bitcoinaverage-global-ethereum-index-v1.p.rapidapi.com/indices/global/ticker/ETHUSD",
+            "description": "Returns ticker data for specified symbol",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "market",
+                    "type": "STRING",
+                    "description": "Possible values: global, local",
+                    "default": "global"
+                },
+                {
+                    "name": "symbol",
+                    "type": "STRING",
+                    "description": "ETH<fiat>, where <fiat> is valid ISO currency (ex. ETHUSD, ETHEUR)",
+                    "default": "ETHUSD"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://bitcoinaverage-global-ethereum-index-v1.p.rapidapi.com/indices/global/ticker/ETHUSD\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"bitcoinaverage-global-ethereum-index-v1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://bitcoinaverage-global-ethereum-index-v1.p.rapidapi.com/indices/{market}/ticker/{symbol}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"bitcoinaverage-global-ethereum-index-v1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "ask": 1678.26811812,
+                "bid": 1677.51333042,
+                "last": 1677.75746489,
+                "high": 1679.87735307,
+                "low": 1635.59680399,
+                "volume": 181332.03961156,
+                "open": {
+                    "hour": 1680.12695312,
+                    "day": 1665.97106934,
+                    "week": 1846.26293945,
+                    "month": 1818.23205566,
+                    "month_3": 1660.85668945,
+                    "month_6": 1227.56225586,
+                    "year": 1143.27978516
+                },
+                "averages": {
+                    "day": 58596563038.37638,
+                    "week": 8397388875.570066,
+                    "month": 1962105353.8953848
+                },
+                "changes": {
+                    "price": {
+                        "hour": -2.36950684,
+                        "day": 11.78637695,
+                        "week": -168.50549316,
+                        "month": -140.47460938,
+                        "month_3": 16.90075684,
+                        "month_6": 450.19519043,
+                        "year": 534.47766113
+                    },
+                    "percent": {
+                        "hour": -0.14,
+                        "day": 0.71,
+                        "week": -9.13,
+                        "month": -7.73,
+                        "month_3": 1.02,
+                        "month_6": 36.67,
+                        "year": 46.75
+                    }
+                },
+                "volume_percent": 85.11057249,
+                "timestamp": 1686931276,
+                "display_timestamp": "2023-06-16 16:01:16",
+                "display_symbol": "ETH-USD"
+            }
+        },
+        {
+            "name": "Short Ticker",
+            "url": "https://bitcoinaverage-global-ethereum-index-v1.p.rapidapi.com/indices/global/ticker/short",
+            "description": "Returns basic ticker denoting last and daily average price for all symbols",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "market",
+                    "type": "STRING",
+                    "description": "Possible values: global, local",
+                    "default": "global"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "crypto",
+                    "type": "STRING",
+                    "description": "Valid value: ETH",
+                    "default": "ETH"
+                },
+                {
+                    "name": "fiats",
+                    "type": "STRING",
+                    "description": "If fiats parameter is included then only the values for those fiats will be returned (ETHUSD and ETHEUR in this example). If it's missing, then the response will contain ticker values of all available fiats for ETH.",
+                    "default": "USD,EUR"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://bitcoinaverage-global-ethereum-index-v1.p.rapidapi.com/indices/global/ticker/short\"\nquerystring = {\"crypto\": \"ETH\", \"fiats\": \"USD,EUR\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"bitcoinaverage-global-ethereum-index-v1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://bitcoinaverage-global-ethereum-index-v1.p.rapidapi.com/indices/{market}/ticker/short\"\nquerystring = {\"crypto\": \"ETH\", \"fiats\": \"USD,EUR\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"bitcoinaverage-global-ethereum-index-v1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "ETHEUR": {
+                    "last": 1535.6849627654249,
+                    "averages": {
+                        "day": 53634606080.28667
+                    },
+                    "timestamp": 1686931280,
+                    "ask": 1536.152373876705,
+                    "bid": 1535.4615015978638
+                },
+                "ETHUSD": {
+                    "last": 1677.7574648925238,
+                    "averages": {
+                        "day": 58596563038.37638
+                    },
+                    "timestamp": 1686931280,
+                    "ask": 1678.268118119024,
+                    "bid": 1677.5133304176286
+                }
+            }
+        },
+        {
+            "name": "Ticker Changes",
+            "url": "https://bitcoinaverage-global-ethereum-index-v1.p.rapidapi.com/indices/local/ticker/ETHUSD/changes",
+            "description": "Returns ticker values and price changes for specified market and symbol.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "market",
+                    "type": "STRING",
+                    "description": "Possible values: global, local",
+                    "default": "local"
+                },
+                {
+                    "name": "symbol",
+                    "type": "STRING",
+                    "description": "Possible values: ETH<fiat> where <fiat> is valid ISO currency (ex. ETHUSD)",
+                    "default": "ETHUSD"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://bitcoinaverage-global-ethereum-index-v1.p.rapidapi.com/indices/local/ticker/ETHUSD/changes\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"bitcoinaverage-global-ethereum-index-v1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://bitcoinaverage-global-ethereum-index-v1.p.rapidapi.com/indices/{market}/ticker/{symbol}/changes\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"bitcoinaverage-global-ethereum-index-v1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "ask": 1677.9659096,
+                "bid": 1677.65288278,
+                "last": 1677.76830162,
+                "high": 1679.93370511,
+                "low": 1634.82914781,
+                "open": {
+                    "hour": 1680.28523012,
+                    "day": 1665.4740678,
+                    "week": 1845.6411,
+                    "month": 1817.8189,
+                    "month_3": 1660.8405,
+                    "month_6": 1227.5034,
+                    "year": 1143.0186
+                },
+                "averages": {
+                    "day": 1663.65545661,
+                    "week": 1728.40894248,
+                    "month": 1819.21867421
+                },
+                "volume": 154332.73702094,
+                "changes": {
+                    "price": {
+                        "hour": -2.51696777,
+                        "day": 12.29418945,
+                        "week": -167.87280273,
+                        "month": -140.05053711,
+                        "month_3": 16.92785645,
+                        "month_6": 450.26489258,
+                        "year": 534.74975586
+                    },
+                    "percent": {
+                        "hour": -0.15,
+                        "day": 0.74,
+                        "week": -9.1,
+                        "month": -7.7,
+                        "month_3": 1.02,
+                        "month_6": 36.68,
+                        "year": 46.78
+                    }
+                },
+                "volume_percent": 85.11057248986087,
+                "timestamp": 1686931276,
+                "display_timestamp": "Fri, 16 Jun 2023 16:01:16  +0000",
+                "display_symbol": "ETH-USD"
+            }
+        },
+        {
+            "name": "All Ticker Data",
+            "url": "https://bitcoinaverage-global-ethereum-index-v1.p.rapidapi.com/indices/local/ticker/all",
+            "description": "If no query parameters are sent, then returns ticker data for every supported symbol. If fiat(s) are sent as parameters, then only the ticker for those values is sent.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "market",
+                    "type": "STRING",
+                    "description": "Possible values: global, local",
+                    "default": "local"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "crypto",
+                    "type": "STRING",
+                    "description": "valid value: ETH",
+                    "default": "ETH"
+                },
+                {
+                    "name": "fiat",
+                    "type": "STRING",
+                    "description": "Comma separated list of ISO currency codes (ex. USD,EUR)",
+                    "default": "USD,EUR"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://bitcoinaverage-global-ethereum-index-v1.p.rapidapi.com/indices/local/ticker/all\"\nquerystring = {\"crypto\": \"ETH\", \"fiat\": \"USD,EUR\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"bitcoinaverage-global-ethereum-index-v1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://bitcoinaverage-global-ethereum-index-v1.p.rapidapi.com/indices/{market}/ticker/all\"\nquerystring = {\"crypto\": \"ETH\", \"fiat\": \"USD,EUR\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"bitcoinaverage-global-ethereum-index-v1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "ETHEUR": {
+                    "ask": 1536.0823934,
+                    "bid": 1533.37086011,
+                    "last": 1534.43700154,
+                    "high": 1537.66374367,
+                    "low": 1496.6864196,
+                    "volume": 20481.46273042,
+                    "open": {
+                        "hour": 1537.66374367,
+                        "day": 1523.61870426,
+                        "week": 1713.4104,
+                        "month": 1673.1368,
+                        "month_3": 1565.5993,
+                        "month_6": 1154.7133,
+                        "year": 1091.8629
+                    },
+                    "averages": {
+                        "day": 1521.35386316,
+                        "week": 1603.85302812,
+                        "month": 1692.85331827
+                    },
+                    "changes": {
+                        "price": {
+                            "hour": -3.22668457,
+                            "day": 10.81835938,
+                            "week": -178.97338867,
+                            "month": -138.6998291,
+                            "month_3": -31.16223145,
+                            "month_6": 379.72375488,
+                            "year": 442.57409668
+                        },
+                        "percent": {
+                            "hour": -0.21,
+                            "day": 0.71,
+                            "week": -10.45,
+                            "month": -8.29,
+                            "month_3": -1.99,
+                            "month_6": 32.88,
+                            "year": 40.53
+                        }
+                    },
+                    "volume_percent": 11.2949917,
+                    "timestamp": 1686931282,
+                    "display_timestamp": "Fri, 16 Jun 2023 16:01:22  +0000",
+                    "display_symbol": "ETH-EUR"
+                },
+                "ETHUSD": {
+                    "ask": 1677.88398142,
+                    "bid": 1677.63602742,
+                    "last": 1677.65486492,
+                    "high": 1679.93370511,
+                    "low": 1634.82914781,
+                    "volume": 154332.59241468,
+                    "open": {
+                        "hour": 1680.28523012,
+                        "day": 1665.4740678,
+                        "week": 1845.6411,
+                        "month": 1817.8189,
+                        "month_3": 1660.8405,
+                        "month_6": 1227.5034,
+                        "year": 1143.0186
+                    },
+                    "averages": {
+                        "day": 1663.65545661,
+                        "week": 1728.40894248,
+                        "month": 1819.21867421
+                    },
+                    "changes": {
+                        "price": {
+                            "hour": -2.63037109,
+                            "day": 12.18078613,
+                            "week": -167.98620605,
+                            "month": -140.16394043,
+                            "month_3": 16.81445312,
+                            "month_6": 450.15148926,
+                            "year": 534.63635254
+                        },
+                        "percent": {
+                            "hour": -0.16,
+                            "day": 0.73,
+                            "week": -9.1,
+                            "month": -7.71,
+                            "month_3": 1.01,
+                            "month_6": 36.67,
+                            "year": 46.77
+                        }
+                    },
+                    "volume_percent": 85.11039336,
+                    "timestamp": 1686931282,
+                    "display_timestamp": "Fri, 16 Jun 2023 16:01:22  +0000",
+                    "display_symbol": "ETH-USD"
+                }
+            },
+            "statuscode": 1,
+            "schema": ""
+        }
+    ],
+    "standardized_name": "global_ethereum_price_index_gex"
+}

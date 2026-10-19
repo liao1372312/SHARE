@@ -1,0 +1,33 @@
+{
+"user_query":"I'm writing an article on happiness and need thought-provoking quotes. Can you give me quotes about happiness? Also, provide quotes from different sources like Dalai Lama and Mother Teresa.",
+"domain":"Technology",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Collect a variety of thought-provoking quotes about happiness from various sources.",
+        "domain": "technology",
+        "required_inputs": ["topic: happiness", "source types: general, famous personalities"]
+    },
+    {
+        "id": 2,
+        "description": "Search for quotes specifically from Dalai Lama related to happiness.",
+        "domain": "technology",
+        "required_inputs": ["author: Dalai Lama", "topic: happiness"],
+        "dependencies": [1]
+    },
+    {
+        "id": 3,
+        "description": "Search for quotes specifically from Mother Teresa related to happiness.",
+        "domain": "technology",
+        "required_inputs": ["author: Mother Teresa", "topic: happiness"],
+        "dependencies": [1]
+    },
+    {
+        "id": 4,
+        "description": "Compile and format the collected quotes into a comprehensive list for the article.",
+        "domain": "technology",
+        "required_inputs": ["quotes from all sources"],
+        "dependencies": [1, 2, 3]
+    }
+]
+}

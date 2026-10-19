@@ -1,0 +1,1215 @@
+{
+    "product_id": "api_feaf4ace-6805-4881-a0fd-6e0931f379d0",
+    "tool_description": "Cryptocurrency financial data API for major exchanges. Candlesticks (OHLCV, VWAP, and Trade Count), Trades (tick-level). Spot and futures markets. Robust data catalog and documentation.",
+    "home_url": "https://rapidapi.com/inca-digital123-inca-digital-default/api/cryptocurrency-financial-data/",
+    "name": "Cryptocurrency Financial Data",
+    "title": "Cryptocurrency Financial Data",
+    "pricing": "FREEMIUM",
+    "tool_name": "Cryptocurrency Financial Data",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 870,
+        "avgSuccessRate": 100,
+        "popularityScore": 9.1,
+        "__typename": "Score"
+    },
+    "host": "cryptocurrency-financial-data.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "/trades",
+            "url": "https://cryptocurrency-financial-data.p.rapidapi.com/trades",
+            "description": "Trades endpoint available upon request",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "start",
+                    "type": "STRING",
+                    "description": "Start of the requested time period, *%Y-%m-%dT%H:%M:%S* UTC timezone",
+                    "default": "2022-10-11T10:00:00"
+                },
+                {
+                    "name": "base",
+                    "type": "STRING",
+                    "description": "The second or quote currency in the traded pair",
+                    "default": "USDT"
+                },
+                {
+                    "name": "market_venue",
+                    "type": "STRING",
+                    "description": "The name of an exchange or a venue",
+                    "default": "COINBASE"
+                },
+                {
+                    "name": "symbol",
+                    "type": "STRING",
+                    "description": "The first or base currency in the traded pair",
+                    "default": "BTC"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "end",
+                    "type": "STRING",
+                    "description": "End of the requested time period, *%Y-%m-%dT%H:%M:%S* UTC timezone",
+                    "default": "2022-10-15T11:00:00"
+                },
+                {
+                    "name": "sort",
+                    "type": "STRING",
+                    "description": "The ordering of results: `asc` (from earliest to latest), `desc` (from latest to earliest)",
+                    "default": "asc"
+                },
+                {
+                    "name": "limit",
+                    "type": "NUMBER",
+                    "description": "Maximum number of records to return, max `10000`",
+                    "default": "100"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://cryptocurrency-financial-data.p.rapidapi.com/trades\"\nquerystring = {\"start\": \"2022-10-11T10:00:00\", \"end\": \"2022-10-15T11:00:00\", \"sort\": \"asc\", \"base\": \"USDT\", \"market_venue\": \"COINBASE\", \"limit\": \"100\", \"symbol\": \"BTC\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"cryptocurrency-financial-data.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://cryptocurrency-financial-data.p.rapidapi.com/trades\"\nquerystring = {\"start\": \"2022-10-11T10:00:00\", \"end\": \"2022-10-15T11:00:00\", \"sort\": \"asc\", \"base\": \"USDT\", \"market_venue\": \"COINBASE\", \"limit\": \"100\", \"symbol\": \"BTC\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"cryptocurrency-financial-data.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "This endpoint is disabled for your subscription"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "required": [
+                    "timestamp",
+                    "symbol",
+                    "base",
+                    "market_venue",
+                    "price",
+                    "volume",
+                    "side"
+                ],
+                "properties": {
+                    "timestamp": {
+                        "type": "string",
+                        "description": "(UTC)"
+                    },
+                    "symbol": {
+                        "type": "string",
+                        "description": "The first listed currency of a currency pair"
+                    },
+                    "base": {
+                        "type": "string",
+                        "description": "The second listed currency of a currency pair (also known as quote currency or counter currency)"
+                    },
+                    "market_venue": {
+                        "type": "string",
+                        "description": "The name of an exchange or a venue"
+                    },
+                    "id": {
+                        "type": "string",
+                        "description": "Trade id as received from the exchange"
+                    },
+                    "price": {
+                        "type": "string",
+                        "description": "Price at which the trade was executed"
+                    },
+                    "volume": {
+                        "type": "string",
+                        "description": "Symbol asset amount traded in the transaction"
+                    },
+                    "side": {
+                        "type": "string",
+                        "enum": [
+                            "buy",
+                            "sell",
+                            "null - if not available in our database"
+                        ],
+                        "description": "The side which aggressors (market liquidity taker) take to place market orders."
+                    }
+                }
+            }
+        },
+        {
+            "name": "/metrics/ohlcv/trial",
+            "url": "https://cryptocurrency-financial-data.p.rapidapi.com/metrics/ohlcv/trial",
+            "description": "Limited coverage and availability for tests",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "market_venue",
+                    "type": "STRING",
+                    "description": "Available exchanges in trial: `BINANCE`, `COINBASE`, `KRAKEN`, `BITSTAMP`, `BITFINEX`",
+                    "default": "Binance"
+                },
+                {
+                    "name": "symbol",
+                    "type": "STRING",
+                    "description": "Available symbols in trial: `BTC`, `ETH`, `ADA`, `XRP`",
+                    "default": "BTC"
+                },
+                {
+                    "name": "start",
+                    "type": "STRING",
+                    "description": "Start of the requested time period, *%Y-%m-%dT%H:%M:%S* UTC timezone. **Should be within one month from the current timestamp**",
+                    "default": "2023-01-01T10:05:00"
+                },
+                {
+                    "name": "base",
+                    "type": "STRING",
+                    "description": "Available bases in trial: `BTC`, `USD`, `USDT`, `USDC`",
+                    "default": "USDT"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "sort",
+                    "type": "STRING",
+                    "description": "The ordering of events: `asc` (from earliest to latest), `desc` (from latest to earliest) ",
+                    "default": "asc"
+                },
+                {
+                    "name": "gran",
+                    "type": "STRING",
+                    "description": "Available granularities: `1m`, `15m`, `1h`, `1d`",
+                    "default": "1d"
+                },
+                {
+                    "name": "end",
+                    "type": "STRING",
+                    "description": "End of the requested time period, *%Y-%m-%dT%H:%M:%S* UTC timezone",
+                    "default": "2023-01-09T10:05:00"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://cryptocurrency-financial-data.p.rapidapi.com/metrics/ohlcv/trial\"\nquerystring = {\"sort\": \"asc\", \"gran\": \"1d\", \"market_venue\": \"Binance\", \"end\": \"2023-01-09T10:05:00\", \"symbol\": \"BTC\", \"start\": \"2023-01-01T10:05:00\", \"base\": \"USDT\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"cryptocurrency-financial-data.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://cryptocurrency-financial-data.p.rapidapi.com/metrics/ohlcv/trial\"\nquerystring = {\"sort\": \"asc\", \"gran\": \"1d\", \"market_venue\": \"Binance\", \"end\": \"2023-01-09T10:05:00\", \"symbol\": \"BTC\", \"start\": \"2023-01-01T10:05:00\", \"base\": \"USDT\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"cryptocurrency-financial-data.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "Incorrect request. Maximum search time period exceeded."
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "required": [
+                    "timestamp",
+                    "symbol",
+                    "base",
+                    "market_venue",
+                    "open",
+                    "high",
+                    "low",
+                    "close",
+                    "volume",
+                    "trades",
+                    "vwap"
+                ],
+                "properties": {
+                    "timestamp": {
+                        "type": "string",
+                        "description": "Timestamp, represents the \u201copen\u201d time at which a ohlcv period begins (UTC)"
+                    },
+                    "symbol": {
+                        "type": "string",
+                        "description": "The first listed currency of a currency pair"
+                    },
+                    "base": {
+                        "type": "string",
+                        "description": "The second currency in the pair (also known as quote currency or counter currency)"
+                    },
+                    "market_venue": {
+                        "type": "string",
+                        "description": "The name of an exchange or a venue"
+                    },
+                    "open": {
+                        "type": "string",
+                        "description": "The first price for an executed trade within the candlestick time period"
+                    },
+                    "high": {
+                        "type": "string",
+                        "description": "The highest price for an executed trade within the candlestick time period"
+                    },
+                    "low": {
+                        "type": "string",
+                        "description": "The lowest price for an executed trade within the candlestick time period"
+                    },
+                    "close": {
+                        "type": "string",
+                        "description": "The last price for an executed trade within the candlestick time period"
+                    },
+                    "volume": {
+                        "type": "string",
+                        "description": "The sum of the executed trades within the candlestick time period"
+                    },
+                    "trades": {
+                        "type": "string",
+                        "description": "The number of trades executed within the candlestick time period"
+                    },
+                    "vwap": {
+                        "type": "string",
+                        "description": "The volume-weighted average price of the trades during the time period"
+                    }
+                }
+            }
+        },
+        {
+            "name": "/metrics/ohlcv/futures/trial",
+            "url": "https://cryptocurrency-financial-data.p.rapidapi.com/metrics/ohlcv/futures/trial",
+            "description": "Limited coverage and availability for tests",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "market_venue",
+                    "type": "STRING",
+                    "description": "Available exchanges in trial: `BINANCE`, `BITFINEX`, `HITBTC`, `KRAKEN`, `OKX`",
+                    "default": "BINANCE"
+                },
+                {
+                    "name": "base",
+                    "type": "STRING",
+                    "description": "Available bases in trial: `BTC`, `USD`, `USDT`, `USDC`",
+                    "default": "USDT"
+                },
+                {
+                    "name": "start",
+                    "type": "STRING",
+                    "description": "Start of the requested time period, *%Y-%m-%dT%H:%M:%S* UTC timezone. **Should be within one month from the current timestamp**",
+                    "default": "2023-01-05T10:05:00"
+                },
+                {
+                    "name": "symbol",
+                    "type": "STRING",
+                    "description": "Available symbols in trial: `BTC`, `ETH`, `ADA`, `XRP`",
+                    "default": "BTC"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "expiration",
+                    "type": "STRING",
+                    "description": "The lifespan of a futures contract. Allowed values: `perpetual`(default), `weekly`, `quarterly`, `monthly`",
+                    "default": "MONTHLY"
+                },
+                {
+                    "name": "delivery_date",
+                    "type": "STRING",
+                    "description": "The last day when a future contract is valid - *YYYY-MM-DD*",
+                    "default": "2022-10-28"
+                },
+                {
+                    "name": "sort",
+                    "type": "STRING",
+                    "description": "The ordering of events: `asc` (from earliest to latest), `desc` (from latest to earliest) ",
+                    "default": "asc"
+                },
+                {
+                    "name": "gran",
+                    "type": "STRING",
+                    "description": "Available granularities: `1m`, `15m`, `1h`, `1d`",
+                    "default": "1m"
+                },
+                {
+                    "name": "end",
+                    "type": "STRING",
+                    "description": "End of the requested time period, *%Y-%m-%dT%H:%M:%S* UTC timezone",
+                    "default": "2023-01-10T10:05:00"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://cryptocurrency-financial-data.p.rapidapi.com/metrics/ohlcv/futures/trial\"\nquerystring = {\"expiration\": \"MONTHLY\", \"market_venue\": \"BINANCE\", \"delivery_date\": \"2022-10-28\", \"base\": \"USDT\", \"start\": \"2023-01-05T10:05:00\", \"sort\": \"asc\", \"gran\": \"1m\", \"end\": \"2023-01-10T10:05:00\", \"symbol\": \"BTC\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"cryptocurrency-financial-data.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://cryptocurrency-financial-data.p.rapidapi.com/metrics/ohlcv/futures/trial\"\nquerystring = {\"expiration\": \"MONTHLY\", \"market_venue\": \"BINANCE\", \"delivery_date\": \"2022-10-28\", \"base\": \"USDT\", \"start\": \"2023-01-05T10:05:00\", \"sort\": \"asc\", \"gran\": \"1m\", \"end\": \"2023-01-10T10:05:00\", \"symbol\": \"BTC\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"cryptocurrency-financial-data.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "Incorrect request. Maximum search time period exceeded."
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "required": [
+                    "timestamp",
+                    "symbol",
+                    "base",
+                    "market_venue",
+                    "open",
+                    "high",
+                    "low",
+                    "close",
+                    "volume",
+                    "trades",
+                    "vwap"
+                ],
+                "properties": {
+                    "timestamp": {
+                        "type": "string",
+                        "description": "Timestamp, represents the \u201copen\u201d time at which a ohlcv period begins (UTC)"
+                    },
+                    "symbol": {
+                        "type": "string",
+                        "description": "The first listed currency of a currency pair"
+                    },
+                    "base": {
+                        "type": "string",
+                        "description": "The second currency in the pair (also known as quote currency or counter currency)"
+                    },
+                    "market_venue": {
+                        "type": "string",
+                        "description": "The name of an exchange or a venue"
+                    },
+                    "open": {
+                        "type": "string",
+                        "description": "The first price for an executed trade within the candlestick time period"
+                    },
+                    "high": {
+                        "type": "string",
+                        "description": "The highest price for an executed trade within the candlestick time period"
+                    },
+                    "low": {
+                        "type": "string",
+                        "description": "The lowest price for an executed trade within the candlestick time period"
+                    },
+                    "close": {
+                        "type": "string",
+                        "description": "The last price for an executed trade within the candlestick time period"
+                    },
+                    "volume": {
+                        "type": "string",
+                        "description": "The sum of the executed trades within the candlestick time period"
+                    },
+                    "trades": {
+                        "type": "string",
+                        "description": "The number of trades executed within the candlestick time period"
+                    },
+                    "vwap": {
+                        "type": "string",
+                        "description": "The volume-weighted average price of the trades during the time period"
+                    }
+                }
+            }
+        },
+        {
+            "name": "/metrics/ohlcv/pro",
+            "url": "https://cryptocurrency-financial-data.p.rapidapi.com/metrics/ohlcv",
+            "description": "Price and volume metrics for spot markets",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "start",
+                    "type": "STRING",
+                    "description": "Start of the requested time period, *%Y-%m-%dT%H:%M:%S* UTC timezone",
+                    "default": "2022-09-05T10:05:00"
+                },
+                {
+                    "name": "market_venue",
+                    "type": "STRING",
+                    "description": "The name of an exchange or a venue",
+                    "default": "BINANCE"
+                },
+                {
+                    "name": "base",
+                    "type": "STRING",
+                    "description": "The second listed currency of a currency pair",
+                    "default": "USDT"
+                },
+                {
+                    "name": "symbol",
+                    "type": "STRING",
+                    "description": "The first listed currency of a currency pair",
+                    "default": "BTC"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "sort",
+                    "type": "STRING",
+                    "description": "The ordering of events: `asc` (from earliest to latest), `desc` (from latest to earliest) ",
+                    "default": "asc"
+                },
+                {
+                    "name": "end",
+                    "type": "STRING",
+                    "description": "End of the requested time period, *%Y-%m-%dT%H:%M:%S* UTC timezone",
+                    "default": "2022-10-05T10:05:00"
+                },
+                {
+                    "name": "gran",
+                    "type": "STRING",
+                    "description": "Available granularities: `1m`, `15m`, `1h`, `1d`",
+                    "default": "1d"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://cryptocurrency-financial-data.p.rapidapi.com/metrics/ohlcv\"\nquerystring = {\"start\": \"2022-09-05T10:05:00\", \"market_venue\": \"BINANCE\", \"sort\": \"asc\", \"base\": \"USDT\", \"end\": \"2022-10-05T10:05:00\", \"symbol\": \"BTC\", \"gran\": \"1d\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"cryptocurrency-financial-data.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://cryptocurrency-financial-data.p.rapidapi.com/metrics/ohlcv\"\nquerystring = {\"start\": \"2022-09-05T10:05:00\", \"market_venue\": \"BINANCE\", \"sort\": \"asc\", \"base\": \"USDT\", \"end\": \"2022-10-05T10:05:00\", \"symbol\": \"BTC\", \"gran\": \"1d\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"cryptocurrency-financial-data.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "data": [
+                    {
+                        "timestamp": "2022-09-05 00:00:00",
+                        "symbol": "BTC",
+                        "base": "USDT",
+                        "market_venue": "BINANCE",
+                        "open": 19766.77,
+                        "high": 19950.7,
+                        "low": 19633.83,
+                        "close": 19796.84,
+                        "volume": 133453.7732300001,
+                        "trades": 2670747,
+                        "vwap": 19775.14
+                    },
+                    {
+                        "timestamp": "2022-09-06 00:00:00",
+                        "symbol": "BTC",
+                        "base": "USDT",
+                        "market_venue": "BINANCE",
+                        "open": 19795.34,
+                        "high": 20180.0,
+                        "low": 18649.51,
+                        "close": 18790.61,
+                        "volume": 356003.28379999934,
+                        "trades": 7117898,
+                        "vwap": 19579.46
+                    },
+                    {
+                        "timestamp": "2022-09-07 00:00:00",
+                        "symbol": "BTC",
+                        "base": "USDT",
+                        "market_venue": "BINANCE",
+                        "open": 18790.61,
+                        "high": 19464.06,
+                        "low": 18510.77,
+                        "close": 19292.84,
+                        "volume": 287152.7797100005,
+                        "trades": 5593043,
+                        "vwap": 18917.86
+                    },
+                    {
+                        "timestamp": "2022-09-08 00:00:00",
+                        "symbol": "BTC",
+                        "base": "USDT",
+                        "market_venue": "BINANCE",
+                        "open": 19292.85,
+                        "high": 19458.25,
+                        "low": 19012.0,
+                        "close": 19319.77,
+                        "volume": 262813.28273,
+                        "trades": 6013826,
+                        "vwap": 19242.63
+                    },
+                    {
+                        "timestamp": "2022-09-09 00:00:00",
+                        "symbol": "BTC",
+                        "base": "USDT",
+                        "market_venue": "BINANCE",
+                        "open": 19320.54,
+                        "high": 21597.22,
+                        "low": 19291.75,
+                        "close": 21360.11,
+                        "volume": 428919.7465200002,
+                        "trades": 7777214,
+                        "vwap": 20819.7
+                    },
+                    {
+                        "timestamp": "2022-09-10 00:00:00",
+                        "symbol": "BTC",
+                        "base": "USDT",
+                        "market_venue": "BINANCE",
+                        "open": 21361.62,
+                        "high": 21810.8,
+                        "low": 21111.13,
+                        "close": 21648.34,
+                        "volume": 307997.33503999957,
+                        "trades": 5615783,
+                        "vwap": 21395.62
+                    },
+                    {
+                        "timestamp": "2022-09-11 00:00:00",
+                        "symbol": "BTC",
+                        "base": "USDT",
+                        "market_venue": "BINANCE",
+                        "open": 21647.21,
+                        "high": 21860.0,
+                        "low": 21350.0,
+                        "close": 21826.87,
+                        "volume": 280701.8312500002,
+                        "trades": 4801815,
+                        "vwap": 21605.13
+                    },
+                    {
+                        "timestamp": "2022-09-12 00:00:00",
+                        "symbol": "BTC",
+                        "base": "USDT",
+                        "market_venue": "BINANCE",
+                        "open": 21826.87,
+                        "high": 22488.0,
+                        "low": 21538.51,
+                        "close": 22395.74,
+                        "volume": 395152.1907800007,
+                        "trades": 6973554,
+                        "vwap": 22113.75
+                    },
+                    {
+                        "timestamp": "2022-09-13 00:00:00",
+                        "symbol": "BTC",
+                        "base": "USDT",
+                        "market_venue": "BINANCE",
+                        "open": 22395.44,
+                        "high": 22799.0,
+                        "low": 19860.0,
+                        "close": 20173.57,
+                        "volume": 428516.15354000026,
+                        "trades": 8068416,
+                        "vwap": 21532.86
+                    },
+                    {
+                        "timestamp": "2022-09-14 00:00:00",
+                        "symbol": "BTC",
+                        "base": "USDT",
+                        "market_venue": "BINANCE",
+                        "open": 20173.62,
+                        "high": 20541.48,
+                        "low": 19617.62,
+                        "close": 20226.71,
+                        "volume": 340826.4015099996,
+                        "trades": 6313052,
+                        "vwap": 20204.41
+                    },
+                    {
+                        "timestamp": "2022-09-15 00:00:00",
+                        "symbol": "BTC",
+                        "base": "USDT",
+                        "market_venue": "BINANCE",
+                        "open": 20227.17,
+                        "high": 20330.24,
+                        "low": 19497.0,
+                        "close": 19701.88,
+                        "volume": 333069.76075999974,
+                        "trades": 6690974,
+                        "vwap": 19981.85
+                    },
+                    {
+                        "timestamp": "2022-09-16 00:00:00",
+                        "symbol": "BTC",
+                        "base": "USDT",
+                        "market_venue": "BINANCE",
+                        "open": 19701.88,
+                        "high": 19890.0,
+                        "low": 19320.01,
+                        "close": 19803.3,
+                        "volume": 283791.07064000005,
+                        "trades": 5120935,
+                        "vwap": 19676.61
+                    },
+                    {
+                        "timestamp": "2022-09-17 00:00:00",
+                        "symbol": "BTC",
+                        "base": "USDT",
+                        "market_venue": "BINANCE",
+                        "open": 19803.3,
+                        "high": 20189.0,
+                        "low": 19748.08,
+                        "close": 20113.62,
+                        "volume": 179231.39816000033,
+                        "trades": 3860885,
+                        "vwap": 19953.54
+                    },
+                    {
+                        "timestamp": "2022-09-18 00:00:00",
+                        "symbol": "BTC",
+                        "base": "USDT",
+                        "market_venue": "BINANCE",
+                        "open": 20112.61,
+                        "high": 20117.26,
+                        "low": 19335.62,
+                        "close": 19416.18,
+                        "volume": 254217.46904000005,
+                        "trades": 4634096,
+                        "vwap": 19801.87
+                    },
+                    {
+                        "timestamp": "2022-09-19 00:00:00",
+                        "symbol": "BTC",
+                        "base": "USDT",
+                        "market_venue": "BINANCE",
+                        "open": 19417.45,
+                        "high": 19686.2,
+                        "low": 18232.56,
+                        "close": 19537.02,
+                        "volume": 378700.9223799999,
+                        "trades": 6786324,
+                        "vwap": 18961.71
+                    },
+                    {
+                        "timestamp": "2022-09-20 00:00:00",
+                        "symbol": "BTC",
+                        "base": "USDT",
+                        "market_venue": "BINANCE",
+                        "open": 19537.02,
+                        "high": 19634.62,
+                        "low": 18711.87,
+                        "close": 18875.0,
+                        "volume": 324098.3286000003,
+                        "trades": 5900070,
+                        "vwap": 19148.46
+                    },
+                    {
+                        "timestamp": "2022-09-21 00:00:00",
+                        "symbol": "BTC",
+                        "base": "USDT",
+                        "market_venue": "BINANCE",
+                        "open": 18874.31,
+                        "high": 19956.0,
+                        "low": 18125.98,
+                        "close": 18461.36,
+                        "volume": 382710.4266700004,
+                        "trades": 6872514,
+                        "vwap": 19059.67
+                    },
+                    {
+                        "timestamp": "2022-09-22 00:00:00",
+                        "symbol": "BTC",
+                        "base": "USDT",
+                        "market_venue": "BINANCE",
+                        "open": 18461.36,
+                        "high": 19550.17,
+                        "low": 18356.39,
+                        "close": 19401.63,
+                        "volume": 379321.7211099997,
+                        "trades": 6251862,
+                        "vwap": 18991.2
+                    },
+                    {
+                        "timestamp": "2022-09-23 00:00:00",
+                        "symbol": "BTC",
+                        "base": "USDT",
+                        "market_venue": "BINANCE",
+                        "open": 19401.63,
+                        "high": 19500.0,
+                        "low": 18531.42,
+                        "close": 19289.91,
+                        "volume": 385886.91829000064,
+                        "trades": 5906265,
+                        "vwap": 18995.95
+                    },
+                    {
+                        "timestamp": "2022-09-24 00:00:00",
+                        "symbol": "BTC",
+                        "base": "USDT",
+                        "market_venue": "BINANCE",
+                        "open": 19288.57,
+                        "high": 19316.14,
+                        "low": 18805.34,
+                        "close": 18920.5,
+                        "volume": 239496.56746000022,
+                        "trades": 3907636,
+                        "vwap": 19077.13
+                    },
+                    {
+                        "timestamp": "2022-09-25 00:00:00",
+                        "symbol": "BTC",
+                        "base": "USDT",
+                        "market_venue": "BINANCE",
+                        "open": 18921.99,
+                        "high": 19180.21,
+                        "low": 18629.2,
+                        "close": 18807.38,
+                        "volume": 191191.44920000012,
+                        "trades": 3714450,
+                        "vwap": 18960.7
+                    },
+                    {
+                        "timestamp": "2022-09-26 00:00:00",
+                        "symbol": "BTC",
+                        "base": "USDT",
+                        "market_venue": "BINANCE",
+                        "open": 18809.13,
+                        "high": 19318.96,
+                        "low": 18680.72,
+                        "close": 19227.82,
+                        "volume": 439239.21942999924,
+                        "trades": 5837041,
+                        "vwap": 19025.94
+                    },
+                    {
+                        "timestamp": "2022-09-27 00:00:00",
+                        "symbol": "BTC",
+                        "base": "USDT",
+                        "market_venue": "BINANCE",
+                        "open": 19226.68,
+                        "high": 20385.86,
+                        "low": 18816.32,
+                        "close": 19079.13,
+                        "volume": 592991.8836599995,
+                        "trades": 8149336,
+                        "vwap": 19731.55
+                    },
+                    {
+                        "timestamp": "2022-09-28 00:00:00",
+                        "symbol": "BTC",
+                        "base": "USDT",
+                        "market_venue": "BINANCE",
+                        "open": 19078.1,
+                        "high": 19790.0,
+                        "low": 18471.28,
+                        "close": 19412.82,
+                        "volume": 521385.4554700004,
+                        "trades": 7357437,
+                        "vwap": 19111.37
+                    },
+                    {
+                        "timestamp": "2022-09-29 00:00:00",
+                        "symbol": "BTC",
+                        "base": "USDT",
+                        "market_venue": "BINANCE",
+                        "open": 19412.82,
+                        "high": 19645.52,
+                        "low": 18843.01,
+                        "close": 19591.51,
+                        "volume": 406596.63833,
+                        "trades": 5633433,
+                        "vwap": 19360.8
+                    },
+                    {
+                        "timestamp": "2022-09-30 00:00:00",
+                        "symbol": "BTC",
+                        "base": "USDT",
+                        "market_venue": "BINANCE",
+                        "open": 19590.54,
+                        "high": 20185.0,
+                        "low": 19155.36,
+                        "close": 19422.61,
+                        "volume": 444322.9534000005,
+                        "trades": 6254203,
+                        "vwap": 19567.11
+                    },
+                    {
+                        "timestamp": "2022-10-01 00:00:00",
+                        "symbol": "BTC",
+                        "base": "USDT",
+                        "market_venue": "BINANCE",
+                        "open": 19422.61,
+                        "high": 19484.0,
+                        "low": 19159.42,
+                        "close": 19310.95,
+                        "volume": 165495.65215999982,
+                        "trades": 2468820,
+                        "vwap": 19322.93
+                    },
+                    {
+                        "timestamp": "2022-10-02 00:00:00",
+                        "symbol": "BTC",
+                        "base": "USDT",
+                        "market_venue": "BINANCE",
+                        "open": 19312.24,
+                        "high": 19395.91,
+                        "low": 18920.35,
+                        "close": 19056.8,
+                        "volume": 206812.47032000005,
+                        "trades": 3320217,
+                        "vwap": 19199.73
+                    },
+                    {
+                        "timestamp": "2022-10-03 00:00:00",
+                        "symbol": "BTC",
+                        "base": "USDT",
+                        "market_venue": "BINANCE",
+                        "open": 19057.74,
+                        "high": 19719.1,
+                        "low": 18959.68,
+                        "close": 19629.08,
+                        "volume": 293582.96169999987,
+                        "trades": 4471864,
+                        "vwap": 19320.09
+                    },
+                    {
+                        "timestamp": "2022-10-04 00:00:00",
+                        "symbol": "BTC",
+                        "base": "USDT",
+                        "market_venue": "BINANCE",
+                        "open": 19629.08,
+                        "high": 20475.0,
+                        "low": 19490.6,
+                        "close": 20337.82,
+                        "volume": 327012.0012700002,
+                        "trades": 4871932,
+                        "vwap": 19979.21
+                    },
+                    {
+                        "timestamp": "2022-10-05 00:00:00",
+                        "symbol": "BTC",
+                        "base": "USDT",
+                        "market_venue": "BINANCE",
+                        "open": 20337.82,
+                        "high": 20365.6,
+                        "low": 20003.38,
+                        "close": 20114.49,
+                        "volume": 99915.61548000004,
+                        "trades": 1543310,
+                        "vwap": 20182.15
+                    }
+                ]
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "required": [
+                    "timestamp",
+                    "symbol",
+                    "base",
+                    "market_venue",
+                    "open",
+                    "high",
+                    "low",
+                    "close",
+                    "volume",
+                    "trades",
+                    "vwap"
+                ],
+                "properties": {
+                    "timestamp": {
+                        "type": "string",
+                        "description": "Timestamp, represents the \u201copen\u201d time at which a ohlcv period begins (UTC)"
+                    },
+                    "symbol": {
+                        "type": "string",
+                        "description": "The first listed currency of a currency pair"
+                    },
+                    "base": {
+                        "type": "string",
+                        "description": "The second currency in the pair (also known as quote currency or counter currency)"
+                    },
+                    "market_venue": {
+                        "type": "string",
+                        "description": "The name of an exchange or a venue"
+                    },
+                    "open": {
+                        "type": "string",
+                        "description": "The first price for an executed trade within the candlestick time period"
+                    },
+                    "high": {
+                        "type": "string",
+                        "description": "The highest price for an executed trade within the candlestick time period"
+                    },
+                    "low": {
+                        "type": "string",
+                        "description": "The lowest price for an executed trade within the candlestick time period"
+                    },
+                    "close": {
+                        "type": "string",
+                        "description": "The last price for an executed trade within the candlestick time period"
+                    },
+                    "volume": {
+                        "type": "string",
+                        "description": "The sum of the executed trades within the candlestick time period"
+                    },
+                    "trades": {
+                        "type": "string",
+                        "description": "The number of trades executed within the candlestick time period"
+                    },
+                    "vwap": {
+                        "type": "string",
+                        "description": "The volume-weighted average price of the trades during the time period"
+                    }
+                }
+            }
+        },
+        {
+            "name": "/trades/futures",
+            "url": "https://cryptocurrency-financial-data.p.rapidapi.com/trades/futures",
+            "description": "Derivatives contracts transactions",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "market_venue",
+                    "type": "STRING",
+                    "description": "The name of an exchange or a venue",
+                    "default": "BINANCE"
+                },
+                {
+                    "name": "base",
+                    "type": "STRING",
+                    "description": "The second listed currency of a currency pair",
+                    "default": "USDT"
+                },
+                {
+                    "name": "symbol",
+                    "type": "STRING",
+                    "description": "The first listed currency of a currency pair",
+                    "default": "BTC"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "expiration",
+                    "type": "STRING",
+                    "description": "The lifespan of a futures contract. Allowed values: `perpetual`(default), `weekly`, `quarterly`, `monthly`",
+                    "default": "MONTHLY"
+                },
+                {
+                    "name": "end",
+                    "type": "STRING",
+                    "description": "End of the requested time period, *%Y-%m-%dT%H:%M:%S* UTC timezone",
+                    "default": "2022-10-19T11:00:00"
+                },
+                {
+                    "name": "delivery_date",
+                    "type": "STRING",
+                    "description": "The last day when a future contract is valid - *YYYY-MM-DD*",
+                    "default": "2022-10-28"
+                },
+                {
+                    "name": "limit",
+                    "type": "NUMBER",
+                    "description": "Maximum number of records to return, max `10000`",
+                    "default": "100"
+                },
+                {
+                    "name": "start",
+                    "type": "STRING",
+                    "description": "Start of the requested time period, *%Y-%m-%dT%H:%M:%S* UTC timezone",
+                    "default": "2022-10-11T10:00:00"
+                },
+                {
+                    "name": "sort",
+                    "type": "STRING",
+                    "description": "The ordering of results: `asc` (from earliest to latest), `desc` (from latest to earliest)",
+                    "default": "asc"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://cryptocurrency-financial-data.p.rapidapi.com/trades/futures\"\nquerystring = {\"expiration\": \"MONTHLY\", \"end\": \"2022-10-19T11:00:00\", \"delivery_date\": \"2022-10-28\", \"limit\": \"100\", \"market_venue\": \"BINANCE\", \"start\": \"2022-10-11T10:00:00\", \"sort\": \"asc\", \"base\": \"USDT\", \"symbol\": \"BTC\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"cryptocurrency-financial-data.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://cryptocurrency-financial-data.p.rapidapi.com/trades/futures\"\nquerystring = {\"expiration\": \"MONTHLY\", \"end\": \"2022-10-19T11:00:00\", \"delivery_date\": \"2022-10-28\", \"limit\": \"100\", \"market_venue\": \"BINANCE\", \"start\": \"2022-10-11T10:00:00\", \"sort\": \"asc\", \"base\": \"USDT\", \"symbol\": \"BTC\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"cryptocurrency-financial-data.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "This endpoint is disabled for your subscription"
+            },
+            "statuscode": 1,
+            "schema": ""
+        },
+        {
+            "name": "/metadata",
+            "url": "https://cryptocurrency-financial-data.p.rapidapi.com/metadata",
+            "description": " ",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "asset_type",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "spot"
+                },
+                {
+                    "name": "data_type",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "metrics"
+                },
+                {
+                    "name": "symbol",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "BTC"
+                },
+                {
+                    "name": "base",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "USDT"
+                },
+                {
+                    "name": "market_venue",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "BINANCE"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://cryptocurrency-financial-data.p.rapidapi.com/metadata\"\nquerystring = {\"asset_type\": \"spot\", \"data_type\": \"metrics\", \"symbol\": \"BTC\", \"base\": \"USDT\", \"market_venue\": \"BINANCE\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"cryptocurrency-financial-data.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://cryptocurrency-financial-data.p.rapidapi.com/metadata\"\nquerystring = {\"asset_type\": \"spot\", \"data_type\": \"metrics\", \"symbol\": \"BTC\", \"base\": \"USDT\", \"market_venue\": \"BINANCE\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"cryptocurrency-financial-data.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "spot": {
+                    "metrics": [
+                        {
+                            "market_venue": "binance",
+                            "symbol": "btc",
+                            "base": "usdt",
+                            "earliest_date": "2020-01-10",
+                            "latest_date": "2023-06-15"
+                        }
+                    ]
+                }
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "required": [
+                    "asset_type",
+                    "data_type",
+                    "market_venue",
+                    "symbol",
+                    "base",
+                    "earliest_date",
+                    "latest_date"
+                ],
+                "properties": {
+                    "asset_type": {
+                        "type": "string",
+                        "description": "The asset types (spot (default) or future)"
+                    },
+                    "data_type": {
+                        "type": "string",
+                        "description": "The data types (metrics or trades)"
+                    },
+                    "market_venue": {
+                        "type": "string",
+                        "description": "The name of exchange or venue"
+                    },
+                    "symbol": {
+                        "type": "string",
+                        "description": "The first listed currency of a currency pair"
+                    },
+                    "base": {
+                        "type": "string",
+                        "description": "The second currency in the pair (also known as quote currency or counter currency)"
+                    },
+                    "earliest_date": {
+                        "type": "string",
+                        "description": "The earliest date when this market appears in our database"
+                    },
+                    "latest_date": {
+                        "type": "string",
+                        "description": "The latest date when this market appears in our database"
+                    }
+                }
+            }
+        },
+        {
+            "name": "/metrics/ohlcv/futures/pro",
+            "url": "https://cryptocurrency-financial-data.p.rapidapi.com/metrics/ohlcv/futures",
+            "description": "Price and volume metrics for futures markets",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "start",
+                    "type": "STRING",
+                    "description": "Start of the requested time period, UTC timezone",
+                    "default": "2022-09-05T10:05:00"
+                },
+                {
+                    "name": "market_venue",
+                    "type": "STRING",
+                    "description": "The name of exchange or venue",
+                    "default": "BINANCE"
+                },
+                {
+                    "name": "symbol",
+                    "type": "STRING",
+                    "description": "The first listed currency of a currency pair",
+                    "default": "BTC"
+                },
+                {
+                    "name": "base",
+                    "type": "STRING",
+                    "description": "The second listed currency of a currency pair",
+                    "default": "USDT"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "sort",
+                    "type": "STRING",
+                    "description": "The ordering of events: `asc` (from earliest to latest), `desc` (from latest to earliest) ",
+                    "default": "asc"
+                },
+                {
+                    "name": "expiration",
+                    "type": "STRING",
+                    "description": "The lifespan of a futures contract. Allowed values: `perpetual`(default), `weekly`, `quarterly`, `monthly`",
+                    "default": "MONTHLY"
+                },
+                {
+                    "name": "delivery_date",
+                    "type": "STRING",
+                    "description": "The last day when a future contract is valid - *YYYY-MM-DD*",
+                    "default": "2022-10-28"
+                },
+                {
+                    "name": "end",
+                    "type": "STRING",
+                    "description": "End of the requested time period, UTC timezone",
+                    "default": "2022-10-05T10:05:00"
+                },
+                {
+                    "name": "gran",
+                    "type": "STRING",
+                    "description": "Available granularities: `1m`, `15m`, `1h`, `1d`",
+                    "default": "1d"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://cryptocurrency-financial-data.p.rapidapi.com/metrics/ohlcv/futures\"\nquerystring = {\"start\": \"2022-09-05T10:05:00\", \"sort\": \"asc\", \"expiration\": \"MONTHLY\", \"market_venue\": \"BINANCE\", \"symbol\": \"BTC\", \"delivery_date\": \"2022-10-28\", \"base\": \"USDT\", \"end\": \"2022-10-05T10:05:00\", \"gran\": \"1d\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"cryptocurrency-financial-data.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://cryptocurrency-financial-data.p.rapidapi.com/metrics/ohlcv/futures\"\nquerystring = {\"start\": \"2022-09-05T10:05:00\", \"sort\": \"asc\", \"expiration\": \"MONTHLY\", \"market_venue\": \"BINANCE\", \"symbol\": \"BTC\", \"delivery_date\": \"2022-10-28\", \"base\": \"USDT\", \"end\": \"2022-10-05T10:05:00\", \"gran\": \"1d\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"cryptocurrency-financial-data.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "data": []
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "required": [
+                    "timestamp",
+                    "symbol",
+                    "base",
+                    "market_venue",
+                    "expiration",
+                    "delivery_date",
+                    "open",
+                    "high",
+                    "low",
+                    "close",
+                    "volume",
+                    "trades",
+                    "vwap"
+                ],
+                "properties": {
+                    "timestamp": {
+                        "type": "string",
+                        "description": "Timestamp, represents the \u201copen\u201d time at which a ohlcv period begins (UTC)"
+                    },
+                    "symbol": {
+                        "type": "string",
+                        "description": "The first listed currency of a currency pair"
+                    },
+                    "base": {
+                        "type": "string",
+                        "description": "The second currency in the pair (also known as quote currency or counter currency)"
+                    },
+                    "market_venue": {
+                        "type": "string",
+                        "description": "The name of an exchange or a venue"
+                    },
+                    "expiration": {
+                        "type": "string",
+                        "description": "The lifespan of a futures contract"
+                    },
+                    "delivery_date": {
+                        "type": "string",
+                        "description": "The last day when a future contract is valid"
+                    },
+                    "open": {
+                        "type": "string",
+                        "description": "The first price for an executed trade within the candlestick time period"
+                    },
+                    "high": {
+                        "type": "string",
+                        "description": "The highest price for an executed trade within the candlestick time period"
+                    },
+                    "low": {
+                        "type": "string",
+                        "description": "The lowest price for an executed trade within the candlestick time period"
+                    },
+                    "close": {
+                        "type": "string",
+                        "description": "The last price for an executed trade within the candlestick time period"
+                    },
+                    "volume": {
+                        "type": "string",
+                        "description": "The sum of the executed trades within the candlestick time period"
+                    },
+                    "trades": {
+                        "type": "string",
+                        "description": "The number of trades executed within the candlestick time period"
+                    },
+                    "vwap": {
+                        "type": "string",
+                        "description": "The volume-weighted average price of the trades during the time period"
+                    }
+                }
+            }
+        }
+    ],
+    "standardized_name": "cryptocurrency_financial_data"
+}

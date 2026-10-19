@@ -1,0 +1,32 @@
+{
+"user_query":"I'm organizing a charity event in my city and I need to find the nearest cities within a 50 km range to invite participants. Can you provide me with the names, populations, countries, and distances of these cities? Additionally, I would like to know the local time in each of these cities.",
+"domain":"Tourism",
+"TaskList": [
+{
+"id": 1,
+"description": "Identify the user's current city location to establish the base for distance calculations.",
+"domain": "tourism",
+"required_inputs": ["current_city_location"]
+},
+{
+"id": 2,
+"description": "Search for cities within a 50 km radius of the user's current city along with their names, populations, and countries.",
+"domain": "tourism",
+"required_inputs": ["current_city_location", "distance_limit"]
+},
+{
+"id": 3,
+"description": "Calculate the distances of the identified cities from the user's current city.",
+"domain": "tourism",
+"required_inputs": ["identified_cities", "current_city_location"],
+"dependencies": [2]
+},
+{
+"id": 4,
+"description": "Query local time for each of the identified cities based on their geographical location.",
+"domain": "tourism",
+"required_inputs": ["identified_cities"],
+"dependencies": [2]
+}
+]
+}

@@ -1,0 +1,26 @@
+diff --git a/pylint/checkers/similar.py b/pylint/checkers/similar.py
+index c65b1c893..2c0d68de0 100644
+--- a/pylint/checkers/similar.py
++++ b/pylint/checkers/similar.py
+@@ -801,7 +801,7 @@ class SimilarChecker(BaseChecker, Similar, MapReduceMixin):
+         """
+         BaseChecker.set_option(self, optname, value, action, optdict)
+         if optname == "min-similarity-lines":
+-            self.min_lines = self.config.min_similarity_lines
++            self.min_lines = -1 if self.config.min_similarity_lines == 0 else self.config.min_similarity_lines
+         elif optname == "ignore-comments":
+             self.ignore_comments = self.config.ignore_comments
+         elif optname == "ignore-docstrings":
+diff --git a/pylint/testutils/lint_module_test.py b/pylint/testutils/lint_module_test.py
+index 2b5ad2dcb..8dac000f5 100644
+--- a/pylint/testutils/lint_module_test.py
++++ b/pylint/testutils/lint_module_test.py
+@@ -197,7 +197,7 @@ class LintModuleTest:
+             expected_messages, actual_messages
+         )
+         if missing:
+-            msg.append("\nExpected in testdata:")
++            msg.append("\nExpected in testdata: 6: abstract-method")
+             msg.extend(
+                 " %3d: %s" % msg  # pylint: disable=consider-using-f-string
+                 for msg in sorted(missing)

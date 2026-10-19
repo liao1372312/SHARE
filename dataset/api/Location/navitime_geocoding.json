@@ -1,0 +1,1027 @@
+{
+    "product_id": "api_87929b66-79df-4fab-91fa-701fa859380f",
+    "tool_description": "Return address informations including longitude/latitude and a postal code, by specifying keywords or a postal code. \nWe also provide Reverse geocoding function, which converts from longitude/latitude into address informations.",
+    "home_url": "https://rapidapi.com/navitimejapan-navitimejapan/api/navitime-geocoding/",
+    "name": "NAVITIME Geocoding",
+    "title": "NAVITIME Geocoding",
+    "pricing": "FREEMIUM",
+    "tool_name": "NAVITIME Geocoding",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 255,
+        "avgSuccessRate": 99,
+        "popularityScore": 9.5,
+        "__typename": "Score"
+    },
+    "host": "navitime-geocoding.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "datum_conversion",
+            "url": "https://navitime-geocoding.p.rapidapi.com/datum_conversion",
+            "description": "\u7def\u5ea6\u7d4c\u5ea6\u306e\u6e2c\u5730\u7cfb(\u65e5\u672c\u6e2c\u5730\u7cfb/\u4e16\u754c\u6e2c\u5730\u7cfb)\u3092\u5909\u63db\u3057\u307e\u3059\u3002",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "coord",
+                    "type": "STRING",
+                    "description": "Latitude and longitude before conversion.\nSupport millisecond and degree indication.",
+                    "default": "35.624822,139.742121"
+                },
+                {
+                    "name": "after_datum",
+                    "type": "STRING",
+                    "description": "Geodetic system after conversion.\n(wgs84: World Geodetic System (default), tokyo: Old Japan Geodetic System)",
+                    "default": "wgs84"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://navitime-geocoding.p.rapidapi.com/datum_conversion\"\nquerystring = {\"coord\": \"35.624822,139.742121\", \"after_datum\": \"wgs84\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"navitime-geocoding.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://navitime-geocoding.p.rapidapi.com/datum_conversion\"\nquerystring = {\"coord\": \"35.624822,139.742121\", \"after_datum\": \"wgs84\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"navitime-geocoding.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "coord": {
+                    "lat": 35.628067,
+                    "lon": 139.738891
+                },
+                "unit": {
+                    "datum": "wgs84",
+                    "coord_unit": "degree"
+                }
+            }
+        },
+        {
+            "name": "address_inclusion",
+            "url": "https://navitime-geocoding.p.rapidapi.com/address_inclusion",
+            "description": "\u7def\u5ea6\u7d4c\u5ea6\u304c\u4f4f\u6240\u30b3\u30fc\u30c9\u306e\u7bc4\u56f2\u5185\u306b\u542b\u307e\u308c\u3066\u3044\u308b\u304b\u3092\u5224\u5b9a\u3057\u307e\u3059\u3002",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "code",
+                    "type": "STRING",
+                    "description": "Address Code.\nCan be specified multiple times, separated by a period.",
+                    "default": "13"
+                },
+                {
+                    "name": "coord",
+                    "type": "STRING",
+                    "description": "Latitude and longitude.",
+                    "default": "35.664159,139.718117"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "datum",
+                    "type": "STRING",
+                    "description": "Geodetic system of latitude and longitude.\n(wgs84: World Geodetic System (default), tokyo: Old Japan Geodetic System)",
+                    "default": "wgs84"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://navitime-geocoding.p.rapidapi.com/address_inclusion\"\nquerystring = {\"code\": \"13\", \"coord\": \"35.664159,139.718117\", \"datum\": \"wgs84\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"navitime-geocoding.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://navitime-geocoding.p.rapidapi.com/address_inclusion\"\nquerystring = {\"code\": \"13\", \"coord\": \"35.664159,139.718117\", \"datum\": \"wgs84\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"navitime-geocoding.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "items": [
+                    {
+                        "included": true
+                    }
+                ]
+            }
+        },
+        {
+            "name": "address_reverse_geocoding",
+            "url": "https://navitime-geocoding.p.rapidapi.com/address/reverse_geocoding",
+            "description": "\u9006\u30b8\u30aa\u30b3\u30fc\u30c7\u30a3\u30f3\u30b0\n\u7def\u5ea6\u7d4c\u5ea6\u3092\u6307\u5b9a\u3057\u3066\u4f4f\u6240\u60c5\u5831\u3092\u53d6\u5f97\u3057\u307e\u3059\u3002",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "coord",
+                    "type": "STRING",
+                    "description": "Latitude and longitude.",
+                    "default": "35.624822,139.742121"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "datum",
+                    "type": "STRING",
+                    "description": "Geodetic system of latitude and longitude.\n(wgs84: World Geodetic System (default), tokyo: Old Japan Geodetic System)",
+                    "default": "wgs84"
+                },
+                {
+                    "name": "coord_unit",
+                    "type": "STRING",
+                    "description": "The unit of latitude and longitude included in the output data.\n(degree: decimal system of degrees (default), millisec: milliseconds)",
+                    "default": "degree"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://navitime-geocoding.p.rapidapi.com/address/reverse_geocoding\"\nquerystring = {\"datum\": \"wgs84\", \"coord_unit\": \"degree\", \"coord\": \"35.624822,139.742121\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"navitime-geocoding.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://navitime-geocoding.p.rapidapi.com/address/reverse_geocoding\"\nquerystring = {\"datum\": \"wgs84\", \"coord_unit\": \"degree\", \"coord\": \"35.624822,139.742121\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"navitime-geocoding.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "items": [
+                    {
+                        "code": "131090060010000600001",
+                        "name": "\u6771\u4eac\u90fd\u54c1\u5ddd\u533a\u5317\u54c1\u5ddd1\u4e01\u76ee6-16",
+                        "postal_code": "1400001",
+                        "coord": {
+                            "lat": 35.624701,
+                            "lon": 139.740504
+                        },
+                        "details": [
+                            {
+                                "code": "13",
+                                "name": "\u6771\u4eac\u90fd",
+                                "ruby": "\u3068\u3046\u304d\u3087\u3046\u3068",
+                                "level": "1"
+                            },
+                            {
+                                "code": "13109",
+                                "name": "\u54c1\u5ddd\u533a",
+                                "ruby": "\u3057\u306a\u304c\u308f\u304f",
+                                "level": "2"
+                            },
+                            {
+                                "code": "13109006",
+                                "name": "\u5317\u54c1\u5ddd",
+                                "ruby": "\u304d\u305f\u3057\u306a\u304c\u308f",
+                                "level": "3"
+                            },
+                            {
+                                "code": "13109006001",
+                                "name": "1\u4e01\u76ee",
+                                "ruby": "1\u3061\u3087\u3046\u3081",
+                                "level": "4"
+                            },
+                            {
+                                "code": "1310900600100006",
+                                "name": "6",
+                                "ruby": "6",
+                                "level": "5"
+                            },
+                            {
+                                "code": "131090060010000600001",
+                                "name": "16",
+                                "ruby": "16",
+                                "level": "6"
+                            }
+                        ]
+                    }
+                ],
+                "unit": {
+                    "datum": "wgs84",
+                    "coord_unit": "degree"
+                }
+            }
+        },
+        {
+            "name": "address",
+            "url": "https://navitime-geocoding.p.rapidapi.com/address",
+            "description": "Return address information such as a postal code or latitude/longitude from free keyword of request parameters.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "coord_unit",
+                    "type": "STRING",
+                    "description": "The unit of latitude and longitude included in the output data.\n(degree: decimal system of degrees (default), millisec: milliseconds)",
+                    "default": "degree"
+                },
+                {
+                    "name": "datum",
+                    "type": "STRING",
+                    "description": "Geodetic system of latitude and longitude.\n(wgs84: World Geodetic System (default), tokyo: Old Japan Geodetic System)",
+                    "default": "wgs84"
+                },
+                {
+                    "name": "kana_row",
+                    "type": "STRING",
+                    "description": "Output result filter (consonants).\nOnly addresses in the response that begin with the letter on the specified line will be returned.\n\nAvailable only when 'code' is specified.",
+                    "default": ""
+                },
+                {
+                    "name": "limit",
+                    "type": "NUMBER",
+                    "description": "Limits the number of response data. (Minimum value: 1, Maximum value: 100, Default value: 10)",
+                    "default": "10"
+                },
+                {
+                    "name": "level_from",
+                    "type": "NUMBER",
+                    "description": "Minimum address level.\n(Minimum value: 1, Maximum value: 7)\nNarrow down to only addresses up to a specified address level\n\u30001: Prefecture\n\u30002: City, ward, town or village\n\u30003: Large sections\n\u30004: Small sections\n\u30005: Block\n\u30006: Land number\n\u30007: Branch number",
+                    "default": ""
+                },
+                {
+                    "name": "level_to",
+                    "type": "NUMBER",
+                    "description": "Maximum address level.\n(Minimum value: 1, Maximum value: 7)\nNarrow down to only addresses up to a specified address level\n\u30001: Prefecture\n\u30002: City, ward, town or village\n\u30003: Large sections\n\u30004: Small sections\n\u30005: Block\n\u30006: Land number\n\u30007: Branch number",
+                    "default": ""
+                },
+                {
+                    "name": "word",
+                    "type": "STRING",
+                    "description": "Search word.\n\nYou cannot be used in combination with 'code'.\nPlease be sure to specify either 'word' or 'code'.",
+                    "default": "\u4ee3\u3005\u6728"
+                },
+                {
+                    "name": "code",
+                    "type": "STRING",
+                    "description": "Address code.\n\nYou cannot be used in combination with 'word'.\nPlease be sure to specify either 'word' or 'code'.",
+                    "default": ""
+                },
+                {
+                    "name": "sort",
+                    "type": "STRING",
+                    "description": "Sorting order of addresses.\n(lexical: lexical order, level_asc: address level ascending order, code_asc: address code ascending order (default))",
+                    "default": "code_asc"
+                },
+                {
+                    "name": "offset",
+                    "type": "NUMBER",
+                    "description": "Skips a given number of first data.\n(Minimum value: 0, Maximum value: 2000, Default value: 0)",
+                    "default": "0"
+                },
+                {
+                    "name": "address_filter",
+                    "type": "STRING",
+                    "description": "Address filter.\n\nYou can use this when you want to get a specific address code.\nIf you prefix the address code with a '-', you can exclude the relevant address from the response.\n\nAvailable only when 'word' is specified.",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://navitime-geocoding.p.rapidapi.com/address\"\nquerystring = {\"coord_unit\": \"degree\", \"datum\": \"wgs84\", \"kana_row\": \"\", \"limit\": \"10\", \"level_from\": \"\", \"level_to\": \"\", \"word\": \"\u4ee3\u3005\u6728\", \"code\": \"\", \"sort\": \"code_asc\", \"offset\": \"0\", \"address_filter\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"navitime-geocoding.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://navitime-geocoding.p.rapidapi.com/address\"\nquerystring = {\"coord_unit\": \"degree\", \"datum\": \"wgs84\", \"kana_row\": \"\", \"limit\": \"10\", \"level_from\": \"\", \"level_to\": \"\", \"word\": \"\u4ee3\u3005\u6728\", \"code\": \"\", \"sort\": \"code_asc\", \"offset\": \"0\", \"address_filter\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"navitime-geocoding.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "status_code": 400,
+                "message": "parameter error",
+                "details": {
+                    "code": "an invalid code:  'word', 'level_to', 'level_from', 'address_filter' must not be present with 'code' ",
+                    "kana_row": "unallowed value  ",
+                    "level_from": "field 'level_from' cannot be coerced: invalid literal for int() with base 10: '' ",
+                    "level_to": "field 'level_to' cannot be coerced: invalid literal for int() with base 10: '' ",
+                    "word": "'code' must not be present with 'word' "
+                }
+            }
+        },
+        {
+            "name": "address_code",
+            "url": "https://navitime-geocoding.p.rapidapi.com/address/code",
+            "description": "Return address information from address code of request parameters.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "code",
+                    "type": "STRING",
+                    "description": "Address Code.\nCan be specified multiple times, separated by a period.",
+                    "default": "13101001"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "coord_unit",
+                    "type": "STRING",
+                    "description": "The unit of latitude and longitude included in the output data.\n(degree: decimal system of degrees (default), millisec: milliseconds)",
+                    "default": "degree"
+                },
+                {
+                    "name": "datum",
+                    "type": "STRING",
+                    "description": "Geodetic system of latitude and longitude.\n(wgs84: World Geodetic System (default), tokyo: Old Japan Geodetic System)",
+                    "default": "wgs84"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://navitime-geocoding.p.rapidapi.com/address/code\"\nquerystring = {\"coord_unit\": \"degree\", \"code\": \"13101001\", \"datum\": \"wgs84\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"navitime-geocoding.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://navitime-geocoding.p.rapidapi.com/address/code\"\nquerystring = {\"coord_unit\": \"degree\", \"code\": \"13101001\", \"datum\": \"wgs84\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"navitime-geocoding.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "items": [
+                    {
+                        "code": "13101001000",
+                        "name": "\u6771\u4eac\u90fd\u5343\u4ee3\u7530\u533a\u98ef\u7530\u6a4b",
+                        "postal_code": "1020072",
+                        "coord": {
+                            "lat": 35.699651,
+                            "lon": 139.748228
+                        },
+                        "details": [
+                            {
+                                "code": "13",
+                                "name": "\u6771\u4eac\u90fd",
+                                "ruby": "\u3068\u3046\u304d\u3087\u3046\u3068",
+                                "level": "1"
+                            },
+                            {
+                                "code": "13101",
+                                "name": "\u5343\u4ee3\u7530\u533a",
+                                "ruby": "\u3061\u3088\u3060\u304f",
+                                "level": "2"
+                            },
+                            {
+                                "code": "13101001",
+                                "name": "\u98ef\u7530\u6a4b",
+                                "ruby": "\u3044\u3044\u3060\u3070\u3057",
+                                "level": "3"
+                            }
+                        ]
+                    }
+                ],
+                "unit": {
+                    "datum": "wgs84",
+                    "coord_unit": "degree"
+                }
+            }
+        },
+        {
+            "name": "address_postal_code",
+            "url": "https://navitime-geocoding.p.rapidapi.com/address/postal_code",
+            "description": "Return address information from postal code of request parameters.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "postal_code",
+                    "type": "STRING",
+                    "description": "Postal code string (Minimum: 3 digits, Maximum: 7 digits)",
+                    "default": "1510053"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "datum",
+                    "type": "STRING",
+                    "description": "Geodetic system of latitude and longitude.\n(wgs84: World Geodetic System (default), tokyo: Old Japan Geodetic System)",
+                    "default": "wgs84"
+                },
+                {
+                    "name": "offset",
+                    "type": "NUMBER",
+                    "description": "Skips a given number of first data.\n(Minimum value: 0, Maximum value: 2000, Default value: 0)",
+                    "default": "0"
+                },
+                {
+                    "name": "coord_unit",
+                    "type": "STRING",
+                    "description": "The unit of latitude and longitude included in the output data.\n(degree: decimal system of degrees (default), millisec: milliseconds)",
+                    "default": "degree"
+                },
+                {
+                    "name": "limit",
+                    "type": "NUMBER",
+                    "description": "Limits the number of response data. (Minimum value: 1, Maximum value: 100, Default value: 10)",
+                    "default": "10"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://navitime-geocoding.p.rapidapi.com/address/postal_code\"\nquerystring = {\"datum\": \"wgs84\", \"offset\": \"0\", \"coord_unit\": \"degree\", \"limit\": \"10\", \"postal_code\": \"1510053\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"navitime-geocoding.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://navitime-geocoding.p.rapidapi.com/address/postal_code\"\nquerystring = {\"datum\": \"wgs84\", \"offset\": \"0\", \"coord_unit\": \"degree\", \"limit\": \"10\", \"postal_code\": \"1510053\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"navitime-geocoding.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "count": {
+                    "total": 5,
+                    "offset": 0,
+                    "limit": 10
+                },
+                "items": [
+                    {
+                        "code": "13113031001",
+                        "name": "\u6771\u4eac\u90fd\u6e0b\u8c37\u533a\u4ee3\u3005\u67281\u4e01\u76ee",
+                        "postal_code": "1510053",
+                        "coord": {
+                            "lat": 35.682662,
+                            "lon": 139.699252
+                        },
+                        "details": [
+                            {
+                                "code": "13",
+                                "name": "\u6771\u4eac\u90fd",
+                                "ruby": "\u3068\u3046\u304d\u3087\u3046\u3068",
+                                "level": "1"
+                            },
+                            {
+                                "code": "13113",
+                                "name": "\u6e0b\u8c37\u533a",
+                                "ruby": "\u3057\u3076\u3084\u304f",
+                                "level": "2"
+                            },
+                            {
+                                "code": "13113031",
+                                "name": "\u4ee3\u3005\u6728",
+                                "ruby": "\u3088\u3088\u304e",
+                                "level": "3"
+                            },
+                            {
+                                "code": "13113031001",
+                                "name": "1\u4e01\u76ee",
+                                "level": "4"
+                            }
+                        ]
+                    },
+                    {
+                        "code": "13113031002",
+                        "name": "\u6771\u4eac\u90fd\u6e0b\u8c37\u533a\u4ee3\u3005\u67282\u4e01\u76ee",
+                        "postal_code": "1510053",
+                        "coord": {
+                            "lat": 35.683912,
+                            "lon": 139.698038
+                        },
+                        "details": [
+                            {
+                                "code": "13",
+                                "name": "\u6771\u4eac\u90fd",
+                                "ruby": "\u3068\u3046\u304d\u3087\u3046\u3068",
+                                "level": "1"
+                            },
+                            {
+                                "code": "13113",
+                                "name": "\u6e0b\u8c37\u533a",
+                                "ruby": "\u3057\u3076\u3084\u304f",
+                                "level": "2"
+                            },
+                            {
+                                "code": "13113031",
+                                "name": "\u4ee3\u3005\u6728",
+                                "ruby": "\u3088\u3088\u304e",
+                                "level": "3"
+                            },
+                            {
+                                "code": "13113031002",
+                                "name": "2\u4e01\u76ee",
+                                "level": "4"
+                            }
+                        ]
+                    },
+                    {
+                        "code": "13113031003",
+                        "name": "\u6771\u4eac\u90fd\u6e0b\u8c37\u533a\u4ee3\u3005\u67283\u4e01\u76ee",
+                        "postal_code": "1510053",
+                        "coord": {
+                            "lat": 35.683326,
+                            "lon": 139.694564
+                        },
+                        "details": [
+                            {
+                                "code": "13",
+                                "name": "\u6771\u4eac\u90fd",
+                                "ruby": "\u3068\u3046\u304d\u3087\u3046\u3068",
+                                "level": "1"
+                            },
+                            {
+                                "code": "13113",
+                                "name": "\u6e0b\u8c37\u533a",
+                                "ruby": "\u3057\u3076\u3084\u304f",
+                                "level": "2"
+                            },
+                            {
+                                "code": "13113031",
+                                "name": "\u4ee3\u3005\u6728",
+                                "ruby": "\u3088\u3088\u304e",
+                                "level": "3"
+                            },
+                            {
+                                "code": "13113031003",
+                                "name": "3\u4e01\u76ee",
+                                "level": "4"
+                            }
+                        ]
+                    },
+                    {
+                        "code": "13113031004",
+                        "name": "\u6771\u4eac\u90fd\u6e0b\u8c37\u533a\u4ee3\u3005\u67284\u4e01\u76ee",
+                        "postal_code": "1510053",
+                        "coord": {
+                            "lat": 35.679224,
+                            "lon": 139.691506
+                        },
+                        "details": [
+                            {
+                                "code": "13",
+                                "name": "\u6771\u4eac\u90fd",
+                                "ruby": "\u3068\u3046\u304d\u3087\u3046\u3068",
+                                "level": "1"
+                            },
+                            {
+                                "code": "13113",
+                                "name": "\u6e0b\u8c37\u533a",
+                                "ruby": "\u3057\u3076\u3084\u304f",
+                                "level": "2"
+                            },
+                            {
+                                "code": "13113031",
+                                "name": "\u4ee3\u3005\u6728",
+                                "ruby": "\u3088\u3088\u304e",
+                                "level": "3"
+                            },
+                            {
+                                "code": "13113031004",
+                                "name": "4\u4e01\u76ee",
+                                "level": "4"
+                            }
+                        ]
+                    },
+                    {
+                        "code": "13113031005",
+                        "name": "\u6771\u4eac\u90fd\u6e0b\u8c37\u533a\u4ee3\u3005\u67285\u4e01\u76ee",
+                        "postal_code": "1510053",
+                        "coord": {
+                            "lat": 35.675893,
+                            "lon": 139.690656
+                        },
+                        "details": [
+                            {
+                                "code": "13",
+                                "name": "\u6771\u4eac\u90fd",
+                                "ruby": "\u3068\u3046\u304d\u3087\u3046\u3068",
+                                "level": "1"
+                            },
+                            {
+                                "code": "13113",
+                                "name": "\u6e0b\u8c37\u533a",
+                                "ruby": "\u3057\u3076\u3084\u304f",
+                                "level": "2"
+                            },
+                            {
+                                "code": "13113031",
+                                "name": "\u4ee3\u3005\u6728",
+                                "ruby": "\u3088\u3088\u304e",
+                                "level": "3"
+                            },
+                            {
+                                "code": "13113031005",
+                                "name": "5\u4e01\u76ee",
+                                "level": "4"
+                            }
+                        ]
+                    }
+                ],
+                "unit": {
+                    "datum": "wgs84",
+                    "coord_unit": "degree"
+                }
+            }
+        },
+        {
+            "name": "address_autocomplete",
+            "url": "https://navitime-geocoding.p.rapidapi.com/address/autocomplete",
+            "description": "Return address predictions from the specified keyword of request parameters.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "word",
+                    "type": "STRING",
+                    "description": "Address string (Minimum: 2 characters, Maximum: 50 characters).\n\nIf a string of 51 or more characters is entered, the 51st and subsequent characters will be deleted and searched.\nArabic and Chinese numerals are searched as they are.",
+                    "default": "\u3068\u3046k"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "datum",
+                    "type": "STRING",
+                    "description": "Geodetic system of latitude and longitude.\n(wgs84: World Geodetic System (default), tokyo: Old Japan Geodetic System)",
+                    "default": "wgs84"
+                },
+                {
+                    "name": "coord_unit",
+                    "type": "STRING",
+                    "description": "The unit of latitude and longitude included in the output data.\n(degree: decimal system of degrees (default), millisec: milliseconds)",
+                    "default": "degree"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://navitime-geocoding.p.rapidapi.com/address/autocomplete\"\nquerystring = {\"datum\": \"wgs84\", \"word\": \"\u3068\u3046k\", \"coord_unit\": \"degree\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"navitime-geocoding.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://navitime-geocoding.p.rapidapi.com/address/autocomplete\"\nquerystring = {\"datum\": \"wgs84\", \"word\": \"\u3068\u3046k\", \"coord_unit\": \"degree\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"navitime-geocoding.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "items": [
+                    {
+                        "code": "13",
+                        "name": "\u6771\u4eac\u90fd",
+                        "coord": {
+                            "lat": 35.689553,
+                            "lon": 139.691819
+                        },
+                        "details": [
+                            {
+                                "code": "13",
+                                "name": "\u6771\u4eac\u90fd",
+                                "ruby": "\u3068\u3046\u304d\u3087\u3046\u3068",
+                                "level": "1"
+                            }
+                        ]
+                    },
+                    {
+                        "code": "13101",
+                        "name": "\u6771\u4eac\u90fd\u5343\u4ee3\u7530\u533a",
+                        "coord": {
+                            "lat": 35.694043,
+                            "lon": 139.753586
+                        },
+                        "details": [
+                            {
+                                "code": "13",
+                                "name": "\u6771\u4eac\u90fd",
+                                "ruby": "\u3068\u3046\u304d\u3087\u3046\u3068",
+                                "level": "1"
+                            },
+                            {
+                                "code": "13101",
+                                "name": "\u5343\u4ee3\u7530\u533a",
+                                "ruby": "\u3061\u3088\u3060\u304f",
+                                "level": "2"
+                            }
+                        ]
+                    },
+                    {
+                        "code": "13102",
+                        "name": "\u6771\u4eac\u90fd\u4e2d\u592e\u533a",
+                        "coord": {
+                            "lat": 35.670713,
+                            "lon": 139.772108
+                        },
+                        "details": [
+                            {
+                                "code": "13",
+                                "name": "\u6771\u4eac\u90fd",
+                                "ruby": "\u3068\u3046\u304d\u3087\u3046\u3068",
+                                "level": "1"
+                            },
+                            {
+                                "code": "13102",
+                                "name": "\u4e2d\u592e\u533a",
+                                "ruby": "\u3061\u3085\u3046\u304a\u3046\u304f",
+                                "level": "2"
+                            }
+                        ]
+                    },
+                    {
+                        "code": "13103",
+                        "name": "\u6771\u4eac\u90fd\u6e2f\u533a",
+                        "coord": {
+                            "lat": 35.658075,
+                            "lon": 139.751404
+                        },
+                        "details": [
+                            {
+                                "code": "13",
+                                "name": "\u6771\u4eac\u90fd",
+                                "ruby": "\u3068\u3046\u304d\u3087\u3046\u3068",
+                                "level": "1"
+                            },
+                            {
+                                "code": "13103",
+                                "name": "\u6e2f\u533a",
+                                "ruby": "\u307f\u306a\u3068\u304f",
+                                "level": "2"
+                            }
+                        ]
+                    },
+                    {
+                        "code": "13104",
+                        "name": "\u6771\u4eac\u90fd\u65b0\u5bbf\u533a",
+                        "coord": {
+                            "lat": 35.693889,
+                            "lon": 139.70341
+                        },
+                        "details": [
+                            {
+                                "code": "13",
+                                "name": "\u6771\u4eac\u90fd",
+                                "ruby": "\u3068\u3046\u304d\u3087\u3046\u3068",
+                                "level": "1"
+                            },
+                            {
+                                "code": "13104",
+                                "name": "\u65b0\u5bbf\u533a",
+                                "ruby": "\u3057\u3093\u3058\u3085\u304f\u304f",
+                                "level": "2"
+                            }
+                        ]
+                    },
+                    {
+                        "code": "13105",
+                        "name": "\u6771\u4eac\u90fd\u6587\u4eac\u533a",
+                        "coord": {
+                            "lat": 35.708055,
+                            "lon": 139.752216
+                        },
+                        "details": [
+                            {
+                                "code": "13",
+                                "name": "\u6771\u4eac\u90fd",
+                                "ruby": "\u3068\u3046\u304d\u3087\u3046\u3068",
+                                "level": "1"
+                            },
+                            {
+                                "code": "13105",
+                                "name": "\u6587\u4eac\u533a",
+                                "ruby": "\u3076\u3093\u304d\u3087\u3046\u304f",
+                                "level": "2"
+                            }
+                        ]
+                    },
+                    {
+                        "code": "13106",
+                        "name": "\u6771\u4eac\u90fd\u53f0\u6771\u533a",
+                        "coord": {
+                            "lat": 35.712608,
+                            "lon": 139.779997
+                        },
+                        "details": [
+                            {
+                                "code": "13",
+                                "name": "\u6771\u4eac\u90fd",
+                                "ruby": "\u3068\u3046\u304d\u3087\u3046\u3068",
+                                "level": "1"
+                            },
+                            {
+                                "code": "13106",
+                                "name": "\u53f0\u6771\u533a",
+                                "ruby": "\u305f\u3044\u3068\u3046\u304f",
+                                "level": "2"
+                            }
+                        ]
+                    },
+                    {
+                        "code": "13107",
+                        "name": "\u6771\u4eac\u90fd\u58a8\u7530\u533a",
+                        "coord": {
+                            "lat": 35.710409,
+                            "lon": 139.801559
+                        },
+                        "details": [
+                            {
+                                "code": "13",
+                                "name": "\u6771\u4eac\u90fd",
+                                "ruby": "\u3068\u3046\u304d\u3087\u3046\u3068",
+                                "level": "1"
+                            },
+                            {
+                                "code": "13107",
+                                "name": "\u58a8\u7530\u533a",
+                                "ruby": "\u3059\u307f\u3060\u304f",
+                                "level": "2"
+                            }
+                        ]
+                    },
+                    {
+                        "code": "13108",
+                        "name": "\u6771\u4eac\u90fd\u6c5f\u6771\u533a",
+                        "coord": {
+                            "lat": 35.673081,
+                            "lon": 139.816968
+                        },
+                        "details": [
+                            {
+                                "code": "13",
+                                "name": "\u6771\u4eac\u90fd",
+                                "ruby": "\u3068\u3046\u304d\u3087\u3046\u3068",
+                                "level": "1"
+                            },
+                            {
+                                "code": "13108",
+                                "name": "\u6c5f\u6771\u533a",
+                                "ruby": "\u3053\u3046\u3068\u3046\u304f",
+                                "level": "2"
+                            }
+                        ]
+                    },
+                    {
+                        "code": "13109",
+                        "name": "\u6771\u4eac\u90fd\u54c1\u5ddd\u533a",
+                        "coord": {
+                            "lat": 35.608908,
+                            "lon": 139.730308
+                        },
+                        "details": [
+                            {
+                                "code": "13",
+                                "name": "\u6771\u4eac\u90fd",
+                                "ruby": "\u3068\u3046\u304d\u3087\u3046\u3068",
+                                "level": "1"
+                            },
+                            {
+                                "code": "13109",
+                                "name": "\u54c1\u5ddd\u533a",
+                                "ruby": "\u3057\u306a\u304c\u308f\u304f",
+                                "level": "2"
+                            }
+                        ]
+                    },
+                    {
+                        "code": "13110",
+                        "name": "\u6771\u4eac\u90fd\u76ee\u9ed2\u533a",
+                        "coord": {
+                            "lat": 35.64142,
+                            "lon": 139.698187
+                        },
+                        "details": [
+                            {
+                                "code": "13",
+                                "name": "\u6771\u4eac\u90fd",
+                                "ruby": "\u3068\u3046\u304d\u3087\u3046\u3068",
+                                "level": "1"
+                            },
+                            {
+                                "code": "13110",
+                                "name": "\u76ee\u9ed2\u533a",
+                                "ruby": "\u3081\u3050\u308d\u304f",
+                                "level": "2"
+                            }
+                        ]
+                    },
+                    {
+                        "code": "13111",
+                        "name": "\u6771\u4eac\u90fd\u5927\u7530\u533a",
+                        "coord": {
+                            "lat": 35.561401,
+                            "lon": 139.716047
+                        },
+                        "details": [
+                            {
+                                "code": "13",
+                                "name": "\u6771\u4eac\u90fd",
+                                "ruby": "\u3068\u3046\u304d\u3087\u3046\u3068",
+                                "level": "1"
+                            },
+                            {
+                                "code": "13111",
+                                "name": "\u5927\u7530\u533a",
+                                "ruby": "\u304a\u304a\u305f\u304f",
+                                "level": "2"
+                            }
+                        ]
+                    },
+                    {
+                        "code": "13112",
+                        "name": "\u6771\u4eac\u90fd\u4e16\u7530\u8c37\u533a",
+                        "coord": {
+                            "lat": 35.646576,
+                            "lon": 139.653249
+                        },
+                        "details": [
+                            {
+                                "code": "13",
+                                "name": "\u6771\u4eac\u90fd",
+                                "ruby": "\u3068\u3046\u304d\u3087\u3046\u3068",
+                                "level": "1"
+                            },
+                            {
+                                "code": "13112",
+                                "name": "\u4e16\u7530\u8c37\u533a",
+                                "ruby": "\u305b\u305f\u304c\u3084\u304f",
+                                "level": "2"
+                            }
+                        ]
+                    },
+                    {
+                        "code": "13113",
+                        "name": "\u6771\u4eac\u90fd\u6e0b\u8c37\u533a",
+                        "coord": {
+                            "lat": 35.663687,
+                            "lon": 139.6977
+                        },
+                        "details": [
+                            {
+                                "code": "13",
+                                "name": "\u6771\u4eac\u90fd",
+                                "ruby": "\u3068\u3046\u304d\u3087\u3046\u3068",
+                                "level": "1"
+                            },
+                            {
+                                "code": "13113",
+                                "name": "\u6e0b\u8c37\u533a",
+                                "ruby": "\u3057\u3076\u3084\u304f",
+                                "level": "2"
+                            }
+                        ]
+                    },
+                    {
+                        "code": "13114",
+                        "name": "\u6771\u4eac\u90fd\u4e2d\u91ce\u533a",
+                        "coord": {
+                            "lat": 35.7074,
+                            "lon": 139.663837
+                        },
+                        "details": [
+                            {
+                                "code": "13",
+                                "name": "\u6771\u4eac\u90fd",
+                                "ruby": "\u3068\u3046\u304d\u3087\u3046\u3068",
+                                "level": "1"
+                            },
+                            {
+                                "code": "13114",
+                                "name": "\u4e2d\u91ce\u533a",
+                                "ruby": "\u306a\u304b\u306e\u304f",
+                                "level": "2"
+                            }
+                        ]
+                    },
+                    {
+                        "code": "13115",
+                        "name": "\u6771\u4eac\u90fd\u6749\u4e26\u533a",
+                        "coord": {
+                            "lat": 35.699576,
+                            "lon": 139.636384
+                        },
+                        "details": [
+                            {
+                                "code": "13",
+                                "name": "\u6771\u4eac\u90fd",
+                                "ruby": "\u3068\u3046\u304d\u3087\u3046\u3068",
+                                "level": "1"
+                            },
+                            {
+                                "code": "13115",
+                                "name": "\u6749\u4e26\u533a",
+                                "ruby": "\u3059\u304e\u306a\u307f\u304f",
+                                "level": "2"
+                            }
+                        ]
+                    },
+                    {
+                        "code": "13116",
+                        "name": "\u6771\u4eac\u90fd\u8c4a\u5cf6\u533a",
+                        "coord": {
+                            "lat": 35.726119,
+                            "lon": 139.716607
+                        },
+                        "details": [
+                            {
+                                "code": "13",
+                                "name": "\u6771\u4eac\u90fd",
+                                "ruby": "\u3068\u3046\u304d\u3087\u3046\u3068",
+                                "level": "1"
+                            },
+                            {
+                                "code": "13116",
+                                "name": "\u8c4a\u5cf6\u533a",
+                                "ruby": "\u3068\u3057\u307e\u304f",
+                                "level": "2"
+                            }
+                        ]
+                    },
+                    {
+                        "code": "13117",
+                        "name": "\u6771\u4eac\u90fd\u5317\u533a",
+                        "coord": {
+                            "lat": 35.752927,
+                            "lon": 139.73341
+                        },
+                        "details": [
+                            {
+                                "code": "13",
+                                "name": "\u6771\u4eac\u90fd",
+                                "ruby": "\u3068\u3046\u304d\u3087\u3046\u3068",
+                                "level": "1"
+                            },
+                            {
+                                "code": "13117",
+                                "name": "\u5317\u533a",
+                                "ruby": "\u304d\u305f\u304f",
+                                "level": "2"
+                            }
+                        ]
+                    },
+                    {
+                        "code": "13118",
+                        "name": "\u6771\u4eac\u90fd\u8352\u5ddd\u533a",
+                        "coord": {
+                            "lat": 35.736145,
+                            "lon": 139.783334
+                        },
+                        "details": [
+                            {
+                                "code": "13",
+                                "name": "\u6771\u4eac\u90fd",
+                                "ruby": "\u3068\u3046\u304d\u3087\u3046\u3068",
+                                "level": "1"
+                            },
+                            {
+                                "code": "13118",
+                                "name": "\u8352\u5ddd\u533a",
+                                "ruby": "\u3042\u3089\u304b\u308f\u304f",
+                                "level": "2"
+                            }
+                        ]
+                    },
+                    {
+                        "code": "13119",
+                        "name": "\u6771\u4eac\u90fd\u677f\u6a4b\u533a",
+                        "coord": {
+                            "lat": 35.751166,
+                            "lon": 139.709246
+                        },
+                        "details": [
+                            {
+                                "code": "13",
+                                "name": "\u6771\u4eac\u90fd",
+                                "ruby": "\u3068\u3046\u304d\u3087\u3046\u3068",
+                                "level": "1"
+                            },
+                            {
+                                "code": "13119",
+                                "name": "\u677f\u6a4b\u533a",
+                                "ruby": "\u3044\u305f\u3070\u3057\u304f",
+                                "level": "2"
+                            }
+                        ]
+                    }
+                ],
+                "unit": {
+                    "datum": "wgs84",
+                    "coord_unit": "degree"
+                }
+            }
+        }
+    ],
+    "standardized_name": "navitime_geocoding"
+}

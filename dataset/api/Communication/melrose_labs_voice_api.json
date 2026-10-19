@@ -1,0 +1,283 @@
+{
+    "product_id": "api_6913771d-c032-468f-a2d6-f95550709b49",
+    "tool_description": "The Voice API is used for text-to-speech, speech-to-text and inbound/outbound voice routing.  The Voice API is part of the <a href=\"https://melroselabs.com/services/voice-gateway/\">Voice Gateway</a> from Melrose Labs.",
+    "home_url": "https://rapidapi.com/MelroseLabs/api/melrose-labs-voice-api1/",
+    "name": "Melrose Labs Voice API",
+    "title": "Melrose Labs Voice API",
+    "pricing": "FREE",
+    "tool_name": "Melrose Labs Voice API",
+    "score": {
+        "avgServiceLevel": 20,
+        "avgLatency": 1511,
+        "avgSuccessRate": 0,
+        "popularityScore": 0.3,
+        "__typename": "Score"
+    },
+    "host": "melrose-labs-voice-api1.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Retrieve text",
+            "url": "https://melrose-labs-voice-api1.p.rapidapi.com/speechtotext/string",
+            "description": "Retrieve text from previously converted speech-to-text.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "transactionid",
+                    "type": "STRING",
+                    "description": "ID of speech-to-text transaction",
+                    "default": "string"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://melrose-labs-voice-api1.p.rapidapi.com/speechtotext/string\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"melrose-labs-voice-api1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://melrose-labs-voice-api1.p.rapidapi.com/speechtotext/{transactionid}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"melrose-labs-voice-api1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "ML_NoSuchObject"
+            },
+            "statuscode": 400,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "get": {
+                        "type": "string"
+                    },
+                    "parameters": {
+                        "type": "array"
+                    },
+                    "errors": {
+                        "type": "array"
+                    },
+                    "results": {
+                        "type": "integer"
+                    },
+                    "response": {
+                        "type": "array",
+                        "items": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "List available numbers for a country",
+            "url": "https://melrose-labs-voice-api1.p.rapidapi.com/numbering/available/string",
+            "description": "Get list of available telephone numbers for a country",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "country",
+                    "type": "STRING",
+                    "description": "Country for which querying for available numbers",
+                    "default": "string"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://melrose-labs-voice-api1.p.rapidapi.com/numbering/available/string\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"melrose-labs-voice-api1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://melrose-labs-voice-api1.p.rapidapi.com/numbering/available/{country}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"melrose-labs-voice-api1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "Internal server error"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "get": {
+                        "type": "string"
+                    },
+                    "parameters": {
+                        "type": "array"
+                    },
+                    "errors": {
+                        "type": "array"
+                    },
+                    "results": {
+                        "type": "integer"
+                    },
+                    "response": {
+                        "type": "array",
+                        "items": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "List available numbers for a country/prefix",
+            "url": "https://melrose-labs-voice-api1.p.rapidapi.com/numbering/available/string/string",
+            "description": "Get list of available telephone numbers for a country and given prefix",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "prefix",
+                    "type": "STRING",
+                    "description": "Prefix within country for which query for available numbers",
+                    "default": "string"
+                },
+                {
+                    "name": "country",
+                    "type": "STRING",
+                    "description": "Country for which querying for available numbers",
+                    "default": "string"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://melrose-labs-voice-api1.p.rapidapi.com/numbering/available/string/string\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"melrose-labs-voice-api1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://melrose-labs-voice-api1.p.rapidapi.com/numbering/available/{country}/{prefix}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"melrose-labs-voice-api1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "Internal server error"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "get": {
+                        "type": "string"
+                    },
+                    "parameters": {
+                        "type": "array"
+                    },
+                    "errors": {
+                        "type": "array"
+                    },
+                    "results": {
+                        "type": "integer"
+                    },
+                    "response": {
+                        "type": "array",
+                        "items": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "List allocated numbers",
+            "url": "https://melrose-labs-voice-api1.p.rapidapi.com/numbering",
+            "description": "Get list of allocated numbers",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://melrose-labs-voice-api1.p.rapidapi.com/numbering\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"melrose-labs-voice-api1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://melrose-labs-voice-api1.p.rapidapi.com/numbering\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"melrose-labs-voice-api1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "Internal server error"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "get": {
+                        "type": "string"
+                    },
+                    "parameters": {
+                        "type": "array"
+                    },
+                    "errors": {
+                        "type": "array"
+                    },
+                    "results": {
+                        "type": "integer"
+                    },
+                    "response": {
+                        "type": "array",
+                        "items": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Retrieve audio file",
+            "url": "https://melrose-labs-voice-api1.p.rapidapi.com/texttospeech/string",
+            "description": "Retrieve audio file from previously converted text-to-speech. File is in MP3 format.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "transactionid",
+                    "type": "STRING",
+                    "description": "Transaction ID for previously submitted text-to-speech conversion.",
+                    "default": "string"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://melrose-labs-voice-api1.p.rapidapi.com/texttospeech/string\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"melrose-labs-voice-api1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://melrose-labs-voice-api1.p.rapidapi.com/texttospeech/{transactionid}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"melrose-labs-voice-api1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "ML_NoSuchObject"
+            },
+            "statuscode": 404,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "get": {
+                        "type": "string"
+                    },
+                    "parameters": {
+                        "type": "array"
+                    },
+                    "errors": {
+                        "type": "array"
+                    },
+                    "results": {
+                        "type": "integer"
+                    },
+                    "response": {
+                        "type": "array",
+                        "items": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Get endpoint",
+            "url": "https://melrose-labs-voice-api1.p.rapidapi.com/numbering/string",
+            "description": "Get endpoint for a number",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "telno",
+                    "type": "STRING",
+                    "description": "Get current endpoint for telephone number",
+                    "default": "string"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://melrose-labs-voice-api1.p.rapidapi.com/numbering/string\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"melrose-labs-voice-api1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://melrose-labs-voice-api1.p.rapidapi.com/numbering/{telno}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"melrose-labs-voice-api1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "Internal server error"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "get": {
+                        "type": "string"
+                    },
+                    "parameters": {
+                        "type": "array"
+                    },
+                    "errors": {
+                        "type": "array"
+                    },
+                    "results": {
+                        "type": "integer"
+                    },
+                    "response": {
+                        "type": "array",
+                        "items": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "standardized_name": "melrose_labs_voice_api"
+}

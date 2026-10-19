@@ -1,0 +1,127 @@
+{
+    "product_id": "api_f4551ffe-5059-4b6d-80cd-9ecfbccdc613",
+    "tool_description": "HOUSE PLANT DATABASE & RESTful API for house plant data (Over 300+ plant details/images) along with their description and information on how to best take care of them (ideal temperature, light, etc.)\n\nNEW ROUTES COMING SOON (GetAllLite, GetByLatinName, GetByCommonName, GetCategories, GetAllByCategory)",
+    "home_url": "https://rapidapi.com/mnai01/api/house-plants2/",
+    "name": "House Plants",
+    "title": "House Plants",
+    "pricing": "FREEMIUM",
+    "tool_name": "House Plants",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 2222,
+        "avgSuccessRate": 100,
+        "popularityScore": 9.5,
+        "__typename": "Score"
+    },
+    "host": "house-plants2.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "GetBySearch",
+            "url": "https://house-plants2.p.rapidapi.com/search",
+            "description": "Searches through all plants and returns the closest results matching \"Latin name\", \"Family\", \"Other names\", \"Common name\", \"Common name (fr.)\", \"Description\", \"Categories\", \"Origin\" in order by highest most likely. This route is case insensitive and uses fuzzy search",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "query",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "Fern"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://house-plants2.p.rapidapi.com/search\"\nquerystring = {\"query\": \"Fern\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"house-plants2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://house-plants2.p.rapidapi.com/search\"\nquerystring = {\"query\": \"Fern\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"house-plants2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "This endpoint is disabled for your subscription"
+            }
+        },
+        {
+            "name": "GetAll",
+            "url": "https://house-plants2.p.rapidapi.com/all",
+            "description": "Returns all plant data within an array. Information for each plant returned contains (but not limited to) the list below\n\n- Latin name \n- Img \n- Id\n- Family \n- Other names \n- Common name \n- Common name (fr.) \n- Description \n- Categories \n- Origin \n- Climat \n- Temperature max\n- Temperature min\n- Zone \n- Growth \n- Light ideal \n- Light tolered \n- Watering \n- Insects \n- Disease \n- Appeal \n- Color of leaf \n- Color of blooms \n- Blooming season \n- Perfume \n- Avaibility \n- Pot diameter\n- Height at purchase\n- Width at purchase\n- Height potential\n- Width potential\n- Available sizes\n- Bearing \n- Clump\n- Pruning \n- Style \n- Use",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://house-plants2.p.rapidapi.com/all\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"house-plants2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://house-plants2.p.rapidapi.com/all\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"house-plants2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "This endpoint is disabled for your subscription"
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "GetAllLite",
+            "url": "https://house-plants2.p.rapidapi.com/all-lite",
+            "description": "Gets all items but only identifying data. All additional data can be grabbed from the GetById route or the GetAll route which return all item with all its keys, no restriction",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://house-plants2.p.rapidapi.com/all-lite\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"house-plants2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://house-plants2.p.rapidapi.com/all-lite\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"house-plants2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per second for your plan, BASIC, by the API provider"
+            }
+        },
+        {
+            "name": "GetAllCategories",
+            "url": "https://house-plants2.p.rapidapi.com/categories",
+            "description": "Get all available categories for all plants",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://house-plants2.p.rapidapi.com/categories\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"house-plants2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://house-plants2.p.rapidapi.com/categories\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"house-plants2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per second for your plan, BASIC, by the API provider"
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "GetById",
+            "url": "https://house-plants2.p.rapidapi.com/id/53417c12-4824-5995-bce0-b81984ebbd1d",
+            "description": "Returns a single plants data within an object. Information for each plant returned contains (but not limited to) the list below\n\n- Latin name \n- Img \n- Id\n- Family \n- Other names \n- Common name \n- Common name (fr.) \n- Description \n- Categories \n- Origin \n- Climat \n- Temperature max\n- Temperature min\n- Zone \n- Growth \n- Light ideal \n- Light tolered \n- Watering \n- Insects \n- Disease \n- Appeal \n- Color of leaf \n- Color of blooms \n- Blooming season \n- Perfume \n- Avaibility \n- Pot diameter\n- Height at purchase\n- Width at purchase\n- Height potential\n- Width potential\n- Available sizes\n- Bearing \n- Clump\n- Pruning \n- Style \n- Use",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "id",
+                    "type": "string",
+                    "description": "",
+                    "default": "53417c12-4824-5995-bce0-b81984ebbd1d"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://house-plants2.p.rapidapi.com/id/53417c12-4824-5995-bce0-b81984ebbd1d\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"house-plants2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://house-plants2.p.rapidapi.com/id/{id}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"house-plants2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per second for your plan, BASIC, by the API provider"
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "GetByCategory",
+            "url": "https://house-plants2.p.rapidapi.com/category/Fern",
+            "description": "Get all item based on a category",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "category",
+                    "type": "string",
+                    "description": "",
+                    "default": "Fern"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://house-plants2.p.rapidapi.com/category/Fern\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"house-plants2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://house-plants2.p.rapidapi.com/category/{category}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"house-plants2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per second for your plan, BASIC, by the API provider"
+            },
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "house_plants"
+}

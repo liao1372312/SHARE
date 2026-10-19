@@ -1,0 +1,507 @@
+{
+    "product_id": "api_e9be2393-03e3-4034-b8a3-2570f632cfc3",
+    "tool_description": "Perform accurate and hassle-free conversions between various measurement units for weight, length, area, volume, speed, fuel, pressure, and temperature with our API. It supports local units and returns both the converted value and abbreviation (if available) for quick and easy integration into your projects.",
+    "home_url": "https://rapidapi.com/rachellau/api/unit-measurement-conversion/",
+    "name": "Unit Measurement Conversion",
+    "title": "Unit Measurement Conversion",
+    "pricing": "FREEMIUM",
+    "tool_name": "Unit Measurement Conversion",
+    "score": {
+        "avgServiceLevel": 84,
+        "avgLatency": 3992,
+        "avgSuccessRate": 34,
+        "popularityScore": 8.2,
+        "__typename": "Score"
+    },
+    "host": "unit-measurement-conversion.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Convert a Unit",
+            "url": "https://unit-measurement-conversion.p.rapidapi.com/convert",
+            "description": "GET the Unit and Value you want to convert, and get a object with the result and abbreviation (if available).",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "fromValue",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "200"
+                },
+                {
+                    "name": "toUnit",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "kilogram"
+                },
+                {
+                    "name": "fromUnit",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "pound"
+                },
+                {
+                    "name": "type",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "weight"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://unit-measurement-conversion.p.rapidapi.com/convert\"\nquerystring = {\"fromValue\": \"200\", \"toUnit\": \"kilogram\", \"fromUnit\": \"pound\", \"type\": \"weight\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"unit-measurement-conversion.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://unit-measurement-conversion.p.rapidapi.com/convert\"\nquerystring = {\"fromValue\": \"200\", \"toUnit\": \"kilogram\", \"fromUnit\": \"pound\", \"type\": \"weight\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"unit-measurement-conversion.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "value": "90.7185",
+                "abbreviation": "kg"
+            }
+        },
+        {
+            "name": "Get a List of All Units",
+            "url": "https://unit-measurement-conversion.p.rapidapi.com/list",
+            "description": "This endpoint gets a full list of units available for conversion",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://unit-measurement-conversion.p.rapidapi.com/list\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"unit-measurement-conversion.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://unit-measurement-conversion.p.rapidapi.com/list\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"unit-measurement-conversion.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "type": "weight",
+                    "measurements": [
+                        {
+                            "unit": "kilogram",
+                            "abbr": "kg"
+                        },
+                        {
+                            "unit": "gram",
+                            "abbr": "g"
+                        },
+                        {
+                            "unit": "pound",
+                            "abbr": "lb"
+                        },
+                        {
+                            "unit": "ounce",
+                            "abbr": "oz"
+                        },
+                        {
+                            "unit": "ounce (gold)",
+                            "abbr": "oz"
+                        },
+                        {
+                            "unit": "tonne",
+                            "abbr": "ton"
+                        },
+                        {
+                            "unit": "ton (UK)",
+                            "abbr": "ton"
+                        },
+                        {
+                            "unit": "ton (US)",
+                            "abbr": "ton"
+                        },
+                        {
+                            "unit": "carat",
+                            "abbr": "ct"
+                        },
+                        {
+                            "unit": "carat (UK)",
+                            "abbr": "ct"
+                        },
+                        {
+                            "unit": "stone",
+                            "abbr": "st"
+                        },
+                        {
+                            "unit": "mace (China)",
+                            "abbr": ""
+                        },
+                        {
+                            "unit": "tael (China)",
+                            "abbr": ""
+                        },
+                        {
+                            "unit": "catty (China)",
+                            "abbr": ""
+                        },
+                        {
+                            "unit": "mace (HK)",
+                            "abbr": ""
+                        },
+                        {
+                            "unit": "tael (HK)",
+                            "abbr": ""
+                        },
+                        {
+                            "unit": "catty (HK)",
+                            "abbr": ""
+                        },
+                        {
+                            "unit": "tam (HK)",
+                            "abbr": ""
+                        },
+                        {
+                            "unit": "tael (Taiwan)",
+                            "abbr": ""
+                        },
+                        {
+                            "unit": "catty (Taiwan)",
+                            "abbr": ""
+                        },
+                        {
+                            "unit": "catty (Japan)",
+                            "abbr": ""
+                        },
+                        {
+                            "unit": "dan (Japan)",
+                            "abbr": ""
+                        },
+                        {
+                            "unit": "artel (Arab)",
+                            "abbr": ""
+                        },
+                        {
+                            "unit": "baht (Thai)",
+                            "abbr": ""
+                        },
+                        {
+                            "unit": "bale (UK)",
+                            "abbr": ""
+                        },
+                        {
+                            "unit": "bale (US)",
+                            "abbr": ""
+                        },
+                        {
+                            "unit": "denier (France)",
+                            "abbr": ""
+                        },
+                        {
+                            "unit": "centner (Germany)",
+                            "abbr": ""
+                        },
+                        {
+                            "unit": "gran (Germany)",
+                            "abbr": ""
+                        },
+                        {
+                            "unit": "lot (Germany)",
+                            "abbr": ""
+                        },
+                        {
+                            "unit": "centner (Russia)",
+                            "abbr": ""
+                        },
+                        {
+                            "unit": "danaro (Italy)",
+                            "abbr": ""
+                        },
+                        {
+                            "unit": "etto (Italy)",
+                            "abbr": ""
+                        },
+                        {
+                            "unit": "grano (Italy)",
+                            "abbr": ""
+                        },
+                        {
+                            "unit": "Arroba (Portugal)",
+                            "abbr": ""
+                        },
+                        {
+                            "unit": "funt (Russia)",
+                            "abbr": ""
+                        }
+                    ]
+                },
+                {
+                    "type": "length",
+                    "measurements": [
+                        {
+                            "unit": "kilometer",
+                            "abbr": "km"
+                        },
+                        {
+                            "unit": "meter",
+                            "abbr": "m"
+                        },
+                        {
+                            "unit": "centimeter",
+                            "abbr": "cm"
+                        },
+                        {
+                            "unit": "millimeter",
+                            "abbr": "mm"
+                        },
+                        {
+                            "unit": "inch",
+                            "abbr": "inch"
+                        },
+                        {
+                            "unit": "feet",
+                            "abbr": "ft"
+                        },
+                        {
+                            "unit": "yard",
+                            "abbr": "yd"
+                        },
+                        {
+                            "unit": "mile",
+                            "abbr": "mi"
+                        },
+                        {
+                            "unit": "fen (Taiwan)",
+                            "abbr": ""
+                        },
+                        {
+                            "unit": "inch (Taiwan)",
+                            "abbr": ""
+                        },
+                        {
+                            "unit": "feet (Taiwan)",
+                            "abbr": ""
+                        },
+                        {
+                            "unit": "jian (Taiwan)",
+                            "abbr": ""
+                        },
+                        {
+                            "unit": "inch (Japan)",
+                            "abbr": ""
+                        },
+                        {
+                            "unit": "feet (Japan)",
+                            "abbr": ""
+                        },
+                        {
+                            "unit": "jian (Japan)",
+                            "abbr": ""
+                        },
+                        {
+                            "unit": "zhang (Japan)",
+                            "abbr": ""
+                        },
+                        {
+                            "unit": "ding (Japan)",
+                            "abbr": ""
+                        },
+                        {
+                            "unit": "li (Japan)",
+                            "abbr": ""
+                        }
+                    ]
+                },
+                {
+                    "type": "area",
+                    "measurements": [
+                        {
+                            "unit": "sq meter",
+                            "abbr": "m2"
+                        },
+                        {
+                            "unit": "sq inch",
+                            "abbr": "inch2"
+                        },
+                        {
+                            "unit": "sq feet",
+                            "abbr": "ft2"
+                        },
+                        {
+                            "unit": "sq yard",
+                            "abbr": "yd2"
+                        },
+                        {
+                            "unit": "sq kilometer",
+                            "abbr": "km2"
+                        },
+                        {
+                            "unit": "acre",
+                            "abbr": "ac"
+                        },
+                        {
+                            "unit": "hectare",
+                            "abbr": "ha"
+                        },
+                        {
+                            "unit": "ping (Taiwan)",
+                            "abbr": ""
+                        },
+                        {
+                            "unit": "fen (Taiwan)",
+                            "abbr": ""
+                        },
+                        {
+                            "unit": "jia (Taiwan)",
+                            "abbr": ""
+                        },
+                        {
+                            "unit": "mu (China)",
+                            "abbr": ""
+                        }
+                    ]
+                },
+                {
+                    "type": "volume",
+                    "measurements": [
+                        {
+                            "unit": "liter",
+                            "abbr": "l"
+                        },
+                        {
+                            "unit": "cu mm",
+                            "abbr": "mm3"
+                        },
+                        {
+                            "unit": "milliliter",
+                            "abbr": "ml"
+                        },
+                        {
+                            "unit": "cu cm",
+                            "abbr": "cc"
+                        },
+                        {
+                            "unit": "cu meter",
+                            "abbr": "m3"
+                        },
+                        {
+                            "unit": "cu inch",
+                            "abbr": "inch3"
+                        },
+                        {
+                            "unit": "cu feet",
+                            "abbr": "feet3"
+                        },
+                        {
+                            "unit": "ounce (US)",
+                            "abbr": "oz"
+                        },
+                        {
+                            "unit": "pint (US)",
+                            "abbr": "pt"
+                        },
+                        {
+                            "unit": "ounce (UK)",
+                            "abbr": "oz"
+                        },
+                        {
+                            "unit": "pint (UK)",
+                            "abbr": "pt"
+                        },
+                        {
+                            "unit": "gallon",
+                            "abbr": "gal"
+                        }
+                    ]
+                },
+                {
+                    "type": "temperature",
+                    "measurements": [
+                        {
+                            "unit": "Celsius",
+                            "abbr": "\u00b0C"
+                        },
+                        {
+                            "unit": "Fahrenheit",
+                            "abbr": "\u00b0F"
+                        },
+                        {
+                            "unit": "Kelvin",
+                            "abbr": "K"
+                        }
+                    ]
+                },
+                {
+                    "type": "speed",
+                    "measurements": [
+                        {
+                            "unit": "meter/s",
+                            "abbr": "m/s"
+                        },
+                        {
+                            "unit": "foot/s",
+                            "abbr": "ft/s"
+                        },
+                        {
+                            "unit": "inch/s",
+                            "abbr": "in/s"
+                        },
+                        {
+                            "unit": "km/s",
+                            "abbr": "km/s"
+                        },
+                        {
+                            "unit": "km/min",
+                            "abbr": "km/min"
+                        },
+                        {
+                            "unit": "km/hour",
+                            "abbr": "km/h"
+                        },
+                        {
+                            "unit": "meter/min",
+                            "abbr": "m/min"
+                        },
+                        {
+                            "unit": "mile/s",
+                            "abbr": "ml/s"
+                        },
+                        {
+                            "unit": "mile/min",
+                            "abbr": "ml/min"
+                        },
+                        {
+                            "unit": "mile/hour",
+                            "abbr": "mph"
+                        }
+                    ]
+                },
+                {
+                    "type": "fuel",
+                    "measurements": [
+                        {
+                            "unit": "km/gal",
+                            "abbr": "km/gal"
+                        },
+                        {
+                            "unit": "km/l",
+                            "abbr": "km/l"
+                        },
+                        {
+                            "unit": "ml/l (US)",
+                            "abbr": "ml/l"
+                        },
+                        {
+                            "unit": "mi/gal (US)",
+                            "abbr": "mi/gal"
+                        },
+                        {
+                            "unit": "mi/gal (UK)",
+                            "abbr": "mi/gal"
+                        }
+                    ]
+                },
+                {
+                    "type": "pressure",
+                    "measurements": [
+                        {
+                            "unit": "atm pressure",
+                            "abbr": "atm"
+                        },
+                        {
+                            "unit": "Pascal",
+                            "abbr": "Pa"
+                        },
+                        {
+                            "unit": "psi",
+                            "abbr": "psi"
+                        },
+                        {
+                            "unit": "psf",
+                            "abbr": "psf"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "standardized_name": "unit_measurement_conversion"
+}

@@ -1,0 +1,291 @@
+{
+    "product_id": "5b6b499ee4b07e7b7f71e4ab",
+    "tool_description": "Find nearest or largest city information or timezone for any given point location (latitude/longitude). The reverse geocode API back \"reverse\" codes any GPS location point into nearest or largest readable places with county, city, distance and population.",
+    "home_url": "https://rapidapi.com/Noggle/api/reverse-geocoding-and-geolocation-service/",
+    "name": "Reverse Geocoding and Geolocation Service",
+    "title": "Reverse Geocoding and Geolocation Service",
+    "pricing": "FREEMIUM",
+    "tool_name": "Reverse Geocoding and Geolocation Service",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 740,
+        "avgSuccessRate": 100,
+        "popularityScore": 9.8,
+        "__typename": "Score"
+    },
+    "host": "geocodeapi.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "GetTimezone",
+            "url": "https://geocodeapi.p.rapidapi.com/GetTimezone",
+            "description": "Finds the local timezone for any given geo-location point by lat and long and returns timezone information with Timezone name, Timezone id and current local time.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "longitude",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "-74.40753570369408"
+                },
+                {
+                    "name": "latitude",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "40.63380384389354"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://geocodeapi.p.rapidapi.com/GetTimezone\"\nquerystring = {\"longitude\": \"-74.40753570369408\", \"latitude\": \"40.63380384389354\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"geocodeapi.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://geocodeapi.p.rapidapi.com/GetTimezone\"\nquerystring = {\"longitude\": \"-74.40753570369408\", \"latitude\": \"40.63380384389354\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"geocodeapi.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "TimeZoneId": "America/New_York",
+                "GMT_offset": -5,
+                "TimeZoneName": "EDT",
+                "LocalTime_Now": "9:34:31 AM",
+                "Country": "United States of America ",
+                "CountryId": "US"
+            },
+            "statuscode": 200,
+            "schema": {
+                "properties": {
+                    "Country": {
+                        "type": "string"
+                    },
+                    "CountryId": {
+                        "type": "string"
+                    },
+                    "GMT_offset": {
+                        "type": "integer"
+                    },
+                    "LocalTime_Now": {
+                        "type": "string"
+                    },
+                    "TimeZoneId": {
+                        "type": "string"
+                    },
+                    "TimeZoneName": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        {
+            "name": "GetNearestCities",
+            "url": "https://geocodeapi.p.rapidapi.com/GetNearestCities",
+            "description": "Returns a readable place name as nearest 3 cities with population, country and distance based on given latitude/longitude pair.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "latitude",
+                    "type": "NUMBER",
+                    "description": "latitude in decimal degrees (wgs84)",
+                    "default": "53.55196"
+                },
+                {
+                    "name": "longitude",
+                    "type": "NUMBER",
+                    "description": "longitude in decimal degrees (wgs84)",
+                    "default": "9.98558"
+                },
+                {
+                    "name": "range",
+                    "type": "NUMBER",
+                    "description": "max radial range for lookup in meter (0=no range)",
+                    "default": "0"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://geocodeapi.p.rapidapi.com/GetNearestCities\"\nquerystring = {\"latitude\": \"53.55196\", \"longitude\": \"9.98558\", \"range\": \"0\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"geocodeapi.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://geocodeapi.p.rapidapi.com/GetNearestCities\"\nquerystring = {\"latitude\": \"53.55196\", \"longitude\": \"9.98558\", \"range\": \"0\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"geocodeapi.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "City": "Hamburg",
+                    "Population": 1739117,
+                    "Latitude": 53.55073,
+                    "Longitude": 9.99302,
+                    "Country": "Germany",
+                    "CountryId": "DE",
+                    "TimeZoneId": "Europe/Berlin",
+                    "TimeZoneName": "CEST",
+                    "TimeZone_GMT_offset": 1,
+                    "LocalTimeNow": "3:34:32 PM",
+                    "Distance": 510.61024424412324,
+                    "Bearing": 105.54745551683118,
+                    "CompassDirection": "ESE"
+                },
+                {
+                    "City": "Barsb\u00fcttel",
+                    "Population": 12363,
+                    "Latitude": 53.56667,
+                    "Longitude": 10.16667,
+                    "Country": "Germany",
+                    "CountryId": "DE",
+                    "TimeZoneId": "Europe/Berlin",
+                    "TimeZoneName": "CEST",
+                    "TimeZone_GMT_offset": 1,
+                    "LocalTimeNow": "3:34:32 PM",
+                    "Distance": 12082.502734015363,
+                    "Bearing": 82.14006350090193,
+                    "CompassDirection": "E"
+                },
+                {
+                    "City": "Oststeinbek",
+                    "Population": 7858,
+                    "Latitude": 53.54321,
+                    "Longitude": 10.16939,
+                    "Country": "Germany",
+                    "CountryId": "DE",
+                    "TimeZoneId": "Europe/Berlin",
+                    "TimeZoneName": "CEST",
+                    "TimeZone_GMT_offset": 1,
+                    "LocalTimeNow": "3:34:32 PM",
+                    "Distance": 12193.2063790798,
+                    "Bearing": 94.50680675870825,
+                    "CompassDirection": "E"
+                },
+                {
+                    "City": "S\u00fclldorf",
+                    "Population": 9430,
+                    "Latitude": 53.5786,
+                    "Longitude": 9.79985,
+                    "Country": "Germany",
+                    "CountryId": "DE",
+                    "TimeZoneId": "Europe/Berlin",
+                    "TimeZoneName": "CEST",
+                    "TimeZone_GMT_offset": 1,
+                    "LocalTimeNow": "3:34:32 PM",
+                    "Distance": 12629.01978625274,
+                    "Bearing": 283.65217967833115,
+                    "CompassDirection": "WNW"
+                },
+                {
+                    "City": "Halstenbek",
+                    "Population": 16212,
+                    "Latitude": 53.63333,
+                    "Longitude": 9.85,
+                    "Country": "Germany",
+                    "CountryId": "DE",
+                    "TimeZoneId": "Europe/Berlin",
+                    "TimeZoneName": "CEST",
+                    "TimeZone_GMT_offset": 1,
+                    "LocalTimeNow": "3:34:32 PM",
+                    "Distance": 12736.100471845502,
+                    "Bearing": 315.37325648152193,
+                    "CompassDirection": "NW"
+                }
+            ],
+            "statuscode": 1,
+            "schema": ""
+        },
+        {
+            "name": "GetLargestCities",
+            "url": "https://geocodeapi.p.rapidapi.com/GetLargestCities",
+            "description": "Returns 5 largest cities within a given radial range with name, population, country and distance.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "latitude",
+                    "type": "NUMBER",
+                    "description": "latitude in decimal degrees (wgs84)",
+                    "default": "53.55196"
+                },
+                {
+                    "name": "longitude",
+                    "type": "NUMBER",
+                    "description": "longitude in decimal degrees (wgs84)",
+                    "default": "9.98558"
+                },
+                {
+                    "name": "range",
+                    "type": "NUMBER",
+                    "description": "radial lookup range in meters (max 100.000)",
+                    "default": "50000"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://geocodeapi.p.rapidapi.com/GetLargestCities\"\nquerystring = {\"latitude\": \"53.55196\", \"longitude\": \"9.98558\", \"range\": \"50000\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"geocodeapi.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://geocodeapi.p.rapidapi.com/GetLargestCities\"\nquerystring = {\"latitude\": \"53.55196\", \"longitude\": \"9.98558\", \"range\": \"50000\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"geocodeapi.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "City": "Hamburg",
+                    "Population": 1739117,
+                    "Latitude": 53.55073,
+                    "Longitude": 9.99302,
+                    "Country": "Germany",
+                    "CountryId": "DE",
+                    "TimeZoneId": "Europe/Berlin",
+                    "TimeZoneName": "CEST",
+                    "TimeZone_GMT_offset": 1,
+                    "LocalTimeNow": "3:34:33 PM",
+                    "Distance": 510.61024424412324,
+                    "Bearing": 105.54745551683118,
+                    "CompassDirection": "ESE"
+                },
+                {
+                    "City": "Norderstedt",
+                    "Population": 71439,
+                    "Latitude": 53.6859,
+                    "Longitude": 9.98041,
+                    "Country": "Germany",
+                    "CountryId": "DE",
+                    "TimeZoneId": "Europe/Berlin",
+                    "TimeZoneName": "CEST",
+                    "TimeZone_GMT_offset": 1,
+                    "LocalTimeNow": "3:34:33 PM",
+                    "Distance": 14910.212182552024,
+                    "Bearing": 358.69050417053774,
+                    "CompassDirection": "N"
+                },
+                {
+                    "City": "L\u00fcneburg",
+                    "Population": 71260,
+                    "Latitude": 53.2509,
+                    "Longitude": 10.41409,
+                    "Country": "Germany",
+                    "CountryId": "DE",
+                    "TimeZoneId": "Europe/Berlin",
+                    "TimeZoneName": "CEST",
+                    "TimeZone_GMT_offset": 1,
+                    "LocalTimeNow": "3:34:33 PM",
+                    "Distance": 43943.125660957565,
+                    "Bearing": 139.50986378798638,
+                    "CompassDirection": "SE"
+                },
+                {
+                    "City": "Elmshorn",
+                    "Population": 48703,
+                    "Latitude": 53.75396,
+                    "Longitude": 9.65339,
+                    "Country": "Germany",
+                    "CountryId": "DE",
+                    "TimeZoneId": "Europe/Berlin",
+                    "TimeZoneName": "CEST",
+                    "TimeZone_GMT_offset": 1,
+                    "LocalTimeNow": "3:34:33 PM",
+                    "Distance": 31392.253751492637,
+                    "Bearing": 315.86900396061145,
+                    "CompassDirection": "NW"
+                },
+                {
+                    "City": "Stade",
+                    "Population": 45634,
+                    "Latitude": 53.59337,
+                    "Longitude": 9.47629,
+                    "Country": "Germany",
+                    "CountryId": "DE",
+                    "TimeZoneId": "Europe/Berlin",
+                    "TimeZoneName": "CEST",
+                    "TimeZone_GMT_offset": 1,
+                    "LocalTimeNow": "3:34:33 PM",
+                    "Distance": 33970.342696308566,
+                    "Bearing": 278.0018472262896,
+                    "CompassDirection": "W"
+                }
+            ],
+            "statuscode": 1,
+            "schema": ""
+        }
+    ],
+    "standardized_name": "reverse_geocoding_and_geolocation_service"
+}

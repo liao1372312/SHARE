@@ -1,0 +1,214 @@
+{
+    "product_id": "api_c74b3871-7cff-4d92-9a69-6d5497c8966d",
+    "tool_description": "Blake2B/MD5/SHA Text/File/Bytes Hashing",
+    "home_url": "https://rapidapi.com/ezzatelbadrawy/api/hashing-api/",
+    "name": "Hashing-Api",
+    "title": "Hashing-Api",
+    "pricing": "FREEMIUM",
+    "tool_name": "Hashing-Api",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 1440,
+        "avgSuccessRate": 87,
+        "popularityScore": 8.9,
+        "__typename": "Score"
+    },
+    "host": "hashing-api.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "SHA Text Hash",
+            "url": "https://hashing-api.p.rapidapi.com/api/sha/256/hashtext",
+            "description": "Hash text (as query-string-parameter) using SHA1, SHA256, SHA384 or SHA512 algorithm according to selected mode path-parameter [1, 256, 384, 512].",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "dataString",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "enter-your-string-here"
+                },
+                {
+                    "name": "mode",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "256"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://hashing-api.p.rapidapi.com/api/sha/256/hashtext\"\nquerystring = {\"dataString\": \"enter-your-string-here\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"hashing-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://hashing-api.p.rapidapi.com/api/sha/{mode}/hashtext\"\nquerystring = {\"dataString\": \"enter-your-string-here\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"hashing-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "hashHexString": "345c1f99168259d6681641d33e8f55c45288eab642a2cfb3c1ec655b7174fd72",
+                "hashBase64String": "NFwfmRaCWdZoFkHTPo9VxFKI6rZCos+zwexlW3F0/XI=",
+                "result": "Success"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "hashHexString": {
+                        "type": [
+                            "string",
+                            "null"
+                        ]
+                    },
+                    "hashBase64String": {
+                        "type": [
+                            "string",
+                            "null"
+                        ]
+                    },
+                    "result": {
+                        "type": [
+                            "string",
+                            "null"
+                        ]
+                    }
+                },
+                "additionalProperties": false
+            }
+        },
+        {
+            "name": "MD5 Text Hash",
+            "url": "https://hashing-api.p.rapidapi.com/api/md5/hashtext",
+            "description": "Hash text (as query-string-parameter) using MD5 algorithm.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "dataString",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "enter-your-string-here"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://hashing-api.p.rapidapi.com/api/md5/hashtext\"\nquerystring = {\"dataString\": \"enter-your-string-here\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"hashing-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://hashing-api.p.rapidapi.com/api/md5/hashtext\"\nquerystring = {\"dataString\": \"enter-your-string-here\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"hashing-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per second for your plan, BASIC, by the API provider"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "hashHexString": {
+                        "type": [
+                            "string",
+                            "null"
+                        ]
+                    },
+                    "hashBase64String": {
+                        "type": [
+                            "string",
+                            "null"
+                        ]
+                    },
+                    "result": {
+                        "type": [
+                            "string",
+                            "null"
+                        ]
+                    }
+                },
+                "additionalProperties": false
+            }
+        },
+        {
+            "name": "Blake2B Text Hash with Key",
+            "url": "https://hashing-api.p.rapidapi.com/api/blake2b/hashtextusingkey",
+            "description": "Hash text (as query-string-parameter) with private-key (as query-string-parameter) using blake2b algorithm.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "dataString",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "enter-your-string-here"
+                },
+                {
+                    "name": "keyString",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "enter-your-key-here"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://hashing-api.p.rapidapi.com/api/blake2b/hashtextusingkey\"\nquerystring = {\"dataString\": \"enter-your-string-here\", \"keyString\": \"enter-your-key-here\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"hashing-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://hashing-api.p.rapidapi.com/api/blake2b/hashtextusingkey\"\nquerystring = {\"dataString\": \"enter-your-string-here\", \"keyString\": \"enter-your-key-here\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"hashing-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per second for your plan, BASIC, by the API provider"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "hashHexString": {
+                        "type": [
+                            "string",
+                            "null"
+                        ]
+                    },
+                    "hashBase64String": {
+                        "type": [
+                            "string",
+                            "null"
+                        ]
+                    },
+                    "result": {
+                        "type": [
+                            "string",
+                            "null"
+                        ]
+                    }
+                },
+                "additionalProperties": false
+            }
+        },
+        {
+            "name": "Blake2B Text Hash",
+            "url": "https://hashing-api.p.rapidapi.com/api/blake2b/hashtext",
+            "description": "Hash text (as query-string-parameter) using blake2b algorithm.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "dataString",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "enter-your-string-here"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://hashing-api.p.rapidapi.com/api/blake2b/hashtext\"\nquerystring = {\"dataString\": \"enter-your-string-here\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"hashing-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://hashing-api.p.rapidapi.com/api/blake2b/hashtext\"\nquerystring = {\"dataString\": \"enter-your-string-here\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"hashing-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per second for your plan, BASIC, by the API provider"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "hashHexString": {
+                        "type": [
+                            "string",
+                            "null"
+                        ]
+                    },
+                    "hashBase64String": {
+                        "type": [
+                            "string",
+                            "null"
+                        ]
+                    },
+                    "result": {
+                        "type": [
+                            "string",
+                            "null"
+                        ]
+                    }
+                },
+                "additionalProperties": false
+            }
+        }
+    ],
+    "standardized_name": "hashing_api"
+}

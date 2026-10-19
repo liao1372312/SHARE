@@ -1,0 +1,51 @@
+{
+    "product_id": "api_f9f27655-f206-4945-8e51-4cd045db35de",
+    "tool_description": "Generate PDFs, Images, and more from HTML and URLs",
+    "home_url": "https://rapidapi.com/cloudlayerio-cloudlayerio-default/api/cloudlayer-io/",
+    "name": "cloudlayer.io",
+    "title": "cloudlayer.io",
+    "pricing": "FREEMIUM",
+    "tool_name": "cloudlayer.io",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 3000,
+        "avgSuccessRate": 66,
+        "popularityScore": 9.2,
+        "__typename": "Score"
+    },
+    "host": "cloudlayer-io.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Convert URL to Image",
+            "url": "https://cloudlayer-io.p.rapidapi.com/v1/url/image",
+            "description": "Make a GET request to convert url to image, accepts simple options as query strings in URL (use POST endpoint for advanced options).",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "url",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "https://google.com"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "timeout",
+                    "type": "NUMBER",
+                    "description": "milliseconds (default 30000)",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://cloudlayer-io.p.rapidapi.com/v1/url/image\"\nquerystring = {\"url\": \"https://google.com\", \"timeout\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"cloudlayer-io.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://cloudlayer-io.p.rapidapi.com/v1/url/image\"\nquerystring = {\"url\": \"https://google.com\", \"timeout\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"cloudlayer-io.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "statusCode": 422,
+                "message": "Timeout is invalid, must be a number and greater than or equal to 1000 URL must be a properly formatted based on RFC 3886.",
+                "error": "Unprocessable Entity"
+            },
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "cloudlayer_io"
+}

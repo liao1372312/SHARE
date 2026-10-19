@@ -1,0 +1,35 @@
+{
+  "user_query": "I want to get upcoming matches for Premier League round 24 and the current standings for 2020, including team logos and match stats.",
+  "domain": "sports",
+  "TaskList": [
+    {
+      "id": 1,
+      "description": "查询Premier League第24轮的即将进行的比赛信息，包括比赛时间、对阵队伍、场地等。",
+      "domain": "sports",
+      "required_inputs": ["league", "round"]
+    },
+    {
+      "id": 2,
+      "description": "获取2020年Premier League的联赛排名和积分榜信息，包括球队名称、积分、排名等。",
+      "domain": "sports",
+      "required_inputs": ["league", "year"]
+    },
+    {
+      "id": 3,
+      "description": "获取涉及的球队的队徽/logo信息。",
+      "domain": "sports",
+      "required_inputs": ["team_names"]
+    },
+    {
+      "id": 4,
+      "description": "获取每场比赛的详细统计数据，包括控球率、射门次数、越位、犯规、传球总数和进攻次数。",
+      "domain": "sports",
+      "required_inputs": ["match_ids"]
+    }
+  ],
+  "dependencies": [
+    {"from": 1, "to": 4},
+    {"from": 2, "to": 3},
+    {"from": 1, "to": 3}
+  ]
+}

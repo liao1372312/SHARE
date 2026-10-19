@@ -1,0 +1,2242 @@
+{
+    "product_id": "api_97832a0e-0c71-4d7a-9684-6fcc05f27bdd",
+    "tool_description": "Extremely Fast and Simple searches for EV charging stations, anywhere in the world.",
+    "home_url": "https://rapidapi.com/letscrape-6bRBa3QguO5/api/ev-charge-finder/",
+    "name": "EV Charge Finder",
+    "title": "EV Charge Finder",
+    "pricing": "FREEMIUM",
+    "tool_name": "EV Charge Finder",
+    "score": {
+        "avgServiceLevel": 99,
+        "avgLatency": 99,
+        "avgSuccessRate": 99,
+        "popularityScore": 9.4,
+        "__typename": "Score"
+    },
+    "host": "ev-charge-finder.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Search by Coordinates Point",
+            "url": "https://ev-charge-finder.p.rapidapi.com/search-by-coordinates-point",
+            "description": "Search for EV charging stations near specific geographic coordinates point.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "lng",
+                    "type": "STRING",
+                    "description": "Longitude of the geographic coordinates point to search near by.",
+                    "default": "-121.925337"
+                },
+                {
+                    "name": "lat",
+                    "type": "STRING",
+                    "description": "Latitude of the geographic coordinates point to search near by.",
+                    "default": "37.359428"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "query",
+                    "type": "STRING",
+                    "description": "Return EV charging stations matching a specific query or keyword.\n\n**e.g.** *`evgo`*\n**e.g.** *`tesla`*\n**e.g.** *`chargepoint`*",
+                    "default": ""
+                },
+                {
+                    "name": "min_kw",
+                    "type": "STRING",
+                    "description": "Restrict the result to the availability for connectors with a specific minimal value of power in kilowatts (closed interval - with that value).",
+                    "default": ""
+                },
+                {
+                    "name": "max_kw",
+                    "type": "STRING",
+                    "description": "Restrict the result to the availability for connectors with a specific maximal value of power in kilowatts (closed interval - with that value).",
+                    "default": ""
+                },
+                {
+                    "name": "limit",
+                    "type": "STRING",
+                    "description": "Maximum number of results to return.\n\n**Allowed values:** *1-500*.\n**Default:** *20*.",
+                    "default": "20"
+                },
+                {
+                    "name": "available",
+                    "type": "STRING",
+                    "description": "Find EV charging stations with an available connector.",
+                    "default": ""
+                },
+                {
+                    "name": "type",
+                    "type": "STRING",
+                    "description": "Return EV charging stations with connectors of one or more types, specified as a comma (,) delimited list of connector types to match.\n\n**e.g.** *`CHAdeMO`*\n**e.g.** *`J1772,CCS`*",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://ev-charge-finder.p.rapidapi.com/search-by-coordinates-point\"\nquerystring = {\"query\": \"\", \"min_kw\": \"\", \"max_kw\": \"\", \"limit\": \"20\", \"available\": \"\", \"type\": \"\", \"lng\": \"-121.925337\", \"lat\": \"37.359428\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ev-charge-finder.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ev-charge-finder.p.rapidapi.com/search-by-coordinates-point\"\nquerystring = {\"query\": \"\", \"min_kw\": \"\", \"max_kw\": \"\", \"limit\": \"20\", \"available\": \"\", \"type\": \"\", \"lng\": \"-121.925337\", \"lat\": \"37.359428\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ev-charge-finder.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "status": "OK",
+                "request_id": "bda98127-04fc-4e04-b8c4-8dc6f9bba46b",
+                "data": [
+                    {
+                        "id": "0x808fcb5efe274ab5:0xc188899f5581e8b3",
+                        "name": "EVgo Charging Station",
+                        "connectors": [
+                            {
+                                "type": "CCS",
+                                "total": 4,
+                                "available": 1,
+                                "kw": 200,
+                                "speed": "Very fast"
+                            },
+                            {
+                                "type": "CHAdeMO",
+                                "total": 4,
+                                "available": 1,
+                                "kw": 100,
+                                "speed": "Fast"
+                            }
+                        ],
+                        "formatted_address": "777 The Alameda, San Jose, CA 95126",
+                        "address_components": {
+                            "district": "Central San Jose",
+                            "street_address": "777 The Alameda",
+                            "city": "San Jose",
+                            "zipcode": "95126",
+                            "state": "California",
+                            "country": "US"
+                        },
+                        "latitude": 37.332368599999995,
+                        "longitude": -121.9051212,
+                        "place_link": "https://www.google.com/maps/place/data=!3m1!4b1!4m2!3m1!1s0x808fcb5efe274ab5:0xc188899f5581e8b3",
+                        "phone_number": "+18774943833",
+                        "opening_hours": {
+                            "Friday": [
+                                "Open 24 hours"
+                            ],
+                            "Saturday": [
+                                "Open 24 hours"
+                            ],
+                            "Sunday": [
+                                "Open 24 hours"
+                            ],
+                            "Monday": [
+                                "Open 24 hours"
+                            ],
+                            "Tuesday": [
+                                "Open 24 hours"
+                            ],
+                            "Wednesday": [
+                                "Open 24 hours"
+                            ],
+                            "Thursday": [
+                                "Open 24 hours"
+                            ]
+                        },
+                        "rating": 4.1,
+                        "review_count": 8,
+                        "website": "https://www.evgo.com/charging-locations",
+                        "photo": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=QPSPVNkvMPkW3LBJ-520NA&cb_client=search.gws-prod.gps&w=86&h=86&yaw=213.52278&pitch=0&thumbfov=100",
+                        "google_place_id": "ChIJtUon_l7Lj4ARs-iBVZ-JiME",
+                        "google_cid": "13945547563580123315"
+                    },
+                    {
+                        "id": "0x808fcc7adcabffff:0x998860c1dc5d7277",
+                        "name": "EV Connect Charging Station",
+                        "connectors": [
+                            {
+                                "type": "CHAdeMO",
+                                "total": 1,
+                                "available": 1,
+                                "kw": 120,
+                                "speed": "Fast"
+                            },
+                            {
+                                "type": "CCS",
+                                "total": 1,
+                                "available": 1,
+                                "kw": 120,
+                                "speed": "Fast"
+                            }
+                        ],
+                        "formatted_address": "1202 Old Oakland Rd, San Jose, CA 95112",
+                        "address_components": {
+                            "district": "North San Jose",
+                            "street_address": "1202 Old Oakland Rd",
+                            "city": "San Jose",
+                            "zipcode": "95112",
+                            "state": "California",
+                            "country": "US"
+                        },
+                        "latitude": 37.3658145,
+                        "longitude": -121.89150289999999,
+                        "place_link": "https://www.google.com/maps/place/data=!3m1!4b1!4m2!3m1!1s0x808fcc7adcabffff:0x998860c1dc5d7277",
+                        "phone_number": "+18668167584",
+                        "opening_hours": {},
+                        "rating": null,
+                        "review_count": 0,
+                        "website": "https://www.evconnect.com/ev-charging-stations",
+                        "photo": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=jJRy0JDnAtog7EgRuLCQnw&cb_client=search.gws-prod.gps&w=86&h=86&yaw=72.690025&pitch=0&thumbfov=100",
+                        "google_place_id": "ChIJ__-r3HrMj4ARd3Jd3MFgiJk",
+                        "google_cid": "11063198870377689719"
+                    },
+                    {
+                        "id": "0x808fcb476189153d:0xaf1744553d3c0e2c",
+                        "name": "Electrify America Charging Station Albertson's",
+                        "connectors": [
+                            {
+                                "type": "CCS",
+                                "total": 5,
+                                "available": null,
+                                "kw": 150,
+                                "speed": "Very fast"
+                            },
+                            {
+                                "type": "CHAdeMO",
+                                "total": 1,
+                                "available": null,
+                                "kw": 50,
+                                "speed": "Fast"
+                            }
+                        ],
+                        "formatted_address": "1300 W San Carlos St, San Jose, CA 95126",
+                        "address_components": {
+                            "district": "Central San Jose",
+                            "street_address": "1300 W San Carlos St",
+                            "city": "San Jose",
+                            "zipcode": "95126",
+                            "state": "California",
+                            "country": "US"
+                        },
+                        "latitude": 37.322873699999995,
+                        "longitude": -121.9119314,
+                        "place_link": "https://www.google.com/maps/place/data=!3m1!4b1!4m2!3m1!1s0x808fcb476189153d:0xaf1744553d3c0e2c",
+                        "phone_number": "+18336322778",
+                        "opening_hours": {
+                            "Friday": [
+                                "Open 24 hours"
+                            ],
+                            "Saturday": [
+                                "Open 24 hours"
+                            ],
+                            "Sunday": [
+                                "Open 24 hours"
+                            ],
+                            "Monday": [
+                                "Open 24 hours"
+                            ],
+                            "Tuesday": [
+                                "Open 24 hours"
+                            ],
+                            "Wednesday": [
+                                "Open 24 hours"
+                            ],
+                            "Thursday": [
+                                "Open 24 hours"
+                            ]
+                        },
+                        "rating": 3,
+                        "review_count": 2,
+                        "website": "https://www.electrifyamerica.com/locate-charger/ca/san-jose/1300-west-san-carlos-street/200190",
+                        "photo": "https://lh5.googleusercontent.com/p/AF1QipMlZP8DSwMAHvV4GtsI7_b8kwQiFrJtCed_i__j=w3264-h2448-k-no",
+                        "google_place_id": "ChIJPRWJYUfLj4ARLA48PVVEF68",
+                        "google_cid": "12616628013991988780"
+                    },
+                    {
+                        "id": "0x808fcbfffb81f283:0x715e9c6ca302172b",
+                        "name": "Tesla Supercharger",
+                        "connectors": [
+                            {
+                                "type": "Tesla",
+                                "total": 12,
+                                "available": null,
+                                "kw": 150,
+                                "speed": "Very fast"
+                            }
+                        ],
+                        "formatted_address": "533 Coleman Ave, San Jose, CA 95110",
+                        "address_components": {
+                            "district": "Central San Jose",
+                            "street_address": "533 Coleman Ave",
+                            "city": "San Jose",
+                            "zipcode": "95110",
+                            "state": "California",
+                            "country": "US"
+                        },
+                        "latitude": 37.339563,
+                        "longitude": -121.90365999999999,
+                        "place_link": "https://www.google.com/maps/place/data=!3m1!4b1!4m2!3m1!1s0x808fcbfffb81f283:0x715e9c6ca302172b",
+                        "phone_number": null,
+                        "opening_hours": {
+                            "Friday": [
+                                "Open 24 hours"
+                            ],
+                            "Saturday": [
+                                "Open 24 hours"
+                            ],
+                            "Sunday": [
+                                "Open 24 hours"
+                            ],
+                            "Monday": [
+                                "Open 24 hours"
+                            ],
+                            "Tuesday": [
+                                "Open 24 hours"
+                            ],
+                            "Wednesday": [
+                                "Open 24 hours"
+                            ],
+                            "Thursday": [
+                                "Open 24 hours"
+                            ]
+                        },
+                        "rating": 4.6,
+                        "review_count": 95,
+                        "website": "https://www.tesla.com/supercharger",
+                        "photo": "https://lh5.googleusercontent.com/p/AF1QipPFfgXcNKiAo9ANHQHE600k6Ww5eduBWU9TltQR=w4624-h3468-k-no",
+                        "google_place_id": "ChIJg_KB-__Lj4ARKxcCo2ycXnE",
+                        "google_cid": "8169138764501882667"
+                    },
+                    {
+                        "id": "0x808fcc7adcac0057:0xff6ba2a7b010a046",
+                        "name": "Shell Recharge Charging Station",
+                        "connectors": [
+                            {
+                                "type": "CHAdeMO",
+                                "total": 1,
+                                "available": null,
+                                "kw": 120,
+                                "speed": "Fast"
+                            },
+                            {
+                                "type": "CCS",
+                                "total": 1,
+                                "available": null,
+                                "kw": 120,
+                                "speed": "Fast"
+                            }
+                        ],
+                        "formatted_address": "1202 Old Oakland Rd, San Jose, CA 95112",
+                        "address_components": {
+                            "district": "North San Jose",
+                            "street_address": "1202 Old Oakland Rd",
+                            "city": "San Jose",
+                            "zipcode": "95112",
+                            "state": "California",
+                            "country": "US"
+                        },
+                        "latitude": 37.3658698,
+                        "longitude": -121.8913468,
+                        "place_link": "https://www.google.com/maps/place/data=!3m1!4b1!4m2!3m1!1s0x808fcc7adcac0057:0xff6ba2a7b010a046",
+                        "phone_number": "+31880109500",
+                        "opening_hours": {},
+                        "rating": null,
+                        "review_count": 0,
+                        "website": "https://shellrecharge.com",
+                        "photo": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=LMwzrv5IKsm4H579HqeO2w&cb_client=search.gws-prod.gps&w=86&h=86&yaw=81.66811&pitch=0&thumbfov=100",
+                        "google_place_id": "ChIJVwCs3HrMj4ARRqAQsKeia_8",
+                        "google_cid": "18404983143276781638"
+                    },
+                    {
+                        "id": "0x808fcca390f5e559:0x992260cfdc3bf02c",
+                        "name": "Blink Charging Station",
+                        "connectors": [
+                            {
+                                "type": "J1772",
+                                "total": 1,
+                                "available": 1,
+                                "kw": 7.7,
+                                "speed": "Slow"
+                            },
+                            {
+                                "type": "J1772",
+                                "total": 1,
+                                "available": 1,
+                                "kw": 6.7,
+                                "speed": "Slow"
+                            }
+                        ],
+                        "formatted_address": "10 Almaden Blvd, San Jose, CA 95113",
+                        "address_components": {
+                            "district": "Central San Jose",
+                            "street_address": "10 Almaden Blvd",
+                            "city": "San Jose",
+                            "zipcode": "95113",
+                            "state": "California",
+                            "country": "US"
+                        },
+                        "latitude": 37.334015,
+                        "longitude": -121.89396099999999,
+                        "place_link": "https://www.google.com/maps/place/data=!3m1!4b1!4m2!3m1!1s0x808fcca390f5e559:0x992260cfdc3bf02c",
+                        "phone_number": "+18555212244",
+                        "opening_hours": {
+                            "Friday": [
+                                "Open 24 hours"
+                            ],
+                            "Saturday": [
+                                "Open 24 hours"
+                            ],
+                            "Sunday": [
+                                "Open 24 hours"
+                            ],
+                            "Monday": [
+                                "Open 24 hours"
+                            ],
+                            "Tuesday": [
+                                "Open 24 hours"
+                            ],
+                            "Wednesday": [
+                                "Open 24 hours"
+                            ],
+                            "Thursday": [
+                                "Open 24 hours"
+                            ]
+                        },
+                        "rating": null,
+                        "review_count": 0,
+                        "website": "https://www.blinkcharging.com",
+                        "photo": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=fLyH9HZH60MDygD6Q7kaOA&cb_client=search.gws-prod.gps&w=86&h=86&yaw=345.83438&pitch=0&thumbfov=100",
+                        "google_place_id": "ChIJWeX1kKPMj4ARLPA73M9gIpk",
+                        "google_cid": "11034488482880548908"
+                    },
+                    {
+                        "id": "0x808fcba60af71f67:0xb57fb3742796cd4d",
+                        "name": "ChargePoint Charging Station",
+                        "connectors": [
+                            {
+                                "type": "J1772",
+                                "total": 2,
+                                "available": 0,
+                                "kw": 6.48,
+                                "speed": "Slow"
+                            }
+                        ],
+                        "formatted_address": "469 CA-82, Santa Clara, CA 95050",
+                        "address_components": {
+                            "district": null,
+                            "street_address": "469 CA-82",
+                            "city": "Santa Clara",
+                            "zipcode": "95050",
+                            "state": "California",
+                            "country": "US"
+                        },
+                        "latitude": 37.3497567,
+                        "longitude": -121.9346729,
+                        "place_link": "https://www.google.com/maps/place/data=!3m1!4b1!4m2!3m1!1s0x808fcba60af71f67:0xb57fb3742796cd4d",
+                        "phone_number": "+18887584389",
+                        "opening_hours": {
+                            "Friday": [
+                                "Open 24 hours"
+                            ],
+                            "Saturday": [
+                                "Open 24 hours"
+                            ],
+                            "Sunday": [
+                                "Open 24 hours"
+                            ],
+                            "Monday": [
+                                "Open 24 hours"
+                            ],
+                            "Tuesday": [
+                                "Open 24 hours"
+                            ],
+                            "Wednesday": [
+                                "Open 24 hours"
+                            ],
+                            "Thursday": [
+                                "Open 24 hours"
+                            ]
+                        },
+                        "rating": 5,
+                        "review_count": 1,
+                        "website": "https://na.chargepoint.com/charge_point?id=1:112419&action=VIEW",
+                        "photo": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=Ka2t6vSz4v_2skY-fUyMZA&cb_client=search.gws-prod.gps&w=86&h=86&yaw=323.85223&pitch=0&thumbfov=100",
+                        "google_place_id": "ChIJZx_3CqbLj4ARTc2WJ3Szf7U",
+                        "google_cid": "13078369154368982349"
+                    },
+                    {
+                        "id": "0x808fcb1eeb656a9f:0xa824cae158d57c56",
+                        "name": "Electrify America Charging Station",
+                        "connectors": [
+                            {
+                                "type": "CCS",
+                                "total": 4,
+                                "available": null,
+                                "kw": 350,
+                                "speed": "Very fast"
+                            },
+                            {
+                                "type": "CCS",
+                                "total": 23,
+                                "available": null,
+                                "kw": 150,
+                                "speed": "Very fast"
+                            },
+                            {
+                                "type": "CHAdeMO",
+                                "total": 1,
+                                "available": null,
+                                "kw": 50,
+                                "speed": "Fast"
+                            }
+                        ],
+                        "formatted_address": "2855 Stevens Creek Blvd, Santa Clara, CA 95050",
+                        "address_components": {
+                            "district": "Central San Jose",
+                            "street_address": "2855 Stevens Creek Blvd",
+                            "city": "Santa Clara",
+                            "zipcode": "95050",
+                            "state": "California",
+                            "country": "US"
+                        },
+                        "latitude": 37.326702,
+                        "longitude": -121.943361,
+                        "place_link": "https://www.google.com/maps/place/data=!3m1!4b1!4m2!3m1!1s0x808fcb1eeb656a9f:0xa824cae158d57c56",
+                        "phone_number": "+18336322778",
+                        "opening_hours": {
+                            "Friday": [
+                                "Open 24 hours"
+                            ],
+                            "Saturday": [
+                                "Open 24 hours"
+                            ],
+                            "Sunday": [
+                                "Open 24 hours"
+                            ],
+                            "Monday": [
+                                "Open 24 hours"
+                            ],
+                            "Tuesday": [
+                                "Open 24 hours"
+                            ],
+                            "Wednesday": [
+                                "Open 24 hours"
+                            ],
+                            "Thursday": [
+                                "Open 24 hours"
+                            ]
+                        },
+                        "rating": 4.2,
+                        "review_count": 32,
+                        "website": "https://www.electrifyamerica.com/locate-charger",
+                        "photo": "https://lh5.googleusercontent.com/p/AF1QipPyqoRfq_n5pQ5RtEnph6UX83dd1f66hQvb9Y58=w4032-h3024-k-no",
+                        "google_place_id": "ChIJn2pl6x7Lj4ARVnzVWOHKJKg",
+                        "google_cid": "12116031966740315222"
+                    },
+                    {
+                        "id": "0x808fcbdf13bdb1bb:0x22001d14356be2b8",
+                        "name": "EVgo Charging Station",
+                        "connectors": [
+                            {
+                                "type": "CCS",
+                                "total": 4,
+                                "available": 2,
+                                "kw": 350,
+                                "speed": "Very fast"
+                            },
+                            {
+                                "type": "CHAdeMO",
+                                "total": 6,
+                                "available": 4,
+                                "kw": 100,
+                                "speed": "Fast"
+                            },
+                            {
+                                "type": "CCS",
+                                "total": 2,
+                                "available": 2,
+                                "kw": 100,
+                                "speed": "Fast"
+                            }
+                        ],
+                        "formatted_address": "10 W Trimble Rd, San Jose, CA 95131",
+                        "address_components": {
+                            "district": "North San Jose",
+                            "street_address": "10 W Trimble Rd",
+                            "city": "San Jose",
+                            "zipcode": "95131",
+                            "state": "California",
+                            "country": "US"
+                        },
+                        "latitude": 37.385152,
+                        "longitude": -121.9289235,
+                        "place_link": "https://www.google.com/maps/place/data=!3m1!4b1!4m2!3m1!1s0x808fcbdf13bdb1bb:0x22001d14356be2b8",
+                        "phone_number": "+18774943833",
+                        "opening_hours": {
+                            "Friday": [
+                                "Open 24 hours"
+                            ],
+                            "Saturday": [
+                                "Open 24 hours"
+                            ],
+                            "Sunday": [
+                                "Open 24 hours"
+                            ],
+                            "Monday": [
+                                "Open 24 hours"
+                            ],
+                            "Tuesday": [
+                                "Open 24 hours"
+                            ],
+                            "Wednesday": [
+                                "Open 24 hours"
+                            ],
+                            "Thursday": [
+                                "Open 24 hours"
+                            ]
+                        },
+                        "rating": 5,
+                        "review_count": 1,
+                        "website": "https://www.evgo.com",
+                        "photo": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=cH_dNc-RkdEPAwTXyh4Odw&cb_client=search.gws-prod.gps&w=86&h=86&yaw=345.99445&pitch=0&thumbfov=100",
+                        "google_place_id": "ChIJu7G9E9_Lj4ARuOJrNRQdACI",
+                        "google_cid": "2449990169922364088"
+                    },
+                    {
+                        "id": "0x808fcca3f9a9da83:0xd8221e15f37424dd",
+                        "name": "ChargePoint Charging Station",
+                        "connectors": [
+                            {
+                                "type": "J1772",
+                                "total": 6,
+                                "available": 1,
+                                "kw": 6.48,
+                                "speed": "Slow"
+                            }
+                        ],
+                        "formatted_address": "1, S Almaden Blvd, San Jose, CA 95113",
+                        "address_components": {
+                            "district": "Central San Jose",
+                            "street_address": "1, S Almaden Blvd",
+                            "city": "San Jose",
+                            "zipcode": "95113",
+                            "state": "California",
+                            "country": "US"
+                        },
+                        "latitude": 37.3329228,
+                        "longitude": -121.8955689,
+                        "place_link": "https://www.google.com/maps/place/data=!3m1!4b1!4m2!3m1!1s0x808fcca3f9a9da83:0xd8221e15f37424dd",
+                        "phone_number": "+18887584389",
+                        "opening_hours": {
+                            "Friday": [
+                                "Open 24 hours"
+                            ],
+                            "Saturday": [
+                                "Open 24 hours"
+                            ],
+                            "Sunday": [
+                                "Open 24 hours"
+                            ],
+                            "Monday": [
+                                "Open 24 hours"
+                            ],
+                            "Tuesday": [
+                                "Open 24 hours"
+                            ],
+                            "Wednesday": [
+                                "Open 24 hours"
+                            ],
+                            "Thursday": [
+                                "Open 24 hours"
+                            ]
+                        },
+                        "rating": null,
+                        "review_count": 0,
+                        "website": "https://na.chargepoint.com/charge_point?id=1:94477&action=VIEW",
+                        "photo": null,
+                        "google_place_id": "ChIJg9qp-aPMj4AR3SR08xUeItg",
+                        "google_cid": "15574043541028218077"
+                    },
+                    {
+                        "id": "0x808fc9663088f187:0x9983265810e3febd",
+                        "name": "Electrify America Charging Station",
+                        "connectors": [
+                            {
+                                "type": "CCS",
+                                "total": 11,
+                                "available": null,
+                                "kw": 150,
+                                "speed": "Very fast"
+                            },
+                            {
+                                "type": "CHAdeMO",
+                                "total": 1,
+                                "available": null,
+                                "kw": 50,
+                                "speed": "Fast"
+                            }
+                        ],
+                        "formatted_address": "2860 Zanker Rd, San Jose, CA 95134",
+                        "address_components": {
+                            "district": "North San Jose",
+                            "street_address": "2860 Zanker Rd",
+                            "city": "San Jose",
+                            "zipcode": "95134",
+                            "state": "California",
+                            "country": "US"
+                        },
+                        "latitude": 37.394314699999995,
+                        "longitude": -121.9280404,
+                        "place_link": "https://www.google.com/maps/place/data=!3m1!4b1!4m2!3m1!1s0x808fc9663088f187:0x9983265810e3febd",
+                        "phone_number": "+18336322778",
+                        "opening_hours": {
+                            "Friday": [
+                                "Open 24 hours"
+                            ],
+                            "Saturday": [
+                                "Open 24 hours"
+                            ],
+                            "Sunday": [
+                                "Open 24 hours"
+                            ],
+                            "Monday": [
+                                "Open 24 hours"
+                            ],
+                            "Tuesday": [
+                                "Open 24 hours"
+                            ],
+                            "Wednesday": [
+                                "Open 24 hours"
+                            ],
+                            "Thursday": [
+                                "Open 24 hours"
+                            ]
+                        },
+                        "rating": 5,
+                        "review_count": 6,
+                        "website": "https://www.electrifyamerica.com/locate-charger",
+                        "photo": "https://lh5.googleusercontent.com/p/AF1QipMhsZuo1AuyNWYMsWLIc8OO8nx80ECcQqSAEVg=w4080-h3072-k-no",
+                        "google_place_id": "ChIJh_GIMGbJj4ARvf7jEFgmg5k",
+                        "google_cid": "11061727269434425021"
+                    },
+                    {
+                        "id": "0x808fcbb9ce577711:0xd1681e6baf136573",
+                        "name": "Tesla Destination Charger",
+                        "connectors": [
+                            {
+                                "type": "Tesla",
+                                "total": 4,
+                                "available": null,
+                                "kw": 16,
+                                "speed": "Medium"
+                            }
+                        ],
+                        "formatted_address": "323 Martin Ave, Santa Clara, CA 95050",
+                        "address_components": {
+                            "district": "North San Jose",
+                            "street_address": "323 Martin Ave",
+                            "city": "Santa Clara",
+                            "zipcode": "95050",
+                            "state": "California",
+                            "country": "US"
+                        },
+                        "latitude": 37.36135,
+                        "longitude": -121.935057,
+                        "place_link": "https://www.google.com/maps/place/data=!3m1!4b1!4m2!3m1!1s0x808fcbb9ce577711:0xd1681e6baf136573",
+                        "phone_number": "+16698001992",
+                        "opening_hours": {},
+                        "rating": null,
+                        "review_count": 0,
+                        "website": "https://www.tesla.com/charging",
+                        "photo": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=FHt16C7f09MoyMNn-QtjyA&cb_client=search.gws-prod.gps&w=86&h=86&yaw=50.503204&pitch=0&thumbfov=100",
+                        "google_place_id": "ChIJEXdXzrnLj4ARc2UTr2seaNE",
+                        "google_cid": "15089343999352464755"
+                    },
+                    {
+                        "id": "0x808fcba5c5a0593f:0x8eb5b06e647a7fc1",
+                        "name": "ChargePoint Charging Station",
+                        "connectors": [
+                            {
+                                "type": "J1772",
+                                "total": 4,
+                                "available": 0,
+                                "kw": 6.48,
+                                "speed": "Slow"
+                            }
+                        ],
+                        "formatted_address": "455 El Camino Real, Santa Clara, CA 95050",
+                        "address_components": {
+                            "district": null,
+                            "street_address": "455 El Camino Real",
+                            "city": "Santa Clara",
+                            "zipcode": "95050",
+                            "state": "California",
+                            "country": "US"
+                        },
+                        "latitude": 37.350850799999996,
+                        "longitude": -121.93389959999999,
+                        "place_link": "https://www.google.com/maps/place/data=!3m1!4b1!4m2!3m1!1s0x808fcba5c5a0593f:0x8eb5b06e647a7fc1",
+                        "phone_number": "+18887584389",
+                        "opening_hours": {
+                            "Friday": [
+                                "Open 24 hours"
+                            ],
+                            "Saturday": [
+                                "Open 24 hours"
+                            ],
+                            "Sunday": [
+                                "Open 24 hours"
+                            ],
+                            "Monday": [
+                                "Open 24 hours"
+                            ],
+                            "Tuesday": [
+                                "Open 24 hours"
+                            ],
+                            "Wednesday": [
+                                "Open 24 hours"
+                            ],
+                            "Thursday": [
+                                "Open 24 hours"
+                            ]
+                        },
+                        "rating": null,
+                        "review_count": 0,
+                        "website": "https://na.chargepoint.com/charge_point?id=1:113185&action=VIEW",
+                        "photo": "https://lh5.googleusercontent.com/p/AF1QipNCFEjR1EteB3Hm-0sbs62nqZv-6QJ_zG6_JCSX=w1920-h1080-k-no",
+                        "google_place_id": "ChIJP1mgxaXLj4ARwX96ZG6wtY4",
+                        "google_cid": "10283319312349036481"
+                    },
+                    {
+                        "id": "0x808fcba779db76cb:0x780f951e6f293d6e",
+                        "name": "ChargePoint Charging Station",
+                        "connectors": [
+                            {
+                                "type": "J1772",
+                                "total": 4,
+                                "available": 3,
+                                "kw": 6.48,
+                                "speed": "Slow"
+                            }
+                        ],
+                        "formatted_address": "425 El Camino Real, Santa Clara, CA 95050",
+                        "address_components": {
+                            "district": null,
+                            "street_address": "425 El Camino Real",
+                            "city": "Santa Clara",
+                            "zipcode": "95050",
+                            "state": "California",
+                            "country": "US"
+                        },
+                        "latitude": 37.3461722,
+                        "longitude": -121.93284879999999,
+                        "place_link": "https://www.google.com/maps/place/data=!3m1!4b1!4m2!3m1!1s0x808fcba779db76cb:0x780f951e6f293d6e",
+                        "phone_number": "+18887584389",
+                        "opening_hours": {
+                            "Friday": [
+                                "Open 24 hours"
+                            ],
+                            "Saturday": [
+                                "Open 24 hours"
+                            ],
+                            "Sunday": [
+                                "Open 24 hours"
+                            ],
+                            "Monday": [
+                                "Open 24 hours"
+                            ],
+                            "Tuesday": [
+                                "Open 24 hours"
+                            ],
+                            "Wednesday": [
+                                "Open 24 hours"
+                            ],
+                            "Thursday": [
+                                "Open 24 hours"
+                            ]
+                        },
+                        "rating": null,
+                        "review_count": 0,
+                        "website": "https://na.chargepoint.com/charge_point?id=1:112415&action=VIEW",
+                        "photo": "https://lh5.googleusercontent.com/p/AF1QipPy0iOdi18ctnCd37mRJo0pZ5oSImwW9t4-fgzP=w1080-h1920-k-no",
+                        "google_place_id": "ChIJy3bbeafLj4ARbj0pbx6VD3g",
+                        "google_cid": "8651297367148543342"
+                    },
+                    {
+                        "id": "0x808fcb9678b95883:0x48ba626b5dd493d",
+                        "name": "ChargePoint Charging Station",
+                        "connectors": [
+                            {
+                                "type": "J1772",
+                                "total": 8,
+                                "available": 4,
+                                "kw": 6.48,
+                                "speed": "Slow"
+                            }
+                        ],
+                        "formatted_address": "1661 Airport Blvd, San Jose, CA 95110",
+                        "address_components": {
+                            "district": "North San Jose",
+                            "street_address": "1661 Airport Blvd",
+                            "city": "San Jose",
+                            "zipcode": "95110",
+                            "state": "California",
+                            "country": "US"
+                        },
+                        "latitude": 37.3631911,
+                        "longitude": -121.9221295,
+                        "place_link": "https://www.google.com/maps/place/data=!3m1!4b1!4m2!3m1!1s0x808fcb9678b95883:0x48ba626b5dd493d",
+                        "phone_number": "+18887584389",
+                        "opening_hours": {
+                            "Friday": [
+                                "Open 24 hours"
+                            ],
+                            "Saturday": [
+                                "Open 24 hours"
+                            ],
+                            "Sunday": [
+                                "Open 24 hours"
+                            ],
+                            "Monday": [
+                                "Open 24 hours"
+                            ],
+                            "Tuesday": [
+                                "Open 24 hours"
+                            ],
+                            "Wednesday": [
+                                "Open 24 hours"
+                            ],
+                            "Thursday": [
+                                "Open 24 hours"
+                            ]
+                        },
+                        "rating": 4,
+                        "review_count": 4,
+                        "website": "https://na.chargepoint.com/charge_point?id=1:311191&action=VIEW",
+                        "photo": "https://lh5.googleusercontent.com/p/AF1QipPqsD0LqGm5pxOGhAr5lpw506JlI7n3Bk1AgEqE=w1800-h4000-k-no",
+                        "google_place_id": "ChIJg1i5eJbLj4ARPUndtSamiwQ",
+                        "google_cid": "327538083104639293"
+                    },
+                    {
+                        "id": "0x808fcb7f610e503b:0x820d308a650c9aca",
+                        "name": "ChargePoint Charging Station",
+                        "connectors": [
+                            {
+                                "type": "J1772",
+                                "total": 12,
+                                "available": 9,
+                                "kw": 6.48,
+                                "speed": "Slow"
+                            }
+                        ],
+                        "formatted_address": "950 N San Pedro St, San Jose, CA 95110",
+                        "address_components": {
+                            "district": "Central San Jose",
+                            "street_address": "950 N San Pedro St",
+                            "city": "San Jose",
+                            "zipcode": "95110",
+                            "state": "California",
+                            "country": "US"
+                        },
+                        "latitude": 37.3535027,
+                        "longitude": -121.9058304,
+                        "place_link": "https://www.google.com/maps/place/data=!3m1!4b1!4m2!3m1!1s0x808fcb7f610e503b:0x820d308a650c9aca",
+                        "phone_number": "+18887584389",
+                        "opening_hours": {
+                            "Friday": [
+                                "Open 24 hours"
+                            ],
+                            "Saturday": [
+                                "Open 24 hours"
+                            ],
+                            "Sunday": [
+                                "Open 24 hours"
+                            ],
+                            "Monday": [
+                                "Open 24 hours"
+                            ],
+                            "Tuesday": [
+                                "Open 24 hours"
+                            ],
+                            "Wednesday": [
+                                "Open 24 hours"
+                            ],
+                            "Thursday": [
+                                "Open 24 hours"
+                            ]
+                        },
+                        "rating": 3,
+                        "review_count": 6,
+                        "website": "https://na.chargepoint.com/charge_point?id=1:175017&action=VIEW",
+                        "photo": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=BN_hiYSGSpx1Q0xDynSgIw&cb_client=search.gws-prod.gps&w=86&h=86&yaw=246.55869&pitch=0&thumbfov=100",
+                        "google_place_id": "ChIJO1AOYX_Lj4ARypoMZYowDYI",
+                        "google_cid": "9371199770586815178"
+                    },
+                    {
+                        "id": "0x808fcc741eb5a15d:0xac42252fea9c0116",
+                        "name": "ChargePoint Charging Station",
+                        "connectors": [
+                            {
+                                "type": "J1772",
+                                "total": 2,
+                                "available": null,
+                                "kw": 6.48,
+                                "speed": "Slow"
+                            }
+                        ],
+                        "formatted_address": "1500 Berger Dr, San Jose, CA 95112",
+                        "address_components": {
+                            "district": "North San Jose",
+                            "street_address": "1500 Berger Dr",
+                            "city": "San Jose",
+                            "zipcode": "95112",
+                            "state": "California",
+                            "country": "US"
+                        },
+                        "latitude": 37.371009,
+                        "longitude": -121.89725399999999,
+                        "place_link": "https://www.google.com/maps/place/data=!3m1!4b1!4m2!3m1!1s0x808fcc741eb5a15d:0xac42252fea9c0116",
+                        "phone_number": "+18887584389",
+                        "opening_hours": {
+                            "Friday": [
+                                "6\u202fPM\u201312\u202fAM"
+                            ],
+                            "Saturday": [
+                                "Closed"
+                            ],
+                            "Sunday": [
+                                "Closed"
+                            ],
+                            "Monday": [
+                                "12\u20136\u202fAM",
+                                "6\u202fPM\u20136\u202fAM"
+                            ],
+                            "Tuesday": [
+                                "6\u202fPM\u20136\u202fAM"
+                            ],
+                            "Wednesday": [
+                                "6\u202fPM\u20136\u202fAM"
+                            ],
+                            "Thursday": [
+                                "6\u202fPM\u20136\u202fAM"
+                            ]
+                        },
+                        "rating": null,
+                        "review_count": 0,
+                        "website": "https://na.chargepoint.com/charge_point?id=1:7874891&action=VIEW",
+                        "photo": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=GPWqqj3UN915xKV91-54ww&cb_client=search.gws-prod.gps&w=86&h=86&yaw=81.75297&pitch=0&thumbfov=100",
+                        "google_place_id": "ChIJXaG1HnTMj4ARFgGc6i8lQqw",
+                        "google_cid": "12412524410716291350"
+                    },
+                    {
+                        "id": "0x808fc971b3169fc5:0xea2a6a6d824f7655",
+                        "name": "EVgo Charging Station",
+                        "connectors": [
+                            {
+                                "type": "CHAdeMO",
+                                "total": 2,
+                                "available": 2,
+                                "kw": 50,
+                                "speed": "Fast"
+                            },
+                            {
+                                "type": "CCS",
+                                "total": 2,
+                                "available": 2,
+                                "kw": 50,
+                                "speed": "Fast"
+                            }
+                        ],
+                        "formatted_address": "3055 Orchard Dr, San Jose, CA 95134",
+                        "address_components": {
+                            "district": "North San Jose",
+                            "street_address": "3055 Orchard Dr",
+                            "city": "San Jose",
+                            "zipcode": "95134",
+                            "state": "California",
+                            "country": "US"
+                        },
+                        "latitude": 37.3946387,
+                        "longitude": -121.9378122,
+                        "place_link": "https://www.google.com/maps/place/data=!3m1!4b1!4m2!3m1!1s0x808fc971b3169fc5:0xea2a6a6d824f7655",
+                        "phone_number": "+18774943833",
+                        "opening_hours": {
+                            "Friday": [
+                                "Open 24 hours"
+                            ],
+                            "Saturday": [
+                                "Open 24 hours"
+                            ],
+                            "Sunday": [
+                                "Open 24 hours"
+                            ],
+                            "Monday": [
+                                "Open 24 hours"
+                            ],
+                            "Tuesday": [
+                                "Open 24 hours"
+                            ],
+                            "Wednesday": [
+                                "Open 24 hours"
+                            ],
+                            "Thursday": [
+                                "Open 24 hours"
+                            ]
+                        },
+                        "rating": 5,
+                        "review_count": 11,
+                        "website": "https://www.evgo.com/charging-locations",
+                        "photo": "https://lh5.googleusercontent.com/p/AF1QipP1Qolpe_Fg7nh7FsVzMiwqD2-1ACrQsRGihOEt=w2268-h4032-k-no",
+                        "google_place_id": "ChIJxZ8Ws3HJj4ARVXZPgm1qKuo",
+                        "google_cid": "16873415972467209813"
+                    },
+                    {
+                        "id": "0x808fccbd3857edc5:0xd48ecc7e628366af",
+                        "name": "ChargePoint Charging Station",
+                        "connectors": [
+                            {
+                                "type": "J1772",
+                                "total": 14,
+                                "available": 2,
+                                "kw": 6.48,
+                                "speed": "Slow"
+                            }
+                        ],
+                        "formatted_address": "95 N 3rd St, San Jose, CA 95112",
+                        "address_components": {
+                            "district": "Central San Jose",
+                            "street_address": "95 N 3rd St",
+                            "city": "San Jose",
+                            "zipcode": "95112",
+                            "state": "California",
+                            "country": "US"
+                        },
+                        "latitude": 37.338051799999995,
+                        "longitude": -121.8895287,
+                        "place_link": "https://www.google.com/maps/place/data=!3m1!4b1!4m2!3m1!1s0x808fccbd3857edc5:0xd48ecc7e628366af",
+                        "phone_number": "+18887584389",
+                        "opening_hours": {
+                            "Friday": [
+                                "Open 24 hours"
+                            ],
+                            "Saturday": [
+                                "Open 24 hours"
+                            ],
+                            "Sunday": [
+                                "Open 24 hours"
+                            ],
+                            "Monday": [
+                                "Open 24 hours"
+                            ],
+                            "Tuesday": [
+                                "Open 24 hours"
+                            ],
+                            "Wednesday": [
+                                "Open 24 hours"
+                            ],
+                            "Thursday": [
+                                "Open 24 hours"
+                            ]
+                        },
+                        "rating": null,
+                        "review_count": 0,
+                        "website": "https://na.chargepoint.com/charge_point?id=1:200579&action=VIEW",
+                        "photo": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=8UTMk8Ri-XNbvi2_G6D0gw&cb_client=search.gws-prod.gps&w=86&h=86&yaw=240.84802&pitch=0&thumbfov=100",
+                        "google_place_id": "ChIJxe1XOL3Mj4ARr2aDYn7MjtQ",
+                        "google_cid": "15316404225924359855"
+                    },
+                    {
+                        "id": "0x808fcb92068f1967:0xb0fe93fe1749fef0",
+                        "name": "SemaConnect Charging Station",
+                        "connectors": [
+                            {
+                                "type": "J1772",
+                                "total": 6,
+                                "available": 5,
+                                "kw": 6.24,
+                                "speed": "Slow"
+                            }
+                        ],
+                        "formatted_address": "1721 Skyport Dr, San Jose, CA 95110",
+                        "address_components": {
+                            "district": "North San Jose",
+                            "street_address": "1721 Skyport Dr",
+                            "city": "San Jose",
+                            "zipcode": "95110",
+                            "state": "California",
+                            "country": "US"
+                        },
+                        "latitude": 37.3644386,
+                        "longitude": -121.91673469999999,
+                        "place_link": "https://www.google.com/maps/place/data=!3m1!4b1!4m2!3m1!1s0x808fcb92068f1967:0xb0fe93fe1749fef0",
+                        "phone_number": "+18006635633",
+                        "opening_hours": {
+                            "Friday": [
+                                "Open 24 hours"
+                            ],
+                            "Saturday": [
+                                "Open 24 hours"
+                            ],
+                            "Sunday": [
+                                "Open 24 hours"
+                            ],
+                            "Monday": [
+                                "Open 24 hours"
+                            ],
+                            "Tuesday": [
+                                "Open 24 hours"
+                            ],
+                            "Wednesday": [
+                                "Open 24 hours"
+                            ],
+                            "Thursday": [
+                                "Open 24 hours"
+                            ]
+                        },
+                        "rating": 1,
+                        "review_count": 1,
+                        "website": "https://network.semaconnect.com",
+                        "photo": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=tRVfD4sdF-C8lZOP0WAtYw&cb_client=search.gws-prod.gps&w=86&h=86&yaw=315.96536&pitch=0&thumbfov=100",
+                        "google_place_id": "ChIJZxmPBpLLj4AR8P5JF_6T_rA",
+                        "google_cid": "12753793914281524976"
+                    }
+                ]
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "type": "string"
+                    },
+                    "request_id": {
+                        "type": "string"
+                    },
+                    "data": {
+                        "type": "array",
+                        "items": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Search by Location",
+            "url": "https://ev-charge-finder.p.rapidapi.com/search-by-location",
+            "description": "Search for EV charging stations near a specific location specified as a free-form location query (e.g. *San Francisco, CA, USA*).",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "near",
+                    "type": "STRING",
+                    "description": "Free-form location query to search near by (e.g. *San Francisco, CA, USA*).",
+                    "default": "New York, NY, USA"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "query",
+                    "type": "STRING",
+                    "description": "Return EV charging stations matching a specific query or keyword.\n\n**e.g.** *`evgo`*\n**e.g.** *`tesla`*\n**e.g.** *`chargepoint`*",
+                    "default": ""
+                },
+                {
+                    "name": "max_kw",
+                    "type": "STRING",
+                    "description": "Restrict the result to the availability for connectors with a specific maximum value of power in kilowatts (closed interval - with that value).",
+                    "default": ""
+                },
+                {
+                    "name": "limit",
+                    "type": "STRING",
+                    "description": "Maximum number of results to return.\n\n**Allowed values:** *1-500*.\n**Default:** *20*.",
+                    "default": "20"
+                },
+                {
+                    "name": "type",
+                    "type": "STRING",
+                    "description": "Return EV charging stations with connectors of one or more types, specified as a comma (,) delimited list of connector types to match.\n\n**e.g.** *`CHAdeMO`*\n**e.g.** *`J1772,CCS`*",
+                    "default": ""
+                },
+                {
+                    "name": "min_kw",
+                    "type": "STRING",
+                    "description": "Restrict the result to the availability for connectors with a specific minimal value of power in kilowatts (closed interval - with that value).",
+                    "default": ""
+                },
+                {
+                    "name": "available",
+                    "type": "STRING",
+                    "description": "Only return EV charging stations with an available connector.",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://ev-charge-finder.p.rapidapi.com/search-by-location\"\nquerystring = {\"query\": \"\", \"max_kw\": \"\", \"limit\": \"20\", \"type\": \"\", \"min_kw\": \"\", \"near\": \"New York, NY, USA\", \"available\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ev-charge-finder.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ev-charge-finder.p.rapidapi.com/search-by-location\"\nquerystring = {\"query\": \"\", \"max_kw\": \"\", \"limit\": \"20\", \"type\": \"\", \"min_kw\": \"\", \"near\": \"New York, NY, USA\", \"available\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ev-charge-finder.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "status": "OK",
+                "request_id": "1bea1ac9-a24c-4fb1-967d-c9ee39f97104",
+                "data": [
+                    {
+                        "id": "0x89c259812fed6abd:0xa19922d17d845d30",
+                        "name": "EV Connect Charging Station",
+                        "connectors": [
+                            {
+                                "type": "CHAdeMO",
+                                "total": 1,
+                                "available": 1,
+                                "kw": 150,
+                                "speed": "Very fast"
+                            },
+                            {
+                                "type": "CCS",
+                                "total": 1,
+                                "available": 1,
+                                "kw": 150,
+                                "speed": "Very fast"
+                            },
+                            {
+                                "type": "CHAdeMO",
+                                "total": 3,
+                                "available": 3,
+                                "kw": 50,
+                                "speed": "Fast"
+                            },
+                            {
+                                "type": "CCS",
+                                "total": 3,
+                                "available": 3,
+                                "kw": 50,
+                                "speed": "Fast"
+                            },
+                            {
+                                "type": "J1772",
+                                "total": 1,
+                                "available": 0,
+                                "kw": 12,
+                                "speed": "Medium"
+                            },
+                            {
+                                "type": "J1772",
+                                "total": 6,
+                                "available": 0,
+                                "kw": 7.4,
+                                "speed": "Slow"
+                            }
+                        ],
+                        "formatted_address": "107 Essex St, New York, NY 10002",
+                        "address_components": {
+                            "district": "Manhattan",
+                            "street_address": "107 Essex St",
+                            "city": "New York",
+                            "zipcode": "10002",
+                            "state": "New York",
+                            "country": "US"
+                        },
+                        "latitude": 40.719318699999995,
+                        "longitude": -73.9881965,
+                        "place_link": "https://www.google.com/maps/place/data=!3m1!4b1!4m2!3m1!1s0x89c259812fed6abd:0xa19922d17d845d30",
+                        "phone_number": "+18668167584",
+                        "opening_hours": {
+                            "Friday": [
+                                "Open 24 hours"
+                            ],
+                            "Saturday": [
+                                "Open 24 hours"
+                            ],
+                            "Sunday": [
+                                "Open 24 hours"
+                            ],
+                            "Monday": [
+                                "Open 24 hours"
+                            ],
+                            "Tuesday": [
+                                "Open 24 hours"
+                            ],
+                            "Wednesday": [
+                                "Open 24 hours"
+                            ],
+                            "Thursday": [
+                                "Open 24 hours"
+                            ]
+                        },
+                        "rating": 5,
+                        "review_count": 2,
+                        "website": "https://www.evconnect.com/ev-charging-stations",
+                        "photo": "https://lh5.googleusercontent.com/p/AF1QipNFzbA3cssxPtsrvueNRF32nkkapRwsq1wC_4gp=w4032-h3024-k-no",
+                        "google_place_id": "ChIJvWrtL4FZwokRMF2EfdEimaE",
+                        "google_cid": "11644376594692463920"
+                    },
+                    {
+                        "id": "0x89c25a2787498e69:0xc5d34e34fc306102",
+                        "name": "Tesla Supercharger",
+                        "connectors": [
+                            {
+                                "type": "Tesla",
+                                "total": 2,
+                                "available": null,
+                                "kw": 72,
+                                "speed": "Fast"
+                            }
+                        ],
+                        "formatted_address": "106 Mott St, New York, NY 10013",
+                        "address_components": {
+                            "district": "Manhattan",
+                            "street_address": "106 Mott St",
+                            "city": "New York",
+                            "zipcode": "10013",
+                            "state": "New York",
+                            "country": "US"
+                        },
+                        "latitude": 40.717521999999995,
+                        "longitude": -73.99730199999999,
+                        "place_link": "https://www.google.com/maps/place/data=!3m1!4b1!4m2!3m1!1s0x89c25a2787498e69:0xc5d34e34fc306102",
+                        "phone_number": null,
+                        "opening_hours": {
+                            "Friday": [
+                                "Open 24 hours"
+                            ],
+                            "Saturday": [
+                                "Open 24 hours"
+                            ],
+                            "Sunday": [
+                                "Open 24 hours"
+                            ],
+                            "Monday": [
+                                "Open 24 hours"
+                            ],
+                            "Tuesday": [
+                                "Open 24 hours"
+                            ],
+                            "Wednesday": [
+                                "Open 24 hours"
+                            ],
+                            "Thursday": [
+                                "Open 24 hours"
+                            ]
+                        },
+                        "rating": 2.4,
+                        "review_count": 7,
+                        "website": "https://www.tesla.com",
+                        "photo": "https://lh5.googleusercontent.com/p/AF1QipPLCg3hh_MOqQ6dVSMTXx3Ttrntv4ftqyYf244t=w1170-h1464-k-no",
+                        "google_place_id": "ChIJaY5JhydawokRAmEw_DRO08U",
+                        "google_cid": "14254823235034046722"
+                    },
+                    {
+                        "id": "0x89c25a192c5e9ae3:0x315db242d56366ee",
+                        "name": "Tesla Destination Charger",
+                        "connectors": [
+                            {
+                                "type": "Tesla",
+                                "total": 3,
+                                "available": null,
+                                "kw": 10,
+                                "speed": "Medium"
+                            }
+                        ],
+                        "formatted_address": "54 Murray Street, New York, NY 10007",
+                        "address_components": {
+                            "district": "Manhattan",
+                            "street_address": "54 Murray Street",
+                            "city": "New York",
+                            "zipcode": "10007",
+                            "state": "New York",
+                            "country": "US"
+                        },
+                        "latitude": 40.7142669,
+                        "longitude": -74.0099206,
+                        "place_link": "https://www.google.com/maps/place/data=!3m1!4b1!4m2!3m1!1s0x89c25a192c5e9ae3:0x315db242d56366ee",
+                        "phone_number": "+12129629011",
+                        "opening_hours": {},
+                        "rating": null,
+                        "review_count": 0,
+                        "website": "https://www.tesla.com/charging",
+                        "photo": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=j6GsJ7rPCFsPxrjpC1FkxQ&cb_client=search.gws-prod.gps&w=86&h=86&yaw=187.50238&pitch=0&thumbfov=100",
+                        "google_place_id": "ChIJ45peLBlawokR7mZj1UKyXTE",
+                        "google_cid": "3557195280810206958"
+                    },
+                    {
+                        "id": "0x89c25a1c923a76af:0x11a1c3ce944864af",
+                        "name": "ChargePoint Charging Station",
+                        "connectors": [
+                            {
+                                "type": "CCS",
+                                "total": 1,
+                                "available": null,
+                                "kw": 23.9,
+                                "speed": "Medium"
+                            }
+                        ],
+                        "formatted_address": "20 River Terrace Apt 3E, New York, NY 10282",
+                        "address_components": {
+                            "district": "Manhattan",
+                            "street_address": "20 River Terrace Apt 3E",
+                            "city": "New York",
+                            "zipcode": "10282",
+                            "state": "New York",
+                            "country": "US"
+                        },
+                        "latitude": 40.716305299999995,
+                        "longitude": -74.016194,
+                        "place_link": "https://www.google.com/maps/place/data=!3m1!4b1!4m2!3m1!1s0x89c25a1c923a76af:0x11a1c3ce944864af",
+                        "phone_number": "+18887584389",
+                        "opening_hours": {
+                            "Friday": [
+                                "Open 24 hours"
+                            ],
+                            "Saturday": [
+                                "Open 24 hours"
+                            ],
+                            "Sunday": [
+                                "Open 24 hours"
+                            ],
+                            "Monday": [
+                                "Open 24 hours"
+                            ],
+                            "Tuesday": [
+                                "Open 24 hours"
+                            ],
+                            "Wednesday": [
+                                "Open 24 hours"
+                            ],
+                            "Thursday": [
+                                "Open 24 hours"
+                            ]
+                        },
+                        "rating": 5,
+                        "review_count": 2,
+                        "website": "https://na.chargepoint.com/charge_point?id=1:111757&action=VIEW",
+                        "photo": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=ocYeRYhglCQgo69QDU73vw&cb_client=search.gws-prod.gps&w=86&h=86&yaw=22.136114&pitch=0&thumbfov=100",
+                        "google_place_id": "ChIJr3Y6khxawokRr2RIlM7DoRE",
+                        "google_cid": "1270511861913642159"
+                    },
+                    {
+                        "id": "0x89c259812fed14e7:0x8f1892add7d14394",
+                        "name": "Shell Recharge Charging Station",
+                        "connectors": [
+                            {
+                                "type": "CHAdeMO",
+                                "total": 1,
+                                "available": null,
+                                "kw": 150,
+                                "speed": "Very fast"
+                            },
+                            {
+                                "type": "CCS",
+                                "total": 1,
+                                "available": null,
+                                "kw": 150,
+                                "speed": "Very fast"
+                            },
+                            {
+                                "type": "CHAdeMO",
+                                "total": 3,
+                                "available": null,
+                                "kw": 50,
+                                "speed": "Fast"
+                            },
+                            {
+                                "type": "CCS",
+                                "total": 3,
+                                "available": null,
+                                "kw": 50,
+                                "speed": "Fast"
+                            },
+                            {
+                                "type": "J1772",
+                                "total": 1,
+                                "available": null,
+                                "kw": 12,
+                                "speed": "Medium"
+                            },
+                            {
+                                "type": "J1772",
+                                "total": 6,
+                                "available": null,
+                                "kw": 7.4,
+                                "speed": "Slow"
+                            }
+                        ],
+                        "formatted_address": "107 Essex St, New York, NY 10002",
+                        "address_components": {
+                            "district": "Manhattan",
+                            "street_address": "107 Essex St",
+                            "city": "New York",
+                            "zipcode": "10002",
+                            "state": "New York",
+                            "country": "US"
+                        },
+                        "latitude": 40.719319299999995,
+                        "longitude": -73.9881972,
+                        "place_link": "https://www.google.com/maps/place/data=!3m1!4b1!4m2!3m1!1s0x89c259812fed14e7:0x8f1892add7d14394",
+                        "phone_number": "+31880109500",
+                        "opening_hours": {
+                            "Friday": [
+                                "Open 24 hours"
+                            ],
+                            "Saturday": [
+                                "Open 24 hours"
+                            ],
+                            "Sunday": [
+                                "Open 24 hours"
+                            ],
+                            "Monday": [
+                                "Open 24 hours"
+                            ],
+                            "Tuesday": [
+                                "Open 24 hours"
+                            ],
+                            "Wednesday": [
+                                "Open 24 hours"
+                            ],
+                            "Thursday": [
+                                "Open 24 hours"
+                            ]
+                        },
+                        "rating": null,
+                        "review_count": 0,
+                        "website": "https://shellrecharge.com",
+                        "photo": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=RT8vuaZUExpzuLg8oCQKKA&cb_client=search.gws-prod.gps&w=86&h=86&yaw=270.87457&pitch=0&thumbfov=100",
+                        "google_place_id": "ChIJ5xTtL4FZwokRlEPR162SGI8",
+                        "google_cid": "10311152622212563860"
+                    },
+                    {
+                        "id": "0x89c25a1c5a1dc6f5:0xdf8d03c7d5b30f77",
+                        "name": "Blink Charging Station",
+                        "connectors": [
+                            {
+                                "type": "J1772",
+                                "total": 1,
+                                "available": 1,
+                                "kw": 8.3,
+                                "speed": "Slow"
+                            },
+                            {
+                                "type": "J1772",
+                                "total": 1,
+                                "available": 1,
+                                "kw": 6.7,
+                                "speed": "Slow"
+                            }
+                        ],
+                        "formatted_address": "325 North End Ave, New York, NY 10282",
+                        "address_components": {
+                            "district": "Manhattan",
+                            "street_address": "325 North End Ave",
+                            "city": "New York",
+                            "zipcode": "10282",
+                            "state": "New York",
+                            "country": "US"
+                        },
+                        "latitude": 40.71695,
+                        "longitude": -74.01494799999999,
+                        "place_link": "https://www.google.com/maps/place/data=!3m1!4b1!4m2!3m1!1s0x89c25a1c5a1dc6f5:0xdf8d03c7d5b30f77",
+                        "phone_number": "+18889982546",
+                        "opening_hours": {
+                            "Friday": [
+                                "Open 24 hours"
+                            ],
+                            "Saturday": [
+                                "Open 24 hours"
+                            ],
+                            "Sunday": [
+                                "Open 24 hours"
+                            ],
+                            "Monday": [
+                                "Open 24 hours"
+                            ],
+                            "Tuesday": [
+                                "Open 24 hours"
+                            ],
+                            "Wednesday": [
+                                "Open 24 hours"
+                            ],
+                            "Thursday": [
+                                "Open 24 hours"
+                            ]
+                        },
+                        "rating": 5,
+                        "review_count": 1,
+                        "website": "https://www.blinkcharging.com",
+                        "photo": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=8urWPnjXUrkNZrM3MMQAJA&cb_client=search.gws-prod.gps&w=86&h=86&yaw=322.88223&pitch=0&thumbfov=100",
+                        "google_place_id": "ChIJ9cYdWhxawokRdw-z1ccDjd8",
+                        "google_cid": "16108535598992789367"
+                    },
+                    {
+                        "id": "0x89c25a26b0f95553:0x90fda160f4a1818a",
+                        "name": "EV Connect Charging Station",
+                        "connectors": [
+                            {
+                                "type": "J1772",
+                                "total": 4,
+                                "available": 0,
+                                "kw": 7.2,
+                                "speed": "Slow"
+                            }
+                        ],
+                        "formatted_address": "170 Park Row, New York, NY 10038",
+                        "address_components": {
+                            "district": "Manhattan",
+                            "street_address": "170 Park Row",
+                            "city": "New York",
+                            "zipcode": "10038",
+                            "state": "New York",
+                            "country": "US"
+                        },
+                        "latitude": 40.713831899999995,
+                        "longitude": -74.0000589,
+                        "place_link": "https://www.google.com/maps/place/data=!3m1!4b1!4m2!3m1!1s0x89c25a26b0f95553:0x90fda160f4a1818a",
+                        "phone_number": "+18668167584",
+                        "opening_hours": {
+                            "Friday": [
+                                "Open 24 hours"
+                            ],
+                            "Saturday": [
+                                "Open 24 hours"
+                            ],
+                            "Sunday": [
+                                "Open 24 hours"
+                            ],
+                            "Monday": [
+                                "Open 24 hours"
+                            ],
+                            "Tuesday": [
+                                "Open 24 hours"
+                            ],
+                            "Wednesday": [
+                                "Open 24 hours"
+                            ],
+                            "Thursday": [
+                                "Open 24 hours"
+                            ]
+                        },
+                        "rating": null,
+                        "review_count": 0,
+                        "website": "https://www.evconnect.com/ev-charging-stations",
+                        "photo": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=aRZL8Wgv_NDD1xLydLl_3Q&cb_client=search.gws-prod.gps&w=86&h=86&yaw=233.17285&pitch=0&thumbfov=100",
+                        "google_place_id": "ChIJU1X5sCZawokRioGh9GCh_ZA",
+                        "google_cid": "10447684148362576266"
+                    },
+                    {
+                        "id": "0x89c25b60a254bfcd:0x1915940026b9f67e",
+                        "name": "Tesla Supercharger",
+                        "connectors": [
+                            {
+                                "type": "Tesla",
+                                "total": 4,
+                                "available": null,
+                                "kw": 72,
+                                "speed": "Fast"
+                            }
+                        ],
+                        "formatted_address": "250 Vesey St, New York, NY 10080",
+                        "address_components": {
+                            "district": "Manhattan",
+                            "street_address": "250 Vesey St",
+                            "city": "New York",
+                            "zipcode": "10080",
+                            "state": "New York",
+                            "country": "US"
+                        },
+                        "latitude": 40.7143051,
+                        "longitude": -74.01639569999999,
+                        "place_link": "https://www.google.com/maps/place/data=!3m1!4b1!4m2!3m1!1s0x89c25b60a254bfcd:0x1915940026b9f67e",
+                        "phone_number": "+18777983752",
+                        "opening_hours": {
+                            "Friday": [
+                                "Open 24 hours"
+                            ],
+                            "Saturday": [
+                                "Open 24 hours"
+                            ],
+                            "Sunday": [
+                                "Open 24 hours"
+                            ],
+                            "Monday": [
+                                "Open 24 hours"
+                            ],
+                            "Tuesday": [
+                                "Open 24 hours"
+                            ],
+                            "Wednesday": [
+                                "Open 24 hours"
+                            ],
+                            "Thursday": [
+                                "Open 24 hours"
+                            ]
+                        },
+                        "rating": 2.3,
+                        "review_count": 6,
+                        "website": "https://www.tesla.com",
+                        "photo": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=kHF5qkLyGR1vvlcjSpsp9A&cb_client=search.gws-prod.gps&w=86&h=86&yaw=113.77581&pitch=0&thumbfov=100",
+                        "google_place_id": "ChIJzb9UomBbwokRfva5JgCUFRk",
+                        "google_cid": "1807513553829754494"
+                    },
+                    {
+                        "id": "0x89c25a22e814ded7:0x36b84c788a1d053a",
+                        "name": "Tesla Destination Charger",
+                        "connectors": [
+                            {
+                                "type": "Tesla",
+                                "total": 3,
+                                "available": null,
+                                "kw": 8,
+                                "speed": "Slow"
+                            }
+                        ],
+                        "formatted_address": "80 Gold St, New York, NY 10038",
+                        "address_components": {
+                            "district": "Manhattan",
+                            "street_address": "80 Gold St",
+                            "city": "New York",
+                            "zipcode": "10038",
+                            "state": "New York",
+                            "country": "US"
+                        },
+                        "latitude": 40.7098902,
+                        "longitude": -74.00424509999999,
+                        "place_link": "https://www.google.com/maps/place/data=!3m1!4b1!4m2!3m1!1s0x89c25a22e814ded7:0x36b84c788a1d053a",
+                        "phone_number": "+12129645250",
+                        "opening_hours": {},
+                        "rating": null,
+                        "review_count": 0,
+                        "website": "https://www.tesla.com/charging",
+                        "photo": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=aZqTVPTWG2n7Fk5VM10lCQ&cb_client=search.gws-prod.gps&w=86&h=86&yaw=94.38698&pitch=0&thumbfov=100",
+                        "google_place_id": "ChIJ194U6CJawokROgUdinhMuDY",
+                        "google_cid": "3942985554359813434"
+                    },
+                    {
+                        "id": "0x89c25a1efd500449:0xcd7004cf5e6b01a3",
+                        "name": "Tesla Destination Charger",
+                        "connectors": [
+                            {
+                                "type": "Tesla",
+                                "total": 3,
+                                "available": null,
+                                "kw": 8,
+                                "speed": "Slow"
+                            }
+                        ],
+                        "formatted_address": "121 Reade St, New York, NY 10013",
+                        "address_components": {
+                            "district": "Manhattan",
+                            "street_address": "121 Reade St",
+                            "city": "New York",
+                            "zipcode": "10013",
+                            "state": "New York",
+                            "country": "US"
+                        },
+                        "latitude": 40.716268,
+                        "longitude": -74.009491,
+                        "place_link": "https://www.google.com/maps/place/data=!3m1!4b1!4m2!3m1!1s0x89c25a1efd500449:0xcd7004cf5e6b01a3",
+                        "phone_number": "+12126083060",
+                        "opening_hours": {},
+                        "rating": null,
+                        "review_count": 0,
+                        "website": "https://www.tesla.com/charging",
+                        "photo": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=FFvInL8990Xe_9kzsTfW8g&cb_client=search.gws-prod.gps&w=86&h=86&yaw=199.67868&pitch=0&thumbfov=100",
+                        "google_place_id": "ChIJSQRQ_R5awokRowFrXs8EcM0",
+                        "google_cid": "14803337263855632803"
+                    },
+                    {
+                        "id": "0x89c259f5858e28a9:0x77375a9f9f2a6c62",
+                        "name": "Tesla Destination Charger",
+                        "connectors": [
+                            {
+                                "type": "Tesla",
+                                "total": 3,
+                                "available": null,
+                                "kw": 16,
+                                "speed": "Medium"
+                            }
+                        ],
+                        "formatted_address": "376 Greenwich St, New York, NY 10013",
+                        "address_components": {
+                            "district": "Manhattan",
+                            "street_address": "376 Greenwich St",
+                            "city": "New York",
+                            "zipcode": "10013",
+                            "state": "New York",
+                            "country": "US"
+                        },
+                        "latitude": 40.7197824,
+                        "longitude": -74.0105423,
+                        "place_link": "https://www.google.com/maps/place/data=!3m1!4b1!4m2!3m1!1s0x89c259f5858e28a9:0x77375a9f9f2a6c62",
+                        "phone_number": "+12122277035",
+                        "opening_hours": {},
+                        "rating": null,
+                        "review_count": 0,
+                        "website": "https://www.tesla.com/charging",
+                        "photo": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=k4v46MI6G4hBnTWTDy0rww&cb_client=search.gws-prod.gps&w=86&h=86&yaw=255.77522&pitch=0&thumbfov=100",
+                        "google_place_id": "ChIJqSiOhfVZwokRYmwqn59aN3c",
+                        "google_cid": "8590434455849167970"
+                    },
+                    {
+                        "id": "0x89c25a1c20e41b2b:0x908410d70dff166d",
+                        "name": "Tesla Destination Charger",
+                        "connectors": [
+                            {
+                                "type": "Tesla",
+                                "total": 3,
+                                "available": null,
+                                "kw": 8,
+                                "speed": "Slow"
+                            }
+                        ],
+                        "formatted_address": "200 Chambers St, New York, NY 10007",
+                        "address_components": {
+                            "district": "Manhattan",
+                            "street_address": "200 Chambers St",
+                            "city": "New York",
+                            "zipcode": "10007",
+                            "state": "New York",
+                            "country": "US"
+                        },
+                        "latitude": 40.7166036,
+                        "longitude": -74.0122703,
+                        "place_link": "https://www.google.com/maps/place/data=!3m1!4b1!4m2!3m1!1s0x89c25a1c20e41b2b:0x908410d70dff166d",
+                        "phone_number": "+18008366666",
+                        "opening_hours": {},
+                        "rating": 1,
+                        "review_count": 1,
+                        "website": "https://www.tesla.com/charging",
+                        "photo": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=ocWq3TPX-vTLBJQE2cTdYQ&cb_client=search.gws-prod.gps&w=86&h=86&yaw=15.6624&pitch=0&thumbfov=100",
+                        "google_place_id": "ChIJKxvkIBxawokRbRb_DdcQhJA",
+                        "google_cid": "10413466754226263661"
+                    },
+                    {
+                        "id": "0x89c259f5855e5e9b:0xaf8cef6ed02f032a",
+                        "name": "Blink Charging Station",
+                        "connectors": [
+                            {
+                                "type": "J1772",
+                                "total": 1,
+                                "available": 1,
+                                "kw": 6.7,
+                                "speed": "Slow"
+                            }
+                        ],
+                        "formatted_address": "40 Harrison St, New York, NY 10013",
+                        "address_components": {
+                            "district": "Manhattan",
+                            "street_address": "40 Harrison St",
+                            "city": "New York",
+                            "zipcode": "10013",
+                            "state": "New York",
+                            "country": "US"
+                        },
+                        "latitude": 40.7191046,
+                        "longitude": -74.0112166,
+                        "place_link": "https://www.google.com/maps/place/data=!3m1!4b1!4m2!3m1!1s0x89c259f5855e5e9b:0xaf8cef6ed02f032a",
+                        "phone_number": null,
+                        "opening_hours": {
+                            "Friday": [
+                                "Open 24 hours"
+                            ],
+                            "Saturday": [
+                                "Open 24 hours"
+                            ],
+                            "Sunday": [
+                                "Open 24 hours"
+                            ],
+                            "Monday": [
+                                "Open 24 hours"
+                            ],
+                            "Tuesday": [
+                                "Open 24 hours"
+                            ],
+                            "Wednesday": [
+                                "Open 24 hours"
+                            ],
+                            "Thursday": [
+                                "Open 24 hours"
+                            ]
+                        },
+                        "rating": 4,
+                        "review_count": 1,
+                        "website": "https://www.blinkcharging.com",
+                        "photo": "https://lh5.googleusercontent.com/p/AF1QipNOsc-MTTE_g6wI5qekRo5pIKHLq8zjDtgvWAyt=w3024-h4032-k-no",
+                        "google_place_id": "ChIJm15ehfVZwokRKgMv0G7vjK8",
+                        "google_cid": "12649748712595063594"
+                    },
+                    {
+                        "id": "0x89c25a1c8e4dd0f9:0xae3ad21af090b1f6",
+                        "name": "Tesla Destination Charger",
+                        "connectors": [
+                            {
+                                "type": "Tesla",
+                                "total": 3,
+                                "available": null,
+                                "kw": 16,
+                                "speed": "Medium"
+                            }
+                        ],
+                        "formatted_address": "400 Murray Street, New York, NY 10013",
+                        "address_components": {
+                            "district": "Manhattan",
+                            "street_address": "400 Murray Street",
+                            "city": "New York",
+                            "zipcode": "10013",
+                            "state": "New York",
+                            "country": "US"
+                        },
+                        "latitude": 40.7160796,
+                        "longitude": -74.0159295,
+                        "place_link": "https://www.google.com/maps/place/data=!3m1!4b1!4m2!3m1!1s0x89c25a1c8e4dd0f9:0xae3ad21af090b1f6",
+                        "phone_number": "+12128422305",
+                        "opening_hours": {},
+                        "rating": null,
+                        "review_count": 0,
+                        "website": "https://www.tesla.com/charging",
+                        "photo": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=QYdMrnQJn00J5j72Pdu_JQ&cb_client=search.gws-prod.gps&w=86&h=86&yaw=125.550575&pitch=0&thumbfov=100",
+                        "google_place_id": "ChIJ-dBNjhxawokR9rGQ8BrSOq4",
+                        "google_cid": "12554577924395676150"
+                    },
+                    {
+                        "id": "0x89c25a1a90e781a1:0x27d3475936d06542",
+                        "name": "Tesla Destination Charger",
+                        "connectors": [
+                            {
+                                "type": "Tesla",
+                                "total": 3,
+                                "available": null,
+                                "kw": 16,
+                                "speed": "Medium"
+                            },
+                            {
+                                "type": "Tesla",
+                                "total": 4,
+                                "available": null,
+                                "kw": 10,
+                                "speed": "Medium"
+                            }
+                        ],
+                        "formatted_address": "250 Albany St, New York, NY 10280",
+                        "address_components": {
+                            "district": "Manhattan",
+                            "street_address": "250 Albany St",
+                            "city": "New York",
+                            "zipcode": "10280",
+                            "state": "New York",
+                            "country": "US"
+                        },
+                        "latitude": 40.7096406,
+                        "longitude": -74.01582669999999,
+                        "place_link": "https://www.google.com/maps/place/data=!3m1!4b1!4m2!3m1!1s0x89c25a1a90e781a1:0x27d3475936d06542",
+                        "phone_number": "+12129451876",
+                        "opening_hours": {},
+                        "rating": null,
+                        "review_count": 0,
+                        "website": "https://www.tesla.com/charging",
+                        "photo": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=5TNgXLFwW6EIexoCufKZ-Q&cb_client=search.gws-prod.gps&w=86&h=86&yaw=214.69307&pitch=0&thumbfov=100",
+                        "google_place_id": "ChIJoYHnkBpawokRQmXQNllH0yc",
+                        "google_cid": "2869715836062426434"
+                    },
+                    {
+                        "id": "0x89c25a1c2120d631:0x232bbf481953a8f8",
+                        "name": "Blink Charging Station",
+                        "connectors": [],
+                        "formatted_address": "200 Chambers St, New York, NY 10282",
+                        "address_components": {
+                            "district": "Manhattan",
+                            "street_address": "200 Chambers St",
+                            "city": "New York",
+                            "zipcode": "10282",
+                            "state": "New York",
+                            "country": "US"
+                        },
+                        "latitude": 40.7165069,
+                        "longitude": -74.0123236,
+                        "place_link": "https://www.google.com/maps/place/data=!3m1!4b1!4m2!3m1!1s0x89c25a1c2120d631:0x232bbf481953a8f8",
+                        "phone_number": "+18555212244",
+                        "opening_hours": {
+                            "Friday": [
+                                "Open 24 hours"
+                            ],
+                            "Saturday": [
+                                "Open 24 hours"
+                            ],
+                            "Sunday": [
+                                "Open 24 hours"
+                            ],
+                            "Monday": [
+                                "Open 24 hours"
+                            ],
+                            "Tuesday": [
+                                "Open 24 hours"
+                            ],
+                            "Wednesday": [
+                                "Open 24 hours"
+                            ],
+                            "Thursday": [
+                                "Open 24 hours"
+                            ]
+                        },
+                        "rating": null,
+                        "review_count": 0,
+                        "website": "https://blinkcharging.com",
+                        "photo": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=xKUM2CCT3zw1vGuWqhOQmA&cb_client=search.gws-prod.gps&w=86&h=86&yaw=46.422565&pitch=0&thumbfov=100",
+                        "google_place_id": "ChIJMdYgIRxawokR-KhTGUi_KyM",
+                        "google_cid": "2534329531709499640"
+                    },
+                    {
+                        "id": "0x89c25a229c651dd3:0x5675f8756d59ec21",
+                        "name": "Blink Charging Station",
+                        "connectors": [],
+                        "formatted_address": "25 Beekman St, New York, NY 10038",
+                        "address_components": {
+                            "district": "Manhattan",
+                            "street_address": "25 Beekman St",
+                            "city": "New York",
+                            "zipcode": "10038",
+                            "state": "New York",
+                            "country": "US"
+                        },
+                        "latitude": 40.710636,
+                        "longitude": -74.00619499999999,
+                        "place_link": "https://www.google.com/maps/place/data=!3m1!4b1!4m2!3m1!1s0x89c25a229c651dd3:0x5675f8756d59ec21",
+                        "phone_number": "+18889982546",
+                        "opening_hours": {
+                            "Friday": [
+                                "Open 24 hours"
+                            ],
+                            "Saturday": [
+                                "Open 24 hours"
+                            ],
+                            "Sunday": [
+                                "Open 24 hours"
+                            ],
+                            "Monday": [
+                                "Open 24 hours"
+                            ],
+                            "Tuesday": [
+                                "Open 24 hours"
+                            ],
+                            "Wednesday": [
+                                "Open 24 hours"
+                            ],
+                            "Thursday": [
+                                "Open 24 hours"
+                            ]
+                        },
+                        "rating": 4.4,
+                        "review_count": 8,
+                        "website": "https://www.blinkcharging.com",
+                        "photo": "https://lh5.googleusercontent.com/p/AF1QipOole0QNVHW6vquUiqauqXW_1bH55Qvfe3kxsWY=w4032-h3024-k-no",
+                        "google_place_id": "ChIJ0x1lnCJawokRIexZbXX4dVY",
+                        "google_cid": "6230158842766421025"
+                    },
+                    {
+                        "id": "0x89c25a11ca104153:0x146a0dd2338ebbc0",
+                        "name": "Tesla Destination Charger",
+                        "connectors": [
+                            {
+                                "type": "Tesla",
+                                "total": 3,
+                                "available": null,
+                                "kw": 16,
+                                "speed": "Medium"
+                            }
+                        ],
+                        "formatted_address": "99 Battery Pl, New York, NY 10280",
+                        "address_components": {
+                            "district": "Manhattan",
+                            "street_address": "99 Battery Pl",
+                            "city": "New York",
+                            "zipcode": "10280",
+                            "state": "New York",
+                            "country": "US"
+                        },
+                        "latitude": 40.7077917,
+                        "longitude": -74.0170916,
+                        "place_link": "https://www.google.com/maps/place/data=!3m1!4b1!4m2!3m1!1s0x89c25a11ca104153:0x146a0dd2338ebbc0",
+                        "phone_number": "+12129453109",
+                        "opening_hours": {},
+                        "rating": null,
+                        "review_count": 0,
+                        "website": "https://www.tesla.com/charging",
+                        "photo": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=ISAF_rHz3raSZ4gy4xyE2g&cb_client=search.gws-prod.gps&w=86&h=86&yaw=359.5333&pitch=0&thumbfov=100",
+                        "google_place_id": "ChIJU0EQyhFawokRwLuOM9INahQ",
+                        "google_cid": "1471003424749173696"
+                    },
+                    {
+                        "id": "0x89c25983e7c43b3d:0x720702b9fc6e7f9c",
+                        "name": "Tesla Destination Charger",
+                        "connectors": [
+                            {
+                                "type": "Tesla",
+                                "total": 3,
+                                "available": null,
+                                "kw": 10,
+                                "speed": "Medium"
+                            }
+                        ],
+                        "formatted_address": "169 Ludlow St, New York, NY 10012",
+                        "address_components": {
+                            "district": "Manhattan",
+                            "street_address": "169 Ludlow St",
+                            "city": "New York",
+                            "zipcode": "10012",
+                            "state": "New York",
+                            "country": "US"
+                        },
+                        "latitude": 40.721748,
+                        "longitude": -73.987653,
+                        "place_link": "https://www.google.com/maps/place/data=!3m1!4b1!4m2!3m1!1s0x89c25983e7c43b3d:0x720702b9fc6e7f9c",
+                        "phone_number": "+12122477303",
+                        "opening_hours": {},
+                        "rating": 1,
+                        "review_count": 1,
+                        "website": "https://www.tesla.com/charging",
+                        "photo": "https://lh5.googleusercontent.com/p/AF1QipNOqGqky-gtPvITYo84dlmwOJ3IpOdnYx6SIKo4=w4032-h3024-k-no",
+                        "google_place_id": "ChIJPTvE54NZwokRnH9u_LkCB3I",
+                        "google_cid": "8216539042988064668"
+                    },
+                    {
+                        "id": "0x89c2598bdb106f43:0x993515537b6df912",
+                        "name": "Tesla Destination Charger",
+                        "connectors": [
+                            {
+                                "type": "Tesla",
+                                "total": 3,
+                                "available": null,
+                                "kw": 13,
+                                "speed": "Medium"
+                            }
+                        ],
+                        "formatted_address": "40 Mercer St, New York, NY 10025",
+                        "address_components": {
+                            "district": "Manhattan",
+                            "street_address": "40 Mercer St",
+                            "city": "New York",
+                            "zipcode": "10025",
+                            "state": "New York",
+                            "country": "US"
+                        },
+                        "latitude": 40.7214429,
+                        "longitude": -74.0009566,
+                        "place_link": "https://www.google.com/maps/place/data=!3m1!4b1!4m2!3m1!1s0x89c2598bdb106f43:0x993515537b6df912",
+                        "phone_number": "+12122193413",
+                        "opening_hours": {},
+                        "rating": null,
+                        "review_count": 0,
+                        "website": "https://www.tesla.com/charging",
+                        "photo": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=x62_DPTZ4iiFoEfLOGo9Tg&cb_client=search.gws-prod.gps&w=86&h=86&yaw=100.71616&pitch=0&thumbfov=100",
+                        "google_place_id": "ChIJQ28Q24tZwokREvlte1MVNZk",
+                        "google_cid": "11039753509865912594"
+                    }
+                ]
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "type": "string"
+                    },
+                    "request_id": {
+                        "type": "string"
+                    },
+                    "data": {
+                        "type": "array",
+                        "items": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "standardized_name": "ev_charge_finder"
+}

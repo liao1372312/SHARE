@@ -1,0 +1,44 @@
+{
+    "product_id": "api_64ad61a4-115b-4890-97f8-cd32f5d72517",
+    "tool_description": "Use this API to determine the location where a Nigeria car is registered.",
+    "home_url": "https://rapidapi.com/globulus-technology-globulus-technology-default/api/car-verification-nigeria/",
+    "name": "Car Verification Nigeria",
+    "title": "Car Verification Nigeria",
+    "pricing": "FREE",
+    "tool_name": "Car Verification Nigeria",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 660,
+        "avgSuccessRate": 100,
+        "popularityScore": 9,
+        "__typename": "Score"
+    },
+    "host": "car-verification-nigeria.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Verify Plate Number Location",
+            "url": "https://car-verification-nigeria.p.rapidapi.com/platenumberloc.php",
+            "description": "Enter the first 3-digit of any Nigeria plate number to know the state and LGA it comes from. For example, if a plate number is GGE123YZ. you will pass the parameter as GGE or gge (not case sensitive) and the state, LGA and state slogan will be displayed including its unique id. Feel free to try it out.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "platecodeloc",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://car-verification-nigeria.p.rapidapi.com/platenumberloc.php\"\nquerystring = {\"platecodeloc\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"car-verification-nigeria.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://car-verification-nigeria.p.rapidapi.com/platenumberloc.php\"\nquerystring = {\"platecodeloc\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"car-verification-nigeria.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "status": "400",
+                "information": {
+                    "error": "No information about this plate number location. Enter only the first 3-digit of the number",
+                    "message": "If you think this information is incorrect, kindly send message to admin. Thanks"
+                }
+            }
+        }
+    ],
+    "standardized_name": "car_verification_nigeria"
+}

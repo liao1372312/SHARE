@@ -1,0 +1,26 @@
+{
+"user_query":"I'm planning a family vacation and I want to make sure our hotel bookings are confirmed. Can you validate the email addresses associated with our hotel reservations to ensure we receive all the necessary information? Also, I would like to know if the hotel phone numbers provided are mobile lines or landlines. Additionally, I would like to fetch the full metadata of the phone numbers to gather more information about the hotels.",
+"domain":"Tourism",
+"TaskList": [
+{
+"id": 1,
+"description": "Validate the email addresses associated with the hotel reservations to ensure they are correctly formatted and reachable.",
+"domain": "tourism",
+"required_inputs": ["email_addresses"]
+},
+{
+"id": 2,
+"description": "Check if the hotel phone numbers provided are mobile lines or landlines.",
+"domain": "tourism",
+"required_inputs": ["hotel_phone_numbers"],
+"dependency": {"depends_on": [1]}
+},
+{
+"id": 3,
+"description": "Fetch the full metadata of the phone numbers to gather more information about the hotels, such as location and service provider.",
+"domain": "tourism",
+"required_inputs": ["hotel_phone_numbers"],
+"dependency": {"depends_on": [2]}
+}
+]
+}

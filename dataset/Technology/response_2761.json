@@ -1,0 +1,25 @@
+{
+"user_query":"I want to create a customized playlist for my family gathering.",
+"domain":"Technology",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Query RojMusic API for a list of suggested Kurdish songs.",
+        "domain": "technology",
+        "required_inputs": ["genre", "language", "mood"]
+    },
+    {
+        "id": 2,
+        "description": "Obtain details of a Spotify playlist including name, description, thumbnail, number of likes, and track details.",
+        "domain": "technology",
+        "required_inputs": ["playlist_id"]
+    },
+    {
+        "id": 3,
+        "description": "Combine the songs retrieved from RojMusic API with the Spotify playlist details to create a customized playlist.",
+        "domain": "technology",
+        "required_inputs": ["kurdsongs", "spotify_playlist_details"],
+        "dependency": {"step": 2, "reason": "Step 3 requires the results from steps 1 and 2 to create the playlist."}
+    }
+]
+}

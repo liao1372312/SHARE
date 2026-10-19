@@ -1,0 +1,28 @@
+{
+  "user_query": "I'm eagerly waiting for the completion of my movie session. Can you check the status of the movie session using the 'Check Movie Status' API? If the movie is ready, I would like to download it using the 'Get Movie' API. Furthermore, I would like to gather information about the movie from the 'Get Video info' API.",
+  "domain": "entertainment",
+  "TaskList": [
+    {
+      "id": 1,
+      "description": "Check the current status of the movie session to determine if the movie is ready for download.",
+      "domain": "entertainment",
+      "required_inputs": ["session_id"]
+    },
+    {
+      "id": 2,
+      "description": "If the movie is ready, download the movie using the 'Get Movie' API.",
+      "domain": "entertainment",
+      "required_inputs": ["movie_id"]
+    },
+    {
+      "id": 3,
+      "description": "Retrieve detailed information about the movie from the 'Get Video info' API.",
+      "domain": "entertainment",
+      "required_inputs": ["movie_id"]
+    }
+  ],
+  "dependencies": [
+    {"from": 1, "to": 2},
+    {"from": 2, "to": 3}
+  ]
+}

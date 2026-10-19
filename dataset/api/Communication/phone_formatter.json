@@ -1,0 +1,67 @@
+{
+    "product_id": "api_83e45930-22c2-4553-a00d-b675538504b5",
+    "tool_description": "With this API you will be able to get the entered phone number in international, national and several standard formats with additional information about the country for the correct phone numbers. The formatting method can use probabilistic algorithms and try to get all the necessary information if it was not passed in the input parameters",
+    "home_url": "https://rapidapi.com/dkorotych/api/phone-formatter/",
+    "name": "Phone Formatter",
+    "title": "Phone Formatter",
+    "pricing": "FREEMIUM",
+    "tool_name": "Phone Formatter",
+    "score": null,
+    "host": "phone-formatter.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "regions",
+            "url": "https://phone-formatter.p.rapidapi.com/regions/us",
+            "description": "Returns a collection of supported regions for the specified\n IETF BCP 47 language tag string.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "language",
+                    "type": "STRING",
+                    "description": "Language in BCP 47 format",
+                    "default": "us"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://phone-formatter.p.rapidapi.com/regions/us\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"phone-formatter.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://phone-formatter.p.rapidapi.com/regions/{language}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"phone-formatter.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "messages": "Base URL is missing or is not configured properly"
+            }
+        },
+        {
+            "name": "simpleRegions",
+            "url": "https://phone-formatter.p.rapidapi.com/regions",
+            "description": "Returns a collection of supported regions. Method use \"Accept-Language\" header value for output list of\n regions on specific language",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://phone-formatter.p.rapidapi.com/regions\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"phone-formatter.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://phone-formatter.p.rapidapi.com/regions\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"phone-formatter.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "messages": "Base URL is missing or is not configured properly"
+            }
+        },
+        {
+            "name": "simple",
+            "url": "https://phone-formatter.p.rapidapi.com/format",
+            "description": "A simplified version of the formatting method that does not accept additional filtering and parsing parameters\n and uses the language value from the \"Accept-Language\" header.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "phone",
+                    "type": "STRING",
+                    "description": "Phone number",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://phone-formatter.p.rapidapi.com/format\"\nquerystring = {\"phone\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"phone-formatter.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://phone-formatter.p.rapidapi.com/format\"\nquerystring = {\"phone\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"phone-formatter.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "messages": "Base URL is missing or is not configured properly"
+            }
+        }
+    ],
+    "standardized_name": "phone_formatter"
+}

@@ -1,0 +1,26 @@
+{
+"user_query":"I'm organizing a company event and I need to find a unique venue.",
+"domain":"Tourism",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Search for breweries that have a spacious outdoor area and can accommodate large groups.",
+        "domain": "tourism",
+        "required_inputs": ["location", "group_size"]
+    },
+    {
+        "id": 2,
+        "description": "Get a list of cocktails available at the selected brewery.",
+        "domain": "tourism",
+        "required_inputs": ["brewery_id"],
+        "dependency": "Step 2 requires Step 1's result"
+    },
+    {
+        "id": 3,
+        "description": "Request the nutritional analysis for the food options available at the brewery.",
+        "domain": "medical",
+        "required_inputs": ["brewery_id"],
+        "dependency": "Step 3 requires Step 1's result"
+    }
+]
+}

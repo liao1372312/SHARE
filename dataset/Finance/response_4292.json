@@ -1,0 +1,33 @@
+{
+"user_query":"I need to generate a dashboard summary for my company's revenue for the past month.",
+"domain":"Finance",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Fetch revenue data for the current year for the date range from 01-09-2021 to 30-09-2021.",
+        "domain": "finance",
+        "required_inputs": ["start_date: 01-09-2021", "end_date: 30-09-2021"]
+    },
+    {
+        "id": 2,
+        "description": "Fetch revenue data for the previous year for the same date range.",
+        "domain": "finance",
+        "required_inputs": ["start_date: 01-09-2020", "end_date: 30-09-2020"],
+        "dependency": "Subtask 1"
+    },
+    {
+        "id": 3,
+        "description": "Generate comparative analysis of the revenue data from the current year and last year.",
+        "domain": "finance",
+        "required_inputs": ["current_year_data", "last_year_data"],
+        "dependency": "Subtask 2"
+    },
+    {
+        "id": 4,
+        "description": "Create a dashboard summary using the comparative analysis and revenue data.",
+        "domain": "finance",
+        "required_inputs": ["comparative_analysis_data"],
+        "dependency": "Subtask 3"
+    }
+]
+}

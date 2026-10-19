@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "tasks": [
+    {
+      "id": "detector-missing-parameters",
+      "title": "修复参数缺失检测器",
+      "request": "修复 flare/detection.py：当参数绑定节点在 meta 中使用复数键 missing_parameters 时，检测器应标记 parameter_error。保持其他故障类型的识别行为。",
+      "workflow_file": "flare/detection.py",
+      "failure_type": "parameter_binding_failure",
+      "difficulty": "medium",
+      "observed_failure": {
+        "message": "当前检测器识别 missing_parameter，却未识别 missing_parameters；已失败的绑定节点因此只得到 execution_error。"
+      },
+      "logs": [
+        {"level": "audit", "message": "论文指标核查中发现：定位节点可能正确，但 Type 标签因缺失复数键而错误。"}
+      ],
+      "validation_command": ["python", "-m", "scripts.check_detector_plural_parameter_key"]
+    }
+  ]
+}

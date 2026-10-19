@@ -1,0 +1,42 @@
+{
+    "product_id": "api_e4f11fa1-8a25-4de2-b875-9e7c44fd3d40",
+    "tool_description": "Get NSE, BSE stock prices",
+    "home_url": "https://rapidapi.com/sagarkarnati/api/stock-info/",
+    "name": "Stock Info",
+    "title": "Stock Info",
+    "pricing": "FREE",
+    "tool_name": "Stock Info",
+    "score": {
+        "avgServiceLevel": 0,
+        "avgLatency": 703,
+        "avgSuccessRate": 0,
+        "popularityScore": 0.1,
+        "__typename": "Score"
+    },
+    "host": "stock-info.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Get Stock Price",
+            "url": "https://stock-info.p.rapidapi.com/v1/equity/TCS.NS",
+            "description": "To get the Stock Price (Delayed 30 mins)",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "symbol",
+                    "type": "string",
+                    "description": "",
+                    "default": "TCS.NS"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://stock-info.p.rapidapi.com/v1/equity/TCS.NS\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"stock-info.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://stock-info.p.rapidapi.com/v1/equity/{symbol}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"stock-info.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "This endpoint is disabled for your subscription"
+            },
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "stock_info"
+}

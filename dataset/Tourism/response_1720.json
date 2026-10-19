@@ -1,0 +1,26 @@
+{
+"user_query":"I'm planning a romantic getaway for my partner and me. Can you help me find return flights from Los Angeles to Bali? Also, provide me with the booking details of a beachfront villa in Bali for a five-night stay. Additionally, I would like to download a list of hotel amenities to ensure a luxurious experience.",
+"domain":"Tourism",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Search for return flights from Los Angeles to Bali.",
+        "domain": "tourism",
+        "required_inputs": ["departure_location", "destination_location", "departure_date", "return_date"]
+    },
+    {
+        "id": 2,
+        "description": "Book a beachfront villa in Bali for a five-night stay.",
+        "domain": "tourism",
+        "required_inputs": ["villa_type", "check_in_date", "check_out_date", "guest_details"],
+        "dependencies": [1]
+    },
+    {
+        "id": 3,
+        "description": "Download a list of hotel amenities for the booked villa.",
+        "domain": "tourism",
+        "required_inputs": ["villa_id"],
+        "dependencies": [2]
+    }
+]
+}

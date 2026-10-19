@@ -1,0 +1,56 @@
+{
+    "product_id": "api_047a3937-27c7-48e4-b6a1-f6017fdf7d21",
+    "tool_description": "Website Categorization API lets you define the website category of a given URL. ",
+    "home_url": "https://rapidapi.com/whoisapi/api/website-categorization/",
+    "name": "Website Categorization",
+    "title": "Website Categorization",
+    "pricing": "FREE",
+    "tool_name": "Website Categorization",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 662,
+        "avgSuccessRate": 0,
+        "popularityScore": 0.1,
+        "__typename": "Score"
+    },
+    "host": "website-categorization.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Webiste Categorization (v1)",
+            "url": "https://website-categorization.p.rapidapi.com/api/v1",
+            "description": "Define website category at once (v1)",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "domainName",
+                    "type": "STRING",
+                    "description": "Website's domain name",
+                    "default": "google.com"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "hardRefresh",
+                    "type": "STRING",
+                    "description": "0 is used for getting the cached category if there is one. 1 is used for demanding the website categorization from scratch. Default: 0",
+                    "default": ""
+                },
+                {
+                    "name": "outputFormat",
+                    "type": "STRING",
+                    "description": "Response output format. Acceptable values: XML or JSON. Defaults to JSON.",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://website-categorization.p.rapidapi.com/api/v1\"\nquerystring = {\"hardRefresh\": \"\", \"domainName\": \"google.com\", \"outputFormat\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"website-categorization.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://website-categorization.p.rapidapi.com/api/v1\"\nquerystring = {\"hardRefresh\": \"\", \"domainName\": \"google.com\", \"outputFormat\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"website-categorization.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "code": 403,
+                "messages": "Access restricted. Check credits balance or enter the correct API key."
+            },
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "website_categorization"
+}

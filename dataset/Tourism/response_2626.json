@@ -1,0 +1,26 @@
+{
+"user_query":"I want to learn about the historical landmarks in my city, including a list of notable sites, interesting facts about each site, and the distance from my location to these landmarks.",
+"domain":"Tourism",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Research and gather a list of notable historical landmarks in the user's city.",
+        "domain": "tourism",
+        "required_inputs": ["city_name"]
+    },
+    {
+        "id": 2,
+        "description": "For each historical landmark, retrieve interesting facts about their history and significance.",
+        "domain": "tourism",
+        "required_inputs": ["landmark_id"],
+        "dependencies": [1]
+    },
+    {
+        "id": 3,
+        "description": "Calculate the distance from the user's current location to each historical landmark.",
+        "domain": "tourism",
+        "required_inputs": ["user_location", "landmark_location"],
+        "dependencies": [1]
+    }
+  ]
+}

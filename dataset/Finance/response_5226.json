@@ -1,0 +1,39 @@
+{
+"user_query":"I want to assess the market status and the pair strength for the 'AUD/USD' and 'CAD/JPY' pairs on an hourly timeframe.",
+"domain":"Finance",
+"TaskList": [
+{
+"id": 1,
+"description": "Fetch the current market status for the 'AUD/USD' pair on an hourly timeframe.",
+"domain": "finance",
+"required_inputs": ["AUD/USD", "hourly"]
+},
+{
+"id": 2,
+"description": "Fetch the current market status for the 'CAD/JPY' pair on an hourly timeframe.",
+"domain": "finance",
+"required_inputs": ["CAD/JPY", "hourly"]
+},
+{
+"id": 3,
+"description": "Analyze the performance data of the 'AUD/USD' pair.",
+"domain": "finance",
+"required_inputs": ["AUD/USD market data", "performance metrics"],
+"dependency": [1]
+},
+{
+"id": 4,
+"description": "Analyze the performance data of the 'CAD/JPY' pair.",
+"domain": "finance",
+"required_inputs": ["CAD/JPY market data", "performance metrics"],
+"dependency": [2]
+},
+{
+"id": 5,
+"description": "Compare the strength of both currency pairs based on the analysis from previous subtasks.",
+"domain": "finance",
+"required_inputs": ["AUD/USD performance data", "CAD/JPY performance data"],
+"dependency": [3, 4]
+}
+]
+}

@@ -1,0 +1,26 @@
+{
+"user_query":"I want to surprise my family with a vacation. Find me some nearby cities and administrative divisions to explore. Also, suggest some popular categories for shopping in the area.",
+"domain":"Tourism",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Identify the user's current location to find nearby cities and administrative divisions.",
+        "domain": "tourism",
+        "required_inputs": ["current_location"]
+    },
+    {
+        "id": 2,
+        "description": "Query a database to fetch a list of nearby cities and administrative divisions based on the current location.",
+        "domain": "tourism",
+        "required_inputs": ["user_location_result"],
+        "dependencies": [1]
+    },
+    {
+        "id": 3,
+        "description": "Research popular shopping categories in the identified nearby cities.",
+        "domain": "tourism",
+        "required_inputs": ["nearby_cities"],
+        "dependencies": [2]
+    }
+]
+}

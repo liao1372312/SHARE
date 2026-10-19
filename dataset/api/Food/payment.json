@@ -1,0 +1,48 @@
+{
+    "product_id": "api_70fd0a7d-1373-40b1-b9ac-30b14204aab4",
+    "tool_description": "Ordering Stack Payment API - provides payments operations for orders. There is one unified API for handling payments with many payment gateways.",
+    "home_url": "https://rapidapi.com/ordering-stack-ordering-stack-default/api/payment12/",
+    "name": "Payment",
+    "title": "Payment",
+    "pricing": "FREE",
+    "tool_name": "Payment",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 1081,
+        "avgSuccessRate": 0,
+        "popularityScore": 0.3,
+        "__typename": "Score"
+    },
+    "host": "payment12.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "GetPaymentTypes",
+            "url": "https://payment12.p.rapidapi.com/payment-api/types",
+            "description": "Find Payment Services allowed by tenant",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "venueId",
+                    "type": "STRING",
+                    "description": "venueId of the object to fetch data.",
+                    "default": ""
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://payment12.p.rapidapi.com/payment-api/types\"\nquerystring = {\"venueId\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"payment12.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://payment12.p.rapidapi.com/payment-api/types\"\nquerystring = {\"venueId\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"payment12.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {
+                "type": "array",
+                "items": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    ],
+    "standardized_name": "payment"
+}

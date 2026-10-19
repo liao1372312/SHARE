@@ -1,0 +1,36 @@
+{
+"user_query":"I'm planning a wine and cheese pairing dinner for my friends and I need some recommendations on the best wines and cheese to pair. Can you provide me with a list of recommended wine and cheese pairings? Additionally, I would like to know the details of my wine cart to ensure I have all the necessary items for the dinner. Also, suggest some nearby breweries where we can visit after the dinner.",
+"domain":"Technology",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Gather recommendations for wine and cheese pairings based on common pairings and expert suggestions.",
+        "domain": "technology",
+        "required_inputs": []
+    },
+    {
+        "id": 2,
+        "description": "Fetch details from the user's wine cart to ensure all necessary items are present for the dinner.",
+        "domain": "technology",
+        "required_inputs": ["user_id"]
+    },
+    {
+        "id": 3,
+        "description": "Search for nearby breweries that can be visited after the dinner, providing details like distance and ratings.",
+        "domain": "technology",
+        "required_inputs": ["user_location"]
+    }
+],
+"dependencies": [
+    {
+        "step": 2,
+        "depends_on": 1,
+        "description": "Wine cart details depend on the wine recommendations."
+    },
+    {
+        "step": 3,
+        "depends_on": null,
+        "description": "Brewery suggestions do not depend on previous steps."
+    }
+]
+}

@@ -1,0 +1,80 @@
+{
+    "product_id": "api_d17a475c-807a-47a0-b4e9-bccbcf60344f",
+    "tool_description": "Forward and reverse geocoding using Google Geocoding API.",
+    "home_url": "https://rapidapi.com/NovusAPI/api/geocode-forward-and-reverse/",
+    "name": "Geocode - Forward and Reverse",
+    "title": "Geocode - Forward and Reverse",
+    "pricing": "FREEMIUM",
+    "tool_name": "Geocode - Forward and Reverse",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 799,
+        "avgSuccessRate": 100,
+        "popularityScore": 8.6,
+        "__typename": "Score"
+    },
+    "host": "geocode-forward-and-reverse.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Forward geocode",
+            "url": "https://geocode-forward-and-reverse.p.rapidapi.com/forward",
+            "description": "Get lat,lng coordinates from an address.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "address",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "2795 Hastings St, Vancouver, BC V5K 1Z8"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://geocode-forward-and-reverse.p.rapidapi.com/forward\"\nquerystring = {\"address\": \"2795 Hastings St, Vancouver, BC V5K 1Z8\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"geocode-forward-and-reverse.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://geocode-forward-and-reverse.p.rapidapi.com/forward\"\nquerystring = {\"address\": \"2795 Hastings St, Vancouver, BC V5K 1Z8\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"geocode-forward-and-reverse.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "address": "2795 E Hastings St, Vancouver, BC V5K 1Z8, Canada",
+                "location": {
+                    "lat": 49.2813458,
+                    "lng": -123.0470199
+                },
+                "place_id": "ChIJr9qJ9yBxhlQRVydHPfGaK6U"
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Reverse geocode",
+            "url": "https://geocode-forward-and-reverse.p.rapidapi.com/reverse",
+            "description": "Get an address from a lat,lng coordinate.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "lng",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "-123.0470199"
+                },
+                {
+                    "name": "lat",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "49.2813458"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://geocode-forward-and-reverse.p.rapidapi.com/reverse\"\nquerystring = {\"lng\": \"-123.0470199\", \"lat\": \"49.2813458\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"geocode-forward-and-reverse.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://geocode-forward-and-reverse.p.rapidapi.com/reverse\"\nquerystring = {\"lng\": \"-123.0470199\", \"lat\": \"49.2813458\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"geocode-forward-and-reverse.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "address": "2795 BC-7A, Vancouver, BC V5K 1Z8, Canada",
+                "location": {
+                    "lat": 49.2812974,
+                    "lng": -123.0469687
+                },
+                "place_id": "ChIJVaCI9yBxhlQREDIu2QbjwDY"
+            },
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "geocode_forward_and_reverse"
+}

@@ -1,0 +1,26 @@
+{
+"user_query":"I'm a financial advisor and I'm looking for investment opportunities. Can you provide me with the profitability (ROA ratio) for the financial year of Apple Inc. (AAPL)? Additionally, fetch me the annual dividends of AAPL.",
+"domain":"Finance",
+"TaskList": [
+{
+"id": 1,
+"description": "Fetch the financial information for Apple Inc. (AAPL) for the latest financial year.",
+"domain": "finance",
+"required_inputs": ["stock_symbol"]
+},
+{
+"id": 2,
+"description": "Calculate the Return on Assets (ROA) ratio using the fetched financial information.",
+"domain": "finance",
+"required_inputs": ["net_income", "total_assets"],
+"dependencies": [1]
+},
+{
+"id": 3,
+"description": "Fetch the annual dividends for Apple Inc. (AAPL) based on the latest financial data.",
+"domain": "finance",
+"required_inputs": ["stock_symbol"],
+"dependencies": [1]
+}
+]
+}

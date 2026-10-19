@@ -1,0 +1,838 @@
+{
+    "product_id": "api_fda50a44-581f-4d04-b8b5-3858c3eb4e43",
+    "tool_description": "An API service to obtain **datacenter and residential proxies.**\n\n###### Features:\n* This service contains pools of **stable and high-quality proxies** that automatically rotate to ensure that you get a new different proxy with each API call.\n* Each request to this API service will provide you with a new proxy available for 30 mins.\n* Proxies are constantly monitored to ensure their health.\n* You can extend the allocation time of a datacenter proxy by making successive calls to the API, with ...",
+    "home_url": "https://rapidapi.com/rpi4gx/api/ephemeral-proxies/",
+    "name": "Ephemeral Proxies",
+    "title": "Ephemeral Proxies",
+    "pricing": "FREEMIUM",
+    "tool_name": "Ephemeral Proxies",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 248,
+        "avgSuccessRate": 100,
+        "popularityScore": 9.8,
+        "__typename": "Score"
+    },
+    "host": "ephemeral-proxies.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Check datacenter proxies service status",
+            "url": "https://ephemeral-proxies.p.rapidapi.com/v2/datacenter/service_status",
+            "description": "It returns the current status of the service, including the total number of datacenter proxies available and grouped by country.\n",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://ephemeral-proxies.p.rapidapi.com/v2/datacenter/service_status\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ephemeral-proxies.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ephemeral-proxies.p.rapidapi.com/v2/datacenter/service_status\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ephemeral-proxies.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "success": true,
+                "service_status": {
+                    "availability": {
+                        "total": {
+                            "proxies": 2000
+                        },
+                        "by_country": [
+                            {
+                                "country_iso": "DE",
+                                "proxies": 75
+                            },
+                            {
+                                "country_iso": "FR",
+                                "proxies": 53
+                            },
+                            {
+                                "country_iso": "UA",
+                                "proxies": 58
+                            },
+                            {
+                                "country_iso": "RU",
+                                "proxies": 90
+                            },
+                            {
+                                "country_iso": "BR",
+                                "proxies": 545
+                            },
+                            {
+                                "country_iso": "NO",
+                                "proxies": 13
+                            },
+                            {
+                                "country_iso": "PL",
+                                "proxies": 25
+                            },
+                            {
+                                "country_iso": "ES",
+                                "proxies": 37
+                            },
+                            {
+                                "country_iso": "NL",
+                                "proxies": 92
+                            },
+                            {
+                                "country_iso": "MX",
+                                "proxies": 42
+                            },
+                            {
+                                "country_iso": "GB",
+                                "proxies": 84
+                            },
+                            {
+                                "country_iso": "US",
+                                "proxies": 874
+                            },
+                            {
+                                "country_iso": "SK",
+                                "proxies": 12
+                            }
+                        ]
+                    }
+                }
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "True if operation succeeds, false otherwise"
+                    },
+                    "service_status": {
+                        "type": "object",
+                        "properties": {
+                            "availability": {
+                                "type": "object",
+                                "properties": {
+                                    "total": {
+                                        "type": "object",
+                                        "properties": {
+                                            "proxies": {
+                                                "type": "number",
+                                                "description": "Total number of proxies available"
+                                            }
+                                        }
+                                    },
+                                    "by_country": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "country_iso": {
+                                                    "type": "string",
+                                                    "description": "Country ISO code"
+                                                },
+                                                "proxies": {
+                                                    "type": "number",
+                                                    "description": "Total number of proxies for country"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Obtain a new datacenter proxy",
+            "url": "https://ephemeral-proxies.p.rapidapi.com/v2/datacenter/proxy",
+            "description": "The connection proxy details are `proxy.host` and `proxy.port` from the response fields.\nThe proxy will allow connections from the same source IP as the one making this API call. Make use of the `whitelist_ip` parameter to allow an additional ip.\nCountries can be selected by using the `countries` parameter, otherwise the country is randomly selected. A list of countries is available on *Service Status* endpoint.\nThe proxy is available for 30 mins.\n",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "whitelist_ip",
+                    "type": "STRING",
+                    "description": "The proxy that this endpoint returns will allow connections from the source ip that is making this API call.\nAdditionally, you can allow an extra ip to connect to the proxy by setting this parameter to the ip that you would like to whitelist.\nThe list of ips that the proxy has whitelisted is returned in the API response.\n",
+                    "default": ""
+                },
+                {
+                    "name": "countries",
+                    "type": "STRING",
+                    "description": "List of countries, separate it by comma, that you would like the proxies to be located.\nExample: GB,US,PL,RU\n",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://ephemeral-proxies.p.rapidapi.com/v2/datacenter/proxy\"\nquerystring = {\"whitelist_ip\": \"\", \"countries\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ephemeral-proxies.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ephemeral-proxies.p.rapidapi.com/v2/datacenter/proxy\"\nquerystring = {\"whitelist_ip\": \"\", \"countries\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ephemeral-proxies.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "success": true,
+                "proxy": {
+                    "id": "925765529a6d7b4396abcaafa675e71c",
+                    "host": "y5p95.ep-proxy.net",
+                    "port": 35099,
+                    "expires_at": "2023-06-16T17:01:34.000Z",
+                    "whitelisted_ips": [
+                        "103.242.175.228"
+                    ],
+                    "features": {
+                        "static": true,
+                        "type": "datacenter",
+                        "supported_protocols": {
+                            "socks4": false,
+                            "socks5": false,
+                            "http": true,
+                            "https": true
+                        }
+                    },
+                    "visibility": {
+                        "ip": "193.202.80.36",
+                        "country": "United States",
+                        "country_iso": "US",
+                        "latitude": 40.7282,
+                        "longitude": -73.7949,
+                        "timezone": "America/New_York",
+                        "asn": "AS26548",
+                        "asn_org": "PureVoltage Hosting Inc.",
+                        "zip_code": "11367",
+                        "region_name": "New York",
+                        "region_code": "NY",
+                        "city": "Flushing"
+                    }
+                }
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "True if operation succeeds, false otherwise"
+                    },
+                    "proxy": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "string",
+                                "description": "Unique proxy identifier"
+                            },
+                            "host": {
+                                "type": "string",
+                                "description": "Proxy's hostname"
+                            },
+                            "port": {
+                                "type": "number",
+                                "description": "Proxy's port"
+                            },
+                            "expires_at": {
+                                "type": "string",
+                                "description": "Expiration time of the proxy. Once a proxy has expired, connections can no longer be stablished with the proxy.\n"
+                            },
+                            "whitelisted_ips": {
+                                "type": "array",
+                                "description": "List of ips that proxy will allow connections from.",
+                                "items": {
+                                    "type": "string"
+                                }
+                            },
+                            "visibility": {
+                                "type": "object",
+                                "description": "Details, including IP address, that the target will see when you connect using this proxy.\nFor example, if you connect to www.google.com using the proxy, Google will see yor source ip as the one listed here.\n",
+                                "properties": {
+                                    "ip": {
+                                        "type": "string"
+                                    },
+                                    "country": {
+                                        "type": "string"
+                                    },
+                                    "country_iso": {
+                                        "type": "string"
+                                    },
+                                    "country_eu": {
+                                        "type": "boolean",
+                                        "description": "Whether the country is in Europe"
+                                    },
+                                    "latitude": {
+                                        "type": "number"
+                                    },
+                                    "longitude": {
+                                        "type": "number"
+                                    },
+                                    "timezone": {
+                                        "type": "string"
+                                    },
+                                    "asn": {
+                                        "type": "string"
+                                    },
+                                    "asn_org": {
+                                        "type": "string"
+                                    },
+                                    "zip_code": {
+                                        "type": "string"
+                                    },
+                                    "region_name": {
+                                        "type": "string"
+                                    },
+                                    "region_code": {
+                                        "type": "string"
+                                    },
+                                    "city": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "features": {
+                                "type": "object",
+                                "description": "Proxy's features and properties",
+                                "properties": {
+                                    "static": {
+                                        "description": "A static proxy will always use the same ip when connecting to the target.",
+                                        "type": "boolean"
+                                    },
+                                    "type": {
+                                        "type": "string",
+                                        "enum": [
+                                            "datacenter",
+                                            "residential",
+                                            "mobile"
+                                        ]
+                                    },
+                                    "supported_protocols": {
+                                        "type": "object",
+                                        "properties": {
+                                            "socks4": {
+                                                "type": "boolean"
+                                            },
+                                            "socks5": {
+                                                "type": "boolean"
+                                            },
+                                            "http": {
+                                                "type": "boolean"
+                                            },
+                                            "https": {
+                                                "type": "boolean"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Extend expiration time of a datacenter proxy",
+            "url": "https://ephemeral-proxies.p.rapidapi.com/v2/datacenter/extend_proxy",
+            "description": "By calling this endpoint the expiration time of an already allocated proxy will be extended by 30 mins.\nSuccessive calls will keep incrementing the expiration time, up to a maximum of 24 hours.\n",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "id",
+                    "type": "STRING",
+                    "description": "The proxy identifier to extend the expiration time. This identifier can be obtained from the response of /v2/datacenter/proxy, field proxy.id.\n",
+                    "default": ""
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://ephemeral-proxies.p.rapidapi.com/v2/datacenter/extend_proxy\"\nquerystring = {\"id\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ephemeral-proxies.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ephemeral-proxies.p.rapidapi.com/v2/datacenter/extend_proxy\"\nquerystring = {\"id\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ephemeral-proxies.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "success": false,
+                "message": "id parameter missing"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "True if operation succeeds, false otherwise"
+                    },
+                    "proxy": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "string",
+                                "description": "Unique proxy identifier"
+                            },
+                            "host": {
+                                "type": "string",
+                                "description": "Proxy's hostname"
+                            },
+                            "port": {
+                                "type": "number",
+                                "description": "Proxy's port"
+                            },
+                            "expires_at": {
+                                "type": "string",
+                                "description": "Expiration time of the proxy. Once a proxy has expired, connections can no longer be stablished with the proxy.\n"
+                            },
+                            "whitelisted_ips": {
+                                "type": "array",
+                                "description": "List of ips that proxy will allow connections from.",
+                                "items": {
+                                    "type": "string"
+                                }
+                            },
+                            "visibility": {
+                                "type": "object",
+                                "description": "Details, including IP address, that the target will see when you connect using this proxy.\nFor example, if you connect to www.google.com using the proxy, Google will see yor source ip as the one listed here.\n",
+                                "properties": {
+                                    "ip": {
+                                        "type": "string"
+                                    },
+                                    "country": {
+                                        "type": "string"
+                                    },
+                                    "country_iso": {
+                                        "type": "string"
+                                    },
+                                    "country_eu": {
+                                        "type": "boolean",
+                                        "description": "Whether the country is in Europe"
+                                    },
+                                    "latitude": {
+                                        "type": "number"
+                                    },
+                                    "longitude": {
+                                        "type": "number"
+                                    },
+                                    "timezone": {
+                                        "type": "string"
+                                    },
+                                    "asn": {
+                                        "type": "string"
+                                    },
+                                    "asn_org": {
+                                        "type": "string"
+                                    },
+                                    "zip_code": {
+                                        "type": "string"
+                                    },
+                                    "region_name": {
+                                        "type": "string"
+                                    },
+                                    "region_code": {
+                                        "type": "string"
+                                    },
+                                    "city": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "features": {
+                                "type": "object",
+                                "description": "Proxy's features and properties",
+                                "properties": {
+                                    "static": {
+                                        "description": "A static proxy will always use the same ip when connecting to the target.",
+                                        "type": "boolean"
+                                    },
+                                    "type": {
+                                        "type": "string",
+                                        "enum": [
+                                            "datacenter",
+                                            "residential",
+                                            "mobile"
+                                        ]
+                                    },
+                                    "supported_protocols": {
+                                        "type": "object",
+                                        "properties": {
+                                            "socks4": {
+                                                "type": "boolean"
+                                            },
+                                            "socks5": {
+                                                "type": "boolean"
+                                            },
+                                            "http": {
+                                                "type": "boolean"
+                                            },
+                                            "https": {
+                                                "type": "boolean"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Get user's traffic balance",
+            "url": "https://ephemeral-proxies.p.rapidapi.com/v2/residential/balance",
+            "description": "It returns the user's traffic balance for current monthly subscription.\n",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://ephemeral-proxies.p.rapidapi.com/v2/residential/balance\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ephemeral-proxies.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ephemeral-proxies.p.rapidapi.com/v2/residential/balance\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ephemeral-proxies.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "success": true,
+                "balance": {
+                    "consumed_megabytes": 0,
+                    "limit_megabytes": 0
+                }
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "True if operation succeeds, false otherwise"
+                    },
+                    "balance": {
+                        "type": "object",
+                        "properties": {
+                            "limit_megabytes": {
+                                "type": "number",
+                                "description": "Total number of megabytes for current monthtly subscription."
+                            },
+                            "consumed_megabytes": {
+                                "type": "number",
+                                "description": "Number of megabytes the user has consumed for the current monthtly subscription."
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Obtain a new residential proxy",
+            "url": "https://ephemeral-proxies.p.rapidapi.com/v2/residential/proxy",
+            "description": "The connection proxy details are `proxy.host` and `proxy.port` from the response fields.\nThe proxy will allow connections from the same source IP as the one making this API call. Make use of the `whitelist_ip` parameter to allow an additional ip.\nCountries can be selected by using the `countries` parameter, otherwise the country is randomly selected. A list of countries is available on *Service Status* endpoint.\nThe proxy is available for 30 mins.\n",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "countries",
+                    "type": "STRING",
+                    "description": "List of countries, separate it by comma, that you would like the proxies to be located.\nExample: GB,US,PL,RU\n",
+                    "default": ""
+                },
+                {
+                    "name": "whitelist_ip",
+                    "type": "STRING",
+                    "description": "The proxy that this endpoint returns will allow connections from the source ip that is making this API call.\nAdditionally, you can allow an extra ip to connect to the proxy by setting this parameter to the ip that you would like to whitelist.\nThe list of ips that the proxy has whitelisted is returned in the API response.\n",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://ephemeral-proxies.p.rapidapi.com/v2/residential/proxy\"\nquerystring = {\"countries\": \"\", \"whitelist_ip\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ephemeral-proxies.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ephemeral-proxies.p.rapidapi.com/v2/residential/proxy\"\nquerystring = {\"countries\": \"\", \"whitelist_ip\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ephemeral-proxies.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "success": false,
+                "message": "User has no data available on their subscription. Please upgrade to a higher plan: https://rapidapi.com/rpi4gx/api/ephemeral-proxies/pricing"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "True if operation succeeds, false otherwise"
+                    },
+                    "proxy": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "string",
+                                "description": "Unique proxy identifier"
+                            },
+                            "host": {
+                                "type": "string",
+                                "description": "Proxy's hostname"
+                            },
+                            "port": {
+                                "type": "number",
+                                "description": "Proxy's port"
+                            },
+                            "expires_at": {
+                                "type": "string",
+                                "description": "Expiration time of the proxy. Once a proxy has expired, connections can no longer be stablished with the proxy.\n"
+                            },
+                            "whitelisted_ips": {
+                                "type": "array",
+                                "description": "List of ips that proxy will allow connections from.",
+                                "items": {
+                                    "type": "string"
+                                }
+                            },
+                            "visibility": {
+                                "type": "object",
+                                "description": "Details, including IP address, that the target will see when you connect using this proxy.\nFor example, if you connect to www.google.com using the proxy, Google will see yor source ip as the one listed here.\n",
+                                "properties": {
+                                    "ip": {
+                                        "type": "string"
+                                    },
+                                    "country": {
+                                        "type": "string"
+                                    },
+                                    "country_iso": {
+                                        "type": "string"
+                                    },
+                                    "country_eu": {
+                                        "type": "boolean",
+                                        "description": "Whether the country is in Europe"
+                                    },
+                                    "latitude": {
+                                        "type": "number"
+                                    },
+                                    "longitude": {
+                                        "type": "number"
+                                    },
+                                    "timezone": {
+                                        "type": "string"
+                                    },
+                                    "asn": {
+                                        "type": "string"
+                                    },
+                                    "asn_org": {
+                                        "type": "string"
+                                    },
+                                    "zip_code": {
+                                        "type": "string"
+                                    },
+                                    "region_name": {
+                                        "type": "string"
+                                    },
+                                    "region_code": {
+                                        "type": "string"
+                                    },
+                                    "city": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "features": {
+                                "type": "object",
+                                "description": "Proxy's features and properties",
+                                "properties": {
+                                    "static": {
+                                        "description": "A static proxy will always use the same ip when connecting to the target.",
+                                        "type": "boolean"
+                                    },
+                                    "type": {
+                                        "type": "string",
+                                        "enum": [
+                                            "datacenter",
+                                            "residential",
+                                            "mobile"
+                                        ]
+                                    },
+                                    "supported_protocols": {
+                                        "type": "object",
+                                        "properties": {
+                                            "socks4": {
+                                                "type": "boolean"
+                                            },
+                                            "socks5": {
+                                                "type": "boolean"
+                                            },
+                                            "http": {
+                                                "type": "boolean"
+                                            },
+                                            "https": {
+                                                "type": "boolean"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Check residential proxies service status",
+            "url": "https://ephemeral-proxies.p.rapidapi.com/v2/residential/service_status",
+            "description": "It returns the current status of the service, including the total number of residential proxies available and grouped by country.\n",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://ephemeral-proxies.p.rapidapi.com/v2/residential/service_status\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ephemeral-proxies.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ephemeral-proxies.p.rapidapi.com/v2/residential/service_status\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ephemeral-proxies.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "success": true,
+                "service_status": {
+                    "availability": {
+                        "total": {
+                            "proxies": 4479545
+                        },
+                        "by_country": [
+                            {
+                                "country_iso": "IT",
+                                "proxies": 139813
+                            },
+                            {
+                                "country_iso": "BE",
+                                "proxies": 140022
+                            },
+                            {
+                                "country_iso": "IL",
+                                "proxies": 140277
+                            },
+                            {
+                                "country_iso": "DE",
+                                "proxies": 140212
+                            },
+                            {
+                                "country_iso": "TH",
+                                "proxies": 139974
+                            },
+                            {
+                                "country_iso": "GR",
+                                "proxies": 140152
+                            },
+                            {
+                                "country_iso": "FR",
+                                "proxies": 139728
+                            },
+                            {
+                                "country_iso": "MY",
+                                "proxies": 139863
+                            },
+                            {
+                                "country_iso": "PH",
+                                "proxies": 140230
+                            },
+                            {
+                                "country_iso": "UA",
+                                "proxies": 139625
+                            },
+                            {
+                                "country_iso": "SG",
+                                "proxies": 140067
+                            },
+                            {
+                                "country_iso": "RU",
+                                "proxies": 139571
+                            },
+                            {
+                                "country_iso": "CA",
+                                "proxies": 139875
+                            },
+                            {
+                                "country_iso": "BR",
+                                "proxies": 139776
+                            },
+                            {
+                                "country_iso": "PT",
+                                "proxies": 140115
+                            },
+                            {
+                                "country_iso": "JP",
+                                "proxies": 140366
+                            },
+                            {
+                                "country_iso": "IN",
+                                "proxies": 139646
+                            },
+                            {
+                                "country_iso": "AR",
+                                "proxies": 140101
+                            },
+                            {
+                                "country_iso": "PL",
+                                "proxies": 140064
+                            },
+                            {
+                                "country_iso": "ES",
+                                "proxies": 139813
+                            },
+                            {
+                                "country_iso": "TR",
+                                "proxies": 140182
+                            },
+                            {
+                                "country_iso": "NL",
+                                "proxies": 140141
+                            },
+                            {
+                                "country_iso": "MX",
+                                "proxies": 140342
+                            },
+                            {
+                                "country_iso": "SE",
+                                "proxies": 139712
+                            },
+                            {
+                                "country_iso": "PK",
+                                "proxies": 139938
+                            },
+                            {
+                                "country_iso": "KR",
+                                "proxies": 139628
+                            },
+                            {
+                                "country_iso": "CH",
+                                "proxies": 139764
+                            },
+                            {
+                                "country_iso": "GB",
+                                "proxies": 140360
+                            },
+                            {
+                                "country_iso": "US",
+                                "proxies": 140048
+                            },
+                            {
+                                "country_iso": "TW",
+                                "proxies": 140259
+                            },
+                            {
+                                "country_iso": "HK",
+                                "proxies": 139723
+                            },
+                            {
+                                "country_iso": "AU",
+                                "proxies": 140158
+                            }
+                        ]
+                    }
+                }
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean",
+                        "description": "True if operation succeeds, false otherwise"
+                    },
+                    "service_status": {
+                        "type": "object",
+                        "properties": {
+                            "availability": {
+                                "type": "object",
+                                "properties": {
+                                    "total": {
+                                        "type": "object",
+                                        "properties": {
+                                            "proxies": {
+                                                "type": "number",
+                                                "description": "Total number of proxies available"
+                                            }
+                                        }
+                                    },
+                                    "by_country": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "country_iso": {
+                                                    "type": "string",
+                                                    "description": "Country ISO code"
+                                                },
+                                                "proxies": {
+                                                    "type": "number",
+                                                    "description": "Total number of proxies for country"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "standardized_name": "ephemeral_proxies"
+}

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SHARE · 真人修复工作台</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <aside class="rail">
+      <div class="brand"><span class="brand-mark">S</span><div><strong>SHARE</strong><small>Human repair desk</small></div></div>
+      <div class="rail-section"><span class="eyebrow">任务队列</span><span id="task-count" class="count">0</span></div>
+      <div id="task-list" class="task-list" aria-label="任务列表"></div>
+      <div class="rail-foot">仅显示决策时可见材料。<br>系统不会在此界面判定成功或 unsafe。</div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div><div class="eyebrow">CONTROLLED REPAIR WORKSPACE</div><h1>真人修复工作台</h1></div>
+        <div class="top-right"><span id="mode-badge" class="badge">正在连接</span><span id="timer" class="timer">00:00</span></div>
+      </header>
+      <div id="notice" class="notice" role="status">正在载入任务…</div>
+      <section id="empty" class="empty"><div class="empty-icon">↗</div><h2>从左侧选择一个任务</h2><p>打开任务后开始计时。修复方案由真人填写并留存，系统不会把提交自动记为修复成功。</p></section>
+
+      <div id="workspace" class="workspace hidden">
+        <div class="task-heading"><div><div id="task-kicker" class="eyebrow"></div><h2 id="task-title"></h2><p id="task-id" class="mono subtle"></p></div><span id="complexity" class="pill"></span></div>
+        <div class="grid">
+          <section class="card context-card">
+            <div class="card-head"><span class="step">01</span><div><h3>任务与证据</h3><p>仅使用当前可见的信息</p></div></div>
+            <div class="section-label">原始需求</div><p id="task-description" class="body-copy"></p>
+            <div class="section-label">目标操作</div><div id="operation" class="operation"></div>
+            <div class="section-label">观察到的故障</div><div id="failure" class="detail-box"></div>
+            <div class="section-label">可用日志</div><pre id="logs" class="log-box"></pre>
+            <div id="candidate-section" class="hidden"><div class="section-label">已有候选修复</div><pre id="candidate" class="log-box"></pre></div>
+            <div class="section-label">允许的操作</div><div id="allowed-actions" class="chips"></div>
+            <div class="hash-row">任务材料 SHA-256 <code id="fixture-hash"></code></div>
+          </section>
+
+          <section class="card edit-card">
+            <div class="card-head"><span class="step">02</span><div><h3>填写修复方案</h3><p>填写后提交或明确停止</p></div></div>
+            <form id="repair-form" novalidate>
+              <label>修复动作 <span class="required">必填</span><input id="action" autocomplete="off" placeholder="例如：bind_required_parameters" maxlength="4000"></label>
+              <label>目标操作 <span class="required">必填</span><input id="target" autocomplete="off" maxlength="4000"></label>
+              <label>参数绑定 <span class="hint">JSON 对象；无参数时填写 {}</span><textarea id="bindings" class="mono" rows="5" spellcheck="false">{}</textarea></label>
+              <label>安全检查 <span class="hint">每行一项</span><textarea id="checks" rows="3" placeholder="例如：仅在受控环境中操作"></textarea></label>
+              <label>修复依据 <span class="required">必填</span><textarea id="rationale" rows="4" placeholder="说明你依据哪些可见证据作出修改"></textarea></label>
+              <label>操作备注或停止原因 <span class="hint">停止时必填；请勿粘贴密钥或个人信息</span><textarea id="notes" rows="3" placeholder="记录检查过程、限制或停止原因"></textarea></label>
+              <div class="form-actions"><button id="submit-repair" type="submit" class="primary">提交修复方案 <span>→</span></button><button id="stop-task" type="button" class="secondary">停止 / 放弃</button></div>
+              <p class="form-foot">提交仅保存真人的决定和方案；执行、成功及安全判定需由独立流程完成。</p>
+            </form>
+            <div id="work-editor" class="work-editor hidden">
+              <div class="editor-meta"><span>正在编辑 <strong id="editable-path" class="mono"></strong></span><span id="editable-format">源文件</span></div>
+              <label>修改后的完整文件 <span class="required">会写入所配置的工作目录</span><textarea id="workflow-editor" class="mono code-editor" rows="22" spellcheck="false"></textarea></label>
+              <label>修改说明或停止原因 <span class="hint">停止时必填</span><textarea id="work-notes" rows="3" placeholder="记录修改依据、检查过程或停止原因"></textarea></label>
+              <div class="form-actions"><button id="preview-change" type="button" class="secondary">预览差异</button><button id="apply-change" type="button" class="primary">保存到文件 <span>→</span></button><button id="stop-work" type="button" class="secondary">停止</button></div>
+              <div id="preview-panel" class="preview-panel hidden"><div class="section-label">文件差异与语法检查</div><pre id="diff-preview" class="diff-box"></pre></div>
+              <p class="form-foot">保存前会验证 JSON、Python 或 TOML 语法与原文件哈希；保存后可运行任务清单中预设的校验命令。原文件与差异会留存供恢复。</p>
+            </div>
+            <div id="saved" class="saved hidden" role="status"><div class="saved-icon">✓</div><h3>记录已保存</h3><p id="saved-detail"></p><code id="record-id"></code><div><button id="revert-change" type="button" class="secondary hidden">撤销本次文件修改</button></div></div>
+          </section>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

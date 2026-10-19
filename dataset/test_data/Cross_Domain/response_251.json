@@ -1,0 +1,32 @@
+{
+"user_query":"I'm planning a surprise birthday party for my best friend next month. Can you recommend some popular party supplies on Amazon and provide their details? Also, suggest some effective email marketing strategies from ClickbankUniversity to promote the party and make it a memorable event.",
+"domain":"Cross-Domain",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Search for popular party supplies on Amazon and gather their details.",
+        "domain": "e-commerce",
+        "required_inputs": ["party_type", "budget", "theme"]
+    },
+    {
+        "id": 2,
+        "description": "Compile the details of the party supplies found in step 1.",
+        "domain": "e-commerce",
+        "required_inputs": ["supplies_info"]  ,
+        "dependencies": [1]
+    },
+    {
+        "id": 3,
+        "description": "Research effective email marketing strategies to promote the party.",
+        "domain": "marketing",
+        "required_inputs": ["target_audience", "event_details"]
+    },
+    {
+        "id": 4,
+        "description": "Create a summary report of the party supplies and email marketing strategies.",
+        "domain": "event planning",
+        "required_inputs": ["supplies_details", "marketing_strategies"],
+        "dependencies": [2, 3]
+    }
+]
+}

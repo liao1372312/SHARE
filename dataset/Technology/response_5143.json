@@ -1,0 +1,38 @@
+{
+"user_query":"I want to surprise my family with personalized horoscope readings based on their zodiac signs. Can you provide horoscope information for each family member for the upcoming month? Also, recommend a radio station that plays a mix of their favorite music genres.",
+"domain":"technology",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Collect zodiac signs for each family member.",
+        "domain": "technology",
+        "required_inputs": ["family_member_names", "family_member_birthdays"]
+    },
+    {
+        "id": 2,
+        "description": "Fetch horoscope information for the upcoming month based on the collected zodiac signs.",
+        "domain": "technology",
+        "required_inputs": ["zodiac_signs"],
+        "dependency": {
+            "step": 2,
+            "required_step": 1
+        }
+    },
+    {
+        "id": 3,
+        "description": "Recommend a radio station that plays a mix of favorite music genres for the family.",
+        "domain": "technology",
+        "required_inputs": ["favorite_music_genres"]
+    },
+    {
+        "id": 4,
+        "description": "Compile and format the horoscope readings and radio station recommendation for presentation.",
+        "domain": "technology",
+        "required_inputs": ["horoscope_info", "radio_station_info"],
+        "dependency": {
+            "step": 4,
+            "required_steps": [2, 3]
+        }
+    }
+  ]
+}

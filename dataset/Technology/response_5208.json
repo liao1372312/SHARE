@@ -1,0 +1,28 @@
+{
+"user_query":"I'm organizing a music-themed party and I need a diverse playlist with songs from different genres.",
+"domain":"Technology",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Retrieve track details of songs by the artists 'Ed Sheeran', 'Taylor Swift', and 'Beyoncé'.",
+        "domain": "technology",
+        "required_inputs": ["artist_name"]
+    },
+    {
+        "id": 2,
+        "description": "Find an album from Apple Music.",
+        "domain": "technology",
+        "required_inputs": []
+    },
+    {
+        "id": 3,
+        "description": "Get details of a random track from the album found in step 2.",
+        "domain": "technology",
+        "required_inputs": ["album_id"],
+        "dependency": {
+            "depends_on": 2,
+            "result": "album details"
+        }
+    }
+]
+}

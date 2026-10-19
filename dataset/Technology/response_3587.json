@@ -1,0 +1,40 @@
+{
+"user_query":"I'm planning a surprise party for my best friend's birthday. Can you help me create a personalized animated invitation featuring a generated face with the specified gender, age, and ethnicity? Also, provide me with the result of the invitation creation process using the job ID.",
+"domain":"technology",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Collect the specifications (gender, age, ethnicity) for the generated face.",
+        "domain": "technology",
+        "required_inputs": ["gender", "age", "ethnicity"]
+    },
+    {
+        "id": 2,
+        "description": "Call the API to generate a face image based on the specified characteristics.",
+        "domain": "technology",
+        "required_inputs": ["gender", "age", "ethnicity"],
+        "dependencies": [1]
+    },
+    {
+        "id": 3,
+        "description": "Create an animated invitation using the generated face image.",
+        "domain": "technology",
+        "required_inputs": ["face_image"],
+        "dependencies": [2]
+    },
+    {
+        "id": 4,
+        "description": "Submit the invitation creation job and receive a job ID for tracking.",
+        "domain": "technology",
+        "required_inputs": ["invitation_template", "face_image"],
+        "dependencies": [3]
+    },
+    {
+        "id": 5,
+        "description": "Retrieve the result of the invitation creation process using the job ID.",
+        "domain": "technology",
+        "required_inputs": ["job_id"],
+        "dependencies": [4]
+    }
+]
+}

@@ -1,0 +1,150 @@
+{
+    "product_id": "api_5632a353-f4d5-4138-b3ac-af3af09c89e2",
+    "tool_description": "Lista de empresas segmentadas | Leads segmentadas",
+    "home_url": "https://rapidapi.com/binfoconsultas/api/lista-de-empresas-por-segmento/",
+    "name": "Lista de empresas por segmento",
+    "title": "Lista de empresas por segmento",
+    "pricing": "FREEMIUM",
+    "tool_name": "Lista de empresas por segmento",
+    "score": {
+        "avgServiceLevel": 48,
+        "avgLatency": 1213,
+        "avgSuccessRate": 48,
+        "popularityScore": 8,
+        "__typename": "Score"
+    },
+    "host": "lista-de-empresas-por-segmento.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Pesquisa por campo",
+            "url": "https://lista-de-empresas-por-segmento.p.rapidapi.com/buscar-por-segmento.php",
+            "description": "Busque uma lista de empresas utilizando outros campos, como:  **nome, email, telefone, socio, cep**.\nCampos retornados: CNPJ, localiza\u00e7\u00e3o, UF, Cidade, bairro, nome fantasia e raz\u00e3o social.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "campo",
+                    "type": "STRING",
+                    "description": "Informar um campo dispon\u00edvel para busca. Campos dispon\u00edveis: **nome, email, telefone, socio, cep.**",
+                    "default": "cep"
+                },
+                {
+                    "name": "q",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "80530-905"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "situacao",
+                    "type": "STRING",
+                    "description": "Ativa, Inativa, Inapta ou Baixada",
+                    "default": "Ativa"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://lista-de-empresas-por-segmento.p.rapidapi.com/buscar-por-segmento.php\"\nquerystring = {\"campo\": \"cep\", \"q\": \"80530-905\", \"situacao\": \"Ativa\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"lista-de-empresas-por-segmento.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://lista-de-empresas-por-segmento.p.rapidapi.com/buscar-por-segmento.php\"\nquerystring = {\"campo\": \"cep\", \"q\": \"80530-905\", \"situacao\": \"Ativa\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"lista-de-empresas-por-segmento.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Detalhes empresa",
+            "url": "https://lista-de-empresas-por-segmento.p.rapidapi.com/buscar-base.php",
+            "description": "Detalhes da empresa utilizando o CNPJ. Dados retornados:\nCNPJ\nRaz\u00e3o social\nNome fantasia\nData cria\u00e7\u00e3o\nStatus empresa\nNatureza jur\u00eddica\nCNAE principal\nCNAEs secund\u00e1rios\nPorte empresa\nEndere\u00e7o\nTelefone\nE-mail\nQuadro de s\u00f3cios e administradores\nParticipa\u00e7\u00f5es em outras empresas",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "cnpj",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "45973106000100"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://lista-de-empresas-por-segmento.p.rapidapi.com/buscar-base.php\"\nquerystring = {\"cnpj\": \"45973106000100\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"lista-de-empresas-por-segmento.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://lista-de-empresas-por-segmento.p.rapidapi.com/buscar-base.php\"\nquerystring = {\"cnpj\": \"45973106000100\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"lista-de-empresas-por-segmento.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "status": true,
+                "mensagem": "",
+                "dados": {
+                    "cnpj": "45973106000100",
+                    "razao_social": "ANA CAROLINA KOCZKODAY SANTAMARIA 07772537980",
+                    "nome_fantasia": "ANA CAROLINA K. SANTAMARIA",
+                    "data_criacao": "09/04/2022",
+                    "natureza_juridica": "2135 - EMPRESARIO",
+                    "cnae_principal": "7319002 - Promo\u00e7\u00e3o de vendas",
+                    "data_situacao": "05/07/2022",
+                    "situacao": "Baixada",
+                    "porte": "Micro empresa",
+                    "capital_social": "R$ 100,00",
+                    "endereco": {
+                        "logradouro": "RUA CARINI",
+                        "numero": "1656",
+                        "complemento": "",
+                        "bairro": "RESIDENCIAL FLORENCA",
+                        "cep": "78555398",
+                        "uf": "MT",
+                        "municipio": "SINOP"
+                    },
+                    "telefones": [
+                        "66 996104336"
+                    ],
+                    "email": "anacksantamaria@gmail.com",
+                    "cnaes_secundarios": []
+                },
+                "socios": [
+                    {
+                        "documento_socio": "07772537980",
+                        "nome_socio": "ANA CAROLINA KOCZKODAY SANTAMARIA",
+                        "data_entrada": "09/04/2022",
+                        "qualificacao": "EMPRES\u00c1RIO"
+                    }
+                ],
+                "participacoes": []
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "CNAE ou localiza\u00e7\u00e3o",
+            "url": "https://lista-de-empresas-por-segmento.p.rapidapi.com/buscar-por-segmento.php",
+            "description": "Busque uma lista de empresas filtrando pelo CNAE ou localiza\u00e7\u00e3o. Voc\u00ea pode filtrar usando apenas CNAE tendo abrang\u00eancia nacional, filtrar usando apenas a localiza\u00e7\u00e3o, ou utilizar ambos os filtros combinados. Dados retornados da empresa:\n**CNPJ, endere\u00e7o, UF, cidade, raz\u00e3o social e nome fantasia**.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "page",
+                    "type": "STRING",
+                    "description": "Pagina\u00e7\u00e3o da lista, cada requisi\u00e7\u00e3o retorna 10 registros por p\u00e1gina.",
+                    "default": "1"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "localizacao",
+                    "type": "STRING",
+                    "description": "Informar UF ou UF-Cidade",
+                    "default": "PR"
+                },
+                {
+                    "name": "situacao",
+                    "type": "STRING",
+                    "description": "Ativa, Suspensa, Inapta, Baixada",
+                    "default": "Ativa"
+                },
+                {
+                    "name": "cnae",
+                    "type": "STRING",
+                    "description": "C\u00f3digo CNAE do segmento da empresa. Voc\u00ea pode informar 1 c\u00f3digo CNAE ou v\u00e1rios c\u00f3digos CNAE. Para informar mais de 1 c\u00f3digo CNAE use o separador pipeline (|). Ex:  6911701|4399101",
+                    "default": "0151201"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://lista-de-empresas-por-segmento.p.rapidapi.com/buscar-por-segmento.php\"\nquerystring = {\"localizacao\": \"PR\", \"situacao\": \"Ativa\", \"cnae\": \"0151201\", \"page\": \"1\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"lista-de-empresas-por-segmento.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://lista-de-empresas-por-segmento.p.rapidapi.com/buscar-por-segmento.php\"\nquerystring = {\"localizacao\": \"PR\", \"situacao\": \"Ativa\", \"cnae\": \"0151201\", \"page\": \"1\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"lista-de-empresas-por-segmento.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "lista_de_empresas_por_segmento"
+}

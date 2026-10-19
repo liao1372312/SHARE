@@ -1,0 +1,251 @@
+{
+    "product_id": "api_7859e318-fc72-4468-858c-cdf69dd4379c",
+    "tool_description": "This API  provides location tracking for any phone number using the cellular network. Tracking does not require the internet or the presence of a Smartphone.\nVisit https://www.traqo.io for API KEYS.",
+    "home_url": "https://rapidapi.com/traqo-traqo-default/api/sim-based-location-tracking1/",
+    "name": "Sim based Location Tracking",
+    "title": "Sim based Location Tracking",
+    "pricing": "FREE",
+    "tool_name": "Sim based Location Tracking",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 1587,
+        "avgSuccessRate": 2,
+        "popularityScore": 0.3,
+        "__typename": "Score"
+    },
+    "host": "sim-based-location-tracking1.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Trip'sCurrentStatus",
+            "url": "https://sim-based-location-tracking1.p.rapidapi.com/api/v3/trip/info/",
+            "description": "<p>You can use this endpoint to fetch the details of a trip which also includes the last known location.</p>\n<p><strong>Body Parameters</strong></p>\n\n<p><strong>Notes</strong></p>\n<ul>\n<li>Atleast one of the below three parameters should be passed</li>\n</ul>\n\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>Parameter</th>\n<th>Mandatory</th>\n<th>Description</th>\n</tr>\n</thead>\n<tbody>\n\n\n<tr>\n<td>invoice</td>\n<td>No</td>\n<td> invoice received in response of submit trip API</td>\n</tr>\n\n<tr>\n<td>id</td>\n<td>No</td>\n<td> trip_id received in response of submit trip API</td>\n</tr>\n\n<tr>\n<td>lr_number</td>\n<td>No</td>\n<td> lr_number received in response of submit trip API</td>\n</tr>\n\n</tbody>\n</table>\n\n\n<h2 id=\"output\">OUTPUT</h2>\n<p>\n<h4>Invalid user credentials</h4>\n</p>\n<pre class=\"click-to-expand-wrapper is-snippet-wrapper language-undefined\"><code class=\"is-highlighted language-undefined\">{\n    \"errors\": \"Invalid username/password.\"\n}\n</code></pre>",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://sim-based-location-tracking1.p.rapidapi.com/api/v3/trip/info/\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sim-based-location-tracking1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://sim-based-location-tracking1.p.rapidapi.com/api/v3/trip/info/\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sim-based-location-tracking1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "status": "invalid_user"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "consent": {
+                        "type": "string",
+                        "description": "",
+                        "default": "PENDING"
+                    },
+                    "tel": {
+                        "type": "string",
+                        "description": "",
+                        "default": "790560XXXX"
+                    },
+                    "operator": {
+                        "type": "string",
+                        "description": "",
+                        "default": "Jio"
+                    }
+                }
+            }
+        },
+        {
+            "name": "Fetchalltrips",
+            "url": "https://sim-based-location-tracking1.p.rapidapi.com/api/v3/trips/fetch/",
+            "description": "This endpoint is for fetching all trips ",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://sim-based-location-tracking1.p.rapidapi.com/api/v3/trips/fetch/\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sim-based-location-tracking1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://sim-based-location-tracking1.p.rapidapi.com/api/v3/trips/fetch/\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sim-based-location-tracking1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "status": "invalid_user"
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "CheckConsent",
+            "url": "https://sim-based-location-tracking1.p.rapidapi.com/api/v3/check_consent/",
+            "description": "<p>You can use this endpoint to check concent status of the passed mobile number.</p>\n<p><strong>Body Parameters</strong></p>\n\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>Parameter</th>\n<th>Mandatory</th>\n<th>Description</th>\n</tr>\n</thead>\n<tbody>\n\n\n<tr>\n<td>tel</td>\n<td>Yes</td>\n<td> 10 digit comma seperated mobile number used for creating trip</td>\n</tr>\n\n\n</tbody>\n</table>\n\n\n<h2 id=\"output\">OUTPUT</h2>\n<p>\n<h4>Invalid user credentials</h4>\n</p>\n<pre class=\"click-to-expand-wrapper is-snippet-wrapper language-undefined\"><code class=\"is-highlighted language-undefined\">{\n    \"errors\": \"Invalid username/password.\"\n}\n</code></pre>",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://sim-based-location-tracking1.p.rapidapi.com/api/v3/check_consent/\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sim-based-location-tracking1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://sim-based-location-tracking1.p.rapidapi.com/api/v3/check_consent/\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sim-based-location-tracking1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "status": "invalid_user"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "consent": {
+                        "type": "string",
+                        "description": "",
+                        "default": "PENDING"
+                    },
+                    "tel": {
+                        "type": "string",
+                        "description": "",
+                        "default": "790560XXXX"
+                    },
+                    "operator": {
+                        "type": "string",
+                        "description": "",
+                        "default": "Jio"
+                    }
+                }
+            }
+        },
+        {
+            "name": "FetchaTrip",
+            "url": "https://sim-based-location-tracking1.p.rapidapi.com/api/v3/trip/fetch/",
+            "description": "<p>This endpoint is for fetching a trip</p>\n<p><strong>Body Parameters</strong></p>\n\n<p><strong>Notes</strong></p>\n<ul>\n<li>Atleast one of the below three parameters should be passed</li>\n</ul>\n\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>Parameter</th>\n<th>Mandatory</th>\n<th>Description</th>\n</tr>\n</thead>\n<tbody>\n\n\n<tr>\n<td>invoice</td>\n<td>No</td>\n<td> invoice received in response of submit trip API</td>\n</tr>\n\n<tr>\n<td>trip_id</td>\n<td>No</td>\n<td> trip_id received in response of submit trip API</td>\n</tr>\n\n<tr>\n<td>lr_number</td>\n<td>No</td>\n<td> lr_number received in response of submit trip API</td>\n</tr>\n\n</tbody>\n</table>\n\n\n<h2 id=\"output\">OUTPUT</h2>\n<p>\n<h4>Invalid user credentials</h4>\n</p>\n<pre class=\"click-to-expand-wrapper is-snippet-wrapper language-undefined\"><code class=\"is-highlighted language-undefined\">{\n    \"errors\": \"Invalid username/password.\"\n}\n</code></pre>",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://sim-based-location-tracking1.p.rapidapi.com/api/v3/trip/fetch/\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sim-based-location-tracking1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://sim-based-location-tracking1.p.rapidapi.com/api/v3/trip/fetch/\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sim-based-location-tracking1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "status": "invalid_user"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "consent": {
+                        "type": "string",
+                        "description": "",
+                        "default": "PENDING"
+                    },
+                    "tel": {
+                        "type": "string",
+                        "description": "",
+                        "default": "790560XXXX"
+                    },
+                    "operator": {
+                        "type": "string",
+                        "description": "",
+                        "default": "Jio"
+                    }
+                }
+            }
+        },
+        {
+            "name": "FetchLocation",
+            "url": "https://sim-based-location-tracking1.p.rapidapi.com/api/v3/trip/location/",
+            "description": "<p>This endpoint is for fetching location of a trip</p>\n<p><strong>Required Body Parameters</strong></p>\n\n<p><strong>Notes</strong></p>\n<ul>\n<li>Atleast one of the below three parameters should be passed</li>\n</ul>\n\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>Parameter</th>\n<th>Mandatory</th>\n<th>Description</th>\n</tr>\n</thead>\n<tbody>\n\n\n<tr>\n<td>invoice</td>\n<td>No</td>\n<td> invoice received in response of submit trip API</td>\n</tr>\n\n<tr>\n<td>id</td>\n<td>No</td>\n<td> trip_id received in response of submit trip API</td>\n</tr>\n\n<tr>\n<td>lr_number</td>\n<td>No</td>\n<td> lr_number received in response of submit trip API</td>\n</tr>\n\n</tbody>\n</table>\n\n\n<h2 id=\"output\">OUTPUT</h2>\n<p>\n<h4>Invalid user credentials</h4>\n</p>\n<pre class=\"click-to-expand-wrapper is-snippet-wrapper language-undefined\"><code class=\"is-highlighted language-undefined\">{\n    \"errors\": \"Invalid username/password.\"\n}\n</code></pre>",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://sim-based-location-tracking1.p.rapidapi.com/api/v3/trip/location/\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sim-based-location-tracking1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://sim-based-location-tracking1.p.rapidapi.com/api/v3/trip/location/\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sim-based-location-tracking1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "status": "true",
+                "error": "Expecting value: line 1 column 1 (char 0)"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "consent": {
+                        "type": "string",
+                        "description": "",
+                        "default": "PENDING"
+                    },
+                    "tel": {
+                        "type": "string",
+                        "description": "",
+                        "default": "790560XXXX"
+                    },
+                    "operator": {
+                        "type": "string",
+                        "description": "",
+                        "default": "Jio"
+                    }
+                }
+            }
+        },
+        {
+            "name": "NumberList",
+            "url": "https://sim-based-location-tracking1.p.rapidapi.com/api/v2/number_list/",
+            "description": "\n<p>All  of <b>last updated locations</b> of provided concents phone numbers can be fetched through this endpoint,</p>\n\n<h2 id=\"output\">OUTPUT</h2>\n<p>\n<h4>Invalid user credentials</h4>\n</p>\n<pre class=\"click-to-expand-wrapper is-snippet-wrapper language-undefined\"><code class=\"is-highlighted language-undefined\">{\n    \"errors\": \"Invalid username/password.\"\n}\n</code></pre>\n",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://sim-based-location-tracking1.p.rapidapi.com/api/v2/number_list/\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sim-based-location-tracking1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://sim-based-location-tracking1.p.rapidapi.com/api/v2/number_list/\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sim-based-location-tracking1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "status": "invalid_user"
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Getlatestlocation",
+            "url": "https://sim-based-location-tracking1.p.rapidapi.com/api/v2/location/",
+            "description": "<p>This API can be used for getting latest location of the passed number.</p>\n\n\n<p><strong>Body Parameters</strong></p>\n\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>Parameter</th>\n<th>Mandatory</th>\n<th>Description</th>\n</tr>\n</thead>\n<tbody>\n\n\n<tr>\n<td>phone_number</td>\n<td>Yes</td>\n<td> 10 digit previously added mobile number</td>\n</tr>\n\n\n</tbody>\n</table>\n\n\n<h2 id=\"output\">OUTPUT</h2>\n<p>\n<h4>Invalid user credentials</h4>\n</p>\n<pre class=\"click-to-expand-wrapper is-snippet-wrapper language-undefined\"><code class=\"is-highlighted language-undefined\">{\n    \"errors\": \"Invalid username/password.\"\n}\n</code></pre>\n\n<p>\n<h4>Wrong or not added mobile number passed</h4>\n</p>\n<pre class=\"click-to-expand-wrapper is-snippet-wrapper language-undefined\"><code class=\"is-highlighted language-undefined\">\n{\n    \"status\": \"invalid_mobile\"\n}\n</code></pre>",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://sim-based-location-tracking1.p.rapidapi.com/api/v2/location/\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sim-based-location-tracking1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://sim-based-location-tracking1.p.rapidapi.com/api/v2/location/\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sim-based-location-tracking1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "status": "invalid_user"
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Checkconcent",
+            "url": "https://sim-based-location-tracking1.p.rapidapi.com/api/v2/check_consent/",
+            "description": "<p>This endpoint is responsible for refreshing the tracking concent of provided number, i.e. whether location tracking is allowed or not yet</p>\n\n<p><strong>Body Parameters</strong></p>\n\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>Parameter</th>\n<th>Mandatory</th>\n<th>Description</th>\n</tr>\n</thead>\n<tbody>\n\n\n<tr>\n<td>tel</td>\n<td>Yes</td>\n<td> 10 digit previously added mobile number</td>\n</tr>\n\n\n</tbody>\n</table>\n\n\n<h2 id=\"output\">OUTPUT</h2>\n<p>\n<h4>Invalid user credentials</h4>\n</p>\n<pre class=\"click-to-expand-wrapper is-snippet-wrapper language-undefined\"><code class=\"is-highlighted language-undefined\">{\n    \"errors\": \"Invalid username/password.\"\n}\n</code></pre>\n\n<p>\n<h4>Wrong or not added mobile number passed</h4>\n</p>\n<pre class=\"click-to-expand-wrapper is-snippet-wrapper language-undefined\"><code class=\"is-highlighted language-undefined\">\n{\n    \"status\": \"invalid_mobile\"\n}\n</code></pre>",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://sim-based-location-tracking1.p.rapidapi.com/api/v2/check_consent/\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sim-based-location-tracking1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://sim-based-location-tracking1.p.rapidapi.com/api/v2/check_consent/\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sim-based-location-tracking1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "status": "invalid_user"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "consent": {
+                        "type": "string",
+                        "description": "",
+                        "default": "PENDING"
+                    },
+                    "tel": {
+                        "type": "string",
+                        "description": "",
+                        "default": "790560XXXX"
+                    },
+                    "operator": {
+                        "type": "string",
+                        "description": "",
+                        "default": "Jio"
+                    }
+                }
+            }
+        },
+        {
+            "name": "RouteHistory",
+            "url": "https://sim-based-location-tracking1.p.rapidapi.com/api/v2/route_history/",
+            "description": "<p>Through this endpoint <b>route history</b> can be fetched of provided number..</p>\n\n<p><strong>Body Parameters</strong></p>\n\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>Parameter</th>\n<th>Mandatory</th>\n<th>Description</th>\n</tr>\n</thead>\n<tbody>\n\n\n<tr>\n<td>phone_number</td>\n<td>Yes</td>\n<td> 10 digit previously added mobile number</td>\n</tr>\n\n<tr>\n<td>from_date</td>\n<td>Yes</td>\n<td>From date for Route history in YYYY/MM/DD formate</td>\n</tr>\n\n<tr>\n<td>to_date</td>\n<td>Yes</td>\n<td>To date for Route history in YYYY/MM/DD formate</td>\n</tr>\n\n</tbody>\n</table>\n\n\n<h2 id=\"output\">OUTPUT</h2>\n<p>\n<h4>Invalid user credentials</h4>\n</p>\n<pre class=\"click-to-expand-wrapper is-snippet-wrapper language-undefined\"><code class=\"is-highlighted language-undefined\">{\n    \"errors\": \"Invalid username/password.\"\n}\n</code></pre>",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://sim-based-location-tracking1.p.rapidapi.com/api/v2/route_history/\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sim-based-location-tracking1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://sim-based-location-tracking1.p.rapidapi.com/api/v2/route_history/\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sim-based-location-tracking1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "status": "invalid_user"
+            },
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "sim_based_location_tracking"
+}

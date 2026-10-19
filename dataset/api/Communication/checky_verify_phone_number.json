@@ -1,0 +1,48 @@
+{
+    "product_id": "api_e3eb0644-22a8-42ba-bed5-10cc9e69d1ca",
+    "tool_description": "Determine in realtime if a given phone number is valid and the type of phone line it is connected to. Works for all countries!",
+    "home_url": "https://rapidapi.com/kidddevs/api/checky-verify-phone-number/",
+    "name": "Checky - Verify Phone Number",
+    "title": "Checky - Verify Phone Number",
+    "pricing": "FREEMIUM",
+    "tool_name": "Checky - Verify Phone Number",
+    "score": {
+        "avgServiceLevel": 98,
+        "avgLatency": 1949,
+        "avgSuccessRate": 98,
+        "popularityScore": 9,
+        "__typename": "Score"
+    },
+    "host": "checky-verify-phone-number.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "GET - Verify",
+            "url": "https://checky-verify-phone-number.p.rapidapi.com/verify",
+            "description": "To use this endpoint, you need to make an HTTP GET request to the API with the phone and country parameters in the query string.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "phone",
+                    "type": "STRING",
+                    "description": "The phone number to verify. It should be provided without any spaces or special characters.",
+                    "default": "6502530000"
+                },
+                {
+                    "name": "country",
+                    "type": "STRING",
+                    "description": "The two-letter country code of the phone number.  eg **US**, **CA**, **FR** etc.",
+                    "default": "US"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://checky-verify-phone-number.p.rapidapi.com/verify\"\nquerystring = {\"phone\": \"6502530000\", \"country\": \"US\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"checky-verify-phone-number.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://checky-verify-phone-number.p.rapidapi.com/verify\"\nquerystring = {\"phone\": \"6502530000\", \"country\": \"US\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"checky-verify-phone-number.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "country": "US",
+                "phone_number": "(650) 253-0000",
+                "phone_type": "MOBILE"
+            }
+        }
+    ],
+    "standardized_name": "checky_verify_phone_number"
+}

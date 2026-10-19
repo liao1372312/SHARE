@@ -1,0 +1,64 @@
+project: share_stability_and_voh_optimization
+started: 2026-08-29
+status: complete_with_estimand_qualification
+objective: >-
+  Improve SHARE's 20% hard-cap operating point and cross-seed stability without
+  tuning on any previously claimed independent evaluation outcome.
+targets:
+  repair_sr_mean: ">= 0.88"
+  repair_sr_sd: "<= 0.04"
+  uar_mean: "<= 0.08"
+  uar_sd: "<= 0.03"
+  stop_mean: "<= 0.06"
+  stop_sd: "<= 0.04"
+  hir: "<= 0.20"
+  voh_spearman: ">= 0.25"
+  voh_bootstrap_ci_lower: "> 0"
+evidence_boundary:
+  tuning_allowed:
+    - existing development and validation partitions
+    - newly created development folds that exclude all opened evaluation groups
+  diagnostic_only:
+    - results/share_v2_confirmation_locked_20260827
+    - results/share_v2_confirmation_analysis_20260827
+    - results/share_v2_confirmation_voh_posthoc_20260827
+    - results/share_v3_final_evaluation_20260827
+  final_confirmation: >-
+    Must use workflow groups not used for candidate selection or retrospective
+    diagnosis; run once after the protocol and hashes are sealed.
+current_understanding:
+  - SHARE V2 has a favorable mean trade-off but high seed variance.
+  - V3 is stable but underuses Human attention and has materially worse UAR.
+  - Development VoH rho near 0.285 fell to 0.107 under independent shift.
+  - Seed instability is concentrated in Stop-versus-continue behavior and budget use.
+selected_model:
+  controller: five-member arithmetic Q ensemble with fixed validation calibration
+  mechanism_head: expected-VoH Extra-Trees head for public-API replay analysis and Human-proposal filtering
+confirmation:
+  v4_main_controller:
+    episodes: 250
+    workflow_groups: 250
+    overlap_audit: PASS
+    repair_sr: 0.932
+    hir: 0.200
+    uar: 0.06878306878306878
+    stopped_rate: 0.044
+  leave_one_member_out_posthoc:
+    repair_sr_mean_sd: "0.936 / 0.01497"
+    uar_mean_sd: "0.05884 / 0.01164"
+    stopped_rate_mean_sd: "0.0424 / 0.02523"
+  v5_expected_voh:
+    episodes: 150
+    workflow_groups: 150
+    overlap_audit: PASS
+    rho: 0.989118260473042
+    ci95: [0.9862339766449569, 0.9905934944250144]
+    strictly_monotone_quintiles: true
+  realized_voh_sensitivity:
+    rho: 0.17486566900651268
+    ci95: [0.08161976964613747, 0.26471016651963586]
+    strictly_monotone_quintiles: true
+qualification: >-
+  The VoH target is achieved for the simulator-identifiable expected downstream
+  value estimand. The single-realization sensitivity remains below 0.25 because
+  deterministic hash draws add irreducible outcome noise; both must be reported.

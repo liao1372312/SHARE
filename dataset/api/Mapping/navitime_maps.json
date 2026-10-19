@@ -1,0 +1,87 @@
+{
+    "product_id": "api_76e1b5d8-57ee-492b-b323-d34e5bd668d6",
+    "tool_description": "Get a JavaScript file or map as an image on web pages.",
+    "home_url": "https://rapidapi.com/navitimejapan-navitimejapan/api/navitime-maps/",
+    "name": "NAVITIME Maps",
+    "title": "NAVITIME Maps",
+    "pricing": "FREEMIUM",
+    "tool_name": "NAVITIME Maps",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 464,
+        "avgSuccessRate": 91,
+        "popularityScore": 9,
+        "__typename": "Score"
+    },
+    "host": "navitime-maps.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "map_script",
+            "url": "https://navitime-maps.p.rapidapi.com/map_script",
+            "description": "Get a JavaScript file to control the tile map that runs on the browser.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "host",
+                    "type": "STRING",
+                    "description": "A domain name of your website.",
+                    "default": "localhost"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://navitime-maps.p.rapidapi.com/map_script\"\nquerystring = {\"host\": \"localhost\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"navitime-maps.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://navitime-maps.p.rapidapi.com/map_script\"\nquerystring = {\"host\": \"localhost\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"navitime-maps.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "map_image(GET)",
+            "url": "https://navitime-maps.p.rapidapi.com/map_image",
+            "description": "Get a static map image of the location, range and zoom value specified in the parameter.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "width",
+                    "type": "NUMBER",
+                    "description": "Width of the map.\n(Minimum value: 1, Maximum value: 999)",
+                    "default": "500"
+                },
+                {
+                    "name": "center",
+                    "type": "STRING",
+                    "description": "Center of the map.",
+                    "default": "35.681236,139.767125"
+                },
+                {
+                    "name": "zoom",
+                    "type": "NUMBER",
+                    "description": "Zoom level.\n(Minimum value: 6, Maximum value: 19)",
+                    "default": "15"
+                },
+                {
+                    "name": "height",
+                    "type": "NUMBER",
+                    "description": "Height of the map.\n(Minimum value: 1, Maximum value: 999)",
+                    "default": "500"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "datum",
+                    "type": "STRING",
+                    "description": "Geodetic system of latitude and longitude.\n(wgs84: World Geodetic System (default), tokyo: Old Japan Geodetic System)",
+                    "default": "wgs84"
+                },
+                {
+                    "name": "coord_unit",
+                    "type": "STRING",
+                    "description": "The unit of latitude and longitude included in the output data.\n(degree: decimal system of degrees (default), millisec: milliseconds)",
+                    "default": "degree"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://navitime-maps.p.rapidapi.com/map_image\"\nquerystring = {\"width\": \"500\", \"datum\": \"wgs84\", \"center\": \"35.681236,139.767125\", \"zoom\": \"15\", \"height\": \"500\", \"coord_unit\": \"degree\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"navitime-maps.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://navitime-maps.p.rapidapi.com/map_image\"\nquerystring = {\"width\": \"500\", \"datum\": \"wgs84\", \"center\": \"35.681236,139.767125\", \"zoom\": \"15\", \"height\": \"500\", \"coord_unit\": \"degree\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"navitime-maps.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        }
+    ],
+    "standardized_name": "navitime_maps"
+}

@@ -1,0 +1,3745 @@
+{
+    "product_id": "api_3c834f7a-705e-46f7-862d-6b1abae0e169",
+    "tool_description": "Economically relevant meteorological data like heat degree days, average temperature. ",
+    "home_url": "https://rapidapi.com/stromdao-stromdao-default/api/ecoweather/",
+    "name": "ecoweather",
+    "title": "ecoweather",
+    "pricing": "FREEMIUM",
+    "tool_name": "ecoweather",
+    "score": {
+        "avgServiceLevel": 97,
+        "avgLatency": 656,
+        "avgSuccessRate": 97,
+        "popularityScore": 8.6,
+        "__typename": "Score"
+    },
+    "host": "ecoweather.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Schneetage",
+            "url": "https://ecoweather.p.rapidapi.com/ucSNOW",
+            "description": "Beantwortet die Frage, wie viel Schnee und an wie viel Tagen innerhalb eines Zeitraums vorhanden gewesen ist. Wird verwendet zum Beispiel bei der Einsatzplanung im Winterdienst und Hausmeisterservice sowie im Tourismus.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "from",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "2021-01-01"
+                },
+                {
+                    "name": "lon",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "8.79"
+                },
+                {
+                    "name": "lat",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "49.34"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "to",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "2021-09-21"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://ecoweather.p.rapidapi.com/ucSNOW\"\nquerystring = {\"from\": \"2021-01-01\", \"to\": \"2021-09-21\", \"lon\": \"8.79\", \"lat\": \"49.34\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ecoweather.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ecoweather.p.rapidapi.com/ucSNOW\"\nquerystring = {\"from\": \"2021-01-01\", \"to\": \"2021-09-21\", \"lon\": \"8.79\", \"lat\": \"49.34\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ecoweather.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "input": {
+                    "geo": {
+                        "lat": "49.34",
+                        "lon": "8.79"
+                    },
+                    "timeframe": {
+                        "from": "2021-01-01",
+                        "to": "2021-09-21"
+                    }
+                },
+                "aggregations": {
+                    "snowdays": 36,
+                    "snow": 117.9
+                },
+                "result": [
+                    {
+                        "timestamp": 1609459200000,
+                        "date": "2021-01-01",
+                        "snow": 1.7
+                    },
+                    {
+                        "timestamp": 1609545600000,
+                        "date": "2021-01-02",
+                        "snow": 0.6
+                    },
+                    {
+                        "timestamp": 1609632000000,
+                        "date": "2021-01-03",
+                        "snow": 0.8
+                    },
+                    {
+                        "timestamp": 1609718400000,
+                        "date": "2021-01-04",
+                        "snow": 0.5
+                    },
+                    {
+                        "timestamp": 1609804800000,
+                        "date": "2021-01-05",
+                        "snow": 4.5
+                    },
+                    {
+                        "timestamp": 1609891200000,
+                        "date": "2021-01-06",
+                        "snow": 0.6
+                    },
+                    {
+                        "timestamp": 1609977600000,
+                        "date": "2021-01-07",
+                        "snow": 1.1
+                    },
+                    {
+                        "timestamp": 1610064000000,
+                        "date": "2021-01-08",
+                        "snow": 1.2
+                    },
+                    {
+                        "timestamp": 1610150400000,
+                        "date": "2021-01-09",
+                        "snow": 0.5
+                    },
+                    {
+                        "timestamp": 1610236800000,
+                        "date": "2021-01-10",
+                        "snow": 9.8
+                    },
+                    {
+                        "timestamp": 1610323200000,
+                        "date": "2021-01-11",
+                        "snow": 1
+                    },
+                    {
+                        "timestamp": 1610409600000,
+                        "date": "2021-01-12",
+                        "snow": 1.5
+                    },
+                    {
+                        "timestamp": 1610496000000,
+                        "date": "2021-01-13",
+                        "snow": 1.1
+                    },
+                    {
+                        "timestamp": 1610582400000,
+                        "date": "2021-01-14",
+                        "snow": 18.7
+                    },
+                    {
+                        "timestamp": 1610668800000,
+                        "date": "2021-01-15",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1610755200000,
+                        "date": "2021-01-16",
+                        "snow": 2.7
+                    },
+                    {
+                        "timestamp": 1610841600000,
+                        "date": "2021-01-17",
+                        "snow": 1.7
+                    },
+                    {
+                        "timestamp": 1610928000000,
+                        "date": "2021-01-18",
+                        "snow": 21.9
+                    },
+                    {
+                        "timestamp": 1611014400000,
+                        "date": "2021-01-19",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1611100800000,
+                        "date": "2021-01-20",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1611187200000,
+                        "date": "2021-01-21",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1611273600000,
+                        "date": "2021-01-22",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1611360000000,
+                        "date": "2021-01-23",
+                        "snow": 3.8
+                    },
+                    {
+                        "timestamp": 1611446400000,
+                        "date": "2021-01-24",
+                        "snow": 6.3
+                    },
+                    {
+                        "timestamp": 1611532800000,
+                        "date": "2021-01-25",
+                        "snow": 4.1
+                    },
+                    {
+                        "timestamp": 1611619200000,
+                        "date": "2021-01-26",
+                        "snow": 1.3
+                    },
+                    {
+                        "timestamp": 1611705600000,
+                        "date": "2021-01-27",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1611792000000,
+                        "date": "2021-01-28",
+                        "snow": 18.6
+                    },
+                    {
+                        "timestamp": 1611878400000,
+                        "date": "2021-01-29",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1611964800000,
+                        "date": "2021-01-30",
+                        "snow": 1.9
+                    },
+                    {
+                        "timestamp": 1612051200000,
+                        "date": "2021-01-31",
+                        "snow": 1.2
+                    },
+                    {
+                        "timestamp": 1612137600000,
+                        "date": "2021-02-01",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1612224000000,
+                        "date": "2021-02-02",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1612310400000,
+                        "date": "2021-02-03",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1612396800000,
+                        "date": "2021-02-04",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1612483200000,
+                        "date": "2021-02-05",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1612569600000,
+                        "date": "2021-02-06",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1612656000000,
+                        "date": "2021-02-07",
+                        "snow": 0.6
+                    },
+                    {
+                        "timestamp": 1612742400000,
+                        "date": "2021-02-08",
+                        "snow": 2.3
+                    },
+                    {
+                        "timestamp": 1612828800000,
+                        "date": "2021-02-09",
+                        "snow": 1.3
+                    },
+                    {
+                        "timestamp": 1612915200000,
+                        "date": "2021-02-10",
+                        "snow": 0.8
+                    },
+                    {
+                        "timestamp": 1613001600000,
+                        "date": "2021-02-11",
+                        "snow": 0.5
+                    },
+                    {
+                        "timestamp": 1613088000000,
+                        "date": "2021-02-12",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1613174400000,
+                        "date": "2021-02-13",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1613260800000,
+                        "date": "2021-02-14",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1613347200000,
+                        "date": "2021-02-15",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1613433600000,
+                        "date": "2021-02-16",
+                        "snow": 0.2
+                    },
+                    {
+                        "timestamp": 1613520000000,
+                        "date": "2021-02-17",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1613606400000,
+                        "date": "2021-02-18",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1613692800000,
+                        "date": "2021-02-19",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1613779200000,
+                        "date": "2021-02-20",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1613865600000,
+                        "date": "2021-02-21",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1613952000000,
+                        "date": "2021-02-22",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1614038400000,
+                        "date": "2021-02-23",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1614124800000,
+                        "date": "2021-02-24",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1614211200000,
+                        "date": "2021-02-25",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1614297600000,
+                        "date": "2021-02-26",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1614384000000,
+                        "date": "2021-02-27",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1614470400000,
+                        "date": "2021-02-28",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1614556800000,
+                        "date": "2021-03-01",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1614643200000,
+                        "date": "2021-03-02",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1614729600000,
+                        "date": "2021-03-03",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1614816000000,
+                        "date": "2021-03-04",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1614902400000,
+                        "date": "2021-03-05",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1614988800000,
+                        "date": "2021-03-06",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1615075200000,
+                        "date": "2021-03-07",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1615161600000,
+                        "date": "2021-03-08",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1615248000000,
+                        "date": "2021-03-09",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1615334400000,
+                        "date": "2021-03-10",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1615420800000,
+                        "date": "2021-03-11",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1615507200000,
+                        "date": "2021-03-12",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1615593600000,
+                        "date": "2021-03-13",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1615680000000,
+                        "date": "2021-03-14",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1615766400000,
+                        "date": "2021-03-15",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1615852800000,
+                        "date": "2021-03-16",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1615939200000,
+                        "date": "2021-03-17",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1616025600000,
+                        "date": "2021-03-18",
+                        "snow": 1.9
+                    },
+                    {
+                        "timestamp": 1616112000000,
+                        "date": "2021-03-19",
+                        "snow": 1.2
+                    },
+                    {
+                        "timestamp": 1616198400000,
+                        "date": "2021-03-20",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1616284800000,
+                        "date": "2021-03-21",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1616371200000,
+                        "date": "2021-03-22",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1616457600000,
+                        "date": "2021-03-23",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1616544000000,
+                        "date": "2021-03-24",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1616630400000,
+                        "date": "2021-03-25",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1616716800000,
+                        "date": "2021-03-26",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1616803200000,
+                        "date": "2021-03-27",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1616889600000,
+                        "date": "2021-03-28",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1616976000000,
+                        "date": "2021-03-29",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1617062400000,
+                        "date": "2021-03-30",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1617148800000,
+                        "date": "2021-03-31",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1617235200000,
+                        "date": "2021-04-01",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1617321600000,
+                        "date": "2021-04-02",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1617408000000,
+                        "date": "2021-04-03",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1617494400000,
+                        "date": "2021-04-04",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1617580800000,
+                        "date": "2021-04-05",
+                        "snow": 0.6
+                    },
+                    {
+                        "timestamp": 1617667200000,
+                        "date": "2021-04-06",
+                        "snow": 0.4
+                    },
+                    {
+                        "timestamp": 1617753600000,
+                        "date": "2021-04-07",
+                        "snow": 0.6
+                    },
+                    {
+                        "timestamp": 1617840000000,
+                        "date": "2021-04-08",
+                        "snow": 0.4
+                    },
+                    {
+                        "timestamp": 1617926400000,
+                        "date": "2021-04-09",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1618012800000,
+                        "date": "2021-04-10",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1618099200000,
+                        "date": "2021-04-11",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1618185600000,
+                        "date": "2021-04-12",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1618272000000,
+                        "date": "2021-04-13",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1618358400000,
+                        "date": "2021-04-14",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1618444800000,
+                        "date": "2021-04-15",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1618531200000,
+                        "date": "2021-04-16",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1618617600000,
+                        "date": "2021-04-17",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1618704000000,
+                        "date": "2021-04-18",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1618790400000,
+                        "date": "2021-04-19",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1618876800000,
+                        "date": "2021-04-20",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1618963200000,
+                        "date": "2021-04-21",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1619049600000,
+                        "date": "2021-04-22",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1619136000000,
+                        "date": "2021-04-23",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1619222400000,
+                        "date": "2021-04-24",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1619308800000,
+                        "date": "2021-04-25",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1619395200000,
+                        "date": "2021-04-26",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1619481600000,
+                        "date": "2021-04-27",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1619568000000,
+                        "date": "2021-04-28",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1619654400000,
+                        "date": "2021-04-29",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1619740800000,
+                        "date": "2021-04-30",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1619827200000,
+                        "date": "2021-05-01",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1619913600000,
+                        "date": "2021-05-02",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1620000000000,
+                        "date": "2021-05-03",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1620086400000,
+                        "date": "2021-05-04",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1620172800000,
+                        "date": "2021-05-05",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1620259200000,
+                        "date": "2021-05-06",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1620345600000,
+                        "date": "2021-05-07",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1620432000000,
+                        "date": "2021-05-08",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1620518400000,
+                        "date": "2021-05-09",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1620604800000,
+                        "date": "2021-05-10",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1620691200000,
+                        "date": "2021-05-11",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1620777600000,
+                        "date": "2021-05-12",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1620864000000,
+                        "date": "2021-05-13",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1620950400000,
+                        "date": "2021-05-14",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1621036800000,
+                        "date": "2021-05-15",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1621123200000,
+                        "date": "2021-05-16",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1621209600000,
+                        "date": "2021-05-17",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1621296000000,
+                        "date": "2021-05-18",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1621382400000,
+                        "date": "2021-05-19",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1621468800000,
+                        "date": "2021-05-20",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1621555200000,
+                        "date": "2021-05-21",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1621641600000,
+                        "date": "2021-05-22",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1621728000000,
+                        "date": "2021-05-23",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1621814400000,
+                        "date": "2021-05-24",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1621900800000,
+                        "date": "2021-05-25",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1621987200000,
+                        "date": "2021-05-26",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1622073600000,
+                        "date": "2021-05-27",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1622160000000,
+                        "date": "2021-05-28",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1622246400000,
+                        "date": "2021-05-29",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1622332800000,
+                        "date": "2021-05-30",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1622419200000,
+                        "date": "2021-05-31",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1622505600000,
+                        "date": "2021-06-01",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1622592000000,
+                        "date": "2021-06-02",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1622678400000,
+                        "date": "2021-06-03",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1622764800000,
+                        "date": "2021-06-04",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1622851200000,
+                        "date": "2021-06-05",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1622937600000,
+                        "date": "2021-06-06",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1623024000000,
+                        "date": "2021-06-07",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1623110400000,
+                        "date": "2021-06-08",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1623196800000,
+                        "date": "2021-06-09",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1623283200000,
+                        "date": "2021-06-10",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1623369600000,
+                        "date": "2021-06-11",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1623456000000,
+                        "date": "2021-06-12",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1623542400000,
+                        "date": "2021-06-13",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1623628800000,
+                        "date": "2021-06-14",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1623715200000,
+                        "date": "2021-06-15",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1623801600000,
+                        "date": "2021-06-16",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1623888000000,
+                        "date": "2021-06-17",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1623974400000,
+                        "date": "2021-06-18",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1624060800000,
+                        "date": "2021-06-19",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1624147200000,
+                        "date": "2021-06-20",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1624233600000,
+                        "date": "2021-06-21",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1624320000000,
+                        "date": "2021-06-22",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1624406400000,
+                        "date": "2021-06-23",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1624492800000,
+                        "date": "2021-06-24",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1624579200000,
+                        "date": "2021-06-25",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1624665600000,
+                        "date": "2021-06-26",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1624752000000,
+                        "date": "2021-06-27",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1624838400000,
+                        "date": "2021-06-28",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1624924800000,
+                        "date": "2021-06-29",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1625011200000,
+                        "date": "2021-06-30",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1625097600000,
+                        "date": "2021-07-01",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1625184000000,
+                        "date": "2021-07-02",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1625270400000,
+                        "date": "2021-07-03",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1625356800000,
+                        "date": "2021-07-04",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1625443200000,
+                        "date": "2021-07-05",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1625529600000,
+                        "date": "2021-07-06",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1625616000000,
+                        "date": "2021-07-07",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1625702400000,
+                        "date": "2021-07-08",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1625788800000,
+                        "date": "2021-07-09",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1625875200000,
+                        "date": "2021-07-10",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1625961600000,
+                        "date": "2021-07-11",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1626048000000,
+                        "date": "2021-07-12",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1626134400000,
+                        "date": "2021-07-13",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1626220800000,
+                        "date": "2021-07-14",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1626307200000,
+                        "date": "2021-07-15",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1626393600000,
+                        "date": "2021-07-16",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1626480000000,
+                        "date": "2021-07-17",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1626566400000,
+                        "date": "2021-07-18",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1626652800000,
+                        "date": "2021-07-19",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1626739200000,
+                        "date": "2021-07-20",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1626825600000,
+                        "date": "2021-07-21",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1626912000000,
+                        "date": "2021-07-22",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1626998400000,
+                        "date": "2021-07-23",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1627084800000,
+                        "date": "2021-07-24",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1627171200000,
+                        "date": "2021-07-25",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1627257600000,
+                        "date": "2021-07-26",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1627344000000,
+                        "date": "2021-07-27",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1627430400000,
+                        "date": "2021-07-28",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1627516800000,
+                        "date": "2021-07-29",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1627603200000,
+                        "date": "2021-07-30",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1627689600000,
+                        "date": "2021-07-31",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1627776000000,
+                        "date": "2021-08-01",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1627862400000,
+                        "date": "2021-08-02",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1627948800000,
+                        "date": "2021-08-03",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1628035200000,
+                        "date": "2021-08-04",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1628121600000,
+                        "date": "2021-08-05",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1628208000000,
+                        "date": "2021-08-06",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1628294400000,
+                        "date": "2021-08-07",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1628380800000,
+                        "date": "2021-08-08",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1628467200000,
+                        "date": "2021-08-09",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1628553600000,
+                        "date": "2021-08-10",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1628640000000,
+                        "date": "2021-08-11",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1628726400000,
+                        "date": "2021-08-12",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1628812800000,
+                        "date": "2021-08-13",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1628899200000,
+                        "date": "2021-08-14",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1628985600000,
+                        "date": "2021-08-15",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1629072000000,
+                        "date": "2021-08-16",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1629158400000,
+                        "date": "2021-08-17",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1629244800000,
+                        "date": "2021-08-18",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1629331200000,
+                        "date": "2021-08-19",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1629417600000,
+                        "date": "2021-08-20",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1629504000000,
+                        "date": "2021-08-21",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1629590400000,
+                        "date": "2021-08-22",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1629676800000,
+                        "date": "2021-08-23",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1629763200000,
+                        "date": "2021-08-24",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1629849600000,
+                        "date": "2021-08-25",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1629936000000,
+                        "date": "2021-08-26",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1630022400000,
+                        "date": "2021-08-27",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1630108800000,
+                        "date": "2021-08-28",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1630195200000,
+                        "date": "2021-08-29",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1630281600000,
+                        "date": "2021-08-30",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1630368000000,
+                        "date": "2021-08-31",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1630454400000,
+                        "date": "2021-09-01",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1630540800000,
+                        "date": "2021-09-02",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1630627200000,
+                        "date": "2021-09-03",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1630713600000,
+                        "date": "2021-09-04",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1630800000000,
+                        "date": "2021-09-05",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1630886400000,
+                        "date": "2021-09-06",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1630972800000,
+                        "date": "2021-09-07",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1631059200000,
+                        "date": "2021-09-08",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1631145600000,
+                        "date": "2021-09-09",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1631232000000,
+                        "date": "2021-09-10",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1631318400000,
+                        "date": "2021-09-11",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1631404800000,
+                        "date": "2021-09-12",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1631491200000,
+                        "date": "2021-09-13",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1631577600000,
+                        "date": "2021-09-14",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1631664000000,
+                        "date": "2021-09-15",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1631750400000,
+                        "date": "2021-09-16",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1631836800000,
+                        "date": "2021-09-17",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1631923200000,
+                        "date": "2021-09-18",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1632009600000,
+                        "date": "2021-09-19",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1632096000000,
+                        "date": "2021-09-20",
+                        "snow": 0
+                    },
+                    {
+                        "timestamp": 1632182400000,
+                        "date": "2021-09-21",
+                        "snow": 0
+                    }
+                ]
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "input": {
+                        "type": "object",
+                        "properties": {
+                            "geo": {
+                                "type": "object",
+                                "properties": {
+                                    "lat": {
+                                        "type": "string"
+                                    },
+                                    "lon": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "timeframe": {
+                                "type": "object",
+                                "properties": {
+                                    "from": {
+                                        "type": "string"
+                                    },
+                                    "to": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "aggregations": {
+                        "type": "object",
+                        "properties": {
+                            "precipitationdays": {
+                                "type": "integer"
+                            },
+                            "precipitation": {
+                                "type": "number"
+                            }
+                        }
+                    },
+                    "result": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "timestamp": {
+                                    "type": "integer"
+                                },
+                                "date": {
+                                    "type": "string"
+                                },
+                                "precipitation": {
+                                    "type": "number"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Heizgradtage",
+            "url": "https://ecoweather.p.rapidapi.com/ucHDD",
+            "description": "Beantwortet die Frage, wie viele Heizgradtage innerhalb eines Zeitraums vorhanden gewesen sind. Wird verwendet zum Beispiel bei der unterj\u00e4hrigen Abgrenzung von Heizkosten bei der Nebenkostenabrechnung.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "from",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "2021-01-01"
+                },
+                {
+                    "name": "lon",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "8.79"
+                },
+                {
+                    "name": "lat",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "49.34"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "to",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "2021-09-21"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://ecoweather.p.rapidapi.com/ucHDD\"\nquerystring = {\"to\": \"2021-09-21\", \"from\": \"2021-01-01\", \"lon\": \"8.79\", \"lat\": \"49.34\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ecoweather.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ecoweather.p.rapidapi.com/ucHDD\"\nquerystring = {\"to\": \"2021-09-21\", \"from\": \"2021-01-01\", \"lon\": \"8.79\", \"lat\": \"49.34\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ecoweather.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "input": {
+                    "geo": {
+                        "lat": "49.34",
+                        "lon": "8.79"
+                    },
+                    "timeframe": {
+                        "from": "2021-01-01",
+                        "to": "2021-09-21"
+                    }
+                },
+                "aggregations": {
+                    "hdd12": 1987.6000000000001,
+                    "hdd15": 2125.1
+                },
+                "result": [
+                    {
+                        "timestamp": 1609459200000,
+                        "date": "2021-01-01",
+                        "hdd12": 18.3,
+                        "hdd15": 18.3
+                    },
+                    {
+                        "timestamp": 1609545600000,
+                        "date": "2021-01-02",
+                        "hdd12": 18.7,
+                        "hdd15": 18.7
+                    },
+                    {
+                        "timestamp": 1609632000000,
+                        "date": "2021-01-03",
+                        "hdd12": 19.6,
+                        "hdd15": 19.6
+                    },
+                    {
+                        "timestamp": 1609718400000,
+                        "date": "2021-01-04",
+                        "hdd12": 19.2,
+                        "hdd15": 19.2
+                    },
+                    {
+                        "timestamp": 1609804800000,
+                        "date": "2021-01-05",
+                        "hdd12": 18.5,
+                        "hdd15": 18.5
+                    },
+                    {
+                        "timestamp": 1609891200000,
+                        "date": "2021-01-06",
+                        "hdd12": 18.7,
+                        "hdd15": 18.7
+                    },
+                    {
+                        "timestamp": 1609977600000,
+                        "date": "2021-01-07",
+                        "hdd12": 18.7,
+                        "hdd15": 18.7
+                    },
+                    {
+                        "timestamp": 1610064000000,
+                        "date": "2021-01-08",
+                        "hdd12": 19.8,
+                        "hdd15": 19.8
+                    },
+                    {
+                        "timestamp": 1610150400000,
+                        "date": "2021-01-09",
+                        "hdd12": 19.9,
+                        "hdd15": 19.9
+                    },
+                    {
+                        "timestamp": 1610236800000,
+                        "date": "2021-01-10",
+                        "hdd12": 21.2,
+                        "hdd15": 21.2
+                    },
+                    {
+                        "timestamp": 1610323200000,
+                        "date": "2021-01-11",
+                        "hdd12": 23,
+                        "hdd15": 23
+                    },
+                    {
+                        "timestamp": 1610409600000,
+                        "date": "2021-01-12",
+                        "hdd12": 19.2,
+                        "hdd15": 19.2
+                    },
+                    {
+                        "timestamp": 1610496000000,
+                        "date": "2021-01-13",
+                        "hdd12": 19.2,
+                        "hdd15": 19.2
+                    },
+                    {
+                        "timestamp": 1610582400000,
+                        "date": "2021-01-14",
+                        "hdd12": 18.8,
+                        "hdd15": 18.8
+                    },
+                    {
+                        "timestamp": 1610668800000,
+                        "date": "2021-01-15",
+                        "hdd12": 20.7,
+                        "hdd15": 20.7
+                    },
+                    {
+                        "timestamp": 1610755200000,
+                        "date": "2021-01-16",
+                        "hdd12": 21.3,
+                        "hdd15": 21.3
+                    },
+                    {
+                        "timestamp": 1610841600000,
+                        "date": "2021-01-17",
+                        "hdd12": 21.1,
+                        "hdd15": 21.1
+                    },
+                    {
+                        "timestamp": 1610928000000,
+                        "date": "2021-01-18",
+                        "hdd12": 18,
+                        "hdd15": 18
+                    },
+                    {
+                        "timestamp": 1611014400000,
+                        "date": "2021-01-19",
+                        "hdd12": 17.7,
+                        "hdd15": 17.7
+                    },
+                    {
+                        "timestamp": 1611100800000,
+                        "date": "2021-01-20",
+                        "hdd12": 17.6,
+                        "hdd15": 17.6
+                    },
+                    {
+                        "timestamp": 1611187200000,
+                        "date": "2021-01-21",
+                        "hdd12": 12.1,
+                        "hdd15": 12.1
+                    },
+                    {
+                        "timestamp": 1611273600000,
+                        "date": "2021-01-22",
+                        "hdd12": 13.1,
+                        "hdd15": 13.1
+                    },
+                    {
+                        "timestamp": 1611360000000,
+                        "date": "2021-01-23",
+                        "hdd12": 17.1,
+                        "hdd15": 17.1
+                    },
+                    {
+                        "timestamp": 1611446400000,
+                        "date": "2021-01-24",
+                        "hdd12": 18.8,
+                        "hdd15": 18.8
+                    },
+                    {
+                        "timestamp": 1611532800000,
+                        "date": "2021-01-25",
+                        "hdd12": 20.2,
+                        "hdd15": 20.2
+                    },
+                    {
+                        "timestamp": 1611619200000,
+                        "date": "2021-01-26",
+                        "hdd12": 19.1,
+                        "hdd15": 19.1
+                    },
+                    {
+                        "timestamp": 1611705600000,
+                        "date": "2021-01-27",
+                        "hdd12": 19.7,
+                        "hdd15": 19.7
+                    },
+                    {
+                        "timestamp": 1611792000000,
+                        "date": "2021-01-28",
+                        "hdd12": 14.2,
+                        "hdd15": 14.2
+                    },
+                    {
+                        "timestamp": 1611878400000,
+                        "date": "2021-01-29",
+                        "hdd12": 11.1,
+                        "hdd15": 11.1
+                    },
+                    {
+                        "timestamp": 1611964800000,
+                        "date": "2021-01-30",
+                        "hdd12": 14.9,
+                        "hdd15": 14.9
+                    },
+                    {
+                        "timestamp": 1612051200000,
+                        "date": "2021-01-31",
+                        "hdd12": 18.9,
+                        "hdd15": 18.9
+                    },
+                    {
+                        "timestamp": 1612137600000,
+                        "date": "2021-02-01",
+                        "hdd12": 16,
+                        "hdd15": 16
+                    },
+                    {
+                        "timestamp": 1612224000000,
+                        "date": "2021-02-02",
+                        "hdd12": 12.4,
+                        "hdd15": 12.4
+                    },
+                    {
+                        "timestamp": 1612310400000,
+                        "date": "2021-02-03",
+                        "hdd12": 9.8,
+                        "hdd15": 9.8
+                    },
+                    {
+                        "timestamp": 1612396800000,
+                        "date": "2021-02-04",
+                        "hdd12": 12.4,
+                        "hdd15": 12.4
+                    },
+                    {
+                        "timestamp": 1612483200000,
+                        "date": "2021-02-05",
+                        "hdd12": 13.7,
+                        "hdd15": 13.7
+                    },
+                    {
+                        "timestamp": 1612569600000,
+                        "date": "2021-02-06",
+                        "hdd12": 14,
+                        "hdd15": 14
+                    },
+                    {
+                        "timestamp": 1612656000000,
+                        "date": "2021-02-07",
+                        "hdd12": 15.4,
+                        "hdd15": 15.4
+                    },
+                    {
+                        "timestamp": 1612742400000,
+                        "date": "2021-02-08",
+                        "hdd12": 22,
+                        "hdd15": 22
+                    },
+                    {
+                        "timestamp": 1612828800000,
+                        "date": "2021-02-09",
+                        "hdd12": 25.4,
+                        "hdd15": 25.4
+                    },
+                    {
+                        "timestamp": 1612915200000,
+                        "date": "2021-02-10",
+                        "hdd12": 27.4,
+                        "hdd15": 27.4
+                    },
+                    {
+                        "timestamp": 1613001600000,
+                        "date": "2021-02-11",
+                        "hdd12": 28.2,
+                        "hdd15": 28.2
+                    },
+                    {
+                        "timestamp": 1613088000000,
+                        "date": "2021-02-12",
+                        "hdd12": 26.9,
+                        "hdd15": 26.9
+                    },
+                    {
+                        "timestamp": 1613174400000,
+                        "date": "2021-02-13",
+                        "hdd12": 26.3,
+                        "hdd15": 26.3
+                    },
+                    {
+                        "timestamp": 1613260800000,
+                        "date": "2021-02-14",
+                        "hdd12": 23.6,
+                        "hdd15": 23.6
+                    },
+                    {
+                        "timestamp": 1613347200000,
+                        "date": "2021-02-15",
+                        "hdd12": 21.3,
+                        "hdd15": 21.3
+                    },
+                    {
+                        "timestamp": 1613433600000,
+                        "date": "2021-02-16",
+                        "hdd12": 16,
+                        "hdd15": 16
+                    },
+                    {
+                        "timestamp": 1613520000000,
+                        "date": "2021-02-17",
+                        "hdd12": 12.4,
+                        "hdd15": 12.4
+                    },
+                    {
+                        "timestamp": 1613606400000,
+                        "date": "2021-02-18",
+                        "hdd12": 14.8,
+                        "hdd15": 14.8
+                    },
+                    {
+                        "timestamp": 1613692800000,
+                        "date": "2021-02-19",
+                        "hdd12": 12.2,
+                        "hdd15": 12.2
+                    },
+                    {
+                        "timestamp": 1613779200000,
+                        "date": "2021-02-20",
+                        "hdd12": 11.5,
+                        "hdd15": 11.5
+                    },
+                    {
+                        "timestamp": 1613865600000,
+                        "date": "2021-02-21",
+                        "hdd12": 10.8,
+                        "hdd15": 10.8
+                    },
+                    {
+                        "timestamp": 1613952000000,
+                        "date": "2021-02-22",
+                        "hdd12": 13.9,
+                        "hdd15": 13.9
+                    },
+                    {
+                        "timestamp": 1614038400000,
+                        "date": "2021-02-23",
+                        "hdd12": 10.6,
+                        "hdd15": 10.6
+                    },
+                    {
+                        "timestamp": 1614124800000,
+                        "date": "2021-02-24",
+                        "hdd12": 9.1,
+                        "hdd15": 9.1
+                    },
+                    {
+                        "timestamp": 1614211200000,
+                        "date": "2021-02-25",
+                        "hdd12": 9.3,
+                        "hdd15": 9.3
+                    },
+                    {
+                        "timestamp": 1614297600000,
+                        "date": "2021-02-26",
+                        "hdd12": 13.6,
+                        "hdd15": 13.6
+                    },
+                    {
+                        "timestamp": 1614384000000,
+                        "date": "2021-02-27",
+                        "hdd12": 14.9,
+                        "hdd15": 14.9
+                    },
+                    {
+                        "timestamp": 1614470400000,
+                        "date": "2021-02-28",
+                        "hdd12": 15.4,
+                        "hdd15": 15.4
+                    },
+                    {
+                        "timestamp": 1614556800000,
+                        "date": "2021-03-01",
+                        "hdd12": 13.9,
+                        "hdd15": 13.9
+                    },
+                    {
+                        "timestamp": 1614643200000,
+                        "date": "2021-03-02",
+                        "hdd12": 12.8,
+                        "hdd15": 12.8
+                    },
+                    {
+                        "timestamp": 1614729600000,
+                        "date": "2021-03-03",
+                        "hdd12": 13.8,
+                        "hdd15": 13.8
+                    },
+                    {
+                        "timestamp": 1614816000000,
+                        "date": "2021-03-04",
+                        "hdd12": 11.2,
+                        "hdd15": 11.2
+                    },
+                    {
+                        "timestamp": 1614902400000,
+                        "date": "2021-03-05",
+                        "hdd12": 16.6,
+                        "hdd15": 16.6
+                    },
+                    {
+                        "timestamp": 1614988800000,
+                        "date": "2021-03-06",
+                        "hdd12": 18.6,
+                        "hdd15": 18.6
+                    },
+                    {
+                        "timestamp": 1615075200000,
+                        "date": "2021-03-07",
+                        "hdd12": 18.3,
+                        "hdd15": 18.3
+                    },
+                    {
+                        "timestamp": 1615161600000,
+                        "date": "2021-03-08",
+                        "hdd12": 18.5,
+                        "hdd15": 18.5
+                    },
+                    {
+                        "timestamp": 1615248000000,
+                        "date": "2021-03-09",
+                        "hdd12": 17.3,
+                        "hdd15": 17.3
+                    },
+                    {
+                        "timestamp": 1615334400000,
+                        "date": "2021-03-10",
+                        "hdd12": 14,
+                        "hdd15": 14
+                    },
+                    {
+                        "timestamp": 1615420800000,
+                        "date": "2021-03-11",
+                        "hdd12": 11,
+                        "hdd15": 11
+                    },
+                    {
+                        "timestamp": 1615507200000,
+                        "date": "2021-03-12",
+                        "hdd12": 13,
+                        "hdd15": 13
+                    },
+                    {
+                        "timestamp": 1615593600000,
+                        "date": "2021-03-13",
+                        "hdd12": 13.7,
+                        "hdd15": 13.7
+                    },
+                    {
+                        "timestamp": 1615680000000,
+                        "date": "2021-03-14",
+                        "hdd12": 16.1,
+                        "hdd15": 16.1
+                    },
+                    {
+                        "timestamp": 1615766400000,
+                        "date": "2021-03-15",
+                        "hdd12": 15.2,
+                        "hdd15": 15.2
+                    },
+                    {
+                        "timestamp": 1615852800000,
+                        "date": "2021-03-16",
+                        "hdd12": 15.4,
+                        "hdd15": 15.4
+                    },
+                    {
+                        "timestamp": 1615939200000,
+                        "date": "2021-03-17",
+                        "hdd12": 16.7,
+                        "hdd15": 16.7
+                    },
+                    {
+                        "timestamp": 1616025600000,
+                        "date": "2021-03-18",
+                        "hdd12": 17.5,
+                        "hdd15": 17.5
+                    },
+                    {
+                        "timestamp": 1616112000000,
+                        "date": "2021-03-19",
+                        "hdd12": 17.7,
+                        "hdd15": 17.7
+                    },
+                    {
+                        "timestamp": 1616198400000,
+                        "date": "2021-03-20",
+                        "hdd12": 18.8,
+                        "hdd15": 18.8
+                    },
+                    {
+                        "timestamp": 1616284800000,
+                        "date": "2021-03-21",
+                        "hdd12": 15.9,
+                        "hdd15": 15.9
+                    },
+                    {
+                        "timestamp": 1616371200000,
+                        "date": "2021-03-22",
+                        "hdd12": 15.2,
+                        "hdd15": 15.2
+                    },
+                    {
+                        "timestamp": 1616457600000,
+                        "date": "2021-03-23",
+                        "hdd12": 14.3,
+                        "hdd15": 14.3
+                    },
+                    {
+                        "timestamp": 1616544000000,
+                        "date": "2021-03-24",
+                        "hdd12": 13.9,
+                        "hdd15": 13.9
+                    },
+                    {
+                        "timestamp": 1616630400000,
+                        "date": "2021-03-25",
+                        "hdd12": 11.4,
+                        "hdd15": 11.4
+                    },
+                    {
+                        "timestamp": 1616716800000,
+                        "date": "2021-03-26",
+                        "hdd12": 10.4,
+                        "hdd15": 10.4
+                    },
+                    {
+                        "timestamp": 1616803200000,
+                        "date": "2021-03-27",
+                        "hdd12": 11.6,
+                        "hdd15": 11.6
+                    },
+                    {
+                        "timestamp": 1616889600000,
+                        "date": "2021-03-28",
+                        "hdd12": 10.4,
+                        "hdd15": 10.4
+                    },
+                    {
+                        "timestamp": 1616976000000,
+                        "date": "2021-03-29",
+                        "hdd12": 0,
+                        "hdd15": 7.9
+                    },
+                    {
+                        "timestamp": 1617062400000,
+                        "date": "2021-03-30",
+                        "hdd12": 0,
+                        "hdd15": 6.699999999999999
+                    },
+                    {
+                        "timestamp": 1617148800000,
+                        "date": "2021-03-31",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1617235200000,
+                        "date": "2021-04-01",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1617321600000,
+                        "date": "2021-04-02",
+                        "hdd12": 10.5,
+                        "hdd15": 10.5
+                    },
+                    {
+                        "timestamp": 1617408000000,
+                        "date": "2021-04-03",
+                        "hdd12": 13.1,
+                        "hdd15": 13.1
+                    },
+                    {
+                        "timestamp": 1617494400000,
+                        "date": "2021-04-04",
+                        "hdd12": 13.6,
+                        "hdd15": 13.6
+                    },
+                    {
+                        "timestamp": 1617580800000,
+                        "date": "2021-04-05",
+                        "hdd12": 15.9,
+                        "hdd15": 15.9
+                    },
+                    {
+                        "timestamp": 1617667200000,
+                        "date": "2021-04-06",
+                        "hdd12": 19.1,
+                        "hdd15": 19.1
+                    },
+                    {
+                        "timestamp": 1617753600000,
+                        "date": "2021-04-07",
+                        "hdd12": 19,
+                        "hdd15": 19
+                    },
+                    {
+                        "timestamp": 1617840000000,
+                        "date": "2021-04-08",
+                        "hdd12": 16,
+                        "hdd15": 16
+                    },
+                    {
+                        "timestamp": 1617926400000,
+                        "date": "2021-04-09",
+                        "hdd12": 12.4,
+                        "hdd15": 12.4
+                    },
+                    {
+                        "timestamp": 1618012800000,
+                        "date": "2021-04-10",
+                        "hdd12": 8.5,
+                        "hdd15": 8.5
+                    },
+                    {
+                        "timestamp": 1618099200000,
+                        "date": "2021-04-11",
+                        "hdd12": 9.7,
+                        "hdd15": 9.7
+                    },
+                    {
+                        "timestamp": 1618185600000,
+                        "date": "2021-04-12",
+                        "hdd12": 15.2,
+                        "hdd15": 15.2
+                    },
+                    {
+                        "timestamp": 1618272000000,
+                        "date": "2021-04-13",
+                        "hdd12": 16.4,
+                        "hdd15": 16.4
+                    },
+                    {
+                        "timestamp": 1618358400000,
+                        "date": "2021-04-14",
+                        "hdd12": 16.8,
+                        "hdd15": 16.8
+                    },
+                    {
+                        "timestamp": 1618444800000,
+                        "date": "2021-04-15",
+                        "hdd12": 16.7,
+                        "hdd15": 16.7
+                    },
+                    {
+                        "timestamp": 1618531200000,
+                        "date": "2021-04-16",
+                        "hdd12": 16.2,
+                        "hdd15": 16.2
+                    },
+                    {
+                        "timestamp": 1618617600000,
+                        "date": "2021-04-17",
+                        "hdd12": 13.3,
+                        "hdd15": 13.3
+                    },
+                    {
+                        "timestamp": 1618704000000,
+                        "date": "2021-04-18",
+                        "hdd12": 12.8,
+                        "hdd15": 12.8
+                    },
+                    {
+                        "timestamp": 1618790400000,
+                        "date": "2021-04-19",
+                        "hdd12": 12,
+                        "hdd15": 12
+                    },
+                    {
+                        "timestamp": 1618876800000,
+                        "date": "2021-04-20",
+                        "hdd12": 11.4,
+                        "hdd15": 11.4
+                    },
+                    {
+                        "timestamp": 1618963200000,
+                        "date": "2021-04-21",
+                        "hdd12": 8.6,
+                        "hdd15": 8.6
+                    },
+                    {
+                        "timestamp": 1619049600000,
+                        "date": "2021-04-22",
+                        "hdd12": 10.1,
+                        "hdd15": 10.1
+                    },
+                    {
+                        "timestamp": 1619136000000,
+                        "date": "2021-04-23",
+                        "hdd12": 10.7,
+                        "hdd15": 10.7
+                    },
+                    {
+                        "timestamp": 1619222400000,
+                        "date": "2021-04-24",
+                        "hdd12": 9,
+                        "hdd15": 9
+                    },
+                    {
+                        "timestamp": 1619308800000,
+                        "date": "2021-04-25",
+                        "hdd12": 9.7,
+                        "hdd15": 9.7
+                    },
+                    {
+                        "timestamp": 1619395200000,
+                        "date": "2021-04-26",
+                        "hdd12": 10.3,
+                        "hdd15": 10.3
+                    },
+                    {
+                        "timestamp": 1619481600000,
+                        "date": "2021-04-27",
+                        "hdd12": 9.6,
+                        "hdd15": 9.6
+                    },
+                    {
+                        "timestamp": 1619568000000,
+                        "date": "2021-04-28",
+                        "hdd12": 0,
+                        "hdd15": 7.199999999999999
+                    },
+                    {
+                        "timestamp": 1619654400000,
+                        "date": "2021-04-29",
+                        "hdd12": 8.4,
+                        "hdd15": 8.4
+                    },
+                    {
+                        "timestamp": 1619740800000,
+                        "date": "2021-04-30",
+                        "hdd12": 13.9,
+                        "hdd15": 13.9
+                    },
+                    {
+                        "timestamp": 1619827200000,
+                        "date": "2021-05-01",
+                        "hdd12": 11.7,
+                        "hdd15": 11.7
+                    },
+                    {
+                        "timestamp": 1619913600000,
+                        "date": "2021-05-02",
+                        "hdd12": 10.8,
+                        "hdd15": 10.8
+                    },
+                    {
+                        "timestamp": 1620000000000,
+                        "date": "2021-05-03",
+                        "hdd12": 11.3,
+                        "hdd15": 11.3
+                    },
+                    {
+                        "timestamp": 1620086400000,
+                        "date": "2021-05-04",
+                        "hdd12": 10.6,
+                        "hdd15": 10.6
+                    },
+                    {
+                        "timestamp": 1620172800000,
+                        "date": "2021-05-05",
+                        "hdd12": 12.1,
+                        "hdd15": 12.1
+                    },
+                    {
+                        "timestamp": 1620259200000,
+                        "date": "2021-05-06",
+                        "hdd12": 12.8,
+                        "hdd15": 12.8
+                    },
+                    {
+                        "timestamp": 1620345600000,
+                        "date": "2021-05-07",
+                        "hdd12": 11.9,
+                        "hdd15": 11.9
+                    },
+                    {
+                        "timestamp": 1620432000000,
+                        "date": "2021-05-08",
+                        "hdd12": 10.5,
+                        "hdd15": 10.5
+                    },
+                    {
+                        "timestamp": 1620518400000,
+                        "date": "2021-05-09",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1620604800000,
+                        "date": "2021-05-10",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1620691200000,
+                        "date": "2021-05-11",
+                        "hdd12": 0,
+                        "hdd15": 7.1
+                    },
+                    {
+                        "timestamp": 1620777600000,
+                        "date": "2021-05-12",
+                        "hdd12": 0,
+                        "hdd15": 7.9
+                    },
+                    {
+                        "timestamp": 1620864000000,
+                        "date": "2021-05-13",
+                        "hdd12": 8.4,
+                        "hdd15": 8.4
+                    },
+                    {
+                        "timestamp": 1620950400000,
+                        "date": "2021-05-14",
+                        "hdd12": 8.2,
+                        "hdd15": 8.2
+                    },
+                    {
+                        "timestamp": 1621036800000,
+                        "date": "2021-05-15",
+                        "hdd12": 8.6,
+                        "hdd15": 8.6
+                    },
+                    {
+                        "timestamp": 1621123200000,
+                        "date": "2021-05-16",
+                        "hdd12": 0,
+                        "hdd15": 7.699999999999999
+                    },
+                    {
+                        "timestamp": 1621209600000,
+                        "date": "2021-05-17",
+                        "hdd12": 8.9,
+                        "hdd15": 8.9
+                    },
+                    {
+                        "timestamp": 1621296000000,
+                        "date": "2021-05-18",
+                        "hdd12": 8.7,
+                        "hdd15": 8.7
+                    },
+                    {
+                        "timestamp": 1621382400000,
+                        "date": "2021-05-19",
+                        "hdd12": 9,
+                        "hdd15": 9
+                    },
+                    {
+                        "timestamp": 1621468800000,
+                        "date": "2021-05-20",
+                        "hdd12": 8.1,
+                        "hdd15": 8.1
+                    },
+                    {
+                        "timestamp": 1621555200000,
+                        "date": "2021-05-21",
+                        "hdd12": 0,
+                        "hdd15": 7.199999999999999
+                    },
+                    {
+                        "timestamp": 1621641600000,
+                        "date": "2021-05-22",
+                        "hdd12": 0,
+                        "hdd15": 7.5
+                    },
+                    {
+                        "timestamp": 1621728000000,
+                        "date": "2021-05-23",
+                        "hdd12": 0,
+                        "hdd15": 7.9
+                    },
+                    {
+                        "timestamp": 1621814400000,
+                        "date": "2021-05-24",
+                        "hdd12": 8,
+                        "hdd15": 8
+                    },
+                    {
+                        "timestamp": 1621900800000,
+                        "date": "2021-05-25",
+                        "hdd12": 9.4,
+                        "hdd15": 9.4
+                    },
+                    {
+                        "timestamp": 1621987200000,
+                        "date": "2021-05-26",
+                        "hdd12": 9.6,
+                        "hdd15": 9.6
+                    },
+                    {
+                        "timestamp": 1622073600000,
+                        "date": "2021-05-27",
+                        "hdd12": 9.2,
+                        "hdd15": 9.2
+                    },
+                    {
+                        "timestamp": 1622160000000,
+                        "date": "2021-05-28",
+                        "hdd12": 0,
+                        "hdd15": 7.4
+                    },
+                    {
+                        "timestamp": 1622246400000,
+                        "date": "2021-05-29",
+                        "hdd12": 0,
+                        "hdd15": 5.699999999999999
+                    },
+                    {
+                        "timestamp": 1622332800000,
+                        "date": "2021-05-30",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1622419200000,
+                        "date": "2021-05-31",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1622505600000,
+                        "date": "2021-06-01",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1622592000000,
+                        "date": "2021-06-02",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1622678400000,
+                        "date": "2021-06-03",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1622764800000,
+                        "date": "2021-06-04",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1622851200000,
+                        "date": "2021-06-05",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1622937600000,
+                        "date": "2021-06-06",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1623024000000,
+                        "date": "2021-06-07",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1623110400000,
+                        "date": "2021-06-08",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1623196800000,
+                        "date": "2021-06-09",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1623283200000,
+                        "date": "2021-06-10",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1623369600000,
+                        "date": "2021-06-11",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1623456000000,
+                        "date": "2021-06-12",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1623542400000,
+                        "date": "2021-06-13",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1623628800000,
+                        "date": "2021-06-14",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1623715200000,
+                        "date": "2021-06-15",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1623801600000,
+                        "date": "2021-06-16",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1623888000000,
+                        "date": "2021-06-17",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1623974400000,
+                        "date": "2021-06-18",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1624060800000,
+                        "date": "2021-06-19",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1624147200000,
+                        "date": "2021-06-20",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1624233600000,
+                        "date": "2021-06-21",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1624320000000,
+                        "date": "2021-06-22",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1624406400000,
+                        "date": "2021-06-23",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1624492800000,
+                        "date": "2021-06-24",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1624579200000,
+                        "date": "2021-06-25",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1624665600000,
+                        "date": "2021-06-26",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1624752000000,
+                        "date": "2021-06-27",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1624838400000,
+                        "date": "2021-06-28",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1624924800000,
+                        "date": "2021-06-29",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1625011200000,
+                        "date": "2021-06-30",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1625097600000,
+                        "date": "2021-07-01",
+                        "hdd12": 0,
+                        "hdd15": 5.4
+                    },
+                    {
+                        "timestamp": 1625184000000,
+                        "date": "2021-07-02",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1625270400000,
+                        "date": "2021-07-03",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1625356800000,
+                        "date": "2021-07-04",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1625443200000,
+                        "date": "2021-07-05",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1625529600000,
+                        "date": "2021-07-06",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1625616000000,
+                        "date": "2021-07-07",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1625702400000,
+                        "date": "2021-07-08",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1625788800000,
+                        "date": "2021-07-09",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1625875200000,
+                        "date": "2021-07-10",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1625961600000,
+                        "date": "2021-07-11",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1626048000000,
+                        "date": "2021-07-12",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1626134400000,
+                        "date": "2021-07-13",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1626220800000,
+                        "date": "2021-07-14",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1626307200000,
+                        "date": "2021-07-15",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1626393600000,
+                        "date": "2021-07-16",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1626480000000,
+                        "date": "2021-07-17",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1626566400000,
+                        "date": "2021-07-18",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1626652800000,
+                        "date": "2021-07-19",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1626739200000,
+                        "date": "2021-07-20",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1626825600000,
+                        "date": "2021-07-21",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1626912000000,
+                        "date": "2021-07-22",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1626998400000,
+                        "date": "2021-07-23",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1627084800000,
+                        "date": "2021-07-24",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1627171200000,
+                        "date": "2021-07-25",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1627257600000,
+                        "date": "2021-07-26",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1627344000000,
+                        "date": "2021-07-27",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1627430400000,
+                        "date": "2021-07-28",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1627516800000,
+                        "date": "2021-07-29",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1627603200000,
+                        "date": "2021-07-30",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1627689600000,
+                        "date": "2021-07-31",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1627776000000,
+                        "date": "2021-08-01",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1627862400000,
+                        "date": "2021-08-02",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1627948800000,
+                        "date": "2021-08-03",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1628035200000,
+                        "date": "2021-08-04",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1628121600000,
+                        "date": "2021-08-05",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1628208000000,
+                        "date": "2021-08-06",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1628294400000,
+                        "date": "2021-08-07",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1628380800000,
+                        "date": "2021-08-08",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1628467200000,
+                        "date": "2021-08-09",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1628553600000,
+                        "date": "2021-08-10",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1628640000000,
+                        "date": "2021-08-11",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1628726400000,
+                        "date": "2021-08-12",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1628812800000,
+                        "date": "2021-08-13",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1628899200000,
+                        "date": "2021-08-14",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1628985600000,
+                        "date": "2021-08-15",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1629072000000,
+                        "date": "2021-08-16",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1629158400000,
+                        "date": "2021-08-17",
+                        "hdd12": 0,
+                        "hdd15": 6.1
+                    },
+                    {
+                        "timestamp": 1629244800000,
+                        "date": "2021-08-18",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1629331200000,
+                        "date": "2021-08-19",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1629417600000,
+                        "date": "2021-08-20",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1629504000000,
+                        "date": "2021-08-21",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1629590400000,
+                        "date": "2021-08-22",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1629676800000,
+                        "date": "2021-08-23",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1629763200000,
+                        "date": "2021-08-24",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1629849600000,
+                        "date": "2021-08-25",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1629936000000,
+                        "date": "2021-08-26",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1630022400000,
+                        "date": "2021-08-27",
+                        "hdd12": 0,
+                        "hdd15": 5.699999999999999
+                    },
+                    {
+                        "timestamp": 1630108800000,
+                        "date": "2021-08-28",
+                        "hdd12": 0,
+                        "hdd15": 5.5
+                    },
+                    {
+                        "timestamp": 1630195200000,
+                        "date": "2021-08-29",
+                        "hdd12": 0,
+                        "hdd15": 5.9
+                    },
+                    {
+                        "timestamp": 1630281600000,
+                        "date": "2021-08-30",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1630368000000,
+                        "date": "2021-08-31",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1630454400000,
+                        "date": "2021-09-01",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1630540800000,
+                        "date": "2021-09-02",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1630627200000,
+                        "date": "2021-09-03",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1630713600000,
+                        "date": "2021-09-04",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1630800000000,
+                        "date": "2021-09-05",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1630886400000,
+                        "date": "2021-09-06",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1630972800000,
+                        "date": "2021-09-07",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1631059200000,
+                        "date": "2021-09-08",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1631145600000,
+                        "date": "2021-09-09",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1631232000000,
+                        "date": "2021-09-10",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1631318400000,
+                        "date": "2021-09-11",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1631404800000,
+                        "date": "2021-09-12",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1631491200000,
+                        "date": "2021-09-13",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1631577600000,
+                        "date": "2021-09-14",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1631664000000,
+                        "date": "2021-09-15",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1631750400000,
+                        "date": "2021-09-16",
+                        "hdd12": 0,
+                        "hdd15": 0
+                    },
+                    {
+                        "timestamp": 1631836800000,
+                        "date": "2021-09-17",
+                        "hdd12": 0,
+                        "hdd15": 5.1
+                    },
+                    {
+                        "timestamp": 1631923200000,
+                        "date": "2021-09-18",
+                        "hdd12": 0,
+                        "hdd15": 5
+                    },
+                    {
+                        "timestamp": 1632009600000,
+                        "date": "2021-09-19",
+                        "hdd12": 0,
+                        "hdd15": 5.5
+                    },
+                    {
+                        "timestamp": 1632096000000,
+                        "date": "2021-09-20",
+                        "hdd12": 0,
+                        "hdd15": 6.4
+                    },
+                    {
+                        "timestamp": 1632182400000,
+                        "date": "2021-09-21",
+                        "hdd12": 0,
+                        "hdd15": 6.699999999999999
+                    }
+                ]
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "input": {
+                        "type": "object",
+                        "properties": {
+                            "geo": {
+                                "type": "object",
+                                "properties": {
+                                    "lat": {
+                                        "type": "string"
+                                    },
+                                    "lon": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "timeframe": {
+                                "type": "object",
+                                "properties": {
+                                    "from": {
+                                        "type": "string"
+                                    },
+                                    "to": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "aggregations": {
+                        "type": "object",
+                        "properties": {
+                            "hdd12": {
+                                "type": "number"
+                            },
+                            "hdd15": {
+                                "type": "number"
+                            }
+                        }
+                    },
+                    "result": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "timestamp": {
+                                    "type": "integer"
+                                },
+                                "date": {
+                                    "type": "string"
+                                },
+                                "hdd12": {
+                                    "type": "number"
+                                },
+                                "hdd15": {
+                                    "type": "number"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Niederschlag",
+            "url": "https://ecoweather.p.rapidapi.com/ucPREC",
+            "description": "Beantwortet die Frage, wie viel Niederschlag innerhalb eines Zeitraums vorhanden gewesen ist. Wird verwendet zum Beispiel bei der Dimensionierung von Regenwassernutzung (Zisterne) oder bei der Planung von G\u00e4rten .",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "from",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "2021-01-01"
+                },
+                {
+                    "name": "lon",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "8.79"
+                },
+                {
+                    "name": "lat",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "49.34"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "to",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "2021-09-21"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://ecoweather.p.rapidapi.com/ucPREC\"\nquerystring = {\"to\": \"2021-09-21\", \"from\": \"2021-01-01\", \"lon\": \"8.79\", \"lat\": \"49.34\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ecoweather.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ecoweather.p.rapidapi.com/ucPREC\"\nquerystring = {\"to\": \"2021-09-21\", \"from\": \"2021-01-01\", \"lon\": \"8.79\", \"lat\": \"49.34\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ecoweather.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per minute for your plan, BASIC, by the API provider"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "input": {
+                        "type": "object",
+                        "properties": {
+                            "geo": {
+                                "type": "object",
+                                "properties": {
+                                    "lat": {
+                                        "type": "string"
+                                    },
+                                    "lon": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "timeframe": {
+                                "type": "object",
+                                "properties": {
+                                    "from": {
+                                        "type": "string"
+                                    },
+                                    "to": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "aggregations": {
+                        "type": "object",
+                        "properties": {
+                            "precipitationdays": {
+                                "type": "integer"
+                            },
+                            "precipitation": {
+                                "type": "number"
+                            }
+                        }
+                    },
+                    "result": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "timestamp": {
+                                    "type": "integer"
+                                },
+                                "date": {
+                                    "type": "string"
+                                },
+                                "precipitation": {
+                                    "type": "number"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "ecoweather",
+            "url": "https://ecoweather.p.rapidapi.com/ecoweather",
+            "description": "Retrieve historical weather data for a location. Dataset lasts back until year 2016. Results are limited to 366 days (1 year)  per request.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "lon",
+                    "type": "NUMBER",
+                    "description": "Longitude of a geo-location in degrees. ",
+                    "default": "8.80282"
+                },
+                {
+                    "name": "lat",
+                    "type": "NUMBER",
+                    "description": "Latitude of a geo-location in degrees. ",
+                    "default": "49.3427818"
+                },
+                {
+                    "name": "from",
+                    "type": "STRING",
+                    "description": "Start date in YYYY-MM-DD format.",
+                    "default": "2021-12-31"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "to",
+                    "type": "STRING",
+                    "description": "End date in YYYY-MM-DD format. \n\nNote: if time period relative to `from` is more than 366 days it will automatically be replaced with this date.",
+                    "default": "2022-09-31"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://ecoweather.p.rapidapi.com/ecoweather\"\nquerystring = {\"lon\": \"8.80282\", \"lat\": \"49.3427818\", \"to\": \"2022-09-31\", \"from\": \"2021-12-31\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ecoweather.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ecoweather.p.rapidapi.com/ecoweather\"\nquerystring = {\"lon\": \"8.80282\", \"lat\": \"49.3427818\", \"to\": \"2022-09-31\", \"from\": \"2021-12-31\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ecoweather.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per minute for your plan, BASIC, by the API provider"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "result": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "timestamp": {
+                                    "type": "integer"
+                                },
+                                "humidity": {
+                                    "type": "number"
+                                },
+                                "snow": {
+                                    "type": "number"
+                                },
+                                "windspeed": {
+                                    "type": "number"
+                                },
+                                "winddirection": {
+                                    "type": "number"
+                                },
+                                "count": {
+                                    "type": "integer"
+                                },
+                                "tempC": {
+                                    "type": "number"
+                                },
+                                "tempminC": {
+                                    "type": "number"
+                                },
+                                "tempmaxC": {
+                                    "type": "number"
+                                },
+                                "precipitation": {
+                                    "type": "number"
+                                },
+                                "date": {
+                                    "type": "string"
+                                },
+                                "hdd12": {
+                                    "type": "number"
+                                },
+                                "hdd15": {
+                                    "type": "number"
+                                }
+                            }
+                        }
+                    },
+                    "aggregations": {
+                        "type": "object",
+                        "properties": {
+                            "year": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "year": {
+                                            "type": "string"
+                                        },
+                                        "count": {
+                                            "type": "integer"
+                                        },
+                                        "snowdays": {
+                                            "type": "integer"
+                                        },
+                                        "precipitationdays": {
+                                            "type": "integer"
+                                        },
+                                        "desertdays": {
+                                            "type": "integer"
+                                        },
+                                        "tropicalnights": {
+                                            "type": "integer"
+                                        },
+                                        "icedays": {
+                                            "type": "integer"
+                                        },
+                                        "icingdays": {
+                                            "type": "integer"
+                                        },
+                                        "tropicaldays": {
+                                            "type": "integer"
+                                        },
+                                        "vegetationdays": {
+                                            "type": "integer"
+                                        },
+                                        "tempC": {
+                                            "type": "number"
+                                        },
+                                        "windspeed": {
+                                            "type": "number"
+                                        },
+                                        "tempminC": {
+                                            "type": "number"
+                                        },
+                                        "tempmaxC": {
+                                            "type": "number"
+                                        },
+                                        "humidity": {
+                                            "type": "number"
+                                        },
+                                        "winddirection": {
+                                            "type": "number"
+                                        },
+                                        "hdd12": {
+                                            "type": "number"
+                                        },
+                                        "hdd15": {
+                                            "type": "number"
+                                        }
+                                    }
+                                }
+                            },
+                            "month": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "month": {
+                                            "type": "string"
+                                        },
+                                        "count": {
+                                            "type": "integer"
+                                        },
+                                        "snowdays": {
+                                            "type": "integer"
+                                        },
+                                        "precipitationdays": {
+                                            "type": "integer"
+                                        },
+                                        "desertdays": {
+                                            "type": "integer"
+                                        },
+                                        "tropicalnights": {
+                                            "type": "integer"
+                                        },
+                                        "vegetationdays": {
+                                            "type": "integer"
+                                        },
+                                        "icedays": {
+                                            "type": "integer"
+                                        },
+                                        "icingdays": {
+                                            "type": "integer"
+                                        },
+                                        "tropicaldays": {
+                                            "type": "integer"
+                                        },
+                                        "tempC": {
+                                            "type": "number"
+                                        },
+                                        "windspeed": {
+                                            "type": "number"
+                                        },
+                                        "tempminC": {
+                                            "type": "number"
+                                        },
+                                        "tempmaxC": {
+                                            "type": "number"
+                                        },
+                                        "humidity": {
+                                            "type": "number"
+                                        },
+                                        "winddirection": {
+                                            "type": "number"
+                                        },
+                                        "hdd12": {
+                                            "type": "number"
+                                        },
+                                        "hdd15": {
+                                            "type": "number"
+                                        }
+                                    }
+                                }
+                            },
+                            "all": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "count": {
+                                            "type": "integer"
+                                        },
+                                        "snowdays": {
+                                            "type": "integer"
+                                        },
+                                        "precipitationdays": {
+                                            "type": "integer"
+                                        },
+                                        "desertdays": {
+                                            "type": "integer"
+                                        },
+                                        "tropicalnights": {
+                                            "type": "integer"
+                                        },
+                                        "icedays": {
+                                            "type": "integer"
+                                        },
+                                        "icingdays": {
+                                            "type": "integer"
+                                        },
+                                        "tropicaldays": {
+                                            "type": "integer"
+                                        },
+                                        "vegetationdays": {
+                                            "type": "integer"
+                                        },
+                                        "tempC": {
+                                            "type": "number"
+                                        },
+                                        "windspeed": {
+                                            "type": "number"
+                                        },
+                                        "tempminC": {
+                                            "type": "number"
+                                        },
+                                        "tempmaxC": {
+                                            "type": "number"
+                                        },
+                                        "humidity": {
+                                            "type": "number"
+                                        },
+                                        "winddirection": {
+                                            "type": "number"
+                                        },
+                                        "hdd12": {
+                                            "type": "number"
+                                        },
+                                        "hdd15": {
+                                            "type": "number"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "meta": {
+                        "type": "object",
+                        "properties": {
+                            "count": {
+                                "type": "object",
+                                "properties": {
+                                    "dimension": {
+                                        "type": "string"
+                                    },
+                                    "measurement": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "tempC": {
+                                "type": "object",
+                                "properties": {
+                                    "dimension": {
+                                        "type": "string"
+                                    },
+                                    "measurement": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "precipitation": {
+                                "type": "object",
+                                "properties": {
+                                    "dimension": {
+                                        "type": "string"
+                                    },
+                                    "measurement": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "snow": {
+                                "type": "object",
+                                "properties": {
+                                    "dimension": {
+                                        "type": "string"
+                                    },
+                                    "measurement": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "windspeed": {
+                                "type": "object",
+                                "properties": {
+                                    "dimension": {
+                                        "type": "string"
+                                    },
+                                    "measurement": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "timestamp": {
+                                "type": "object",
+                                "properties": {
+                                    "dimension": {
+                                        "type": "string"
+                                    },
+                                    "measurement": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "hdd12": {
+                                "type": "object",
+                                "properties": {
+                                    "dimension": {
+                                        "type": "string"
+                                    },
+                                    "measurement": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "hdd15": {
+                                "type": "object",
+                                "properties": {
+                                    "dimension": {
+                                        "type": "string"
+                                    },
+                                    "measurement": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "snowdays": {
+                                "type": "object",
+                                "properties": {
+                                    "dimension": {
+                                        "type": "string"
+                                    },
+                                    "measurement": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "precipitationdays": {
+                                "type": "object",
+                                "properties": {
+                                    "dimension": {
+                                        "type": "string"
+                                    },
+                                    "measurement": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "icedays": {
+                                "type": "object",
+                                "properties": {
+                                    "dimension": {
+                                        "type": "string"
+                                    },
+                                    "measurement": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "tropicaldays": {
+                                "type": "object",
+                                "properties": {
+                                    "dimension": {
+                                        "type": "string"
+                                    },
+                                    "measurement": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "desertdays": {
+                                "type": "object",
+                                "properties": {
+                                    "dimension": {
+                                        "type": "string"
+                                    },
+                                    "measurement": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "tropicalnights": {
+                                "type": "object",
+                                "properties": {
+                                    "dimension": {
+                                        "type": "string"
+                                    },
+                                    "measurement": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "vegetationdays": {
+                                "type": "object",
+                                "properties": {
+                                    "dimension": {
+                                        "type": "string"
+                                    },
+                                    "measurement": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "icingdays": {
+                                "type": "object",
+                                "properties": {
+                                    "dimension": {
+                                        "type": "string"
+                                    },
+                                    "measurement": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "input": {
+                        "type": "object",
+                        "properties": {
+                            "geo": {
+                                "type": "object",
+                                "properties": {
+                                    "lat": {
+                                        "type": "string"
+                                    },
+                                    "lon": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "timeframe": {
+                                "type": "object",
+                                "properties": {
+                                    "from": {
+                                        "type": "string"
+                                    },
+                                    "to": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "standardized_name": "ecoweather"
+}

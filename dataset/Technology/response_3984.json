@@ -1,0 +1,33 @@
+{
+"user_query":"I'm a music producer and I'm looking for some unique tracks to sample. Can you recommend some tracks from Soundcloud and provide me with the basic information of those tracks? Also, suggest some albums related to these tracks and provide information about the artists and their albums.",
+"domain":"Technology",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Search for unique tracks on Soundcloud based on specific genres or moods.",
+        "domain": "technology",
+        "required_inputs": ["genre", "mood"]
+    },
+    {
+        "id": 2,
+        "description": "Retrieve basic information of the recommended tracks such as title, artist, duration, and genre.",
+        "domain": "technology",
+        "required_inputs": ["track_ids"],
+        "dependencies": [1]
+    },
+    {
+        "id": 3,
+        "description": "Find albums related to the recommended tracks.",
+        "domain": "technology",
+        "required_inputs": ["track_ids"],
+        "dependencies": [2]
+    },
+    {
+        "id": 4,
+        "description": "Gather information about the artists of the recommended tracks and their albums.",
+        "domain": "technology",
+        "required_inputs": ["artist_ids"],
+        "dependencies": [3]
+    }
+]
+}

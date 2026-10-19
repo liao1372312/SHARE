@@ -1,0 +1,105 @@
+{
+    "product_id": "api_74431f10-9e55-422b-8a7c-c02c2d0f894f",
+    "tool_description": "Fast and Simple web search query autocomplete with support for Knowledge Graph entities. Powered by Google Search.",
+    "home_url": "https://rapidapi.com/letscrape-6bRBa3QguO5/api/web-search-autocomplete/",
+    "name": "Web Search Autocomplete",
+    "title": "Web Search Autocomplete",
+    "pricing": "FREEMIUM",
+    "tool_name": "Web Search Autocomplete",
+    "score": {
+        "avgServiceLevel": 99,
+        "avgLatency": 116,
+        "avgSuccessRate": 99,
+        "popularityScore": 9.4,
+        "__typename": "Score"
+    },
+    "host": "web-search-autocomplete.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Autocomplete",
+            "url": "https://web-search-autocomplete.p.rapidapi.com/autocomplete",
+            "description": "Get query suggestions from Google Search, including Knowledge Graph information when available.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "query",
+                    "type": "STRING",
+                    "description": "Autocomplete / typeahead search query.",
+                    "default": "to"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "cursor_pointer",
+                    "type": "STRING",
+                    "description": "Cursor pointer defines the position of cursor for the query provided, position starts from 0 which is a case where cursor is placed before the query. If not provided acts as cursor is placed in the end of query (Google's *cp* parameter).",
+                    "default": ""
+                },
+                {
+                    "name": "user_agent",
+                    "type": "ENUM",
+                    "description": "Device type to use for the search.\n\n**Default:** desktop.",
+                    "default": ""
+                },
+                {
+                    "name": "region",
+                    "type": "STRING",
+                    "description": "The country / region from which to make the query.\n\n**Allowed values:** 2-letter country code, see [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)\n**Default:** us.",
+                    "default": "us"
+                },
+                {
+                    "name": "language",
+                    "type": "STRING",
+                    "description": "Set the language of the results.\n\n**Allowed values:** 2-letter language code, see [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes)\n**Default:** en.",
+                    "default": "en"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://web-search-autocomplete.p.rapidapi.com/autocomplete\"\nquerystring = {\"cursor_pointer\": \"\", \"query\": \"to\", \"user_agent\": \"\", \"region\": \"us\", \"language\": \"en\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"web-search-autocomplete.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://web-search-autocomplete.p.rapidapi.com/autocomplete\"\nquerystring = {\"cursor_pointer\": \"\", \"query\": \"to\", \"user_agent\": \"\", \"region\": \"us\", \"language\": \"en\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"web-search-autocomplete.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "status": "ERROR",
+                "request_id": "30202821-5ef4-4a80-a9db-8a4b3c48aece",
+                "error": {
+                    "message": "User agent should be one of: desktop, mobile.",
+                    "code": 400
+                }
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "type": "string"
+                    },
+                    "request_id": {
+                        "type": "string"
+                    },
+                    "parameters": {
+                        "type": "object",
+                        "properties": {
+                            "query": {
+                                "type": "string"
+                            },
+                            "language": {
+                                "type": "string"
+                            },
+                            "region": {
+                                "type": "string"
+                            },
+                            "user_agent": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "data": {
+                        "type": "array",
+                        "items": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "standardized_name": "web_search_autocomplete"
+}

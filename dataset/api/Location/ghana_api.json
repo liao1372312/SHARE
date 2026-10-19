@@ -1,0 +1,655 @@
+{
+    "product_id": "api_bc6d0a56-3bd6-4004-8c09-55a9ca1926e1",
+    "tool_description": "Welcome to the Ghanaian Location Lookup API! This API allows you to retrieve the latitude, longitude, and name of any location in Ghana.",
+    "home_url": "https://rapidapi.com/kidddevs/api/ghana-api/",
+    "name": "Ghana API",
+    "title": "Ghana API",
+    "pricing": "FREEMIUM",
+    "tool_name": "Ghana API",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 449,
+        "avgSuccessRate": 100,
+        "popularityScore": 8.2,
+        "__typename": "Score"
+    },
+    "host": "ghana-api.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Directions Between 2 Locations",
+            "url": "https://ghana-api.p.rapidapi.com/directions",
+            "description": "This endpoint returns information about the route between two locations in terms of distance, duration, and steps.\n\nBelow Example: **Directions from Kumasi to Accra**",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "end_lon",
+                    "type": "NUMBER",
+                    "description": "Longitude of the ending point (required)",
+                    "default": "-0.1870"
+                },
+                {
+                    "name": "end_lat",
+                    "type": "NUMBER",
+                    "description": "Latitude of the ending point (required)",
+                    "default": "5.6037"
+                },
+                {
+                    "name": "start_lon",
+                    "type": "NUMBER",
+                    "description": "Longitude of the starting point (required)",
+                    "default": "-1.6233086"
+                },
+                {
+                    "name": "start_lat",
+                    "type": "NUMBER",
+                    "description": "Latitude of the starting point (required)",
+                    "default": "6.6985605"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "distance_unit",
+                    "type": "STRING",
+                    "description": "Unit of distance measurement, valid options are **km** (default), and **mi**.",
+                    "default": "km"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://ghana-api.p.rapidapi.com/directions\"\nquerystring = {\"end_lon\": \"-0.1870\", \"distance_unit\": \"km\", \"end_lat\": \"5.6037\", \"start_lon\": \"-1.6233086\", \"start_lat\": \"6.6985605\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ghana-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ghana-api.p.rapidapi.com/directions\"\nquerystring = {\"end_lon\": \"-0.1870\", \"distance_unit\": \"km\", \"end_lat\": \"5.6037\", \"start_lon\": \"-1.6233086\", \"start_lat\": \"6.6985605\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ghana-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "distance": "247.65km",
+                "duration": "3h 8min",
+                "steps": [
+                    {
+                        "direction": "depart",
+                        "distance": "0.15km",
+                        "duration": "0min:9s",
+                        "instruction": "",
+                        "location": [
+                            -1.622578,
+                            6.699115
+                        ]
+                    },
+                    {
+                        "direction": "fork",
+                        "distance": "0.05km",
+                        "duration": "0min:3s",
+                        "instruction": "",
+                        "location": [
+                            -1.621801,
+                            6.698023
+                        ]
+                    },
+                    {
+                        "direction": "roundabout",
+                        "distance": "0.09km",
+                        "duration": "0min:6s",
+                        "instruction": "",
+                        "location": [
+                            -1.621806,
+                            6.697568
+                        ]
+                    },
+                    {
+                        "direction": "exit roundabout",
+                        "distance": "0.03km",
+                        "duration": "0min:1s",
+                        "instruction": "",
+                        "location": [
+                            -1.621584,
+                            6.697318
+                        ]
+                    },
+                    {
+                        "direction": "new name",
+                        "distance": "1.03km",
+                        "duration": "1min:10s",
+                        "instruction": "",
+                        "location": [
+                            -1.621354,
+                            6.697314
+                        ]
+                    },
+                    {
+                        "direction": "turn",
+                        "distance": "0.19km",
+                        "duration": "0min:27s",
+                        "instruction": "",
+                        "location": [
+                            -1.617055,
+                            6.689107
+                        ]
+                    },
+                    {
+                        "direction": "turn",
+                        "distance": "0.24km",
+                        "duration": "0min:15s",
+                        "instruction": "",
+                        "location": [
+                            -1.615381,
+                            6.689151
+                        ]
+                    },
+                    {
+                        "direction": "roundabout",
+                        "distance": "0.02km",
+                        "duration": "0min:1s",
+                        "instruction": "",
+                        "location": [
+                            -1.61324,
+                            6.689285
+                        ]
+                    },
+                    {
+                        "direction": "exit roundabout",
+                        "distance": "5.31km",
+                        "duration": "4min:33s",
+                        "instruction": "",
+                        "location": [
+                            -1.613095,
+                            6.689307
+                        ]
+                    },
+                    {
+                        "direction": "fork",
+                        "distance": "0.15km",
+                        "duration": "0min:6s",
+                        "instruction": "",
+                        "location": [
+                            -1.565387,
+                            6.687933
+                        ]
+                    },
+                    {
+                        "direction": "new name",
+                        "distance": "11.29km",
+                        "duration": "7min:57s",
+                        "instruction": "",
+                        "location": [
+                            -1.564084,
+                            6.688281
+                        ]
+                    },
+                    {
+                        "direction": "new name",
+                        "distance": "53.35km",
+                        "duration": "37min:39s",
+                        "instruction": "",
+                        "location": [
+                            -1.470872,
+                            6.72265
+                        ]
+                    },
+                    {
+                        "direction": "new name",
+                        "distance": "24.02km",
+                        "duration": "16min:57s",
+                        "instruction": "",
+                        "location": [
+                            -1.047628,
+                            6.601986
+                        ]
+                    },
+                    {
+                        "direction": "new name",
+                        "distance": "15.07km",
+                        "duration": "10min:38s",
+                        "instruction": "",
+                        "location": [
+                            -0.836601,
+                            6.597936
+                        ]
+                    },
+                    {
+                        "direction": "new name",
+                        "distance": "112.86km",
+                        "duration": "1h 26min",
+                        "instruction": "",
+                        "location": [
+                            -0.733309,
+                            6.529698
+                        ]
+                    },
+                    {
+                        "direction": "fork",
+                        "distance": "17.48km",
+                        "duration": "13min:8s",
+                        "instruction": "",
+                        "location": [
+                            -0.314347,
+                            5.736266
+                        ]
+                    },
+                    {
+                        "direction": "off ramp",
+                        "distance": "0.31km",
+                        "duration": "0min:28s",
+                        "instruction": "",
+                        "location": [
+                            -0.228303,
+                            5.611633
+                        ]
+                    },
+                    {
+                        "direction": "merge",
+                        "distance": "0.80km",
+                        "duration": "0min:35s",
+                        "instruction": "",
+                        "location": [
+                            -0.227256,
+                            5.612506
+                        ]
+                    },
+                    {
+                        "direction": "off ramp",
+                        "distance": "0.33km",
+                        "duration": "0min:29s",
+                        "instruction": "",
+                        "location": [
+                            -0.220256,
+                            5.614355
+                        ]
+                    },
+                    {
+                        "direction": "fork",
+                        "distance": "0.36km",
+                        "duration": "0min:32s",
+                        "instruction": "",
+                        "location": [
+                            -0.217318,
+                            5.614549
+                        ]
+                    },
+                    {
+                        "direction": "rotary",
+                        "distance": "0.01km",
+                        "duration": "0min:0s",
+                        "instruction": "",
+                        "location": [
+                            -0.214061,
+                            5.614847
+                        ]
+                    },
+                    {
+                        "direction": "exit rotary",
+                        "distance": "1.53km",
+                        "duration": "1min:53s",
+                        "instruction": "",
+                        "location": [
+                            -0.213987,
+                            5.614808
+                        ]
+                    },
+                    {
+                        "direction": "new name",
+                        "distance": "1.91km",
+                        "duration": "2min:52s",
+                        "instruction": "",
+                        "location": [
+                            -0.204348,
+                            5.605407
+                        ]
+                    },
+                    {
+                        "direction": "turn",
+                        "distance": "0.11km",
+                        "duration": "0min:20s",
+                        "instruction": "",
+                        "location": [
+                            -0.189997,
+                            5.595851
+                        ]
+                    },
+                    {
+                        "direction": "turn",
+                        "distance": "0.10km",
+                        "duration": "0min:9s",
+                        "instruction": "",
+                        "location": [
+                            -0.189131,
+                            5.59541
+                        ]
+                    },
+                    {
+                        "direction": "roundabout",
+                        "distance": "0.01km",
+                        "duration": "0min:0s",
+                        "instruction": "",
+                        "location": [
+                            -0.188964,
+                            5.596288
+                        ]
+                    },
+                    {
+                        "direction": "exit roundabout",
+                        "distance": "0.86km",
+                        "duration": "1min:17s",
+                        "instruction": "",
+                        "location": [
+                            -0.188941,
+                            5.596331
+                        ]
+                    },
+                    {
+                        "direction": "arrive",
+                        "distance": "0.00km",
+                        "duration": "0min:0s",
+                        "instruction": "",
+                        "location": [
+                            -0.18712,
+                            5.603729
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Measure Distance",
+            "url": "https://ghana-api.p.rapidapi.com/distance",
+            "description": "This endpoint calculates the distance between two locations based on their latitude and longitude coordinates, while allowing the user to specify the unit of measurement.\n\nBelow Example: **Distance from Kumasi to Accra**",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "lon1",
+                    "type": "NUMBER",
+                    "description": "Longitude of the first location (required)",
+                    "default": "-1.6233086"
+                },
+                {
+                    "name": "lat2",
+                    "type": "NUMBER",
+                    "description": "Latitude of the second location (required)",
+                    "default": "5.6037"
+                },
+                {
+                    "name": "lat1",
+                    "type": "NUMBER",
+                    "description": "Latitude of the first location (required)",
+                    "default": "6.6985605"
+                },
+                {
+                    "name": "lon2",
+                    "type": "NUMBER",
+                    "description": "Longitude of the second location (required)",
+                    "default": "-0.1870"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "unit",
+                    "type": "STRING",
+                    "description": "Unit of distance measurement, valid options are **km** (default), **mi**, **ft**, and **yd**.\n",
+                    "default": "km"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://ghana-api.p.rapidapi.com/distance\"\nquerystring = {\"lon1\": \"-1.6233086\", \"lat2\": \"5.6037\", \"unit\": \"km\", \"lat1\": \"6.6985605\", \"lon2\": \"-0.1870\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ghana-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ghana-api.p.rapidapi.com/distance\"\nquerystring = {\"lon1\": \"-1.6233086\", \"lat2\": \"5.6037\", \"unit\": \"km\", \"lat1\": \"6.6985605\", \"lon2\": \"-0.1870\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ghana-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "distance": "247.65km",
+                "duration": "3h 8min",
+                "unit": "km"
+            }
+        },
+        {
+            "name": "Reverse Geocode",
+            "url": "https://ghana-api.p.rapidapi.com/georev",
+            "description": "This endpoint allows you to perform reverse geocoding in Ghana by providing query parameters for latitude and longitude. It returns the name of the city where the location is located.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "lon",
+                    "type": "STRING",
+                    "description": "The longitude of the location.",
+                    "default": "-0.1870"
+                },
+                {
+                    "name": "lat",
+                    "type": "STRING",
+                    "description": "The latitude of the location.",
+                    "default": "5.6037"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://ghana-api.p.rapidapi.com/georev\"\nquerystring = {\"lon\": \"-0.1870\", \"lat\": \"5.6037\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ghana-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ghana-api.p.rapidapi.com/georev\"\nquerystring = {\"lon\": \"-0.1870\", \"lat\": \"5.6037\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ghana-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "amenity": "",
+                "boundingbox": [
+                    "5.603873",
+                    "5.603973",
+                    "-0.1874308",
+                    "-0.1873308"
+                ],
+                "category": "place",
+                "city": "Accra",
+                "country": "Ghana",
+                "display_name": "19, Patrice Lumumba Road, Airport Residential Area, Dzorwulu, Accra, Ayawaso West Municipal District, Greater Accra Region, GA-254-4987, Ghana",
+                "region": "Greater Accra Region",
+                "suburb": "Airport Residential Area"
+            }
+        },
+        {
+            "name": "Facilities Lookup",
+            "url": "https://ghana-api.p.rapidapi.com/facility",
+            "description": "This endpoint allows you to get facilities in Ghana like hospital, bank, college, etc. by providing optional query parameters for facility type, region and city. It returns a list of facilities that match the query parameters.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "region",
+                    "type": "STRING",
+                    "description": "The region where the facility is located",
+                    "default": "Greater Accra"
+                },
+                {
+                    "name": "type",
+                    "type": "STRING",
+                    "description": "The type of amenity facility to search for (default: **hospital**)\nOptions:\n**aerodrome, bar, cafe, fast_food, pub, restaurant, college, driving_school, school, university, bank, atm, pharmacy,** etc..        \n\n[More options->](https://wiki.openstreetmap.org/wiki/Map_features#Amenity)",
+                    "default": "hospital"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "limit",
+                    "type": "NUMBER",
+                    "description": "The number of facilities to query.",
+                    "default": "10"
+                },
+                {
+                    "name": "city",
+                    "type": "STRING",
+                    "description": "The city where the facility is located",
+                    "default": "Accra"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://ghana-api.p.rapidapi.com/facility\"\nquerystring = {\"limit\": \"10\", \"city\": \"Accra\", \"region\": \"Greater Accra\", \"type\": \"hospital\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ghana-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ghana-api.p.rapidapi.com/facility\"\nquerystring = {\"limit\": \"10\", \"city\": \"Accra\", \"region\": \"Greater Accra\", \"type\": \"hospital\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ghana-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "hospital": [
+                    {
+                        "ISO3166-2-lvl4": "GH-AA",
+                        "address": "Harley Street, Accra, Ghana",
+                        "amenity": "Korle Bu Teaching Hospital",
+                        "country_code": "gh",
+                        "county": "Accra Metropolitan District",
+                        "display_name": "Korle Bu Teaching Hospital, Harley Street, Korlebu, Accra, Accra Metropolitan District, Greater Accra Region, GA-221-1570, Ghana",
+                        "latitude": "5.538316699999999",
+                        "longitude": "-0.226829367783661",
+                        "postcode": "GA-221-1570",
+                        "region": "Greater Accra Region",
+                        "road": "Harley Street",
+                        "suburb": "Korlebu",
+                        "village": "",
+                        "website": ""
+                    },
+                    {
+                        "ISO3166-2-lvl4": "GH-AA",
+                        "address": "Independence Avenue, Accra, Ghana",
+                        "amenity": "37 Military Hospital",
+                        "country_code": "gh",
+                        "county": "Ayawaso East Municipal District",
+                        "display_name": "37 Military Hospital, Independence Avenue, Kanda, Accra, Ayawaso East Municipal District, Greater Accra Region, GL-067-5987, Ghana",
+                        "latitude": "5.5873288",
+                        "longitude": "-0.1842659990105952",
+                        "postcode": "GL-067-5987",
+                        "region": "Greater Accra Region",
+                        "road": "Independence Avenue",
+                        "suburb": "Kanda",
+                        "village": "",
+                        "website": ""
+                    },
+                    {
+                        "ISO3166-2-lvl4": "GH-AA",
+                        "address": "Reverend Richter Street, Accra, Ghana",
+                        "amenity": "Osu Maternity Home Hospital",
+                        "country_code": "gh",
+                        "county": "Korle-Klottey Municipal District",
+                        "display_name": "Osu Maternity Home Hospital, Reverend Richter Street, Ministries, Christiansborg, Kokomlemle, Accra, Korle-Klottey Municipal District, Greater Accra Region, GA-222-2148, Ghana",
+                        "latitude": "5.553747",
+                        "longitude": "-0.185228",
+                        "postcode": "GA-222-2148",
+                        "region": "Greater Accra Region",
+                        "road": "Reverend Richter Street",
+                        "suburb": "Ministries",
+                        "village": "",
+                        "website": ""
+                    },
+                    {
+                        "ISO3166-2-lvl4": "GH-AA",
+                        "address": "Castle Road, Accra, Ghana",
+                        "amenity": "Accra Psychiatric Hospital",
+                        "country_code": "gh",
+                        "county": "Korle-Klottey Municipal District",
+                        "display_name": "Accra Psychiatric Hospital, Castle Road, Ministries, Adabraka, Kokomlemle, Accra, Korle-Klottey Municipal District, Greater Accra Region, GA-222-2148, Ghana",
+                        "latitude": "5.56332295",
+                        "longitude": "-0.20457906053467267",
+                        "postcode": "GA-222-2148",
+                        "region": "Greater Accra Region",
+                        "road": "Castle Road",
+                        "suburb": "Adabraka",
+                        "village": "",
+                        "website": ""
+                    },
+                    {
+                        "ISO3166-2-lvl4": "GH-AA",
+                        "address": "Castle Road, Accra, Ghana",
+                        "amenity": "Ridge Hospital",
+                        "country_code": "gh",
+                        "county": "Korle-Klottey Municipal District",
+                        "display_name": "Ridge Hospital, Castle Road, Ministries, West Ridge, Kokomlemle, Accra, Korle-Klottey Municipal District, Greater Accra Region, GA-222-2148, Ghana",
+                        "latitude": "5.56214205",
+                        "longitude": "-0.19891906543248727",
+                        "postcode": "GA-222-2148",
+                        "region": "Greater Accra Region",
+                        "road": "Castle Road",
+                        "suburb": "West Ridge",
+                        "village": "",
+                        "website": ""
+                    },
+                    {
+                        "ISO3166-2-lvl4": "GH-AA",
+                        "address": "Amoonakwa Road, Accra, Ghana",
+                        "amenity": "Princess Marie Louie Children's Hospital",
+                        "country_code": "gh",
+                        "county": "Accra Metropolitan District",
+                        "display_name": "Princess Marie Louie Children's Hospital, Amoonakwa Road, Ussher Town, Accra, Accra Metropolitan District, Greater Accra Region, GA-222-2148, Ghana",
+                        "latitude": "5.5447719",
+                        "longitude": "-0.21321637552383504",
+                        "postcode": "GA-222-2148",
+                        "region": "Greater Accra Region",
+                        "road": "Amoonakwa Road",
+                        "suburb": "Ussher Town",
+                        "village": "",
+                        "website": ""
+                    },
+                    {
+                        "ISO3166-2-lvl4": "GH-AA",
+                        "address": "Barnes Avenue, Accra, Ghana",
+                        "amenity": "Nyaho Medical Centre",
+                        "country_code": "gh",
+                        "county": "Korle-Klottey Municipal District",
+                        "display_name": "Nyaho Medical Centre, Barnes Avenue, Ministries, West Ridge, Kokomlemle, Accra, Korle-Klottey Municipal District, Greater Accra Region, GA-222-2148, Ghana",
+                        "latitude": "5.5514896",
+                        "longitude": "-0.2039394",
+                        "postcode": "GA-222-2148",
+                        "region": "Greater Accra Region",
+                        "road": "Barnes Avenue",
+                        "suburb": "West Ridge",
+                        "village": "",
+                        "website": ""
+                    },
+                    {
+                        "ISO3166-2-lvl4": "GH-AA",
+                        "address": "Kwame Nkrumah Avenue, Accra, Ghana",
+                        "amenity": "Atta Quarshie Merton Memorial Hospital",
+                        "country_code": "gh",
+                        "county": "Korle-Klottey Municipal District",
+                        "display_name": "Atta Quarshie Merton Memorial Hospital, Kwame Nkrumah Avenue, Adabraka, Kokomlemle, Accra, Korle-Klottey Municipal District, Greater Accra Region, GA-222-2148, Ghana",
+                        "latitude": "5.5619488",
+                        "longitude": "-0.2137769",
+                        "postcode": "GA-222-2148",
+                        "region": "Greater Accra Region",
+                        "road": "Kwame Nkrumah Avenue",
+                        "suburb": "Adabraka",
+                        "village": "",
+                        "website": ""
+                    },
+                    {
+                        "ISO3166-2-lvl4": "GH-AA",
+                        "address": "Starlets 91 Road, Accra, Ghana",
+                        "amenity": "Civil Service Polyclinic",
+                        "country_code": "gh",
+                        "county": "Korle-Klottey Municipal District",
+                        "display_name": "Civil Service Polyclinic, Starlets 91 Road, Ministries, Victoriaborg, Kokomlemle, Accra, Korle-Klottey Municipal District, Greater Accra Region, GA-222-2148, Ghana",
+                        "latitude": "5.551027449999999",
+                        "longitude": "-0.19600946208654133",
+                        "postcode": "GA-222-2148",
+                        "region": "Greater Accra Region",
+                        "road": "Starlets 91 Road",
+                        "suburb": "Ministries",
+                        "village": "",
+                        "website": ""
+                    },
+                    {
+                        "ISO3166-2-lvl4": "GH-AA",
+                        "address": "Tsiranana Loop, Accra, Ghana",
+                        "amenity": "Adabraka Polyclinic",
+                        "country_code": "gh",
+                        "county": "Korle-Klottey Municipal District",
+                        "display_name": "Adabraka Polyclinic, Tsiranana Loop, Ministries, West Ridge, Kokomlemle, Accra, Korle-Klottey Municipal District, Greater Accra Region, GA-222-2148, Ghana",
+                        "latitude": "5.5618324999999995",
+                        "longitude": "-0.20451858953675212",
+                        "postcode": "GA-222-2148",
+                        "region": "Greater Accra Region",
+                        "road": "Tsiranana Loop",
+                        "suburb": "West Ridge",
+                        "village": "",
+                        "website": ""
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Geocode",
+            "url": "https://ghana-api.p.rapidapi.com/geofy",
+            "description": "This endpoint allows you to lookup locations in Ghana by providing an address query parameter. It returns the latitude, longitude and city name of the location.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "address",
+                    "type": "STRING",
+                    "description": "Name of address to lookup",
+                    "default": "Kumasi"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://ghana-api.p.rapidapi.com/geofy\"\nquerystring = {\"address\": \"Kumasi\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ghana-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ghana-api.p.rapidapi.com/geofy\"\nquerystring = {\"address\": \"Kumasi\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ghana-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "display_name": "Kumasi, Kumasi Metropolitan District, Ashanti Region, Ghana",
+                "latitude": "6.6985605",
+                "longitude": "-1.6233086"
+            }
+        }
+    ],
+    "standardized_name": "ghana_api"
+}

@@ -1,0 +1,32 @@
+{
+"user_query":"My company is organizing an event on sustainable development and we need to gather information about climate change. Please fetch the climate change news from The Guardian and provide us with the articles from Energy Price News that cover the European region.",
+"domain":"Technology",
+"TaskList": [
+{
+"id": 1,
+"description": "Fetch climate change news from The Guardian.",
+"domain": "technology",
+"required_inputs": ["source: The Guardian", "topic: climate change"]
+},
+{
+"id": 2,
+"description": "Filter articles related to the European region from the fetched news articles.",
+"domain": "technology",
+"required_inputs": ["articles from step 1", "region: Europe"],
+"dependencies": [1]
+},
+{
+"id": 3,
+"description": "Fetch articles from Energy Price News that cover the European region.",
+"domain": "technology",
+"required_inputs": ["source: Energy Price News", "region: Europe"]
+},
+{
+"id": 4,
+"description": "Provide a summary of the filtered articles covering climate change and energy prices in Europe.",
+"domain": "technology",
+"required_inputs": ["articles from step 2", "articles from step 3"],
+"dependencies": [2, 3]
+}
+]
+}

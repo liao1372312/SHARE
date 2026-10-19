@@ -1,0 +1,71 @@
+{
+    "product_id": "api_a25a876e-5bad-4132-b399-0b644a05abcf",
+    "tool_description": "Free and easy. Validate any phone number, from any country.\nGet type of number (for example, fixed line or mobile), the location of the number, and also reformat the number into local and international dialing formats.",
+    "home_url": "https://rapidapi.com/larroyouy70/api/phonenumbervalidatefree/",
+    "name": "PhoneNumberValidateFree",
+    "title": "PhoneNumberValidateFree",
+    "pricing": "FREEMIUM",
+    "tool_name": "PhoneNumberValidateFree",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 487,
+        "avgSuccessRate": 100,
+        "popularityScore": 9.9,
+        "__typename": "Score"
+    },
+    "host": "phonenumbervalidatefree.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Validate",
+            "url": "https://phonenumbervalidatefree.p.rapidapi.com/ts_PhoneNumberValidateTest.jsp",
+            "description": "Free and easy. Validate any phone number, from any country.\nGet type of number (for example, fixed line or mobile), the location of the number, and also reformat the number into local and international dialing formats.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "number",
+                    "type": "STRING",
+                    "description": "1_ Option: local format (without prefix):\nExample: 94887799\n\n2_ Option: format E 164:\nRecommended: starting with symbol + followed by country prefix and number, without blank spaces\nRemark: the + symbol in a url is escaped for the text %2B leaving %2B59894887799\nExample: +59894887799 \n\n1_ Opci\u00f3n: formato local (sin prefijo):\nEjemplo: 94887799\n\n2_ Opci\u00f3n: formato E 164:\nRecomendado: comenzando con s\u00edmbolo + seguido de prefijo pa\u00eds y n\u00famero, sin espacios en blanco\nObservaci\u00f3n: el s\u00edmbolo + en una url se escapea para el texto %2B quedando %2B59894887799\nEjemplo: +59894887799",
+                    "default": "+59894887799"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "country",
+                    "type": "STRING",
+                    "description": "Format: ISO 3166-1 alpha-2 code\nRemark: in capital letters.\nOptional if the number parameter starts with the + symbol \n\nFormato: ISO 3166-1 alpha-2 code\nObservaci\u00f3n: en may\u00fasculas.\nOpcional si el parametro number comienza con el s\u00edmbolo +",
+                    "default": "UY"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://phonenumbervalidatefree.p.rapidapi.com/ts_PhoneNumberValidateTest.jsp\"\nquerystring = {\"number\": \"+59894887799\", \"country\": \"UY\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"phonenumbervalidatefree.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://phonenumbervalidatefree.p.rapidapi.com/ts_PhoneNumberValidateTest.jsp\"\nquerystring = {\"number\": \"+59894887799\", \"country\": \"UY\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"phonenumbervalidatefree.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "phoneNumberEntered": "+59894887799",
+                "defaultCountryEntered": "UY",
+                "languageEntered": "en",
+                "countryCode": "598",
+                "nationalNumber": "94887799",
+                "extension": "",
+                "countryCodeSource": "FROM_NUMBER_WITH_PLUS_SIGN",
+                "italianLeadingZero": false,
+                "rawInput": "+59894887799",
+                "isPossibleNumber": true,
+                "isValidNumber": true,
+                "isValidNumberForRegion": true,
+                "phoneNumberRegion": "UY",
+                "numberType": "MOBILE",
+                "E164Format": "+59894887799",
+                "originalFormat": "+598 94 887 799",
+                "nationalFormat": "094 887 799",
+                "internationalFormat": "+598 94 887 799",
+                "outOfCountryFormatFromUS": "011 598 94 887 799",
+                "outOfCountryFormatFromCH": "00 598 94 887 799",
+                "location": "Uruguay",
+                "timeZone_s": "[America/Montevideo]",
+                "carrier": "Movistar"
+            },
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "phonenumbervalidatefree"
+}

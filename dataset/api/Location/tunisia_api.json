@@ -1,0 +1,711 @@
+{
+    "product_id": "api_db4a070b-39c7-4735-9194-7db5048f8078",
+    "tool_description": "The Tunisia Lookup API allows you to look up the latitude, longitude, and address of a location in Tunisia.",
+    "home_url": "https://rapidapi.com/kidddevs/api/tunisia-api/",
+    "name": "Tunisia API",
+    "title": "Tunisia API",
+    "pricing": "FREEMIUM",
+    "tool_name": "Tunisia API",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 446,
+        "avgSuccessRate": 100,
+        "popularityScore": 8.3,
+        "__typename": "Score"
+    },
+    "host": "tunisia-api.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Directions Between 2 Locations",
+            "url": "https://tunisia-api.p.rapidapi.com/directions",
+            "description": "This endpoint returns information about the route between two locations in terms of distance, duration, and steps.\n\nBelow Example: **Directions from Sfax to Tunis**",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "start_lon",
+                    "type": "NUMBER",
+                    "description": "Longitude of the starting point (required)",
+                    "default": "10.7603483"
+                },
+                {
+                    "name": "end_lon",
+                    "type": "NUMBER",
+                    "description": "Longitude of the ending point (required)",
+                    "default": "10.103167361330975"
+                },
+                {
+                    "name": "start_lat",
+                    "type": "NUMBER",
+                    "description": "Latitude of the starting point (required)",
+                    "default": "34.797783"
+                },
+                {
+                    "name": "end_lat",
+                    "type": "NUMBER",
+                    "description": "Latitude of the ending point (required)",
+                    "default": "36.81395975"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "distance_unit",
+                    "type": "STRING",
+                    "description": "Unit of distance measurement, valid options are **km** (default), and **mi**.",
+                    "default": "km"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://tunisia-api.p.rapidapi.com/directions\"\nquerystring = {\"start_lon\": \"10.7603483\", \"distance_unit\": \"km\", \"end_lon\": \"10.103167361330975\", \"start_lat\": \"34.797783\", \"end_lat\": \"36.81395975\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"tunisia-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://tunisia-api.p.rapidapi.com/directions\"\nquerystring = {\"start_lon\": \"10.7603483\", \"distance_unit\": \"km\", \"end_lon\": \"10.103167361330975\", \"start_lat\": \"34.797783\", \"end_lat\": \"36.81395975\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"tunisia-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "distance": "268.82km",
+                "duration": "3h 18min",
+                "steps": [
+                    {
+                        "direction": "depart",
+                        "distance": "0.04km",
+                        "duration": "0min:10s",
+                        "instruction": "",
+                        "location": [
+                            10.760337,
+                            34.797895
+                        ]
+                    },
+                    {
+                        "direction": "turn",
+                        "distance": "0.50km",
+                        "duration": "0min:46s",
+                        "instruction": "",
+                        "location": [
+                            10.760788,
+                            34.797924
+                        ]
+                    },
+                    {
+                        "direction": "new name",
+                        "distance": "2.51km",
+                        "duration": "3min:47s",
+                        "instruction": "",
+                        "location": [
+                            10.76129,
+                            34.802379
+                        ]
+                    },
+                    {
+                        "direction": "roundabout",
+                        "distance": "0.02km",
+                        "duration": "0min:3s",
+                        "instruction": "",
+                        "location": [
+                            10.763608,
+                            34.824877
+                        ]
+                    },
+                    {
+                        "direction": "exit roundabout",
+                        "distance": "3.51km",
+                        "duration": "5min:16s",
+                        "instruction": "",
+                        "location": [
+                            10.763664,
+                            34.825064
+                        ]
+                    },
+                    {
+                        "direction": "roundabout",
+                        "distance": "0.10km",
+                        "duration": "0min:14s",
+                        "instruction": "",
+                        "location": [
+                            10.760223,
+                            34.856197
+                        ]
+                    },
+                    {
+                        "direction": "exit roundabout",
+                        "distance": "4.22km",
+                        "duration": "3min:30s",
+                        "instruction": "",
+                        "location": [
+                            10.759609,
+                            34.856656
+                        ]
+                    },
+                    {
+                        "direction": "roundabout",
+                        "distance": "0.01km",
+                        "duration": "0min:0s",
+                        "instruction": "",
+                        "location": [
+                            10.726929,
+                            34.883203
+                        ]
+                    },
+                    {
+                        "direction": "exit roundabout",
+                        "distance": "1.11km",
+                        "duration": "1min:33s",
+                        "instruction": "",
+                        "location": [
+                            10.726874,
+                            34.883255
+                        ]
+                    },
+                    {
+                        "direction": "fork",
+                        "distance": "94.82km",
+                        "duration": "1h 4min",
+                        "instruction": "",
+                        "location": [
+                            10.717652,
+                            34.889621
+                        ]
+                    },
+                    {
+                        "direction": "merge",
+                        "distance": "14.31km",
+                        "duration": "9min:32s",
+                        "instruction": "",
+                        "location": [
+                            10.563066,
+                            35.689631
+                        ]
+                    },
+                    {
+                        "direction": "fork",
+                        "distance": "117.85km",
+                        "duration": "1h 21min",
+                        "instruction": "",
+                        "location": [
+                            10.545877,
+                            35.814244
+                        ]
+                    },
+                    {
+                        "direction": "merge",
+                        "distance": "12.27km",
+                        "duration": "9min:5s",
+                        "instruction": "",
+                        "location": [
+                            10.327338,
+                            36.675933
+                        ]
+                    },
+                    {
+                        "direction": "off ramp",
+                        "distance": "0.33km",
+                        "duration": "0min:37s",
+                        "instruction": "",
+                        "location": [
+                            10.217635,
+                            36.738449
+                        ]
+                    },
+                    {
+                        "direction": "merge",
+                        "distance": "0.21km",
+                        "duration": "0min:8s",
+                        "instruction": "",
+                        "location": [
+                            10.218068,
+                            36.73845
+                        ]
+                    },
+                    {
+                        "direction": "roundabout",
+                        "distance": "0.05km",
+                        "duration": "0min:2s",
+                        "instruction": "",
+                        "location": [
+                            10.215907,
+                            36.737682
+                        ]
+                    },
+                    {
+                        "direction": "exit roundabout",
+                        "distance": "0.85km",
+                        "duration": "0min:36s",
+                        "instruction": "",
+                        "location": [
+                            10.215478,
+                            36.737485
+                        ]
+                    },
+                    {
+                        "direction": "roundabout",
+                        "distance": "0.04km",
+                        "duration": "0min:2s",
+                        "instruction": "",
+                        "location": [
+                            10.210713,
+                            36.731635
+                        ]
+                    },
+                    {
+                        "direction": "exit roundabout",
+                        "distance": "0.99km",
+                        "duration": "0min:41s",
+                        "instruction": "",
+                        "location": [
+                            10.210311,
+                            36.731607
+                        ]
+                    },
+                    {
+                        "direction": "roundabout",
+                        "distance": "0.03km",
+                        "duration": "0min:1s",
+                        "instruction": "",
+                        "location": [
+                            10.199475,
+                            36.729917
+                        ]
+                    },
+                    {
+                        "direction": "exit roundabout",
+                        "distance": "0.53km",
+                        "duration": "0min:22s",
+                        "instruction": "",
+                        "location": [
+                            10.199186,
+                            36.730021
+                        ]
+                    },
+                    {
+                        "direction": "fork",
+                        "distance": "0.07km",
+                        "duration": "0min:3s",
+                        "instruction": "",
+                        "location": [
+                            10.194914,
+                            36.733296
+                        ]
+                    },
+                    {
+                        "direction": "fork",
+                        "distance": "0.75km",
+                        "duration": "0min:31s",
+                        "instruction": "",
+                        "location": [
+                            10.194472,
+                            36.733803
+                        ]
+                    },
+                    {
+                        "direction": "roundabout",
+                        "distance": "0.02km",
+                        "duration": "0min:0s",
+                        "instruction": "",
+                        "location": [
+                            10.192766,
+                            36.740348
+                        ]
+                    },
+                    {
+                        "direction": "exit roundabout",
+                        "distance": "1.13km",
+                        "duration": "0min:47s",
+                        "instruction": "",
+                        "location": [
+                            10.192699,
+                            36.740513
+                        ]
+                    },
+                    {
+                        "direction": "roundabout",
+                        "distance": "0.01km",
+                        "duration": "0min:0s",
+                        "instruction": "",
+                        "location": [
+                            10.187863,
+                            36.749935
+                        ]
+                    },
+                    {
+                        "direction": "exit roundabout",
+                        "distance": "0.59km",
+                        "duration": "0min:24s",
+                        "instruction": "",
+                        "location": [
+                            10.187815,
+                            36.750039
+                        ]
+                    },
+                    {
+                        "direction": "roundabout",
+                        "distance": "0.06km",
+                        "duration": "0min:2s",
+                        "instruction": "",
+                        "location": [
+                            10.187542,
+                            36.755265
+                        ]
+                    },
+                    {
+                        "direction": "exit roundabout",
+                        "distance": "2.28km",
+                        "duration": "2min:5s",
+                        "instruction": "",
+                        "location": [
+                            10.187629,
+                            36.755788
+                        ]
+                    },
+                    {
+                        "direction": "new name",
+                        "distance": "1.48km",
+                        "duration": "1min:22s",
+                        "instruction": "",
+                        "location": [
+                            10.179111,
+                            36.774658
+                        ]
+                    },
+                    {
+                        "direction": "new name",
+                        "distance": "1.11km",
+                        "duration": "1min:3s",
+                        "instruction": "",
+                        "location": [
+                            10.170441,
+                            36.785728
+                        ]
+                    },
+                    {
+                        "direction": "turn",
+                        "distance": "0.92km",
+                        "duration": "1min:0s",
+                        "instruction": "",
+                        "location": [
+                            10.163131,
+                            36.79348
+                        ]
+                    },
+                    {
+                        "direction": "new name",
+                        "distance": "0.24km",
+                        "duration": "0min:15s",
+                        "instruction": "",
+                        "location": [
+                            10.155355,
+                            36.798901
+                        ]
+                    },
+                    {
+                        "direction": "end of road",
+                        "distance": "1.67km",
+                        "duration": "1min:43s",
+                        "instruction": "",
+                        "location": [
+                            10.153427,
+                            36.800345
+                        ]
+                    },
+                    {
+                        "direction": "rotary",
+                        "distance": "0.04km",
+                        "duration": "0min:2s",
+                        "instruction": "",
+                        "location": [
+                            10.137204,
+                            36.807577
+                        ]
+                    },
+                    {
+                        "direction": "exit rotary",
+                        "distance": "0.10km",
+                        "duration": "0min:5s",
+                        "instruction": "",
+                        "location": [
+                            10.136876,
+                            36.80776
+                        ]
+                    },
+                    {
+                        "direction": "roundabout",
+                        "distance": "0.01km",
+                        "duration": "0min:0s",
+                        "instruction": "",
+                        "location": [
+                            10.135751,
+                            36.807714
+                        ]
+                    },
+                    {
+                        "direction": "exit roundabout",
+                        "distance": "1.61km",
+                        "duration": "1min:28s",
+                        "instruction": "",
+                        "location": [
+                            10.135658,
+                            36.807719
+                        ]
+                    },
+                    {
+                        "direction": "roundabout",
+                        "distance": "0.04km",
+                        "duration": "0min:2s",
+                        "instruction": "",
+                        "location": [
+                            10.118673,
+                            36.811458
+                        ]
+                    },
+                    {
+                        "direction": "exit roundabout",
+                        "distance": "0.90km",
+                        "duration": "0min:49s",
+                        "instruction": "",
+                        "location": [
+                            10.118461,
+                            36.811736
+                        ]
+                    },
+                    {
+                        "direction": "turn",
+                        "distance": "0.56km",
+                        "duration": "1min:7s",
+                        "instruction": "",
+                        "location": [
+                            10.108981,
+                            36.814491
+                        ]
+                    },
+                    {
+                        "direction": "new name",
+                        "distance": "0.28km",
+                        "duration": "0min:24s",
+                        "instruction": "",
+                        "location": [
+                            10.103702,
+                            36.815367
+                        ]
+                    },
+                    {
+                        "direction": "roundabout",
+                        "distance": "0.10km",
+                        "duration": "0min:8s",
+                        "instruction": "",
+                        "location": [
+                            10.100614,
+                            36.815554
+                        ]
+                    },
+                    {
+                        "direction": "exit roundabout",
+                        "distance": "0.07km",
+                        "duration": "0min:16s",
+                        "instruction": "",
+                        "location": [
+                            10.100497,
+                            36.815293
+                        ]
+                    },
+                    {
+                        "direction": "end of road",
+                        "distance": "0.28km",
+                        "duration": "1min:7s",
+                        "instruction": "",
+                        "location": [
+                            10.10114,
+                            36.815055
+                        ]
+                    },
+                    {
+                        "direction": "turn",
+                        "distance": "0.12km",
+                        "duration": "0min:28s",
+                        "instruction": "",
+                        "location": [
+                            10.102201,
+                            36.812724
+                        ]
+                    },
+                    {
+                        "direction": "end of road",
+                        "distance": "0.07km",
+                        "duration": "0min:16s",
+                        "instruction": "",
+                        "location": [
+                            10.10313,
+                            36.813433
+                        ]
+                    },
+                    {
+                        "direction": "arrive",
+                        "distance": "0.00km",
+                        "duration": "0min:0s",
+                        "instruction": "",
+                        "location": [
+                            10.103566,
+                            36.813843
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Measure Distance",
+            "url": "https://tunisia-api.p.rapidapi.com/distance",
+            "description": "This endpoint calculates the distance between two locations based on their latitude and longitude coordinates, while allowing the user to specify the unit of measurement.\n\nBelow Example: **Distance from Sfax to Tunis**",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "lon2",
+                    "type": "NUMBER",
+                    "description": "Longitude of the second location (required)",
+                    "default": "10.103167361330975"
+                },
+                {
+                    "name": "lat2",
+                    "type": "NUMBER",
+                    "description": "Latitude of the second location (required)",
+                    "default": "36.81395975"
+                },
+                {
+                    "name": "lon1",
+                    "type": "NUMBER",
+                    "description": "Longitude of the first location (required)",
+                    "default": "10.7603483"
+                },
+                {
+                    "name": "lat1",
+                    "type": "NUMBER",
+                    "description": "Latitude of the first location (required)",
+                    "default": "34.797783"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "unit",
+                    "type": "STRING",
+                    "description": "Unit of distance measurement, valid options are **km** (default), **mi**, **ft**, and **yd**.\n",
+                    "default": "km"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://tunisia-api.p.rapidapi.com/distance\"\nquerystring = {\"unit\": \"km\", \"lon2\": \"10.103167361330975\", \"lat2\": \"36.81395975\", \"lon1\": \"10.7603483\", \"lat1\": \"34.797783\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"tunisia-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://tunisia-api.p.rapidapi.com/distance\"\nquerystring = {\"unit\": \"km\", \"lon2\": \"10.103167361330975\", \"lat2\": \"36.81395975\", \"lon1\": \"10.7603483\", \"lat1\": \"34.797783\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"tunisia-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "distance": "268.82km",
+                "duration": "3h 18min",
+                "unit": "km"
+            }
+        },
+        {
+            "name": "Reverse Geocode",
+            "url": "https://tunisia-api.p.rapidapi.com/georev",
+            "description": "This endpoint allows you to perform reverse geocoding in Tunisia by providing query parameters for latitude and longitude. It returns the name of the city where the location is located.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "lon",
+                    "type": "STRING",
+                    "description": "The longitude of the location.",
+                    "default": "10.335847425638779"
+                },
+                {
+                    "name": "lat",
+                    "type": "STRING",
+                    "description": "The latitude of the location.",
+                    "default": "34.723238699999996"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://tunisia-api.p.rapidapi.com/georev\"\nquerystring = {\"lon\": \"10.335847425638779\", \"lat\": \"34.723238699999996\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"tunisia-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://tunisia-api.p.rapidapi.com/georev\"\nquerystring = {\"lon\": \"10.335847425638779\", \"lat\": \"34.723238699999996\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"tunisia-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "amenity": "",
+                "boundingbox": [
+                    "34.7215264",
+                    "34.7615264",
+                    "10.3501863",
+                    "10.3901863"
+                ],
+                "category": "place",
+                "city": "",
+                "country": "\u062a\u0648\u0646\u0633",
+                "display_name": "\u0628\u0648\u0644\u0630\u064a\u0627\u0628, \u0645\u0639\u062a\u0645\u062f\u064a\u0629 \u0639\u0642\u0627\u0631\u0628, \u0648\u0644\u0627\u064a\u0629 \u0635\u0641\u0627\u0642\u0633, 3030, \u062a\u0648\u0646\u0633",
+                "province": "\u0648\u0644\u0627\u064a\u0629 \u0635\u0641\u0627\u0642\u0633",
+                "suburb": ""
+            }
+        },
+        {
+            "name": "Facilities Lookup",
+            "url": "https://tunisia-api.p.rapidapi.com/facility",
+            "description": "This endpoint allows you to get facilities in Tunisia like hospital, bank, college, etc. by providing optional query parameters for facility type, province and city. It returns a list of facilities that match the query parameters.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "city",
+                    "type": "STRING",
+                    "description": "The city where the facility is located",
+                    "default": "Tunis"
+                },
+                {
+                    "name": "province",
+                    "type": "STRING",
+                    "description": "The region where the facility is located",
+                    "default": "Manouba"
+                },
+                {
+                    "name": "type",
+                    "type": "STRING",
+                    "description": "The type of amenity facility to search for (default: **hospital**)\nOptions:\n**aerodrome, bar, cafe, fast_food, pub, restaurant, college, driving_school, school, university, bank, atm, pharmacy,** etc..        \n\n[More options->](https://wiki.openstreetmap.org/wiki/Map_features#Amenity)",
+                    "default": "hospital"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "limit",
+                    "type": "STRING",
+                    "description": "The number of facilities to query.",
+                    "default": "1"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://tunisia-api.p.rapidapi.com/facility\"\nquerystring = {\"limit\": \"1\", \"city\": \"Tunis\", \"province\": \"Manouba\", \"type\": \"hospital\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"tunisia-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://tunisia-api.p.rapidapi.com/facility\"\nquerystring = {\"limit\": \"1\", \"city\": \"Tunis\", \"province\": \"Manouba\", \"type\": \"hospital\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"tunisia-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "hospital": [
+                    {
+                        "ISO3166-2-lvl4": "TN-14",
+                        "address": "\u0634\u0627\u0631\u0639 \u0627\u0644\u062d\u0628\u064a\u0628 \u0628\u0648\u0631\u0642\u064a\u0628\u0629, , \u062a\u0648\u0646\u0633",
+                        "amenity": "\u0645\u0639\u0647\u062f \u0645\u062d\u0645\u062f \u0627\u0644\u0642\u0635\u0627\u0628 \u0644\u0644\u062c\u0628\u0631 \u0648\u062a\u0642\u0648\u064a\u0645 \u0627\u0644\u0623\u0639\u0636\u0627\u0621",
+                        "country_code": "tn",
+                        "county": "\u0645\u0646\u0648\u0628\u0629 \u0627\u0644\u0648\u0633\u0637\u0649",
+                        "display_name": "\u0645\u0639\u0647\u062f \u0645\u062d\u0645\u062f \u0627\u0644\u0642\u0635\u0627\u0628 \u0644\u0644\u062c\u0628\u0631 \u0648\u062a\u0642\u0648\u064a\u0645 \u0627\u0644\u0623\u0639\u0636\u0627\u0621, \u0634\u0627\u0631\u0639 \u0627\u0644\u062d\u0628\u064a\u0628 \u0628\u0648\u0631\u0642\u064a\u0628\u0629, \u0645\u0646\u0648\u0628\u0629, \u0645\u0646\u0648\u0628\u0629 \u0627\u0644\u0648\u0633\u0637\u0649, \u0645\u0639\u062a\u0645\u062f\u064a\u0629 \u0645\u0646\u0648\u0628\u0629\u202c, \u0648\u0644\u0627\u064a\u0629 \u0645\u0646\u0648\u0628\u0629, 2051, \u062a\u0648\u0646\u0633",
+                        "latitude": "36.81395975",
+                        "longitude": "10.103167361330975",
+                        "postcode": "2051",
+                        "province": "\u0648\u0644\u0627\u064a\u0629 \u0645\u0646\u0648\u0628\u0629",
+                        "road": "\u0634\u0627\u0631\u0639 \u0627\u0644\u062d\u0628\u064a\u0628 \u0628\u0648\u0631\u0642\u064a\u0628\u0629",
+                        "suburb": "",
+                        "village": "",
+                        "website": ""
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Geocode",
+            "url": "https://tunisia-api.p.rapidapi.com/geofy",
+            "description": "This endpoint allows you to lookup locations in Tunisia by providing an address query parameter. It returns the latitude, longitude and city name of the location.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "address",
+                    "type": "STRING",
+                    "description": "The name of the location to look up.",
+                    "default": "Tunis"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://tunisia-api.p.rapidapi.com/geofy\"\nquerystring = {\"address\": \"Tunis\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"tunisia-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://tunisia-api.p.rapidapi.com/geofy\"\nquerystring = {\"address\": \"Tunis\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"tunisia-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "display_name": "\u062a\u0648\u0646\u0633",
+                "latitude": "33.8439408",
+                "longitude": "9.400138"
+            }
+        }
+    ],
+    "standardized_name": "tunisia_api"
+}

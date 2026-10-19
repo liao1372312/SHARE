@@ -1,0 +1,61 @@
+{
+    "product_id": "api_33ab0c90-c7ff-47d6-bbaf-1cce4616fe64",
+    "tool_description": "Get registered service names and transport protocols port numbers.",
+    "home_url": "https://rapidapi.com/andrew.svintsitsky/api/commonportnumbers/",
+    "name": "CommonPortNumbers",
+    "title": "CommonPortNumbers",
+    "pricing": "FREEMIUM",
+    "tool_name": "CommonPortNumbers",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 4314,
+        "avgSuccessRate": 100,
+        "popularityScore": 8.1,
+        "__typename": "Score"
+    },
+    "host": "commonportnumbers.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "commonports",
+            "url": "https://commonportnumbers.p.rapidapi.com/commonportnames",
+            "description": "Get registered service names and transport protocols port numbers.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "port",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "53"
+                },
+                {
+                    "name": "protocol",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "tcp"
+                },
+                {
+                    "name": "service",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://commonportnumbers.p.rapidapi.com/commonportnames\"\nquerystring = {\"port\": \"53\", \"protocol\": \"tcp\", \"service\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"commonportnumbers.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://commonportnumbers.p.rapidapi.com/commonportnames\"\nquerystring = {\"port\": \"53\", \"protocol\": \"tcp\", \"service\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"commonportnumbers.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "ServiceName": "domain",
+                    "PortNumber": "53",
+                    "PortType": "System Port",
+                    "TransportProtocol": "tcp",
+                    "Description": "Domain Name Server",
+                    "Reference": "N/A",
+                    "Source": "Internet Assigned Numbers Authority (IANA)",
+                    "Notes": ""
+                }
+            ]
+        }
+    ],
+    "standardized_name": "commonportnumbers"
+}

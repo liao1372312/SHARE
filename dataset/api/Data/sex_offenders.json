@@ -1,0 +1,201 @@
+{
+    "product_id": "api_860e3d12-60cc-46e3-a8b7-57f9d2490845",
+    "tool_description": "National Registered Sex Offenders API for the United States.   750k+ offender records, 1M+ crimes, 19k+ cities, and all 50 states. Supports lat, lng search with radius. More info https://offenders.io/",
+    "home_url": "https://rapidapi.com/offenders-offenders-default/api/sex-offenders/",
+    "name": "Sex Offenders",
+    "title": "Sex Offenders",
+    "pricing": "FREEMIUM",
+    "tool_name": "Sex Offenders",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 1819,
+        "avgSuccessRate": 100,
+        "popularityScore": 8.8,
+        "__typename": "Score"
+    },
+    "host": "sex-offenders.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Search Sex Offenders",
+            "url": "https://sex-offenders.p.rapidapi.com/sexoffender",
+            "description": "Params:\n@lat: latitude\n@lng: longitude\n@radius: search radius in Miles (Mi), e.g. radius = 0.2 means the API will search for sex offenders within 0.2 miles of the given lat and lng\n\nResponse:\n@offenders: List of Offender Object; If no offenders are found, it will return empty list `offenders: []`.\n\nExtensive database of National Registered Sex Offenders API for the United States. This API covers 750k+ offender records, 1M+ crime records, 19k+ cities, and all 50 states. Supports lat/lng search with radius.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "radius",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "1"
+                },
+                {
+                    "name": "lat",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "37.397568"
+                },
+                {
+                    "name": "lng",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "-122.06492"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://sex-offenders.p.rapidapi.com/sexoffender\"\nquerystring = {\"radius\": \"1\", \"lat\": \"37.397568\", \"lng\": \"-122.06492\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sex-offenders.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://sex-offenders.p.rapidapi.com/sexoffender\"\nquerystring = {\"radius\": \"1\", \"lat\": \"37.397568\", \"lng\": \"-122.06492\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sex-offenders.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "offenders": [
+                    {
+                        "name": "Gary Wayne Grissom",
+                        "address": "440 Moffett Blvd",
+                        "zipcode": "94043",
+                        "crime": "",
+                        "content": " <br><b>Zip Code: </b>94043<br><b>Sex: </b>Male<br><b>Date of birth: </b>4/14/1966<br><b>Eye color: </b>Blue<br><b>Hair color: </b>Brown<br><b>Height: </b>5&apos;11&quot;<br><b>Weight: </b> 150 lbs.<br><b>Marks/Scars/Tattoos: </b>wrist, right<br><b>Ethnicity: </b>White<br>",
+                        "lat": 37.4005632,
+                        "lng": -122.0742225,
+                        "updatedAt": 1676696419937
+                    },
+                    {
+                        "name": "Joseph P Tugade",
+                        "address": "440 Moffett Blvd",
+                        "zipcode": "94043",
+                        "crime": "",
+                        "content": " <br><b>Zip Code: </b>94043<br><b>Sex: </b>Male<br><b>Date of birth: </b>12/18/1983<br><b>Eye color: </b>Hazel<br><b>Hair color: </b>Black<br><b>Height: </b>6&apos;01&quot;<br><b>Weight: </b> 235 lbs.<br><b>Ethnicity: </b>Hispanic<br>",
+                        "lat": 37.4005632,
+                        "lng": -122.0742225,
+                        "updatedAt": 1676696419937
+                    },
+                    {
+                        "name": "David Hopkins",
+                        "address": "881 San Rafael Ave",
+                        "zipcode": "94043",
+                        "crime": "",
+                        "content": " <br><b>Risk level: </b> Below Average Risk (formerly Low Risk)<br><b>Zip Code: </b>94043<br><b>Sex: </b>Male<br><b>Date of birth: </b>6/8/1963<br><b>Eye color: </b>Blue<br><b>Hair color: </b>Red/Auburn<br><b>Height: </b>5&apos;08&quot;<br><b>Weight: </b> 203 lbs.<br><b>Race: </b>White<br>",
+                        "lat": 37.4057277,
+                        "lng": -122.0727589,
+                        "updatedAt": 1676696419939
+                    },
+                    {
+                        "name": "Ulysses Douglas King",
+                        "address": "100 E Middlefield Rd",
+                        "zipcode": "94043",
+                        "crime": "",
+                        "content": " <br><b>Zip Code: </b>94043<br><b>Sex: </b>Male<br><b>Date of birth: </b>5/10/1972<br><b>Eye color: </b>Brown<br><b>Hair color: </b>Black<br><b>Height: </b>6&apos;02&quot;<br><b>Weight: </b> 205 lbs.<br><b>Marks/Scars/Tattoos: </b>arm, left, nonspecific; arm, left, nonspecific<br><b>Ethnicity: </b>Black<br>",
+                        "lat": 37.398424,
+                        "lng": -122.063826,
+                        "updatedAt": 1676696419938
+                    },
+                    {
+                        "name": "Jose Camacho",
+                        "address": "520 Walker Dr",
+                        "zipcode": "94043",
+                        "crime": "",
+                        "content": " <br><b>Risk level: </b> Well Above Average Risk (formerly High Risk)<br><b>Zip Code: </b>94043<br><b>Sex: </b>Male<br><b>Date of birth: </b>12/11/1984<br><b>Eye color: </b>Brown<br><b>Hair color: </b>Black<br><b>Height: </b>6&apos;05&quot;<br><b>Weight: </b> 165 lbs.<br><b>Marks/Scars/Tattoos: </b>chest word; back face<br><b>Race: </b>Hispanic<br>",
+                        "lat": 37.4026588,
+                        "lng": -122.0667491,
+                        "updatedAt": 1652356816541
+                    },
+                    {
+                        "name": "Roy James Williams",
+                        "address": "520 Walker Dr",
+                        "zipcode": "94043",
+                        "crime": "",
+                        "content": " <br><b>Zip Code: </b>94043<br><b>Sex: </b>Male<br><b>Date of birth: </b>7/25/1961<br><b>Eye color: </b>Brown<br><b>Hair color: </b>Black<br><b>Height: </b>5&apos;11&quot;<br><b>Weight: </b> 190 lbs.<br><b>Marks/Scars/Tattoos: </b>eyebrow, left/left eye area unknown<br><b>Race: </b>Black<br>",
+                        "lat": 37.4026588,
+                        "lng": -122.0667491,
+                        "updatedAt": 1652356816546
+                    },
+                    {
+                        "name": "Christopher Lloyd Galbreath",
+                        "address": "521 Tyrella",
+                        "zipcode": "94040",
+                        "crime": "",
+                        "content": " <br><b>Risk level: </b> Above Average Risk (formerly Moderate-High Risk)<br><b>Zip Code: </b>94040<br><b>Sex: </b>Male<br><b>Date of birth: </b>8/6/1988<br><b>Eye color: </b>Blue<br><b>Hair color: </b>Brown<br><b>Height: </b>6&apos;02&quot;<br><b>Weight: </b> 180 lbs.<br><b>Marks/Scars/Tattoos: </b>wrist, right; forearm, left star<br><b>Race: </b>White<br>",
+                        "lat": 37.4038614,
+                        "lng": -122.0625518,
+                        "updatedAt": 1676696419894
+                    },
+                    {
+                        "name": "Daniel H Craft",
+                        "address": "270 Velarde St",
+                        "zipcode": "94041",
+                        "crime": "",
+                        "content": " <br><b>Zip Code: </b>94041<br><b>Sex: </b>Male<br><b>Date of birth: </b>4/2/1957<br><b>Eye color: </b>Green<br><b>Hair color: </b>Red/Auburn<br><b>Height: </b>5&apos;10&quot;<br><b>Weight: </b> 145 lbs.<br><b>Marks/Scars/Tattoos: </b>knee, right surgical; leg, right, nonspecific; knee, right unknown<br><b>Ethnicity: </b>White<br>",
+                        "lat": 37.3888859,
+                        "lng": -122.0746232,
+                        "updatedAt": 1676696419896
+                    },
+                    {
+                        "name": "Jose Hector Perezescobar",
+                        "address": "210 Easy St",
+                        "zipcode": "94043",
+                        "crime": "",
+                        "content": " <br><b>Risk level: </b> Average Risk (formerly Low-Moderate Risk)<br><b>Zip Code: </b>94043<br><b>Sex: </b>Male<br><b>Date of birth: </b>6/24/1991<br><b>Eye color: </b>Brown<br><b>Hair color: </b>Black<br><b>Height: </b>5&apos;05&quot;<br><b>Weight: </b> 176 lbs.<br><b>Race: </b>Hispanic<br>",
+                        "lat": 37.3971819,
+                        "lng": -122.0677291,
+                        "updatedAt": 1676696419938
+                    },
+                    {
+                        "name": "Rafael Ceballos Herrera",
+                        "address": "211 Easy St",
+                        "zipcode": "94043",
+                        "crime": "",
+                        "content": " <br><b>Zip Code: </b>94043<br><b>Sex: </b>Male<br><b>Date of birth: </b>10/24/1969<br><b>Eye color: </b>Brown<br><b>Hair color: </b>Brown<br><b>Height: </b>5&apos;03&quot;<br><b>Weight: </b> 110 lbs.<br><b>Marks/Scars/Tattoos: </b>abdomen unknown; chest unknown<br><b>Ethnicity: </b>Hispanic<br>",
+                        "lat": 37.3965996,
+                        "lng": -122.0667884,
+                        "updatedAt": 1676696419938
+                    },
+                    {
+                        "name": "Jorge Alberto Tejada",
+                        "address": "205 Miro Ave",
+                        "zipcode": "94041",
+                        "crime": "",
+                        "content": " <br><b>Risk level: </b> Average Risk (formerly Low Risk)<br><b>Zip Code: </b>94041<br><b>Sex: </b>Male<br><b>Date of birth: </b>8/22/1974<br><b>Eye color: </b>Brown<br><b>Hair color: </b>Black<br><b>Height: </b>5&apos;06&quot;<br><b>Weight: </b> 184 lbs.<br><b>Race: </b>Hispanic<br>",
+                        "lat": 37.3865495,
+                        "lng": -122.0568777,
+                        "updatedAt": 1652356816540
+                    }
+                ]
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "offenders": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "name": {
+                                    "type": "string"
+                                },
+                                "address": {
+                                    "type": "string"
+                                },
+                                "zipcode": {
+                                    "type": "string"
+                                },
+                                "crime": {
+                                    "type": "string"
+                                },
+                                "content": {
+                                    "type": "string"
+                                },
+                                "lat": {
+                                    "type": "number"
+                                },
+                                "lng": {
+                                    "type": "number"
+                                },
+                                "updatedAt": {
+                                    "type": "integer"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "standardized_name": "sex_offenders"
+}

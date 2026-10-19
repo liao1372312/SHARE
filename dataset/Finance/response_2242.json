@@ -1,0 +1,26 @@
+{
+"user_query":"I'm interested in a specific order with ID 3. Could you provide me with the order details? Additionally, get the inventory status to see the available quantities of different items. If any item is out of stock, please notify me.",
+"domain":"Finance",
+"TaskList": [
+{
+"id": 1,
+"description": "Retrieve the details of the order with ID 3.",
+"domain": "finance",
+"required_inputs": ["order_id"]
+},
+{
+"id": 2,
+"description": "Check the inventory status for the items related to order ID 3.",
+"domain": "finance",
+"required_inputs": ["order_id"],
+"dependencies": [1]
+},
+{
+"id": 3,
+"description": "Notify the user if any item is out of stock based on the inventory status.",
+"domain": "finance",
+"required_inputs": ["inventory_status"],
+"dependencies": [2]
+}
+]
+}

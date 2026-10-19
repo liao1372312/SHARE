@@ -1,0 +1,60 @@
+{
+    "product_id": "api_09ceaf6a-5399-48e6-892d-28ddc1f094c8",
+    "tool_description": "Autonomous System Numbers (ASN) internet search engine to quickly lookup updated information about specific ASN, Organization, CIDR, or registered IP addresses (IPv4 and IPv6) among other relevant data.",
+    "home_url": "https://rapidapi.com/yaaboukir/api/asn-lookup/",
+    "name": "ASN Lookup",
+    "title": "ASN Lookup",
+    "pricing": "FREEMIUM",
+    "tool_name": "ASN Lookup",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 610,
+        "avgSuccessRate": 91,
+        "popularityScore": 9.6,
+        "__typename": "Score"
+    },
+    "host": "asn-lookup.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Fetch information",
+            "url": "https://asn-lookup.p.rapidapi.com/api",
+            "description": "Retrieve information based on AS number, CIDR (IPV4 & IPV6) or organization name.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "ip",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "asn",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "AS32934"
+                },
+                {
+                    "name": "cidr",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "orgname",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://asn-lookup.p.rapidapi.com/api\"\nquerystring = {\"ip\": \"\", \"asn\": \"AS32934\", \"cidr\": \"\", \"orgname\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"asn-lookup.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://asn-lookup.p.rapidapi.com/api\"\nquerystring = {\"ip\": \"\", \"asn\": \"AS32934\", \"cidr\": \"\", \"orgname\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"asn-lookup.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "detail": "Only one query parameter is allowed."
+            },
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "asn_lookup"
+}

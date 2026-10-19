@@ -1,0 +1,25 @@
+{
+"user_query":"Book a hotel near Times Square and fetch product details from Amazon India.",
+"domain":"tourism",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Search for hotels near Times Square that have a conference room and free Wi-Fi.",
+        "domain": "tourism",
+        "required_inputs": ["location", "amenities", "room_type"]
+    },
+    {
+        "id": 2,
+        "description": "Book a selected hotel for the conference.",
+        "domain": "tourism",
+        "required_inputs": ["hotel_id", "booking_details"],
+        "dependencies": [1]
+    },
+    {
+        "id": 3,
+        "description": "Fetch product details and reviews for the barcode '123456789012' from Amazon India.",
+        "domain": "technology",
+        "required_inputs": ["barcode"]
+    }
+]
+}

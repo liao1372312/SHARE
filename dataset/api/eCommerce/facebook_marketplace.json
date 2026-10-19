@@ -1,0 +1,118 @@
+{
+    "product_id": "api_acaeafd6-a50d-413b-a454-ab5050ed0139",
+    "tool_description": "Get complete Facebook Marketplace data to include number sold, number saved, title, description, location and category of current and past listings on FBMP. \n\nWe are the ONLY provider of Facebook Marketplace data anywhere!",
+    "home_url": "https://rapidapi.com/moxall/api/facebook-marketplace/",
+    "name": "Facebook Marketplace",
+    "title": "Facebook Marketplace",
+    "pricing": "FREEMIUM",
+    "tool_name": "Facebook Marketplace",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 290,
+        "avgSuccessRate": 100,
+        "popularityScore": 9.2,
+        "__typename": "Score"
+    },
+    "host": "facebook-marketplace.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "categories",
+            "url": "https://facebook-marketplace.p.rapidapi.com/categories",
+            "description": "Facebook items categories",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://facebook-marketplace.p.rapidapi.com/categories\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"facebook-marketplace.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://facebook-marketplace.p.rapidapi.com/categories\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"facebook-marketplace.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You are not subscribed to this API."
+            }
+        },
+        {
+            "name": "products",
+            "url": "https://facebook-marketplace.p.rapidapi.com/products",
+            "description": "Get facbook items",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "no_of_save",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "25"
+                },
+                {
+                    "name": "min_sales",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "5"
+                },
+                {
+                    "name": "min_price",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "2.00"
+                },
+                {
+                    "name": "category",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "Apparel"
+                },
+                {
+                    "name": "city",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "New York"
+                },
+                {
+                    "name": "page",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "1"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://facebook-marketplace.p.rapidapi.com/products\"\nquerystring = {\"no_of_save\": \"25\", \"min_sales\": \"5\", \"min_price\": \"2.00\", \"category\": \"Apparel\", \"city\": \"New York\", \"page\": \"1\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"facebook-marketplace.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://facebook-marketplace.p.rapidapi.com/products\"\nquerystring = {\"no_of_save\": \"25\", \"min_sales\": \"5\", \"min_price\": \"2.00\", \"category\": \"Apparel\", \"city\": \"New York\", \"page\": \"1\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"facebook-marketplace.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "total_products": 1010,
+                "total_pages": 21,
+                "result_per_page": 50,
+                "data": [
+                    {
+                        "ID": 422,
+                        "Title": "6 Pack New Medicare Card Protector Sleeves and 6 Pack RFID Blocking Card Sleeves for Insurance,",
+                        "City_Name": "New York",
+                        "Category": "Miscellaneous",
+                        "Item_Description": "BRAND NEW\n\n-[PACKAGES]: 6 pack clear medicare protector card sleeves and 6 pack RFID blocking card sleeves.\n\n-[PORTABLE & CONVENIENT]: 3.74\" x 2.4\" demens\nions, fits with 3.54\" x 2.24\" card size\n\n-[USAGE]: precision made for the new Medicare cards, social security cards, bank cards, credit cards, and IDs, NOT for vaccination card\n\n-[STURDY TRANSPARENT]: easy slide, non-stick,12mil thickness, highly protective, crystal clear, 100% card coverage\n\n-[WHAT YOU GET]: 12 pack card sleeves, refund/replacement services if quality issue\n\n6 Pack Medicare Card Protector Sleeves and 6 Pack RFID Blocking Card Sleeves Specification: Product Name: Card Sleeves Outer Size: 3.74 x 2.40-inch Inner Size: 3.54 x 2.24 inch Medicare Card Sleeves: PVC?Clear Thickness: 12mil RFID Blocking Card Sleeves: Metal Isolation Material? Grey Function: Suitable for 3.54 x 2.24-inch bank cards, credit cards, medicare cards, social security cards, badge, pass, ticket, document, photo, paper or credential, permit, license. NOT for vaccination card Feature:1. Size suitable for 3.54 x 2.24-inch cards 2. Enhances personal information security by RFID Blocking, prevent vital cards detail from unnoticed scan 3. Waterproof, to prevent cards from being damaged by water 4. A thick, sturdy plastic sleeve protects the card from stains and creases What you will get: 6 x Card sleeves 6 x RFID Blocking card sleeves",
+                        "Main_Image": "https://productbotimages.s3.amazonaws.com/588140375638938/Image_1.png",
+                        "Seller_Name": " Big Trucking Deals",
+                        "Seller_Profile": "https://www.facebook.com/Big-Trucking-Deals-103134945517117/",
+                        "Item_Link": "https://www.facebook.com/marketplace/item/588140375638938/",
+                        "Seller_Feedback_Amount": 0,
+                        "Num_Saves": 1126,
+                        "No_Of_Sales": 200,
+                        "Shipping_Cost": 5,
+                        "Discounted_Price": 0,
+                        "Original_Price": 9,
+                        "Created_At": "2021-12-19 09:24:36"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "cities",
+            "url": "https://facebook-marketplace.p.rapidapi.com/cities",
+            "description": "Facebook items cities",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://facebook-marketplace.p.rapidapi.com/cities\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"facebook-marketplace.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://facebook-marketplace.p.rapidapi.com/cities\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"facebook-marketplace.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per second for your plan, BASIC, by the API provider"
+            }
+        }
+    ],
+    "standardized_name": "facebook_marketplace"
+}

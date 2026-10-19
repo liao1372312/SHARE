@@ -1,0 +1,1242 @@
+{
+    "product_id": "api_f1ae7777-ce69-49f6-8ea9-462cd95b0037",
+    "tool_description": "Les bo\u00eetes postales (BPs), codes postaux, localit\u00e9s,communes, codes cedex de Nouvelle-Cal\u00e9donie.",
+    "home_url": "https://rapidapi.com/opt-nc-opt-nc-default/api/bps/",
+    "name": "BPS",
+    "title": "BPS",
+    "pricing": "FREE",
+    "tool_name": "BPS",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 892,
+        "avgSuccessRate": 94,
+        "popularityScore": 8.7,
+        "__typename": "Score"
+    },
+    "host": "bps.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "BP par localite",
+            "url": "https://bps.p.rapidapi.com/boites-postales",
+            "description": "Liste des BP par localit\u00e9 en Nouvelle Cal\u00e9donie",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "localite",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://bps.p.rapidapi.com/boites-postales\"\nquerystring = {\"localite\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"bps.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://bps.p.rapidapi.com/boites-postales\"\nquerystring = {\"localite\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"bps.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": []
+        },
+        {
+            "name": "Commune par nom",
+            "url": "https://bps.p.rapidapi.com/communes",
+            "description": "R\u00e9cup\u00e9rer une ou plusieurs communes gr\u00e2ce \u00e0 son nom. Perfect match ou partiel.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "nom",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "poum"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://bps.p.rapidapi.com/communes\"\nquerystring = {\"nom\": \"poum\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"bps.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://bps.p.rapidapi.com/communes\"\nquerystring = {\"nom\": \"poum\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"bps.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "province": "province Nord",
+                    "nom": "POUM",
+                    "nomMinus": "Poum",
+                    "codeCom": 98826,
+                    "codePost": 98826
+                }
+            ]
+        },
+        {
+            "name": "Code postal par code",
+            "url": "https://bps.p.rapidapi.com/codes-postaux/98827",
+            "description": "Fournit les informations \u00e0 partir d'un code postal connu en Nouvelle Cal\u00e9donie.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "code",
+                    "type": "string",
+                    "description": "",
+                    "default": "98827"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://bps.p.rapidapi.com/codes-postaux/98827\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"bps.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://bps.p.rapidapi.com/codes-postaux/{code}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"bps.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "code": 98827,
+                "localite": "POYA",
+                "libelle": "",
+                "codeCommune": 98827,
+                "province": "province Nord,province Sud",
+                "cedex": false,
+                "bp": true,
+                "domicile": true
+            }
+        },
+        {
+            "name": "All",
+            "url": "https://bps.p.rapidapi.com/provinces",
+            "description": "Liste des provinces de la Nouvelle Cal\u00e9donie",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://bps.p.rapidapi.com/provinces\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"bps.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://bps.p.rapidapi.com/provinces\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"bps.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": [
+                "province Nord",
+                "province Sud",
+                "province des \u00eeles Loyaut\u00e9"
+            ]
+        },
+        {
+            "name": "All codes postaux",
+            "url": "https://bps.p.rapidapi.com/codes-postaux",
+            "description": "Tous les codes postaux.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://bps.p.rapidapi.com/codes-postaux\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"bps.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://bps.p.rapidapi.com/codes-postaux\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"bps.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "code": 98800,
+                    "localite": "NOUMEA",
+                    "libelle": "NOUMEA",
+                    "codeCommune": 98818,
+                    "province": "province Sud",
+                    "cedex": false,
+                    "bp": false,
+                    "domicile": true
+                },
+                {
+                    "code": 98801,
+                    "localite": "NOUMEA",
+                    "libelle": "LOGICOOP",
+                    "codeCommune": 98818,
+                    "province": "province Sud",
+                    "cedex": true,
+                    "bp": true,
+                    "domicile": false
+                },
+                {
+                    "code": 98802,
+                    "localite": "NOUMEA",
+                    "libelle": "MAGENTA",
+                    "codeCommune": 98818,
+                    "province": "province Sud",
+                    "cedex": true,
+                    "bp": true,
+                    "domicile": false
+                },
+                {
+                    "code": 98803,
+                    "localite": "NOUMEA",
+                    "libelle": "MAGENTA",
+                    "codeCommune": 98818,
+                    "province": "province Sud",
+                    "cedex": true,
+                    "bp": true,
+                    "domicile": false
+                },
+                {
+                    "code": 98804,
+                    "localite": "NOUMEA",
+                    "libelle": "MAGENTA",
+                    "codeCommune": 98818,
+                    "province": "province Sud",
+                    "cedex": true,
+                    "bp": true,
+                    "domicile": false
+                },
+                {
+                    "code": 98805,
+                    "localite": "NOUMEA",
+                    "libelle": "VALLEE DU TIR",
+                    "codeCommune": 98818,
+                    "province": "province Sud",
+                    "cedex": true,
+                    "bp": true,
+                    "domicile": false
+                },
+                {
+                    "code": 98806,
+                    "localite": "NOUMEA",
+                    "libelle": "RIVIERE SALEE",
+                    "codeCommune": 98818,
+                    "province": "province Sud",
+                    "cedex": true,
+                    "bp": true,
+                    "domicile": false
+                },
+                {
+                    "code": 98807,
+                    "localite": "NOUMEA",
+                    "libelle": "NOUMEA SUD",
+                    "codeCommune": 98818,
+                    "province": "province Sud",
+                    "cedex": true,
+                    "bp": true,
+                    "domicile": false
+                },
+                {
+                    "code": 98808,
+                    "localite": "NOUMEA",
+                    "libelle": "Centre de traitement Postal",
+                    "codeCommune": 98818,
+                    "province": "province Sud",
+                    "cedex": true,
+                    "bp": false,
+                    "domicile": false
+                },
+                {
+                    "code": 98809,
+                    "localite": "MONT DORE",
+                    "libelle": "",
+                    "codeCommune": 98817,
+                    "province": "province Sud",
+                    "cedex": false,
+                    "bp": false,
+                    "domicile": true
+                },
+                {
+                    "code": 98810,
+                    "localite": "MONT DORE",
+                    "libelle": "Boulari",
+                    "codeCommune": 98817,
+                    "province": "province Sud",
+                    "cedex": false,
+                    "bp": true,
+                    "domicile": false
+                },
+                {
+                    "code": 98811,
+                    "localite": "BELEP",
+                    "libelle": "",
+                    "codeCommune": 98801,
+                    "province": "province Nord",
+                    "cedex": false,
+                    "bp": true,
+                    "domicile": true
+                },
+                {
+                    "code": 98812,
+                    "localite": "BOULOUPARIS",
+                    "libelle": "",
+                    "codeCommune": 98802,
+                    "province": "province Sud",
+                    "cedex": false,
+                    "bp": true,
+                    "domicile": true
+                },
+                {
+                    "code": 98813,
+                    "localite": "CANALA",
+                    "libelle": "",
+                    "codeCommune": 98804,
+                    "province": "province Nord",
+                    "cedex": false,
+                    "bp": true,
+                    "domicile": true
+                },
+                {
+                    "code": 98814,
+                    "localite": "FAYAOUE",
+                    "libelle": "",
+                    "codeCommune": 98820,
+                    "province": "province des \u00eeles Loyaut\u00e9",
+                    "cedex": false,
+                    "bp": true,
+                    "domicile": true
+                },
+                {
+                    "code": 98815,
+                    "localite": "HIENGHENE",
+                    "libelle": "",
+                    "codeCommune": 98807,
+                    "province": "province Nord",
+                    "cedex": false,
+                    "bp": true,
+                    "domicile": true
+                },
+                {
+                    "code": 98816,
+                    "localite": "HOUAILOU",
+                    "libelle": "",
+                    "codeCommune": 98808,
+                    "province": "province Nord",
+                    "cedex": false,
+                    "bp": true,
+                    "domicile": true
+                },
+                {
+                    "code": 98817,
+                    "localite": "KAALA GOMEN",
+                    "libelle": "",
+                    "codeCommune": 98810,
+                    "province": "province Nord",
+                    "cedex": false,
+                    "bp": true,
+                    "domicile": true
+                },
+                {
+                    "code": 98818,
+                    "localite": "KOUAOUA",
+                    "libelle": "",
+                    "codeCommune": 98833,
+                    "province": "province Nord",
+                    "cedex": false,
+                    "bp": true,
+                    "domicile": true
+                },
+                {
+                    "code": 98819,
+                    "localite": "MOINDOU",
+                    "libelle": "MOINDOU",
+                    "codeCommune": 98816,
+                    "province": "province Sud",
+                    "cedex": false,
+                    "bp": true,
+                    "domicile": true
+                },
+                {
+                    "code": 98820,
+                    "localite": "WE",
+                    "libelle": "",
+                    "codeCommune": 98814,
+                    "province": "province des \u00eeles Loyaut\u00e9",
+                    "cedex": false,
+                    "bp": true,
+                    "domicile": true
+                },
+                {
+                    "code": 98821,
+                    "localite": "OUEGOA",
+                    "libelle": "",
+                    "codeCommune": 98819,
+                    "province": "province Nord",
+                    "cedex": false,
+                    "bp": true,
+                    "domicile": true
+                },
+                {
+                    "code": 98822,
+                    "localite": "POINDIMIE",
+                    "libelle": "",
+                    "codeCommune": 98822,
+                    "province": "province Nord",
+                    "cedex": false,
+                    "bp": true,
+                    "domicile": true
+                },
+                {
+                    "code": 98823,
+                    "localite": "PONERIHOUEN",
+                    "libelle": "",
+                    "codeCommune": 98823,
+                    "province": "province Nord",
+                    "cedex": false,
+                    "bp": true,
+                    "domicile": true
+                },
+                {
+                    "code": 98824,
+                    "localite": "POUEBO",
+                    "libelle": "",
+                    "codeCommune": 98824,
+                    "province": "province Nord",
+                    "cedex": false,
+                    "bp": true,
+                    "domicile": true
+                },
+                {
+                    "code": 98825,
+                    "localite": "POUEMBOUT",
+                    "libelle": "",
+                    "codeCommune": 98825,
+                    "province": "province Nord",
+                    "cedex": false,
+                    "bp": true,
+                    "domicile": true
+                },
+                {
+                    "code": 98826,
+                    "localite": "POUM",
+                    "libelle": "",
+                    "codeCommune": 98826,
+                    "province": "province Nord",
+                    "cedex": false,
+                    "bp": true,
+                    "domicile": true
+                },
+                {
+                    "code": 98827,
+                    "localite": "POYA",
+                    "libelle": "",
+                    "codeCommune": 98827,
+                    "province": "province Nord,province Sud",
+                    "cedex": false,
+                    "bp": true,
+                    "domicile": true
+                },
+                {
+                    "code": 98828,
+                    "localite": "TADINE",
+                    "libelle": "",
+                    "codeCommune": 98815,
+                    "province": "province des \u00eeles Loyaut\u00e9",
+                    "cedex": false,
+                    "bp": true,
+                    "domicile": true
+                },
+                {
+                    "code": 98829,
+                    "localite": "THIO",
+                    "libelle": "",
+                    "codeCommune": 98829,
+                    "province": "province Sud",
+                    "cedex": false,
+                    "bp": true,
+                    "domicile": true
+                },
+                {
+                    "code": 98830,
+                    "localite": "DUMBEA",
+                    "libelle": "Koutio",
+                    "codeCommune": 98805,
+                    "province": "province Sud",
+                    "cedex": false,
+                    "bp": true,
+                    "domicile": false
+                },
+                {
+                    "code": 98831,
+                    "localite": "TOUHO",
+                    "libelle": "",
+                    "codeCommune": 98830,
+                    "province": "province Nord",
+                    "cedex": false,
+                    "bp": true,
+                    "domicile": true
+                },
+                {
+                    "code": 98832,
+                    "localite": "VAO",
+                    "libelle": "",
+                    "codeCommune": 98809,
+                    "province": "province Sud",
+                    "cedex": false,
+                    "bp": true,
+                    "domicile": true
+                },
+                {
+                    "code": 98833,
+                    "localite": "VOH",
+                    "libelle": "",
+                    "codeCommune": 98831,
+                    "province": "province Nord",
+                    "cedex": false,
+                    "bp": true,
+                    "domicile": true
+                },
+                {
+                    "code": 98834,
+                    "localite": "YATE",
+                    "libelle": "",
+                    "codeCommune": 98832,
+                    "province": "province Sud",
+                    "cedex": false,
+                    "bp": true,
+                    "domicile": true
+                },
+                {
+                    "code": 98835,
+                    "localite": "DUMBEA",
+                    "libelle": "",
+                    "codeCommune": 98805,
+                    "province": "province Sud",
+                    "cedex": false,
+                    "bp": false,
+                    "domicile": true
+                },
+                {
+                    "code": 98836,
+                    "localite": "DUMBEA",
+                    "libelle": "G.A Mairie",
+                    "codeCommune": 98805,
+                    "province": "province Sud",
+                    "cedex": false,
+                    "bp": true,
+                    "domicile": false
+                },
+                {
+                    "code": 98837,
+                    "localite": "DUMBEA",
+                    "libelle": "",
+                    "codeCommune": 98805,
+                    "province": "province Sud",
+                    "cedex": false,
+                    "bp": true,
+                    "domicile": false
+                },
+                {
+                    "code": 98838,
+                    "localite": "PORO",
+                    "libelle": "PORO",
+                    "codeCommune": 98808,
+                    "province": "province Nord",
+                    "cedex": false,
+                    "bp": true,
+                    "domicile": true
+                },
+                {
+                    "code": 98839,
+                    "localite": "DUMBEA",
+                    "libelle": "G.A Panda",
+                    "codeCommune": 98805,
+                    "province": "province Sud",
+                    "cedex": false,
+                    "bp": true,
+                    "domicile": false
+                },
+                {
+                    "code": 98840,
+                    "localite": "TONTOUTA",
+                    "libelle": "",
+                    "codeCommune": 98821,
+                    "province": "province Sud",
+                    "cedex": false,
+                    "bp": true,
+                    "domicile": true
+                },
+                {
+                    "code": 98841,
+                    "localite": "NOUMEA",
+                    "libelle": "Autres services OPT",
+                    "codeCommune": 98818,
+                    "province": "province Sud",
+                    "cedex": true,
+                    "bp": false,
+                    "domicile": false
+                },
+                {
+                    "code": 98843,
+                    "localite": "NOUMEA",
+                    "libelle": "MARINE / ARMEE BP 38",
+                    "codeCommune": 98818,
+                    "province": "province Sud",
+                    "cedex": true,
+                    "bp": true,
+                    "domicile": false
+                },
+                {
+                    "code": 98844,
+                    "localite": "NOUMEA",
+                    "libelle": "HT COMMISSARIAT BP C5",
+                    "codeCommune": 98818,
+                    "province": "province Sud",
+                    "cedex": true,
+                    "bp": true,
+                    "domicile": false
+                },
+                {
+                    "code": 98845,
+                    "localite": "NOUMEA",
+                    "libelle": "AGENCE PRINCIPALE",
+                    "codeCommune": 98818,
+                    "province": "province Sud",
+                    "cedex": true,
+                    "bp": true,
+                    "domicile": false
+                },
+                {
+                    "code": 98846,
+                    "localite": "NOUMEA",
+                    "libelle": "AGENCE PRINCIPALE",
+                    "codeCommune": 98818,
+                    "province": "province Sud",
+                    "cedex": true,
+                    "bp": true,
+                    "domicile": false
+                },
+                {
+                    "code": 98847,
+                    "localite": "NOUMEA",
+                    "libelle": "AGENCE PRINCIPALE",
+                    "codeCommune": 98818,
+                    "province": "province Sud",
+                    "cedex": true,
+                    "bp": true,
+                    "domicile": false
+                },
+                {
+                    "code": 98848,
+                    "localite": "NOUMEA",
+                    "libelle": "NOUMEA CTP",
+                    "codeCommune": 98818,
+                    "province": "province Sud",
+                    "cedex": true,
+                    "bp": true,
+                    "domicile": false
+                },
+                {
+                    "code": 98849,
+                    "localite": "NOUMEA",
+                    "libelle": "NOUMEA CTP",
+                    "codeCommune": 98818,
+                    "province": "province Sud",
+                    "cedex": true,
+                    "bp": true,
+                    "domicile": false
+                },
+                {
+                    "code": 98850,
+                    "localite": "KOUMAC",
+                    "libelle": "",
+                    "codeCommune": 98812,
+                    "province": "province Nord",
+                    "cedex": false,
+                    "bp": true,
+                    "domicile": true
+                },
+                {
+                    "code": 98851,
+                    "localite": "NOUMEA",
+                    "libelle": "NOUMEA CTP",
+                    "codeCommune": 98818,
+                    "province": "province Sud",
+                    "cedex": true,
+                    "bp": true,
+                    "domicile": false
+                },
+                {
+                    "code": 98852,
+                    "localite": "NOUMEA",
+                    "libelle": "NOUMEA CTP",
+                    "codeCommune": 98818,
+                    "province": "province Sud",
+                    "cedex": true,
+                    "bp": true,
+                    "domicile": false
+                },
+                {
+                    "code": 98853,
+                    "localite": "NOUMEA",
+                    "libelle": "AGENCE PRINCIPALE",
+                    "codeCommune": 98818,
+                    "province": "province Sud",
+                    "cedex": true,
+                    "bp": true,
+                    "domicile": false
+                },
+                {
+                    "code": 98855,
+                    "localite": "NOUMEA",
+                    "libelle": "VALLEE DU TIR",
+                    "codeCommune": 98818,
+                    "province": "province Sud",
+                    "cedex": true,
+                    "bp": true,
+                    "domicile": false
+                },
+                {
+                    "code": 98857,
+                    "localite": "NOUMEA",
+                    "libelle": "NOUMEA SUD",
+                    "codeCommune": 98818,
+                    "province": "province Sud",
+                    "cedex": true,
+                    "bp": true,
+                    "domicile": false
+                },
+                {
+                    "code": 98859,
+                    "localite": "KONE",
+                    "libelle": "",
+                    "codeCommune": 98811,
+                    "province": "province Nord",
+                    "cedex": false,
+                    "bp": false,
+                    "domicile": true
+                },
+                {
+                    "code": 98860,
+                    "localite": "KONE",
+                    "libelle": "",
+                    "codeCommune": 98811,
+                    "province": "province Nord",
+                    "cedex": false,
+                    "bp": true,
+                    "domicile": false
+                },
+                {
+                    "code": 98862,
+                    "localite": "NOUMEA",
+                    "libelle": "LOGICOOP",
+                    "codeCommune": 98818,
+                    "province": "province Sud",
+                    "cedex": true,
+                    "bp": true,
+                    "domicile": false
+                },
+                {
+                    "code": 98863,
+                    "localite": "NOUMEA",
+                    "libelle": "DUCOS CENTRE",
+                    "codeCommune": 98818,
+                    "province": "province Sud",
+                    "cedex": true,
+                    "bp": true,
+                    "domicile": false
+                },
+                {
+                    "code": 98865,
+                    "localite": "NOUMEA",
+                    "libelle": "DUCOS CENTRE",
+                    "codeCommune": 98818,
+                    "province": "province Sud",
+                    "cedex": true,
+                    "bp": true,
+                    "domicile": false
+                },
+                {
+                    "code": 98866,
+                    "localite": "NOUMEA",
+                    "libelle": "RIVIERE SALEE",
+                    "codeCommune": 98818,
+                    "province": "province Sud",
+                    "cedex": true,
+                    "bp": true,
+                    "domicile": false
+                },
+                {
+                    "code": 98870,
+                    "localite": "BOURAIL",
+                    "libelle": "",
+                    "codeCommune": 98803,
+                    "province": "province Sud",
+                    "cedex": false,
+                    "bp": true,
+                    "domicile": true
+                },
+                {
+                    "code": 98874,
+                    "localite": "PONT DES FRANCAIS",
+                    "libelle": "G.A PDF",
+                    "codeCommune": 98817,
+                    "province": "province Sud",
+                    "cedex": false,
+                    "bp": true,
+                    "domicile": false
+                },
+                {
+                    "code": 98875,
+                    "localite": "PLUM",
+                    "libelle": "G.A Plum",
+                    "codeCommune": 98817,
+                    "province": "province Sud",
+                    "cedex": false,
+                    "bp": true,
+                    "domicile": false
+                },
+                {
+                    "code": 98876,
+                    "localite": "LA COULEE",
+                    "libelle": "G.A La Coul\u00e9e",
+                    "codeCommune": 98817,
+                    "province": "province Sud",
+                    "cedex": false,
+                    "bp": true,
+                    "domicile": false
+                },
+                {
+                    "code": 98877,
+                    "localite": "NEPOUI",
+                    "libelle": "NEPOUI",
+                    "codeCommune": 98827,
+                    "province": "province Nord",
+                    "cedex": false,
+                    "bp": true,
+                    "domicile": false
+                },
+                {
+                    "code": 98878,
+                    "localite": "LA ROCHE",
+                    "libelle": "",
+                    "codeCommune": 98815,
+                    "province": "province des \u00eeles Loyaut\u00e9",
+                    "cedex": false,
+                    "bp": true,
+                    "domicile": false
+                },
+                {
+                    "code": 98880,
+                    "localite": "LA FOA",
+                    "libelle": "",
+                    "codeCommune": 98813,
+                    "province": "province Sud",
+                    "cedex": false,
+                    "bp": true,
+                    "domicile": true
+                },
+                {
+                    "code": 98881,
+                    "localite": "FARINO",
+                    "libelle": "",
+                    "codeCommune": 98806,
+                    "province": "province Sud",
+                    "cedex": false,
+                    "bp": true,
+                    "domicile": true
+                },
+                {
+                    "code": 98882,
+                    "localite": "SARRAMEA",
+                    "libelle": "SARRAMEA",
+                    "codeCommune": 98828,
+                    "province": "province Sud",
+                    "cedex": false,
+                    "bp": true,
+                    "domicile": true
+                },
+                {
+                    "code": 98883,
+                    "localite": "OUACO",
+                    "libelle": "OUACO",
+                    "codeCommune": 98810,
+                    "province": "province Nord",
+                    "cedex": false,
+                    "bp": true,
+                    "domicile": false
+                },
+                {
+                    "code": 98884,
+                    "localite": "CHEPENEHE",
+                    "libelle": "CHEPENEHE",
+                    "codeCommune": 98814,
+                    "province": "province des \u00eeles Loyaut\u00e9",
+                    "cedex": false,
+                    "bp": true,
+                    "domicile": false
+                },
+                {
+                    "code": 98885,
+                    "localite": "MOU",
+                    "libelle": "MOU",
+                    "codeCommune": 98814,
+                    "province": "province des \u00eeles Loyaut\u00e9",
+                    "cedex": false,
+                    "bp": true,
+                    "domicile": false
+                },
+                {
+                    "code": 98889,
+                    "localite": "PAITA",
+                    "libelle": "",
+                    "codeCommune": 98821,
+                    "province": "province Sud",
+                    "cedex": false,
+                    "bp": false,
+                    "domicile": true
+                },
+                {
+                    "code": 98890,
+                    "localite": "PAITA",
+                    "libelle": "",
+                    "codeCommune": 98821,
+                    "province": "province Sud",
+                    "cedex": false,
+                    "bp": true,
+                    "domicile": false
+                },
+                {
+                    "code": 98895,
+                    "localite": "NOUMEA",
+                    "libelle": "BELLE VIE",
+                    "codeCommune": 98818,
+                    "province": "province Sud",
+                    "cedex": true,
+                    "bp": true,
+                    "domicile": false
+                },
+                {
+                    "code": 98897,
+                    "localite": "NOUMEA",
+                    "libelle": "NOUMEA N'GEA",
+                    "codeCommune": 98818,
+                    "province": "province Sud",
+                    "cedex": true,
+                    "bp": true,
+                    "domicile": false
+                },
+                {
+                    "code": 98899,
+                    "localite": "NOUMEA",
+                    "libelle": "Centre financier",
+                    "codeCommune": 98818,
+                    "province": "province Sud",
+                    "cedex": true,
+                    "bp": false,
+                    "domicile": false
+                }
+            ]
+        },
+        {
+            "name": "All BPs",
+            "url": "https://bps.p.rapidapi.com/boites-postales",
+            "description": "Lister toutes les bo\u00eetes postales",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "localite",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "poum"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://bps.p.rapidapi.com/boites-postales\"\nquerystring = {\"localite\": \"poum\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"bps.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://bps.p.rapidapi.com/boites-postales\"\nquerystring = {\"localite\": \"poum\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"bps.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "bpId": 76,
+                    "libelle": "1 \u00e0 210",
+                    "rangeMin": "1",
+                    "rangeMax": "210",
+                    "codePostal": {
+                        "code": 98826,
+                        "localite": "POUM",
+                        "libelle": "",
+                        "codeCommune": 98826,
+                        "province": "province Nord",
+                        "cedex": false,
+                        "bp": true,
+                        "domicile": true
+                    },
+                    "ilot": false
+                },
+                {
+                    "bpId": 77,
+                    "libelle": "2 \u00e0 2500",
+                    "rangeMin": "2",
+                    "rangeMax": "2500",
+                    "codePostal": {
+                        "code": 98826,
+                        "localite": "POUM",
+                        "libelle": "",
+                        "codeCommune": 98826,
+                        "province": "province Nord",
+                        "cedex": false,
+                        "bp": true,
+                        "domicile": true
+                    },
+                    "ilot": true
+                }
+            ]
+        },
+        {
+            "name": "Toutes communes",
+            "url": "https://bps.p.rapidapi.com/export/pdf",
+            "description": "R\u00e9cup\u00e8re le PDF de toutes les communes de la Nouvelle Cal\u00e9donie",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://bps.p.rapidapi.com/export/pdf\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"bps.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://bps.p.rapidapi.com/export/pdf\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"bps.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "Health",
+            "url": "https://bps.p.rapidapi.com/actuator/health",
+            "description": "Get the status of the API",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://bps.p.rapidapi.com/actuator/health\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"bps.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://bps.p.rapidapi.com/actuator/health\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"bps.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "status": "UP"
+            }
+        },
+        {
+            "name": "Communes par code Commune",
+            "url": "https://bps.p.rapidapi.com/communes/98810",
+            "description": "R\u00e9cup\u00e9rer les d\u00e9tails d'une commune depuis son code.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "code_com",
+                    "type": "string",
+                    "description": "",
+                    "default": "98810"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://bps.p.rapidapi.com/communes/98810\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"bps.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://bps.p.rapidapi.com/communes/{code_com}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"bps.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "province": "province Nord",
+                "nom": "KAALA-GOMEN",
+                "nomMinus": "Kaala-Gomen",
+                "codeCom": 98810,
+                "codePost": 98817
+            }
+        },
+        {
+            "name": "All communes",
+            "url": "https://bps.p.rapidapi.com/communes",
+            "description": "La liste des communes",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://bps.p.rapidapi.com/communes\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"bps.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://bps.p.rapidapi.com/communes\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"bps.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "province": "province Nord",
+                    "nom": "BELEP",
+                    "nomMinus": "Belep",
+                    "codeCom": 98801,
+                    "codePost": 98811
+                },
+                {
+                    "province": "province Sud",
+                    "nom": "BOULOUPARIS",
+                    "nomMinus": "Boulouparis",
+                    "codeCom": 98802,
+                    "codePost": 98812
+                },
+                {
+                    "province": "province Sud",
+                    "nom": "BOURAIL",
+                    "nomMinus": "Bourail",
+                    "codeCom": 98803,
+                    "codePost": 98870
+                },
+                {
+                    "province": "province Nord",
+                    "nom": "CANALA",
+                    "nomMinus": "Canala",
+                    "codeCom": 98804,
+                    "codePost": 98813
+                },
+                {
+                    "province": "province Sud",
+                    "nom": "DUMBEA",
+                    "nomMinus": "Dumb\u00e9a",
+                    "codeCom": 98805,
+                    "codePost": 98835
+                },
+                {
+                    "province": "province Sud",
+                    "nom": "FARINO",
+                    "nomMinus": "Farino",
+                    "codeCom": 98806,
+                    "codePost": 98881
+                },
+                {
+                    "province": "province Nord",
+                    "nom": "HIENGHENE",
+                    "nomMinus": "Hiengh\u00e8ne",
+                    "codeCom": 98807,
+                    "codePost": 98815
+                },
+                {
+                    "province": "province Nord",
+                    "nom": "HOUAILOU",
+                    "nomMinus": "Houa\u00eflou",
+                    "codeCom": 98808,
+                    "codePost": 98816
+                },
+                {
+                    "province": "province Sud",
+                    "nom": "ILE DES PINS",
+                    "nomMinus": "\u00cele-des-Pins (L')",
+                    "codeCom": 98809,
+                    "codePost": 98832
+                },
+                {
+                    "province": "province Nord",
+                    "nom": "KAALA-GOMEN",
+                    "nomMinus": "Kaala-Gomen",
+                    "codeCom": 98810,
+                    "codePost": 98817
+                },
+                {
+                    "province": "province Nord",
+                    "nom": "KONE",
+                    "nomMinus": "Kon\u00e9",
+                    "codeCom": 98811,
+                    "codePost": 98859
+                },
+                {
+                    "province": "province Nord",
+                    "nom": "KOUAOUA",
+                    "nomMinus": "Kouaoua",
+                    "codeCom": 98833,
+                    "codePost": 98818
+                },
+                {
+                    "province": "province Nord",
+                    "nom": "KOUMAC",
+                    "nomMinus": "Koumac",
+                    "codeCom": 98812,
+                    "codePost": 98850
+                },
+                {
+                    "province": "province Sud",
+                    "nom": "LA FOA",
+                    "nomMinus": "La Foa",
+                    "codeCom": 98813,
+                    "codePost": 98880
+                },
+                {
+                    "province": "province des \u00eeles Loyaut\u00e9",
+                    "nom": "LIFOU",
+                    "nomMinus": "Lifou",
+                    "codeCom": 98814,
+                    "codePost": 98820
+                },
+                {
+                    "province": "province des \u00eeles Loyaut\u00e9",
+                    "nom": "MARE",
+                    "nomMinus": "Mar\u00e9",
+                    "codeCom": 98815,
+                    "codePost": 98828
+                },
+                {
+                    "province": "province Sud",
+                    "nom": "MOINDOU",
+                    "nomMinus": "Moindou",
+                    "codeCom": 98816,
+                    "codePost": 98819
+                },
+                {
+                    "province": "province Sud",
+                    "nom": "MONT-DORE",
+                    "nomMinus": "Mont-Dore (Le)",
+                    "codeCom": 98817,
+                    "codePost": 98809
+                },
+                {
+                    "province": "province Sud",
+                    "nom": "NOUMEA",
+                    "nomMinus": "Noum\u00e9a",
+                    "codeCom": 98818,
+                    "codePost": 98800
+                },
+                {
+                    "province": "province Nord",
+                    "nom": "OUEGOA",
+                    "nomMinus": "Ou\u00e9goa",
+                    "codeCom": 98819,
+                    "codePost": 98821
+                },
+                {
+                    "province": "province des \u00eeles Loyaut\u00e9",
+                    "nom": "OUVEA",
+                    "nomMinus": "Ouv\u00e9a",
+                    "codeCom": 98820,
+                    "codePost": 98814
+                },
+                {
+                    "province": "province Sud",
+                    "nom": "PAITA",
+                    "nomMinus": "Pa\u00efta",
+                    "codeCom": 98821,
+                    "codePost": 98889
+                },
+                {
+                    "province": "province Nord",
+                    "nom": "POINDIMIE",
+                    "nomMinus": "Poindimi\u00e9",
+                    "codeCom": 98822,
+                    "codePost": 98822
+                },
+                {
+                    "province": "province Nord",
+                    "nom": "PONERIHOUEN",
+                    "nomMinus": "Pon\u00e9rihouen",
+                    "codeCom": 98823,
+                    "codePost": 98823
+                },
+                {
+                    "province": "province Nord",
+                    "nom": "POUEBO",
+                    "nomMinus": "Pou\u00e9bo",
+                    "codeCom": 98824,
+                    "codePost": 98824
+                },
+                {
+                    "province": "province Nord",
+                    "nom": "POUEMBOUT",
+                    "nomMinus": "Pouembout",
+                    "codeCom": 98825,
+                    "codePost": 98825
+                },
+                {
+                    "province": "province Nord",
+                    "nom": "POUM",
+                    "nomMinus": "Poum",
+                    "codeCom": 98826,
+                    "codePost": 98826
+                },
+                {
+                    "province": "province Nord;province Sud",
+                    "nom": "POYA",
+                    "nomMinus": "Poya",
+                    "codeCom": 98827,
+                    "codePost": 98827
+                },
+                {
+                    "province": "province Sud",
+                    "nom": "SARRAMEA",
+                    "nomMinus": "Sarram\u00e9a",
+                    "codeCom": 98828,
+                    "codePost": 98882
+                },
+                {
+                    "province": "province Sud",
+                    "nom": "THIO",
+                    "nomMinus": "Thio",
+                    "codeCom": 98829,
+                    "codePost": 98829
+                },
+                {
+                    "province": "province Nord",
+                    "nom": "TOUHO",
+                    "nomMinus": "Touho",
+                    "codeCom": 98830,
+                    "codePost": 98831
+                },
+                {
+                    "province": "province Nord",
+                    "nom": "VOH",
+                    "nomMinus": "Voh",
+                    "codeCom": 98831,
+                    "codePost": 98833
+                },
+                {
+                    "province": "province Sud",
+                    "nom": "YATE",
+                    "nomMinus": "Yat\u00e9",
+                    "codeCom": 98832,
+                    "codePost": 98834
+                }
+            ]
+        }
+    ],
+    "standardized_name": "bps"
+}

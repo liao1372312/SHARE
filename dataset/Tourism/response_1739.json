@@ -1,0 +1,22 @@
+{
+"user_query":"I'm planning a road trip across New Caledonia. Can you fetch the postal code details of a specific location in New Caledonia, including the localite, libelle, and province? Additionally, I would like to know the geolocation details of the same location, including the latitude and longitude coordinates.",
+"domain":"Tourism",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Fetch the postal code details for a specific location in New Caledonia, including localite, libelle, and province.",
+        "domain": "tourism",
+        "required_inputs": ["location"]
+    },
+    {
+        "id": 2,
+        "description": "Fetch the geolocation details (latitude and longitude) for the same location in New Caledonia.",
+        "domain": "tourism",
+        "required_inputs": ["location"],
+        "dependency": {
+            "step": 1,
+            "description": "Step 2 requires the location identified in Step 1."
+        }
+    }
+]
+}

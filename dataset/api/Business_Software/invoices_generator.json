@@ -1,0 +1,158 @@
+{
+    "product_id": "api_0a1ec37b-4baa-4c78-96f0-f984a34b38e6",
+    "tool_description": "Generate invoices in pdf format quickly through a simple API",
+    "home_url": "https://rapidapi.com/sorinmarica4/api/invoices-generator/",
+    "name": "Invoices Generator",
+    "title": "Invoices Generator",
+    "pricing": "FREEMIUM",
+    "tool_name": "Invoices Generator",
+    "score": {
+        "avgServiceLevel": 93,
+        "avgLatency": 10306,
+        "avgSuccessRate": 66,
+        "popularityScore": 9,
+        "__typename": "Score"
+    },
+    "host": "invoices-generator.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Generate Invoice",
+            "url": "https://invoices-generator.p.rapidapi.com/generate-invoice",
+            "description": "Quickly generate invoices through a REST API endpoint",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "services",
+                    "type": "STRING",
+                    "description": "A JSON representing the services, and their prices that will be written on the invoice. The JSON is using the following format:\n\n`[{\\\"name\\\": \\\"My Service\\\", \\\"price\\\": \\\"30\\\", \\\"units\\\": \\\"Hours\\\", \\\"discount\\\": \\\"1000\\\", \\\"quantity\\\": \\\"1000\\\"}]`\n\nThe JSON is an array. Each element of the array represents a service. Each service is a JSON object with the following properties:\n\n- name: The name of the service/product that is sold\n- price: Represents the price per unit of the service/product that is sold\n- units: Represents how the service/product in measured in quantity. This can be anything, such as hours, kilograms, tons etc.\n-discount: Represents the total discount for all the quantity of this product/service.\n-quantity: Represents the amount of units that are being sold. For example if the unit is hour and the quantity is 100, then you're billing 100 hours of the service. Another example could be where the units is kilograms and the quantity is 100 and the product sold is \\\"Sugar\\\" => billing 100 kilograms of sugar.",
+                    "default": "[{\"name\": \"My Service\", \"price\": \"30\", \"units\": \"Hours\", \"discount\": \"1000\", \"quantity\": \"1000\"}]"
+                },
+                {
+                    "name": "number",
+                    "type": "STRING",
+                    "description": "Represents the invoice number",
+                    "default": "INVOICE01"
+                },
+                {
+                    "name": "currency",
+                    "type": "STRING",
+                    "description": "The currency in which the prices will be shown on the invoices. It can be any 3 letter currency code. If the code is not recognized then it will be simply displayed directly.",
+                    "default": "USD"
+                },
+                {
+                    "name": "seller_company_name",
+                    "type": "STRING",
+                    "description": "The company name of the seller entity. This can be a person's name as well, in case the seller is not a company.",
+                    "default": "Seller Company Name"
+                },
+                {
+                    "name": "date",
+                    "type": "STRING",
+                    "description": "The date of the invoice",
+                    "default": "2022-01-01"
+                },
+                {
+                    "name": "tax",
+                    "type": "NUMBER",
+                    "description": "The tax percentage aplied to the invoice.",
+                    "default": "20"
+                },
+                {
+                    "name": "buyer_company_name",
+                    "type": "STRING",
+                    "description": "The company name of the buyer entity. It can also be just a simple name of a person in case the buyer is not a company.",
+                    "default": "Buyer Company Name"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "locale",
+                    "type": "STRING",
+                    "description": "The language of the invoice. Accepted languages are:\n\n'en' => 'English',\n'nl' => 'Dutch',\n'de' => 'German',\n'es' => 'Spanish',\n'fr' => 'French',\n'it' => 'Italian',\n'pl' => 'Polish',\n'pt_BR' => 'Brazilian Portuguese',\n'ro' => 'Romanian',",
+                    "default": "en"
+                },
+                {
+                    "name": "logo",
+                    "type": "STRING",
+                    "description": "A logo to display on the top left corner of the invoice. This field is not mandatory.",
+                    "default": "https://cdn.logo.com/hotlink-ok/logo-social.png"
+                },
+                {
+                    "name": "buyer_tax_number",
+                    "type": "STRING",
+                    "description": "The tax number of the buyer's company. This field is not mandatory.",
+                    "default": "Buyer Tax Number"
+                },
+                {
+                    "name": "seller_address",
+                    "type": "STRING",
+                    "description": "The address of the seller. This field is not mandatory.",
+                    "default": "Seller Address"
+                },
+                {
+                    "name": "buyer_vat_number",
+                    "type": "STRING",
+                    "description": "The VAT number of the buyer's company. This field is not mandatory.",
+                    "default": "Buyer VAT Number"
+                },
+                {
+                    "name": "shipping",
+                    "type": "NUMBER",
+                    "description": "The amount to be paid for shipping. This field is not mandatory.",
+                    "default": "30"
+                },
+                {
+                    "name": "service_fee",
+                    "type": "NUMBER",
+                    "description": "A service fee to add on the invoice. This field is not mandatory.",
+                    "default": "10"
+                },
+                {
+                    "name": "due_date",
+                    "type": "STRING",
+                    "description": "The due date of the invoice. This field is not mandatory.",
+                    "default": "2022-01-01"
+                },
+                {
+                    "name": "seller_bank_account",
+                    "type": "STRING",
+                    "description": "The bank account of the seller, where the payment will be made. This field is not mandatory.",
+                    "default": "Seller Bank Account"
+                },
+                {
+                    "name": "seller_bank_name",
+                    "type": "STRING",
+                    "description": "The bank name of the account of the seller. This field is not mandatory.",
+                    "default": "Seller Bank Name"
+                },
+                {
+                    "name": "seller_tax_number",
+                    "type": "STRING",
+                    "description": "The tax number of the seller's company. This field is not mandatory.",
+                    "default": "Seller Tax Number"
+                },
+                {
+                    "name": "buyer_address",
+                    "type": "STRING",
+                    "description": "The address of the buyer entity. This field is not mandatory.",
+                    "default": "Buyer Address"
+                },
+                {
+                    "name": "seller_vat_number",
+                    "type": "STRING",
+                    "description": "The VAT number of the seller's company. This field is not mandatory.",
+                    "default": "Seller VAT Number"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://invoices-generator.p.rapidapi.com/generate-invoice\"\nquerystring = {\"locale\": \"en\", \"logo\": \"https://cdn.logo.com/hotlink-ok/logo-social.png\", \"services\": \"[{\\\"name\\\": \\\"My Service\\\", \\\"price\\\": \\\"30\\\", \\\"units\\\": \\\"Hours\\\", \\\"discount\\\": \\\"1000\\\", \\\"quantity\\\": \\\"1000\\\"}]\", \"number\": \"INVOICE01\", \"buyer_tax_number\": \"Buyer Tax Number\", \"currency\": \"USD\", \"seller_address\": \"Seller Address\", \"buyer_vat_number\": \"Buyer VAT Number\", \"shipping\": \"30\", \"seller_company_name\": \"Seller Company Name\", \"date\": \"2022-01-01\", \"service_fee\": \"10\", \"due_date\": \"2022-01-01\", \"seller_bank_account\": \"Seller Bank Account\", \"seller_bank_name\": \"Seller Bank Name\", \"tax\": \"20\", \"seller_tax_number\": \"Seller Tax Number\", \"buyer_address\": \"Buyer Address\", \"seller_vat_number\": \"Seller VAT Number\", \"buyer_company_name\": \"Buyer Company Name\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"invoices-generator.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://invoices-generator.p.rapidapi.com/generate-invoice\"\nquerystring = {\"locale\": \"en\", \"logo\": \"https://cdn.logo.com/hotlink-ok/logo-social.png\", \"services\": \"[{\\\"name\\\": \\\"My Service\\\", \\\"price\\\": \\\"30\\\", \\\"units\\\": \\\"Hours\\\", \\\"discount\\\": \\\"1000\\\", \\\"quantity\\\": \\\"1000\\\"}]\", \"number\": \"INVOICE01\", \"buyer_tax_number\": \"Buyer Tax Number\", \"currency\": \"USD\", \"seller_address\": \"Seller Address\", \"buyer_vat_number\": \"Buyer VAT Number\", \"shipping\": \"30\", \"seller_company_name\": \"Seller Company Name\", \"date\": \"2022-01-01\", \"service_fee\": \"10\", \"due_date\": \"2022-01-01\", \"seller_bank_account\": \"Seller Bank Account\", \"seller_bank_name\": \"Seller Bank Name\", \"tax\": \"20\", \"seller_tax_number\": \"Seller Tax Number\", \"buyer_address\": \"Buyer Address\", \"seller_vat_number\": \"Seller VAT Number\", \"buyer_company_name\": \"Buyer Company Name\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"invoices-generator.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "success": true,
+                "url": "https://billtime.io/storage/invoice_INVOICE01_en.648c30d10b8e7.pdf"
+            },
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "invoices_generator"
+}

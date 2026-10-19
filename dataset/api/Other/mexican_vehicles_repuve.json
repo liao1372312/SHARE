@@ -1,0 +1,42 @@
+{
+    "product_id": "api_b3869056-87a2-4ca5-8385-8d9c25533630",
+    "tool_description": "Get information for Mexican vehicles including year, make, model as well as stolen reports.",
+    "home_url": "https://rapidapi.com/ivanrodriguezo/api/mexican-vehicles-repuve/",
+    "name": "Mexican Vehicles REPUVE",
+    "title": "Mexican Vehicles REPUVE",
+    "pricing": "FREE",
+    "tool_name": "Mexican Vehicles REPUVE",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 376,
+        "avgSuccessRate": 0,
+        "popularityScore": 0.2,
+        "__typename": "Score"
+    },
+    "host": "mexican-vehicles-repuve.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "GET Vehicle information",
+            "url": "https://mexican-vehicles-repuve.p.rapidapi.com/",
+            "description": "Sample response:\n\n```\n{\n    \"doors\": 4,\n    \"has_stolen_report\": false,\n    \"year\": 2009,\n    \"license_plates\": \"CP50087\",\n    \"model\": \"DOBLE CABINA\",\n    \"assembly_plant_location\": \"\",\n    \"state\": \"CAMPECHE\",\n    \"classification\": \"ESTANDAR\",\n    \"type\": \"\",\n    \"make\": \"NISSAN\",\n    \"version\": \"V4\",\n    \"origin_country\": \"MEXICO\"\n}\n```",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "plates",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "Y20BBG"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://mexican-vehicles-repuve.p.rapidapi.com/\"\nquerystring = {\"plates\": \"Y20BBG\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"mexican-vehicles-repuve.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://mexican-vehicles-repuve.p.rapidapi.com/\"\nquerystring = {\"plates\": \"Y20BBG\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"mexican-vehicles-repuve.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "Message": null
+            },
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "mexican_vehicles_repuve"
+}

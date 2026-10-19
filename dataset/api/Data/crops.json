@@ -1,0 +1,127 @@
+{
+    "product_id": "api_b6683fcb-9011-416a-a478-fc3fcfe708d1",
+    "tool_description": "Plants for agricultural purposes in Spain: info about taxonomy, growing period, fruit type, categorization, and other. Total of 293 species. Being possible to filter by any of the characteristics mentioned above.",
+    "home_url": "https://rapidapi.com/parracj/api/crops/",
+    "name": "Crops",
+    "title": "Crops",
+    "pricing": "FREEMIUM",
+    "tool_name": "Crops",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 919,
+        "avgSuccessRate": 100,
+        "popularityScore": 9,
+        "__typename": "Score"
+    },
+    "host": "crops.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Crops list",
+            "url": "https://crops.p.rapidapi.com/",
+            "description": "This endpoint returns back all crops that are grown in Spain, being possible to filter them through query string (see Optional Parameters).",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "subcategory",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "De invierno"
+                },
+                {
+                    "name": "family",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "Poaceae"
+                },
+                {
+                    "name": "commonName",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "Trigo"
+                },
+                {
+                    "name": "specieName",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "Triticum"
+                },
+                {
+                    "name": "consistency",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "herb\u00e1cea"
+                },
+                {
+                    "name": "cropCycle",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "anual"
+                },
+                {
+                    "name": "fruitType",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "cariopsis"
+                },
+                {
+                    "name": "category",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "Cereales de grano"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://crops.p.rapidapi.com/\"\nquerystring = {\"subcategory\": \"De invierno\", \"family\": \"Poaceae\", \"commonName\": \"Trigo\", \"specieName\": \"Triticum\", \"consistency\": \"herb\u00e1cea\", \"cropCycle\": \"anual\", \"fruitType\": \"cariopsis\", \"category\": \"Cereales de grano\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"crops.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://crops.p.rapidapi.com/\"\nquerystring = {\"subcategory\": \"De invierno\", \"family\": \"Poaceae\", \"commonName\": \"Trigo\", \"specieName\": \"Triticum\", \"consistency\": \"herb\u00e1cea\", \"cropCycle\": \"anual\", \"fruitType\": \"cariopsis\", \"category\": \"Cereales de grano\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"crops.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "Category": "CEREALES DE GRANO",
+                    "Class": "Magnoliopsida",
+                    "CommonName": "Trigo duro",
+                    "Consistency": "Herb\u00e1cea",
+                    "CropCycle": "anual",
+                    "Division": "Streptophyta",
+                    "Family": "Poaceae",
+                    "FruitType": "cariopsis o cari\u00f3pside",
+                    "Genus": "Triticum",
+                    "Order": "Poales",
+                    "Remarks": "Cyperales (Steb.)=Poales (Str.) (http://www.mobot.org/MOBOT/Research/APweb/top/synonymyorders.html). Gramineae -Gram\u00edneas- (Steb.)=Poaceae -Po\u00e1ceas- (Str.).\r\n\r\nJ.M. Mateo Box, 2005. 'Prontuario de Agricultura', ep\u00edgrafe TRIGO:\r\n\r\n'Las diferencias morfol\u00f3gicas entre trigo duro y blando no son muy grandes. La principal es que el trigo duro tiene las hojas de color m\u00e1s claro, y totalmente glabras (sin pilosidad). Por otra parte, el trigo duro presenta un aparato vegetativo menos desarrollado y de menor capacidad de ahijamiento, con una ca\u00f1a m\u00e1s d\u00e9bil, lo que le sensibiliza al encamado, siendo su porte m\u00e1s erguido en el enca\u00f1ado. La espiga tiene un raquis s\u00f3lido, con glumas carenadas hasta su base y es compacta, cada glumilla inferior termina con una larga arista, muy rugosa. El grano es m\u00e1s estrecho que el del trigo panificable, alargado, de surco profundo, un mech\u00f3n poco desarrollado y su textura es fuertemente v\u00edtrea.\r\n[...]\r\n[En 1918] Sakamura clasific\u00f3 las especies del g\u00e9nero 'Triticum' en funci\u00f3n del n\u00famero de cromosomas, agrup\u00e1ndolos en tres series: diploide con 14 cromosomas (n=7) y genoma AA, tetraploide con 28 cromosomas (n=14) y genoma AABB y hexaploide con 42 cromosomas (n=21) y genoma AABBDD. Cada genoma tiene 7 cromosomas.\r\nEl g\u00e9nero 'Triticum' comprende alrededor de 30 tipos de trigo con caracter\u00edsticas gen\u00e9ticas muy diferentes, y de los que tan solo se cultiva aproximadamente la mitad.\r\n\r\nLas especies poliploides no provienen de la multiplicaci\u00f3n de un mismo genoma de base (autopoliploides), sino de la adici\u00f3n de genomas de caracter\u00edsticas pr\u00f3ximas (alopoliploides), por eso, m\u00e1s recientemente, Bowden ha clasificado de nuevo los grupos introduciendo el g\u00e9nero 'Aegilops', tras haber descubierto que 2 de los 3 genomas de los trigos hexaploides (B y D) derivan de dicho g\u00e9nero.\r\n\r\nLa esca\u00f1a menor, escanda o esprilla ('T. monococcum'), diploide, posee el genoma A, mientras que las esca\u00f1as silvestres o trigos almidoneros ('T. turgidum', ssp. 'dicoccoides' y 'T. turgidum', ssp. 'dicoccum') posee los genomas A y B.\r\n\r\nEntre los trigos hexaploides, los que poseen ls genomas A, B y D, el m\u00e1s importante es el trigo harinero ('T. aestivum'), procededente del cruzamiento de un trigo tetraploide (esca\u00f1a silvestre o trigo almidonero) y una gram\u00ednea diploide con 7 cromosomas que aport\u00f3 el genoma D, denominada 'Aegilops squarrosa', y m\u00e1s recientemente 'T. tauschii'.\r\n\r\nEl trigo duro ('T. durum' Derf.) pertenece a el grupo tetraploide de los trigos; posee los genomas a descendiente de 'T. monoccocum' y B descendiente de 'Aegilops espeltoides'. Actualmente 'T. durum' est\u00e1 englobado en la especie 'T. turgidum' que reagrupa el conjunto de especies tetraploides que proporcionan la fertilidad para los cruzamientos dentro del grupo y la existencia de formas intermedias entre 'T. durum', 'T. turgidum', 'T. dicoccum' y 'T. polonicum', todas ellas, en la actualidad, subespecies de 'T. turgidum'.\r\n\r\nEl 'T. aestivum', o trigo blando, es con diferencia la especie m\u00e1s cultivada. Le sigue el 'T. turgidum' y en particular su principal subespecie 'T. turgidum durum', trigo duro o semolero. Estos dos son los \u00fanicos tipos utilizados en Espa\u00f1a y en la UE para alimentaci\u00f3n humana.\r\n\r\nLas esca\u00f1as menores y silvestres y los almidoneros han sido recolectados desde ant\u00edguo por el hombre en sus formas silvestres antes de ser cultivadas y las formas espont\u00e1neas a\u00fan existentes son interf\u00e9rtiles con los tipos cultivados correspondientes.\r\n[...]\r\nEl trigo blando, por el contrario, no tiene ning\u00fan tipo silvestre [...].\r\nLos principales caracteres morfol\u00f3gicos utilizados para diferenciar las especies y subespecies de trigo son los siguientes: fragilidad o solidez del raquis, persistencia de las glumas (grano vestido) o no (grano desnudo) despu\u00e9s de la trilla, n\u00famero de flores y granos por espiguilla y n\u00famero de espiguillas por cent\u00edmetro de raquis, caracter\u00edsticas del grano tales como dimensiones, forma, secci\u00f3n, composici\u00f3n, color y caracter\u00edsticas de las glumas y de las glumillas (dimensiones, forma, pilosidad, importancia del nervio principal o carena, etc.), as\u00ed como el color de las glumas.\r\n\r\nPara la diferenciaci\u00f3n de las variedades bot\u00e1nicas se utiliza el car\u00e1cter aristado de la espiga (presencia o ausencia de barbas que prolongan el \u00e1pice de la glumilla y su longitud); la vellosidad o pubescencia de las glumas y su color (trigos de espiga blanca, roja, etc.) y otros caracteres como el color de la barba, color del grano, etc.\r\n\r\nPara la diferenciaci\u00f3n de variedades comerciales (variedades cultivadas) se utilizan entre otras caracter\u00edsticas morfol\u00f3gicas y anat\u00f3micas, tales como forma y pilosidad de las glumas, \u00e1pice de la gluma, glumillas, espiguilla terminal, raquis, tama\u00f1o de los \u00f3rganos, as\u00ed como observaciones fenol\u00f3gicas (duraci\u00f3n del ahijamiento, enca\u00f1ado, fecha de espigado, maduraci\u00f3n, etc.) y comportamiento fisiol\u00f3gico (mayor o menor resistencia a accidentes fisiol\u00f3gicos, plagas y enfermedades)'.\r\n\r\nVV.AA., 2003. 'Strasburger: Tratado de bot\u00e1nica':\r\n\r\n'Las gram\u00edneas se dividen fundamentalmente en 2 grandes grupos. El primero contiene a las bambusoideas, las oryzoideas y las pooideas (clado \u201cBOP\u201d). A las 'Pooideae' con fotos\u00edntesis C3 pertenecen, p. ej., la espiguilla ('Poa'), el vallico ('Lolium'), el bromo o cebadilla ('Bromus') y la ca\u00f1uela ('Festuca'), en los cuales las glumas son cortas, y el fromental ('Arrhenatherum'), la avena amarilla ('Trisetum') y la avena ('Avena'), que presentan glumas largas. Las espiguillas o esp\u00edculas de estos g\u00e9neros suelen estar dispuestas en pan\u00edculas. Tienen espigas los cereales 'Triticum' (trigo), 'Secale' (centeno) y 'Hordeum' (cebada). Entre las pooideas europeas se observan esp\u00edculas unifloras, p. ej., en 'Agrostis' (agr\u00f3stide o castillito), 'Anthoxanthum' (grama de olor), 'Alopecurus' (rabo de zorra) y 'Phleum' (fleo o cola de rata), as\u00ed como 'Stipa' (esparto). El segundo gran grupo de las gram\u00edneas comprende a las panicoideas, las arundinoideas, las clorioideas y las centotecoideas (clado \u201cPACC\u201d).En las 'Panicoideae', que suelen ser tropicales, las esp\u00edculas con frecuencia est\u00e1n aplanadas perpendicularmente con respecto al plano definido por las dos partes de la flor. A este grupo pertenecen el mijo ('Panicum'), el pasto (Pennisetum) y el panizo ('Setaria'), la ca\u00f1a de az\u00facar ('Saccharum officinale'), as\u00ed como los cereales sorgo ('Sorghum') y ma\u00edz ('Zea mays'). Panizo, sorgo, mijo y ma\u00edz tienen inflorescencia en pan\u00edcula'.",
+                    "SpecieId": 42,
+                    "SpecieName": "Triticum turgidum",
+                    "Subcategory": "De invierno",
+                    "Subclass": "Liliidae",
+                    "Subdivision": "Spermatophytina",
+                    "Subfamily": "Pooideae",
+                    "SubspecieVarietyForm": "var. durum",
+                    "Superorder": "-",
+                    "Synonyms": "Triticum turgidum L. var. durum\r\nTriticum pyramidale - Percival.\r\nTriticum durum - Desf."
+                },
+                {
+                    "Category": "CEREALES DE GRANO",
+                    "Class": "Magnoliopsida",
+                    "CommonName": "Trigo",
+                    "Consistency": "Herb\u00e1cea",
+                    "CropCycle": "anual",
+                    "Division": "Streptophyta",
+                    "Family": "Poaceae",
+                    "FruitType": "cariopsis o cari\u00f3pside",
+                    "Genus": "Triticum",
+                    "Order": "Poales",
+                    "Remarks": "Cyperales (Steb.)=Poales (Str.) (http://www.mobot.org/MOBOT/Research/APweb/top/synonymyorders.html). Gramineae -Gram\u00edneas- (Steb.)=Poaceae -Po\u00e1ceas- (Str.).\r\n\r\nSeg\u00fan datos de la FAO entre 1995 y 2002 (recogidos en 'Prontuario de agricultura', J.M. Mateo Box, 2005), el trigo es la planta m\u00e1s cultivada en el mundo, seguida del arroz.\r\n\r\nJ.M. Mateo Box, 2005. 'Prontuario de agricultura':\r\n\r\n'TRIGO\r\n\r\nBajo esta denominaci\u00f3n se incluye un conjunto de especies del g\u00e9nero 'Triticum' de caracter\u00edsticas muy diversas, desde variedades espont\u00e1neas distribuidas por Oriente Pr\u00f3ximo, hasta las variedades de trigo cultivadas distribuidas por todo el mundo que corresponden fundamentalmente a las especies ('T. aestivum' L., trigo blando y 'T. turgidum' L. var. 'durum', trigo duro) y constituyen a escala mundial la principal fuente de calor\u00edas y prote\u00ednas en la alimentaci\u00f3n humana, siendo cultivadas en zonas con condiciones clim\u00e1ticas muy variables.\r\nA lo largo de la historia el trigo ha llegado a ser considerado como el mejor de los cereales para su uso en la alimentaci\u00f3n humana, sustituyendo completamente a la cebada y al centeno, por lo que el comercio internacional se ha centrado pr\u00e1cticamente en este cereal y, por tanto, la disponibilidad de trigo es considerada como un signo de civilizaci\u00f3n avanzada, reflejando, generalmente, una situaci\u00f3n alimentaria favorable de muchos millones de personas y al mismo tiempo, indicando estabilidad en las condiciones econ\u00f3micas y pol\u00edticas. Los pa\u00edses con un adecuado suministro de trigo han sido considerados durante siglos bien nutridos.\r\n\r\nDescripci\u00f3n bot\u00e1nica y fisiolog\u00eda\r\n\r\nMorfolog\u00eda y anatom\u00eda. El trigo es una planta herb\u00e1cea que desarrolla de siete a ocho largas hojas, en forma de cinta y terminadas en punta. La parte inferior de las hojas, la vaina, rodea toda la longitud de un entrenudo y se prolonga a trav\u00e9s de una l\u00edgula transparente, larga y corta pegada al tallo. La parte superior de la hoja, el limbo, se prolonga a cada lado del tallo por dos aur\u00edculas pelosas poco abrazadoras. Su sistema radicular es fasciculado y bastante desarrollado, encontr\u00e1ndose el 55% de su peso en los primeros 25 cm del suelo, aunque pueden encontrarse ra\u00edces hasta una profundidad de 1,5 m si las caracter\u00edsticas del suelo lo permiten.\r\nLa principal diferencia morfol\u00f3gica del trigo con respecto a otros cereales se encuentra en la espiga que presenta 2 glumas por nudo del raquis con una sola espiguilla que incluye un n\u00famero variable de flores f\u00e9rtiles, que depende de la variedad y las condiciones de desarrollo, pero que suele oscilar entre 2 y 5 y generalmente es de 3. Cada espiguilla est\u00e1 formada por dos br\u00e1cteas o glumillas, la inferior, denominada lemma, se inserta sobre un corto ped\u00fanculo y en algunas variedades es aristada, en su axila tiene una flor que est\u00e1 recubierta por la gluma superior a p\u00e1lea. El n\u00famero de espiguillas por cent\u00edmetro de raquis define la compacidad de la espiga, diferenci\u00e1ndose espigas compactas y espigas laxas.\r\nEl trigo es una planta aut\u00f3gama, cuando los estambres salen al exterior la fecundaci\u00f3n ya se ha producido. Esto determina una alta capacidad de las variedades para mantener sus caracter\u00edsticas agron\u00f3micas constantes a lo largo de los procesos de reproducci\u00f3n.\r\nLa forma, tama\u00f1o, color, textura y otras caracter\u00edsticas del grano de trigo son muy variables. Normalmente es ovalado y con una longitud m\u00e1xima de 4 a 10 mm. Sobre la cara ventral tiene un surco profundo y sobre la parte apical, en uno de sus extremos, lleva un mech\u00f3n de pelos, f\u00e1cilmente observables poco despu\u00e9s de la recolecci\u00f3n, pero que son dif\u00edciles de identificar en trigos muy secos y viejos por ser muy quebradizos.\r\nEl grano puede tener forma el\u00edptica, ovalada, ovoide, redondeada y oblonga y el color var\u00eda del blanco al rojo, con matices muy distintos que pueden llegar al \u00e1mbar y al p\u00farpura, seg\u00fan propiedades espec\u00edficas, varietales y de h\u00e1bitat. El color est\u00e1 originado por las cubiertas de la semilla, aunque tambi\u00e9n puede venir modificado por la naturaleza del albumen, debido a la transparencia del pericarpio.\r\nLas variedades que tienen granos de menos de 7 mm de longitud se consideran de grano peque\u00f1o (corto), entre 7 y 9 mm son de grano mediano y cuando tienen m\u00e1s de 9 mm se consideran de grano largo.\r\nLas variedades cultivadas actualmente son de grano desnudo, es decir, despu\u00e9s de la recolecci\u00f3n no conserva las glumillas, mientras que los trigos cultivados antiguamente, esca\u00f1as y escandas, conservan las glumillas y son de grano vestido.\r\nEn la madurez, la cara dorsal del grano, donde se encuentra el embri\u00f3n, est\u00e1 protegida por la lemma y la cara ventral por la p\u00e1lea. En esta cara el grano tiene una hendidura longitudinal (surco) cuyas caracter\u00edsticas de anchura y profundidad sirven para clasificar los granos.\r\nEl grano de trigo es una cari\u00f3pside desnuda. En una secci\u00f3n longitudinal del mismo se observan desde el exterior hacia el interior los siguientes tejidos:\r\n- El pericarpio, constituido a su vez por el epicarpio, o \u00abpericarpio externo\u00bb en la figura, constituido por c\u00e9lulas rectangulares de pared gruesa, el mesocarpio, una o dos capas de grandes c\u00e9lulas, denominadas transversales porque se sit\u00faan perpendicularmente a las del epicarpio y el endocarpio, representado por c\u00e9lulas tubulares dispuestas en el sentido de la longitud del grano.\r\n- El tegumento de la semilla que procede de c\u00e9lulas protectoras del \u00f3vulo, denominada testa y constituida por dos capas de c\u00e9lulas de pared delgada. La capa interna es la que proporciona, por su pigmentaci\u00f3n, el color caracter\u00edstico de los granos rojos.\r\n- Albumen o endospermo que est\u00e1 rodeado externamente por una capa de c\u00e9lulas c\u00fabicas gruesas, denominada capa de aleurona o capa proteica, ya que son engrosadas, de forma c\u00fabica, con alto contenido en nitr\u00f3geno en forma de granos de aleurona. Internamente a dicha capa se encuentra un albumen harinoso, uniforme, de c\u00e9lulas llenas de granos de almid\u00f3n y prote\u00ednas (gluten).\r\n- Embri\u00f3n, en la parte inferior de la cara dorsal (v\u00e9rtice opuesto al que lleva el mech\u00f3n de pelos) que comporta las estructuras b\u00e1sicas necesarias para el desarrollo de la nueva pl\u00e1ntula y est\u00e1 rodeado por el escutelo o cotiled\u00f3n \u00fanico, tejido de reserva cuya funci\u00f3n es la de movilizar reservas desde el albumen hacia el embri\u00f3n durante la germinaci\u00f3n. \r\nLas diferencias morfol\u00f3gicas entre trigo duro y blando no son muy grandes. La principal es que el trigo duro tiene las hojas de color m\u00e1s claro, y totalmente glabras (sin pilosidad). Por otra parte, el trigo duro presenta un aparato vegetativo menos desarrollado y de menor capacidad de ahijamiento, con una ca\u00f1a m\u00e1s d\u00e9bil, lo que le sensibiliza al encamado, siendo su porte m\u00e1s erguido en el enca\u00f1ado. La espiga tiene un raquis s\u00f3lido, con glumas carenadas hasta su base y es compacta, cada glumilla inferior termina con una larga arista, muy rugosa. El grano es m\u00e1s estrecho que el del trigo panificable, alargado de surco profundo, un mech\u00f3n poco desarrollado y su textura es fuertemente v\u00edtrea.\r\n\r\nTaxonom\u00eda bot\u00e1nica. El trigo pertenece a la familia de las gram\u00edneas (Po\u00e1ceas), tribu Hordeae. La primera clasificaci\u00f3n de los trigos fue realizada por Linneo en 1753, aunque no fue hasta m\u00e1s tarde, en 1918, cuando Sakamura clasific\u00f3 las especies del g\u00e9nero 'Triticum', en funci\u00f3n del n\u00famero de cromosomas, agrup\u00e1ndolos en tres series: diploide con 14 cromosomas (n = 7) y genoma AA, tetraploide con 28 cromosomas (n = 21) y genoma AABB y hexaploide con 42 cromosomas (n = 21) y genoma AABBDD. Cada genoma tiene 7 cromosomas.\r\nEl g\u00e9nero 'Triticum' comprende alrededor de 30 tipos de trigo con caracter\u00edsticas gen\u00e9ticas muy diferentes, y de los que tan s\u00f3lo se cultiva aproximadamente la mitad.\r\nLas especies poliploides no provienen de la multiplicaci\u00f3n de un mismo genoma de base (autopoliploides), sino de la adici\u00f3n de genomas de caracter\u00edsticas pr\u00f3ximas (alopoliploides), por eso, m\u00e1s recientemente, Bowden ha clasificado de nuevo los grupos introduciendo e",
+                    "SpecieId": 1785,
+                    "SpecieName": "Triticum aestivum",
+                    "Subcategory": "De invierno",
+                    "Subclass": "Liliidae",
+                    "Subdivision": "Spermatophytina",
+                    "Subfamily": "Pooideae",
+                    "SubspecieVarietyForm": "-",
+                    "Superorder": "-",
+                    "Synonyms": "Triticum aestivum L.\r\nTriticum hybernum L.\r\nTriticum linnaeanum Lag.\r\nTriticum sativum Lam.\r\nTriticum vulgare Vill"
+                }
+            ],
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "crops"
+}

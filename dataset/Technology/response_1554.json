@@ -1,0 +1,35 @@
+{
+"user_query":"I want to plan a surprise birthday party for my friend. Can you help me find party venues in her city? Additionally, could you generate a list of decoration ideas using the url API? It would be great if you could also provide me with a translation of the decoration ideas in Spanish and French.",
+"domain":"Technology",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Find party venues in the friend's city.",
+        "domain": "event planning",
+        "required_inputs": ["city_name", "party_date", "number_of_guests"]
+    },
+    {
+        "id": 2,
+        "description": "Generate a list of decoration ideas using a URL API.",
+        "domain": "information retrieval",
+        "required_inputs": ["api_url"]
+    },
+    {
+        "id": 3,
+        "description": "Translate the decoration ideas into Spanish.",
+        "domain": "language translation",
+        "required_inputs": ["decoration_ideas", "target_language"]
+    },
+    {
+        "id": 4,
+        "description": "Translate the decoration ideas into French.",
+        "domain": "language translation",
+        "required_inputs": ["decoration_ideas", "target_language"]
+    }
+],
+"dependencies": {
+    "2": [1],
+    "3": [2],
+    "4": [2]
+}
+}

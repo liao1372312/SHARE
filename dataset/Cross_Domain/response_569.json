@@ -1,0 +1,30 @@
+{
+"user_query":"I am planning a trip with my friends to Paris next month. Can you provide us with the climate score of the city during that time? Additionally, we would like to know if there were any recent disasters in the vicinity of Paris. Finally, we are interested in finding out the average prices of ETFs in the market. Thank you.",
+"domain":"Cross-Domain",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Fetch the climate score for Paris for the next month.",
+        "domain": "tourism",
+        "required_inputs": ["city", "time_period"]
+    },
+    {
+        "id": 2,
+        "description": "Check for any recent disasters that have occurred in the vicinity of Paris.",
+        "domain": "tourism",
+        "required_inputs": ["city", "time_period"]
+    },
+    {
+        "id": 3,
+        "description": "Retrieve and calculate the average prices of ETFs in the market.",
+        "domain": "finance",
+        "required_inputs": ["market_type", "date_range"]
+    },
+    {
+        "id": 4,
+        "description": "Compile the results from subtasks 1, 2, and 3 into a single report for the user.",
+        "domain": "Cross-Domain",
+        "required_inputs": ["climate_score", "disaster_info", "etf_prices"]
+    }
+]
+}

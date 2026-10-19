@@ -1,0 +1,396 @@
+{
+    "product_id": "api_894be780-513c-4d7c-bf37-c2364e622053",
+    "tool_description": "GroupDocs.Comparison Cloud is a REST API provides you with a difference checker functionality to comapre same format documents.",
+    "home_url": "https://rapidapi.com/groupdocscloud/api/groupdocs-comparison-cloud/",
+    "name": "GroupDocs.Comparison Cloud",
+    "title": "GroupDocs.Comparison Cloud",
+    "pricing": "FREEMIUM",
+    "tool_name": "GroupDocs.Comparison Cloud",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 433,
+        "avgSuccessRate": 0,
+        "popularityScore": 0.1,
+        "__typename": "Score"
+    },
+    "host": "groupdocs-comparison-cloud.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "GetFilesList",
+            "url": "https://groupdocs-comparison-cloud.p.rapidapi.com/comparison/storage/folder/{path}",
+            "description": " ",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "path",
+                    "type": "STRING",
+                    "description": "Folder path e.g. '/folder'",
+                    "default": ""
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "storageName",
+                    "type": "STRING",
+                    "description": "Storage name",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://groupdocs-comparison-cloud.p.rapidapi.com/comparison/storage/folder/{path}\"\nquerystring = {\"storageName\": \"\", \"path\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"groupdocs-comparison-cloud.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://groupdocs-comparison-cloud.p.rapidapi.com/comparison/storage/folder/{path}\"\nquerystring = {\"storageName\": \"\", \"path\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"groupdocs-comparison-cloud.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "requestId": "4242284f-4451-4774-8a03-7e16b462f1a9",
+                "error": {
+                    "code": "error",
+                    "message": "ClientId is undefined. Please check authorization.",
+                    "description": "Operation Failed. General Error.",
+                    "dateTime": "2023-06-16T16:28:04.7567665Z",
+                    "innerError": null
+                }
+            },
+            "statuscode": 200,
+            "schema": {
+                "additionalProperties": false,
+                "description": "Files list",
+                "properties": {
+                    "Value": {
+                        "description": "Files and folders contained by folder StorageFile.",
+                        "items": {
+                            "additionalProperties": false,
+                            "description": "File or folder information",
+                            "properties": {
+                                "IsFolder": {
+                                    "description": "True if it is a folder.",
+                                    "type": "boolean"
+                                },
+                                "ModifiedDate": {
+                                    "description": "File or folder last modified DateTime.",
+                                    "format": "date-time",
+                                    "type": "string"
+                                },
+                                "Name": {
+                                    "description": "File or folder name.",
+                                    "type": "string"
+                                },
+                                "Path": {
+                                    "description": "File or folder path.",
+                                    "type": "string"
+                                },
+                                "Size": {
+                                    "description": "File or folder size.",
+                                    "format": "int64",
+                                    "maximum": 9223372036854776000,
+                                    "minimum": -9223372036854776000,
+                                    "type": "integer"
+                                }
+                            },
+                            "required": [
+                                "IsFolder",
+                                "Size"
+                            ],
+                            "type": "object"
+                        },
+                        "type": "array"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        {
+            "name": "GetDiscUsage",
+            "url": "https://groupdocs-comparison-cloud.p.rapidapi.com/comparison/storage/disc",
+            "description": " ",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "storageName",
+                    "type": "STRING",
+                    "description": "Storage name",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://groupdocs-comparison-cloud.p.rapidapi.com/comparison/storage/disc\"\nquerystring = {\"storageName\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"groupdocs-comparison-cloud.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://groupdocs-comparison-cloud.p.rapidapi.com/comparison/storage/disc\"\nquerystring = {\"storageName\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"groupdocs-comparison-cloud.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "requestId": "307d1846-1bc4-4318-8057-dd135875df51",
+                "error": {
+                    "code": "error",
+                    "message": "ClientId is undefined. Please check authorization.",
+                    "description": "Operation Failed. General Error.",
+                    "dateTime": "2023-06-16T16:28:06.365202Z",
+                    "innerError": null
+                }
+            },
+            "statuscode": 1,
+            "schema": ""
+        },
+        {
+            "name": "ObjectExists",
+            "url": "https://groupdocs-comparison-cloud.p.rapidapi.com/comparison/storage/exist/{path}",
+            "description": " ",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "path",
+                    "type": "STRING",
+                    "description": "File or folder path e.g. '/file.ext' or '/folder'",
+                    "default": ""
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "versionId",
+                    "type": "STRING",
+                    "description": "File version ID",
+                    "default": ""
+                },
+                {
+                    "name": "storageName",
+                    "type": "STRING",
+                    "description": "Storage name",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://groupdocs-comparison-cloud.p.rapidapi.com/comparison/storage/exist/{path}\"\nquerystring = {\"versionId\": \"\", \"path\": \"\", \"storageName\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"groupdocs-comparison-cloud.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://groupdocs-comparison-cloud.p.rapidapi.com/comparison/storage/exist/{path}\"\nquerystring = {\"versionId\": \"\", \"path\": \"\", \"storageName\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"groupdocs-comparison-cloud.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "requestId": "3c5aa165-fd68-47df-b621-14acf0dc6c5d",
+                "error": {
+                    "code": "error",
+                    "message": "ClientId is undefined. Please check authorization.",
+                    "description": "Operation Failed. General Error.",
+                    "dateTime": "2023-06-16T16:28:10.7983042Z",
+                    "innerError": null
+                }
+            },
+            "statuscode": 1,
+            "schema": ""
+        },
+        {
+            "name": "DownloadFile",
+            "url": "https://groupdocs-comparison-cloud.p.rapidapi.com/comparison/storage/file/{path}",
+            "description": " ",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "path",
+                    "type": "STRING",
+                    "description": "File path e.g. '/folder/file.ext'",
+                    "default": ""
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "storageName",
+                    "type": "STRING",
+                    "description": "Storage name",
+                    "default": ""
+                },
+                {
+                    "name": "versionId",
+                    "type": "STRING",
+                    "description": "File version ID to download",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://groupdocs-comparison-cloud.p.rapidapi.com/comparison/storage/file/{path}\"\nquerystring = {\"storageName\": \"\", \"path\": \"\", \"versionId\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"groupdocs-comparison-cloud.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://groupdocs-comparison-cloud.p.rapidapi.com/comparison/storage/file/{path}\"\nquerystring = {\"storageName\": \"\", \"path\": \"\", \"versionId\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"groupdocs-comparison-cloud.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "requestId": "c88e8691-9ba0-4b6a-b349-46aa3f9c646d",
+                "error": {
+                    "code": "error",
+                    "message": "ClientId is undefined. Please check authorization.",
+                    "description": "Operation Failed. General Error.",
+                    "dateTime": "2023-06-16T16:28:14.4623825Z",
+                    "innerError": null
+                }
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "GetFileVersions",
+            "url": "https://groupdocs-comparison-cloud.p.rapidapi.com/comparison/storage/version/{path}",
+            "description": " ",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "path",
+                    "type": "STRING",
+                    "description": "File path e.g. '/file.ext'",
+                    "default": ""
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "storageName",
+                    "type": "STRING",
+                    "description": "Storage name",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://groupdocs-comparison-cloud.p.rapidapi.com/comparison/storage/version/{path}\"\nquerystring = {\"path\": \"\", \"storageName\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"groupdocs-comparison-cloud.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://groupdocs-comparison-cloud.p.rapidapi.com/comparison/storage/version/{path}\"\nquerystring = {\"path\": \"\", \"storageName\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"groupdocs-comparison-cloud.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "requestId": "b0b39487-409c-41a1-9cee-81e2e08a8f63",
+                "error": {
+                    "code": "error",
+                    "message": "ClientId is undefined. Please check authorization.",
+                    "description": "Operation Failed. General Error.",
+                    "dateTime": "2023-06-16T16:28:15.1767399Z",
+                    "innerError": null
+                }
+            },
+            "statuscode": 200,
+            "schema": {
+                "additionalProperties": false,
+                "description": "File versions FileVersion.",
+                "properties": {
+                    "Value": {
+                        "description": "File versions FileVersion.",
+                        "items": {
+                            "additionalProperties": false,
+                            "allOf": [
+                                {
+                                    "additionalProperties": false,
+                                    "description": "File or folder information",
+                                    "properties": {
+                                        "IsFolder": {
+                                            "description": "True if it is a folder.",
+                                            "type": "boolean"
+                                        },
+                                        "ModifiedDate": {
+                                            "description": "File or folder last modified DateTime.",
+                                            "format": "date-time",
+                                            "type": "string"
+                                        },
+                                        "Name": {
+                                            "description": "File or folder name.",
+                                            "type": "string"
+                                        },
+                                        "Path": {
+                                            "description": "File or folder path.",
+                                            "type": "string"
+                                        },
+                                        "Size": {
+                                            "description": "File or folder size.",
+                                            "format": "int64",
+                                            "maximum": 9223372036854776000,
+                                            "minimum": -9223372036854776000,
+                                            "type": "integer"
+                                        }
+                                    },
+                                    "required": [
+                                        "IsFolder",
+                                        "Size"
+                                    ],
+                                    "type": "object"
+                                },
+                                {
+                                    "additionalProperties": false,
+                                    "description": "File Version",
+                                    "properties": {
+                                        "IsLatest": {
+                                            "description": "Specifies whether the file is (true) or is not (false) the latest version of an file.",
+                                            "type": "boolean"
+                                        },
+                                        "VersionId": {
+                                            "description": "File Version ID.",
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "IsLatest"
+                                    ],
+                                    "type": "object"
+                                }
+                            ],
+                            "description": "File Version",
+                            "type": "object"
+                        },
+                        "type": "array"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        {
+            "name": "StorageExists",
+            "url": "https://groupdocs-comparison-cloud.p.rapidapi.com/comparison/storage/{storageName}/exist",
+            "description": " ",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "storageName",
+                    "type": "STRING",
+                    "description": "Storage name",
+                    "default": ""
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://groupdocs-comparison-cloud.p.rapidapi.com/comparison/storage/{storageName}/exist\"\nquerystring = {\"storageName\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"groupdocs-comparison-cloud.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://groupdocs-comparison-cloud.p.rapidapi.com/comparison/storage/{storageName}/exist\"\nquerystring = {\"storageName\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"groupdocs-comparison-cloud.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "requestId": "7b21e469-9509-4ad6-a9b1-042927faf4be",
+                "error": {
+                    "code": "error",
+                    "message": "ClientId is undefined. Please check authorization.",
+                    "description": "Operation Failed. General Error.",
+                    "dateTime": "2023-06-16T16:28:16.5777495Z",
+                    "innerError": null
+                }
+            },
+            "statuscode": 1,
+            "schema": ""
+        },
+        {
+            "name": "GetSupportedFileFormats",
+            "url": "https://groupdocs-comparison-cloud.p.rapidapi.com/comparison/formats",
+            "description": " ",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://groupdocs-comparison-cloud.p.rapidapi.com/comparison/formats\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"groupdocs-comparison-cloud.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://groupdocs-comparison-cloud.p.rapidapi.com/comparison/formats\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"groupdocs-comparison-cloud.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "requestId": "6a18f711-c49a-49e5-964c-550e89c6e190",
+                "error": {
+                    "code": "error",
+                    "message": "ClientId is undefined. Please check authorization.",
+                    "description": "Operation Failed. General Error.",
+                    "dateTime": "2023-06-16T16:28:21.1589671Z",
+                    "innerError": null
+                }
+            },
+            "statuscode": 200,
+            "schema": {
+                "additionalProperties": false,
+                "description": "Describes list of supported file formats",
+                "properties": {
+                    "Formats": {
+                        "description": "Supported file formats",
+                        "items": {
+                            "additionalProperties": false,
+                            "description": "File-format",
+                            "properties": {
+                                "Extension": {
+                                    "description": "File format extension",
+                                    "type": "string"
+                                },
+                                "FileFormat": {
+                                    "description": "File format name",
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "type": "array"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    ],
+    "standardized_name": "groupdocs_comparison_cloud"
+}

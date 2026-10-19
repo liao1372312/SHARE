@@ -1,0 +1,35 @@
+{
+  "user_query": "I am planning a family reunion and I need some help. Can you provide me with a paginated list of orders that were completed and closed? Also, fetch the details of the last order made by my grandmother using the order ID '654321'. Additionally, suggest some Michelin restaurants nearby for a special family dinner. Finally, share a recipe for a traditional family dish that we can prepare together.",
+  "domain": "mixed",
+  "TaskList": [
+    {
+      "id": 1,
+      "description": "Retrieve a paginated list of orders that have been completed and closed.",
+      "domain": "finance",
+      "required_inputs": ["pagination parameters (page number, page size)", "order status filter (completed, closed)"],
+      "api_function": "Query order management system for orders filtered by status with pagination support"
+    },
+    {
+      "id": 2,
+      "description": "Fetch detailed information of the last order made by grandmother using order ID '654321'.",
+      "domain": "finance",
+      "required_inputs": ["order ID '654321'"],
+      "dependency": "Depends on order ID provided, independent of Task 1",
+      "api_function": "Query order details by order ID"
+    },
+    {
+      "id": 3,
+      "description": "Suggest Michelin-starred restaurants nearby for a special family dinner.",
+      "domain": "tourism",
+      "required_inputs": ["user location or address"],
+      "api_function": "Search for Michelin restaurants near a given location"
+    },
+    {
+      "id": 4,
+      "description": "Provide a recipe for a traditional family dish suitable for preparing together.",
+      "domain": "medical",
+      "required_inputs": ["cuisine type or dish preference (optional)"],
+      "api_function": "Retrieve recipe details from a culinary or recipe database"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+"user_query":"I'm organizing a company retreat and I need to book travel arrangements for all the employees. Can you assist me in finding the best flight options for our destination? Additionally, I need to check the departure board for train services at our destination. Please provide me with the train departure times and destinations.",
+"domain":"Tourism",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Gather the list of employees who need travel arrangements.",
+        "domain": "tourism",
+        "required_inputs": ["employee_list"]
+    },
+    {
+        "id": 2,
+        "description": "Research and find available flight options for the specified destination and dates.",
+        "domain": "tourism",
+        "required_inputs": ["destination", "travel_dates", "number_of_passengers"],
+        "depends_on": [1]
+    },
+    {
+        "id": 3,
+        "description": "Check for the available train services and their departure times at the destination.",
+        "domain": "tourism",
+        "required_inputs": ["destination"],
+        "depends_on": [2]
+    },
+    {
+        "id": 4,
+        "description": "Compile the flight options and train schedules into a report for the company.",
+        "domain": "tourism",
+        "required_inputs": ["flight_options", "train_schedule"],
+        "depends_on": [2, 3]
+    }
+]
+}

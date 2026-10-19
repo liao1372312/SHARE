@@ -1,0 +1,62 @@
+{
+    "product_id": "api_647c1691-3057-4401-8107-c8182e8a0250",
+    "tool_description": "Provided by vinalert.com, this simple api will return true or false for any VIN depending on the salvage records that are found. Database has 19.2 million VINs as of April 2020 and adding more daily.",
+    "home_url": "https://rapidapi.com/nadkabbani/api/simple-salvage-vin-check/",
+    "name": "Simple Salvage Vin Check",
+    "title": "Simple Salvage Vin Check",
+    "pricing": "FREEMIUM",
+    "tool_name": "Simple Salvage Vin Check",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 2341,
+        "avgSuccessRate": 100,
+        "popularityScore": 8.6,
+        "__typename": "Score"
+    },
+    "host": "simple-salvage-vin-check.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "salvagecheck",
+            "url": "https://simple-salvage-vin-check.p.rapidapi.com/",
+            "description": "Returns true if the VIN was in a salvage database in the past. False otherwise. Must be a valid 17 digit vin from North America.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "vin",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "1G1JC5SHXC4134208"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://simple-salvage-vin-check.p.rapidapi.com/\"\nquerystring = {\"vin\": \"1G1JC5SHXC4134208\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"simple-salvage-vin-check.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://simple-salvage-vin-check.p.rapidapi.com/\"\nquerystring = {\"vin\": \"1G1JC5SHXC4134208\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"simple-salvage-vin-check.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "get": {
+                        "type": "string"
+                    },
+                    "parameters": {
+                        "type": "array"
+                    },
+                    "errors": {
+                        "type": "array"
+                    },
+                    "results": {
+                        "type": "integer"
+                    },
+                    "response": {
+                        "type": "array",
+                        "items": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "standardized_name": "simple_salvage_vin_check"
+}

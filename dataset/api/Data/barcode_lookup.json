@@ -1,0 +1,98 @@
+{
+    "product_id": "api_78346a5e-3afd-4db4-83c0-996d5ec3f18d",
+    "tool_description": "Lookup product data and pricing for over 635 million unique items by UPC, EAN, ISBN codes or search terms.",
+    "home_url": "https://rapidapi.com/barcodelookup/api/barcode-lookup/",
+    "name": "Barcode Lookup",
+    "title": "Barcode Lookup",
+    "pricing": "FREEMIUM",
+    "tool_name": "Barcode Lookup",
+    "score": {
+        "avgServiceLevel": 99,
+        "avgLatency": 271,
+        "avgSuccessRate": 73,
+        "popularityScore": 9.3,
+        "__typename": "Score"
+    },
+    "host": "barcode-lookup.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Product",
+            "url": "https://barcode-lookup.p.rapidapi.com/v3/products",
+            "description": "Endpoint to retrieve product data.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "asin",
+                    "type": "STRING",
+                    "description": "ASIN",
+                    "default": ""
+                },
+                {
+                    "name": "page",
+                    "type": "STRING",
+                    "description": "Page number for any search query (10 results per page)",
+                    "default": ""
+                },
+                {
+                    "name": "barcode",
+                    "type": "NUMBER",
+                    "description": "UPC, EAN or ISBN number",
+                    "default": ""
+                },
+                {
+                    "name": "mpn",
+                    "type": "STRING",
+                    "description": "Manufacturer Part Number",
+                    "default": ""
+                },
+                {
+                    "name": "search",
+                    "type": "STRING",
+                    "description": "Any search term or phrase",
+                    "default": ""
+                },
+                {
+                    "name": "category",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "title",
+                    "type": "STRING",
+                    "description": "Product Name",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://barcode-lookup.p.rapidapi.com/v3/products\"\nquerystring = {\"asin\": \"\", \"page\": \"\", \"barcode\": \"\", \"mpn\": \"\", \"search\": \"\", \"category\": \"\", \"title\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"barcode-lookup.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://barcode-lookup.p.rapidapi.com/v3/products\"\nquerystring = {\"asin\": \"\", \"page\": \"\", \"barcode\": \"\", \"mpn\": \"\", \"search\": \"\", \"category\": \"\", \"title\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"barcode-lookup.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "get": {
+                        "type": "string"
+                    },
+                    "parameters": {
+                        "type": "array"
+                    },
+                    "errors": {
+                        "type": "array"
+                    },
+                    "results": {
+                        "type": "integer"
+                    },
+                    "response": {
+                        "type": "array",
+                        "items": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "standardized_name": "barcode_lookup"
+}

@@ -1,0 +1,874 @@
+{
+    "product_id": "api_98f17801-357b-4504-8a1e-494d36bb3ac2",
+    "tool_description": "This KJV Bible API allows users to retrieve verses/chapters in 1 of 6 formats.",
+    "home_url": "https://rapidapi.com/curtistaylor/api/bible-memory-verse-flashcard/",
+    "name": "Bible Memory Verse Flashcard",
+    "title": "Bible Memory Verse Flashcard",
+    "pricing": "FREE",
+    "tool_name": "Bible Memory Verse Flashcard",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 1087,
+        "avgSuccessRate": 100,
+        "popularityScore": 8.3,
+        "__typename": "Score"
+    },
+    "host": "bible-memory-verse-flashcard.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Search for Chapters containing Terms",
+            "url": "https://bible-memory-verse-flashcard.p.rapidapi.com/search_term/chapters",
+            "description": "Takes term(s) and returns chapters  that contain term(s). Terms are not case sensitive.  Books, operators etc. are NOT CASE SENSITIVE.\n\n**   ONLY SEARCHES 2 BOOKS   (NO RANGE FUNCTION) **",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "first_book",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "matthew"
+                },
+                {
+                    "name": "term1",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "bread"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "text_mode",
+                    "type": "STRING",
+                    "description": "MODES:    'full',   'blank',    'first',   'vowels',  'misc',   'ends', \n\n(Not case sensitive)",
+                    "default": "ends"
+                },
+                {
+                    "name": "term4",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "second_book",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "term_filter_operator",
+                    "type": "STRING",
+                    "description": "OPERATORS: 'and'  'or'\n\n(Not Case Sensitive)",
+                    "default": "and"
+                },
+                {
+                    "name": "term2",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "light"
+                },
+                {
+                    "name": "term3",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "word_search_mode",
+                    "type": "BOOLEAN",
+                    "description": "",
+                    "default": "true"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://bible-memory-verse-flashcard.p.rapidapi.com/search_term/chapters\"\nquerystring = {\"text_mode\": \"ends\", \"term4\": \"\", \"second_book\": \"\", \"term_filter_operator\": \"and\", \"first_book\": \"matthew\", \"term2\": \"light\", \"term1\": \"bread\", \"term3\": \"\", \"word_search_mode\": \"true\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"bible-memory-verse-flashcard.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://bible-memory-verse-flashcard.p.rapidapi.com/search_term/chapters\"\nquerystring = {\"text_mode\": \"ends\", \"term4\": \"\", \"second_book\": \"\", \"term_filter_operator\": \"and\", \"first_book\": \"matthew\", \"term2\": \"light\", \"term1\": \"bread\", \"term3\": \"\", \"word_search_mode\": \"true\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"bible-memory-verse-flashcard.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "status_code": 404,
+                "detail": "''SEARCH TERM NEEDS TO BE AT LEAST 2 CHARACTERS LONG WHEN 'word_search_mode' is TRUE",
+                "headers": null
+            }
+        },
+        {
+            "name": "Search Term - Chapter Address Summary",
+            "url": "https://bible-memory-verse-flashcard.p.rapidapi.com/search_term/chapter_summary",
+            "description": "Returns a summary for chapter addresses that contain term criteria\n\n**  CAN SEARCH A RANGE OF BOOKS.  \n(first_book = 'matthew' , second_book = 'john' MEANS ENDPOINT SEARCHES  'matthew'  'mark'  'luke' 'john')    **",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "first_book",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "matthew"
+                },
+                {
+                    "name": "term1",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "temple"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "term_filter_operator",
+                    "type": "STRING",
+                    "description": "OPERATORS: 'and'  'or'\n\n(Not Case Sensitive)",
+                    "default": "and"
+                },
+                {
+                    "name": "term4",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "term5",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "second_book",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "revelation"
+                },
+                {
+                    "name": "word_search_mode",
+                    "type": "BOOLEAN",
+                    "description": "",
+                    "default": "true"
+                },
+                {
+                    "name": "term2",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "fire"
+                },
+                {
+                    "name": "term3",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://bible-memory-verse-flashcard.p.rapidapi.com/search_term/chapter_summary\"\nquerystring = {\"term_filter_operator\": \"and\", \"term4\": \"\", \"term5\": \"\", \"second_book\": \"revelation\", \"word_search_mode\": \"true\", \"first_book\": \"matthew\", \"term2\": \"fire\", \"term3\": \"\", \"term1\": \"temple\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"bible-memory-verse-flashcard.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://bible-memory-verse-flashcard.p.rapidapi.com/search_term/chapter_summary\"\nquerystring = {\"term_filter_operator\": \"and\", \"term4\": \"\", \"term5\": \"\", \"second_book\": \"revelation\", \"word_search_mode\": \"true\", \"first_book\": \"matthew\", \"term2\": \"fire\", \"term3\": \"\", \"term1\": \"temple\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"bible-memory-verse-flashcard.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "status_code": 404,
+                "detail": "''SEARCH TERM NEEDS TO BE AT LEAST 2 CHARACTERS LONG WHEN 'word_search_mode' is TRUE",
+                "headers": null
+            }
+        },
+        {
+            "name": "Search Term - Verse Address Summary",
+            "url": "https://bible-memory-verse-flashcard.p.rapidapi.com/search_term/verse_summary",
+            "description": "Returns a summary for verse addresses that contain term criteria.\n\n**  CAN SEARCH A RANGE OF BOOKS.  \n(first_book = 'matthew' , second_book = 'john' MEANS ENDPOINT SEARCHES  'matthew'  'mark'  'luke' 'john')    **",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "first_book",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "genesis"
+                },
+                {
+                    "name": "term1",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "gold"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "term5",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "term3",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "iron"
+                },
+                {
+                    "name": "term4",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "term2",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "silver"
+                },
+                {
+                    "name": "term_filter_operator",
+                    "type": "STRING",
+                    "description": "OPERATORS: 'and'  'or'\n\n(Not Case Sensitive)",
+                    "default": "or"
+                },
+                {
+                    "name": "word_search_mode",
+                    "type": "BOOLEAN",
+                    "description": "",
+                    "default": "true"
+                },
+                {
+                    "name": "second_book",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "job"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://bible-memory-verse-flashcard.p.rapidapi.com/search_term/verse_summary\"\nquerystring = {\"term5\": \"\", \"term3\": \"iron\", \"first_book\": \"genesis\", \"term4\": \"\", \"term2\": \"silver\", \"term_filter_operator\": \"or\", \"term1\": \"gold\", \"word_search_mode\": \"true\", \"second_book\": \"job\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"bible-memory-verse-flashcard.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://bible-memory-verse-flashcard.p.rapidapi.com/search_term/verse_summary\"\nquerystring = {\"term5\": \"\", \"term3\": \"iron\", \"first_book\": \"genesis\", \"term4\": \"\", \"term2\": \"silver\", \"term_filter_operator\": \"or\", \"term1\": \"gold\", \"word_search_mode\": \"true\", \"second_book\": \"job\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"bible-memory-verse-flashcard.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "status_code": 404,
+                "detail": "''SEARCH TERM NEEDS TO BE AT LEAST 2 CHARACTERS LONG WHEN 'word_search_mode' is TRUE",
+                "headers": null
+            }
+        },
+        {
+            "name": "Search for Verses containing Terms",
+            "url": "https://bible-memory-verse-flashcard.p.rapidapi.com/search_term/verses",
+            "description": "Takes term(s) and returns verses that contain term(s). Terms are not case sensitive. \nBooks, operators etc. are NOT CASE SENSITIVE\n\n**  CAN SEARCH A RANGE OF BOOKS.  \n(first_book = 'matthew' , second_book = 'john' MEANS ENDPOINT SEARCHES  'matthew'  'mark'  'luke' 'john')    **",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "word_search_mode",
+                    "type": "BOOLEAN",
+                    "description": "",
+                    "default": "true"
+                },
+                {
+                    "name": "first_book",
+                    "type": "STRING",
+                    "description": "1ST / book name IN POSSIBLE VERSE SEQUENCE",
+                    "default": "genesis"
+                },
+                {
+                    "name": "term_filter_operator",
+                    "type": "STRING",
+                    "description": "OPERATORS: 'and'  'or'\n\n(Not Case Sensitive)",
+                    "default": "or"
+                },
+                {
+                    "name": "term1",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "gold"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "text_mode",
+                    "type": "STRING",
+                    "description": "MODES:    'full',   'blank',    'first',   'vowels',  'misc',   'ends', \n\n(Not case sensitive)",
+                    "default": "full"
+                },
+                {
+                    "name": "term2",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "term4",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "second_book",
+                    "type": "STRING",
+                    "description": "2nd / last book IN POSSIBLE VERSE SEQUENCE.\n\n(IF first_book='matthew', second_book='acts'  MEANS results FROM \n'matthew', 'mark', 'luke', 'john', 'acts')",
+                    "default": "numbers"
+                },
+                {
+                    "name": "term3",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://bible-memory-verse-flashcard.p.rapidapi.com/search_term/verses\"\nquerystring = {\"word_search_mode\": \"true\", \"first_book\": \"genesis\", \"text_mode\": \"full\", \"term2\": \"\", \"term_filter_operator\": \"or\", \"term4\": \"\", \"term1\": \"gold\", \"second_book\": \"numbers\", \"term3\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"bible-memory-verse-flashcard.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://bible-memory-verse-flashcard.p.rapidapi.com/search_term/verses\"\nquerystring = {\"word_search_mode\": \"true\", \"first_book\": \"genesis\", \"text_mode\": \"full\", \"term2\": \"\", \"term_filter_operator\": \"or\", \"term4\": \"\", \"term1\": \"gold\", \"second_book\": \"numbers\", \"term3\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"bible-memory-verse-flashcard.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "status_code": 404,
+                "detail": "''SEARCH TERM NEEDS TO BE AT LEAST 2 CHARACTERS LONG WHEN 'word_search_mode' is TRUE",
+                "headers": null
+            }
+        },
+        {
+            "name": "Search Term - Count occurrences of terms found in text",
+            "url": "https://bible-memory-verse-flashcard.p.rapidapi.com/search_term/counter",
+            "description": "Return number of term criteria occurrences in chosen book(s)\n\n**  CAN SEARCH A RANGE OF BOOKS.  \n(first_book = 'matthew' , second_book = 'john' MEANS ENDPOINT SEARCHES  'matthew'  'mark'  'luke' 'john')    **",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "term1",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "city"
+                },
+                {
+                    "name": "first_book",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "genesis"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "second_book",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "numbers"
+                },
+                {
+                    "name": "term5",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "term7",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "term2",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "term6",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "term4",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "term3",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://bible-memory-verse-flashcard.p.rapidapi.com/search_term/counter\"\nquerystring = {\"second_book\": \"numbers\", \"term1\": \"city\", \"term5\": \"\", \"first_book\": \"genesis\", \"term7\": \"\", \"term2\": \"\", \"term6\": \"\", \"term4\": \"\", \"term3\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"bible-memory-verse-flashcard.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://bible-memory-verse-flashcard.p.rapidapi.com/search_term/counter\"\nquerystring = {\"second_book\": \"numbers\", \"term1\": \"city\", \"term5\": \"\", \"first_book\": \"genesis\", \"term7\": \"\", \"term2\": \"\", \"term6\": \"\", \"term4\": \"\", \"term3\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"bible-memory-verse-flashcard.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "status_code": 404,
+                "detail": "''SEARCH TERM NEEDS TO BE AT LEAST 2 CHARACTERS LONG",
+                "headers": null
+            }
+        },
+        {
+            "name": "Get Verses",
+            "url": "https://bible-memory-verse-flashcard.p.rapidapi.com/get_verses",
+            "description": "Takes parameters and returns requested verses",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "text_mode",
+                    "type": "STRING",
+                    "description": "MODES:    'full',   'blank',    'first',   'vowels',  'misc',   'ends', \n\n(Not case sensitive)",
+                    "default": "ends"
+                },
+                {
+                    "name": "book_name",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "john"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "verse_num1",
+                    "type": "NUMBER",
+                    "description": "1ST / starting verse IN POSSIBLE VERSE SEQUENCE",
+                    "default": "1"
+                },
+                {
+                    "name": "chapter",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "1"
+                },
+                {
+                    "name": "verse_num2",
+                    "type": "NUMBER",
+                    "description": "Last verse of a possible sequence of verses [EX: IF verse_num1=1 and verse_num2=10\nmeans verses  1,2,3,4,5,6,7,8,9, 10 WILL BE RETURNED]",
+                    "default": "5"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://bible-memory-verse-flashcard.p.rapidapi.com/get_verses\"\nquerystring = {\"text_mode\": \"ends\", \"verse_num1\": \"1\", \"chapter\": \"1\", \"verse_num2\": \"5\", \"book_name\": \"john\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"bible-memory-verse-flashcard.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://bible-memory-verse-flashcard.p.rapidapi.com/get_verses\"\nquerystring = {\"text_mode\": \"ends\", \"verse_num1\": \"1\", \"chapter\": \"1\", \"verse_num2\": \"5\", \"book_name\": \"john\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"bible-memory-verse-flashcard.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "description": "RETURNS VERSE(S) FROM CHOSEN BOOK",
+                "number_of_verses": 5,
+                "verses": [
+                    {
+                        "id": 26046,
+                        "book_name": "john",
+                        "chapter": "1",
+                        "verse_num": "1",
+                        "verse_text": "1:1 In t-e b-------g w-s t-e W--d, a-d t-e W--d w-s w--h G-d, a-d t-e W--d w-s G-d. "
+                    },
+                    {
+                        "id": 26047,
+                        "book_name": "john",
+                        "chapter": "1",
+                        "verse_num": "2",
+                        "verse_text": "1:2 T-e s--e w-s in t-e b-------g w--h G-d. "
+                    },
+                    {
+                        "id": 26048,
+                        "book_name": "john",
+                        "chapter": "1",
+                        "verse_num": "3",
+                        "verse_text": "1:3 A-l t----s w--e m--e by h-m; a-d w-----t h-m w-s n-t a-y t---g m--e t--t w-s m--e. "
+                    },
+                    {
+                        "id": 26049,
+                        "book_name": "john",
+                        "chapter": "1",
+                        "verse_num": "4",
+                        "verse_text": "1:4 In h-m w-s l--e; a-d t-e l--e w-s t-e l---t of m-n. "
+                    },
+                    {
+                        "id": 26050,
+                        "book_name": "john",
+                        "chapter": "1",
+                        "verse_num": "5",
+                        "verse_text": "1:5 A-d t-e l---t s-----h in d------s; a-d t-e d------s c----------d it n-t. "
+                    }
+                ]
+            },
+            "statuscode": 1,
+            "schema": ""
+        },
+        {
+            "name": "Get Chapter",
+            "url": "https://bible-memory-verse-flashcard.p.rapidapi.com/get_chapter",
+            "description": "Takes parameters and returns one chapter for chosen bookname",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "book_name",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "numbers"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "chapter",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "1"
+                },
+                {
+                    "name": "text_mode",
+                    "type": "STRING",
+                    "description": "MODES:    'full',   'blank',    'first',   'vowels',   'misc',   'ends', \n\n(Not case sensitive)",
+                    "default": "vowels"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://bible-memory-verse-flashcard.p.rapidapi.com/get_chapter\"\nquerystring = {\"book_name\": \"numbers\", \"chapter\": \"1\", \"text_mode\": \"vowels\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"bible-memory-verse-flashcard.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://bible-memory-verse-flashcard.p.rapidapi.com/get_chapter\"\nquerystring = {\"book_name\": \"numbers\", \"chapter\": \"1\", \"text_mode\": \"vowels\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"bible-memory-verse-flashcard.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "description": "RETURNS A SINGLE SUBMITTED CHAPTER FROM CHOSEN BOOK",
+                "book_name": "numbers",
+                "chapter": [
+                    {
+                        "id": 3606,
+                        "book_name": "numbers",
+                        "chapter": "1",
+                        "verse_num": "1",
+                        "verse_text": "1:1 And th- L-RD sp-k- unt- M-s-s in th- w-ld-rn-ss of S-n--, in th- t-b-rn-cl- of th- c-ngr-g-t--n, on th- f-rst d-y of th- s-c-nd m-nth, in th- s-c-nd y--r aft-r th-y w-r- c-m- o-t of th- l-nd of Egypt, s-y-ng,"
+                    },
+                    {
+                        "id": 3607,
+                        "book_name": "numbers",
+                        "chapter": "1",
+                        "verse_num": "2",
+                        "verse_text": "1:2 T-k- y- th- s-m of all th- c-ngr-g-t--n of th- ch-ldr-n of Isr--l, aft-r th--r f-m-l--s, by th- h--s- of th--r f-th-rs, w-th th- n-mb-r of th--r n-m-s, ev-ry m-l- by th--r p-lls;"
+                    },
+                    {
+                        "id": 3608,
+                        "book_name": "numbers",
+                        "chapter": "1",
+                        "verse_num": "3",
+                        "verse_text": "1:3 Fr-m tw-nty y--rs old and upw-rd, all th-t ar- abl- t- g- f-rth t- w-r in Isr--l: th-- and A-r-n sh-ll n-mb-r th-m by th--r arm--s. "
+                    },
+                    {
+                        "id": 3609,
+                        "book_name": "numbers",
+                        "chapter": "1",
+                        "verse_num": "4",
+                        "verse_text": "1:4 And w-th y-- th-r- sh-ll b- a m-n of ev-ry tr-b-; ev-ry on- h--d of th- h--s- of h-s f-th-rs. "
+                    },
+                    {
+                        "id": 3610,
+                        "book_name": "numbers",
+                        "chapter": "1",
+                        "verse_num": "5",
+                        "verse_text": "1:5 And th-s- ar- th- n-m-s of th- m-n th-t sh-ll st-nd w-th y--: of th- tr-b- of R--b-n; El-z-r th- s-n of Sh-d--r. "
+                    },
+                    {
+                        "id": 3611,
+                        "book_name": "numbers",
+                        "chapter": "1",
+                        "verse_num": "6",
+                        "verse_text": "1:6 Of S-m--n; Sh-l-m--l th- s-n of Z-r-sh-dd--. "
+                    },
+                    {
+                        "id": 3612,
+                        "book_name": "numbers",
+                        "chapter": "1",
+                        "verse_num": "7",
+                        "verse_text": "1:7 Of J-d-h; N-hsh-n th- s-n of Amm-n-d-b. "
+                    },
+                    {
+                        "id": 3613,
+                        "book_name": "numbers",
+                        "chapter": "1",
+                        "verse_num": "8",
+                        "verse_text": "1:8 Of Iss-ch-r; N-th-n--l th- s-n of Z--r. "
+                    },
+                    {
+                        "id": 3614,
+                        "book_name": "numbers",
+                        "chapter": "1",
+                        "verse_num": "9",
+                        "verse_text": "1:9 Of Z-b-l-n; El--b th- s-n of H-l-n. "
+                    },
+                    {
+                        "id": 3615,
+                        "book_name": "numbers",
+                        "chapter": "1",
+                        "verse_num": "10",
+                        "verse_text": "1:10 Of th- ch-ldr-n of J-s-ph: of Ephr--m; El-sh-m- th- s-n of Amm-h-d: of M-n-ss-h; G-m-l--l th- s-n of P-d-hz-r. "
+                    },
+                    {
+                        "id": 3616,
+                        "book_name": "numbers",
+                        "chapter": "1",
+                        "verse_num": "11",
+                        "verse_text": "1:11 Of B-nj-m-n; Ab-d-n th- s-n of G-d--n-. "
+                    },
+                    {
+                        "id": 3617,
+                        "book_name": "numbers",
+                        "chapter": "1",
+                        "verse_num": "12",
+                        "verse_text": "1:12 Of D-n; Ah--z-r th- s-n of Amm-sh-dd--. "
+                    },
+                    {
+                        "id": 3618,
+                        "book_name": "numbers",
+                        "chapter": "1",
+                        "verse_num": "13",
+                        "verse_text": "1:13 Of Ash-r; P-g--l th- s-n of Ocr-n. "
+                    },
+                    {
+                        "id": 3619,
+                        "book_name": "numbers",
+                        "chapter": "1",
+                        "verse_num": "14",
+                        "verse_text": "1:14 Of G-d; El--s-ph th- s-n of D---l. "
+                    },
+                    {
+                        "id": 3620,
+                        "book_name": "numbers",
+                        "chapter": "1",
+                        "verse_num": "15",
+                        "verse_text": "1:15 Of N-pht-l-; Ah-r- th- s-n of En-n. "
+                    },
+                    {
+                        "id": 3621,
+                        "book_name": "numbers",
+                        "chapter": "1",
+                        "verse_num": "16",
+                        "verse_text": "1:16 Th-s- w-r- th- r-n-wn-d of th- c-ngr-g-t--n, pr-nc-s of th- tr-b-s of th--r f-th-rs, h--ds of th--s-nds in Isr--l. "
+                    },
+                    {
+                        "id": 3622,
+                        "book_name": "numbers",
+                        "chapter": "1",
+                        "verse_num": "17",
+                        "verse_text": "1:17 And M-s-s and A-r-n t--k th-s- m-n wh-ch ar- expr-ss-d by th--r n-m-s:"
+                    },
+                    {
+                        "id": 3623,
+                        "book_name": "numbers",
+                        "chapter": "1",
+                        "verse_num": "18",
+                        "verse_text": "1:18 And th-y ass-mbl-d all th- c-ngr-g-t--n t-g-th-r on th- f-rst d-y of th- s-c-nd m-nth, and th-y d-cl-r-d th--r p-d-gr--s aft-r th--r f-m-l--s, by th- h--s- of th--r f-th-rs, acc-rd-ng t- th- n-mb-r of th- n-m-s, fr-m tw-nty y--rs old and upw-rd, by th--r p-lls. "
+                    },
+                    {
+                        "id": 3624,
+                        "book_name": "numbers",
+                        "chapter": "1",
+                        "verse_num": "19",
+                        "verse_text": "1:19 As th- L-RD c-mm-nd-d M-s-s, s- h- n-mb-r-d th-m in th- w-ld-rn-ss of S-n--. "
+                    },
+                    {
+                        "id": 3625,
+                        "book_name": "numbers",
+                        "chapter": "1",
+                        "verse_num": "20",
+                        "verse_text": "1:20 And th- ch-ldr-n of R--b-n, Isr--l's eld-st s-n, by th--r g-n-r-t--ns, aft-r th--r f-m-l--s, by th- h--s- of th--r f-th-rs, acc-rd-ng t- th- n-mb-r of th- n-m-s, by th--r p-lls, ev-ry m-l- fr-m tw-nty y--rs old and upw-rd, all th-t w-r- abl- t- g- f-rth t- w-r; "
+                    },
+                    {
+                        "id": 3626,
+                        "book_name": "numbers",
+                        "chapter": "1",
+                        "verse_num": "21",
+                        "verse_text": "1:21 Th-s- th-t w-r- n-mb-r-d of th-m, ev-n of th- tr-b- of R--b-n, w-r- f-rty and s-x th--s-nd and f-v- h-ndr-d. "
+                    },
+                    {
+                        "id": 3627,
+                        "book_name": "numbers",
+                        "chapter": "1",
+                        "verse_num": "22",
+                        "verse_text": "1:22 Of th- ch-ldr-n of S-m--n, by th--r g-n-r-t--ns, aft-r th--r f-m-l--s, by th- h--s- of th--r f-th-rs, th-s- th-t w-r- n-mb-r-d of th-m, acc-rd-ng t- th- n-mb-r of th- n-m-s, by th--r p-lls, ev-ry m-l- fr-m tw-nty y--rs old and upw-rd, all th-t w-r- abl- t- g- f-rth t- w-r;"
+                    },
+                    {
+                        "id": 3628,
+                        "book_name": "numbers",
+                        "chapter": "1",
+                        "verse_num": "23",
+                        "verse_text": "1:23 Th-s- th-t w-r- n-mb-r-d of th-m, ev-n of th- tr-b- of S-m--n, w-r- f-fty and n-n- th--s-nd and thr-- h-ndr-d. "
+                    },
+                    {
+                        "id": 3629,
+                        "book_name": "numbers",
+                        "chapter": "1",
+                        "verse_num": "24",
+                        "verse_text": "1:24 Of th- ch-ldr-n of G-d, by th--r g-n-r-t--ns, aft-r th--r f-m-l--s, by th- h--s- of th--r f-th-rs, acc-rd-ng t- th- n-mb-r of th- n-m-s, fr-m tw-nty y--rs old and upw-rd, all th-t w-r- abl- t- g- f-rth t- w-r;"
+                    },
+                    {
+                        "id": 3630,
+                        "book_name": "numbers",
+                        "chapter": "1",
+                        "verse_num": "25",
+                        "verse_text": "1:25 Th-s- th-t w-r- n-mb-r-d of th-m, ev-n of th- tr-b- of G-d, w-r- f-rty and f-v- th--s-nd s-x h-ndr-d and f-fty. "
+                    },
+                    {
+                        "id": 3631,
+                        "book_name": "numbers",
+                        "chapter": "1",
+                        "verse_num": "26",
+                        "verse_text": "1:26 Of th- ch-ldr-n of J-d-h, by th--r g-n-r-t--ns, aft-r th--r f-m-l--s, by th- h--s- of th--r f-th-rs, acc-rd-ng t- th- n-mb-r of th- n-m-s, fr-m tw-nty y--rs old and upw-rd, all th-t w-r- abl- t- g- f-rth t- w-r;"
+                    },
+                    {
+                        "id": 3632,
+                        "book_name": "numbers",
+                        "chapter": "1",
+                        "verse_num": "27",
+                        "verse_text": "1:27 Th-s- th-t w-r- n-mb-r-d of th-m, ev-n of th- tr-b- of J-d-h, w-r- thr--sc-r- and f--rt--n th--s-nd and s-x h-ndr-d. "
+                    },
+                    {
+                        "id": 3633,
+                        "book_name": "numbers",
+                        "chapter": "1",
+                        "verse_num": "28",
+                        "verse_text": "1:28 Of th- ch-ldr-n of Iss-ch-r, by th--r g-n-r-t--ns, aft-r th--r f-m-l--s, by th- h--s- of th--r f-th-rs, acc-rd-ng t- th- n-mb-r of th- n-m-s, fr-m tw-nty y--rs old and upw-rd, all th-t w-r- abl- t- g- f-rth t- w-r;"
+                    },
+                    {
+                        "id": 3634,
+                        "book_name": "numbers",
+                        "chapter": "1",
+                        "verse_num": "29",
+                        "verse_text": "1:29 Th-s- th-t w-r- n-mb-r-d of th-m, ev-n of th- tr-b- of Iss-ch-r, w-r- f-fty and f--r th--s-nd and f--r h-ndr-d. "
+                    },
+                    {
+                        "id": 3635,
+                        "book_name": "numbers",
+                        "chapter": "1",
+                        "verse_num": "30",
+                        "verse_text": "1:30 Of th- ch-ldr-n of Z-b-l-n, by th--r g-n-r-t--ns, aft-r th--r f-m-l--s, by th- h--s- of th--r f-th-rs, acc-rd-ng t- th- n-mb-r of th- n-m-s, fr-m tw-nty y--rs old and upw-rd, all th-t w-r- abl- t- g- f-rth t- w-r;"
+                    },
+                    {
+                        "id": 3636,
+                        "book_name": "numbers",
+                        "chapter": "1",
+                        "verse_num": "31",
+                        "verse_text": "1:31 Th-s- th-t w-r- n-mb-r-d of th-m, ev-n of th- tr-b- of Z-b-l-n, w-r- f-fty and s-v-n th--s-nd and f--r h-ndr-d. "
+                    },
+                    {
+                        "id": 3637,
+                        "book_name": "numbers",
+                        "chapter": "1",
+                        "verse_num": "32",
+                        "verse_text": "1:32 Of th- ch-ldr-n of J-s-ph, n-m-ly, of th- ch-ldr-n of Ephr--m, by th--r g-n-r-t--ns, aft-r th--r f-m-l--s, by th- h--s- of th--r f-th-rs, acc-rd-ng t- th- n-mb-r of th- n-m-s, fr-m tw-nty y--rs old and upw-rd, all th-t w-r- abl- t- g- f-rth t- w-r;"
+                    },
+                    {
+                        "id": 3638,
+                        "book_name": "numbers",
+                        "chapter": "1",
+                        "verse_num": "33",
+                        "verse_text": "1:33 Th-s- th-t w-r- n-mb-r-d of th-m, ev-n of th- tr-b- of Ephr--m, w-r- f-rty th--s-nd and f-v- h-ndr-d. "
+                    },
+                    {
+                        "id": 3639,
+                        "book_name": "numbers",
+                        "chapter": "1",
+                        "verse_num": "34",
+                        "verse_text": "1:34 Of th- ch-ldr-n of M-n-ss-h, by th--r g-n-r-t--ns, aft-r th--r f-m-l--s, by th- h--s- of th--r f-th-rs, acc-rd-ng t- th- n-mb-r of th- n-m-s, fr-m tw-nty y--rs old and upw-rd, all th-t w-r- abl- t- g- f-rth t- w-r;"
+                    },
+                    {
+                        "id": 3640,
+                        "book_name": "numbers",
+                        "chapter": "1",
+                        "verse_num": "35",
+                        "verse_text": "1:35 Th-s- th-t w-r- n-mb-r-d of th-m, ev-n of th- tr-b- of M-n-ss-h, w-r- th-rty and tw- th--s-nd and tw- h-ndr-d. "
+                    },
+                    {
+                        "id": 3641,
+                        "book_name": "numbers",
+                        "chapter": "1",
+                        "verse_num": "36",
+                        "verse_text": "1:36 Of th- ch-ldr-n of B-nj-m-n, by th--r g-n-r-t--ns, aft-r th--r f-m-l--s, by th- h--s- of th--r f-th-rs, acc-rd-ng t- th- n-mb-r of th- n-m-s, fr-m tw-nty y--rs old and upw-rd, all th-t w-r- abl- t- g- f-rth t- w-r;"
+                    },
+                    {
+                        "id": 3642,
+                        "book_name": "numbers",
+                        "chapter": "1",
+                        "verse_num": "37",
+                        "verse_text": "1:37 Th-s- th-t w-r- n-mb-r-d of th-m, ev-n of th- tr-b- of B-nj-m-n, w-r- th-rty and f-v- th--s-nd and f--r h-ndr-d. "
+                    },
+                    {
+                        "id": 3643,
+                        "book_name": "numbers",
+                        "chapter": "1",
+                        "verse_num": "38",
+                        "verse_text": "1:38 Of th- ch-ldr-n of D-n, by th--r g-n-r-t--ns, aft-r th--r f-m-l--s, by th- h--s- of th--r f-th-rs, acc-rd-ng t- th- n-mb-r of th- n-m-s, fr-m tw-nty y--rs old and upw-rd, all th-t w-r- abl- t- g- f-rth t- w-r;"
+                    },
+                    {
+                        "id": 3644,
+                        "book_name": "numbers",
+                        "chapter": "1",
+                        "verse_num": "39",
+                        "verse_text": "1:39 Th-s- th-t w-r- n-mb-r-d of th-m, ev-n of th- tr-b- of D-n, w-r- thr--sc-r- and tw- th--s-nd and s-v-n h-ndr-d. "
+                    },
+                    {
+                        "id": 3645,
+                        "book_name": "numbers",
+                        "chapter": "1",
+                        "verse_num": "40",
+                        "verse_text": "1:40 Of th- ch-ldr-n of Ash-r, by th--r g-n-r-t--ns, aft-r th--r f-m-l--s, by th- h--s- of th--r f-th-rs, acc-rd-ng t- th- n-mb-r of th- n-m-s, fr-m tw-nty y--rs old and upw-rd, all th-t w-r- abl- t- g- f-rth t- w-r;"
+                    },
+                    {
+                        "id": 3646,
+                        "book_name": "numbers",
+                        "chapter": "1",
+                        "verse_num": "41",
+                        "verse_text": "1:41 Th-s- th-t w-r- n-mb-r-d of th-m, ev-n of th- tr-b- of Ash-r, w-r- f-rty and on- th--s-nd and f-v- h-ndr-d. "
+                    },
+                    {
+                        "id": 3647,
+                        "book_name": "numbers",
+                        "chapter": "1",
+                        "verse_num": "42",
+                        "verse_text": "1:42 Of th- ch-ldr-n of N-pht-l-, thr--gh--t th--r g-n-r-t--ns, aft-r th--r f-m-l--s, by th- h--s- of th--r f-th-rs, acc-rd-ng t- th- n-mb-r of th- n-m-s, fr-m tw-nty y--rs old and upw-rd, all th-t w-r- abl- t- g- f-rth t- w-r;"
+                    },
+                    {
+                        "id": 3648,
+                        "book_name": "numbers",
+                        "chapter": "1",
+                        "verse_num": "43",
+                        "verse_text": "1:43 Th-s- th-t w-r- n-mb-r-d of th-m, ev-n of th- tr-b- of N-pht-l-, w-r- f-fty and thr-- th--s-nd and f--r h-ndr-d. "
+                    },
+                    {
+                        "id": 3649,
+                        "book_name": "numbers",
+                        "chapter": "1",
+                        "verse_num": "44",
+                        "verse_text": "1:44 Th-s- ar- th-s- th-t w-r- n-mb-r-d, wh-ch M-s-s and A-r-n n-mb-r-d, and th- pr-nc-s of Isr--l, b--ng tw-lv- m-n: e-ch on- w-s f-r th- h--s- of h-s f-th-rs. "
+                    },
+                    {
+                        "id": 3650,
+                        "book_name": "numbers",
+                        "chapter": "1",
+                        "verse_num": "45",
+                        "verse_text": "1:45 S- w-r- all th-s- th-t w-r- n-mb-r-d of th- ch-ldr-n of Isr--l, by th- h--s- of th--r f-th-rs, fr-m tw-nty y--rs old and upw-rd, all th-t w-r- abl- t- g- f-rth t- w-r in Isr--l;"
+                    },
+                    {
+                        "id": 3651,
+                        "book_name": "numbers",
+                        "chapter": "1",
+                        "verse_num": "46",
+                        "verse_text": "1:46 Ev-n all th-y th-t w-r- n-mb-r-d w-r- s-x h-ndr-d th--s-nd and thr-- th--s-nd and f-v- h-ndr-d and f-fty. "
+                    },
+                    {
+                        "id": 3652,
+                        "book_name": "numbers",
+                        "chapter": "1",
+                        "verse_num": "47",
+                        "verse_text": "1:47 B-t th- L-v-t-s aft-r th- tr-b- of th--r f-th-rs w-r- n-t n-mb-r-d am-ng th-m. "
+                    },
+                    {
+                        "id": 3653,
+                        "book_name": "numbers",
+                        "chapter": "1",
+                        "verse_num": "48",
+                        "verse_text": "1:48 F-r th- L-RD h-d sp-k-n unt- M-s-s, s-y-ng,"
+                    },
+                    {
+                        "id": 3654,
+                        "book_name": "numbers",
+                        "chapter": "1",
+                        "verse_num": "49",
+                        "verse_text": "1:49 Only th-- sh-lt n-t n-mb-r th- tr-b- of L-v-, n--th-r t-k- th- s-m of th-m am-ng th- ch-ldr-n of Isr--l:"
+                    },
+                    {
+                        "id": 3655,
+                        "book_name": "numbers",
+                        "chapter": "1",
+                        "verse_num": "50",
+                        "verse_text": "1:50 B-t th-- sh-lt app--nt th- L-v-t-s ov-r th- t-b-rn-cl- of t-st-m-ny, and ov-r all th- v-ss-ls th-r--f, and ov-r all th-ngs th-t b-l-ng t- it: th-y sh-ll b--r th- t-b-rn-cl-, and all th- v-ss-ls th-r--f; and th-y sh-ll m-n-st-r unt- it, and sh-ll enc-mp r--nd ab--t th- t-b-rn-cl-. "
+                    },
+                    {
+                        "id": 3656,
+                        "book_name": "numbers",
+                        "chapter": "1",
+                        "verse_num": "51",
+                        "verse_text": "1:51 And wh-n th- t-b-rn-cl- s-tt-th f-rw-rd, th- L-v-t-s sh-ll t-k- it d-wn: and wh-n th- t-b-rn-cl- is t- b- p-tch-d, th- L-v-t-s sh-ll s-t it up: and th- str-ng-r th-t c-m-th n-gh sh-ll b- p-t t- d--th. "
+                    },
+                    {
+                        "id": 3657,
+                        "book_name": "numbers",
+                        "chapter": "1",
+                        "verse_num": "52",
+                        "verse_text": "1:52 And th- ch-ldr-n of Isr--l sh-ll p-tch th--r t-nts, ev-ry m-n by h-s own c-mp, and ev-ry m-n by h-s own st-nd-rd, thr--gh--t th--r h-sts. "
+                    },
+                    {
+                        "id": 3658,
+                        "book_name": "numbers",
+                        "chapter": "1",
+                        "verse_num": "53",
+                        "verse_text": "1:53 B-t th- L-v-t-s sh-ll p-tch r--nd ab--t th- t-b-rn-cl- of t-st-m-ny, th-t th-r- b- n- wr-th up-n th- c-ngr-g-t--n of th- ch-ldr-n of Isr--l: and th- L-v-t-s sh-ll k--p th- ch-rg- of th- t-b-rn-cl- of t-st-m-ny. "
+                    },
+                    {
+                        "id": 3659,
+                        "book_name": "numbers",
+                        "chapter": "1",
+                        "verse_num": "54",
+                        "verse_text": "1:54 And th- ch-ldr-n of Isr--l d-d acc-rd-ng t- all th-t th- L-RD c-mm-nd-d M-s-s, s- d-d th-y. "
+                    }
+                ]
+            }
+        }
+    ],
+    "standardized_name": "bible_memory_verse_flashcard"
+}

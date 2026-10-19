@@ -1,0 +1,2181 @@
+{
+    "product_id": "api_bae2da57-62be-44e9-a57a-530bbf6aa8f2",
+    "tool_description": "Get rates for forex USD base and crypto USDT base",
+    "home_url": "https://rapidapi.com/rmr-soft-rmr-soft-default/api/crypto-and-forex-rates/",
+    "name": "Crypto and Forex Rates",
+    "title": "Crypto and Forex Rates",
+    "pricing": "FREEMIUM",
+    "tool_name": "Crypto and Forex Rates",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 807,
+        "avgSuccessRate": 100,
+        "popularityScore": 7.9,
+        "__typename": "Score"
+    },
+    "host": "crypto-and-forex-rates.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "ExchangeCurrencies",
+            "url": "https://crypto-and-forex-rates.p.rapidapi.com/api/exchange/iqd/try/100000/1/1/3",
+            "description": "Exchange between two currency ( USD is base ) \nUser can define Buy and Sell Fees also can define withdraw fee in percentage",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "from",
+                    "type": "string",
+                    "description": "",
+                    "default": "iqd"
+                },
+                {
+                    "name": "to",
+                    "type": "string",
+                    "description": "",
+                    "default": "try"
+                },
+                {
+                    "name": "amount",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "100000"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "bfee",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "1"
+                },
+                {
+                    "name": "sfee",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "1"
+                },
+                {
+                    "name": "withdraw",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "3"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://crypto-and-forex-rates.p.rapidapi.com/api/exchange/iqd/try/100000/1/1/3\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"crypto-and-forex-rates.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://crypto-and-forex-rates.p.rapidapi.com/api/exchange/{is_from}/{to}/{amount}/{bfee}/{sfee}/{withdraw}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"crypto-and-forex-rates.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "success": 200,
+                "from": "iqd",
+                "to": "try",
+                "amount": "100000",
+                "sell": 0.000673011556764106,
+                "buy": 0.042556777482829815,
+                "result": 1534.0005721170348,
+                "withdrawFee": "3%"
+            }
+        },
+        {
+            "name": "api/assetInfo",
+            "url": "https://crypto-and-forex-rates.p.rapidapi.com/api/assetInfo/eur",
+            "description": "Information about single asset",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "symbol",
+                    "type": "string",
+                    "description": "",
+                    "default": "eur"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://crypto-and-forex-rates.p.rapidapi.com/api/assetInfo/eur\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"crypto-and-forex-rates.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://crypto-and-forex-rates.p.rapidapi.com/api/assetInfo/{symbol}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"crypto-and-forex-rates.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "success": 200,
+                "0": {
+                    "symbol": "EUR",
+                    "AssetType": "forex",
+                    "price": "0.917192",
+                    "ChartSymbol": "EURusd",
+                    "LastUpdate": "2023-06-16 01:10:32"
+                }
+            }
+        },
+        {
+            "name": "getPrices",
+            "url": "https://crypto-and-forex-rates.p.rapidapi.com/api/getPrices",
+            "description": "Get list of prices for all assets",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://crypto-and-forex-rates.p.rapidapi.com/api/getPrices\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"crypto-and-forex-rates.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://crypto-and-forex-rates.p.rapidapi.com/api/getPrices\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"crypto-and-forex-rates.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "success": 200,
+                "0": [
+                    {
+                        "Symbol": "usdt",
+                        "Price": "1",
+                        "LastUpdate": "2023-06-16 16:39:02",
+                        "AssetType": "crypto"
+                    },
+                    {
+                        "Symbol": "trx",
+                        "Price": "0.07004000",
+                        "LastUpdate": "2023-06-16 16:39:08",
+                        "AssetType": "crypto"
+                    },
+                    {
+                        "Symbol": "ada",
+                        "Price": "0.25970000",
+                        "LastUpdate": "2023-06-16 16:39:14",
+                        "AssetType": "crypto"
+                    },
+                    {
+                        "Symbol": "luna",
+                        "Price": "0.58460000",
+                        "LastUpdate": "2023-06-16 16:39:20",
+                        "AssetType": "crypto"
+                    },
+                    {
+                        "Symbol": "bnb",
+                        "Price": "237.30000000",
+                        "LastUpdate": "2023-06-16 16:39:02",
+                        "AssetType": "crypto"
+                    },
+                    {
+                        "Symbol": "sol",
+                        "Price": "14.94000000",
+                        "LastUpdate": "2023-06-16 16:39:02",
+                        "AssetType": "crypto"
+                    },
+                    {
+                        "Symbol": "link",
+                        "Price": "5.24100000",
+                        "LastUpdate": "2023-06-16 16:39:02",
+                        "AssetType": "crypto"
+                    },
+                    {
+                        "Symbol": "grt",
+                        "Price": "0.09700000",
+                        "LastUpdate": "2023-06-16 16:39:02",
+                        "AssetType": "crypto"
+                    },
+                    {
+                        "Symbol": "ltc",
+                        "Price": "75.45000000",
+                        "LastUpdate": "2023-06-16 16:39:02",
+                        "AssetType": "crypto"
+                    },
+                    {
+                        "Symbol": "axs",
+                        "Price": "4.75000000",
+                        "LastUpdate": "2023-06-16 16:39:02",
+                        "AssetType": "crypto"
+                    },
+                    {
+                        "Symbol": "ftm",
+                        "Price": "0.25920000",
+                        "LastUpdate": "2023-06-16 16:39:02",
+                        "AssetType": "crypto"
+                    },
+                    {
+                        "Symbol": "theta",
+                        "Price": "0.64500000",
+                        "LastUpdate": "2023-06-16 16:39:02",
+                        "AssetType": "crypto"
+                    },
+                    {
+                        "Symbol": "dash",
+                        "Price": "30.53000000",
+                        "LastUpdate": "2023-06-16 16:39:02",
+                        "AssetType": "crypto"
+                    },
+                    {
+                        "Symbol": "xrp",
+                        "Price": "0.46360000",
+                        "LastUpdate": "2023-06-16 16:39:02",
+                        "AssetType": "crypto"
+                    },
+                    {
+                        "Symbol": "doge",
+                        "Price": "0.06149000",
+                        "LastUpdate": "2023-06-16 16:39:02",
+                        "AssetType": "crypto"
+                    },
+                    {
+                        "Symbol": "1inch",
+                        "Price": "0.26920000",
+                        "LastUpdate": "2023-06-16 16:39:02",
+                        "AssetType": "crypto"
+                    },
+                    {
+                        "Symbol": "btc",
+                        "Price": "25785.00000000",
+                        "LastUpdate": "2023-06-16 16:39:02",
+                        "AssetType": "crypto"
+                    },
+                    {
+                        "Symbol": "shib",
+                        "Price": "0.00000670",
+                        "LastUpdate": "2023-06-16 16:39:02",
+                        "AssetType": "crypto"
+                    },
+                    {
+                        "Symbol": "usd",
+                        "Price": "1",
+                        "LastUpdate": "0000-00-00 00:00:00",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "TRY",
+                        "Price": "23.733",
+                        "LastUpdate": "2023-06-16 16:38:22",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "EUR",
+                        "Price": "0.917192",
+                        "LastUpdate": "2023-06-16 01:10:32",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "AED",
+                        "Price": "3.6725",
+                        "LastUpdate": "2022-08-10 17:15:30",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "AFN",
+                        "Price": "86.042722",
+                        "LastUpdate": "2023-06-16 01:10:32",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "ALL",
+                        "Price": "99.446215",
+                        "LastUpdate": "2023-06-16 01:10:32",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "AMD",
+                        "Price": "386.874442",
+                        "LastUpdate": "2023-06-16 01:10:32",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "ANG",
+                        "Price": "1.79",
+                        "LastUpdate": "0000-00-00 00:00:00",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "AOA",
+                        "Price": "700.973111",
+                        "LastUpdate": "2023-06-16 01:10:32",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "ARS",
+                        "Price": "247.675697",
+                        "LastUpdate": "2023-06-16 01:10:32",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "AUD",
+                        "Price": "1.456795",
+                        "LastUpdate": "2023-06-16 01:10:32",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "AWG",
+                        "Price": "1.79",
+                        "LastUpdate": "0000-00-00 00:00:00",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "AZN",
+                        "Price": "1.69827",
+                        "LastUpdate": "2023-06-16 01:10:32",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "BAM",
+                        "Price": "1.791158",
+                        "LastUpdate": "2023-06-16 01:10:32",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "BBD",
+                        "Price": "2",
+                        "LastUpdate": "0000-00-00 00:00:00",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "BDT",
+                        "Price": "109.113912",
+                        "LastUpdate": "2023-06-16 01:10:32",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "BGN",
+                        "Price": "1.792954",
+                        "LastUpdate": "2023-06-16 01:10:32",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "BHD",
+                        "Price": "0.376",
+                        "LastUpdate": "0000-00-00 00:00:00",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "BIF",
+                        "Price": "2812.863861",
+                        "LastUpdate": "2023-06-16 01:10:32",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "BMD",
+                        "Price": "1",
+                        "LastUpdate": "0000-00-00 00:00:00",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "BND",
+                        "Price": "1.339031",
+                        "LastUpdate": "2023-06-16 01:10:32",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "BOB",
+                        "Price": "6.921367",
+                        "LastUpdate": "2023-06-16 01:10:32",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "BRL",
+                        "Price": "4.8134",
+                        "LastUpdate": "2023-06-16 01:10:32",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "BSD",
+                        "Price": "1",
+                        "LastUpdate": "0000-00-00 00:00:00",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "BTN",
+                        "Price": "82.048479",
+                        "LastUpdate": "2023-06-16 01:10:32",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "BWP",
+                        "Price": "13.372154",
+                        "LastUpdate": "2023-06-16 01:10:32",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "BYN",
+                        "Price": "2.852008",
+                        "LastUpdate": "2023-06-16 01:10:32",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "BZD",
+                        "Price": "2",
+                        "LastUpdate": "0000-00-00 00:00:00",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "CAD",
+                        "Price": "1.325404",
+                        "LastUpdate": "2023-06-16 01:10:32",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "CDF",
+                        "Price": "2278.237994",
+                        "LastUpdate": "2023-06-16 01:10:32",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "CHF",
+                        "Price": "0.893709",
+                        "LastUpdate": "2023-06-16 01:10:32",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "CLP",
+                        "Price": "802.47135",
+                        "LastUpdate": "2023-06-16 01:10:32",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "CNY",
+                        "Price": "7.13161",
+                        "LastUpdate": "2023-06-16 01:10:32",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "COP",
+                        "Price": "4190.746653",
+                        "LastUpdate": "2023-06-16 01:10:32",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "CRC",
+                        "Price": "542.416236",
+                        "LastUpdate": "2023-06-16 01:10:32",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "CUC",
+                        "Price": "1",
+                        "LastUpdate": "0000-00-00 00:00:00",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "CUP",
+                        "Price": "24",
+                        "LastUpdate": "2022-01-05 17:20:20",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "CVE",
+                        "Price": "100.981189",
+                        "LastUpdate": "2023-06-16 01:10:32",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "CZK",
+                        "Price": "21.844378",
+                        "LastUpdate": "2023-06-16 01:10:32",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "DJF",
+                        "Price": "177.721",
+                        "LastUpdate": "2022-08-10 17:15:31",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "DKK",
+                        "Price": "6.83225",
+                        "LastUpdate": "2023-06-16 01:10:32",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "DOP",
+                        "Price": "54.7971",
+                        "LastUpdate": "2023-06-16 01:10:32",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "DZD",
+                        "Price": "136.066772",
+                        "LastUpdate": "2023-06-16 01:10:32",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "EGP",
+                        "Price": "30.865882",
+                        "LastUpdate": "2023-06-16 01:10:32",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "ERN",
+                        "Price": "15",
+                        "LastUpdate": "0000-00-00 00:00:00",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "ETB",
+                        "Price": "54.935621",
+                        "LastUpdate": "2023-06-16 01:10:32",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "FJD",
+                        "Price": "2.210152",
+                        "LastUpdate": "2023-06-16 01:10:32",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "FKP",
+                        "Price": "0.784539",
+                        "LastUpdate": "2023-06-16 01:10:32",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "FOK",
+                        "Price": "6.83225",
+                        "LastUpdate": "2023-06-16 01:10:32",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "GBP",
+                        "Price": "0.78414",
+                        "LastUpdate": "2023-06-16 01:10:32",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "GEL",
+                        "Price": "2.612113",
+                        "LastUpdate": "2023-06-16 01:10:32",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "GGP",
+                        "Price": "0.784539",
+                        "LastUpdate": "2023-06-16 01:10:32",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "GHS",
+                        "Price": "11.547306",
+                        "LastUpdate": "2023-06-16 01:10:32",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "GIP",
+                        "Price": "0.784539",
+                        "LastUpdate": "2023-06-16 01:10:32",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "GMD",
+                        "Price": "62.538034",
+                        "LastUpdate": "2023-06-16 01:10:32",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "GNF",
+                        "Price": "8554.682898",
+                        "LastUpdate": "2023-06-16 01:10:32",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "GTQ",
+                        "Price": "7.834914",
+                        "LastUpdate": "2023-06-16 01:10:32",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "GYD",
+                        "Price": "211.397066",
+                        "LastUpdate": "2023-06-16 01:10:32",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "HKD",
+                        "Price": "7.823658",
+                        "LastUpdate": "2023-06-16 01:10:32",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "HNL",
+                        "Price": "24.633555",
+                        "LastUpdate": "2023-06-16 01:10:32",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "HRK",
+                        "Price": "6.900129",
+                        "LastUpdate": "2023-06-16 01:10:32",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "HTG",
+                        "Price": "139.424742",
+                        "LastUpdate": "2023-06-16 01:10:32",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "HUF",
+                        "Price": "342.509097",
+                        "LastUpdate": "2023-06-16 01:10:32",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "IDR",
+                        "Price": "14925.211981",
+                        "LastUpdate": "2023-06-16 01:10:32",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "ILS",
+                        "Price": "3.570589",
+                        "LastUpdate": "2023-06-16 01:10:32",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "IMP",
+                        "Price": "0.784539",
+                        "LastUpdate": "2023-06-16 01:10:32",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "INR",
+                        "Price": "82.04863",
+                        "LastUpdate": "2023-06-16 01:10:32",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "IQD",
+                        "Price": "1471",
+                        "LastUpdate": "2023-06-15 11:48:49",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "IRR",
+                        "Price": "496500",
+                        "LastUpdate": "2023-06-16 16:38:22",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "ISK",
+                        "Price": "137.891711",
+                        "LastUpdate": "2023-06-16 01:10:32",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "JMD",
+                        "Price": "154.395988",
+                        "LastUpdate": "2023-06-16 01:10:32",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "JOD",
+                        "Price": "0.709",
+                        "LastUpdate": "0000-00-00 00:00:00",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "JPY",
+                        "Price": "140.406671",
+                        "LastUpdate": "2023-06-16 01:10:32",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "KES",
+                        "Price": "140.13406",
+                        "LastUpdate": "2023-06-16 01:10:32",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "KGS",
+                        "Price": "87.553741",
+                        "LastUpdate": "2023-06-16 01:10:32",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "KHR",
+                        "Price": "4101.357748",
+                        "LastUpdate": "2023-06-16 01:10:32",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "KID",
+                        "Price": "1.457129",
+                        "LastUpdate": "2023-06-16 01:10:32",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "KMF",
+                        "Price": "450.546304",
+                        "LastUpdate": "2023-06-16 01:10:32",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "KRW",
+                        "Price": "1272.614596",
+                        "LastUpdate": "2023-06-16 01:10:32",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "KWD",
+                        "Price": "0.307054",
+                        "LastUpdate": "2023-06-16 01:10:32",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "KYD",
+                        "Price": "0.833333",
+                        "LastUpdate": "2022-08-10 17:15:31",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "KZT",
+                        "Price": "452.235494",
+                        "LastUpdate": "2023-06-16 01:10:33",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "LAK",
+                        "Price": "18189.716171",
+                        "LastUpdate": "2023-06-16 01:10:33",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "LBP",
+                        "Price": "15000",
+                        "LastUpdate": "2023-02-18 01:05:31",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "LKR",
+                        "Price": "306.072637",
+                        "LastUpdate": "2023-06-16 01:10:33",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "LRD",
+                        "Price": "176.305533",
+                        "LastUpdate": "2023-06-16 01:10:33",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "LSL",
+                        "Price": "18.260834",
+                        "LastUpdate": "2023-06-16 01:10:33",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "LYD",
+                        "Price": "4.813367",
+                        "LastUpdate": "2023-06-16 01:10:33",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "MAD",
+                        "Price": "10.018481",
+                        "LastUpdate": "2023-06-16 01:10:33",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "MDL",
+                        "Price": "17.840468",
+                        "LastUpdate": "2023-06-16 01:10:33",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "MGA",
+                        "Price": "4513.172909",
+                        "LastUpdate": "2023-06-16 01:10:33",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "MKD",
+                        "Price": "56.943965",
+                        "LastUpdate": "2023-06-16 01:10:33",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "MMK",
+                        "Price": "2101.180926",
+                        "LastUpdate": "2023-06-16 01:10:33",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "MNT",
+                        "Price": "3481.294875",
+                        "LastUpdate": "2023-06-16 01:10:33",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "MOP",
+                        "Price": "8.058367",
+                        "LastUpdate": "2023-06-16 01:10:33",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "MRU",
+                        "Price": "34.493752",
+                        "LastUpdate": "2023-06-16 01:10:33",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "MUR",
+                        "Price": "45.460327",
+                        "LastUpdate": "2023-06-16 01:10:33",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "MVR",
+                        "Price": "15.448797",
+                        "LastUpdate": "2023-06-16 01:10:33",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "MWK",
+                        "Price": "1029.55869",
+                        "LastUpdate": "2023-06-16 01:10:33",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "MXN",
+                        "Price": "17.14787",
+                        "LastUpdate": "2023-06-16 01:10:33",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "MYR",
+                        "Price": "4.627085",
+                        "LastUpdate": "2023-06-16 01:10:33",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "MZN",
+                        "Price": "64.067316",
+                        "LastUpdate": "2023-06-16 01:10:33",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "NAD",
+                        "Price": "18.260834",
+                        "LastUpdate": "2023-06-16 01:10:33",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "NGN",
+                        "Price": "600.556931",
+                        "LastUpdate": "2023-06-16 01:10:33",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "NIO",
+                        "Price": "36.561596",
+                        "LastUpdate": "2023-06-16 01:10:33",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "NOK",
+                        "Price": "10.522373",
+                        "LastUpdate": "2023-06-16 01:10:33",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "NPR",
+                        "Price": "131.277567",
+                        "LastUpdate": "2023-06-16 01:10:33",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "NZD",
+                        "Price": "1.605851",
+                        "LastUpdate": "2023-06-16 01:10:33",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "OMR",
+                        "Price": "0.384497",
+                        "LastUpdate": "2022-08-10 17:15:31",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "PAB",
+                        "Price": "1",
+                        "LastUpdate": "0000-00-00 00:00:00",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "PEN",
+                        "Price": "3.648342",
+                        "LastUpdate": "2023-06-16 01:10:33",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "PGK",
+                        "Price": "3.565953",
+                        "LastUpdate": "2023-06-16 01:10:33",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "PHP",
+                        "Price": "55.902768",
+                        "LastUpdate": "2023-06-16 01:10:33",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "PKR",
+                        "Price": "286.331469",
+                        "LastUpdate": "2023-06-16 01:10:33",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "PLN",
+                        "Price": "4.100897",
+                        "LastUpdate": "2023-06-16 01:10:33",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "PYG",
+                        "Price": "7202.166586",
+                        "LastUpdate": "2023-06-16 01:10:33",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "QAR",
+                        "Price": "3.64",
+                        "LastUpdate": "0000-00-00 00:00:00",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "RON",
+                        "Price": "4.574679",
+                        "LastUpdate": "2023-06-16 01:10:33",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "RSD",
+                        "Price": "108.357719",
+                        "LastUpdate": "2023-06-16 01:10:33",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "RUB",
+                        "Price": "83.729258",
+                        "LastUpdate": "2023-06-16 01:10:33",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "RWF",
+                        "Price": "1172.893722",
+                        "LastUpdate": "2023-06-16 01:10:33",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "SAR",
+                        "Price": "3.75",
+                        "LastUpdate": "0000-00-00 00:00:00",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "SBD",
+                        "Price": "8.49562",
+                        "LastUpdate": "2023-06-16 01:10:33",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "SCR",
+                        "Price": "13.368345",
+                        "LastUpdate": "2023-06-16 01:10:33",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "SDG",
+                        "Price": "550.391616",
+                        "LastUpdate": "2023-06-16 01:10:33",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "SEK",
+                        "Price": "10.623459",
+                        "LastUpdate": "2023-06-16 01:10:33",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "SGD",
+                        "Price": "1.338512",
+                        "LastUpdate": "2023-06-16 01:10:33",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "SHP",
+                        "Price": "0.784539",
+                        "LastUpdate": "2023-06-16 01:10:33",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "SLL",
+                        "Price": "22663.670125",
+                        "LastUpdate": "2023-06-15 01:15:32",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "SOS",
+                        "Price": "568.325477",
+                        "LastUpdate": "2023-06-16 01:10:33",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "SRD",
+                        "Price": "37.592448",
+                        "LastUpdate": "2023-06-16 01:10:33",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "SSP",
+                        "Price": "975.122066",
+                        "LastUpdate": "2023-06-16 01:10:33",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "STN",
+                        "Price": "22.437212",
+                        "LastUpdate": "2023-06-16 01:10:33",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "SYP",
+                        "Price": "2536.909493",
+                        "LastUpdate": "2023-06-16 01:10:33",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "SZL",
+                        "Price": "18.260834",
+                        "LastUpdate": "2023-06-16 01:10:33",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "THB",
+                        "Price": "34.617704",
+                        "LastUpdate": "2023-06-16 01:10:33",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "TJS",
+                        "Price": "10.893764",
+                        "LastUpdate": "2023-06-16 01:10:33",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "TMT",
+                        "Price": "3.498452",
+                        "LastUpdate": "2023-06-16 01:10:33",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "TND",
+                        "Price": "3.095614",
+                        "LastUpdate": "2023-06-16 01:10:33",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "TOP",
+                        "Price": "2.288563",
+                        "LastUpdate": "2023-06-16 01:10:33",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "TTD",
+                        "Price": "6.750372",
+                        "LastUpdate": "2023-06-16 01:10:33",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "TVD",
+                        "Price": "1.457129",
+                        "LastUpdate": "2023-06-16 01:10:33",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "TWD",
+                        "Price": "30.643332",
+                        "LastUpdate": "2023-06-16 01:10:33",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "TZS",
+                        "Price": "2384.221587",
+                        "LastUpdate": "2023-06-16 01:10:33",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "UAH",
+                        "Price": "36.936332",
+                        "LastUpdate": "2023-06-16 01:10:33",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "UGX",
+                        "Price": "3699.175337",
+                        "LastUpdate": "2023-06-16 01:10:33",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "UYU",
+                        "Price": "38.56179",
+                        "LastUpdate": "2023-06-16 01:10:33",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "UZS",
+                        "Price": "11429.058776",
+                        "LastUpdate": "2023-06-16 01:10:33",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "VES",
+                        "Price": "27.1053",
+                        "LastUpdate": "2023-06-15 01:15:32",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "VND",
+                        "Price": "23544.623657",
+                        "LastUpdate": "2023-06-16 01:10:33",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "VUV",
+                        "Price": "118.057241",
+                        "LastUpdate": "2023-06-16 01:10:33",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "WST",
+                        "Price": "2.694962",
+                        "LastUpdate": "2023-06-16 01:10:33",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "XAF",
+                        "Price": "600.728406",
+                        "LastUpdate": "2023-06-16 01:10:33",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "XCD",
+                        "Price": "2.7",
+                        "LastUpdate": "0000-00-00 00:00:00",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "XDR",
+                        "Price": "0.748742",
+                        "LastUpdate": "2023-06-16 01:10:33",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "XOF",
+                        "Price": "600.728406",
+                        "LastUpdate": "2023-06-16 01:10:33",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "XPF",
+                        "Price": "109.284789",
+                        "LastUpdate": "2023-06-16 01:10:33",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "YER",
+                        "Price": "250.316774",
+                        "LastUpdate": "2023-06-16 01:10:33",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "ZAR",
+                        "Price": "18.260954",
+                        "LastUpdate": "2023-06-16 01:10:33",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "ZMW",
+                        "Price": "19.11015",
+                        "LastUpdate": "2023-06-16 01:10:33",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "SLE",
+                        "Price": "22.66367",
+                        "LastUpdate": "2023-06-15 01:15:32",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "JEP",
+                        "Price": "0.784539",
+                        "LastUpdate": "2023-06-16 01:10:32",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "ZWL",
+                        "Price": "6474.157122",
+                        "LastUpdate": "2023-06-16 01:10:33",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "IRT",
+                        "Price": "49650",
+                        "LastUpdate": "2023-06-16 16:38:22",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "payeer",
+                        "Price": "1",
+                        "LastUpdate": "2022-02-28 11:39:37",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "webmoney",
+                        "Price": "1",
+                        "LastUpdate": "2022-02-28 11:39:35",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "perfect",
+                        "Price": "1",
+                        "LastUpdate": "2022-02-28 11:39:33",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "unfxmoney",
+                        "Price": "1.3",
+                        "LastUpdate": "2023-04-27 11:32:00",
+                        "AssetType": "forex"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "getAssets",
+            "url": "https://crypto-and-forex-rates.p.rapidapi.com/api/getAssets",
+            "description": "return list of supported assets",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://crypto-and-forex-rates.p.rapidapi.com/api/getAssets\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"crypto-and-forex-rates.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://crypto-and-forex-rates.p.rapidapi.com/api/getAssets\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"crypto-and-forex-rates.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "success": 200,
+                "0": [
+                    {
+                        "Symbol": "usdt",
+                        "ChartSymbol": "",
+                        "AssetType": "crypto"
+                    },
+                    {
+                        "Symbol": "trx",
+                        "ChartSymbol": "trxusdt",
+                        "AssetType": "crypto"
+                    },
+                    {
+                        "Symbol": "ada",
+                        "ChartSymbol": "adausdt",
+                        "AssetType": "crypto"
+                    },
+                    {
+                        "Symbol": "luna",
+                        "ChartSymbol": "lunausdt",
+                        "AssetType": "crypto"
+                    },
+                    {
+                        "Symbol": "bnb",
+                        "ChartSymbol": "bnbusdt",
+                        "AssetType": "crypto"
+                    },
+                    {
+                        "Symbol": "sol",
+                        "ChartSymbol": "solusdt",
+                        "AssetType": "crypto"
+                    },
+                    {
+                        "Symbol": "link",
+                        "ChartSymbol": "linkusdt",
+                        "AssetType": "crypto"
+                    },
+                    {
+                        "Symbol": "grt",
+                        "ChartSymbol": "grtusdt",
+                        "AssetType": "crypto"
+                    },
+                    {
+                        "Symbol": "ltc",
+                        "ChartSymbol": "ltcusdt",
+                        "AssetType": "crypto"
+                    },
+                    {
+                        "Symbol": "axs",
+                        "ChartSymbol": "axsusdt",
+                        "AssetType": "crypto"
+                    },
+                    {
+                        "Symbol": "ftm",
+                        "ChartSymbol": "ftmusdt",
+                        "AssetType": "crypto"
+                    },
+                    {
+                        "Symbol": "theta",
+                        "ChartSymbol": "thetausdt",
+                        "AssetType": "crypto"
+                    },
+                    {
+                        "Symbol": "dash",
+                        "ChartSymbol": "dashusdt",
+                        "AssetType": "crypto"
+                    },
+                    {
+                        "Symbol": "xrp",
+                        "ChartSymbol": "xrpusdt",
+                        "AssetType": "crypto"
+                    },
+                    {
+                        "Symbol": "doge",
+                        "ChartSymbol": "dogeusdt",
+                        "AssetType": "crypto"
+                    },
+                    {
+                        "Symbol": "1inch",
+                        "ChartSymbol": "1inchusdt",
+                        "AssetType": "crypto"
+                    },
+                    {
+                        "Symbol": "btc",
+                        "ChartSymbol": "btcusdt",
+                        "AssetType": "crypto"
+                    },
+                    {
+                        "Symbol": "shib",
+                        "ChartSymbol": "shibusdt",
+                        "AssetType": "crypto"
+                    },
+                    {
+                        "Symbol": "usd",
+                        "ChartSymbol": "",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "TRY",
+                        "ChartSymbol": "TRYusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "EUR",
+                        "ChartSymbol": "EURusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "AED",
+                        "ChartSymbol": "AEDusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "AFN",
+                        "ChartSymbol": "AFNusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "ALL",
+                        "ChartSymbol": "ALLusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "AMD",
+                        "ChartSymbol": "AMDusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "ANG",
+                        "ChartSymbol": "ANGusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "AOA",
+                        "ChartSymbol": "AOAusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "ARS",
+                        "ChartSymbol": "ARSusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "AUD",
+                        "ChartSymbol": "AUDusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "AWG",
+                        "ChartSymbol": "AWGusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "AZN",
+                        "ChartSymbol": "AZNusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "BAM",
+                        "ChartSymbol": "BAMusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "BBD",
+                        "ChartSymbol": "BBDusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "BDT",
+                        "ChartSymbol": "BDTusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "BGN",
+                        "ChartSymbol": "BGNusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "BHD",
+                        "ChartSymbol": "BHDusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "BIF",
+                        "ChartSymbol": "BIFusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "BMD",
+                        "ChartSymbol": "BMDusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "BND",
+                        "ChartSymbol": "BNDusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "BOB",
+                        "ChartSymbol": "BOBusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "BRL",
+                        "ChartSymbol": "BRLusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "BSD",
+                        "ChartSymbol": "BSDusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "BTN",
+                        "ChartSymbol": "BTNusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "BWP",
+                        "ChartSymbol": "BWPusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "BYN",
+                        "ChartSymbol": "BYNusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "BZD",
+                        "ChartSymbol": "BZDusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "CAD",
+                        "ChartSymbol": "CADusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "CDF",
+                        "ChartSymbol": "CDFusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "CHF",
+                        "ChartSymbol": "CHFusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "CLP",
+                        "ChartSymbol": "CLPusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "CNY",
+                        "ChartSymbol": "CNYusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "COP",
+                        "ChartSymbol": "COPusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "CRC",
+                        "ChartSymbol": "CRCusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "CUC",
+                        "ChartSymbol": "CUCusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "CUP",
+                        "ChartSymbol": "CUPusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "CVE",
+                        "ChartSymbol": "CVEusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "CZK",
+                        "ChartSymbol": "CZKusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "DJF",
+                        "ChartSymbol": "DJFusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "DKK",
+                        "ChartSymbol": "DKKusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "DOP",
+                        "ChartSymbol": "DOPusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "DZD",
+                        "ChartSymbol": "DZDusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "EGP",
+                        "ChartSymbol": "EGPusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "ERN",
+                        "ChartSymbol": "ERNusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "ETB",
+                        "ChartSymbol": "ETBusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "FJD",
+                        "ChartSymbol": "FJDusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "FKP",
+                        "ChartSymbol": "FKPusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "FOK",
+                        "ChartSymbol": "FOKusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "GBP",
+                        "ChartSymbol": "GBPusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "GEL",
+                        "ChartSymbol": "GELusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "GGP",
+                        "ChartSymbol": "GGPusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "GHS",
+                        "ChartSymbol": "GHSusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "GIP",
+                        "ChartSymbol": "GIPusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "GMD",
+                        "ChartSymbol": "GMDusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "GNF",
+                        "ChartSymbol": "GNFusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "GTQ",
+                        "ChartSymbol": "GTQusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "GYD",
+                        "ChartSymbol": "GYDusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "HKD",
+                        "ChartSymbol": "HKDusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "HNL",
+                        "ChartSymbol": "HNLusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "HRK",
+                        "ChartSymbol": "HRKusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "HTG",
+                        "ChartSymbol": "HTGusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "HUF",
+                        "ChartSymbol": "HUFusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "IDR",
+                        "ChartSymbol": "IDRusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "ILS",
+                        "ChartSymbol": "ILSusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "IMP",
+                        "ChartSymbol": "IMPusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "INR",
+                        "ChartSymbol": "INRusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "IQD",
+                        "ChartSymbol": "USDIQD",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "IRR",
+                        "ChartSymbol": "USDIRR",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "ISK",
+                        "ChartSymbol": "ISKusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "JMD",
+                        "ChartSymbol": "JMDusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "JOD",
+                        "ChartSymbol": "JODusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "JPY",
+                        "ChartSymbol": "JPYusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "KES",
+                        "ChartSymbol": "KESusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "KGS",
+                        "ChartSymbol": "KGSusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "KHR",
+                        "ChartSymbol": "KHRusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "KID",
+                        "ChartSymbol": "KIDusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "KMF",
+                        "ChartSymbol": "KMFusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "KRW",
+                        "ChartSymbol": "KRWusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "KWD",
+                        "ChartSymbol": "KWDusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "KYD",
+                        "ChartSymbol": "KYDusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "KZT",
+                        "ChartSymbol": "KZTusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "LAK",
+                        "ChartSymbol": "LAKusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "LBP",
+                        "ChartSymbol": "LBPusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "LKR",
+                        "ChartSymbol": "LKRusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "LRD",
+                        "ChartSymbol": "LRDusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "LSL",
+                        "ChartSymbol": "LSLusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "LYD",
+                        "ChartSymbol": "LYDusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "MAD",
+                        "ChartSymbol": "MADusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "MDL",
+                        "ChartSymbol": "MDLusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "MGA",
+                        "ChartSymbol": "MGAusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "MKD",
+                        "ChartSymbol": "MKDusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "MMK",
+                        "ChartSymbol": "MMKusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "MNT",
+                        "ChartSymbol": "MNTusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "MOP",
+                        "ChartSymbol": "MOPusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "MRU",
+                        "ChartSymbol": "MRUusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "MUR",
+                        "ChartSymbol": "MURusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "MVR",
+                        "ChartSymbol": "MVRusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "MWK",
+                        "ChartSymbol": "MWKusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "MXN",
+                        "ChartSymbol": "MXNusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "MYR",
+                        "ChartSymbol": "MYRusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "MZN",
+                        "ChartSymbol": "MZNusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "NAD",
+                        "ChartSymbol": "NADusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "NGN",
+                        "ChartSymbol": "NGNusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "NIO",
+                        "ChartSymbol": "NIOusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "NOK",
+                        "ChartSymbol": "NOKusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "NPR",
+                        "ChartSymbol": "NPRusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "NZD",
+                        "ChartSymbol": "NZDusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "OMR",
+                        "ChartSymbol": "OMRusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "PAB",
+                        "ChartSymbol": "PABusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "PEN",
+                        "ChartSymbol": "PENusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "PGK",
+                        "ChartSymbol": "PGKusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "PHP",
+                        "ChartSymbol": "PHPusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "PKR",
+                        "ChartSymbol": "PKRusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "PLN",
+                        "ChartSymbol": "PLNusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "PYG",
+                        "ChartSymbol": "PYGusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "QAR",
+                        "ChartSymbol": "QARusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "RON",
+                        "ChartSymbol": "RONusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "RSD",
+                        "ChartSymbol": "RSDusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "RUB",
+                        "ChartSymbol": "RUBusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "RWF",
+                        "ChartSymbol": "RWFusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "SAR",
+                        "ChartSymbol": "SARusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "SBD",
+                        "ChartSymbol": "SBDusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "SCR",
+                        "ChartSymbol": "SCRusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "SDG",
+                        "ChartSymbol": "SDGusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "SEK",
+                        "ChartSymbol": "SEKusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "SGD",
+                        "ChartSymbol": "SGDusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "SHP",
+                        "ChartSymbol": "SHPusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "SLL",
+                        "ChartSymbol": "SLLusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "SOS",
+                        "ChartSymbol": "SOSusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "SRD",
+                        "ChartSymbol": "SRDusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "SSP",
+                        "ChartSymbol": "SSPusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "STN",
+                        "ChartSymbol": "STNusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "SYP",
+                        "ChartSymbol": "SYPusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "SZL",
+                        "ChartSymbol": "SZLusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "THB",
+                        "ChartSymbol": "THBusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "TJS",
+                        "ChartSymbol": "TJSusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "TMT",
+                        "ChartSymbol": "TMTusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "TND",
+                        "ChartSymbol": "TNDusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "TOP",
+                        "ChartSymbol": "TOPusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "TTD",
+                        "ChartSymbol": "TTDusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "TVD",
+                        "ChartSymbol": "TVDusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "TWD",
+                        "ChartSymbol": "TWDusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "TZS",
+                        "ChartSymbol": "TZSusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "UAH",
+                        "ChartSymbol": "UAHusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "UGX",
+                        "ChartSymbol": "UGXusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "UYU",
+                        "ChartSymbol": "UYUusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "UZS",
+                        "ChartSymbol": "UZSusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "VES",
+                        "ChartSymbol": "VESusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "VND",
+                        "ChartSymbol": "VNDusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "VUV",
+                        "ChartSymbol": "VUVusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "WST",
+                        "ChartSymbol": "WSTusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "XAF",
+                        "ChartSymbol": "XAFusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "XCD",
+                        "ChartSymbol": "XCDusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "XDR",
+                        "ChartSymbol": "XDRusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "XOF",
+                        "ChartSymbol": "XOFusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "XPF",
+                        "ChartSymbol": "XPFusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "YER",
+                        "ChartSymbol": "YERusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "ZAR",
+                        "ChartSymbol": "ZARusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "ZMW",
+                        "ChartSymbol": "ZMWusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "SLE",
+                        "ChartSymbol": "SLEusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "JEP",
+                        "ChartSymbol": "JEPusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "ZWL",
+                        "ChartSymbol": "ZWLusd",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "IRT",
+                        "ChartSymbol": "",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "payeer",
+                        "ChartSymbol": "",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "webmoney",
+                        "ChartSymbol": "",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "perfect",
+                        "ChartSymbol": "",
+                        "AssetType": "forex"
+                    },
+                    {
+                        "Symbol": "unfxmoney",
+                        "ChartSymbol": "unfxmoney",
+                        "AssetType": "forex"
+                    }
+                ]
+            }
+        }
+    ],
+    "standardized_name": "crypto_and_forex_rates"
+}

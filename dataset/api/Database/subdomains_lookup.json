@@ -1,0 +1,82 @@
+{
+    "product_id": "api_defdca77-ec9a-4eab-948a-1a5e8f1474f2",
+    "tool_description": "Subdomains Lookup API lists all the subdomains for a queried domain name.",
+    "home_url": "https://rapidapi.com/whoisapi/api/subdomains-lookup/",
+    "name": "Subdomains Lookup",
+    "title": "Subdomains Lookup",
+    "pricing": "FREE",
+    "tool_name": "Subdomains Lookup",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 813,
+        "avgSuccessRate": 0,
+        "popularityScore": 0.2,
+        "__typename": "Score"
+    },
+    "host": "subdomains-lookup.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "/api/v1",
+            "url": "https://subdomains-lookup.p.rapidapi.com/api/v1",
+            "description": "Subdomain Lookup API",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "domainName",
+                    "type": "STRING",
+                    "description": "The target domain name.",
+                    "default": "amazon.com"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "outputFormat",
+                    "type": "STRING",
+                    "description": "Response output format (JSON | XML).\nDefault: JSON",
+                    "default": "JSON"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://subdomains-lookup.p.rapidapi.com/api/v1\"\nquerystring = {\"domainName\": \"amazon.com\", \"outputFormat\": \"JSON\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"subdomains-lookup.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://subdomains-lookup.p.rapidapi.com/api/v1\"\nquerystring = {\"domainName\": \"amazon.com\", \"outputFormat\": \"JSON\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"subdomains-lookup.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "code": 403,
+                "messages": "Access restricted. Check credits balance or enter the correct API key."
+            },
+            "statuscode": 200,
+            "schema": {
+                "properties": {
+                    "result": {
+                        "properties": {
+                            "count": {
+                                "type": "integer"
+                            },
+                            "records": {
+                                "items": {
+                                    "properties": {
+                                        "domain": {
+                                            "type": "string"
+                                        },
+                                        "firstSeen": {
+                                            "type": "integer"
+                                        },
+                                        "lastSeen": {
+                                            "type": "integer"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "search": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    ],
+    "standardized_name": "subdomains_lookup"
+}

@@ -1,0 +1,544 @@
+{
+    "product_id": "api_7ee957cc-b126-4c97-a6b2-90ce35f31551",
+    "tool_description": "The API enables you to make fast DNS and WHOIS lookups.",
+    "home_url": "https://rapidapi.com/AirBorne04/api/retrieve-dns-entries/",
+    "name": "Retrieve DNS Entries",
+    "title": "Retrieve DNS Entries",
+    "pricing": "FREEMIUM",
+    "tool_name": "Retrieve DNS Entries",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 135,
+        "avgSuccessRate": 93,
+        "popularityScore": 7.5,
+        "__typename": "Score"
+    },
+    "host": "retrieve-dns-entries.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "/api/schema",
+            "url": "https://retrieve-dns-entries.p.rapidapi.com/api/schema",
+            "description": " ",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://retrieve-dns-entries.p.rapidapi.com/api/schema\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"retrieve-dns-entries.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://retrieve-dns-entries.p.rapidapi.com/api/schema\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"retrieve-dns-entries.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "openapi": "3.0.3",
+                "info": {
+                    "title": "Fast Domain and IP resolver to retrieve DNS and WHOIS information.",
+                    "description": "This api lets you ",
+                    "contact": {
+                        "email": "ffwd.bussiness@gmail.com"
+                    },
+                    "version": "1.0.0"
+                },
+                "servers": [
+                    {
+                        "url": "https://maxxify-apis-domain.deno.dev"
+                    }
+                ],
+                "tags": [
+                    {
+                        "name": "dns",
+                        "description": "DNS resolver API over Http"
+                    }
+                ],
+                "paths": {
+                    "/api/schema": {
+                        "get": {
+                            "summary": "OpenAPI schema file",
+                            "tags": [
+                                "schema"
+                            ],
+                            "responses": {
+                                "200": {
+                                    "description": "Returning this Schema file",
+                                    "content": {
+                                        "application/json": {
+                                            "schema": {
+                                                "type": "object"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "/api/whois": {
+                        "get": {
+                            "summary": "Retrieve information on the organization that is the registrant of the given host or domain",
+                            "tags": [
+                                "whois"
+                            ],
+                            "parameters": [
+                                {
+                                    "name": "host",
+                                    "in": "query",
+                                    "required": false,
+                                    "example": "google.com",
+                                    "schema": {
+                                        "type": "string"
+                                    }
+                                },
+                                {
+                                    "name": "url",
+                                    "in": "query",
+                                    "required": false,
+                                    "example": "http://google.com",
+                                    "schema": {
+                                        "type": "string"
+                                    }
+                                },
+                                {
+                                    "name": "ip",
+                                    "in": "query",
+                                    "required": false,
+                                    "example": "8.8.8.8",
+                                    "schema": {
+                                        "type": "string"
+                                    }
+                                }
+                            ],
+                            "responses": {
+                                "200": {
+                                    "description": "Successful operation",
+                                    "content": {
+                                        "application/json": {
+                                            "schema": {
+                                                "$ref": "#/components/schemas/WhoisRecord"
+                                            }
+                                        }
+                                    }
+                                },
+                                "401": {
+                                    "description": "The request is not authorized",
+                                    "content": {
+                                        "application/json": {
+                                            "schema": {
+                                                "$ref": "#/components/schemas/Error"
+                                            }
+                                        }
+                                    }
+                                },
+                                "404": {
+                                    "description": "No records found for this host or url",
+                                    "content": {
+                                        "application/json": {
+                                            "schema": {
+                                                "$ref": "#/components/schemas/Error"
+                                            }
+                                        }
+                                    }
+                                },
+                                "500": {
+                                    "description": "Internal Server Error",
+                                    "content": {
+                                        "application/json": {
+                                            "schema": {
+                                                "$ref": "#/components/schemas/Error"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "/api/dns": {
+                        "get": {
+                            "summary": "Provide a host or url to retrieve the DNS records. You can also provide a specific record type to only retrieve those records.",
+                            "tags": [
+                                "dns"
+                            ],
+                            "parameters": [
+                                {
+                                    "name": "host",
+                                    "in": "query",
+                                    "required": false,
+                                    "example": "google.com",
+                                    "schema": {
+                                        "type": "string"
+                                    }
+                                },
+                                {
+                                    "name": "url",
+                                    "in": "query",
+                                    "required": false,
+                                    "schema": {
+                                        "type": "string"
+                                    },
+                                    "example": "https://google.com"
+                                },
+                                {
+                                    "name": "record",
+                                    "in": "query",
+                                    "required": false,
+                                    "schema": {
+                                        "type": "string"
+                                    },
+                                    "example": "A, CNAME, MX"
+                                }
+                            ],
+                            "responses": {
+                                "200": {
+                                    "description": "Successful operation",
+                                    "content": {
+                                        "application/json": {
+                                            "schema": {
+                                                "$ref": "#/components/schemas/DnsRecord"
+                                            }
+                                        }
+                                    }
+                                },
+                                "204": {
+                                    "description": "Not enough data to resolve to a DNS record",
+                                    "content": {
+                                        "application/json": {
+                                            "schema": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "version": {
+                                                        "type": "string"
+                                                    },
+                                                    "supported_dns_record_types": {
+                                                        "type": "array",
+                                                        "items": {
+                                                            "type": "string"
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "components": {
+                    "schemas": {
+                        "WhoisRecord": {
+                            "type": "object",
+                            "required": [
+                                "startAddress",
+                                "endAddress",
+                                "ipVersion",
+                                "name",
+                                "type",
+                                "lastChanged",
+                                "registered",
+                                "registrant"
+                            ],
+                            "properties": {
+                                "startAddress": {
+                                    "type": "string",
+                                    "example": "172.217.0.0"
+                                },
+                                "endAddress": {
+                                    "type": "string",
+                                    "example": "172.217.255.255"
+                                },
+                                "ipVersion": {
+                                    "type": "string",
+                                    "enum": [
+                                        "v4",
+                                        "v6"
+                                    ],
+                                    "example": "v4"
+                                },
+                                "name": {
+                                    "type": "string",
+                                    "example": "GOOGLE"
+                                },
+                                "type": {
+                                    "type": "string",
+                                    "example": "DIRECT ALLOCATION"
+                                },
+                                "lastChanged": {
+                                    "type": "string",
+                                    "example": "2012-04-16T15:24:30.000Z"
+                                },
+                                "registered": {
+                                    "type": "string",
+                                    "example": "2012-04-16T15:24:30.000Z"
+                                },
+                                "registrant": {
+                                    "type": "array",
+                                    "items": {
+                                        "properties": {
+                                            "handle": {
+                                                "type": "string",
+                                                "example": "GOGL"
+                                            },
+                                            "vcard": {
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "oneOf": [
+                                                            {
+                                                                "type": "string"
+                                                            },
+                                                            {
+                                                                "type": "object"
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            },
+                                            "lastChanged": {
+                                                "type": "string",
+                                                "example": "2012-04-16T15:24:30.000Z"
+                                            },
+                                            "registered": {
+                                                "type": "string",
+                                                "example": "2012-04-16T15:24:30.000Z"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "DnsRecord": {
+                            "type": "object",
+                            "required": [
+                                "type"
+                            ],
+                            "properties": {
+                                "type": {
+                                    "type": "string",
+                                    "example": "MX"
+                                },
+                                "value": {
+                                    "type": "string",
+                                    "example": "smtp.google.com"
+                                },
+                                "preference": {
+                                    "type": "number",
+                                    "example": 10
+                                }
+                            }
+                        },
+                        "Error": {
+                            "type": "object",
+                            "required": [
+                                "error"
+                            ],
+                            "properties": {
+                                "error": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object"
+            }
+        },
+        {
+            "name": "/api/dns",
+            "url": "https://retrieve-dns-entries.p.rapidapi.com/api/dns",
+            "description": " ",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "host",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "google.com"
+                },
+                {
+                    "name": "url",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "https://google.com"
+                },
+                {
+                    "name": "record",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "A, CNAME, MX"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://retrieve-dns-entries.p.rapidapi.com/api/dns\"\nquerystring = {\"host\": \"google.com\", \"url\": \"https://google.com\", \"record\": \"A, CNAME, MX\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"retrieve-dns-entries.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://retrieve-dns-entries.p.rapidapi.com/api/dns\"\nquerystring = {\"host\": \"google.com\", \"url\": \"https://google.com\", \"record\": \"A, CNAME, MX\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"retrieve-dns-entries.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "error": "Invalid DNS record type"
+            },
+            "statuscode": 1,
+            "schema": ""
+        },
+        {
+            "name": "/api/whois",
+            "url": "https://retrieve-dns-entries.p.rapidapi.com/api/whois",
+            "description": " ",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "ip",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "8.8.8.8"
+                },
+                {
+                    "name": "host",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "google.com"
+                },
+                {
+                    "name": "url",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "http://google.com"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://retrieve-dns-entries.p.rapidapi.com/api/whois\"\nquerystring = {\"ip\": \"8.8.8.8\", \"host\": \"google.com\", \"url\": \"http://google.com\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"retrieve-dns-entries.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://retrieve-dns-entries.p.rapidapi.com/api/whois\"\nquerystring = {\"ip\": \"8.8.8.8\", \"host\": \"google.com\", \"url\": \"http://google.com\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"retrieve-dns-entries.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "startAddress": "216.58.192.0",
+                "endAddress": "216.58.223.255",
+                "ipVersion": "v4",
+                "name": "GOOGLE",
+                "type": "DIRECT ALLOCATION",
+                "lastChanged": "2012-01-27T16:50:20-05:00",
+                "registered": "2012-01-27T16:50:20-05:00",
+                "registrant": [
+                    {
+                        "handle": "GOGL",
+                        "vcard": [
+                            [
+                                "version",
+                                {},
+                                "text",
+                                "4.0"
+                            ],
+                            [
+                                "fn",
+                                {},
+                                "text",
+                                "Google LLC"
+                            ],
+                            [
+                                "adr",
+                                {
+                                    "label": "1600 Amphitheatre Parkway\nMountain View\nCA\n94043\nUnited States"
+                                },
+                                "text",
+                                [
+                                    "",
+                                    "",
+                                    "",
+                                    "",
+                                    "",
+                                    "",
+                                    ""
+                                ]
+                            ],
+                            [
+                                "kind",
+                                {},
+                                "text",
+                                "org"
+                            ]
+                        ],
+                        "roles": [
+                            "registrant"
+                        ],
+                        "lastChanged": "2019-10-31T15:45:45-04:00",
+                        "registered": "2000-03-30T00:00:00-05:00"
+                    }
+                ],
+                "status": [
+                    "active"
+                ],
+                "cidr0_cidrs": [
+                    {
+                        "v4prefix": "216.58.192.0",
+                        "length": 19
+                    }
+                ]
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "required": [
+                    "startAddress",
+                    "endAddress",
+                    "ipVersion",
+                    "name",
+                    "type",
+                    "lastChanged",
+                    "registered",
+                    "registrant"
+                ],
+                "properties": {
+                    "startAddress": {
+                        "type": "string"
+                    },
+                    "endAddress": {
+                        "type": "string"
+                    },
+                    "ipVersion": {
+                        "type": "string",
+                        "enum": [
+                            "v4",
+                            "v6"
+                        ]
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "string"
+                    },
+                    "lastChanged": {
+                        "type": "string"
+                    },
+                    "registered": {
+                        "type": "string"
+                    },
+                    "registrant": {
+                        "type": "array",
+                        "items": {
+                            "properties": {
+                                "handle": {
+                                    "type": "string"
+                                },
+                                "vcard": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "array",
+                                        "items": {
+                                            "oneOf": [
+                                                {
+                                                    "type": "string"
+                                                },
+                                                {
+                                                    "type": "object"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                },
+                                "lastChanged": {
+                                    "type": "string"
+                                },
+                                "registered": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "standardized_name": "retrieve_dns_entries"
+}

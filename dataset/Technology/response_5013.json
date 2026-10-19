@@ -1,0 +1,26 @@
+{
+"user_query":"I need to find the best deals on Nike shoes in the US.",
+"domain":"Technology",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Search for Nike shoes offers in the US using the Search API and sort the results by lowest price.",
+        "domain": "technology",
+        "required_inputs": ["brand", "category", "region", "sort_by"]
+    },
+    {
+        "id": 2,
+        "description": "Once the product offers are retrieved, select a specific product to view its details.",
+        "domain": "technology",
+        "required_inputs": ["selected_product_id"],
+        "dependencies": [1]
+    },
+    {
+        "id": 3,
+        "description": "Fetch product reviews for the selected Nike shoes using the Product Reviews API.",
+        "domain": "technology",
+        "required_inputs": ["selected_product_id"],
+        "dependencies": [2]
+    }
+  ]
+}

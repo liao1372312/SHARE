@@ -1,0 +1,85 @@
+{
+    "product_id": "569e1d2fe4b02cacb649f176",
+    "tool_description": "Free, powerful language detection JSON REST API for 173 world languages, dialects and accents. Compatible with any application.",
+    "home_url": "https://rapidapi.com/apilayer/api/languagelayer/",
+    "name": "languagelayer",
+    "title": "languagelayer",
+    "pricing": "FREE",
+    "tool_name": "languagelayer",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 698,
+        "avgSuccessRate": 100,
+        "popularityScore": 6.6,
+        "__typename": "Score"
+    },
+    "host": "apilayer-languagelayer-v1.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "/batch",
+            "url": "https://apilayer-languagelayer-v1.p.rapidapi.com/batch",
+            "description": "API endpoint used to perform batch language detection",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "query[]",
+                    "type": "STRING",
+                    "description": "Append multiple \"query[]\" parameters containing query texts",
+                    "default": ""
+                },
+                {
+                    "name": "show_query",
+                    "type": "NUMBER",
+                    "description": "Set to \"1\" if you want the API's JSON result set to return your query text.",
+                    "default": "0"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://apilayer-languagelayer-v1.p.rapidapi.com/batch\"\nquerystring = {\"query[]\": \"\", \"show_query\": \"0\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"apilayer-languagelayer-v1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://apilayer-languagelayer-v1.p.rapidapi.com/batch\"\nquerystring = {\"query[]\": \"\", \"show_query\": \"0\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"apilayer-languagelayer-v1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "success": false,
+                "error": {
+                    "code": 101,
+                    "type": "missing_access_key",
+                    "info": "You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]"
+                }
+            }
+        },
+        {
+            "name": "/detect",
+            "url": "https://apilayer-languagelayer-v1.p.rapidapi.com/detect",
+            "description": "API endpoint used to perform standard (single) language detection",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "query",
+                    "type": "STRING",
+                    "description": "The full query text you would like the API to perform language detection for",
+                    "default": ""
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "show_query",
+                    "type": "NUMBER",
+                    "description": "Set to \"1\" if you want the API's JSON result set to return your query text",
+                    "default": "0"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://apilayer-languagelayer-v1.p.rapidapi.com/detect\"\nquerystring = {\"query\": \"\", \"show_query\": \"0\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"apilayer-languagelayer-v1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://apilayer-languagelayer-v1.p.rapidapi.com/detect\"\nquerystring = {\"query\": \"\", \"show_query\": \"0\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"apilayer-languagelayer-v1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "success": false,
+                "error": {
+                    "code": 101,
+                    "type": "missing_access_key",
+                    "info": "You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]"
+                }
+            },
+            "statuscode": 1,
+            "schema": ""
+        }
+    ],
+    "standardized_name": "languagelayer"
+}

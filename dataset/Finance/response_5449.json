@@ -1,0 +1,32 @@
+{
+"user_query":"I want to invest in small cap stocks with high earnings growth rates and see their financial data and balance sheets.",
+"domain":"Finance",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Query the market for small cap stocks with high earnings growth rates.",
+        "domain": "finance",
+        "required_inputs": ["marketCriteria", "earningsGrowthRateThreshold"]
+    },
+    {
+        "id": 2,
+        "description": "Retrieve financial data for each identified stock.",
+        "domain": "finance",
+        "required_inputs": ["stockSymbols"]
+    },
+    {
+        "id": 3,
+        "description": "Retrieve balance sheet information for each identified stock.",
+        "domain": "finance",
+        "required_inputs": ["stockSymbols"]
+    }
+],
+"dependency": {
+    "id": 2,
+    "depends_on": [1]
+},
+"dependency": {
+    "id": 3,
+    "depends_on": [1]
+}
+}

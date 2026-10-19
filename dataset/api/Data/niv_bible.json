@@ -1,0 +1,63 @@
+{
+    "product_id": "api_244a6e06-3c22-4a8d-a1e7-fbcf26cbffa1",
+    "tool_description": "An simple and quick web tool that allows you to retrieve data from both Old and New Testament based on a book, chapter or verse. The API provides access to the New International Version (NIV) of the Holy Bible, which is known to be one of the most widely-used translations in the English language.",
+    "home_url": "https://rapidapi.com/sambruce23/api/niv-bible/",
+    "name": "NIV Bible",
+    "title": "NIV Bible",
+    "pricing": "FREEMIUM",
+    "tool_name": "NIV Bible",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 6133,
+        "avgSuccessRate": 100,
+        "popularityScore": 8.6,
+        "__typename": "Score"
+    },
+    "host": "niv-bible.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "GetSingleVerse",
+            "url": "https://niv-bible.p.rapidapi.com/row",
+            "description": "Get a single verse based on the book, chapter and verse number.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "Verse",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "1"
+                },
+                {
+                    "name": "Chapter",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "1"
+                },
+                {
+                    "name": "Book",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "Genesis"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://niv-bible.p.rapidapi.com/row\"\nquerystring = {\"Verse\": \"1\", \"Chapter\": \"1\", \"Book\": \"Genesis\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"niv-bible.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://niv-bible.p.rapidapi.com/row\"\nquerystring = {\"Verse\": \"1\", \"Chapter\": \"1\", \"Book\": \"Genesis\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"niv-bible.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "Book": {
+                    "0": "Genesis"
+                },
+                "Chapter": {
+                    "0": 1
+                },
+                "Text": {
+                    "0": "In the beginning God created the heavens and the earth."
+                },
+                "Verse": {
+                    "0": 1
+                }
+            }
+        }
+    ],
+    "standardized_name": "niv_bible"
+}

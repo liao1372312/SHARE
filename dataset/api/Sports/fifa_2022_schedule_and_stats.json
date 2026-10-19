@@ -1,0 +1,1396 @@
+{
+    "product_id": "api_acb8551e-38e6-489b-869d-5d92b40866cb",
+    "tool_description": "Get the latest FIFA World Cup Schedule and Stats ",
+    "home_url": "https://rapidapi.com/kwik-api-kwik-api-default/api/fifa-2022-schedule-and-stats/",
+    "name": "FIFA 2022 Schedule and Stats",
+    "title": "FIFA 2022 Schedule and Stats",
+    "pricing": "FREEMIUM",
+    "tool_name": "FIFA 2022 Schedule and Stats",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 499,
+        "avgSuccessRate": 100,
+        "popularityScore": 8.2,
+        "__typename": "Score"
+    },
+    "host": "fifa-2022-schedule-and-stats.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Get matches on a specific date",
+            "url": "https://fifa-2022-schedule-and-stats.p.rapidapi.com/schedule",
+            "description": "Parameters:\n1.  date - Date to query the matches\n2. utc_offset - Change the utc offset of the date to suit your timezone.\n\nReturns the matches on the specified date and timezone.\nWorks for both historical, live, and future dates.\nMatch data consists of date, time, home team, away team, and many more, see the example response for an example.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "date",
+                    "type": "DATE (YYYY-MM-DD)",
+                    "description": "",
+                    "default": "2022-11-22"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "utc_offset",
+                    "type": "NUMBER",
+                    "description": "UTC Offset for timezone (Must be between -12 to 14)",
+                    "default": "8"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://fifa-2022-schedule-and-stats.p.rapidapi.com/schedule\"\nquerystring = {\"date\": \"2022-11-22\", \"utc_offset\": \"8\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"fifa-2022-schedule-and-stats.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://fifa-2022-schedule-and-stats.p.rapidapi.com/schedule\"\nquerystring = {\"date\": \"2022-11-22\", \"utc_offset\": \"8\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"fifa-2022-schedule-and-stats.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "from": "2022-11-22T00:00:00+08:00",
+                "to": "2022-11-23T00:00:00+08:00",
+                "matches": [
+                    {
+                        "StageName": [
+                            {
+                                "Locale": "en-GB",
+                                "Description": "First stage"
+                            }
+                        ],
+                        "GroupName": [
+                            {
+                                "Locale": "en-GB",
+                                "Description": "Group A"
+                            }
+                        ],
+                        "CompetitionName": [
+                            {
+                                "Locale": "en-GB",
+                                "Description": "FIFA World Cup\u2122"
+                            }
+                        ],
+                        "SeasonName": [
+                            {
+                                "Locale": "en-GB",
+                                "Description": "FIFA World Cup Qatar 2022\u2122"
+                            }
+                        ],
+                        "Date": "2022-11-21T16:00:00Z",
+                        "LocalDate": "2022-11-21T19:00:00Z",
+                        "Home": {
+                            "Score": 0,
+                            "Side": null,
+                            "IdTeam": "43879",
+                            "IdCountry": "SEN",
+                            "Tactics": "4-5-1",
+                            "TeamType": 1,
+                            "AgeType": 7,
+                            "TeamName": [
+                                {
+                                    "Locale": "en-GB",
+                                    "Description": "Senegal"
+                                }
+                            ],
+                            "Abbreviation": "SEN",
+                            "ShortClubName": "Senegal",
+                            "FootballType": 0,
+                            "Gender": 1,
+                            "IdAssociation": "SEN"
+                        },
+                        "Away": {
+                            "Score": 2,
+                            "Side": null,
+                            "IdTeam": "43960",
+                            "IdCountry": "NED",
+                            "Tactics": "3-5-2",
+                            "TeamType": 1,
+                            "AgeType": 7,
+                            "TeamName": [
+                                {
+                                    "Locale": "en-gb",
+                                    "Description": "Netherlands"
+                                }
+                            ],
+                            "Abbreviation": "NED",
+                            "ShortClubName": "Netherlands",
+                            "FootballType": 0,
+                            "Gender": 1,
+                            "IdAssociation": "NED"
+                        },
+                        "HomeTeamScore": 0,
+                        "AwayTeamScore": 2,
+                        "AggregateHomeTeamScore": null,
+                        "AggregateAwayTeamScore": null,
+                        "HomeTeamPenaltyScore": 0,
+                        "AwayTeamPenaltyScore": 0,
+                        "LastPeriodUpdate": null,
+                        "Leg": null,
+                        "IsHomeMatch": null,
+                        "Stadium": {
+                            "IdStadium": "400090321",
+                            "Name": [
+                                {
+                                    "Locale": "en-GB",
+                                    "Description": "Al Thumama Stadium"
+                                }
+                            ],
+                            "Capacity": null,
+                            "WebAddress": null,
+                            "Built": null,
+                            "Roof": false,
+                            "Turf": null,
+                            "IdCity": "400177572",
+                            "CityName": [
+                                {
+                                    "Locale": "en-GB",
+                                    "Description": "Doha"
+                                }
+                            ],
+                            "IdCountry": "QAT",
+                            "PostalCode": null,
+                            "Street": null,
+                            "Email": null,
+                            "Fax": null,
+                            "Phone": null,
+                            "AffiliationCountry": null,
+                            "AffiliationRegion": null,
+                            "Latitude": null,
+                            "Longitude": null,
+                            "Length": null,
+                            "Width": null,
+                            "Properties": {
+                                "IdIFES": "5047369"
+                            },
+                            "IsUpdateable": null
+                        },
+                        "MatchTime": "0'",
+                        "SecondHalfTime": null,
+                        "FirstHalfTime": null,
+                        "FirstHalfExtraTime": null,
+                        "SecondHalfExtraTime": null,
+                        "Winner": "43960",
+                        "BallPossession": {
+                            "Intervals": [],
+                            "LastX": [],
+                            "OverallHome": 46.97914,
+                            "OverallAway": 53.02086
+                        },
+                        "Officials": [
+                            {
+                                "IdCountry": "BRA",
+                                "OfficialId": "361561",
+                                "NameShort": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "Wilton SAMPAIO"
+                                    }
+                                ],
+                                "Name": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "Wilton SAMPAIO"
+                                    }
+                                ],
+                                "OfficialType": 1,
+                                "TypeLocalized": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "Referee"
+                                    }
+                                ]
+                            },
+                            {
+                                "IdCountry": "BRA",
+                                "OfficialId": "374168",
+                                "NameShort": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "Bruno BOSCHILIA"
+                                    }
+                                ],
+                                "Name": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "Bruno Boschilia"
+                                    }
+                                ],
+                                "OfficialType": 2,
+                                "TypeLocalized": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "Assistant Referee 1"
+                                    }
+                                ]
+                            },
+                            {
+                                "IdCountry": "BRA",
+                                "OfficialId": "391903",
+                                "NameShort": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "Bruno PIRES"
+                                    }
+                                ],
+                                "Name": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "Bruno PIRES"
+                                    }
+                                ],
+                                "OfficialType": 3,
+                                "TypeLocalized": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "Assistant Referee 2"
+                                    }
+                                ]
+                            },
+                            {
+                                "IdCountry": "URU",
+                                "OfficialId": "416145",
+                                "NameShort": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "Andres MATONTE"
+                                    }
+                                ],
+                                "Name": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "Andres Matias MATONTE CABRERA"
+                                    }
+                                ],
+                                "OfficialType": 4,
+                                "TypeLocalized": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "Fourth official"
+                                    }
+                                ]
+                            },
+                            {
+                                "IdCountry": "VEN",
+                                "OfficialId": "221377",
+                                "NameShort": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "Juan SOTO"
+                                    }
+                                ],
+                                "Name": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "Juan SOTO"
+                                    }
+                                ],
+                                "OfficialType": 5,
+                                "TypeLocalized": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "Video Assistant Referee (VAR)"
+                                    }
+                                ]
+                            },
+                            {
+                                "IdCountry": "ARG",
+                                "OfficialId": "328252",
+                                "NameShort": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "Diego BONFA"
+                                    }
+                                ],
+                                "Name": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "Diego Yamil Bonf\u00e1"
+                                    }
+                                ],
+                                "OfficialType": 7,
+                                "TypeLocalized": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "Offside VAR"
+                                    }
+                                ]
+                            },
+                            {
+                                "IdCountry": "COL",
+                                "OfficialId": "408580",
+                                "NameShort": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "Nicolas GALLO"
+                                    }
+                                ],
+                                "Name": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "Nicol\u00e1s Gallo Barrag\u00e1n"
+                                    }
+                                ],
+                                "OfficialType": 8,
+                                "TypeLocalized": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "Assistant VAR"
+                                    }
+                                ]
+                            },
+                            {
+                                "IdCountry": "ARG",
+                                "OfficialId": "361843",
+                                "NameShort": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "Mauro VIGLIANO"
+                                    }
+                                ],
+                                "Name": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "Mauro Vigliano"
+                                    }
+                                ],
+                                "OfficialType": 9,
+                                "TypeLocalized": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "Support VAR"
+                                    }
+                                ]
+                            },
+                            {
+                                "IdCountry": "URU",
+                                "OfficialId": "348552",
+                                "NameShort": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "Nicolas TARAN"
+                                    }
+                                ],
+                                "Name": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "Nicol\u00e1s Taran"
+                                    }
+                                ],
+                                "OfficialType": 10,
+                                "TypeLocalized": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "Reserve Assistant Referee"
+                                    }
+                                ]
+                            }
+                        ],
+                        "MatchLegInfo": null
+                    },
+                    {
+                        "StageName": [
+                            {
+                                "Locale": "en-GB",
+                                "Description": "First stage"
+                            }
+                        ],
+                        "GroupName": [
+                            {
+                                "Locale": "en-GB",
+                                "Description": "Group B"
+                            }
+                        ],
+                        "CompetitionName": [
+                            {
+                                "Locale": "en-GB",
+                                "Description": "FIFA World Cup\u2122"
+                            }
+                        ],
+                        "SeasonName": [
+                            {
+                                "Locale": "en-GB",
+                                "Description": "FIFA World Cup Qatar 2022\u2122"
+                            }
+                        ],
+                        "Date": "2022-11-21T19:00:00Z",
+                        "LocalDate": "2022-11-21T22:00:00Z",
+                        "Home": {
+                            "Score": 1,
+                            "Side": null,
+                            "IdTeam": "43921",
+                            "IdCountry": "USA",
+                            "Tactics": "4-3-3",
+                            "TeamType": 1,
+                            "AgeType": 7,
+                            "TeamName": [
+                                {
+                                    "Locale": "en-gb",
+                                    "Description": "United States"
+                                }
+                            ],
+                            "Abbreviation": "USA",
+                            "ShortClubName": "United States",
+                            "FootballType": 0,
+                            "Gender": 1,
+                            "IdAssociation": "USA"
+                        },
+                        "Away": {
+                            "Score": 1,
+                            "Side": null,
+                            "IdTeam": "43974",
+                            "IdCountry": "WAL",
+                            "Tactics": "5-3-2",
+                            "TeamType": 1,
+                            "AgeType": 7,
+                            "TeamName": [
+                                {
+                                    "Locale": "en-gb",
+                                    "Description": "Wales"
+                                }
+                            ],
+                            "Abbreviation": "WAL",
+                            "ShortClubName": "Wales",
+                            "FootballType": 0,
+                            "Gender": 1,
+                            "IdAssociation": "WAL"
+                        },
+                        "HomeTeamScore": 1,
+                        "AwayTeamScore": 1,
+                        "AggregateHomeTeamScore": null,
+                        "AggregateAwayTeamScore": null,
+                        "HomeTeamPenaltyScore": 0,
+                        "AwayTeamPenaltyScore": 0,
+                        "LastPeriodUpdate": null,
+                        "Leg": null,
+                        "IsHomeMatch": null,
+                        "Stadium": {
+                            "IdStadium": "400090320",
+                            "Name": [
+                                {
+                                    "Locale": "en-GB",
+                                    "Description": "Ahmad Bin Ali Stadium"
+                                }
+                            ],
+                            "Capacity": null,
+                            "WebAddress": null,
+                            "Built": null,
+                            "Roof": false,
+                            "Turf": null,
+                            "IdCity": "400243268",
+                            "CityName": [
+                                {
+                                    "Locale": "en-GB",
+                                    "Description": "Ar-Rayyan"
+                                }
+                            ],
+                            "IdCountry": "QAT",
+                            "PostalCode": null,
+                            "Street": null,
+                            "Email": null,
+                            "Fax": null,
+                            "Phone": null,
+                            "AffiliationCountry": null,
+                            "AffiliationRegion": null,
+                            "Latitude": null,
+                            "Longitude": null,
+                            "Length": null,
+                            "Width": null,
+                            "Properties": {
+                                "IdIFES": "5047368"
+                            },
+                            "IsUpdateable": null
+                        },
+                        "MatchTime": "0'",
+                        "SecondHalfTime": null,
+                        "FirstHalfTime": null,
+                        "FirstHalfExtraTime": null,
+                        "SecondHalfExtraTime": null,
+                        "Winner": null,
+                        "BallPossession": {
+                            "Intervals": [],
+                            "LastX": [],
+                            "OverallHome": 57.767494,
+                            "OverallAway": 42.232506
+                        },
+                        "Officials": [
+                            {
+                                "IdCountry": "QAT",
+                                "OfficialId": "361083",
+                                "NameShort": [
+                                    {
+                                        "Locale": "en-gb",
+                                        "Description": "Abdulrahman Al Jassim"
+                                    }
+                                ],
+                                "Name": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "Abdulrahman AL JASSIM"
+                                    }
+                                ],
+                                "OfficialType": 1,
+                                "TypeLocalized": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "Referee"
+                                    }
+                                ]
+                            },
+                            {
+                                "IdCountry": "QAT",
+                                "OfficialId": "349025",
+                                "NameShort": [
+                                    {
+                                        "Locale": "en-gb",
+                                        "Description": "Taleb Salem Al Marri"
+                                    }
+                                ],
+                                "Name": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "Taleb AL MARRI"
+                                    }
+                                ],
+                                "OfficialType": 2,
+                                "TypeLocalized": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "Assistant Referee 1"
+                                    }
+                                ]
+                            },
+                            {
+                                "IdCountry": "QAT",
+                                "OfficialId": "374031",
+                                "NameShort": [
+                                    {
+                                        "Locale": "en-gb",
+                                        "Description": "Saoud Al Maqaleh"
+                                    }
+                                ],
+                                "Name": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "Saoud AL MAQALEH"
+                                    }
+                                ],
+                                "OfficialType": 3,
+                                "TypeLocalized": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "Assistant Referee 2"
+                                    }
+                                ]
+                            },
+                            {
+                                "IdCountry": "CHN",
+                                "OfficialId": "328495",
+                                "NameShort": [
+                                    {
+                                        "Locale": "en-gb",
+                                        "Description": "Ma Ning"
+                                    }
+                                ],
+                                "Name": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "Ning Ma"
+                                    }
+                                ],
+                                "OfficialType": 4,
+                                "TypeLocalized": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "Fourth official"
+                                    }
+                                ]
+                            },
+                            {
+                                "IdCountry": "QAT",
+                                "OfficialId": "408196",
+                                "NameShort": [
+                                    {
+                                        "Locale": "en-gb",
+                                        "Description": "Abdulla Al-Marri"
+                                    }
+                                ],
+                                "Name": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "Abdulla AL MARRI"
+                                    }
+                                ],
+                                "OfficialType": 5,
+                                "TypeLocalized": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "Video Assistant Referee (VAR)"
+                                    }
+                                ]
+                            },
+                            {
+                                "IdCountry": "ALG",
+                                "OfficialId": "375314",
+                                "NameShort": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "Mokrane GOURARI"
+                                    }
+                                ],
+                                "Name": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "Mokrane Gourari"
+                                    }
+                                ],
+                                "OfficialType": 7,
+                                "TypeLocalized": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "Offside VAR"
+                                    }
+                                ]
+                            },
+                            {
+                                "IdCountry": "MAR",
+                                "OfficialId": "301775",
+                                "NameShort": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "Redouane JIYED"
+                                    }
+                                ],
+                                "Name": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "Redouane JIYED"
+                                    }
+                                ],
+                                "OfficialType": 8,
+                                "TypeLocalized": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "Assistant VAR"
+                                    }
+                                ]
+                            },
+                            {
+                                "IdCountry": "MAR",
+                                "OfficialId": "383759",
+                                "NameShort": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "Adil ZOURAK"
+                                    }
+                                ],
+                                "Name": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "Adil ZOURAK"
+                                    }
+                                ],
+                                "OfficialType": 9,
+                                "TypeLocalized": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "Support VAR"
+                                    }
+                                ]
+                            },
+                            {
+                                "IdCountry": "CHN",
+                                "OfficialId": "374370",
+                                "NameShort": [
+                                    {
+                                        "Locale": "en-gb",
+                                        "Description": "Cao Yi"
+                                    }
+                                ],
+                                "Name": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "Yi Cao"
+                                    }
+                                ],
+                                "OfficialType": 10,
+                                "TypeLocalized": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "Reserve Assistant Referee"
+                                    }
+                                ]
+                            }
+                        ],
+                        "MatchLegInfo": null
+                    },
+                    {
+                        "StageName": [
+                            {
+                                "Locale": "en-GB",
+                                "Description": "First stage"
+                            }
+                        ],
+                        "GroupName": [
+                            {
+                                "Locale": "en-GB",
+                                "Description": "Group C"
+                            }
+                        ],
+                        "CompetitionName": [
+                            {
+                                "Locale": "en-GB",
+                                "Description": "FIFA World Cup\u2122"
+                            }
+                        ],
+                        "SeasonName": [
+                            {
+                                "Locale": "en-GB",
+                                "Description": "FIFA World Cup Qatar 2022\u2122"
+                            }
+                        ],
+                        "Date": "2022-11-22T10:00:00Z",
+                        "LocalDate": "2022-11-22T13:00:00Z",
+                        "Home": {
+                            "Score": 1,
+                            "Side": null,
+                            "IdTeam": "43922",
+                            "IdCountry": "ARG",
+                            "Tactics": "4-4-2",
+                            "TeamType": 1,
+                            "AgeType": 7,
+                            "TeamName": [
+                                {
+                                    "Locale": "en-GB",
+                                    "Description": "Argentina"
+                                }
+                            ],
+                            "Abbreviation": "ARG",
+                            "ShortClubName": "Argentina",
+                            "FootballType": 0,
+                            "Gender": 1,
+                            "IdAssociation": "ARG"
+                        },
+                        "Away": {
+                            "Score": 2,
+                            "Side": null,
+                            "IdTeam": "43835",
+                            "IdCountry": "KSA",
+                            "Tactics": "4-3-3",
+                            "TeamType": 1,
+                            "AgeType": 7,
+                            "TeamName": [
+                                {
+                                    "Locale": "en-GB",
+                                    "Description": "Saudi Arabia"
+                                }
+                            ],
+                            "Abbreviation": "KSA",
+                            "ShortClubName": "Saudi Arabia",
+                            "FootballType": 0,
+                            "Gender": 1,
+                            "IdAssociation": "KSA"
+                        },
+                        "HomeTeamScore": 1,
+                        "AwayTeamScore": 2,
+                        "AggregateHomeTeamScore": null,
+                        "AggregateAwayTeamScore": null,
+                        "HomeTeamPenaltyScore": 0,
+                        "AwayTeamPenaltyScore": 0,
+                        "LastPeriodUpdate": null,
+                        "Leg": null,
+                        "IsHomeMatch": null,
+                        "Stadium": {
+                            "IdStadium": "400090323",
+                            "Name": [
+                                {
+                                    "Locale": "en-GB",
+                                    "Description": "Lusail Stadium"
+                                }
+                            ],
+                            "Capacity": null,
+                            "WebAddress": null,
+                            "Built": null,
+                            "Roof": false,
+                            "Turf": null,
+                            "IdCity": "400157371",
+                            "CityName": [
+                                {
+                                    "Locale": "en-GB",
+                                    "Description": "Al Daayen"
+                                }
+                            ],
+                            "IdCountry": "QAT",
+                            "PostalCode": null,
+                            "Street": null,
+                            "Email": null,
+                            "Fax": null,
+                            "Phone": null,
+                            "AffiliationCountry": null,
+                            "AffiliationRegion": null,
+                            "Latitude": null,
+                            "Longitude": null,
+                            "Length": null,
+                            "Width": null,
+                            "Properties": {
+                                "IdIFES": "5047371"
+                            },
+                            "IsUpdateable": null
+                        },
+                        "MatchTime": "0'",
+                        "SecondHalfTime": null,
+                        "FirstHalfTime": null,
+                        "FirstHalfExtraTime": null,
+                        "SecondHalfExtraTime": null,
+                        "Winner": "43835",
+                        "BallPossession": {
+                            "Intervals": [],
+                            "LastX": [],
+                            "OverallHome": 65.8303,
+                            "OverallAway": 34.1697
+                        },
+                        "Officials": [
+                            {
+                                "IdCountry": "SVN",
+                                "OfficialId": "315008",
+                                "NameShort": [
+                                    {
+                                        "Locale": "en-gb",
+                                        "Description": "S. Vin\u010di\u0107"
+                                    }
+                                ],
+                                "Name": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "Slavko VINCIC"
+                                    }
+                                ],
+                                "OfficialType": 1,
+                                "TypeLocalized": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "Referee"
+                                    }
+                                ]
+                            },
+                            {
+                                "IdCountry": "SVN",
+                                "OfficialId": "374790",
+                                "NameShort": [
+                                    {
+                                        "Locale": "en-gb",
+                                        "Description": "T. Klan\u010dnik"
+                                    }
+                                ],
+                                "Name": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "Tomaz KLANCNIK"
+                                    }
+                                ],
+                                "OfficialType": 2,
+                                "TypeLocalized": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "Assistant Referee 1"
+                                    }
+                                ]
+                            },
+                            {
+                                "IdCountry": "SVN",
+                                "OfficialId": "383670",
+                                "NameShort": [
+                                    {
+                                        "Locale": "en-gb",
+                                        "Description": "A. Kova\u010di\u010d"
+                                    }
+                                ],
+                                "Name": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "Andraz KOVACIC"
+                                    }
+                                ],
+                                "OfficialType": 3,
+                                "TypeLocalized": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "Assistant Referee 2"
+                                    }
+                                ]
+                            },
+                            {
+                                "IdCountry": "SEN",
+                                "OfficialId": "327055",
+                                "NameShort": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "Maguette NDIAYE"
+                                    }
+                                ],
+                                "Name": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "Maguette NDIAYE"
+                                    }
+                                ],
+                                "OfficialType": 4,
+                                "TypeLocalized": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "Fourth official"
+                                    }
+                                ]
+                            },
+                            {
+                                "IdCountry": "NED",
+                                "OfficialId": "279576",
+                                "NameShort": [
+                                    {
+                                        "Locale": "en-gb",
+                                        "Description": "P. van Boekel"
+                                    }
+                                ],
+                                "Name": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "Pol van Boekel"
+                                    }
+                                ],
+                                "OfficialType": 5,
+                                "TypeLocalized": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "Video Assistant Referee (VAR)"
+                                    }
+                                ]
+                            },
+                            {
+                                "IdCountry": "ALG",
+                                "OfficialId": "302457",
+                                "NameShort": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "Abdelhak ETCHIALI"
+                                    }
+                                ],
+                                "Name": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "Abdelhak ETCHIALI"
+                                    }
+                                ],
+                                "OfficialType": 7,
+                                "TypeLocalized": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "Offside VAR"
+                                    }
+                                ]
+                            },
+                            {
+                                "IdCountry": "GER",
+                                "OfficialId": "373388",
+                                "NameShort": [
+                                    {
+                                        "Locale": "en-gb",
+                                        "Description": "B. Dankert"
+                                    }
+                                ],
+                                "Name": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "Bastian Dankert"
+                                    }
+                                ],
+                                "OfficialType": 8,
+                                "TypeLocalized": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "Assistant VAR"
+                                    }
+                                ]
+                            },
+                            {
+                                "IdCountry": "ESP",
+                                "OfficialId": "408488",
+                                "NameShort": [
+                                    {
+                                        "Locale": "en-gb",
+                                        "Description": "Ricardo De Burgos"
+                                    }
+                                ],
+                                "Name": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "Ricardo De Burgos Bengoetxea"
+                                    }
+                                ],
+                                "OfficialType": 9,
+                                "TypeLocalized": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "Support VAR"
+                                    }
+                                ]
+                            },
+                            {
+                                "IdCountry": "SEN",
+                                "OfficialId": "283637",
+                                "NameShort": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "El Hadji SAMBA"
+                                    }
+                                ],
+                                "Name": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "El Hadji SAMBA"
+                                    }
+                                ],
+                                "OfficialType": 10,
+                                "TypeLocalized": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "Reserve Assistant Referee"
+                                    }
+                                ]
+                            }
+                        ],
+                        "MatchLegInfo": null
+                    },
+                    {
+                        "StageName": [
+                            {
+                                "Locale": "en-GB",
+                                "Description": "First stage"
+                            }
+                        ],
+                        "GroupName": [
+                            {
+                                "Locale": "en-GB",
+                                "Description": "Group D"
+                            }
+                        ],
+                        "CompetitionName": [
+                            {
+                                "Locale": "en-GB",
+                                "Description": "FIFA World Cup\u2122"
+                            }
+                        ],
+                        "SeasonName": [
+                            {
+                                "Locale": "en-GB",
+                                "Description": "FIFA World Cup Qatar 2022\u2122"
+                            }
+                        ],
+                        "Date": "2022-11-22T13:00:00Z",
+                        "LocalDate": "2022-11-22T16:00:00Z",
+                        "Home": {
+                            "Score": 0,
+                            "Side": null,
+                            "IdTeam": "43941",
+                            "IdCountry": "DEN",
+                            "Tactics": "3-5-2",
+                            "TeamType": 1,
+                            "AgeType": 7,
+                            "TeamName": [
+                                {
+                                    "Locale": "en-gb",
+                                    "Description": "Denmark"
+                                }
+                            ],
+                            "Abbreviation": "DEN",
+                            "ShortClubName": "Denmark",
+                            "FootballType": 0,
+                            "Gender": 1,
+                            "IdAssociation": "DEN"
+                        },
+                        "Away": {
+                            "Score": 0,
+                            "Side": null,
+                            "IdTeam": "43888",
+                            "IdCountry": "TUN",
+                            "Tactics": "3-4-3",
+                            "TeamType": 1,
+                            "AgeType": 7,
+                            "TeamName": [
+                                {
+                                    "Locale": "en-GB",
+                                    "Description": "Tunisia"
+                                }
+                            ],
+                            "Abbreviation": "TUN",
+                            "ShortClubName": "Tunisia",
+                            "FootballType": 0,
+                            "Gender": 1,
+                            "IdAssociation": "TUN"
+                        },
+                        "HomeTeamScore": 0,
+                        "AwayTeamScore": 0,
+                        "AggregateHomeTeamScore": null,
+                        "AggregateAwayTeamScore": null,
+                        "HomeTeamPenaltyScore": 0,
+                        "AwayTeamPenaltyScore": 0,
+                        "LastPeriodUpdate": null,
+                        "Leg": null,
+                        "IsHomeMatch": null,
+                        "Stadium": {
+                            "IdStadium": "400090322",
+                            "Name": [
+                                {
+                                    "Locale": "en-GB",
+                                    "Description": "Education City Stadium"
+                                }
+                            ],
+                            "Capacity": null,
+                            "WebAddress": null,
+                            "Built": null,
+                            "Roof": false,
+                            "Turf": null,
+                            "IdCity": "400243227",
+                            "CityName": [
+                                {
+                                    "Locale": "en-GB",
+                                    "Description": "Doha"
+                                }
+                            ],
+                            "IdCountry": "QAT",
+                            "PostalCode": null,
+                            "Street": null,
+                            "Email": null,
+                            "Fax": null,
+                            "Phone": null,
+                            "AffiliationCountry": null,
+                            "AffiliationRegion": null,
+                            "Latitude": null,
+                            "Longitude": null,
+                            "Length": null,
+                            "Width": null,
+                            "Properties": {
+                                "IdIFES": "5047370"
+                            },
+                            "IsUpdateable": null
+                        },
+                        "MatchTime": "0'",
+                        "SecondHalfTime": null,
+                        "FirstHalfTime": null,
+                        "FirstHalfExtraTime": null,
+                        "SecondHalfExtraTime": null,
+                        "Winner": null,
+                        "BallPossession": {
+                            "Intervals": [],
+                            "LastX": [],
+                            "OverallHome": 58.82959,
+                            "OverallAway": 41.170414
+                        },
+                        "Officials": [
+                            {
+                                "IdCountry": "MEX",
+                                "OfficialId": "374810",
+                                "NameShort": [
+                                    {
+                                        "Locale": "en-gb",
+                                        "Description": "C. Ramos"
+                                    }
+                                ],
+                                "Name": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "C\u00e9sar Arturo Ramos Palazuelos"
+                                    }
+                                ],
+                                "OfficialType": 1,
+                                "TypeLocalized": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "Referee"
+                                    }
+                                ]
+                            },
+                            {
+                                "IdCountry": "MEX",
+                                "OfficialId": "280936",
+                                "NameShort": [
+                                    {
+                                        "Locale": "en-gb",
+                                        "Description": "A. Mor\u00edn"
+                                    }
+                                ],
+                                "Name": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "Alberto Mor\u00edn M\u00e9ndez"
+                                    }
+                                ],
+                                "OfficialType": 2,
+                                "TypeLocalized": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "Assistant Referee 1"
+                                    }
+                                ]
+                            },
+                            {
+                                "IdCountry": "MEX",
+                                "OfficialId": "374814",
+                                "NameShort": [
+                                    {
+                                        "Locale": "en-gb",
+                                        "Description": "M. Hern\u00e1ndez"
+                                    }
+                                ],
+                                "Name": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "Miguel \u00c1ngel Hern\u00e1ndez Paredes"
+                                    }
+                                ],
+                                "OfficialType": 3,
+                                "TypeLocalized": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "Assistant Referee 2"
+                                    }
+                                ]
+                            },
+                            {
+                                "IdCountry": "HON",
+                                "OfficialId": "400191",
+                                "NameShort": [
+                                    {
+                                        "Locale": "en-gb",
+                                        "Description": "S. Mart\u00ednez"
+                                    }
+                                ],
+                                "Name": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "Said MARTINEZ"
+                                    }
+                                ],
+                                "OfficialType": 4,
+                                "TypeLocalized": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "Fourth official"
+                                    }
+                                ]
+                            },
+                            {
+                                "IdCountry": "MEX",
+                                "OfficialId": "374794",
+                                "NameShort": [
+                                    {
+                                        "Locale": "en-gb",
+                                        "Description": "F. Guerrero"
+                                    }
+                                ],
+                                "Name": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "Fernando GUERRERO"
+                                    }
+                                ],
+                                "OfficialType": 5,
+                                "TypeLocalized": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "Video Assistant Referee (VAR)"
+                                    }
+                                ]
+                            },
+                            {
+                                "IdCountry": "ARG",
+                                "OfficialId": "391866",
+                                "NameShort": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "Gabriel CHADE"
+                                    }
+                                ],
+                                "Name": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "Gabriel CHADE"
+                                    }
+                                ],
+                                "OfficialType": 7,
+                                "TypeLocalized": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "Offside VAR"
+                                    }
+                                ]
+                            },
+                            {
+                                "IdCountry": "USA",
+                                "OfficialId": "383463",
+                                "NameShort": [
+                                    {
+                                        "Locale": "en-gb",
+                                        "Description": "A. Villarreal"
+                                    }
+                                ],
+                                "Name": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "Armando Villarreal"
+                                    }
+                                ],
+                                "OfficialType": 8,
+                                "TypeLocalized": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "Assistant VAR"
+                                    }
+                                ]
+                            },
+                            {
+                                "IdCountry": "ESP",
+                                "OfficialId": "382904",
+                                "NameShort": [
+                                    {
+                                        "Locale": "en-gb",
+                                        "Description": "Juan Mart\u00ednez"
+                                    }
+                                ],
+                                "Name": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "Juan MARTINEZ"
+                                    }
+                                ],
+                                "OfficialType": 9,
+                                "TypeLocalized": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "Support VAR"
+                                    }
+                                ]
+                            },
+                            {
+                                "IdCountry": "HON",
+                                "OfficialId": "361341",
+                                "NameShort": [
+                                    {
+                                        "Locale": "en-gb",
+                                        "Description": "W. L\u00f3pez"
+                                    }
+                                ],
+                                "Name": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "Walter LOPEZ"
+                                    }
+                                ],
+                                "OfficialType": 10,
+                                "TypeLocalized": [
+                                    {
+                                        "Locale": "en-GB",
+                                        "Description": "Reserve Assistant Referee"
+                                    }
+                                ]
+                            }
+                        ],
+                        "MatchLegInfo": null
+                    }
+                ]
+            },
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "fifa_2022_schedule_and_stats"
+}

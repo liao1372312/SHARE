@@ -1,0 +1,63 @@
+{
+    "product_id": "api_9ac90873-868e-4335-ab2e-4e5d015739e8",
+    "tool_description": "Generate custom QR codes for any data. See more info at https://api-ninjas.com/api/qrcode.",
+    "home_url": "https://rapidapi.com/apininjas/api/qr-code-by-api-ninjas/",
+    "name": "QR Code by API-Ninjas",
+    "title": "QR Code by API-Ninjas",
+    "pricing": "FREEMIUM",
+    "tool_name": "QR Code by API-Ninjas",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 481,
+        "avgSuccessRate": 100,
+        "popularityScore": 9.2,
+        "__typename": "Score"
+    },
+    "host": "qr-code-by-api-ninjas.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "/v1/qrcode",
+            "url": "https://qr-code-by-api-ninjas.p.rapidapi.com/v1/qrcode",
+            "description": "API Ninjas QR Code API endpoint. Returns a QRCode image binary specified by input parameters.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "data",
+                    "type": "STRING",
+                    "description": "data to encode in the QR code.",
+                    "default": "https://api-ninjas.com"
+                },
+                {
+                    "name": "format",
+                    "type": "STRING",
+                    "description": "image format to return. Must be one of the following: png, jpg, jpeg, eps, svg.",
+                    "default": "png"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "size",
+                    "type": "NUMBER",
+                    "description": "size of the QR code image to generate. The output will be a square image with (size x size) dimensions.",
+                    "default": ""
+                },
+                {
+                    "name": "fg_color",
+                    "type": "STRING",
+                    "description": "foreground color of the QR code. Must be a 6-digit hex color (e.g. 00ff00 for green). Default is 000000 (black)",
+                    "default": ""
+                },
+                {
+                    "name": "bg_color",
+                    "type": "STRING",
+                    "description": "background color of the QR code. Must be a 6-digit hex color (e.g. 00ff00 for green). Default is ffffff (white)",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://qr-code-by-api-ninjas.p.rapidapi.com/v1/qrcode\"\nquerystring = {\"size\": \"\", \"fg_color\": \"\", \"data\": \"https://api-ninjas.com\", \"format\": \"png\", \"bg_color\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"qr-code-by-api-ninjas.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://qr-code-by-api-ninjas.p.rapidapi.com/v1/qrcode\"\nquerystring = {\"size\": \"\", \"fg_color\": \"\", \"data\": \"https://api-ninjas.com\", \"format\": \"png\", \"bg_color\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"qr-code-by-api-ninjas.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        }
+    ],
+    "standardized_name": "qr_code_by_api_ninjas"
+}

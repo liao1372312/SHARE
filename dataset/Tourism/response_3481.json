@@ -1,0 +1,26 @@
+{
+"user_query":"I'm planning a trip to New York City and I want to explore the most popular attractions. Can you fetch me the Instagram posts related to these attractions? Additionally, provide me with the comments and replies on these posts to get more insights.",
+"domain":"Tourism",
+"TaskList": [
+{
+"id": 1,
+"description": "Identify the most popular attractions in New York City.",
+"domain": "tourism",
+"required_inputs": []
+},
+{
+"id": 2,
+"description": "Fetch Instagram posts related to the identified attractions.",
+"domain": "social_media",
+"required_inputs": ["list_of_attractions"] ,
+"dependencies": [1]
+},
+{
+"id": 3,
+"description": "Retrieve comments and replies for the fetched Instagram posts.",
+"domain": "social_media",
+"required_inputs": ["list_of_posts"],
+"dependencies": [2]
+}
+]
+}

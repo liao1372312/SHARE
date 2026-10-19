@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "kind": "share_swebench_verified_refinement_artifact",
+  "instance_id": "pylint-dev__pylint-4970",
+  "generated_at_utc": "2026-08-21T15:02:10.829794+00:00",
+  "started_at_utc": "2026-08-21T15:01:40.663233+00:00",
+  "profile": "primary",
+  "model": "gpt-5.4-mini",
+  "image": "swebench/sweb.eval.x86_64.pylint-dev_1776_pylint-4970:latest",
+  "image_id": "sha256:e92c8815ecc47cf0c5e562bdca041fa7f7641d25fafb70a4dc28729bfa319eb6",
+  "base_commit": "40cc2ffd7887959157aaf469e09585ec2be7f528",
+  "container_network": "none",
+  "gold_patch_withheld": true,
+  "test_patch_withheld": true,
+  "benchmark_evaluation_feedback_used": false,
+  "initial_patch": {
+    "path": "datasets/share_swebench_r002_protocol_v1/observed_r002_ai/pylint-dev__pylint-4970/primary/raw/generation_model.patch",
+    "sha256": "a6d33c24a363740f611f236d6cd6412aeb0ba993f122b76eeb277b7a929716fd"
+  },
+  "turns_used": 7,
+  "test_verified_after_latest_edit": true,
+  "diff_inspected_after_latest_edit": true,
+  "final_summary": "Fixed `min-similarity-lines=0` to disable the similarity checker by updating `SimilarChecker.set_option()` to set `self._enabled = self.min_lines > 0` when that option changes. Verified with `python -m pytest tests/checkers/unittest_similar.py -q` (17 passed) and inspected the final git diff.",
+  "generation_error": null,
+  "patch_empty": false,
+  "protocol": {
+    "generator_source_sha256": "2c45e91a15a689a61ea0a0549d4178c685817908ccfb155c1f17fc85734a2428",
+    "system_prompt_sha256": "fdcab63cd133c46f4f82669985382e04ce6051ef10cf5940491c92aa1d1b276d",
+    "user_prompt_template_sha256": "f7e69bc82192edc80b352ec4007eb71e55eebbda0138ebd35c0be83ad3e00a2a",
+    "max_turns": 20,
+    "max_output_tokens": 4096,
+    "temperature": 0.0,
+    "profile_reasoning_effort": null
+  },
+  "files": {
+    "model_patch": {
+      "path": "model.patch",
+      "sha256": "a6d33c24a363740f611f236d6cd6412aeb0ba993f122b76eeb277b7a929716fd"
+    },
+    "prediction": {
+      "path": "prediction.jsonl",
+      "sha256": "154f37570f95c6e2e92ef5c4d012f75b5d54e903c96930145383d10cd39c9381"
+    },
+    "transcript": {
+      "path": "transcript.jsonl",
+      "sha256": "b80e7796f40c0bf6dc6419c1c71cfd7377481cfae093b65037bab82232681dec"
+    }
+  }
+}

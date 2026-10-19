@@ -1,0 +1,33 @@
+{
+"user_query":"Find the trending memes on Reddit to create a slideshow for a team-building event and search for comments related to team-building activities.",
+"domain":"Technology",
+"TaskList": [
+{
+"id": 1,
+"description": "Search for trending memes on Reddit to gather content for the slideshow.",
+"domain": "technology",
+"required_inputs": ["subreddit_name", "trending_filter"]
+},
+{
+"id": 2,
+"description": "Fetch the top posts from the 'memes' subreddit to share with participants.",
+"domain": "technology",
+"required_inputs": ["subreddit_name", "top_filter"],
+"dependencies": [1]
+},
+{
+"id": 3,
+"description": "Search for comments related to team-building activities to include relevant quotes or feedback.",
+"domain": "technology",
+"required_inputs": ["subreddit_name", "keywords"],
+"dependencies": [2]
+},
+{
+"id": 4,
+"description": "Compile the collected memes and comments into a slideshow format for presentation.",
+"domain": "technology",
+"required_inputs": ["memes_data", "comments_data"],
+"dependencies": [2, 3]
+}
+]
+}

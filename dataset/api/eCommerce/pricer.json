@@ -1,0 +1,70 @@
+{
+    "product_id": "api_80d8800a-6710-4071-b166-23f049ff0f51",
+    "tool_description": "real time price comparison api ",
+    "home_url": "https://rapidapi.com/animeslayerquiz/api/pricer/",
+    "name": "Pricer",
+    "title": "Pricer",
+    "pricing": "FREEMIUM",
+    "tool_name": "Pricer",
+    "score": {
+        "avgServiceLevel": 97,
+        "avgLatency": 3346,
+        "avgSuccessRate": 97,
+        "popularityScore": 9.4,
+        "__typename": "Score"
+    },
+    "host": "pricer.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Search for a product",
+            "url": "https://pricer.p.rapidapi.com/str",
+            "description": "search by product name",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "q",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "iphone"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://pricer.p.rapidapi.com/str\"\nquerystring = {\"q\": \"iphone\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"pricer.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://pricer.p.rapidapi.com/str\"\nquerystring = {\"q\": \"iphone\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"pricer.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You are not subscribed to this API."
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "title": {
+                            "type": "string"
+                        },
+                        "price": {
+                            "type": "string"
+                        },
+                        "shop": {
+                            "type": "string"
+                        },
+                        "shipping": {
+                            "type": "string"
+                        },
+                        "reviews": {
+                            "type": "string"
+                        },
+                        "link": {
+                            "type": "string"
+                        },
+                        "img": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "standardized_name": "pricer"
+}

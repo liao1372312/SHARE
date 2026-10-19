@@ -1,0 +1,60 @@
+{
+    "product_id": "api_915c3dee-b04f-42a5-9a60-2c6a0f39619e",
+    "tool_description": "Get information from all US Corporate Retirement plans from the Form 5500.",
+    "home_url": "https://rapidapi.com/dataminingapi-dataminingapi-default/api/form-5500-data/",
+    "name": "Form 5500 Data",
+    "title": "Form 5500 Data",
+    "pricing": "FREE",
+    "tool_name": "Form 5500 Data",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 7,
+        "avgSuccessRate": 100,
+        "popularityScore": 7.6,
+        "__typename": "Score"
+    },
+    "host": "form-5500-data.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Form5500_PlanName",
+            "url": "https://form-5500-data.p.rapidapi.com/api/721937f76ee4118d05d4268531b648ae/311334685",
+            "description": "This will return information about the plan.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "EIN",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "311334685"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://form-5500-data.p.rapidapi.com/api/721937f76ee4118d05d4268531b648ae/311334685\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"form-5500-data.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://form-5500-data.p.rapidapi.com/api/721937f76ee4118d05d4268531b648ae/{ein}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"form-5500-data.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "name": "GOLDMAN SACHS & CO. LLC HEALTH & WELFARE PLAN",
+                    "plan_sponsor": "GOLDMAN SACHS & CO. LLC",
+                    "address_line_1": "200 WEST STREET 19 FLOOR",
+                    "address_line_2": "",
+                    "zip": "10282",
+                    "ein": "135108880",
+                    "phone": "2129022001",
+                    "admin_person": "",
+                    "tax_year_begin": "2018-01-01",
+                    "tax_year_end": "2018-12-31",
+                    "sector_level_1": "Finance and Insurance",
+                    "sector_level_2": "Securities, Commodity Contracts, and Other Financial Investments and Related ActivitiesT",
+                    "sector_level_3": "Securities and Commodity Contracts Intermediation and BrokerageT",
+                    "city": "New York",
+                    "state": "NY",
+                    "plan_type": "Single-Employer Plan",
+                    "plan_inception": "1970-01-01",
+                    "plan_catagory": "Welfare Benefit",
+                    "assets": null
+                }
+            ]
+        }
+    ],
+    "standardized_name": "form_5500_data"
+}

@@ -1,0 +1,52 @@
+{
+    "product_id": "api_0ff84641-3dfb-4b0f-bc1a-6785102769d6",
+    "tool_description": "The easy way to monitor SSL certificate expirations.",
+    "home_url": "https://rapidapi.com/sunandmoon/api/ssl-snitch/",
+    "name": "SSL Snitch",
+    "title": "SSL Snitch",
+    "pricing": "FREEMIUM",
+    "tool_name": "SSL Snitch",
+    "score": {
+        "avgServiceLevel": 85,
+        "avgLatency": 9973,
+        "avgSuccessRate": 77,
+        "popularityScore": 7.8,
+        "__typename": "Score"
+    },
+    "host": "ssl-snitch.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Check",
+            "url": "https://ssl-snitch.p.rapidapi.com/v1/check",
+            "description": "Takes a domain name and returns SSL information.  Optionally, the extend property can be set for additional information.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "domain",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "test.com"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "extended",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "true"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://ssl-snitch.p.rapidapi.com/v1/check\"\nquerystring = {\"extended\": \"true\", \"domain\": \"test.com\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ssl-snitch.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ssl-snitch.p.rapidapi.com/v1/check\"\nquerystring = {\"extended\": \"true\", \"domain\": \"test.com\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ssl-snitch.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "error": {
+                    "status": 400,
+                    "message": "Bad Request"
+                }
+            },
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "ssl_snitch"
+}

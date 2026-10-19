@@ -1,0 +1,66 @@
+{
+    "product_id": "api_b34fcb84-2a49-43b1-9982-67b2d72f74f1",
+    "tool_description": "An AI Chatbot for your aplication.",
+    "home_url": "https://rapidapi.com/farish978/api/ai-chatbot/",
+    "name": "AI Chatbot",
+    "title": "AI Chatbot",
+    "pricing": "FREEMIUM",
+    "tool_name": "AI Chatbot",
+    "score": {
+        "avgServiceLevel": 97,
+        "avgLatency": 573,
+        "avgSuccessRate": 97,
+        "popularityScore": 9.6,
+        "__typename": "Score"
+    },
+    "host": "ai-chatbot.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Chat",
+            "url": "https://ai-chatbot.p.rapidapi.com/chat/free",
+            "description": "The chatbot endpoint.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "uid",
+                    "type": "STRING",
+                    "description": "User Identification for personalised response and response continuity.",
+                    "default": "user1"
+                },
+                {
+                    "name": "message",
+                    "type": "STRING",
+                    "description": "Message that the chatbot has to respond to.",
+                    "default": "What's your name?"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://ai-chatbot.p.rapidapi.com/chat/free\"\nquerystring = {\"uid\": \"user1\", \"message\": \"What's your name?\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ai-chatbot.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ai-chatbot.p.rapidapi.com/chat/free\"\nquerystring = {\"uid\": \"user1\", \"message\": \"What's your name?\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ai-chatbot.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "chatbot": {
+                    "message": "What's your name?",
+                    "response": "Sorry I need more information."
+                }
+            },
+            "statuscode": 200,
+            "schema": {
+                "properties": {
+                    "chatbot": {
+                        "properties": {
+                            "message": {
+                                "type": "string"
+                            },
+                            "response": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    ],
+    "standardized_name": "ai_chatbot"
+}

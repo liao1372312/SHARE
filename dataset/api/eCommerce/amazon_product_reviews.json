@@ -1,0 +1,90 @@
+{
+    "product_id": "api_1aba3a14-2b39-4962-a36b-32c19dceea40",
+    "tool_description": "Amazon Product Reviews\nContact me at: vuesdata@gmail.com or visit https://www.vuesdata.com for building custom spiders or custom requests.",
+    "home_url": "https://rapidapi.com/vuesdata/api/amazon-product-reviews1/",
+    "name": "Amazon Product Reviews",
+    "title": "Amazon Product Reviews",
+    "pricing": "FREEMIUM",
+    "tool_name": "Amazon Product Reviews",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 3486,
+        "avgSuccessRate": 100,
+        "popularityScore": 5.7,
+        "__typename": "Score"
+    },
+    "host": "amazon-product-reviews1.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "AmazonProductReviews",
+            "url": "https://amazon-product-reviews1.p.rapidapi.com/amazonreviews/",
+            "description": "It will accept three parameters asin, domain, pageNum.\nFor Ex:\nasin: B087N3LWRB  (you can find it in the product page of amazon)\ndomain: amazon.co.uk  (put the domain without www, currently we only provide amazon.com, amazon.in and amazon.co.uk)\npageNum: 1 (min 1 and max depends on the number of reviews on the product.  Each page give 10 reviews)",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "pageNum",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "1"
+                },
+                {
+                    "name": "domain",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "amazon.com"
+                },
+                {
+                    "name": "asin",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "B01H6GUCCQ"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://amazon-product-reviews1.p.rapidapi.com/amazonreviews/\"\nquerystring = {\"pageNum\": \"1\", \"domain\": \"amazon.com\", \"asin\": \"B01H6GUCCQ\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"amazon-product-reviews1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://amazon-product-reviews1.p.rapidapi.com/amazonreviews/\"\nquerystring = {\"pageNum\": \"1\", \"domain\": \"amazon.com\", \"asin\": \"B01H6GUCCQ\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"amazon-product-reviews1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You are not subscribed to this API."
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "ProductName": {
+                        "type": "string"
+                    },
+                    "ProductRating": {
+                        "type": "string"
+                    },
+                    "ProductUrl": {
+                        "type": "string"
+                    },
+                    "Reviewers": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "review_body": {
+                                    "type": "string"
+                                },
+                                "review_title": {
+                                    "type": "string"
+                                },
+                                "reviewer_name": {
+                                    "type": "string"
+                                },
+                                "stars": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "Total_Review_Count": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    ],
+    "standardized_name": "amazon_product_reviews"
+}

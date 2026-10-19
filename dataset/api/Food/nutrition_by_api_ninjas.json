@@ -1,0 +1,67 @@
+{
+    "product_id": "api_fe5b3c0f-c7f3-45ab-9adb-455ca4adbcbd",
+    "tool_description": "Natural language API to extract nutrition data from any text. See more info at https://api-ninjas.com/api/nutrition.",
+    "home_url": "https://rapidapi.com/apininjas/api/nutrition-by-api-ninjas/",
+    "name": "Nutrition by API-Ninjas",
+    "title": "Nutrition by API-Ninjas",
+    "pricing": "FREEMIUM",
+    "tool_name": "Nutrition by API-Ninjas",
+    "score": {
+        "avgServiceLevel": 93,
+        "avgLatency": 2126,
+        "avgSuccessRate": 78,
+        "popularityScore": 9.7,
+        "__typename": "Score"
+    },
+    "host": "nutrition-by-api-ninjas.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "/v1/nutrition",
+            "url": "https://nutrition-by-api-ninjas.p.rapidapi.com/v1/nutrition",
+            "description": "API Ninjas Nutrition API endpoint.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "query",
+                    "type": "STRING",
+                    "description": "Query text to extract nutrition information (e.g. **bacon and 3 eggs**).",
+                    "default": "1lb brisket with fries"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://nutrition-by-api-ninjas.p.rapidapi.com/v1/nutrition\"\nquerystring = {\"query\": \"1lb brisket with fries\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"nutrition-by-api-ninjas.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://nutrition-by-api-ninjas.p.rapidapi.com/v1/nutrition\"\nquerystring = {\"query\": \"1lb brisket with fries\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"nutrition-by-api-ninjas.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "name": "brisket",
+                    "calories": 1312.3,
+                    "serving_size_g": 453.592,
+                    "fat_total_g": 82.9,
+                    "fat_saturated_g": 33.2,
+                    "protein_g": 132.0,
+                    "sodium_mg": 217,
+                    "potassium_mg": 781,
+                    "cholesterol_mg": 487,
+                    "carbohydrates_total_g": 0.0,
+                    "fiber_g": 0.0,
+                    "sugar_g": 0.0
+                },
+                {
+                    "name": "fries",
+                    "calories": 317.7,
+                    "serving_size_g": 100.0,
+                    "fat_total_g": 14.8,
+                    "fat_saturated_g": 2.3,
+                    "protein_g": 3.4,
+                    "sodium_mg": 212,
+                    "potassium_mg": 124,
+                    "cholesterol_mg": 0,
+                    "carbohydrates_total_g": 41.1,
+                    "fiber_g": 3.8,
+                    "sugar_g": 0.3
+                }
+            ]
+        }
+    ],
+    "standardized_name": "nutrition_by_api_ninjas"
+}

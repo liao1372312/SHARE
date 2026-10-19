@@ -1,0 +1,33 @@
+{
+"user_query":"I want to verify the phone numbers of volunteers from different countries for a charity event.",
+"domain":"Cross-Domain",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Gather the list of volunteer phone numbers from different countries (Australia, France, Brazil).",
+        "domain": "Cross-Domain",
+        "required_inputs": ["list_of_volunteers"]
+    },
+    {
+        "id": 2,
+        "description": "Verify the format of the phone numbers for each country using validation criteria.",
+        "domain": "Cross-Domain",
+        "required_inputs": ["phone_number", "country_code"],
+        "dependencies": [1]
+    },
+    {
+        "id": 3,
+        "description": "Retrieve example phone numbers for Australia, France, and Brazil to use as reference for validation.",
+        "domain": "Cross-Domain",
+        "required_inputs": ["country_name"],
+        "dependencies": [1]
+    },
+    {
+        "id": 4,
+        "description": "Compile the verification results and example phone numbers into a report.",
+        "domain": "Cross-Domain",
+        "required_inputs": ["verification_results", "example_numbers"],
+        "dependencies": [2, 3]
+    }
+]
+}

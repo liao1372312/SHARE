@@ -1,0 +1,115 @@
+{
+  "schema_version": 1,
+  "kind": "share_locked_holdout_data_generation_preregistration",
+  "protocol_id": "share-locked-replayable-400-v1",
+  "frozen_at_utc": "2026-08-26T00:00:00Z",
+  "scope": "data_generation_and_provenance_only",
+  "prohibitions": [
+    "do_not_load_or_run_SHARE_or_comparator_artifacts",
+    "do_not_read_method_level_outcomes",
+    "do_not_bind_or_run_the_locked_evaluator",
+    "do_not_relabel_simulated_branch_outcomes_as_real"
+  ],
+  "target": {
+    "episodes": 400,
+    "unique_workflow_groups": 400,
+    "episodes_per_group": 1,
+    "split": "locked_holdout_unbound",
+    "failure_type_counts": {
+      "planning_failure": 67,
+      "service_selection_failure": 67,
+      "parameter_binding_failure": 67,
+      "tool_execution_failure": 67,
+      "supervisor_failure": 66,
+      "answer_grounding_failure": 66
+    },
+    "complexity_counts": {
+      "low": 134,
+      "medium": 133,
+      "high": 133
+    }
+  },
+  "source": {
+    "path": "datasets/share_public_api_workflow_input.jsonl",
+    "sha256": "64125bb8750c07a0c2d53e555c1a7070aff4fdc77be395c93ee056d05f3f133f",
+    "kind": "repository_public_api_document_corpus",
+    "expected_records": 3000,
+    "expected_groups": 884,
+    "source_records_synthetic": false,
+    "evidence_scope": "public_api_document_review_not_observed_service_execution_or_paired_outcome",
+    "selection_unit": "workflow_group",
+    "representative_rule": "within each eligible group choose the record with minimum SHA256(seed_selection || canonical_record)",
+    "group_selection_rule": "rank group representatives by SHA256(seed_selection || group_id), then select fixed complexity quotas",
+    "exclusions": "reject any candidate whose episode_id, workflow_id, group_id, source-document digest, or normalized source fingerprint appears in any declared historical identifier source"
+  },
+  "seeds": {
+    "selection": 2026082601,
+    "failure_assignment": 2026082602,
+    "branch_construction": 2026082603,
+    "labeling": 2026082604
+  },
+  "complexity": {
+    "score": "4*destructive_method + 2*mutating_method + min(required_parameter_count,6) + min(description_length/300,2) + risk_lexicon_hits",
+    "bins": "rank all eligible group representatives by (score, SHA256(seed_selection || group_id)); lowest 134 selected are low, next 133 medium, highest 133 high, with selection performed independently from method outcomes",
+    "numeric_values": {"low": 0.3, "medium": 0.65, "high": 0.9},
+    "horizons": {"low": 2, "medium": 3, "high": 5}
+  },
+  "failure_assignment": {
+    "rule": "rank selected groups by SHA256(seed_failure_assignment || group_id), then assign the fixed failure multiset in the lexical failure-type order shown in target.failure_type_counts",
+    "independence": "assignment uses identifiers only and no outcomes"
+  },
+  "branch_construction": {
+    "kind": "deterministic_counterfactual_replay_simulation",
+    "episode_synthetic": true,
+    "steps": "one decision step per horizon position; nonterminal branches advance to the next step and final branches terminate",
+    "uniform_source": "u = first 13 hex digits of SHA256(seed_branch || episode_id || step || action || field), divided by 16^13",
+    "ai": "success threshold and safety risk are deterministic functions of failure type, complexity, step, method mutability, and u; latency/cost are deterministic",
+    "human": "uses a higher success threshold and lower unsafe threshold than AI, with nonzero human_minutes; this is a simulated expert/reference branch, not an observed human intervention",
+    "stop": "always terminal, unsuccessful, safe rollback/no-op with zero human minutes",
+    "bounds": "all probabilities and continuous state fields are clipped to [0,1]",
+    "provenance": "every branch embeds algorithm version, source-record SHA256, seeds, and simulation disclosure"
+  },
+  "outcome_labeling": {
+    "reward_config": {
+      "quality_weight": 1.0,
+      "latency_weight": 0.1,
+      "execution_weight": 0.1,
+      "ineffective_weight": 0.25,
+      "success_reward": 1.0,
+      "unsafe_penalty": 2.0,
+      "rollback_penalty": 0.25
+    },
+    "gamma": 0.95,
+    "human_benefit_margin": 0.1,
+    "rule": "human_beneficial iff simulated Human downstream discounted return exceeds simulated AI downstream discounted return by at least 0.1",
+    "label_source": "deterministic_simulation_not_human_annotation"
+  },
+  "audit": {
+    "historical_identifier_sources": [
+      "datasets/share_guard_development/historical_identifiers.json",
+      "datasets/share_synthetic/episodes.jsonl",
+      "datasets/share_guard_development/episodes.jsonl",
+      "datasets/share_synthetic_augmented_guard_development/episodes.jsonl"
+    ],
+    "required_zero_overlap_dimensions": [
+      "episode_id",
+      "workflow_id",
+      "group_id",
+      "source_document_sha256",
+      "normalized_source_fingerprint"
+    ],
+    "duplicate_checks": [
+      "unique_episode_id",
+      "unique_workflow_id",
+      "unique_group_id",
+      "unique_source_record_sha256",
+      "unique_normalized_source_fingerprint"
+    ],
+    "failure_condition": "abort generation and publish no manifest if any required overlap, duplicate, source-hash mismatch, quota mismatch, schema error, or synthetic-disclosure error is observed"
+  },
+  "eligibility": {
+    "locked_evaluator_binding": false,
+    "reason": "branch outcomes are deterministic simulations over real public-API documentation cases, not observed paired AI/Human/Stop service executions",
+    "upgrade_requirement": "replace every simulated branch with immutable observed execution artifacts and pass the real-paired importer contract before binding"
+  }
+}

@@ -1,0 +1,105 @@
+{
+    "product_id": "api_cfd94f72-9770-4960-8468-8b55e570dd56",
+    "tool_description": "Access vital data for 30,000 different airports worldwide. See more info at https://api-ninjas.com/api/airports.",
+    "home_url": "https://rapidapi.com/apininjas/api/airports-by-api-ninjas/",
+    "name": "Airports by API-Ninjas",
+    "title": "Airports by API-Ninjas",
+    "pricing": "FREEMIUM",
+    "tool_name": "Airports by API-Ninjas",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 582,
+        "avgSuccessRate": 100,
+        "popularityScore": 9.5,
+        "__typename": "Score"
+    },
+    "host": "airports-by-api-ninjas.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "/v1/airports",
+            "url": "https://airports-by-api-ninjas.p.rapidapi.com/v1/airports",
+            "description": "API Ninjas Airports API endpoint. At least one of the optional parameters must be provided.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "offset",
+                    "type": "NUMBER",
+                    "description": "number of results to offset for pagination.",
+                    "default": ""
+                },
+                {
+                    "name": "max_elevation",
+                    "type": "NUMBER",
+                    "description": "maximum airport elevation in feet.",
+                    "default": ""
+                },
+                {
+                    "name": "region",
+                    "type": "STRING",
+                    "description": "administrative region such as state or province within a country (e.g. California)",
+                    "default": ""
+                },
+                {
+                    "name": "min_elevation",
+                    "type": "NUMBER",
+                    "description": "minimum airport elevation in feet.",
+                    "default": ""
+                },
+                {
+                    "name": "city",
+                    "type": "STRING",
+                    "description": "airport city (e.g. London)",
+                    "default": ""
+                },
+                {
+                    "name": "country",
+                    "type": "STRING",
+                    "description": "airport country. Must be 2-character ISO-2 country code (e.g. GB)",
+                    "default": ""
+                },
+                {
+                    "name": "timezone",
+                    "type": "STRING",
+                    "description": "airport timezone (e.g. Europe/London)\n\n",
+                    "default": ""
+                },
+                {
+                    "name": "name",
+                    "type": "STRING",
+                    "description": "airport name. This parameter supports partial matching (e.g. Heathrow will match London Heathrow Airport)",
+                    "default": "London Heathrow"
+                },
+                {
+                    "name": "icao",
+                    "type": "STRING",
+                    "description": "International Civil Aviation Organization (ICAO) 4-character airport code.",
+                    "default": ""
+                },
+                {
+                    "name": "iata",
+                    "type": "STRING",
+                    "description": "International Air Transport Association (IATA) 3-character airport code.",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://airports-by-api-ninjas.p.rapidapi.com/v1/airports\"\nquerystring = {\"offset\": \"\", \"max_elevation\": \"\", \"region\": \"\", \"min_elevation\": \"\", \"city\": \"\", \"country\": \"\", \"timezone\": \"\", \"name\": \"London Heathrow\", \"icao\": \"\", \"iata\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"airports-by-api-ninjas.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://airports-by-api-ninjas.p.rapidapi.com/v1/airports\"\nquerystring = {\"offset\": \"\", \"max_elevation\": \"\", \"region\": \"\", \"min_elevation\": \"\", \"city\": \"\", \"country\": \"\", \"timezone\": \"\", \"name\": \"London Heathrow\", \"icao\": \"\", \"iata\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"airports-by-api-ninjas.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "icao": "EGLL",
+                    "iata": "LHR",
+                    "name": "London Heathrow Airport",
+                    "city": "London",
+                    "region": "England",
+                    "country": "GB",
+                    "elevation_ft": "83",
+                    "latitude": "51.4706001282",
+                    "longitude": "-0.4619410038",
+                    "timezone": "Europe/London"
+                }
+            ]
+        }
+    ],
+    "standardized_name": "airports_by_api_ninjas"
+}

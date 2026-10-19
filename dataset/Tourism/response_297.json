@@ -1,0 +1,32 @@
+{
+"user_query":"I am planning a family reunion and I need to find a suitable venue. Can you suggest some local hotels or event spaces that can accommodate a large group? Additionally, I would like to gather information about nearby attractions and activities to plan a fun-filled itinerary for the reunion.",
+"domain":"Tourism",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Search for local hotels or event spaces that can accommodate a large group for the family reunion.",
+        "domain": "tourism",
+        "required_inputs": ["location", "number_of_guests"]
+    },
+    {
+        "id": 2,
+        "description": "Retrieve detailed information about the selected venues, including amenities and pricing.",
+        "domain": "tourism",
+        "required_inputs": ["venue_id"],
+        "dependencies": ["1"]
+    },
+    {
+        "id": 3,
+        "description": "Research nearby attractions and activities that are suitable for a family reunion.",
+        "domain": "tourism",
+        "required_inputs": ["location", "preferences"]
+    },
+    {
+        "id": 4,
+        "description": "Compile the venue and attraction information into a cohesive itinerary for the reunion.",
+        "domain": "tourism",
+        "required_inputs": ["venue_details", "attraction_details"],
+        "dependencies": ["2", "3"]
+    }
+]
+}

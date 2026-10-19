@@ -1,0 +1,166 @@
+{
+    "product_id": "api_c5c39456-1822-4533-b78c-a3116dd4c2dd",
+    "tool_description": "Take perfect screenshot from websites. Powered by nodejs\n\nThe service work through proxy servers. \nUse proxyCountry : asia | europe | north_america\nOr proxyState : france | canada | singapore | united_kingdom | germany\notherwise it will pick one randomly",
+    "home_url": "https://rapidapi.com/andychen-nBn3-aYqo/api/screenshot-maker/",
+    "name": "Screenshot Maker",
+    "title": "Screenshot Maker",
+    "pricing": "FREEMIUM",
+    "tool_name": "Screenshot Maker",
+    "score": {
+        "avgServiceLevel": 96,
+        "avgLatency": 2927,
+        "avgSuccessRate": 64,
+        "popularityScore": 7.6,
+        "__typename": "Score"
+    },
+    "host": "screenshot-maker.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Take screenshot",
+            "url": "https://screenshot-maker.p.rapidapi.com/browser/screenshot/_take",
+            "description": "collect all parameteres, load the webpage and take screenshot at the end.\nThis API save on a S3 bucket and return the url.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "targetUrl",
+                    "type": "STRING",
+                    "description": "Website url",
+                    "default": "https://www.google.it"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "proxyState",
+                    "type": "ENUM",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "proxyCountry",
+                    "type": "ENUM",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "clickDelay",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "500"
+                },
+                {
+                    "name": "fullpage",
+                    "type": "ENUM",
+                    "description": "take screenshot of the entire website page, from header to footer",
+                    "default": ""
+                },
+                {
+                    "name": "removables",
+                    "type": "STRING",
+                    "description": "remove divs/html by selector",
+                    "default": ""
+                },
+                {
+                    "name": "clickCount",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "1"
+                },
+                {
+                    "name": "hasTouch",
+                    "type": "ENUM",
+                    "description": "Specify if the viewport supports touch events.",
+                    "default": ""
+                },
+                {
+                    "name": "clickSelector",
+                    "type": "STRING",
+                    "description": "This method fetches an element with selector, scrolls it into view if needed, and then uses Page.mouse to click in the center of the element. If there's no element matching selector, the method throws an error.",
+                    "default": ""
+                },
+                {
+                    "name": "isFullyLoaded",
+                    "type": "ENUM",
+                    "description": "consider navigation to be finished when there are no more than 0 network connections for at least 500 ms. \nThan take screenshot",
+                    "default": ""
+                },
+                {
+                    "name": "clickButton",
+                    "type": "ENUM",
+                    "description": "Mouse button to be used, left click or right click etc",
+                    "default": ""
+                },
+                {
+                    "name": "pageHeight",
+                    "type": "NUMBER",
+                    "description": "Set browser page height",
+                    "default": "1024"
+                },
+                {
+                    "name": "isMobile",
+                    "type": "ENUM",
+                    "description": "Whether the meta viewport tag is taken into account.",
+                    "default": ""
+                },
+                {
+                    "name": "pageWidth",
+                    "type": "NUMBER",
+                    "description": "Set browser page width",
+                    "default": "1024"
+                },
+                {
+                    "name": "isLandScape",
+                    "type": "ENUM",
+                    "description": "Specifies if the viewport is in landscape mode.",
+                    "default": ""
+                },
+                {
+                    "name": "deviceScaleFactor",
+                    "type": "NUMBER",
+                    "description": "Specify device scale factor.",
+                    "default": "1"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://screenshot-maker.p.rapidapi.com/browser/screenshot/_take\"\nquerystring = {\"proxyState\": \"\", \"proxyCountry\": \"\", \"clickDelay\": \"500\", \"fullpage\": \"\", \"removables\": \"\", \"clickCount\": \"1\", \"hasTouch\": \"\", \"clickSelector\": \"\", \"isFullyLoaded\": \"\", \"clickButton\": \"\", \"targetUrl\": \"https://www.google.it\", \"pageHeight\": \"1024\", \"isMobile\": \"\", \"pageWidth\": \"1024\", \"isLandScape\": \"\", \"deviceScaleFactor\": \"1\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"screenshot-maker.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://screenshot-maker.p.rapidapi.com/browser/screenshot/_take\"\nquerystring = {\"proxyState\": \"\", \"proxyCountry\": \"\", \"clickDelay\": \"500\", \"fullpage\": \"\", \"removables\": \"\", \"clickCount\": \"1\", \"hasTouch\": \"\", \"clickSelector\": \"\", \"isFullyLoaded\": \"\", \"clickButton\": \"\", \"targetUrl\": \"https://www.google.it\", \"pageHeight\": \"1024\", \"isMobile\": \"\", \"pageWidth\": \"1024\", \"isLandScape\": \"\", \"deviceScaleFactor\": \"1\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"screenshot-maker.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "imageUrl": "https://zen-screenshot-repository.s3.eu-north-1.amazonaws.com/6/3/7/63784f16-c7e4-4550-b958-ed069f3658b8.jpg",
+                "imageName": "63784f16-c7e4-4550-b958-ed069f3658b8.jpg",
+                "performance": {
+                    "browser": 2511.093535423279,
+                    "upload": 499.73389625549316
+                },
+                "payload": {
+                    "proxy": {
+                        "country": "europe",
+                        "state": "united_kingdom"
+                    },
+                    "fullpage": false,
+                    "isFullyLoaded": true,
+                    "removables": null,
+                    "click": {
+                        "selector": "",
+                        "options": {
+                            "delay": 500,
+                            "button": "middle",
+                            "clickCount": 1
+                        }
+                    },
+                    "viewport": {
+                        "width": 1024,
+                        "height": 1024,
+                        "deviceScaleFactor": 1,
+                        "isMobile": false,
+                        "hasTouch": false,
+                        "isLandScape": false
+                    }
+                },
+                "times": {
+                    "openPage": 349.1895475387573,
+                    "goto": 2007.6448593139648,
+                    "screenshot": 123.7699728012085
+                }
+            }
+        }
+    ],
+    "standardized_name": "screenshot_maker"
+}

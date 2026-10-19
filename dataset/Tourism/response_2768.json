@@ -1,0 +1,33 @@
+{
+"user_query":"I want to plan a road trip across the United States and visit famous landmarks. Provide me with a list of cities along the route and their unique histories and touristic AI texts. Also, recommend hotels in each city for my stay during the road trip.",
+"domain":"Tourism",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Identify the starting point and destination for the road trip across the United States.",
+        "domain": "tourism",
+        "required_inputs": ["starting_point", "destination"]
+    },
+    {
+        "id": 2,
+        "description": "Generate a list of cities along the route based on the starting point and destination identified in Subtask 1.",
+        "domain": "tourism",
+        "required_inputs": ["route_information"]  ,
+        "depends_on": [1]
+    },
+    {
+        "id": 3,
+        "description": "Gather unique histories and tourist information for each city identified in Subtask 2.",
+        "domain": "tourism",
+        "required_inputs": ["city_list"],
+        "depends_on": [2]
+    },
+    {
+        "id": 4,
+        "description": "Recommend hotels in each city gathered in Subtask 3 for user stays during the road trip.",
+        "domain": "tourism",
+        "required_inputs": ["city_histories"],
+        "depends_on": [3]
+    }
+]
+}

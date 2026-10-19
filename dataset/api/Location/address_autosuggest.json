@@ -1,0 +1,84 @@
+{
+    "product_id": "api_94c8d8fb-dc48-4684-9a49-6c8bdfb398f2",
+    "tool_description": "\"Address Autosuggest\" API buit to suggests address results for a given search term. This API provides a JSON interface to extract address suggestions for a complete or partial address query.his API uses the latest PAF and Multiple Residence data from Royal Mail.",
+    "home_url": "https://rapidapi.com/api-tier1-apitier-team/api/address-autosuggest/",
+    "name": "Address Autosuggest",
+    "title": "Address Autosuggest",
+    "pricing": "FREEMIUM",
+    "tool_name": "Address Autosuggest",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 1123,
+        "avgSuccessRate": 0,
+        "popularityScore": 0.3,
+        "__typename": "Score"
+    },
+    "host": "address-autosuggest.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Address Autosuggest",
+            "url": "https://address-autosuggest.p.rapidapi.com/v1/addresses/autocomplete",
+            "description": "\"Address Autosuggest\" API buit to suggests address results for a given search term. This API provides a JSON interface to extract address suggestions for a complete or partial address query.\n\nThe Autocomplete API suggests partial address results for a given query.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "query",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "Bridge"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://address-autosuggest.p.rapidapi.com/v1/addresses/autocomplete\"\nquerystring = {\"query\": \"Bridge\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"address-autosuggest.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://address-autosuggest.p.rapidapi.com/v1/addresses/autocomplete\"\nquerystring = {\"query\": \"Bridge\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"address-autosuggest.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "status": 402,
+                "message": "Address Autosuggest API not avaialble with Free Trial Plan, Please upgrade your account.",
+                "upgrade-url": "https://www.theapibridge.com/api/postcode/pricing"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "type": "integer"
+                    },
+                    "message": {
+                        "type": "string"
+                    },
+                    "result": {
+                        "type": "object",
+                        "properties": {
+                            "total": {
+                                "type": "integer"
+                            },
+                            "hits": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "address": {
+                                            "type": "string"
+                                        },
+                                        "udprn": {
+                                            "type": "string"
+                                        },
+                                        "urls": {
+                                            "type": "object",
+                                            "properties": {
+                                                "findByUDPRN": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "standardized_name": "address_autosuggest"
+}

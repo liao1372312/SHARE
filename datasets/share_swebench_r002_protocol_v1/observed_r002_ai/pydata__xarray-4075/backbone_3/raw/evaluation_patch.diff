@@ -1,0 +1,73 @@
+diff --git a/xarray/core/weighted.py b/xarray/core/weighted.py
+index 996d2e4c..8f40e167 100644
+--- a/xarray/core/weighted.py
++++ b/xarray/core/weighted.py
+@@ -142,7 +142,7 @@ class Weighted:
+         # we need to mask data values that are nan; else the weights are wrong
+         mask = da.notnull()
+ 
+-        sum_of_weights = self._reduce(mask, self.weights, dim=dim, skipna=False)
++        sum_of_weights = self._reduce(mask, self.weights.astype(float), dim=dim, skipna=False)
+ 
+         # 0-weights are not valid
+         valid_weights = sum_of_weights != 0.0
+diff --git a/xarray/tests/test_weighted.py b/xarray/tests/test_weighted.py
+index 24531215..cb2581ae 100644
+--- a/xarray/tests/test_weighted.py
++++ b/xarray/tests/test_weighted.py
+@@ -1,4 +1,55 @@
+ import numpy as np
++import xarray as xr
++import pytest
++
++
++def test_weighted_mean_boolean():
++    dta = xr.DataArray([1., 1., 1.])
++    wgt = xr.DataArray(np.array([1, 1, 0], dtype=bool))
++    result = dta.weighted(wgt).mean()
++    expected = xr.DataArray(1.)
++    assert result.item() == expected.item()
++
++import pytest
++
++import xarray as xr
++from xarray import DataArray
++from xarray.tests import assert_allclose, assert_equal, raises_regex
++
++
++@pytest.mark.parametrize("as_dataset", (True, False))
++def test_weighted_non_DataArray_weights(as_dataset):
++
++    data = DataArray([1, 2])
++    if as_dataset:
++        data = data.to_dataset(name="data")
++
++    with raises_regex(ValueError, "`weights` must be a DataArray"):
++        data.weighted([1, 2])
++
++
++@pytest.mark.parametrize("as_dataset", (True, False))
++@pytest.mark.parametrize("weights", ([np.nan, 2], [np.nan, np.nan]))
++def test_weighted_weights_nan_raises(as_dataset, weights):
++
++    data = DataArray([1, 2])
++    if as_dataset:
++        data = data.to_dataset(name="data")
++
++    with pytest.raises(ValueError, match="`weights` cannot contain missing values."):
++        data.weighted(DataArray(weights))
++
++
++@pytest.mark.parametrize(
++    ("weights", "expected"),
++    (([1, 2], 3), ([2, 0], 2), ([0, 0], np.nan), ([-1, 1], np.nan)),
++)
++def test_weighted_sum_of_weights_no_nan(weights, expected):
++
++    da = DataArray([1, 2])
++    weights = DataArray(weights)
++    result = da.weighted(weights).sum_of_weights()
++
+ import pytest
+ 
+ import xarray as xr

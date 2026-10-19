@@ -1,0 +1,38 @@
+{
+"user_query":"I need some workout inspiration. Search Pinterest for pins related to 'fitness' and provide me with the pins uploaded by the user '0869178429hau'. Additionally, find the top posts on Reddit for the subreddit 'fitness' and give me the details.",
+"domain":"Technology",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Search for pins related to 'fitness' on Pinterest uploaded by the user '0869178429hau'.",
+        "domain": "technology",
+        "required_inputs": ["search_term", "username"]
+    },
+    {
+        "id": 2,
+        "description": "Retrieve the pin details found in Step 1.",
+        "domain": "technology",
+        "required_inputs": ["pins_data"],
+        "dependency": {
+            "step": 1,
+            "condition": "successful retrieval of pins"
+        }
+    },
+    {
+        "id": 3,
+        "description": "Find the top posts from the subreddit 'fitness' on Reddit.",
+        "domain": "technology",
+        "required_inputs": ["subreddit_name"]
+    },
+    {
+        "id": 4,
+        "description": "Compile the details of top posts found in Step 3.",
+        "domain": "technology",
+        "required_inputs": ["reddit_posts_data"],
+        "dependency": {
+            "step": 3,
+            "condition": "successful retrieval of Reddit posts"
+        }
+    }
+]
+}

@@ -1,0 +1,37 @@
+{
+"user_query":"Can you fetch the most recent draw results for the Daily 3 and Fantasy 5 from the CA Lottery? Additionally, I'd like to know the latest price of the fund with ISIN LU0690375182 and its historical prices from 2015-01-25 to 2020-12-31. Lastly, provide me with the SABR log for the strike 1200.",
+"domain":"Finance",
+"TaskList": [
+{
+"id": 1,
+"description": "Fetch the most recent draw results for the Daily 3 from the California Lottery.",
+"domain": "finance",
+"required_inputs": []
+},
+{
+"id": 2,
+"description": "Fetch the most recent draw results for Fantasy 5 from the California Lottery.",
+"domain": "finance",
+"required_inputs": []
+},
+{
+"id": 3,
+"description": "Get the latest price of the fund with ISIN LU0690375182.",
+"domain": "finance",
+"required_inputs": ["ISIN"]
+},
+{
+"id": 4,
+"description": "Retrieve the historical prices of the fund with ISIN LU0690375182 from 2015-01-25 to 2020-12-31.",
+"domain": "finance",
+"required_inputs": ["ISIN", "start_date", "end_date"],
+"dependencies": [3]
+},
+{
+"id": 5,
+"description": "Provide the SABR log for the strike 1200.",
+"domain": "finance",
+"required_inputs": ["strike"]
+}
+]
+}

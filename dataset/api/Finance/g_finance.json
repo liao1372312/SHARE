@@ -1,0 +1,3029 @@
+{
+    "product_id": "api_c456485a-0378-4469-b92e-a172c7f013e2",
+    "tool_description": "This API helps to query financial summary, stocks, quotes, movers, news, etc\u2026",
+    "home_url": "https://rapidapi.com/herosAPI/api/g-finance/",
+    "name": "G - Finance",
+    "title": "G - Finance",
+    "pricing": "FREEMIUM",
+    "tool_name": "G - Finance",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 1444,
+        "avgSuccessRate": 97,
+        "popularityScore": 9.3,
+        "__typename": "Score"
+    },
+    "host": "g-finance.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "market-trends",
+            "url": "https://g-finance.p.rapidapi.com/market-trends/",
+            "description": "market-trends",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "t",
+                    "type": "STRING",
+                    "description": "Tab name. One of these:\n\nindexes\nmost-active\ngainers\nlosers\nclimate-leaders\ncryptocurrencies\ncurrencies",
+                    "default": "losers"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "gl",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "US"
+                },
+                {
+                    "name": "s",
+                    "type": "STRING",
+                    "description": "Subtab name. If you selected the indexes tab, you can choose one of the following, leave empty to get all.\n\namericas\neurope-middle-east-africa\nasia-pacific",
+                    "default": "en"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://g-finance.p.rapidapi.com/market-trends/\"\nquerystring = {\"gl\": \"US\", \"t\": \"losers\", \"s\": \"en\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"g-finance.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://g-finance.p.rapidapi.com/market-trends/\"\nquerystring = {\"gl\": \"US\", \"t\": \"losers\", \"s\": \"en\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"g-finance.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "title": "Losers",
+                "slug": "losers",
+                "items": [
+                    {
+                        "info": {
+                            "type": "stock",
+                            "title": "Cabot Corp",
+                            "ticker": "CBT:NYSE",
+                            "ticker_symbols": [
+                                "CBT",
+                                "NYSE"
+                            ],
+                            "country_code": "US",
+                            "exchange": {
+                                "primary": {
+                                    "symbol": null,
+                                    "name": null
+                                },
+                                "secondary": {
+                                    "symbol": null,
+                                    "name": null
+                                }
+                            }
+                        },
+                        "price": {
+                            "currency": "USD",
+                            "previous_close": 74.62,
+                            "last": {
+                                "time": 1686931923,
+                                "value": 67.27,
+                                "today_change": -7.350006,
+                                "today_change_percent": -9.849914
+                            },
+                            "after_hours": {
+                                "value": 68.93,
+                                "change": 1.6299973,
+                                "change_percent": 2.4219868
+                            }
+                        }
+                    },
+                    {
+                        "info": {
+                            "type": "stock",
+                            "title": "SoFi Technologies Inc",
+                            "ticker": "SOFI:NASDAQ",
+                            "ticker_symbols": [
+                                "SOFI",
+                                "NASDAQ"
+                            ],
+                            "country_code": "US",
+                            "exchange": {
+                                "primary": {
+                                    "symbol": null,
+                                    "name": null
+                                },
+                                "secondary": {
+                                    "symbol": null,
+                                    "name": null
+                                }
+                            }
+                        },
+                        "price": {
+                            "currency": "USD",
+                            "previous_close": 9.55,
+                            "last": {
+                                "time": 1686931921,
+                                "value": 8.7284,
+                                "today_change": -0.82159996,
+                                "today_change_percent": -8.603141
+                            },
+                            "after_hours": {
+                                "value": 8.91,
+                                "change": 0.17010021,
+                                "change_percent": 1.946249
+                            }
+                        }
+                    },
+                    {
+                        "info": {
+                            "type": "stock",
+                            "title": "ZoomInfo Technologies Inc",
+                            "ticker": "ZI:NASDAQ",
+                            "ticker_symbols": [
+                                "ZI",
+                                "NASDAQ"
+                            ],
+                            "country_code": "US",
+                            "exchange": {
+                                "primary": {
+                                    "symbol": null,
+                                    "name": null
+                                },
+                                "secondary": {
+                                    "symbol": null,
+                                    "name": null
+                                }
+                            }
+                        },
+                        "price": {
+                            "currency": "USD",
+                            "previous_close": 28.4,
+                            "last": {
+                                "time": 1686931921,
+                                "value": 25.985,
+                                "today_change": -2.414999,
+                                "today_change_percent": -8.503518
+                            },
+                            "after_hours": {
+                                "value": 26.7,
+                                "change": 0.6800003,
+                                "change_percent": 2.6133754
+                            }
+                        }
+                    },
+                    {
+                        "info": {
+                            "type": "stock",
+                            "title": "Viking Therapeutics Inc",
+                            "ticker": "VKTX:NASDAQ",
+                            "ticker_symbols": [
+                                "VKTX",
+                                "NASDAQ"
+                            ],
+                            "country_code": "US",
+                            "exchange": {
+                                "primary": {
+                                    "symbol": null,
+                                    "name": null
+                                },
+                                "secondary": {
+                                    "symbol": null,
+                                    "name": null
+                                }
+                            }
+                        },
+                        "price": {
+                            "currency": "USD",
+                            "previous_close": 22.46,
+                            "last": {
+                                "time": 1686931914,
+                                "value": 20.755,
+                                "today_change": -1.7049999,
+                                "today_change_percent": -7.5912733
+                            },
+                            "after_hours": {
+                                "value": 22.59,
+                                "change": 1.7800007,
+                                "change_percent": 8.553583
+                            }
+                        }
+                    },
+                    {
+                        "info": {
+                            "type": "stock",
+                            "title": "Integral Ad Science Holding Corp",
+                            "ticker": "IAS:NASDAQ",
+                            "ticker_symbols": [
+                                "IAS",
+                                "NASDAQ"
+                            ],
+                            "country_code": "US",
+                            "exchange": {
+                                "primary": {
+                                    "symbol": null,
+                                    "name": null
+                                },
+                                "secondary": {
+                                    "symbol": null,
+                                    "name": null
+                                }
+                            }
+                        },
+                        "price": {
+                            "currency": "USD",
+                            "previous_close": 19.17,
+                            "last": {
+                                "time": 1686931919,
+                                "value": 17.735,
+                                "today_change": -1.4349995,
+                                "today_change_percent": -7.485652
+                            },
+                            "after_hours": {
+                                "value": 18.1,
+                                "change": 0.35000038,
+                                "change_percent": 1.9718332
+                            }
+                        }
+                    },
+                    {
+                        "info": {
+                            "type": "stock",
+                            "title": "Agilon Health Inc",
+                            "ticker": "AGL:NYSE",
+                            "ticker_symbols": [
+                                "AGL",
+                                "NYSE"
+                            ],
+                            "country_code": "US",
+                            "exchange": {
+                                "primary": {
+                                    "symbol": null,
+                                    "name": null
+                                },
+                                "secondary": {
+                                    "symbol": null,
+                                    "name": null
+                                }
+                            }
+                        },
+                        "price": {
+                            "currency": "USD",
+                            "previous_close": 18.71,
+                            "last": {
+                                "time": 1686931833,
+                                "value": 17.51,
+                                "today_change": -1.1999989,
+                                "today_change_percent": -6.4136767
+                            },
+                            "after_hours": {
+                                "value": null,
+                                "change": null,
+                                "change_percent": null
+                            }
+                        }
+                    },
+                    {
+                        "info": {
+                            "type": "stock",
+                            "title": "Lufax Holding Ltd - ADR",
+                            "ticker": "LU:NYSE",
+                            "ticker_symbols": [
+                                "LU",
+                                "NYSE"
+                            ],
+                            "country_code": "US",
+                            "exchange": {
+                                "primary": {
+                                    "symbol": null,
+                                    "name": null
+                                },
+                                "secondary": {
+                                    "symbol": null,
+                                    "name": null
+                                }
+                            }
+                        },
+                        "price": {
+                            "currency": "USD",
+                            "previous_close": 1.68,
+                            "last": {
+                                "time": 1686931744,
+                                "value": 1.575,
+                                "today_change": -0.1049999,
+                                "today_change_percent": -6.2499943
+                            },
+                            "after_hours": {
+                                "value": 1.72,
+                                "change": 0.14499998,
+                                "change_percent": 9.206347
+                            }
+                        }
+                    },
+                    {
+                        "info": {
+                            "type": "stock",
+                            "title": "Nextier Oilfield Solutions Inc",
+                            "ticker": "NEX:NYSE",
+                            "ticker_symbols": [
+                                "NEX",
+                                "NYSE"
+                            ],
+                            "country_code": "US",
+                            "exchange": {
+                                "primary": {
+                                    "symbol": null,
+                                    "name": null
+                                },
+                                "secondary": {
+                                    "symbol": null,
+                                    "name": null
+                                }
+                            }
+                        },
+                        "price": {
+                            "currency": "USD",
+                            "previous_close": 9.52,
+                            "last": {
+                                "time": 1686931907,
+                                "value": 8.95,
+                                "today_change": -0.5749998,
+                                "today_change_percent": -6.0367436
+                            },
+                            "after_hours": {
+                                "value": 9.26,
+                                "change": 0.3000002,
+                                "change_percent": 3.3482165
+                            }
+                        }
+                    },
+                    {
+                        "info": {
+                            "type": "stock",
+                            "title": "Carvana Co",
+                            "ticker": "CVNA:NYSE",
+                            "ticker_symbols": [
+                                "CVNA",
+                                "NYSE"
+                            ],
+                            "country_code": "US",
+                            "exchange": {
+                                "primary": {
+                                    "symbol": null,
+                                    "name": null
+                                },
+                                "secondary": {
+                                    "symbol": null,
+                                    "name": null
+                                }
+                            }
+                        },
+                        "price": {
+                            "currency": "USD",
+                            "previous_close": 26.38,
+                            "last": {
+                                "time": 1686931913,
+                                "value": 24.8,
+                                "today_change": -1.5799999,
+                                "today_change_percent": -5.9893856
+                            },
+                            "after_hours": {
+                                "value": 27.25,
+                                "change": 2.6100006,
+                                "change_percent": 10.592535
+                            }
+                        }
+                    },
+                    {
+                        "info": {
+                            "type": "stock",
+                            "title": "Sendas Distribuidora SA",
+                            "ticker": "ASAI:NYSE",
+                            "ticker_symbols": [
+                                "ASAI",
+                                "NYSE"
+                            ],
+                            "country_code": "US",
+                            "exchange": {
+                                "primary": {
+                                    "symbol": null,
+                                    "name": null
+                                },
+                                "secondary": {
+                                    "symbol": null,
+                                    "name": null
+                                }
+                            }
+                        },
+                        "price": {
+                            "currency": "USD",
+                            "previous_close": 14.74,
+                            "last": {
+                                "time": 1686931735,
+                                "value": 13.91,
+                                "today_change": -0.8299999,
+                                "today_change_percent": -5.6309357
+                            },
+                            "after_hours": {
+                                "value": 14.03,
+                                "change": 0.119999886,
+                                "change_percent": 0.86268795
+                            }
+                        }
+                    },
+                    {
+                        "info": {
+                            "type": "stock",
+                            "title": "Rumble Inc",
+                            "ticker": "RUM:NASDAQ",
+                            "ticker_symbols": [
+                                "RUM",
+                                "NASDAQ"
+                            ],
+                            "country_code": "US",
+                            "exchange": {
+                                "primary": {
+                                    "symbol": null,
+                                    "name": null
+                                },
+                                "secondary": {
+                                    "symbol": null,
+                                    "name": null
+                                }
+                            }
+                        },
+                        "price": {
+                            "currency": "USD",
+                            "previous_close": 10.03,
+                            "last": {
+                                "time": 1686931915,
+                                "value": 9.4694,
+                                "today_change": -0.5605993,
+                                "today_change_percent": -5.589226
+                            },
+                            "after_hours": {
+                                "value": 10.04,
+                                "change": 0.53999996,
+                                "change_percent": 5.68421
+                            }
+                        }
+                    },
+                    {
+                        "info": {
+                            "type": "stock",
+                            "title": "Oscar Health Inc",
+                            "ticker": "OSCR:NYSE",
+                            "ticker_symbols": [
+                                "OSCR",
+                                "NYSE"
+                            ],
+                            "country_code": "US",
+                            "exchange": {
+                                "primary": {
+                                    "symbol": null,
+                                    "name": null
+                                },
+                                "secondary": {
+                                    "symbol": null,
+                                    "name": null
+                                }
+                            }
+                        },
+                        "price": {
+                            "currency": "USD",
+                            "previous_close": 9.57,
+                            "last": {
+                                "time": 1686931918,
+                                "value": 9.05,
+                                "today_change": -0.5100002,
+                                "today_change_percent": -5.33473
+                            },
+                            "after_hours": {
+                                "value": 9.68,
+                                "change": 0.6500006,
+                                "change_percent": 7.1982346
+                            }
+                        }
+                    },
+                    {
+                        "info": {
+                            "type": "stock",
+                            "title": "Icahn Enterprises LP Common Stock",
+                            "ticker": "IEP:NASDAQ",
+                            "ticker_symbols": [
+                                "IEP",
+                                "NASDAQ"
+                            ],
+                            "country_code": "US",
+                            "exchange": {
+                                "primary": {
+                                    "symbol": null,
+                                    "name": null
+                                },
+                                "secondary": {
+                                    "symbol": null,
+                                    "name": null
+                                }
+                            }
+                        },
+                        "price": {
+                            "currency": "USD",
+                            "previous_close": 28.62,
+                            "last": {
+                                "time": 1686931921,
+                                "value": 27.15,
+                                "today_change": -1.4700012,
+                                "today_change_percent": -5.1362724
+                            },
+                            "after_hours": {
+                                "value": 28.81,
+                                "change": 1.6749992,
+                                "change_percent": 6.172837
+                            }
+                        }
+                    },
+                    {
+                        "info": {
+                            "type": "stock",
+                            "title": "Hannon Armstrong Sustnbl Infrstr Cap Inc",
+                            "ticker": "HASI:NYSE",
+                            "ticker_symbols": [
+                                "HASI",
+                                "NYSE"
+                            ],
+                            "country_code": "US",
+                            "exchange": {
+                                "primary": {
+                                    "symbol": null,
+                                    "name": null
+                                },
+                                "secondary": {
+                                    "symbol": null,
+                                    "name": null
+                                }
+                            }
+                        },
+                        "price": {
+                            "currency": "USD",
+                            "previous_close": 28.41,
+                            "last": {
+                                "time": 1686931916,
+                                "value": 26.975,
+                                "today_change": -1.4349995,
+                                "today_change_percent": -5.0510364
+                            },
+                            "after_hours": {
+                                "value": 28.59,
+                                "change": 1.6399994,
+                                "change_percent": 6.0853405
+                            }
+                        }
+                    },
+                    {
+                        "info": {
+                            "type": "stock",
+                            "title": "Moelis & Co",
+                            "ticker": "MC:NYSE",
+                            "ticker_symbols": [
+                                "MC",
+                                "NYSE"
+                            ],
+                            "country_code": "US",
+                            "exchange": {
+                                "primary": {
+                                    "symbol": null,
+                                    "name": null
+                                },
+                                "secondary": {
+                                    "symbol": null,
+                                    "name": null
+                                }
+                            }
+                        },
+                        "price": {
+                            "currency": "USD",
+                            "previous_close": 46.53,
+                            "last": {
+                                "time": 1686931905,
+                                "value": 44.2,
+                                "today_change": -2.3400002,
+                                "today_change_percent": -5.027933
+                            },
+                            "after_hours": {
+                                "value": 45.93,
+                                "change": 1.5299988,
+                                "change_percent": 3.445943
+                            }
+                        }
+                    },
+                    {
+                        "info": {
+                            "type": "stock",
+                            "title": "Gitlab Inc",
+                            "ticker": "GTLB:NASDAQ",
+                            "ticker_symbols": [
+                                "GTLB",
+                                "NASDAQ"
+                            ],
+                            "country_code": "US",
+                            "exchange": {
+                                "primary": {
+                                    "symbol": null,
+                                    "name": null
+                                },
+                                "secondary": {
+                                    "symbol": null,
+                                    "name": null
+                                }
+                            }
+                        },
+                        "price": {
+                            "currency": "USD",
+                            "previous_close": 53.44,
+                            "last": {
+                                "time": 1686931902,
+                                "value": 50.82,
+                                "today_change": -2.619999,
+                                "today_change_percent": -4.902693
+                            },
+                            "after_hours": {
+                                "value": 53.68,
+                                "change": 2.915001,
+                                "change_percent": 5.742147
+                            }
+                        }
+                    },
+                    {
+                        "info": {
+                            "type": "stock",
+                            "title": "Prothena Corporation PLC",
+                            "ticker": "PRTA:NASDAQ",
+                            "ticker_symbols": [
+                                "PRTA",
+                                "NASDAQ"
+                            ],
+                            "country_code": "US",
+                            "exchange": {
+                                "primary": {
+                                    "symbol": null,
+                                    "name": null
+                                },
+                                "secondary": {
+                                    "symbol": null,
+                                    "name": null
+                                }
+                            }
+                        },
+                        "price": {
+                            "currency": "USD",
+                            "previous_close": 72.57,
+                            "last": {
+                                "time": 1686931902,
+                                "value": 69.02,
+                                "today_change": -3.550003,
+                                "today_change_percent": -4.891833
+                            },
+                            "after_hours": {
+                                "value": 73.86,
+                                "change": 4.5999985,
+                                "change_percent": 6.6416373
+                            }
+                        }
+                    },
+                    {
+                        "info": {
+                            "type": "stock",
+                            "title": "Privia Health Group Inc",
+                            "ticker": "PRVA:NASDAQ",
+                            "ticker_symbols": [
+                                "PRVA",
+                                "NASDAQ"
+                            ],
+                            "country_code": "US",
+                            "exchange": {
+                                "primary": {
+                                    "symbol": null,
+                                    "name": null
+                                },
+                                "secondary": {
+                                    "symbol": null,
+                                    "name": null
+                                }
+                            }
+                        },
+                        "price": {
+                            "currency": "USD",
+                            "previous_close": 27.23,
+                            "last": {
+                                "time": 1686931913,
+                                "value": 25.92,
+                                "today_change": -1.3099995,
+                                "today_change_percent": -4.8108683
+                            },
+                            "after_hours": {
+                                "value": 26.94,
+                                "change": 1.0500011,
+                                "change_percent": 4.0556245
+                            }
+                        }
+                    },
+                    {
+                        "info": {
+                            "type": "stock",
+                            "title": "GDS Holdings Ltd - ADR",
+                            "ticker": "GDS:NASDAQ",
+                            "ticker_symbols": [
+                                "GDS",
+                                "NASDAQ"
+                            ],
+                            "country_code": "US",
+                            "exchange": {
+                                "primary": {
+                                    "symbol": null,
+                                    "name": null
+                                },
+                                "secondary": {
+                                    "symbol": null,
+                                    "name": null
+                                }
+                            }
+                        },
+                        "price": {
+                            "currency": "USD",
+                            "previous_close": 13.6,
+                            "last": {
+                                "time": 1686931916,
+                                "value": 12.95,
+                                "today_change": -0.6500006,
+                                "today_change_percent": -4.7794156
+                            },
+                            "after_hours": {
+                                "value": 13.68,
+                                "change": 0.7400007,
+                                "change_percent": 5.7187076
+                            }
+                        }
+                    },
+                    {
+                        "info": {
+                            "type": "stock",
+                            "title": "Patterson-UTI Energy, Inc.",
+                            "ticker": "PTEN:NASDAQ",
+                            "ticker_symbols": [
+                                "PTEN",
+                                "NASDAQ"
+                            ],
+                            "country_code": "US",
+                            "exchange": {
+                                "primary": {
+                                    "symbol": null,
+                                    "name": null
+                                },
+                                "secondary": {
+                                    "symbol": null,
+                                    "name": null
+                                }
+                            }
+                        },
+                        "price": {
+                            "currency": "USD",
+                            "previous_close": 12.48,
+                            "last": {
+                                "time": 1686931919,
+                                "value": 11.885,
+                                "today_change": -0.5949993,
+                                "today_change_percent": -4.767623
+                            },
+                            "after_hours": {
+                                "value": 12.72,
+                                "change": 0.81500053,
+                                "change_percent": 6.8458676
+                            }
+                        }
+                    },
+                    {
+                        "info": {
+                            "type": "stock",
+                            "title": "Clearwater Analytics Holdings Inc",
+                            "ticker": "CWAN:NYSE",
+                            "ticker_symbols": [
+                                "CWAN",
+                                "NYSE"
+                            ],
+                            "country_code": "US",
+                            "exchange": {
+                                "primary": {
+                                    "symbol": null,
+                                    "name": null
+                                },
+                                "secondary": {
+                                    "symbol": null,
+                                    "name": null
+                                }
+                            }
+                        },
+                        "price": {
+                            "currency": "USD",
+                            "previous_close": 16.55,
+                            "last": {
+                                "time": 1686931911,
+                                "value": 15.79,
+                                "today_change": -0.7599993,
+                                "today_change_percent": -4.5921407
+                            },
+                            "after_hours": {
+                                "value": 15.99,
+                                "change": 0.19999981,
+                                "change_percent": 1.2666231
+                            }
+                        }
+                    },
+                    {
+                        "info": {
+                            "type": "stock",
+                            "title": "Quantumscape Corp",
+                            "ticker": "QS:NYSE",
+                            "ticker_symbols": [
+                                "QS",
+                                "NYSE"
+                            ],
+                            "country_code": "US",
+                            "exchange": {
+                                "primary": {
+                                    "symbol": null,
+                                    "name": null
+                                },
+                                "secondary": {
+                                    "symbol": null,
+                                    "name": null
+                                }
+                            }
+                        },
+                        "price": {
+                            "currency": "USD",
+                            "previous_close": 7.88,
+                            "last": {
+                                "time": 1686931875,
+                                "value": 7.52,
+                                "today_change": -0.36000013,
+                                "today_change_percent": -4.5685296
+                            },
+                            "after_hours": {
+                                "value": 8.02,
+                                "change": 0.5000005,
+                                "change_percent": 6.648943
+                            }
+                        }
+                    },
+                    {
+                        "info": {
+                            "type": "stock",
+                            "title": "Joby Aviation Inc",
+                            "ticker": "JOBY:NYSE",
+                            "ticker_symbols": [
+                                "JOBY",
+                                "NYSE"
+                            ],
+                            "country_code": "US",
+                            "exchange": {
+                                "primary": {
+                                    "symbol": null,
+                                    "name": null
+                                },
+                                "secondary": {
+                                    "symbol": null,
+                                    "name": null
+                                }
+                            }
+                        },
+                        "price": {
+                            "currency": "USD",
+                            "previous_close": 7.93,
+                            "last": {
+                                "time": 1686931885,
+                                "value": 7.57,
+                                "today_change": -0.35999966,
+                                "today_change_percent": -4.539718
+                            },
+                            "after_hours": {
+                                "value": 8,
+                                "change": 0.42999983,
+                                "change_percent": 5.680315
+                            }
+                        }
+                    },
+                    {
+                        "info": {
+                            "type": "stock",
+                            "title": "Sunrun Inc",
+                            "ticker": "RUN:NASDAQ",
+                            "ticker_symbols": [
+                                "RUN",
+                                "NASDAQ"
+                            ],
+                            "country_code": "US",
+                            "exchange": {
+                                "primary": {
+                                    "symbol": null,
+                                    "name": null
+                                },
+                                "secondary": {
+                                    "symbol": null,
+                                    "name": null
+                                }
+                            }
+                        },
+                        "price": {
+                            "currency": "USD",
+                            "previous_close": 20.08,
+                            "last": {
+                                "time": 1686931913,
+                                "value": 19.1705,
+                                "today_change": -0.9095001,
+                                "today_change_percent": -4.529383
+                            },
+                            "after_hours": {
+                                "value": 20.28,
+                                "change": 1.1750011,
+                                "change_percent": 6.1502285
+                            }
+                        }
+                    },
+                    {
+                        "info": {
+                            "type": "stock",
+                            "title": "Genworth Financial Inc",
+                            "ticker": "GNW:NYSE",
+                            "ticker_symbols": [
+                                "GNW",
+                                "NYSE"
+                            ],
+                            "country_code": "US",
+                            "exchange": {
+                                "primary": {
+                                    "symbol": null,
+                                    "name": null
+                                },
+                                "secondary": {
+                                    "symbol": null,
+                                    "name": null
+                                }
+                            }
+                        },
+                        "price": {
+                            "currency": "USD",
+                            "previous_close": 5.3,
+                            "last": {
+                                "time": 1686931898,
+                                "value": 5.065,
+                                "today_change": -0.23500013,
+                                "today_change_percent": -4.4339647
+                            },
+                            "after_hours": {
+                                "value": 5.38,
+                                "change": 0.31500006,
+                                "change_percent": 6.219152
+                            }
+                        }
+                    },
+                    {
+                        "info": {
+                            "type": "stock",
+                            "title": "Plug Power Inc",
+                            "ticker": "PLUG:NASDAQ",
+                            "ticker_symbols": [
+                                "PLUG",
+                                "NASDAQ"
+                            ],
+                            "country_code": "US",
+                            "exchange": {
+                                "primary": {
+                                    "symbol": null,
+                                    "name": null
+                                },
+                                "secondary": {
+                                    "symbol": null,
+                                    "name": null
+                                }
+                            }
+                        },
+                        "price": {
+                            "currency": "USD",
+                            "previous_close": 10.82,
+                            "last": {
+                                "time": 1686931921,
+                                "value": 10.3452,
+                                "today_change": -0.4748001,
+                                "today_change_percent": -4.388171
+                            },
+                            "after_hours": {
+                                "value": 10.89,
+                                "change": 0.5500002,
+                                "change_percent": 5.3191504
+                            }
+                        }
+                    },
+                    {
+                        "info": {
+                            "type": "stock",
+                            "title": "Toast Inc",
+                            "ticker": "TOST:NYSE",
+                            "ticker_symbols": [
+                                "TOST",
+                                "NYSE"
+                            ],
+                            "country_code": "US",
+                            "exchange": {
+                                "primary": {
+                                    "symbol": null,
+                                    "name": null
+                                },
+                                "secondary": {
+                                    "symbol": null,
+                                    "name": null
+                                }
+                            }
+                        },
+                        "price": {
+                            "currency": "USD",
+                            "previous_close": 23.035,
+                            "last": {
+                                "time": 1686931889,
+                                "value": 22.03,
+                                "today_change": -1.0049992,
+                                "today_change_percent": -4.362922
+                            },
+                            "after_hours": {
+                                "value": 23.08,
+                                "change": 1.0650005,
+                                "change_percent": 4.837613
+                            }
+                        }
+                    },
+                    {
+                        "info": {
+                            "type": "stock",
+                            "title": "DigitalOcean Holdings Inc",
+                            "ticker": "DOCN:NYSE",
+                            "ticker_symbols": [
+                                "DOCN",
+                                "NYSE"
+                            ],
+                            "country_code": "US",
+                            "exchange": {
+                                "primary": {
+                                    "symbol": null,
+                                    "name": null
+                                },
+                                "secondary": {
+                                    "symbol": null,
+                                    "name": null
+                                }
+                            }
+                        },
+                        "price": {
+                            "currency": "USD",
+                            "previous_close": 45.92,
+                            "last": {
+                                "time": 1686931883,
+                                "value": 43.93,
+                                "today_change": -1.9899979,
+                                "today_change_percent": -4.333619
+                            },
+                            "after_hours": {
+                                "value": 45.78,
+                                "change": 1.9699974,
+                                "change_percent": 4.496684
+                            }
+                        }
+                    },
+                    {
+                        "info": {
+                            "type": "stock",
+                            "title": "Bilibili Inc - ADR",
+                            "ticker": "BILI:NASDAQ",
+                            "ticker_symbols": [
+                                "BILI",
+                                "NASDAQ"
+                            ],
+                            "country_code": "US",
+                            "exchange": {
+                                "primary": {
+                                    "symbol": null,
+                                    "name": null
+                                },
+                                "secondary": {
+                                    "symbol": null,
+                                    "name": null
+                                }
+                            }
+                        },
+                        "price": {
+                            "currency": "USD",
+                            "previous_close": 18.3,
+                            "last": {
+                                "time": 1686931920,
+                                "value": 17.51,
+                                "today_change": -0.789999,
+                                "today_change_percent": -4.3169346
+                            },
+                            "after_hours": {
+                                "value": 18.55,
+                                "change": 1.0450001,
+                                "change_percent": 5.9697237
+                            }
+                        }
+                    },
+                    {
+                        "info": {
+                            "type": "stock",
+                            "title": "Array Technologies Inc",
+                            "ticker": "ARRY:NASDAQ",
+                            "ticker_symbols": [
+                                "ARRY",
+                                "NASDAQ"
+                            ],
+                            "country_code": "US",
+                            "exchange": {
+                                "primary": {
+                                    "symbol": null,
+                                    "name": null
+                                },
+                                "secondary": {
+                                    "symbol": null,
+                                    "name": null
+                                }
+                            }
+                        },
+                        "price": {
+                            "currency": "USD",
+                            "previous_close": 22.09,
+                            "last": {
+                                "time": 1686931917,
+                                "value": 21.17,
+                                "today_change": -0.9200001,
+                                "today_change_percent": -4.1647806
+                            },
+                            "after_hours": {
+                                "value": 22.4,
+                                "change": 1.2399998,
+                                "change_percent": 5.860112
+                            }
+                        }
+                    },
+                    {
+                        "info": {
+                            "type": "stock",
+                            "title": "Millicom International Cellular SA",
+                            "ticker": "TIGO:NASDAQ",
+                            "ticker_symbols": [
+                                "TIGO",
+                                "NASDAQ"
+                            ],
+                            "country_code": "US",
+                            "exchange": {
+                                "primary": {
+                                    "symbol": null,
+                                    "name": null
+                                },
+                                "secondary": {
+                                    "symbol": null,
+                                    "name": null
+                                }
+                            }
+                        },
+                        "price": {
+                            "currency": "USD",
+                            "previous_close": 17.48,
+                            "last": {
+                                "time": 1686931834,
+                                "value": 16.755,
+                                "today_change": -0.7250004,
+                                "today_change_percent": -4.1475997
+                            },
+                            "after_hours": {
+                                "value": 16.4383,
+                                "change": -0.31669998,
+                                "change_percent": -1.8901819
+                            }
+                        }
+                    },
+                    {
+                        "info": {
+                            "type": "stock",
+                            "title": "Shoals Technologies Group Inc",
+                            "ticker": "SHLS:NASDAQ",
+                            "ticker_symbols": [
+                                "SHLS",
+                                "NASDAQ"
+                            ],
+                            "country_code": "US",
+                            "exchange": {
+                                "primary": {
+                                    "symbol": null,
+                                    "name": null
+                                },
+                                "secondary": {
+                                    "symbol": null,
+                                    "name": null
+                                }
+                            }
+                        },
+                        "price": {
+                            "currency": "USD",
+                            "previous_close": 25.69,
+                            "last": {
+                                "time": 1686931914,
+                                "value": 24.63,
+                                "today_change": -1.0600014,
+                                "today_change_percent": -4.1261244
+                            },
+                            "after_hours": {
+                                "value": 26.09,
+                                "change": 1.4500008,
+                                "change_percent": 5.8847437
+                            }
+                        }
+                    },
+                    {
+                        "info": {
+                            "type": "stock",
+                            "title": "Alexandria Real Estate Equities Inc",
+                            "ticker": "ARE:NYSE",
+                            "ticker_symbols": [
+                                "ARE",
+                                "NYSE"
+                            ],
+                            "country_code": "US",
+                            "exchange": {
+                                "primary": {
+                                    "symbol": null,
+                                    "name": null
+                                },
+                                "secondary": {
+                                    "symbol": null,
+                                    "name": null
+                                }
+                            }
+                        },
+                        "price": {
+                            "currency": "USD",
+                            "previous_close": 121.15,
+                            "last": {
+                                "time": 1686931835,
+                                "value": 116.17,
+                                "today_change": -4.9800034,
+                                "today_change_percent": -4.1106095
+                            },
+                            "after_hours": {
+                                "value": 112.97,
+                                "change": -3.199997,
+                                "change_percent": -2.7545812
+                            }
+                        }
+                    },
+                    {
+                        "info": {
+                            "type": "stock",
+                            "title": "Peloton Interactive Inc",
+                            "ticker": "PTON:NASDAQ",
+                            "ticker_symbols": [
+                                "PTON",
+                                "NASDAQ"
+                            ],
+                            "country_code": "US",
+                            "exchange": {
+                                "primary": {
+                                    "symbol": null,
+                                    "name": null
+                                },
+                                "secondary": {
+                                    "symbol": null,
+                                    "name": null
+                                }
+                            }
+                        },
+                        "price": {
+                            "currency": "USD",
+                            "previous_close": 8.96,
+                            "last": {
+                                "time": 1686931920,
+                                "value": 8.595,
+                                "today_change": -0.36499977,
+                                "today_change_percent": -4.073658
+                            },
+                            "after_hours": {
+                                "value": 8.99,
+                                "change": 0.3949995,
+                                "change_percent": 4.5956893
+                            }
+                        }
+                    },
+                    {
+                        "info": {
+                            "type": "stock",
+                            "title": "Immunovant Inc",
+                            "ticker": "IMVT:NASDAQ",
+                            "ticker_symbols": [
+                                "IMVT",
+                                "NASDAQ"
+                            ],
+                            "country_code": "US",
+                            "exchange": {
+                                "primary": {
+                                    "symbol": null,
+                                    "name": null
+                                },
+                                "secondary": {
+                                    "symbol": null,
+                                    "name": null
+                                }
+                            }
+                        },
+                        "price": {
+                            "currency": "USD",
+                            "previous_close": 21.13,
+                            "last": {
+                                "time": 1686931925,
+                                "value": 20.275,
+                                "today_change": -0.85499954,
+                                "today_change_percent": -4.0463777
+                            },
+                            "after_hours": {
+                                "value": 21.35,
+                                "change": 1.0900002,
+                                "change_percent": 5.3800597
+                            }
+                        }
+                    },
+                    {
+                        "info": {
+                            "type": "stock",
+                            "title": "Cerevel Therapeutics Holdings Inc",
+                            "ticker": "CERE:NASDAQ",
+                            "ticker_symbols": [
+                                "CERE",
+                                "NASDAQ"
+                            ],
+                            "country_code": "US",
+                            "exchange": {
+                                "primary": {
+                                    "symbol": null,
+                                    "name": null
+                                },
+                                "secondary": {
+                                    "symbol": null,
+                                    "name": null
+                                }
+                            }
+                        },
+                        "price": {
+                            "currency": "USD",
+                            "previous_close": 35.38,
+                            "last": {
+                                "time": 1686931911,
+                                "value": 33.98,
+                                "today_change": -1.4000015,
+                                "today_change_percent": -3.957042
+                            },
+                            "after_hours": {
+                                "value": null,
+                                "change": null,
+                                "change_percent": null
+                            }
+                        }
+                    },
+                    {
+                        "info": {
+                            "type": "stock",
+                            "title": "Cloudflare Inc",
+                            "ticker": "NET:NYSE",
+                            "ticker_symbols": [
+                                "NET",
+                                "NYSE"
+                            ],
+                            "country_code": "US",
+                            "exchange": {
+                                "primary": {
+                                    "symbol": null,
+                                    "name": null
+                                },
+                                "secondary": {
+                                    "symbol": null,
+                                    "name": null
+                                }
+                            }
+                        },
+                        "price": {
+                            "currency": "USD",
+                            "previous_close": 70.25,
+                            "last": {
+                                "time": 1686931883,
+                                "value": 67.49,
+                                "today_change": -2.7799988,
+                                "today_change_percent": -3.9561675
+                            },
+                            "after_hours": {
+                                "value": 71.47,
+                                "change": 4.0200043,
+                                "change_percent": 5.9599767
+                            }
+                        }
+                    },
+                    {
+                        "info": {
+                            "type": "stock",
+                            "title": "Luminar Technologies Inc",
+                            "ticker": "LAZR:NASDAQ",
+                            "ticker_symbols": [
+                                "LAZR",
+                                "NASDAQ"
+                            ],
+                            "country_code": "US",
+                            "exchange": {
+                                "primary": {
+                                    "symbol": null,
+                                    "name": null
+                                },
+                                "secondary": {
+                                    "symbol": null,
+                                    "name": null
+                                }
+                            }
+                        },
+                        "price": {
+                            "currency": "USD",
+                            "previous_close": 7.07,
+                            "last": {
+                                "time": 1686931913,
+                                "value": 6.8,
+                                "today_change": -0.26999998,
+                                "today_change_percent": -3.818953
+                            },
+                            "after_hours": {
+                                "value": 7.12,
+                                "change": 0.33999968,
+                                "change_percent": 5.0147443
+                            }
+                        }
+                    },
+                    {
+                        "info": {
+                            "type": "stock",
+                            "title": "C3.ai Inc",
+                            "ticker": "AI:NYSE",
+                            "ticker_symbols": [
+                                "AI",
+                                "NYSE"
+                            ],
+                            "country_code": "US",
+                            "exchange": {
+                                "primary": {
+                                    "symbol": null,
+                                    "name": null
+                                },
+                                "secondary": {
+                                    "symbol": null,
+                                    "name": null
+                                }
+                            }
+                        },
+                        "price": {
+                            "currency": "USD",
+                            "previous_close": 46.37,
+                            "last": {
+                                "time": 1686931919,
+                                "value": 44.61,
+                                "today_change": -1.7599983,
+                                "today_change_percent": -3.795554
+                            },
+                            "after_hours": {
+                                "value": 48.43,
+                                "change": 4.029999,
+                                "change_percent": 9.076573
+                            }
+                        }
+                    },
+                    {
+                        "info": {
+                            "type": "stock",
+                            "title": "PENN Entertainment Inc",
+                            "ticker": "PENN:NASDAQ",
+                            "ticker_symbols": [
+                                "PENN",
+                                "NASDAQ"
+                            ],
+                            "country_code": "US",
+                            "exchange": {
+                                "primary": {
+                                    "symbol": null,
+                                    "name": null
+                                },
+                                "secondary": {
+                                    "symbol": null,
+                                    "name": null
+                                }
+                            }
+                        },
+                        "price": {
+                            "currency": "USD",
+                            "previous_close": 25.84,
+                            "last": {
+                                "time": 1686931916,
+                                "value": 24.88,
+                                "today_change": -0.960001,
+                                "today_change_percent": -3.7151742
+                            },
+                            "after_hours": {
+                                "value": 25.87,
+                                "change": 1,
+                                "change_percent": 4.0209084
+                            }
+                        }
+                    },
+                    {
+                        "info": {
+                            "type": "stock",
+                            "title": "Goodyear Tire & Rubber Co",
+                            "ticker": "GT:NASDAQ",
+                            "ticker_symbols": [
+                                "GT",
+                                "NASDAQ"
+                            ],
+                            "country_code": "US",
+                            "exchange": {
+                                "primary": {
+                                    "symbol": null,
+                                    "name": null
+                                },
+                                "secondary": {
+                                    "symbol": null,
+                                    "name": null
+                                }
+                            }
+                        },
+                        "price": {
+                            "currency": "USD",
+                            "previous_close": 14.29,
+                            "last": {
+                                "time": 1686931912,
+                                "value": 13.76,
+                                "today_change": -0.52999973,
+                                "today_change_percent": -3.7088854
+                            },
+                            "after_hours": {
+                                "value": 14.32,
+                                "change": 0.55999947,
+                                "change_percent": 4.069763
+                            }
+                        }
+                    },
+                    {
+                        "info": {
+                            "type": "stock",
+                            "title": "Steel Dynamics Inc",
+                            "ticker": "STLD:NASDAQ",
+                            "ticker_symbols": [
+                                "STLD",
+                                "NASDAQ"
+                            ],
+                            "country_code": "US",
+                            "exchange": {
+                                "primary": {
+                                    "symbol": null,
+                                    "name": null
+                                },
+                                "secondary": {
+                                    "symbol": null,
+                                    "name": null
+                                }
+                            }
+                        },
+                        "price": {
+                            "currency": "USD",
+                            "previous_close": 105.96,
+                            "last": {
+                                "time": 1686931921,
+                                "value": 102.05,
+                                "today_change": -3.909996,
+                                "today_change_percent": -3.690068
+                            },
+                            "after_hours": {
+                                "value": 103.39,
+                                "change": 1.2399979,
+                                "change_percent": 1.213899
+                            }
+                        }
+                    },
+                    {
+                        "info": {
+                            "type": "stock",
+                            "title": "Fluence Energy Inc",
+                            "ticker": "FLNC:NASDAQ",
+                            "ticker_symbols": [
+                                "FLNC",
+                                "NASDAQ"
+                            ],
+                            "country_code": "US",
+                            "exchange": {
+                                "primary": {
+                                    "symbol": null,
+                                    "name": null
+                                },
+                                "secondary": {
+                                    "symbol": null,
+                                    "name": null
+                                }
+                            }
+                        },
+                        "price": {
+                            "currency": "USD",
+                            "previous_close": 27.21,
+                            "last": {
+                                "time": 1686931922,
+                                "value": 26.2087,
+                                "today_change": -1.0012989,
+                                "today_change_percent": -3.6798933
+                            },
+                            "after_hours": {
+                                "value": 27.21,
+                                "change": 1.0199986,
+                                "change_percent": 3.8946106
+                            }
+                        }
+                    },
+                    {
+                        "info": {
+                            "type": "stock",
+                            "title": "Humana Inc",
+                            "ticker": "HUM:NYSE",
+                            "ticker_symbols": [
+                                "HUM",
+                                "NYSE"
+                            ],
+                            "country_code": "US",
+                            "exchange": {
+                                "primary": {
+                                    "symbol": null,
+                                    "name": null
+                                },
+                                "secondary": {
+                                    "symbol": null,
+                                    "name": null
+                                }
+                            }
+                        },
+                        "price": {
+                            "currency": "USD",
+                            "previous_close": 463.85,
+                            "last": {
+                                "time": 1686931895,
+                                "value": 446.86,
+                                "today_change": -16.99002,
+                                "today_change_percent": -3.6628265
+                            },
+                            "after_hours": {
+                                "value": 451.08,
+                                "change": 4.0799866,
+                                "change_percent": 0.91274863
+                            }
+                        }
+                    },
+                    {
+                        "info": {
+                            "type": "stock",
+                            "title": "Crocs, Inc.",
+                            "ticker": "CROX:NASDAQ",
+                            "ticker_symbols": [
+                                "CROX",
+                                "NASDAQ"
+                            ],
+                            "country_code": "US",
+                            "exchange": {
+                                "primary": {
+                                    "symbol": null,
+                                    "name": null
+                                },
+                                "secondary": {
+                                    "symbol": null,
+                                    "name": null
+                                }
+                            }
+                        },
+                        "price": {
+                            "currency": "USD",
+                            "previous_close": 115.09,
+                            "last": {
+                                "time": 1686931908,
+                                "value": 111.005,
+                                "today_change": -4.084999,
+                                "today_change_percent": -3.5493956
+                            },
+                            "after_hours": {
+                                "value": 116.24,
+                                "change": 5.1399994,
+                                "change_percent": 4.6264625
+                            }
+                        }
+                    },
+                    {
+                        "info": {
+                            "type": "stock",
+                            "title": "Evotec SE",
+                            "ticker": "EVO:NASDAQ",
+                            "ticker_symbols": [
+                                "EVO",
+                                "NASDAQ"
+                            ],
+                            "country_code": "US",
+                            "exchange": {
+                                "primary": {
+                                    "symbol": null,
+                                    "name": null
+                                },
+                                "secondary": {
+                                    "symbol": null,
+                                    "name": null
+                                }
+                            }
+                        },
+                        "price": {
+                            "currency": "USD",
+                            "previous_close": 11.8501,
+                            "last": {
+                                "time": 1686931216,
+                                "value": 11.43,
+                                "today_change": -0.42009926,
+                                "today_change_percent": -3.5451117
+                            },
+                            "after_hours": {
+                                "value": 11.75,
+                                "change": 0.3199997,
+                                "change_percent": 2.7996473
+                            }
+                        }
+                    },
+                    {
+                        "info": {
+                            "type": "stock",
+                            "title": "Urban Outfitters, Inc.",
+                            "ticker": "URBN:NASDAQ",
+                            "ticker_symbols": [
+                                "URBN",
+                                "NASDAQ"
+                            ],
+                            "country_code": "US",
+                            "exchange": {
+                                "primary": {
+                                    "symbol": null,
+                                    "name": null
+                                },
+                                "secondary": {
+                                    "symbol": null,
+                                    "name": null
+                                }
+                            }
+                        },
+                        "price": {
+                            "currency": "USD",
+                            "previous_close": 33.58,
+                            "last": {
+                                "time": 1686931921,
+                                "value": 32.4,
+                                "today_change": -1.1800003,
+                                "today_change_percent": -3.513997
+                            },
+                            "after_hours": {
+                                "value": 34,
+                                "change": 1.6699982,
+                                "change_percent": 5.165475
+                            }
+                        }
+                    },
+                    {
+                        "info": {
+                            "type": "stock",
+                            "title": "Nuvei Corp",
+                            "ticker": "NVEI:NASDAQ",
+                            "ticker_symbols": [
+                                "NVEI",
+                                "NASDAQ"
+                            ],
+                            "country_code": "US",
+                            "exchange": {
+                                "primary": {
+                                    "symbol": null,
+                                    "name": null
+                                },
+                                "secondary": {
+                                    "symbol": null,
+                                    "name": null
+                                }
+                            }
+                        },
+                        "price": {
+                            "currency": "USD",
+                            "previous_close": 30.2,
+                            "last": {
+                                "time": 1686931916,
+                                "value": 29.145,
+                                "today_change": -1.0550003,
+                                "today_change_percent": -3.4933784
+                            },
+                            "after_hours": {
+                                "value": 28.7,
+                                "change": -0.44999886,
+                                "change_percent": -1.5437354
+                            }
+                        }
+                    },
+                    {
+                        "info": {
+                            "type": "stock",
+                            "title": "Atour Lifestyle Holdings Ltd - ADR",
+                            "ticker": "ATAT:NASDAQ",
+                            "ticker_symbols": [
+                                "ATAT",
+                                "NASDAQ"
+                            ],
+                            "country_code": "US",
+                            "exchange": {
+                                "primary": {
+                                    "symbol": null,
+                                    "name": null
+                                },
+                                "secondary": {
+                                    "symbol": null,
+                                    "name": null
+                                }
+                            }
+                        },
+                        "price": {
+                            "currency": "USD",
+                            "previous_close": 18.08,
+                            "last": {
+                                "time": 1686931895,
+                                "value": 17.46,
+                                "today_change": -0.62000084,
+                                "today_change_percent": -3.4292083
+                            },
+                            "after_hours": {
+                                "value": 18.18,
+                                "change": 0.59000015,
+                                "change_percent": 3.3541794
+                            }
+                        }
+                    },
+                    {
+                        "info": {
+                            "type": "stock",
+                            "title": "Manchester United PLC",
+                            "ticker": "MANU:NYSE",
+                            "ticker_symbols": [
+                                "MANU",
+                                "NYSE"
+                            ],
+                            "country_code": "US",
+                            "exchange": {
+                                "primary": {
+                                    "symbol": null,
+                                    "name": null
+                                },
+                                "secondary": {
+                                    "symbol": null,
+                                    "name": null
+                                }
+                            }
+                        },
+                        "price": {
+                            "currency": "USD",
+                            "previous_close": 24.81,
+                            "last": {
+                                "time": 1686931919,
+                                "value": 23.96,
+                                "today_change": -0.8500004,
+                                "today_change_percent": -3.4260395
+                            },
+                            "after_hours": {
+                                "value": 24.9,
+                                "change": 0.9899998,
+                                "change_percent": 4.140526
+                            }
+                        }
+                    }
+                ]
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "ticker",
+            "url": "https://g-finance.p.rapidapi.com/ticker/",
+            "description": "ticker",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "t",
+                    "type": "STRING",
+                    "description": "Ticker symbol. For example:\n\nABNB:NASDAQ\n.DJI:INDEXDJX\nEUR-USD\nBTC-USD",
+                    "default": "ABNB:NASDAQ"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "gl",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "US"
+                },
+                {
+                    "name": "hl",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "en"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://g-finance.p.rapidapi.com/ticker/\"\nquerystring = {\"t\": \"ABNB:NASDAQ\", \"gl\": \"US\", \"hl\": \"en\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"g-finance.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://g-finance.p.rapidapi.com/ticker/\"\nquerystring = {\"t\": \"ABNB:NASDAQ\", \"gl\": \"US\", \"hl\": \"en\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"g-finance.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "info": {
+                    "type": "stock",
+                    "title": "Airbnb Inc",
+                    "ticker": "ABNB:NASDAQ",
+                    "ticker_symbols": [
+                        "ABNB",
+                        "NASDAQ"
+                    ],
+                    "country_code": "US"
+                },
+                "about": {
+                    "symbol": "ABNB",
+                    "name": "Airbnb",
+                    "description": "Airbnb, Inc. is an American San Francisco-based company operating an online marketplace for short- and long-term homestays and experiences. The company acts as a broker and charges a commission from each booking. The company was founded in 2008 by Brian Chesky, Nathan Blecharczyk, and Joe Gebbia. Airbnb is a shortened version of its original name, AirBedandBreakfast.com. The company is credited with revolutionizing the tourism industry, while also having been the subject of intense criticism by residents of tourism hotspot cities like Barcelona and Venice for enabling an unaffordable increase in home rents, and for a lack of regulation.",
+                    "about_url": "https://en.wikipedia.org/wiki/Airbnb",
+                    "headquarters": {
+                        "city": "San Francisco",
+                        "state": "California",
+                        "country": "United States",
+                        "country_code": "US",
+                        "address": "888 Brannan St."
+                    },
+                    "founded": {
+                        "year": 2008,
+                        "month": 8,
+                        "day": null
+                    },
+                    "ceo": "Brian Chesky",
+                    "employees": 6811,
+                    "website": "http://www.airbnb.com/"
+                },
+                "price": {
+                    "currency": "USD",
+                    "previous_close": 127.85,
+                    "last": {
+                        "value": 127.62,
+                        "today_change": -0.22999573,
+                        "today_change_percent": -0.17989498,
+                        "time": 1686931919
+                    },
+                    "after_market_closing": {
+                        "value": 128.43,
+                        "change": 0.8099899,
+                        "change_percent": 0.63468885
+                    }
+                },
+                "charts": {
+                    "1day": [
+                        {
+                            "date": "2023-06-16 09:30:00",
+                            "price": 128.68
+                        },
+                        {
+                            "date": "2023-06-16 09:31:00",
+                            "price": 128.43
+                        },
+                        {
+                            "date": "2023-06-16 09:32:00",
+                            "price": 128.32
+                        },
+                        {
+                            "date": "2023-06-16 09:33:00",
+                            "price": 128.54
+                        },
+                        {
+                            "date": "2023-06-16 09:34:00",
+                            "price": 128.86
+                        },
+                        {
+                            "date": "2023-06-16 09:35:00",
+                            "price": 128.45
+                        },
+                        {
+                            "date": "2023-06-16 09:36:00",
+                            "price": 128.075
+                        },
+                        {
+                            "date": "2023-06-16 09:37:00",
+                            "price": 127.55
+                        },
+                        {
+                            "date": "2023-06-16 09:38:00",
+                            "price": 127.8499
+                        },
+                        {
+                            "date": "2023-06-16 09:39:00",
+                            "price": 127.73
+                        },
+                        {
+                            "date": "2023-06-16 09:40:00",
+                            "price": 128.052
+                        },
+                        {
+                            "date": "2023-06-16 09:41:00",
+                            "price": 127.91
+                        },
+                        {
+                            "date": "2023-06-16 09:42:00",
+                            "price": 128.01
+                        },
+                        {
+                            "date": "2023-06-16 09:43:00",
+                            "price": 127.88
+                        },
+                        {
+                            "date": "2023-06-16 09:44:00",
+                            "price": 127.515
+                        },
+                        {
+                            "date": "2023-06-16 09:45:00",
+                            "price": 127.41
+                        },
+                        {
+                            "date": "2023-06-16 09:46:00",
+                            "price": 126.92
+                        },
+                        {
+                            "date": "2023-06-16 09:47:00",
+                            "price": 127.3
+                        },
+                        {
+                            "date": "2023-06-16 09:48:00",
+                            "price": 127.22
+                        },
+                        {
+                            "date": "2023-06-16 09:49:00",
+                            "price": 127.4
+                        },
+                        {
+                            "date": "2023-06-16 09:50:00",
+                            "price": 127.4
+                        },
+                        {
+                            "date": "2023-06-16 09:51:00",
+                            "price": 127.27
+                        },
+                        {
+                            "date": "2023-06-16 09:52:00",
+                            "price": 127.3682
+                        },
+                        {
+                            "date": "2023-06-16 09:53:00",
+                            "price": 127.42
+                        },
+                        {
+                            "date": "2023-06-16 09:54:00",
+                            "price": 127.16
+                        },
+                        {
+                            "date": "2023-06-16 09:55:00",
+                            "price": 127.15
+                        },
+                        {
+                            "date": "2023-06-16 09:56:00",
+                            "price": 126.96
+                        },
+                        {
+                            "date": "2023-06-16 09:57:00",
+                            "price": 127.15
+                        },
+                        {
+                            "date": "2023-06-16 09:58:00",
+                            "price": 126.96
+                        },
+                        {
+                            "date": "2023-06-16 09:59:00",
+                            "price": 127.04
+                        },
+                        {
+                            "date": "2023-06-16 10:00:00",
+                            "price": 127.28
+                        },
+                        {
+                            "date": "2023-06-16 10:01:00",
+                            "price": 127.5
+                        },
+                        {
+                            "date": "2023-06-16 10:02:00",
+                            "price": 127.5
+                        },
+                        {
+                            "date": "2023-06-16 10:03:00",
+                            "price": 127.28
+                        },
+                        {
+                            "date": "2023-06-16 10:04:00",
+                            "price": 127.35
+                        },
+                        {
+                            "date": "2023-06-16 10:05:00",
+                            "price": 127.51
+                        },
+                        {
+                            "date": "2023-06-16 10:06:00",
+                            "price": 127.355
+                        },
+                        {
+                            "date": "2023-06-16 10:07:00",
+                            "price": 127.215
+                        },
+                        {
+                            "date": "2023-06-16 10:08:00",
+                            "price": 127.13
+                        },
+                        {
+                            "date": "2023-06-16 10:09:00",
+                            "price": 127.545
+                        },
+                        {
+                            "date": "2023-06-16 10:10:00",
+                            "price": 127.345
+                        },
+                        {
+                            "date": "2023-06-16 10:11:00",
+                            "price": 127.58
+                        },
+                        {
+                            "date": "2023-06-16 10:12:00",
+                            "price": 127.77
+                        },
+                        {
+                            "date": "2023-06-16 10:13:00",
+                            "price": 127.83
+                        },
+                        {
+                            "date": "2023-06-16 10:14:00",
+                            "price": 127.595
+                        },
+                        {
+                            "date": "2023-06-16 10:15:00",
+                            "price": 127.62
+                        },
+                        {
+                            "date": "2023-06-16 10:16:00",
+                            "price": 127.525
+                        },
+                        {
+                            "date": "2023-06-16 10:17:00",
+                            "price": 127.73
+                        },
+                        {
+                            "date": "2023-06-16 10:18:00",
+                            "price": 127.71
+                        },
+                        {
+                            "date": "2023-06-16 10:19:00",
+                            "price": 127.65
+                        },
+                        {
+                            "date": "2023-06-16 10:20:00",
+                            "price": 127.62
+                        },
+                        {
+                            "date": "2023-06-16 10:21:00",
+                            "price": 127.55
+                        },
+                        {
+                            "date": "2023-06-16 10:22:00",
+                            "price": 127.8
+                        },
+                        {
+                            "date": "2023-06-16 10:23:00",
+                            "price": 127.99
+                        },
+                        {
+                            "date": "2023-06-16 10:24:00",
+                            "price": 127.83
+                        },
+                        {
+                            "date": "2023-06-16 10:25:00",
+                            "price": 127.87
+                        },
+                        {
+                            "date": "2023-06-16 10:26:00",
+                            "price": 127.73
+                        },
+                        {
+                            "date": "2023-06-16 10:27:00",
+                            "price": 127.87
+                        },
+                        {
+                            "date": "2023-06-16 10:28:00",
+                            "price": 127.815
+                        },
+                        {
+                            "date": "2023-06-16 10:29:00",
+                            "price": 127.94
+                        },
+                        {
+                            "date": "2023-06-16 10:30:00",
+                            "price": 128.135
+                        },
+                        {
+                            "date": "2023-06-16 10:31:00",
+                            "price": 128.115
+                        },
+                        {
+                            "date": "2023-06-16 10:32:00",
+                            "price": 128.21
+                        },
+                        {
+                            "date": "2023-06-16 10:33:00",
+                            "price": 128.27
+                        },
+                        {
+                            "date": "2023-06-16 10:34:00",
+                            "price": 128.35
+                        },
+                        {
+                            "date": "2023-06-16 10:35:00",
+                            "price": 128.565
+                        },
+                        {
+                            "date": "2023-06-16 10:36:00",
+                            "price": 128.52
+                        },
+                        {
+                            "date": "2023-06-16 10:37:00",
+                            "price": 128.39
+                        },
+                        {
+                            "date": "2023-06-16 10:38:00",
+                            "price": 128.55
+                        },
+                        {
+                            "date": "2023-06-16 10:39:00",
+                            "price": 128.6
+                        },
+                        {
+                            "date": "2023-06-16 10:40:00",
+                            "price": 128.66
+                        },
+                        {
+                            "date": "2023-06-16 10:41:00",
+                            "price": 128.47
+                        },
+                        {
+                            "date": "2023-06-16 10:42:00",
+                            "price": 128.4267
+                        },
+                        {
+                            "date": "2023-06-16 10:43:00",
+                            "price": 128.39
+                        },
+                        {
+                            "date": "2023-06-16 10:44:00",
+                            "price": 128.465
+                        },
+                        {
+                            "date": "2023-06-16 10:45:00",
+                            "price": 128.19
+                        },
+                        {
+                            "date": "2023-06-16 10:46:00",
+                            "price": 128.0793
+                        },
+                        {
+                            "date": "2023-06-16 10:47:00",
+                            "price": 127.93
+                        },
+                        {
+                            "date": "2023-06-16 10:48:00",
+                            "price": 127.83
+                        },
+                        {
+                            "date": "2023-06-16 10:49:00",
+                            "price": 127.95
+                        },
+                        {
+                            "date": "2023-06-16 10:50:00",
+                            "price": 127.99
+                        },
+                        {
+                            "date": "2023-06-16 10:51:00",
+                            "price": 127.935
+                        },
+                        {
+                            "date": "2023-06-16 10:52:00",
+                            "price": 127.895
+                        },
+                        {
+                            "date": "2023-06-16 10:53:00",
+                            "price": 127.785
+                        },
+                        {
+                            "date": "2023-06-16 10:54:00",
+                            "price": 127.78
+                        },
+                        {
+                            "date": "2023-06-16 10:55:00",
+                            "price": 127.91
+                        },
+                        {
+                            "date": "2023-06-16 10:56:00",
+                            "price": 128.045
+                        },
+                        {
+                            "date": "2023-06-16 10:57:00",
+                            "price": 128.08
+                        },
+                        {
+                            "date": "2023-06-16 10:58:00",
+                            "price": 128.17
+                        },
+                        {
+                            "date": "2023-06-16 10:59:00",
+                            "price": 128.08
+                        },
+                        {
+                            "date": "2023-06-16 11:00:00",
+                            "price": 128.04
+                        },
+                        {
+                            "date": "2023-06-16 11:01:00",
+                            "price": 127.91
+                        },
+                        {
+                            "date": "2023-06-16 11:02:00",
+                            "price": 127.965
+                        },
+                        {
+                            "date": "2023-06-16 11:03:00",
+                            "price": 128.01
+                        },
+                        {
+                            "date": "2023-06-16 11:04:00",
+                            "price": 127.95
+                        },
+                        {
+                            "date": "2023-06-16 11:05:00",
+                            "price": 127.91
+                        },
+                        {
+                            "date": "2023-06-16 11:06:00",
+                            "price": 127.99
+                        },
+                        {
+                            "date": "2023-06-16 11:07:00",
+                            "price": 127.93
+                        },
+                        {
+                            "date": "2023-06-16 11:08:00",
+                            "price": 128.0999
+                        },
+                        {
+                            "date": "2023-06-16 11:09:00",
+                            "price": 128.16
+                        },
+                        {
+                            "date": "2023-06-16 11:10:00",
+                            "price": 128.14
+                        },
+                        {
+                            "date": "2023-06-16 11:11:00",
+                            "price": 128.07
+                        },
+                        {
+                            "date": "2023-06-16 11:12:00",
+                            "price": 128.19
+                        },
+                        {
+                            "date": "2023-06-16 11:13:00",
+                            "price": 128.18
+                        },
+                        {
+                            "date": "2023-06-16 11:14:00",
+                            "price": 128.04
+                        },
+                        {
+                            "date": "2023-06-16 11:15:00",
+                            "price": 128.005
+                        },
+                        {
+                            "date": "2023-06-16 11:16:00",
+                            "price": 127.97
+                        },
+                        {
+                            "date": "2023-06-16 11:17:00",
+                            "price": 127.95
+                        },
+                        {
+                            "date": "2023-06-16 11:18:00",
+                            "price": 127.7421
+                        },
+                        {
+                            "date": "2023-06-16 11:19:00",
+                            "price": 127.74
+                        },
+                        {
+                            "date": "2023-06-16 11:20:00",
+                            "price": 127.545
+                        },
+                        {
+                            "date": "2023-06-16 11:21:00",
+                            "price": 127.54
+                        },
+                        {
+                            "date": "2023-06-16 11:22:00",
+                            "price": 127.54
+                        },
+                        {
+                            "date": "2023-06-16 11:23:00",
+                            "price": 127.4
+                        },
+                        {
+                            "date": "2023-06-16 11:24:00",
+                            "price": 127.24
+                        },
+                        {
+                            "date": "2023-06-16 11:25:00",
+                            "price": 127.27
+                        },
+                        {
+                            "date": "2023-06-16 11:26:00",
+                            "price": 127.215
+                        },
+                        {
+                            "date": "2023-06-16 11:27:00",
+                            "price": 127.07
+                        },
+                        {
+                            "date": "2023-06-16 11:28:00",
+                            "price": 126.97
+                        },
+                        {
+                            "date": "2023-06-16 11:29:00",
+                            "price": 127.195
+                        },
+                        {
+                            "date": "2023-06-16 11:30:00",
+                            "price": 127.33
+                        },
+                        {
+                            "date": "2023-06-16 11:31:00",
+                            "price": 127.38
+                        },
+                        {
+                            "date": "2023-06-16 11:32:00",
+                            "price": 127.3
+                        },
+                        {
+                            "date": "2023-06-16 11:33:00",
+                            "price": 127.42
+                        },
+                        {
+                            "date": "2023-06-16 11:34:00",
+                            "price": 127.4
+                        },
+                        {
+                            "date": "2023-06-16 11:35:00",
+                            "price": 127.405
+                        },
+                        {
+                            "date": "2023-06-16 11:36:00",
+                            "price": 127.52
+                        },
+                        {
+                            "date": "2023-06-16 11:37:00",
+                            "price": 127.385
+                        },
+                        {
+                            "date": "2023-06-16 11:38:00",
+                            "price": 127.1
+                        },
+                        {
+                            "date": "2023-06-16 11:39:00",
+                            "price": 127.09
+                        },
+                        {
+                            "date": "2023-06-16 11:40:00",
+                            "price": 127.2
+                        },
+                        {
+                            "date": "2023-06-16 11:41:00",
+                            "price": 127.32
+                        },
+                        {
+                            "date": "2023-06-16 11:42:00",
+                            "price": 127.245
+                        },
+                        {
+                            "date": "2023-06-16 11:43:00",
+                            "price": 127.17
+                        },
+                        {
+                            "date": "2023-06-16 11:44:00",
+                            "price": 127.25
+                        },
+                        {
+                            "date": "2023-06-16 11:45:00",
+                            "price": 127.43
+                        },
+                        {
+                            "date": "2023-06-16 11:46:00",
+                            "price": 127.44
+                        },
+                        {
+                            "date": "2023-06-16 11:47:00",
+                            "price": 127.44
+                        },
+                        {
+                            "date": "2023-06-16 11:48:00",
+                            "price": 127.38
+                        },
+                        {
+                            "date": "2023-06-16 11:49:00",
+                            "price": 127.265
+                        },
+                        {
+                            "date": "2023-06-16 11:50:00",
+                            "price": 127.255
+                        },
+                        {
+                            "date": "2023-06-16 11:51:00",
+                            "price": 127.26
+                        },
+                        {
+                            "date": "2023-06-16 11:52:00",
+                            "price": 127.28
+                        },
+                        {
+                            "date": "2023-06-16 11:53:00",
+                            "price": 127.17
+                        },
+                        {
+                            "date": "2023-06-16 11:54:00",
+                            "price": 127.14
+                        },
+                        {
+                            "date": "2023-06-16 11:55:00",
+                            "price": 127.265
+                        },
+                        {
+                            "date": "2023-06-16 11:56:00",
+                            "price": 127.17
+                        },
+                        {
+                            "date": "2023-06-16 11:57:00",
+                            "price": 127.31
+                        },
+                        {
+                            "date": "2023-06-16 11:58:00",
+                            "price": 127.38
+                        },
+                        {
+                            "date": "2023-06-16 11:59:00",
+                            "price": 127.48
+                        },
+                        {
+                            "date": "2023-06-16 12:00:00",
+                            "price": 127.6001
+                        },
+                        {
+                            "date": "2023-06-16 12:01:00",
+                            "price": 127.66
+                        },
+                        {
+                            "date": "2023-06-16 12:02:00",
+                            "price": 127.66
+                        },
+                        {
+                            "date": "2023-06-16 12:03:00",
+                            "price": 127.671
+                        },
+                        {
+                            "date": "2023-06-16 12:04:00",
+                            "price": 127.64
+                        },
+                        {
+                            "date": "2023-06-16 12:05:00",
+                            "price": 127.75
+                        },
+                        {
+                            "date": "2023-06-16 12:06:00",
+                            "price": 127.84
+                        },
+                        {
+                            "date": "2023-06-16 12:07:00",
+                            "price": 127.79
+                        },
+                        {
+                            "date": "2023-06-16 12:08:00",
+                            "price": 127.755
+                        },
+                        {
+                            "date": "2023-06-16 12:09:00",
+                            "price": 127.686
+                        },
+                        {
+                            "date": "2023-06-16 12:10:00",
+                            "price": 127.635
+                        },
+                        {
+                            "date": "2023-06-16 12:11:00",
+                            "price": 127.7
+                        },
+                        {
+                            "date": "2023-06-16 12:12:00",
+                            "price": 127.67
+                        }
+                    ],
+                    "1month": [
+                        {
+                            "date": "2023-05-16 16:00:00",
+                            "price": 105.41
+                        },
+                        {
+                            "date": "2023-05-17 16:00:00",
+                            "price": 108.33
+                        },
+                        {
+                            "date": "2023-05-18 16:00:00",
+                            "price": 111.87
+                        },
+                        {
+                            "date": "2023-05-19 16:00:00",
+                            "price": 107.38
+                        },
+                        {
+                            "date": "2023-05-22 16:00:00",
+                            "price": 109.93
+                        },
+                        {
+                            "date": "2023-05-23 16:00:00",
+                            "price": 106.25
+                        },
+                        {
+                            "date": "2023-05-24 16:00:00",
+                            "price": 105.71
+                        },
+                        {
+                            "date": "2023-05-25 16:00:00",
+                            "price": 104.42
+                        },
+                        {
+                            "date": "2023-05-26 16:00:00",
+                            "price": 106.81
+                        },
+                        {
+                            "date": "2023-05-30 16:00:00",
+                            "price": 107.19
+                        },
+                        {
+                            "date": "2023-05-31 16:00:00",
+                            "price": 109.77
+                        },
+                        {
+                            "date": "2023-06-01 16:00:00",
+                            "price": 112.16
+                        },
+                        {
+                            "date": "2023-06-02 16:00:00",
+                            "price": 118.06
+                        },
+                        {
+                            "date": "2023-06-05 16:00:00",
+                            "price": 115.69
+                        },
+                        {
+                            "date": "2023-06-06 16:00:00",
+                            "price": 117.3
+                        },
+                        {
+                            "date": "2023-06-07 16:00:00",
+                            "price": 116.55
+                        },
+                        {
+                            "date": "2023-06-08 16:00:00",
+                            "price": 115.5
+                        },
+                        {
+                            "date": "2023-06-09 16:00:00",
+                            "price": 117.86
+                        },
+                        {
+                            "date": "2023-06-12 16:00:00",
+                            "price": 124.59
+                        },
+                        {
+                            "date": "2023-06-13 16:00:00",
+                            "price": 124.9
+                        },
+                        {
+                            "date": "2023-06-14 16:00:00",
+                            "price": 125.14
+                        },
+                        {
+                            "date": "2023-06-15 16:00:00",
+                            "price": 127.85
+                        },
+                        {
+                            "date": "2023-06-16 12:11:22",
+                            "price": 127.62
+                        }
+                    ]
+                },
+                "news": [
+                    {
+                        "url": "https://www.fool.com/investing/2023/06/16/airbnb-stock-buy-sell-or-hold/",
+                        "title": "Airbnb Stock: Buy, Sell, or Hold?",
+                        "thumbnail": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQxcFnGgwOrI0Qeg1KXOyJtxGngqCCEU8u7-ilJGL9_tZM-2BZX0EACKbgzu_0",
+                        "published_time": 1686906600,
+                        "source": {
+                            "name": "The Motley Fool",
+                            "logo": null
+                        }
+                    },
+                    {
+                        "url": "https://finance.yahoo.com/news/why-airbnb-inc-abnb-top-135004442.html",
+                        "title": "Why Airbnb, Inc. (ABNB) is a Top Momentum Stock for the Long-Term",
+                        "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVLU5uXlC1P-ryfPChsREzrsHxibqxf1b4M9ifjOVOXDAu7sT5O5kl5sG_Hcs",
+                        "published_time": 1686664204,
+                        "source": {
+                            "name": "Yahoo Finance",
+                            "logo": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSyPOBjF5YVGEioqxHho6TXOUXbRMSqzenB7scROM5vW6C2MlucaxNQpRK3Dg"
+                        }
+                    },
+                    {
+                        "url": "https://www.cnbc.com/2023/06/14/be-still-getaways-from-airbnb-side-hustle-to-full-time-rental-startup.html",
+                        "title": "32-year-old spent $2,000 setting up an Airbnb in her neighbor's barn\u2014now  her rentals bring in $2.88 million a year",
+                        "thumbnail": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSo46rFMou5csUigCL-Kr7RTR1X26BM91BngF9ymaR5swA_-tyYL5XhSskBg0Q",
+                        "published_time": 1686763003,
+                        "source": {
+                            "name": "CNBC",
+                            "logo": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRX2SsyfcXq4M8Bd_OGoPIqBnUTT8J7V-CEdDDZoobSfOPaAjsqxTHKv6w87Q"
+                        }
+                    },
+                    {
+                        "url": "https://www.independent.co.uk/life-style/airbnb-pet-friendly-cleaning-fee-dog-hair-b2358730.html",
+                        "title": "Airbnb customer furious after being charged extra over dog hair",
+                        "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnJu1Zy9cIjBymIFh-C4tUm1v1t9V6mpcripGcDpz-lahxqSTDwUuUcS9u_bE",
+                        "published_time": 1686897560,
+                        "source": {
+                            "name": "The Independent",
+                            "logo": null
+                        }
+                    },
+                    {
+                        "url": "https://www.fool.com/investing/2023/06/15/superb-growth-stocks-buy-june-hold-cost-abnb/",
+                        "title": "2 Superb Growth Stocks to Buy In June and Hold Forever",
+                        "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9MFclXrVWqh4qtWD43Rz5FQMSdAbu_kfJWN3GW3SC4p8INNY8PCdu2fxB_Yw",
+                        "published_time": 1686821700,
+                        "source": {
+                            "name": "The Motley Fool",
+                            "logo": null
+                        }
+                    },
+                    {
+                        "url": "https://www.fool.com/investing/2023/06/13/is-it-too-late-to-buy-airbnb-stock/",
+                        "title": "Is It Too Late to Buy Airbnb Stock?",
+                        "thumbnail": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSELRBGH52VoKs4WOtlttSsn12KoiT4XW_QFari2DTi1yvdz9BLjq3I9s-C_rA",
+                        "published_time": 1686656700,
+                        "source": {
+                            "name": "The Motley Fool",
+                            "logo": null
+                        }
+                    }
+                ],
+                "stats": {
+                    "currency": "USD",
+                    "day_range": "126.79-129.2",
+                    "year_range": "81.91-144.63",
+                    "market_cap": "81658299816.061",
+                    "volume": 8287220,
+                    "pe_ratio": 42.559258,
+                    "dividend_yield": null,
+                    "primary_market": "NASDAQ"
+                }
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "search",
+            "url": "https://g-finance.p.rapidapi.com/search/",
+            "description": "search",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "q",
+                    "type": "STRING",
+                    "description": "Search query.",
+                    "default": "Airbnb"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "gl",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "US"
+                },
+                {
+                    "name": "hl",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "en"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://g-finance.p.rapidapi.com/search/\"\nquerystring = {\"gl\": \"US\", \"q\": \"Airbnb\", \"hl\": \"en\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"g-finance.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://g-finance.p.rapidapi.com/search/\"\nquerystring = {\"gl\": \"US\", \"q\": \"Airbnb\", \"hl\": \"en\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"g-finance.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "info": {
+                        "type": "stock",
+                        "title": "Airbnb Inc",
+                        "ticker": "ABNB:NASDAQ",
+                        "ticker_symbols": [
+                            "ABNB",
+                            "NASDAQ"
+                        ],
+                        "country_code": "US",
+                        "exchange": {
+                            "primary": {
+                                "symbol": null,
+                                "name": null
+                            },
+                            "secondary": {
+                                "symbol": null,
+                                "name": null
+                            }
+                        }
+                    },
+                    "price": {
+                        "currency": "USD",
+                        "previous_close": 127.85,
+                        "last": {
+                            "time": 1686931926,
+                            "value": 127.71,
+                            "today_change": -0.13999939,
+                            "today_change_percent": -0.109502845
+                        },
+                        "after_hours": {
+                            "value": 128.43,
+                            "change": 0.7199936,
+                            "change_percent": 0.5637723
+                        }
+                    }
+                },
+                {
+                    "info": {
+                        "type": "stock",
+                        "title": "Airbnb Inc",
+                        "ticker": "0A8C:LON",
+                        "ticker_symbols": [
+                            "0A8C",
+                            "LON"
+                        ],
+                        "country_code": "GB",
+                        "exchange": {
+                            "primary": {
+                                "symbol": null,
+                                "name": null
+                            },
+                            "secondary": {
+                                "symbol": null,
+                                "name": null
+                            }
+                        }
+                    },
+                    "price": {
+                        "currency": "USD",
+                        "previous_close": 127.21,
+                        "last": {
+                            "time": 1686931850,
+                            "value": 127.67,
+                            "today_change": 0.45999908,
+                            "today_change_percent": 0.36160606
+                        },
+                        "after_hours": {
+                            "value": null,
+                            "change": null,
+                            "change_percent": null
+                        }
+                    }
+                },
+                {
+                    "info": {
+                        "type": "stock",
+                        "title": "Airbnb Inc",
+                        "ticker": "6Z1:ETR",
+                        "ticker_symbols": [
+                            "6Z1",
+                            "ETR"
+                        ],
+                        "country_code": "DE",
+                        "exchange": {
+                            "primary": {
+                                "symbol": null,
+                                "name": null
+                            },
+                            "secondary": {
+                                "symbol": null,
+                                "name": null
+                            }
+                        }
+                    },
+                    "price": {
+                        "currency": "EUR",
+                        "previous_close": 115.6,
+                        "last": {
+                            "time": 1686930330,
+                            "value": 116.5,
+                            "today_change": 0.9000015,
+                            "today_change_percent": 0.77854806
+                        },
+                        "after_hours": {
+                            "value": null,
+                            "change": null,
+                            "change_percent": null
+                        }
+                    }
+                },
+                {
+                    "info": {
+                        "type": "stock",
+                        "title": "Airbnb Inc",
+                        "ticker": "ABNB:BMV",
+                        "ticker_symbols": [
+                            "ABNB",
+                            "BMV"
+                        ],
+                        "country_code": "MX",
+                        "exchange": {
+                            "primary": {
+                                "symbol": null,
+                                "name": null
+                            },
+                            "secondary": {
+                                "symbol": null,
+                                "name": null
+                            }
+                        }
+                    },
+                    "price": {
+                        "currency": "MXN",
+                        "previous_close": 2171.01,
+                        "last": {
+                            "time": 1686930708,
+                            "value": 2171.01,
+                            "today_change": 0,
+                            "today_change_percent": 0
+                        },
+                        "after_hours": {
+                            "value": null,
+                            "change": null,
+                            "change_percent": null
+                        }
+                    }
+                },
+                {
+                    "info": {
+                        "type": "stock",
+                        "title": "Airbnb Inc",
+                        "ticker": "6Z1:FRA",
+                        "ticker_symbols": [
+                            "6Z1",
+                            "FRA"
+                        ],
+                        "country_code": "DE",
+                        "exchange": {
+                            "primary": {
+                                "symbol": null,
+                                "name": null
+                            },
+                            "secondary": {
+                                "symbol": null,
+                                "name": null
+                            }
+                        }
+                    },
+                    "price": {
+                        "currency": "EUR",
+                        "previous_close": 111.6,
+                        "last": {
+                            "time": 1686927682,
+                            "value": 117.46,
+                            "today_change": 5.8600006,
+                            "today_change_percent": 5.2508965
+                        },
+                        "after_hours": {
+                            "value": null,
+                            "change": null,
+                            "change_percent": null
+                        }
+                    }
+                }
+            ],
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "g_finance"
+}

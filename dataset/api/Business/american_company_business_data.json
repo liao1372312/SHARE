@@ -1,0 +1,520 @@
+{
+    "product_id": "api_247a2011-0b6d-4e15-9a72-9a2f56d2594e",
+    "tool_description": "Enrich your CRM / MAS / ERP system with data about all companies listed in the United States. The US Company Data API lets you obtain detailed data about US companies currently or previously listed in the United States. You can use this information to enrich your Customer Relationship Management (CRM) system or other B2B systems you have in use. A matching with your own data is possible through the powerful lookup mechanism. In addition, this API allows you to search and filter on the index o...",
+    "home_url": "https://rapidapi.com/zilinskivan/api/american-company-business-data/",
+    "name": "American Company Business Data",
+    "title": "American Company Business Data",
+    "pricing": "FREEMIUM",
+    "tool_name": "American Company Business Data",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 930,
+        "avgSuccessRate": 100,
+        "popularityScore": 7.9,
+        "__typename": "Score"
+    },
+    "host": "american-company-business-data.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Search",
+            "url": "https://american-company-business-data.p.rapidapi.com/",
+            "description": "Search business contacts",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "p",
+                    "type": "NUMBER",
+                    "description": "Search by: 1 - company name, 2- address, 3-email, 4-web, 5-industry, 6-zip",
+                    "default": "1"
+                },
+                {
+                    "name": "ls",
+                    "type": "NUMBER",
+                    "description": "Limit Start Page Offset: 0,50,100,150,...N",
+                    "default": "0"
+                },
+                {
+                    "name": "c",
+                    "type": "STRING",
+                    "description": "Country Selector. Available Options: US, GB",
+                    "default": "US"
+                },
+                {
+                    "name": "s",
+                    "type": "STRING",
+                    "description": "Search Query. Example: bank, sport, music ... etc",
+                    "default": "bank"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://american-company-business-data.p.rapidapi.com/\"\nquerystring = {\"p\": \"1\", \"ls\": \"0\", \"c\": \"US\", \"s\": \"bank\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"american-company-business-data.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://american-company-business-data.p.rapidapi.com/\"\nquerystring = {\"p\": \"1\", \"ls\": \"0\", \"c\": \"US\", \"s\": \"bank\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"american-company-business-data.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "s": 1,
+                "d": [
+                    {
+                        "company": "First National Bank Alaska",
+                        "zip": "99503-5904",
+                        "email": "rwilkinson@fnbalaska.com",
+                        "phone": "907-777-4362",
+                        "website": "Http://www.fnbalaska.com",
+                        "industry": "National Commercial Banks",
+                        "rowid": 137
+                    },
+                    {
+                        "company": "Northrim Bank",
+                        "zip": "99503-3915",
+                        "email": "schierhorn.joe@nrim.com",
+                        "phone": "907-562-0062",
+                        "website": "Http://www.northrim.com",
+                        "industry": "State Commercial Banks",
+                        "rowid": 235
+                    },
+                    {
+                        "company": "Northrim Bank",
+                        "zip": "99524-1489",
+                        "email": "suzanne.whittle@nrim.com",
+                        "phone": "907-562-0062",
+                        "website": "Http://www.northrim.com",
+                        "industry": "State Commercial Banks",
+                        "rowid": 366
+                    },
+                    {
+                        "company": "First National Bank Alaska",
+                        "zip": "99503-5904",
+                        "email": "lroberts@fnbalaska.com",
+                        "phone": "907-777-4362",
+                        "website": "Http://www.fnbalaska.com",
+                        "industry": "National Commercial Banks",
+                        "rowid": 458
+                    },
+                    {
+                        "company": "Northrim Bank",
+                        "zip": "99503",
+                        "email": "bush.wesley@nrim.com",
+                        "phone": "907-562-0062",
+                        "website": "Http://www.northrim.com",
+                        "industry": "State Commercial Banks",
+                        "rowid": 597
+                    },
+                    {
+                        "company": "Denali State Bank",
+                        "zip": "99701",
+                        "email": "ahines@denalistatebank.com",
+                        "phone": "?",
+                        "website": "Http://www.denalistatebank.com",
+                        "industry": "Offices Of Bank Holding Companies",
+                        "rowid": 653
+                    },
+                    {
+                        "company": "Mt. Mckinley Bank",
+                        "zip": "99737",
+                        "email": "jpletnikoff@mtmckinleybank.com",
+                        "phone": "907-465-1231",
+                        "website": "Http://www.mtmckinleybank.com",
+                        "industry": "Commercial Banks, Nec",
+                        "rowid": 781
+                    },
+                    {
+                        "company": "Alaska Pacific Bank",
+                        "zip": "99801",
+                        "email": "dpeterson@alaskapacificbank.com",
+                        "phone": "907-789-4844",
+                        "website": "Http://www.alaskapacificbank.com",
+                        "industry": "Savings Institutions, Federally Chartered",
+                        "rowid": 783
+                    },
+                    {
+                        "company": "Alaska Pacific Bank",
+                        "zip": "99801-8046",
+                        "email": "mbranson@alaskapacificbank.com",
+                        "phone": "907-789-4844",
+                        "website": "Http://www.alaskapacificbank.com",
+                        "industry": "Savings Institutions, Federally Chartered",
+                        "rowid": 828
+                    },
+                    {
+                        "company": "Northrim Bank",
+                        "zip": "99503",
+                        "email": "castiglione.milagros@nrim.com",
+                        "phone": "907-562-0062",
+                        "website": "Http://www.northrim.com",
+                        "industry": "State Commercial Banks",
+                        "rowid": 881
+                    },
+                    {
+                        "company": "First National Bank Alaska",
+                        "zip": "99503",
+                        "email": "jroth@fnbalaska.com",
+                        "phone": "907-777-4362",
+                        "website": "Http://www.fnbalaska.com",
+                        "industry": "National Commercial Banks",
+                        "rowid": 883
+                    },
+                    {
+                        "company": "Northrim Bank",
+                        "zip": "99503",
+                        "email": "martin.amanda@nrim.com",
+                        "phone": "907-562-0062",
+                        "website": "Http://www.northrim.com",
+                        "industry": "State Commercial Banks",
+                        "rowid": 890
+                    },
+                    {
+                        "company": "Northrim Bank",
+                        "zip": "99503",
+                        "email": "rennie.jared@nrim.com",
+                        "phone": "907-562-0062",
+                        "website": "Http://www.northrim.com",
+                        "industry": "State Commercial Banks",
+                        "rowid": 891
+                    },
+                    {
+                        "company": "Coldwell Banker Fortune Inc",
+                        "zip": "99503",
+                        "email": "nthomas@reals8.com",
+                        "phone": "907-265-9106",
+                        "website": "Http://www.coldwellbankerfortune.com",
+                        "industry": "Real Estate Brokers And Agents",
+                        "rowid": 960
+                    },
+                    {
+                        "company": "Food Bank Of Alaska Inc",
+                        "zip": "99501-1855",
+                        "email": "crockwell@foodbankofalaska.org",
+                        "phone": "907-272-3663",
+                        "website": "Http://www.foodbankofalaska.org",
+                        "industry": "Emergency Social Services",
+                        "rowid": 998
+                    },
+                    {
+                        "company": "Food Bank Of Alaska Inc",
+                        "zip": "99501",
+                        "email": "jmackenzie@foodbankofalaska.org",
+                        "phone": "907-272-3663",
+                        "website": "Http://www.foodbankofalaska.org",
+                        "industry": "Emergency Social Services",
+                        "rowid": 999
+                    },
+                    {
+                        "company": "Food Bank Of Alaska Inc",
+                        "zip": "99501-1855",
+                        "email": "mchurchill@foodbankofalaska.org",
+                        "phone": "907-272-3663",
+                        "website": "Http://www.foodbankofalaska.org",
+                        "industry": "Emergency Social Services",
+                        "rowid": 1053
+                    },
+                    {
+                        "company": "Alaska Pacific Bank",
+                        "zip": "99801",
+                        "email": "markbranson@alaskapacificbank.com",
+                        "phone": "9077894844",
+                        "website": "?",
+                        "industry": "Banks",
+                        "rowid": 2001
+                    },
+                    {
+                        "company": "Northrim Bank",
+                        "zip": "99503-3901",
+                        "email": "philocook.lori@nrim.com",
+                        "phone": "9075620062",
+                        "website": "Http://www.northrim.com",
+                        "industry": "Banks",
+                        "rowid": 2006
+                    },
+                    {
+                        "company": "First National Bank Alaska",
+                        "zip": "99503",
+                        "email": "smejia@fnbalaska.com",
+                        "phone": "9077774362",
+                        "website": "Http://www.fnbalaska.com",
+                        "industry": "Banks",
+                        "rowid": 2103
+                    },
+                    {
+                        "company": "Northrim Bank",
+                        "zip": "99503-3925",
+                        "email": "hartman.glenna@nrim.com",
+                        "phone": "9075620062",
+                        "website": "Http://www.northrim.com",
+                        "industry": "Banks",
+                        "rowid": 2164
+                    },
+                    {
+                        "company": "Alaska Pacific Bank",
+                        "zip": "99801-8046",
+                        "email": "jpierce@alaskapacificbank.com",
+                        "phone": "9077894844",
+                        "website": "Http://www.alaskapacificbank.com",
+                        "industry": "Banks",
+                        "rowid": 2165
+                    },
+                    {
+                        "company": "First Bank",
+                        "zip": "99901-6440",
+                        "email": "dustin.hofeling@firstbankak.com",
+                        "phone": "9072284474",
+                        "website": "Http://www.firstbankak.com",
+                        "industry": "Banks",
+                        "rowid": 2204
+                    },
+                    {
+                        "company": "First National Bank Alaska",
+                        "zip": "99501-5324",
+                        "email": "chuck@fnbalaska.com",
+                        "phone": "9077774362",
+                        "website": "Http://www.fnbalaska.com",
+                        "industry": "Banks",
+                        "rowid": 2262
+                    },
+                    {
+                        "company": "Denali State Bank",
+                        "zip": "99701-2830",
+                        "email": "kmaccri@denalistatebank.com",
+                        "phone": "9074561400",
+                        "website": "Http://www.denalistatebank.com",
+                        "industry": "Banks",
+                        "rowid": 2308
+                    },
+                    {
+                        "company": "First National Bank Alaska",
+                        "zip": "99503-5904",
+                        "email": "lchen@fnbalaska.com",
+                        "phone": "9077774362",
+                        "website": "Http://www.fnbalaska.com",
+                        "industry": "Banks",
+                        "rowid": 2361
+                    },
+                    {
+                        "company": "Mt. Mckinley Bank",
+                        "zip": "99705-7752",
+                        "email": "smeyn@mtmckinleybank.com",
+                        "phone": "9074521751",
+                        "website": "Http://www.mtmckinleybank.com",
+                        "industry": "Banks",
+                        "rowid": 2409
+                    },
+                    {
+                        "company": "Mt. Mckinley Bank",
+                        "zip": "99709-4901",
+                        "email": "seanmeyn@mtmckinleybank.com",
+                        "phone": "9074521751",
+                        "website": "Http://www.mtmckinleybank.com",
+                        "industry": "Banks",
+                        "rowid": 2476
+                    },
+                    {
+                        "company": "Northrim Bank",
+                        "zip": "99503",
+                        "email": "craig.benjamin@nrim.com",
+                        "phone": "9075620062",
+                        "website": "Http://www.northrim.com",
+                        "industry": "Banks",
+                        "rowid": 2509
+                    },
+                    {
+                        "company": "Key Bank",
+                        "zip": "99510-0420",
+                        "email": "bryannerlant@key.com",
+                        "phone": "9075626100",
+                        "website": "?",
+                        "industry": "Banks",
+                        "rowid": 2593
+                    },
+                    {
+                        "company": "Data Bank Computer Svc",
+                        "zip": "99801-9516",
+                        "email": "cox@databankcomputers.com",
+                        "phone": "9077806677",
+                        "website": "?",
+                        "industry": "Computers-service & Repair",
+                        "rowid": 2641
+                    },
+                    {
+                        "company": "Alaska Pacific Bank",
+                        "zip": "99801-8046",
+                        "email": "craig e@alaskapacificbank.com",
+                        "phone": "9077894844",
+                        "website": "?",
+                        "industry": "Banks",
+                        "rowid": 2642
+                    },
+                    {
+                        "company": "Mt Mc Kinley Bank",
+                        "zip": "99707-3880",
+                        "email": "craig.ingham@mtmckinleybank.com",
+                        "phone": "9074521751",
+                        "website": "?",
+                        "industry": "Banks",
+                        "rowid": 2643
+                    },
+                    {
+                        "company": "First National Bank Alaska",
+                        "zip": "99510-0720",
+                        "email": "cuddy@fnbalaska.com",
+                        "phone": "9075614663",
+                        "website": "?",
+                        "industry": "Banks",
+                        "rowid": 2647
+                    },
+                    {
+                        "company": "Wells Fargo Bank N A",
+                        "zip": "99801",
+                        "email": "amanda.coate@wellsfargoefs.com",
+                        "phone": "9077899550",
+                        "website": "?",
+                        "industry": "National Bank",
+                        "rowid": 2770
+                    },
+                    {
+                        "company": "Wells Fargo Bank N A",
+                        "zip": "99654",
+                        "email": "annette.olenjnicjzk@wellsfargoefs.com",
+                        "phone": "9073765355",
+                        "website": "?",
+                        "industry": "National Bank",
+                        "rowid": 2801
+                    },
+                    {
+                        "company": "Blood Bank Of Alaska Inc",
+                        "zip": "99508",
+                        "email": "brondeau@bbak.org",
+                        "phone": "9072225600",
+                        "website": "?",
+                        "industry": "Misc Ambulatory Health Care Svcs",
+                        "rowid": 2835
+                    },
+                    {
+                        "company": "Wells Fargo Bank N A",
+                        "zip": "99515",
+                        "email": "brenden.barnes@wellsfargoefs.com",
+                        "phone": "9072675301",
+                        "website": "?",
+                        "industry": "National Bank",
+                        "rowid": 2854
+                    },
+                    {
+                        "company": "Wells Fargo Bank N A",
+                        "zip": "99577",
+                        "email": "brent.hamson@wellsfargoefs.com",
+                        "phone": "9072477878",
+                        "website": "?",
+                        "industry": "National Bank",
+                        "rowid": 2856
+                    },
+                    {
+                        "company": "Wells Fargo Bank National Association",
+                        "zip": "99588",
+                        "email": "brian.ridley@wellsfargoefs.com",
+                        "phone": "9078223214",
+                        "website": "?",
+                        "industry": "National Bank",
+                        "rowid": 2862
+                    },
+                    {
+                        "company": "Wells Fargo Bank N A",
+                        "zip": "99723",
+                        "email": "dana.black@wellsfargoefs.com",
+                        "phone": "9078526200",
+                        "website": "?",
+                        "industry": "National Bank",
+                        "rowid": 2966
+                    },
+                    {
+                        "company": "Wells Fargo Bank N A",
+                        "zip": "99615",
+                        "email": "darren.franz@wellsfargoefs.com",
+                        "phone": "9074863126",
+                        "website": "?",
+                        "industry": "National Bank",
+                        "rowid": 2983
+                    },
+                    {
+                        "company": "Wells Fargo Bank N A",
+                        "zip": "99737",
+                        "email": "david.durham@wellsfargoefs.com",
+                        "phone": "9078954691",
+                        "website": "?",
+                        "industry": "National Bank",
+                        "rowid": 2997
+                    },
+                    {
+                        "company": "Wells Fargo Bank N A",
+                        "zip": "99645",
+                        "email": "deborah.retherford@wellsfargoefs.com",
+                        "phone": "9077452161",
+                        "website": "?",
+                        "industry": "State Commercial Bank",
+                        "rowid": 3022
+                    },
+                    {
+                        "company": "Blood Bank Of Alaska Inc",
+                        "zip": "99508",
+                        "email": "jwilliams@bbak.org",
+                        "phone": "9072225600",
+                        "website": "?",
+                        "industry": "Misc Ambulatory Health Care Svcs",
+                        "rowid": 3182
+                    },
+                    {
+                        "company": "Wells Fargo Bank N A",
+                        "zip": "99559",
+                        "email": "jaysen.katasse@wellsfargoefs.com",
+                        "phone": "9075433875",
+                        "website": "?",
+                        "industry": "State Commercial Bank",
+                        "rowid": 3229
+                    },
+                    {
+                        "company": "Wells Fargo Bank N A",
+                        "zip": "99615",
+                        "email": "jim.brenner@wellsfargoefs.com",
+                        "phone": "9074863126",
+                        "website": "?",
+                        "industry": "National Bank",
+                        "rowid": 3262
+                    },
+                    {
+                        "company": "Wells Fargo Bank N A",
+                        "zip": "99577",
+                        "email": "jim.mcconnell@wellsfargoefs.com",
+                        "phone": "9072477878",
+                        "website": "?",
+                        "industry": "National Bank",
+                        "rowid": 3265
+                    },
+                    {
+                        "company": "Wells Fargo Bank N A",
+                        "zip": "99921",
+                        "email": "keith.carnes@wellsfargoefs.com",
+                        "phone": "9078263040",
+                        "website": "?",
+                        "industry": "Commercial Bank",
+                        "rowid": 3366
+                    },
+                    {
+                        "company": "Alaska First Bank & Trust",
+                        "zip": "99515",
+                        "email": "johnsonk@damortgage.com",
+                        "phone": "9075222006",
+                        "website": "?",
+                        "industry": "National Bank",
+                        "rowid": 3391
+                    }
+                ],
+                "p": {
+                    "limitstart": 0,
+                    "limit": 50,
+                    "total": 1002752,
+                    "pagesStart": 1,
+                    "pagesStop": 10,
+                    "pagesCurrent": 1,
+                    "pagesTotal": 20056
+                },
+                "f": "<ul class=\"pagination pagination-sm\"><li class=\"disabled\"><a><<</a></li><li class=\"disabled\"><a><</a></li><li class=\"active hidden-xs\"><a>1</a></li><li class=\"hidden-xs\"><a data-start=\"50\" title=\"2\" href=\"https://american-company-business-data.p.rapidapi.com/xsearch/?p=1&c=US&s=bank&ls=0&limitstart=50\" class=\"pagenav\">2</a></li><li class=\"hidden-xs\"><a data-start=\"100\" title=\"3\" href=\"https://american-company-business-data.p.rapidapi.com/xsearch/?p=1&c=US&s=bank&ls=0&limitstart=100\" class=\"pagenav\">3</a></li><li class=\"hidden-xs\"><a data-start=\"150\" title=\"4\" href=\"https://american-company-business-data.p.rapidapi.com/xsearch/?p=1&c=US&s=bank&ls=0&limitstart=150\" class=\"pagenav\">4</a></li><li class=\"hidden-xs\"><a data-start=\"200\" title=\"5\" href=\"https://american-company-business-data.p.rapidapi.com/xsearch/?p=1&c=US&s=bank&ls=0&limitstart=200\" class=\"pagenav\">...</a></li><li class=\"hidden-xs\"><a data-start=\"250\" title=\"6\" href=\"https://american-company-business-data.p.rapidapi.com/xsearch/?p=1&c=US&s=bank&ls=0&limitstart=250\" class=\"pagenav\">6</a></li><li class=\"hidden-xs\"><a data-start=\"300\" title=\"7\" href=\"https://american-company-business-data.p.rapidapi.com/xsearch/?p=1&c=US&s=bank&ls=0&limitstart=300\" class=\"pagenav\">7</a></li><li class=\"hidden-xs\"><a data-start=\"350\" title=\"8\" href=\"https://american-company-business-data.p.rapidapi.com/xsearch/?p=1&c=US&s=bank&ls=0&limitstart=350\" class=\"pagenav\">8</a></li><li class=\"hidden-xs\"><a data-start=\"400\" title=\"9\" href=\"https://american-company-business-data.p.rapidapi.com/xsearch/?p=1&c=US&s=bank&ls=0&limitstart=400\" class=\"pagenav\">9</a></li><li class=\"hidden-xs\"><a data-start=\"450\" title=\"10\" href=\"https://american-company-business-data.p.rapidapi.com/xsearch/?p=1&c=US&s=bank&ls=0&limitstart=450\" class=\"pagenav\">10</a></li><li><a data-start=\"50\" title=\"Next\" href=\"https://american-company-business-data.p.rapidapi.com/xsearch/?p=1&c=US&s=bank&ls=0&limitstart=50\" class=\"pagenav\">></a></li><li><a data-start=\"1002750\" title=\"End\" href=\"https://american-company-business-data.p.rapidapi.com/xsearch/?p=1&c=US&s=bank&ls=0&limitstart=1002750\" class=\"pagenav\">>></a></li></ul>"
+            }
+        }
+    ],
+    "standardized_name": "american_company_business_data"
+}

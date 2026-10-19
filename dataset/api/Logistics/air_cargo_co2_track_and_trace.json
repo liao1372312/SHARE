@@ -1,0 +1,527 @@
+{
+    "product_id": "api_e2d8961b-a34a-4e41-bfa9-6889ab1d0913",
+    "tool_description": "Track your Air Cargo shipments and measure CO2 with more than 170 airlines",
+    "home_url": "https://rapidapi.com/cargoai-cargoai-default/api/air-cargo-co2-track-and-trace/",
+    "name": "Air Cargo CO2 Track And Trace",
+    "title": "Air Cargo CO2 Track And Trace",
+    "pricing": "FREEMIUM",
+    "tool_name": "Air Cargo CO2 Track And Trace",
+    "score": {
+        "avgServiceLevel": 47,
+        "avgLatency": 2133,
+        "avgSuccessRate": 36,
+        "popularityScore": 9.7,
+        "__typename": "Score"
+    },
+    "host": "air-cargo-co2-track-and-trace.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "PULL (track)",
+            "url": "https://air-cargo-co2-track-and-trace.p.rapidapi.com/track",
+            "description": "By providing a valid AWB, you can get tracking information for the shipment.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "awb",
+                    "type": "STRING",
+                    "description": "provide valid AWB number",
+                    "default": "000-99999970"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://air-cargo-co2-track-and-trace.p.rapidapi.com/track\"\nquerystring = {\"awb\": \"000-99999970\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"air-cargo-co2-track-and-trace.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://air-cargo-co2-track-and-trace.p.rapidapi.com/track\"\nquerystring = {\"awb\": \"000-99999970\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"air-cargo-co2-track-and-trace.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "awb": "000-99999970",
+                    "weight": "7.0",
+                    "pieces": "1",
+                    "origin": "LHR",
+                    "destination": "NRT",
+                    "events": [
+                        {
+                            "code": "BKD",
+                            "eventDate": "2022-06-01T09:21:00+00:00",
+                            "eventLocation": "LHR",
+                            "eventLocationCoord": "-0.46194100,51.47060013",
+                            "flight": {
+                                "number": "CAI62",
+                                "origin": "LHR",
+                                "destination": "SIN",
+                                "originCoord": "-0.46194100,51.47060013",
+                                "destinationCoord": "103.99400330,1.35019004",
+                                "scheduledDeparture": "2022-06-04T12:25:00+00:00",
+                                "actualDeparture": "2022-06-04T12:25:00+00:00",
+                                "scheduledArrival": "2022-06-05T09:30:00+08:00",
+                                "actualArrival": "2022-06-05T09:47:24+08:00",
+                                "carbonEmission": "34.57 kg (est)",
+                                "distance": "10883.29",
+                                "duration": "12h 5m 33s"
+                            },
+                            "weight": "7.0",
+                            "pieces": "1",
+                            "isPlanned": false,
+                            "distance": "10883.29",
+                            "origin": "LHR",
+                            "destination": "SIN",
+                            "time": "12h 5m 33s",
+                            "flightNumber": "CAI62",
+                            "scheduledDepartureDate": "2022-06-04T12:25:00+00:00",
+                            "carbonEmission": "34.57 kg (est)",
+                            "originCoord": "-0.46194100,51.47060013",
+                            "destinationCoord": "103.99400330,1.35019004"
+                        },
+                        {
+                            "code": "BKD",
+                            "eventDate": "2022-06-01T09:21:00+00:00",
+                            "eventLocation": "LHR",
+                            "eventLocationCoord": "-0.46194100,51.47060013",
+                            "flight": {
+                                "number": "CAI24",
+                                "origin": "SIN",
+                                "destination": "NRT",
+                                "originCoord": "103.99400330,1.35019004",
+                                "destinationCoord": "140.38600159,35.76470184",
+                                "scheduledDeparture": "2022-06-05T20:45:00+08:00",
+                                "actualDeparture": "2022-06-05T20:40:00+08:00",
+                                "scheduledArrival": "2022-06-06T07:30:00+12:00",
+                                "actualArrival": "2022-06-06T07:25:00+12:00",
+                                "carbonEmission": "17.39 kg (est)",
+                                "distance": "5357.58",
+                                "duration": "5h 57m 10s"
+                            },
+                            "weight": "7.0",
+                            "pieces": "1",
+                            "isPlanned": false,
+                            "distance": "5357.58",
+                            "origin": "SIN",
+                            "destination": "NRT",
+                            "time": "5h 57m 10s",
+                            "flightNumber": "CAI24",
+                            "scheduledDepartureDate": "2022-06-05T20:45:00+08:00",
+                            "carbonEmission": "17.39 kg (est)",
+                            "originCoord": "103.99400330,1.35019004",
+                            "destinationCoord": "140.38600159,35.76470184"
+                        },
+                        {
+                            "code": "RCS",
+                            "eventDate": "2022-06-02T09:32:46+00:00",
+                            "eventLocation": "LHR",
+                            "eventLocationCoord": "-0.46194100,51.47060013",
+                            "weight": "7.0",
+                            "pieces": "1",
+                            "isPlanned": false,
+                            "origin": "LHR",
+                            "destination": "NRT",
+                            "originCoord": "-0.46194100,51.47060013",
+                            "destinationCoord": "140.38600159,35.76470184"
+                        },
+                        {
+                            "code": "MAN",
+                            "eventDate": "2022-06-04T12:25:00+00:00",
+                            "eventLocation": "LHR",
+                            "eventLocationCoord": "-0.46194100,51.47060013",
+                            "flight": {
+                                "number": "CAI62",
+                                "origin": "LHR",
+                                "destination": "SIN",
+                                "originCoord": "-0.46194100,51.47060013",
+                                "destinationCoord": "103.99400330,1.35019004",
+                                "scheduledDeparture": "2022-06-04T12:25:00+00:00",
+                                "actualDeparture": "2022-06-04T12:25:00+00:00",
+                                "scheduledArrival": "2022-06-05T09:30:00+08:00",
+                                "actualArrival": "2022-06-05T09:47:24+08:00",
+                                "carbonEmission": "34.57 kg (est)",
+                                "distance": "10883.29",
+                                "duration": "12h 5m 33s"
+                            },
+                            "weight": "7.0",
+                            "pieces": "1",
+                            "isPlanned": false,
+                            "distance": "10883.29",
+                            "origin": "LHR",
+                            "destination": "SIN",
+                            "time": "12h 5m 33s",
+                            "flightNumber": "CAI62",
+                            "scheduledDepartureDate": "2022-06-04T12:25:00+00:00",
+                            "carbonEmission": "34.57 kg (est)",
+                            "originCoord": "-0.46194100,51.47060013",
+                            "destinationCoord": "103.99400330,1.35019004"
+                        },
+                        {
+                            "code": "DEP",
+                            "eventDate": "2022-06-04T12:25:00+00:00",
+                            "eventLocation": "LHR",
+                            "eventLocationCoord": "-0.46194100,51.47060013",
+                            "flight": {
+                                "number": "CAI62",
+                                "origin": "LHR",
+                                "destination": "SIN",
+                                "originCoord": "-0.46194100,51.47060013",
+                                "destinationCoord": "103.99400330,1.35019004",
+                                "scheduledDeparture": "2022-06-04T12:25:00+00:00",
+                                "actualDeparture": "2022-06-04T12:25:00+00:00",
+                                "scheduledArrival": "2022-06-05T09:30:00+08:00",
+                                "actualArrival": "2022-06-05T09:47:24+08:00",
+                                "carbonEmission": "34.57 kg (est)",
+                                "distance": "10883.29",
+                                "duration": "12h 5m 33s"
+                            },
+                            "weight": "7.0",
+                            "pieces": "1",
+                            "isPlanned": false,
+                            "distance": "10883.29",
+                            "origin": "LHR",
+                            "destination": "SIN",
+                            "time": "12h 5m 33s",
+                            "flightNumber": "CAI62",
+                            "scheduledDepartureDate": "2022-06-04T12:25:00+00:00",
+                            "carbonEmission": "34.57 kg (est)",
+                            "originCoord": "-0.46194100,51.47060013",
+                            "destinationCoord": "103.99400330,1.35019004"
+                        },
+                        {
+                            "code": "ARR",
+                            "eventDate": "2022-06-05T09:47:24+08:00",
+                            "eventLocation": "SIN",
+                            "eventLocationCoord": "103.99400330,1.35019004",
+                            "flight": {
+                                "number": "CAI62",
+                                "origin": "LHR",
+                                "destination": "SIN",
+                                "originCoord": "-0.46194100,51.47060013",
+                                "destinationCoord": "103.99400330,1.35019004",
+                                "scheduledDeparture": "2022-06-04T12:25:00+00:00",
+                                "actualDeparture": "2022-06-04T12:25:00+00:00",
+                                "scheduledArrival": "2022-06-05T09:30:00+08:00",
+                                "actualArrival": "2022-06-05T09:47:24+08:00",
+                                "distance": "6761.60"
+                            },
+                            "weight": "7.0",
+                            "pieces": "1",
+                            "isPlanned": false,
+                            "distance": "6761.60",
+                            "origin": "LHR",
+                            "destination": "SIN",
+                            "time": "13h 0m 0s",
+                            "flightNumber": "CAI62",
+                            "scheduledDepartureDate": "2022-06-04T12:25:00+00:00",
+                            "originCoord": "-0.46194100,51.47060013",
+                            "destinationCoord": "103.99400330,1.35019004"
+                        },
+                        {
+                            "code": "RCF",
+                            "eventDate": "2022-06-05T10:27:00+08:00",
+                            "eventLocation": "SIN",
+                            "eventLocationCoord": "103.99400330,1.35019004",
+                            "flight": {
+                                "number": "CAI62",
+                                "origin": "LHR",
+                                "destination": "SIN",
+                                "originCoord": "-0.46194100,51.47060013",
+                                "destinationCoord": "103.99400330,1.35019004",
+                                "scheduledDeparture": "2022-06-04T12:25:00+00:00",
+                                "actualDeparture": "2022-06-04T12:25:00+00:00",
+                                "scheduledArrival": "2022-06-05T09:30:00+08:00",
+                                "actualArrival": "2022-06-05T09:47:24+08:00",
+                                "distance": "6761.60"
+                            },
+                            "weight": "7.0",
+                            "pieces": "1",
+                            "isPlanned": false,
+                            "distance": "6761.60",
+                            "origin": "LHR",
+                            "destination": "SIN",
+                            "time": "13h 0m 0s",
+                            "flightNumber": "CAI62",
+                            "scheduledDepartureDate": "2022-06-04T12:25:00+00:00",
+                            "originCoord": "-0.46194100,51.47060013",
+                            "destinationCoord": "103.99400330,1.35019004"
+                        },
+                        {
+                            "code": "MAN",
+                            "eventDate": "2022-06-05T20:40:00+08:00",
+                            "eventLocation": "SIN",
+                            "eventLocationCoord": "103.99400330,1.35019004",
+                            "flight": {
+                                "number": "CAI24",
+                                "origin": "SIN",
+                                "destination": "NRT",
+                                "originCoord": "103.99400330,1.35019004",
+                                "destinationCoord": "140.38600159,35.76470184",
+                                "scheduledDeparture": "2022-06-05T20:45:00+08:00",
+                                "actualDeparture": "2022-06-05T20:40:00+08:00",
+                                "scheduledArrival": "2022-06-06T07:30:00+12:00",
+                                "actualArrival": "2022-06-06T07:25:00+12:00",
+                                "carbonEmission": "17.39 kg (est)",
+                                "distance": "5357.58",
+                                "duration": "5h 57m 10s"
+                            },
+                            "weight": "7.0",
+                            "pieces": "1",
+                            "isPlanned": false,
+                            "distance": "5357.58",
+                            "origin": "SIN",
+                            "destination": "NRT",
+                            "time": "5h 57m 10s",
+                            "flightNumber": "CAI24",
+                            "scheduledDepartureDate": "2022-06-05T20:45:00+08:00",
+                            "carbonEmission": "17.39 kg (est)",
+                            "originCoord": "103.99400330,1.35019004",
+                            "destinationCoord": "140.38600159,35.76470184"
+                        },
+                        {
+                            "code": "DEP",
+                            "eventDate": "2022-06-05T20:40:00+08:00",
+                            "eventLocation": "SIN",
+                            "eventLocationCoord": "103.99400330,1.35019004",
+                            "flight": {
+                                "number": "CAI24",
+                                "origin": "SIN",
+                                "destination": "NRT",
+                                "originCoord": "103.99400330,1.35019004",
+                                "destinationCoord": "140.38600159,35.76470184",
+                                "scheduledDeparture": "2022-06-05T20:45:00+08:00",
+                                "actualDeparture": "2022-06-05T20:40:00+08:00",
+                                "scheduledArrival": "2022-06-06T07:30:00+12:00",
+                                "actualArrival": "2022-06-06T07:25:00+12:00",
+                                "carbonEmission": "17.39 kg (est)",
+                                "distance": "5357.58",
+                                "duration": "5h 57m 10s"
+                            },
+                            "weight": "7.0",
+                            "pieces": "1",
+                            "isPlanned": false,
+                            "distance": "5357.58",
+                            "origin": "SIN",
+                            "destination": "NRT",
+                            "time": "5h 57m 10s",
+                            "flightNumber": "CAI24",
+                            "scheduledDepartureDate": "2022-06-05T20:45:00+08:00",
+                            "carbonEmission": "17.39 kg (est)",
+                            "originCoord": "103.99400330,1.35019004",
+                            "destinationCoord": "140.38600159,35.76470184"
+                        },
+                        {
+                            "code": "ARR",
+                            "eventDate": "2022-06-06T07:25:00+12:00",
+                            "eventLocation": "NRT",
+                            "eventLocationCoord": "140.38600159,35.76470184",
+                            "flight": {
+                                "number": "CAI24",
+                                "origin": "SIN",
+                                "destination": "NRT",
+                                "originCoord": "103.99400330,1.35019004",
+                                "destinationCoord": "140.38600159,35.76470184",
+                                "scheduledDeparture": "2022-06-05T20:45:00+08:00",
+                                "actualDeparture": "2022-06-05T20:40:00+08:00",
+                                "scheduledArrival": "2022-06-06T07:30:00+12:00",
+                                "actualArrival": "2022-06-06T07:25:00+12:00",
+                                "distance": "3328.47"
+                            },
+                            "weight": "7.0",
+                            "pieces": "1",
+                            "isPlanned": false,
+                            "distance": "3328.47",
+                            "origin": "SIN",
+                            "destination": "NRT",
+                            "time": "6h 45m 0s",
+                            "flightNumber": "CAI24",
+                            "scheduledDepartureDate": "2022-06-05T20:45:00+08:00",
+                            "originCoord": "103.99400330,1.35019004",
+                            "destinationCoord": "140.38600159,35.76470184"
+                        },
+                        {
+                            "code": "RCF",
+                            "eventDate": "2022-06-06T09:45:20+12:00",
+                            "eventLocation": "NRT",
+                            "eventLocationCoord": "140.38600159,35.76470184",
+                            "flight": {
+                                "number": "CAI24",
+                                "origin": "SIN",
+                                "destination": "NRT",
+                                "originCoord": "103.99400330,1.35019004",
+                                "destinationCoord": "140.38600159,35.76470184",
+                                "scheduledDeparture": "2022-06-05T20:45:00+08:00",
+                                "actualDeparture": "2022-06-05T20:40:00+08:00",
+                                "scheduledArrival": "2022-06-06T07:30:00+12:00",
+                                "actualArrival": "2022-06-06T07:25:00+12:00",
+                                "distance": "3328.47"
+                            },
+                            "weight": "7.0",
+                            "pieces": "1",
+                            "isPlanned": false,
+                            "distance": "3328.47",
+                            "origin": "SIN",
+                            "destination": "NRT",
+                            "time": "6h 45m 0s",
+                            "flightNumber": "CAI24",
+                            "scheduledDepartureDate": "2022-06-05T20:45:00+08:00",
+                            "originCoord": "103.99400330,1.35019004",
+                            "destinationCoord": "140.38600159,35.76470184"
+                        },
+                        {
+                            "code": "NFD",
+                            "eventDate": "2022-06-06T11:32:12+12:00",
+                            "eventLocation": "NRT",
+                            "eventLocationCoord": "140.38600159,35.76470184",
+                            "weight": "7.0",
+                            "pieces": "1",
+                            "isPlanned": false,
+                            "origin": "LHR",
+                            "destination": "NRT",
+                            "originCoord": "-0.46194100,51.47060013",
+                            "destinationCoord": "140.38600159,35.76470184"
+                        },
+                        {
+                            "code": "DLV",
+                            "eventDate": "2022-06-06T16:24:00+12:00",
+                            "eventLocation": "NRT",
+                            "eventLocationCoord": "140.38600159,35.76470184",
+                            "weight": "7.0",
+                            "pieces": "1",
+                            "isPlanned": false,
+                            "origin": "LHR",
+                            "destination": "NRT",
+                            "originCoord": "-0.46194100,51.47060013",
+                            "destinationCoord": "140.38600159,35.76470184"
+                        }
+                    ],
+                    "status": "DELIVERED",
+                    "originCoord": "-0.46194100,51.47060013",
+                    "destinationCoord": "140.38600159,35.76470184",
+                    "carbonEmission": "82.53 kg (est)",
+                    "distance": "25832.40",
+                    "time": "28h 42m 9s"
+                }
+            ],
+            "statuscode": 200,
+            "schema": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "awb": {
+                            "type": "string",
+                            "description": "air waybill number"
+                        },
+                        "origin": {
+                            "type": "string"
+                        },
+                        "destination": {
+                            "type": "string"
+                        },
+                        "pieces": {
+                            "type": "string"
+                        },
+                        "weight": {
+                            "type": "string"
+                        },
+                        "volume": {
+                            "type": "string"
+                        },
+                        "events": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "code": {
+                                        "type": "string"
+                                    },
+                                    "eventLocation": {
+                                        "type": "string"
+                                    },
+                                    "eventDate": {
+                                        "type": "string",
+                                        "format": "date-time"
+                                    },
+                                    "eventLocationCoord": {
+                                        "type": "string"
+                                    },
+                                    "flight": {
+                                        "type": "object",
+                                        "properties": {
+                                            "number": {
+                                                "type": "string"
+                                            },
+                                            "origin": {
+                                                "type": "string"
+                                            },
+                                            "destination": {
+                                                "type": "string"
+                                            },
+                                            "scheduledDeparture": {
+                                                "type": "string",
+                                                "format": "date-time"
+                                            },
+                                            "actualDeparture": {
+                                                "type": "string",
+                                                "format": "date-time"
+                                            },
+                                            "scheduledArrival": {
+                                                "type": "string",
+                                                "format": "date-time"
+                                            },
+                                            "actualArrival": {
+                                                "type": "string",
+                                                "format": "date-time"
+                                            },
+                                            "originCoord": {
+                                                "type": "string"
+                                            },
+                                            "destinationCoord": {
+                                                "type": "string"
+                                            },
+                                            "carbonEmission": {
+                                                "type": "string"
+                                            },
+                                            "distance": {
+                                                "type": "string"
+                                            }
+                                        }
+                                    },
+                                    "pieces": {
+                                        "type": "string"
+                                    },
+                                    "weight": {
+                                        "type": "string"
+                                    },
+                                    "volume": {
+                                        "type": "string"
+                                    },
+                                    "eventUlds": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "pieces": {
+                                                    "type": "string"
+                                                },
+                                                "uld": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "originCoord": {
+                            "type": "string"
+                        },
+                        "destinationCoord": {
+                            "type": "string"
+                        },
+                        "carbonEmission": {
+                            "type": "string"
+                        },
+                        "distance": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "standardized_name": "air_cargo_co2_track_and_trace"
+}

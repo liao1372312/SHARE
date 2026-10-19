@@ -1,0 +1,318 @@
+{
+    "product_id": "api_87868806-7343-4ad2-a5ce-2afe45b7a065",
+    "tool_description": "https://xlsx-template.kurukona.net/\nTemplate + JSON \u279e XLSX or PDF.\nTemplate base excel file and pdf generator.\nYou can create xlsx document or pdf file with template and json data.\n\n![img1](https://xlsx-template.kurukona.net/rapidapi/img/xlsx-tempate-engine-generate-img.png)",
+    "home_url": "https://rapidapi.com/kurukona/api/xlsx-template/",
+    "name": "XLSX Template",
+    "title": "XLSX Template",
+    "pricing": "FREEMIUM",
+    "tool_name": "XLSX Template",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 2095,
+        "avgSuccessRate": 99,
+        "popularityScore": 8.6,
+        "__typename": "Score"
+    },
+    "host": "xlsx-template.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Mail config List",
+            "url": "https://xlsx-template.p.rapidapi.com/mail/config/list",
+            "description": "Get mail config list from cloud database",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "orderBy",
+                    "type": "STRING",
+                    "description": "[generatedAt]|[asc, desc]\nOnly 'generatedAt' is allowed\n",
+                    "default": "generatedAt|asc"
+                },
+                {
+                    "name": "limit",
+                    "type": "NUMBER",
+                    "description": "Data get size limit\n",
+                    "default": 1000
+                },
+                {
+                    "name": "filter",
+                    "type": "STRING",
+                    "description": "{field}{operator}{value}\n[generatedAt][<=, >=, ==, !=, <, >]{value}\nOnly 'generatedAt' is allowed\n",
+                    "default": "generatedAt>=2022-11-16T00:00:00.000Z"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://xlsx-template.p.rapidapi.com/mail/config/list\"\nquerystring = {\"orderBy\": \"generatedAt|asc\", \"limit\": 1000, \"filter\": \"generatedAt>=2022-11-16T00:00:00.000Z\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"xlsx-template.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://xlsx-template.p.rapidapi.com/mail/config/list\"\nquerystring = {\"orderBy\": \"generatedAt|asc\", \"limit\": 1000, \"filter\": \"generatedAt>=2022-11-16T00:00:00.000Z\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"xlsx-template.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "This endpoint is disabled for your subscription"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "array",
+                "items": {
+                    "allOf": [
+                        {
+                            "type": "object",
+                            "properties": {
+                                "host": {
+                                    "type": "string"
+                                },
+                                "port": {
+                                    "type": "integer"
+                                },
+                                "secure": {
+                                    "type": "boolean"
+                                },
+                                "auth": {
+                                    "type": "object",
+                                    "properties": {
+                                        "user": {
+                                            "type": "string"
+                                        },
+                                        "pass": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            },
+                            "description": "https://nodemailer.com/smtp/#examples"
+                        },
+                        {
+                            "properties": {
+                                "generatedAt": {
+                                    "type": "string"
+                                },
+                                "mailConfigId": {
+                                    "type": "string",
+                                    "description": "Cloud stored mail config id"
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Generate historys",
+            "url": "https://xlsx-template.p.rapidapi.com/generate/historys",
+            "description": "Generated files history",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "orderBy",
+                    "type": "STRING",
+                    "description": "[serverTimingSec,serverTimingMs,generatedAt]|[asc, desc]\nOnly 'serverTimingSec', 'serverTimingMs', 'generatedAt' is allowed\n",
+                    "default": "serverTimingSec|asc"
+                },
+                {
+                    "name": "filter",
+                    "type": "STRING",
+                    "description": "{field}{operator}{value}\n[serverTimingSec,serverTimingMs,generatedAt][<=, >=, ==, !=, <, >]{value}\nOnly 'serverTimingSec', 'serverTimingMs', 'generatedAt' is allowed\n",
+                    "default": "serverTimingSec>=2"
+                },
+                {
+                    "name": "limit",
+                    "type": "NUMBER",
+                    "description": "Data get size limit\n",
+                    "default": "10"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://xlsx-template.p.rapidapi.com/generate/historys\"\nquerystring = {\"orderBy\": \"serverTimingSec|asc\", \"filter\": \"serverTimingSec>=2\", \"limit\": \"10\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"xlsx-template.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://xlsx-template.p.rapidapi.com/generate/historys\"\nquerystring = {\"orderBy\": \"serverTimingSec|asc\", \"filter\": \"serverTimingSec>=2\", \"limit\": \"10\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"xlsx-template.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": [],
+            "statuscode": 200,
+            "schema": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "generatedFiles": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "filename": {
+                                        "type": "string"
+                                    },
+                                    "pdf": {
+                                        "type": "object",
+                                        "properties": {
+                                            "size": {
+                                                "type": "integer",
+                                                "description": "byte"
+                                            },
+                                            "serverTimingMs": {
+                                                "type": "integer",
+                                                "description": "milliseconds"
+                                            }
+                                        }
+                                    },
+                                    "xlsx": {
+                                        "type": "object",
+                                        "properties": {
+                                            "size": {
+                                                "type": "integer",
+                                                "description": "byte"
+                                            },
+                                            "serverTimingMs": {
+                                                "type": "integer",
+                                                "description": "milliseconds"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "remoteIp": {
+                            "type": "string",
+                            "description": "Api call remote ip"
+                        },
+                        "serverTimingMs": {
+                            "type": "integer",
+                            "description": "milliseconds"
+                        },
+                        "serverTimingSec": {
+                            "type": "integer",
+                            "description": "seconds"
+                        },
+                        "generatedAt": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Mail config get",
+            "url": "https://xlsx-template.p.rapidapi.com/mail/config/slB2bozM2fVk5KirxyMq",
+            "description": "Get a mail confing from cloud database",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "mailConfigId",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "slB2bozM2fVk5KirxyMq"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://xlsx-template.p.rapidapi.com/mail/config/slB2bozM2fVk5KirxyMq\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"xlsx-template.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://xlsx-template.p.rapidapi.com/mail/config/{mailconfigid}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"xlsx-template.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per minute for your plan, BASIC, by the API provider"
+            },
+            "statuscode": 200,
+            "schema": {
+                "allOf": [
+                    {
+                        "type": "object",
+                        "properties": {
+                            "host": {
+                                "type": "string"
+                            },
+                            "port": {
+                                "type": "integer"
+                            },
+                            "secure": {
+                                "type": "boolean"
+                            },
+                            "auth": {
+                                "type": "object",
+                                "properties": {
+                                    "user": {
+                                        "type": "string"
+                                    },
+                                    "pass": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        },
+                        "description": "https://nodemailer.com/smtp/#examples"
+                    },
+                    {
+                        "properties": {
+                            "generatedAt": {
+                                "type": "string"
+                            },
+                            "mailConfigId": {
+                                "type": "string",
+                                "description": "Cloud stored mail config id"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Template list",
+            "url": "https://xlsx-template.p.rapidapi.com/template/list",
+            "description": "Cloud storage templates file list",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "orderBy",
+                    "type": "STRING",
+                    "description": "Only 'serverTimingSec', 'serverTimingMs', 'generatedAt' is allowed\n[serverTimingSec,serverTimingMs,generatedAt]|[asc, desc]\n",
+                    "default": "updated|asc"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://xlsx-template.p.rapidapi.com/template/list\"\nquerystring = {\"orderBy\": \"updated|asc\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"xlsx-template.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://xlsx-template.p.rapidapi.com/template/list\"\nquerystring = {\"orderBy\": \"updated|asc\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"xlsx-template.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per minute for your plan, BASIC, by the API provider"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "totalSize": {
+                        "type": "integer"
+                    },
+                    "templateFiles": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "filename": {
+                                    "type": "string"
+                                },
+                                "size": {
+                                    "type": "string"
+                                },
+                                "updated": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Template download",
+            "url": "https://xlsx-template.p.rapidapi.com/template/template.xlsx",
+            "description": "Download template file from Cloud storage",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "templateFilename",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "template.xlsx"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://xlsx-template.p.rapidapi.com/template/template.xlsx\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"xlsx-template.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://xlsx-template.p.rapidapi.com/template/{templatefilename}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"xlsx-template.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per minute for your plan, BASIC, by the API provider"
+            },
+            "statuscode": 1,
+            "schema": ""
+        }
+    ],
+    "standardized_name": "xlsx_template"
+}

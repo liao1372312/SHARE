@@ -1,0 +1,392 @@
+{
+    "product_id": "api_fac2ba13-eead-46a2-a73a-cf22f2b39836",
+    "tool_description": "",
+    "home_url": "https://rapidapi.com/traject-data-traject-data-default/api/asin-data/",
+    "name": "ASIN Data",
+    "title": "ASIN Data",
+    "pricing": "FREEMIUM",
+    "tool_name": "ASIN Data",
+    "score": {
+        "avgServiceLevel": 63,
+        "avgLatency": 8389,
+        "avgSuccessRate": 63,
+        "popularityScore": 8.8,
+        "__typename": "Score"
+    },
+    "host": "asin-data.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Category",
+            "url": "https://asin-data.p.rapidapi.com/request",
+            "description": "The Category Parameters are applicable when making a request with `type=category` to retrieve category results for an Amazon category. Categories can be specified either via passing an Amazon category URL in to the url parameter, or by passing a Category ID in the `category_id` and an Amazon domain in the `amazon_domain` parameter. The parameters should be appended as querystring parameters to the Product Data API GET HTTP request.\n\nCategory results are retrieved from the category listing page on Amazon.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "type",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "category"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "refinements",
+                    "type": "STRING",
+                    "description": "\nA comma-seperated list of refinement values to filter the category results by. These allow you to refine your category results by values such as \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"Reviews rating 4 and over\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"price range\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\" and \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"brand\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\".\n\nRefinement values are returned in the refinements array of each type=category result. Refinement values are dynamic and change by category area or search term used. If you wish to use refinements you should first issue a type=category request without specifying any refinements to retrieve a master list of the available refinements for the given category area/search term. You can then cache these refinement values for use on subsequent requests.\n\nFor example, to run a type=search request specifying two refinements with values `p_85/2470955011` and `p_36/2421886011` the value of the refinements parameter would be `refinements=p_85/2470955011,p_36/2421886011`\n\nNote that sometimes Amazon do not present a explicit refinement value and instead a link is returned. In this instance you should pass the link into the url request parameter of your type=category request to retrieve data from that refinement-filtered page.",
+                    "default": ""
+                },
+                {
+                    "name": "amazon_domain",
+                    "type": "STRING",
+                    "description": "The Amazon domain to retrieve category results from. For a full list of supported Amazon domains see [Supported Amazon Domains](https://www.asindataapi.com/docs/product-data-api/reference/amazon-domains).",
+                    "default": ""
+                },
+                {
+                    "name": "page",
+                    "type": "NUMBER",
+                    "description": "The current page of category results to retrieve. Inspect the pagination.total_pages property in the Category results to see how many pages of category results are available.\n\nupdate value of num to get additional pages",
+                    "default": ""
+                },
+                {
+                    "name": "sort_by",
+                    "type": "STRING",
+                    "description": "Determines the sort order of category results to return. Valid values are:\n\n- most_recent\n- price_low_to_high\n- price_high_to_low\n- featured\n- average_review\n",
+                    "default": ""
+                },
+                {
+                    "name": "category_id",
+                    "type": "STRING",
+                    "description": "A category ID to retrieve results from. You may supply any arbitary value in the category_id parameter.\n\nASIN Data API will use the category_id in the following form: `https://amazon_domain/s?node=category_id.`\n\nNote that pagination for top-level categories is not supported by the Amazon sites. If you wish to iterate the contents of a category the recommended approach is to pick the lowest level categories to perform your iteration / pagination on.",
+                    "default": ""
+                },
+                {
+                    "name": "url",
+                    "type": "STRING",
+                    "description": "The Amazon category results page URL to retrieve category results from. Be sure to URL-encode the url parameter.\n\n**Note the url parameter is supplied, the category_id parameter cannot be used (as the url itself defines the category ID used).**",
+                    "default": "https://www.amazon.com/s?bbn=16225009011&rh=n%3A%2116225009011%2Cn%3A502394%2Cn%3A281052"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://asin-data.p.rapidapi.com/request\"\nquerystring = {\"refinements\": \"\", \"amazon_domain\": \"\", \"page\": \"\", \"sort_by\": \"\", \"category_id\": \"\", \"url\": \"https://www.amazon.com/s?bbn=16225009011&rh=n%3A%2116225009011%2Cn%3A502394%2Cn%3A281052\", \"type\": \"category\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"asin-data.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://asin-data.p.rapidapi.com/request\"\nquerystring = {\"refinements\": \"\", \"amazon_domain\": \"\", \"page\": \"\", \"sort_by\": \"\", \"category_id\": \"\", \"url\": \"https://www.amazon.com/s?bbn=16225009011&rh=n%3A%2116225009011%2Cn%3A502394%2Cn%3A281052\", \"type\": \"category\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"asin-data.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "API Request failed due to Provider configuration error: The API response body transformation failed to parse content-type application/json. Please contact the API Provider",
+                "info": "Your Client (working) ---> Gateway (working) ---> API (not working)"
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Offers",
+            "url": "https://asin-data.p.rapidapi.com/request",
+            "description": "The Offers Parameters are applicable when making a request with `type=offers` to retrieve seller Offers for a single product on Amazon - the product is specified using either the asin and `amazon_domain` parameters or the url parameter (where the url parameter contains a link to an Amazon product offers page). The parameters should be appended as querystring parameters to the Product Data API GET HTTP request.\n\nOffers are retrieved from the offers listing popup window for a single product on Amazon.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "type",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "offers"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "offers_condition_used_acceptable",
+                    "type": "BOOLEAN",
+                    "description": "\nLimit the offers returned to just those that are of Used-Acceptable Condition. Valid values are:\ntrue\nOnly include offers that are Used-Acceptable Condition.\nfalse\nInclude all offers, regardless of their Condition.",
+                    "default": ""
+                },
+                {
+                    "name": "offers_condition_used_good",
+                    "type": "BOOLEAN",
+                    "description": "\nLimit the offers returned to just those that are of Used-Good Condition. Valid values are:\ntrue\nOnly include offers that are Used-Good Condition.\nfalse\nInclude all offers, regardless of their Condition.",
+                    "default": ""
+                },
+                {
+                    "name": "show_different_asins",
+                    "type": "BOOLEAN",
+                    "description": "\nSometimes Amazon will return Offers from ASINs other than the ASIN supplied in the asin request parameter (for example, when the original ASIN is out of stock). show_different_asins controls whether you want these other-ASIN offer results returned, or not. Can be set to true to include offers from other ASINs, or false (the default) to hide offers from ASINs other than the ASIN supplied in the asin parameter. Note that if you supply a url instead of asin in your request this parameter is ignored.",
+                    "default": ""
+                },
+                {
+                    "name": "amazon_domain",
+                    "type": "STRING",
+                    "description": "The Amazon domain to retrieve Offers for the product specified in the asin parameter from. For a full list of supported Amazon domains see Supported Amazon Domains.\n\n**Note: If the amazon_domain and asin parameters are supplied then the url parameter is ignored.**",
+                    "default": "amazon.com"
+                },
+                {
+                    "name": "offers_condition_used_like_new",
+                    "type": "BOOLEAN",
+                    "description": "\nLimit the offers returned to just those that are of Used-Like-New Condition. Valid values are:\ntrue\nOnly include offers that are Used-Like-New Condition.\nfalse\nInclude all offers, regardless of their Condition.",
+                    "default": ""
+                },
+                {
+                    "name": "offers_free_shipping",
+                    "type": "BOOLEAN",
+                    "description": "\nLimit the offers returned to just those that have Free Shipping. Valid values are:\ntrue\nOnly include offers that have Free Shipping.\nfalse\nInclude all offers, regardless of whether they have Free Shipping or not.",
+                    "default": ""
+                },
+                {
+                    "name": "offers_condition_new",
+                    "type": "BOOLEAN",
+                    "description": "l\nLimit the offers returned to just those that are of New Condition. Valid values are:\ntrue\nOnly include offers that are New Condition.\nfalse\nInclude all offers, regardless of their Condition.",
+                    "default": ""
+                },
+                {
+                    "name": "page",
+                    "type": "NUMBER",
+                    "description": "The current page of reviews to retrieve. Inspect the pagination.total_pages property in the Reviews results to see how many pages of reviews are available.\n**Note that the maximum number of reviews pages served by Amazon is 500**\n\nupdate value of num to get additional pages",
+                    "default": ""
+                },
+                {
+                    "name": "asin",
+                    "type": "STRING",
+                    "description": "The Amazon ASIN (product ID) to retrieve Offers for. Used in combination with the amazon_domain parameter.\n\n**Note: If the asin and amazon_domain parameters are supplied then the url parameter is ignored.**",
+                    "default": "B073JYC4XM"
+                },
+                {
+                    "name": "url",
+                    "type": "STRING",
+                    "description": "The Amazon product-page URL to retrieve Offers from.\n\n**Note: If the url parameter is supplied then the amazon_domain and asin parameters are ignored.**",
+                    "default": ""
+                },
+                {
+                    "name": "offers_prime",
+                    "type": "BOOLEAN",
+                    "description": "\nLimit the offers returned to just those that are Prime-eligible. Valid values are:\ntrue\nOnly include offers that are Prime-eligible.\nfalse\nInclude all offers, regardless of whether they are Prime-eligible or not.",
+                    "default": ""
+                },
+                {
+                    "name": "offers_condition_used_very_good",
+                    "type": "BOOLEAN",
+                    "description": "\nLimit the offers returned to just those that are of Used-Very-Good Condition. Valid values are:\ntrue\nOnly include offers that are Used-Very-Good Condition.\nfalse\nInclude all offers, regardless of their Condition.",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://asin-data.p.rapidapi.com/request\"\nquerystring = {\"offers_condition_used_acceptable\": \"\", \"offers_condition_used_good\": \"\", \"show_different_asins\": \"\", \"amazon_domain\": \"amazon.com\", \"offers_condition_used_like_new\": \"\", \"offers_free_shipping\": \"\", \"offers_condition_new\": \"\", \"page\": \"\", \"asin\": \"B073JYC4XM\", \"url\": \"\", \"offers_prime\": \"\", \"offers_condition_used_very_good\": \"\", \"type\": \"offers\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"asin-data.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://asin-data.p.rapidapi.com/request\"\nquerystring = {\"offers_condition_used_acceptable\": \"\", \"offers_condition_used_good\": \"\", \"show_different_asins\": \"\", \"amazon_domain\": \"amazon.com\", \"offers_condition_used_like_new\": \"\", \"offers_free_shipping\": \"\", \"offers_condition_new\": \"\", \"page\": \"\", \"asin\": \"B073JYC4XM\", \"url\": \"\", \"offers_prime\": \"\", \"offers_condition_used_very_good\": \"\", \"type\": \"offers\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"asin-data.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Reviews",
+            "url": "https://asin-data.p.rapidapi.com/request",
+            "description": "The Reviews Parameters are applicable when making a request with `type=reviews` to retrieve customer Reviews for a single product on Amazon - the product is specified using either the asin and `amazon_domain` parameters or the url parameter (where the url parameter contains a link to an Amazon reviews page). The parameters should be appended as querystring parameters to the Product Data API GET HTTP request.\n\nReviews are retrieved from the customer reviews page for a single product on Amazon.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "type",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "reviews"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "review_stars",
+                    "type": "STRING",
+                    "description": "The star rating of reviews to retrieve. Valid values are:\n\n- all_stars \n- five_star\n- four_star\n- three_star\n- two_star\n- one_star\n- all_positive\n- all_critical",
+                    "default": ""
+                },
+                {
+                    "name": "page",
+                    "type": "NUMBER",
+                    "description": "The current page of reviews to retrieve. Inspect the pagination.total_pages property in the Reviews results to see how many pages of reviews are available.\n\n**Note that the maximum number of reviews pages served by Amazon is 500.**\n\nupdate value of num to get additional pages",
+                    "default": ""
+                },
+                {
+                    "name": "search_term",
+                    "type": "STRING",
+                    "description": "A search term to use to search reviews.",
+                    "default": ""
+                },
+                {
+                    "name": "show_different_asins",
+                    "type": "BOOLEAN",
+                    "description": "Sometimes Amazon will return Reviews from ASINs other than the ASIN supplied in the asin request parameter (for example, when the original ASIN is out of stock). `show_different_asins `controls whether you want these other-ASIN review results returned, or not. Can be set to true (the default) to include reviews from other ASINs, or false to hide reviews from ASINs other than the ASIN supplied in the asin parameter. \n\nNote that if you supply a url instead of asin in your request this parameter is ignored.\n\nNote in the event of` show_different_asins=false` and the ASIN shown by Amazon being different from the requested ASIN, then all fields apart from product will be removed from the response.",
+                    "default": ""
+                },
+                {
+                    "name": "review_media_type",
+                    "type": "STRING",
+                    "description": "Filter the reviews to those containing a specific media type. Valid values are:\n\n`all_reviews`\n- Include reviews with text, images or video.\n\n`media_reviews_only`\n- Include only reviews containing images or video.",
+                    "default": ""
+                },
+                {
+                    "name": "sort_by",
+                    "type": "STRING",
+                    "description": "Determines the sort order of reviews to return. \n\nValid values are:  `most_helpful` and `most_recent`\n",
+                    "default": ""
+                },
+                {
+                    "name": "global_reviews",
+                    "type": "BOOLEAN",
+                    "description": "Determines whether Global Reviews are included, or not Global Reviews are reviews from other Amazon domains outside of the Amazon domain specified in the request. Valid values are:\n\n`true`\n- The  default, Global Reviews are included in the results.\n\n`false`\n- Global reviews are excluded from the results.",
+                    "default": ""
+                },
+                {
+                    "name": "review_id",
+                    "type": "STRING",
+                    "description": "\nA single Review ID, as returned by a prior `type=reviews` request, to retrieve. Useful if you wish to check for the presence of a single review. Use in combination with the amazon_domain parameter.",
+                    "default": ""
+                },
+                {
+                    "name": "reviewer_type",
+                    "type": "STRING",
+                    "description": "The type of reviewer to retrieve reviews from. Valid values are:\n\n`verified_purchase`\n- include reviews by Amazon Verified Purchasers only\n\n`all`\n- include  all reviews, regardless of whether they are from Amazon Verified Purchasers or not)",
+                    "default": ""
+                },
+                {
+                    "name": "amazon_domain",
+                    "type": "STRING",
+                    "description": "The Amazon domain to retrieve Reviews for the product specified in the asin parameter from. For a full list of supported Amazon domains see Supported Amazon Domains.\n\n**Note: If the amazon_domain and asin parameters are supplied then the url parameter is ignored.**",
+                    "default": "amazon.com"
+                },
+                {
+                    "name": "url",
+                    "type": "STRING",
+                    "description": "The Amazon product-page URL to retrieve Reviews from.\n\n**Note: If the url parameter is supplied then the amazon_domain and asin parameters are ignored.**",
+                    "default": ""
+                },
+                {
+                    "name": "review_formats",
+                    "type": "STRING",
+                    "description": "The type of reviewer to retrieve reviews from. Valid values are:\n\n`all_formats`\n- Include reviews of any product format/variant.\n\n`current_format`\n- Include reviews relating specifically to the current format/variant.",
+                    "default": ""
+                },
+                {
+                    "name": "asin",
+                    "type": "STRING",
+                    "description": "The Amazon ASIN (product ID) to retrieve Reviews for. Used in combination with the amazon_domain parameter.\n\n**Note: If the asin and amazon_domain parameters are supplied then the url parameter is ignored.**",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://asin-data.p.rapidapi.com/request\"\nquerystring = {\"review_stars\": \"\", \"page\": \"\", \"search_term\": \"\", \"show_different_asins\": \"\", \"review_media_type\": \"\", \"sort_by\": \"\", \"global_reviews\": \"\", \"review_id\": \"\", \"reviewer_type\": \"\", \"amazon_domain\": \"amazon.com\", \"url\": \"\", \"review_formats\": \"\", \"asin\": \"\", \"type\": \"reviews\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"asin-data.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://asin-data.p.rapidapi.com/request\"\nquerystring = {\"review_stars\": \"\", \"page\": \"\", \"search_term\": \"\", \"show_different_asins\": \"\", \"review_media_type\": \"\", \"sort_by\": \"\", \"global_reviews\": \"\", \"review_id\": \"\", \"reviewer_type\": \"\", \"amazon_domain\": \"amazon.com\", \"url\": \"\", \"review_formats\": \"\", \"asin\": \"\", \"type\": \"reviews\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"asin-data.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Search",
+            "url": "https://asin-data.p.rapidapi.com/request",
+            "description": "The Search Parameters are applicable when making a request with `type=search` to retrieve search results for an Amazon domain - the Amazon domain is specified using the `amazon_domain` parameter and the search term is specified in the `search_term` parameter. The parameters should be appended as querystring parameters to the Product Data API GET HTTP request.\n\nSearch results are retrieved from the search results page on Amazon.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "type",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "search"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "search_term",
+                    "type": "STRING",
+                    "description": "A search term to use to search products.",
+                    "default": "memory cards"
+                },
+                {
+                    "name": "url",
+                    "type": "STRING",
+                    "description": "The Amazon search results page URL to retrieve search results from. Be sure to URL-encode the url parameter.\n\n**Note the url parameter is supplied, the search_term parameter cannot be used (as the url itself defines the search term used).**",
+                    "default": ""
+                },
+                {
+                    "name": "direct_search",
+                    "type": "STRING",
+                    "description": "By default Amazon will, if a spelling mistake is suspected in the search_term, show search results for the corrected search term.\n\nTo disable this behaviour and search for the value in `search_term` directly, without auto-correcting it, set `direct_search=true`.",
+                    "default": ""
+                },
+                {
+                    "name": "page",
+                    "type": "NUMBER",
+                    "description": "The current page of search results to retrieve. Inspect the pagination.total_pages property in the Search results to see how many pages of search results are available.\n\nupdate value of num to get additional pages",
+                    "default": ""
+                },
+                {
+                    "name": "exclude_sponsored",
+                    "type": "BOOLEAN",
+                    "description": "Whether to exclude sponsored search results (when set to exclude_sponsored=true) from the search results returned, or not. Defaults to false.",
+                    "default": ""
+                },
+                {
+                    "name": "sort_by",
+                    "type": "STRING",
+                    "description": "Determines the sort order of search results to return. Valid values are:\n\n- most_recent\n- price_low_to_high\n- price_high_to_low\n- featured\n- average_review",
+                    "default": ""
+                },
+                {
+                    "name": "refinements",
+                    "type": "STRING",
+                    "description": "\nA comma-seperated list of refinement values to filter the search results by. These allow you to refine your search by values such as \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"Reviews rating 4 and over\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"price range\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\" and \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"brand\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\".\n\nRefinement values are returned in the refinements array of each type=search result. Refinement values are dynamic and change by category area or search term used. If you wish to use refinements you should first issue a type=search request without specifying any refinements to retrieve a master list of the avaialble refinements for the given category area/search term. You can then cache these refinement values for use on subsequent requests.\n\nFor example, to run a type=search request specifying two refinements with values `p_85/2470955011 `and` p_36/2421886011 `the value of the refinements parameter would be `refinements=p_85/2470955011,p_36/2421886011`",
+                    "default": ""
+                },
+                {
+                    "name": "category_id",
+                    "type": "STRING",
+                    "description": "\nA category ID to limit search results to. ASIN Data API will use the category_id in the following form: https://amazon_domain/s?node=category_id.\n\nNote that pagination for top-level categories is not supported by the Amazon sites. If you wish to iterate the contents of a category the recommended approach is to pick the lowest level categories to perform your iteration / pagination on.",
+                    "default": ""
+                },
+                {
+                    "name": "amazon_domain",
+                    "type": "STRING",
+                    "description": "The Amazon domain to retrieve search results from. For a full list of supported Amazon domains see Supported Amazon Domains.\n\n**Note: If the amazon_domain and asin parameters are supplied then the url parameter is ignored.**",
+                    "default": "amazon.com"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://asin-data.p.rapidapi.com/request\"\nquerystring = {\"search_term\": \"memory cards\", \"url\": \"\", \"direct_search\": \"\", \"page\": \"\", \"exclude_sponsored\": \"\", \"sort_by\": \"\", \"refinements\": \"\", \"category_id\": \"\", \"amazon_domain\": \"amazon.com\", \"type\": \"search\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"asin-data.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://asin-data.p.rapidapi.com/request\"\nquerystring = {\"search_term\": \"memory cards\", \"url\": \"\", \"direct_search\": \"\", \"page\": \"\", \"exclude_sponsored\": \"\", \"sort_by\": \"\", \"refinements\": \"\", \"category_id\": \"\", \"amazon_domain\": \"amazon.com\", \"type\": \"search\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"asin-data.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Product",
+            "url": "https://asin-data.p.rapidapi.com/request",
+            "description": "The Product Parameters are applicable when making a request with `type=product` to retrieve details of a single product on Amazon - the product is specified using either the asin and `amazon_domain` parameters or the url parameter (where the url parameter contains a link to an Amazon product page). The parameters should be appended as querystring parameters to the Product Data API GET HTTP request.\n\nProduct details are retrieved from the product page for a single product on Amazon.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "type",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "product"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "gtin",
+                    "type": "STRING",
+                    "description": "A GTIN, ISBN, UPC or EAN code to retrieve results for. Internally ASIN Data API will first convert the GTIN/ISBN/UPC/EAN to an Amazon ASIN, then retrieve the results for that ASIN from Amazon. Used in combination with the amazon_domain parameter.\n\n**Note: If the gtin and amazon_domain parameters are supplied then the url parameter is ignored.**",
+                    "default": ""
+                },
+                {
+                    "name": "url",
+                    "type": "STRING",
+                    "description": "The Amazon product-page URL to retrieve product details from.\n\n**Ensure that the url parameter is URL-encoded.**\n\nNote: If the url parameter is supplied then the amazon_domain and asin parameters are ignored.",
+                    "default": ""
+                },
+                {
+                    "name": "amazon_domain",
+                    "type": "STRING",
+                    "description": "The Amazon domain to retrieve product details from for the product specified in the asin parameter. For a full list of supported Amazon domains see Supported Amazon Domains.\n\n**Note: If the amazon_domain and asin parameters are supplied then the url parameter is ignored.**",
+                    "default": "amazon.com"
+                },
+                {
+                    "name": "asin",
+                    "type": "STRING",
+                    "description": "The Amazon ASIN (product ID) to retrieve product details for. Used in combination with the `amazon_domain` parameter.\n\n**Note: If the asin and `amazon_domain `parameters are supplied then the url parameter is ignored.**",
+                    "default": "B073JYC4XM"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://asin-data.p.rapidapi.com/request\"\nquerystring = {\"gtin\": \"\", \"url\": \"\", \"type\": \"product\", \"amazon_domain\": \"amazon.com\", \"asin\": \"B073JYC4XM\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"asin-data.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://asin-data.p.rapidapi.com/request\"\nquerystring = {\"gtin\": \"\", \"url\": \"\", \"type\": \"product\", \"amazon_domain\": \"amazon.com\", \"asin\": \"B073JYC4XM\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"asin-data.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "asin_data"
+}

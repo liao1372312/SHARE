@@ -1,0 +1,33 @@
+{
+"user_query":"I'm planning a romantic dinner and I want to create a playlist of love songs. Can you fetch a playlist from Spotify and provide me with the details? I would also like to retrieve the lyrics for these songs from the SongMeanings API.",
+"domain":"Technology",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Fetch a playlist of love songs from Spotify.",
+        "domain": "technology",
+        "required_inputs": ["playlist genre", "playlist length"]
+    },
+    {
+        "id": 2,
+        "description": "Retrieve the details of the fetched playlist from Spotify.",
+        "domain": "technology",
+        "required_inputs": ["playlist ID"],
+        "dependencies": [1]
+    },
+    {
+        "id": 3,
+        "description": "Extract the song titles from the playlist to retrieve their lyrics.",
+        "domain": "technology",
+        "required_inputs": ["song titles"],
+        "dependencies": [2]
+    },
+    {
+        "id": 4,
+        "description": "Fetch the lyrics for each song from the SongMeanings API.",
+        "domain": "technology",
+        "required_inputs": ["song titles"],
+        "dependencies": [3]
+    }
+]
+}

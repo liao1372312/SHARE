@@ -1,0 +1,33 @@
+{
+"user_query":"I'm planning a romantic date night and I want to create a playlist with love songs. Can you recommend popular love songs from different eras? Also, provide me with the lyrics and download links for those songs.",
+"domain":"Technology",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Gather a list of popular love songs from different eras.",
+        "domain": "technology",
+        "required_inputs": ["era1", "era2", "era3"]
+    },
+    {
+        "id": 2,
+        "description": "Retrieve the lyrics for each song identified in step 1.",
+        "domain": "technology",
+        "required_inputs": ["song_id"],
+        "dependency": "Step 2 requires Step 1 results."
+    },
+    {
+        "id": 3,
+        "description": "Find download links for each song identified in step 1.",
+        "domain": "technology",
+        "required_inputs": ["song_id"],
+        "dependency": "Step 3 requires Step 1 results."
+    },
+    {
+        "id": 4,
+        "description": "Compile the playlist with song titles, lyrics, and download links.",
+        "domain": "technology",
+        "required_inputs": ["songs_data"],
+        "dependency": "Step 4 requires Step 2 and Step 3 results."
+    }
+]
+}

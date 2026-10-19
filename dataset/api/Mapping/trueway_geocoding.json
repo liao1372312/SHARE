@@ -1,0 +1,303 @@
+{
+    "product_id": "api_ed762aef-e305-4401-b2fe-b0f8c5f0f43d",
+    "tool_description": "Forward and Reverse Geocoding",
+    "home_url": "https://rapidapi.com/trueway/api/trueway-geocoding/",
+    "name": "TrueWay Geocoding",
+    "title": "TrueWay Geocoding",
+    "pricing": "FREEMIUM",
+    "tool_name": "TrueWay Geocoding",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 326,
+        "avgSuccessRate": 100,
+        "popularityScore": 9.9,
+        "__typename": "Score"
+    },
+    "host": "trueway-geocoding.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "ReverseGeocode",
+            "url": "https://trueway-geocoding.p.rapidapi.com/ReverseGeocode",
+            "description": "Obtain address for location",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "location",
+                    "type": "STRING",
+                    "description": "The location for which you wish to obtain the human-readable address",
+                    "default": "37.7879493,-122.3961974"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "language",
+                    "type": "STRING",
+                    "description": "The language in which to return results",
+                    "default": "en"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://trueway-geocoding.p.rapidapi.com/ReverseGeocode\"\nquerystring = {\"language\": \"en\", \"location\": \"37.7879493,-122.3961974\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"trueway-geocoding.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://trueway-geocoding.p.rapidapi.com/ReverseGeocode\"\nquerystring = {\"language\": \"en\", \"location\": \"37.7879493,-122.3961974\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"trueway-geocoding.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "results": [
+                    {
+                        "address": "505 Howard St, San Francisco, CA 94105, USA",
+                        "postal_code": "94105",
+                        "country": "United States",
+                        "region": "California",
+                        "area": "San Francisco County",
+                        "locality": "San Francisco",
+                        "neighborhood": "SoMa",
+                        "street": "Howard Street",
+                        "house": "505",
+                        "location": {
+                            "lat": 37.78793,
+                            "lng": -122.396161
+                        },
+                        "location_type": "exact",
+                        "type": "poi"
+                    },
+                    {
+                        "address": "18 Tehama St, San Francisco, CA 94105, USA",
+                        "postal_code": "94105",
+                        "country": "United States",
+                        "region": "California",
+                        "area": "San Francisco County",
+                        "locality": "San Francisco",
+                        "neighborhood": "SoMa",
+                        "street": "Tehama Street",
+                        "house": "18",
+                        "location": {
+                            "lat": 37.78795,
+                            "lng": -122.396136
+                        },
+                        "location_type": "exact",
+                        "type": "street_address"
+                    },
+                    {
+                        "address": "505 Howard St, San Francisco, CA 94105, USA",
+                        "postal_code": "94105",
+                        "country": "United States",
+                        "region": "California",
+                        "area": "San Francisco County",
+                        "locality": "San Francisco",
+                        "neighborhood": "SoMa",
+                        "street": "Howard Street",
+                        "house": "505",
+                        "location": {
+                            "lat": 37.787926,
+                            "lng": -122.396187
+                        },
+                        "location_type": "exact",
+                        "type": "street_address"
+                    },
+                    {
+                        "address": "QJQ3+5G SoMa, San Francisco, CA, USA",
+                        "country": "United States",
+                        "region": "California",
+                        "area": "San Francisco County",
+                        "locality": "San Francisco",
+                        "neighborhood": "SoMa",
+                        "location": {
+                            "lat": 37.787926,
+                            "lng": -122.396187
+                        },
+                        "location_type": "centroid",
+                        "type": "poi"
+                    },
+                    {
+                        "address": "19-1 Tehama St, San Francisco, CA 94105, USA",
+                        "postal_code": "94105",
+                        "country": "United States",
+                        "region": "California",
+                        "area": "San Francisco County",
+                        "locality": "San Francisco",
+                        "neighborhood": "SoMa",
+                        "street": "Tehama Street",
+                        "house": "19-1",
+                        "location": {
+                            "lat": 37.787852,
+                            "lng": -122.3958
+                        },
+                        "location_type": "centroid",
+                        "type": "route"
+                    }
+                ]
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "results": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "address": {
+                                    "type": "string"
+                                },
+                                "postal_code": {
+                                    "type": "string"
+                                },
+                                "country": {
+                                    "type": "string"
+                                },
+                                "region": {
+                                    "type": "string"
+                                },
+                                "area": {
+                                    "type": "string"
+                                },
+                                "locality": {
+                                    "type": "string"
+                                },
+                                "neighborhood": {
+                                    "type": "string"
+                                },
+                                "street": {
+                                    "type": "string"
+                                },
+                                "house": {
+                                    "type": "string"
+                                },
+                                "location": {
+                                    "type": "object",
+                                    "properties": {
+                                        "lat": {
+                                            "type": "number"
+                                        },
+                                        "lng": {
+                                            "type": "number"
+                                        }
+                                    }
+                                },
+                                "location_type": {
+                                    "type": "string"
+                                },
+                                "type": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Geocode",
+            "url": "https://trueway-geocoding.p.rapidapi.com/Geocode",
+            "description": "Obtain geocoordinates for address",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "address",
+                    "type": "STRING",
+                    "description": "The address that you want to geocode",
+                    "default": "505 Howard St, San Francisco"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "language",
+                    "type": "STRING",
+                    "description": "The language in which to return results",
+                    "default": "en"
+                },
+                {
+                    "name": "country",
+                    "type": "STRING",
+                    "description": "The country code",
+                    "default": ""
+                },
+                {
+                    "name": "bounds",
+                    "type": "STRING",
+                    "description": "The bounding box",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://trueway-geocoding.p.rapidapi.com/Geocode\"\nquerystring = {\"address\": \"505 Howard St, San Francisco\", \"language\": \"en\", \"country\": \"\", \"bounds\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"trueway-geocoding.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://trueway-geocoding.p.rapidapi.com/Geocode\"\nquerystring = {\"address\": \"505 Howard St, San Francisco\", \"language\": \"en\", \"country\": \"\", \"bounds\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"trueway-geocoding.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "results": [
+                    {
+                        "address": "505 Howard St, San Francisco, CA 94105, USA",
+                        "postal_code": "94105",
+                        "country": "United States",
+                        "region": "California",
+                        "area": "San Francisco County",
+                        "locality": "San Francisco",
+                        "neighborhood": "SoMa",
+                        "street": "Howard Street",
+                        "house": "505",
+                        "location": {
+                            "lat": 37.787926,
+                            "lng": -122.396187
+                        },
+                        "location_type": "exact",
+                        "type": "street_address"
+                    }
+                ]
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "results": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "address": {
+                                    "type": "string"
+                                },
+                                "postal_code": {
+                                    "type": "string"
+                                },
+                                "country": {
+                                    "type": "string"
+                                },
+                                "region": {
+                                    "type": "string"
+                                },
+                                "area": {
+                                    "type": "string"
+                                },
+                                "locality": {
+                                    "type": "string"
+                                },
+                                "neighborhood": {
+                                    "type": "string"
+                                },
+                                "street": {
+                                    "type": "string"
+                                },
+                                "house": {
+                                    "type": "string"
+                                },
+                                "location": {
+                                    "type": "object",
+                                    "properties": {
+                                        "lat": {
+                                            "type": "number"
+                                        },
+                                        "lng": {
+                                            "type": "number"
+                                        }
+                                    }
+                                },
+                                "location_type": {
+                                    "type": "string"
+                                },
+                                "type": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "standardized_name": "trueway_geocoding"
+}

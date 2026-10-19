@@ -1,0 +1,26 @@
+{
+"user_query":"I'm planning a trip to China, Japan, and Korea and I want to stay updated on the latest news from these countries. Could you fetch me all the news articles available for these regions? Additionally, it would be great if you could filter the news specifically from the Guardian and provide me with the title, URL, and source of each article.",
+"domain":"tourism",
+"TaskList": [
+{
+"id": 1,
+"description": "Fetch the latest news articles for China, Japan, and Korea.",
+"domain": "news",
+"required_inputs": ["regions: China, Japan, Korea"]
+},
+{
+"id": 2,
+"description": "Filter the news articles to include only those from The Guardian.",
+"domain": "news",
+"required_inputs": ["source: The Guardian"],
+"dependencies": [1]
+},
+{
+"id": 3,
+"description": "Extract the title, URL, and source from the filtered news articles.",
+"domain": "data extraction",
+"required_inputs": ["articles data"],
+"dependencies": [2]
+}
+]
+}

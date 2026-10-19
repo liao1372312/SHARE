@@ -1,0 +1,47 @@
+{
+"user_query":"I'm planning a trip to a new city and I need some information about the popular places and entities there. Can you give me details about the attractions, restaurants, and hotels in San Francisco? Also, provide me with relevant images for each place.",
+"domain":"tourism",
+"TaskList": [
+{
+"id": 1,
+"description": "Query for popular attractions in San Francisco.",
+"domain": "tourism",
+"required_inputs": ["city_name"]
+},
+{
+"id": 2,
+"description": "Fetch details about restaurants in San Francisco.",
+"domain": "tourism",
+"required_inputs": ["city_name"]
+},
+{
+"id": 3,
+"description": "Obtain information on hotels in San Francisco.",
+"domain": "tourism",
+"required_inputs": ["city_name"]
+},
+{
+"id": 4,
+"description": "Retrieve images for the popular attractions found in step 1.",
+"domain": "tourism",
+"required_inputs": ["attraction_ids"]
+},
+{
+"id": 5,
+"description": "Retrieve images for the restaurants found in step 2.",
+"domain": "tourism",
+"required_inputs": ["restaurant_ids"]
+},
+{
+"id": 6,
+"description": "Retrieve images for the hotels found in step 3.",
+"domain": "tourism",
+"required_inputs": ["hotel_ids"]
+}
+],
+"dependencies": [
+    {"step": 4, "depends_on": 1},
+    {"step": 5, "depends_on": 2},
+    {"step": 6, "depends_on": 3}
+]
+}

@@ -1,0 +1,53 @@
+{
+"user_query":"I want to explore the sentiment analysis and keywords of recent crypto news articles and tweets.",
+"domain":"Finance",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Fetch the last 100 news articles related to cryptocurrencies from the past 24 hours.",
+        "domain": "finance",
+        "required_inputs": ["time_period", "crypto_related_keywords"]
+    },
+    {
+        "id": 2,
+        "description": "Fetch the last 100 tweets related to cryptocurrencies from the past 24 hours.",
+        "domain": "finance",
+        "required_inputs": ["time_period", "crypto_related_keywords"]
+    },
+    {
+        "id": 3,
+        "description": "Perform sentiment analysis on the fetched news articles.",
+        "domain": "finance",
+        "required_inputs": ["news_article_texts"],
+        "dependencies": [1]
+    },
+    {
+        "id": 4,
+        "description": "Perform sentiment analysis on the fetched tweets.",
+        "domain": "finance",
+        "required_inputs": ["tweet_texts"],
+        "dependencies": [2]
+    },
+    {
+        "id": 5,
+        "description": "Extract the top 3 keywords from the fetched news articles.",
+        "domain": "finance",
+        "required_inputs": ["news_article_texts"],
+        "dependencies": [1]
+    },
+    {
+        "id": 6,
+        "description": "Extract the top 3 keywords from the fetched tweets.",
+        "domain": "finance",
+        "required_inputs": ["tweet_texts"],
+        "dependencies": [2]
+    },
+    {
+        "id": 7,
+        "description": "Compile the sentiment analysis results and keywords from both sources.",
+        "domain": "finance",
+        "required_inputs": ["sentiment_analysis_news", "sentiment_analysis_tweets", "keywords_news", "keywords_tweets"],
+        "dependencies": [3, 4, 5, 6]
+    }
+]
+}

@@ -1,0 +1,86 @@
+{
+    "product_id": "api_76b8afcd-3121-4e93-a7e9-7e98ff223335",
+    "tool_description": "Access stock prices. Financial statements, real stock price values. SEC EDGAR API with all filings in real time. Free stock API to discover financial data instantly more at https://fmpcloud.io/ ",
+    "home_url": "https://rapidapi.com/FmpCloudAPI/api/fmpcloud/",
+    "name": "FmpCloud",
+    "title": "FmpCloud",
+    "pricing": "FREE",
+    "tool_name": "FmpCloud",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 762,
+        "avgSuccessRate": 0,
+        "popularityScore": 0.3,
+        "__typename": "Score"
+    },
+    "host": "fmpcloud.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Income Statement",
+            "url": "https://fmpcloud.p.rapidapi.com/income-statement/AAPL",
+            "description": "Get Company Income Statement In JSON format",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "stock",
+                    "type": "string",
+                    "description": "",
+                    "default": "AAPL"
+                },
+                {
+                    "name": "apikey",
+                    "type": "STRING",
+                    "description": "get your apikey at https://fmpcloud.io/register",
+                    "default": "demo"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "period",
+                    "type": "STRING",
+                    "description": "annual / quarter",
+                    "default": "quarter"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://fmpcloud.p.rapidapi.com/income-statement/AAPL\"\nquerystring = {\"period\": \"quarter\", \"apikey\": \"demo\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"fmpcloud.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://fmpcloud.p.rapidapi.com/income-statement/{stock}\"\nquerystring = {\"period\": \"quarter\", \"apikey\": \"demo\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"fmpcloud.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "Error Message": "Invalid API KEY. Please retry or visit our documentation to create one FREE https://site.financialmodelingprep.com/developer/docs"
+            }
+        },
+        {
+            "name": "Cash Flow Statement",
+            "url": "https://fmpcloud.p.rapidapi.com/cash-flow-statement/AAPL",
+            "description": "Get Cash Flow Statement in JSON Format",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "stock",
+                    "type": "string",
+                    "description": "",
+                    "default": "AAPL"
+                },
+                {
+                    "name": "apikey",
+                    "type": "STRING",
+                    "description": "get your apikey at https://fmpcloud.io/register",
+                    "default": "demo"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "period",
+                    "type": "STRING",
+                    "description": "period / annual",
+                    "default": "quarter"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://fmpcloud.p.rapidapi.com/cash-flow-statement/AAPL\"\nquerystring = {\"apikey\": \"demo\", \"period\": \"quarter\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"fmpcloud.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://fmpcloud.p.rapidapi.com/cash-flow-statement/{stock}\"\nquerystring = {\"apikey\": \"demo\", \"period\": \"quarter\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"fmpcloud.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "Error Message": "Invalid API KEY. Please retry or visit our documentation to create one FREE https://site.financialmodelingprep.com/developer/docs"
+            }
+        }
+    ],
+    "standardized_name": "fmpcloud"
+}

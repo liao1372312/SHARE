@@ -1,0 +1,33 @@
+{
+"user_query":"I want to surprise my family with a vacation to a tropical destination. Can you recommend some beautiful beaches, luxury hotels, and local attractions for a perfect family getaway?",
+"domain":"Tourism",
+"TaskList": [
+{
+"id": 1,
+"description": "Research and compile a list of popular tropical destinations with beautiful beaches.",
+"domain": "tourism",
+"required_inputs": []
+},
+{
+"id": 2,
+"description": "Identify luxury hotels available in the selected tropical destinations.",
+"domain": "tourism",
+"required_inputs": ["destination_id"] 	,
+"dependencies": [1]
+},
+{
+"id": 3,
+"description": "Gather information on local attractions and activities suitable for families at the selected destinations.",
+"domain": "tourism",
+"required_inputs": ["destination_id"],
+"dependencies": [1]
+},
+{
+"id": 4,
+"description": "Create a comprehensive travel itinerary including beaches, hotels, and attractions based on the collected information.",
+"domain": "tourism",
+"required_inputs": ["beach_list", "hotel_list", "attraction_list"],
+"dependencies": [2, 3]
+}
+]
+}

@@ -1,0 +1,33 @@
+{
+"user_query":"I'm planning a trip to a soccer-loving country and I want to attend some matches. Can you fetch me the live match details and predictions? Also, provide me with the list of fixture IDs for the matches.",
+"domain":"Tourism",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Fetch the list of upcoming soccer matches in the chosen country.",
+        "domain": "tourism",
+        "required_inputs": ["country_name"]
+    },
+    {
+        "id": 2,
+        "description": "Retrieve live match details for the upcoming soccer matches.",
+        "domain": "tourism",
+        "required_inputs": ["fixture_ids"],
+        "dependencies": [1]
+    },
+    {
+        "id": 3,
+        "description": "Get predictions for the upcoming soccer matches based on current team performances.",
+        "domain": "tourism",
+        "required_inputs": ["fixture_ids"],
+        "dependencies": [1]
+    },
+    {
+        "id": 4,
+        "description": "Collect and provide the list of fixture IDs for the matches.",
+        "domain": "tourism",
+        "required_inputs": ["match_list"],
+        "dependencies": [1]
+    }
+]
+}

@@ -1,0 +1,884 @@
+{
+    "product_id": "api_4c59d57e-9b09-49de-a230-0e9fccdd2d0f",
+    "tool_description": "Search Reddit comments and posts in near real time and view archive data from 2010 to present day",
+    "home_url": "https://rapidapi.com/lexyr-inc-lexyr-inc-default/api/socialgrep/",
+    "name": "Socialgrep",
+    "title": "Socialgrep",
+    "pricing": "FREEMIUM",
+    "tool_name": "Socialgrep",
+    "score": {
+        "avgServiceLevel": 99,
+        "avgLatency": 579,
+        "avgSuccessRate": 98,
+        "popularityScore": 9,
+        "__typename": "Score"
+    },
+    "host": "socialgrep.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Post search",
+            "url": "https://socialgrep.p.rapidapi.com/search/posts",
+            "description": "Searches Reddit posts.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "query",
+                    "type": "STRING",
+                    "description": "The comma-separated query for the search. Supports the following term types:\n\n`site:{site_name}` - search only posts where the domain matches {site_name}.\n\n`-site:{site_name}` - search only posts where the domain does not match {site_name}.\n\n`/r/{subreddit}` - search only posts from the subreddit {subreddit}.\n\n`-/r/{subreddit}` - search only posts not from the subreddit {subreddit}.\n\n`{term}` - search only posts with titles containing the term {term}.\n\n`-{term}` - search only posts with titles not containing the term {term}.\n\n`score:{score}` - search only posts with score at least {score}.\n\n`before:{YYYY-mm-dd}`, `after:{YYYY-mm-dd}` - search only posts within the date range. `before` is inclusive, `after` is not.",
+                    "default": "/r/funny,cat"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "after",
+                    "type": "NUMBER",
+                    "description": "The previous result's `sort_key` value. Used for pagination.",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://socialgrep.p.rapidapi.com/search/posts\"\nquerystring = {\"after\": \"\", \"query\": \"/r/funny,cat\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"socialgrep.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://socialgrep.p.rapidapi.com/search/posts\"\nquerystring = {\"after\": \"\", \"query\": \"/r/funny,cat\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"socialgrep.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "type": "post",
+                "data": [
+                    {
+                        "type": "post",
+                        "id": "14axeea",
+                        "subreddit": {
+                            "id": "2qh33",
+                            "name": "funny",
+                            "nsfw": false
+                        },
+                        "created_utc": 1686923433,
+                        "permalink": "https://old.reddit.com/r/funny/comments/14axeea/funny_cat_hehehe/",
+                        "domain": "i.redd.it",
+                        "title": "Funny cat hehehe",
+                        "selftext": null,
+                        "url": "https://i.redd.it/mif1azlgxd6b1.jpg",
+                        "score": 1
+                    },
+                    {
+                        "type": "post",
+                        "id": "14axdqi",
+                        "subreddit": {
+                            "id": "2qh33",
+                            "name": "funny",
+                            "nsfw": false
+                        },
+                        "created_utc": 1686923386,
+                        "permalink": "https://old.reddit.com/r/funny/comments/14axdqi/ru_paul_as_a_cat/",
+                        "domain": "i.redd.it",
+                        "title": "Ru paul as a cat",
+                        "selftext": null,
+                        "url": "https://i.redd.it/nahxcxgbxd6b1.png",
+                        "score": 1
+                    },
+                    {
+                        "type": "post",
+                        "id": "14axd8h",
+                        "subreddit": {
+                            "id": "2qh33",
+                            "name": "funny",
+                            "nsfw": false
+                        },
+                        "created_utc": 1686923349,
+                        "permalink": "https://old.reddit.com/r/funny/comments/14axd8h/ru_paul_as_a_cat/",
+                        "domain": "i.redd.it",
+                        "title": "Ru paul as a cat",
+                        "selftext": null,
+                        "url": "https://i.redd.it/mvknd5i7xd6b1.png",
+                        "score": 1
+                    },
+                    {
+                        "type": "post",
+                        "id": "14790ot",
+                        "subreddit": {
+                            "id": "2qh33",
+                            "name": "funny",
+                            "nsfw": false
+                        },
+                        "created_utc": 1686526571,
+                        "permalink": "https://old.reddit.com/r/funny/comments/14790ot/so_cute_cat_funny_video/",
+                        "domain": "rumble.com",
+                        "title": "So Cute Cat Funny Video",
+                        "selftext": null,
+                        "url": "https://rumble.com/v2qcbuk-so-cute-cat-funny-video.html",
+                        "score": 1
+                    },
+                    {
+                        "type": "post",
+                        "id": "1478zz5",
+                        "subreddit": {
+                            "id": "2qh33",
+                            "name": "funny",
+                            "nsfw": false
+                        },
+                        "created_utc": 1686526520,
+                        "permalink": "https://old.reddit.com/r/funny/comments/1478zz5/baby_cats_cute_and_funny_cat_videos_compilation/",
+                        "domain": "rumble.com",
+                        "title": "Baby Cats - Cute and Funny Cat Videos Compilation",
+                        "selftext": null,
+                        "url": "https://rumble.com/v2qfj2m-baby-cats-cute-and-funny-cat-videos-compilation-aww-animals.html",
+                        "score": 1
+                    },
+                    {
+                        "type": "post",
+                        "id": "1478ygy",
+                        "subreddit": {
+                            "id": "2qh33",
+                            "name": "funny",
+                            "nsfw": false
+                        },
+                        "created_utc": 1686526406,
+                        "permalink": "https://old.reddit.com/r/funny/comments/1478ygy/shorts_cat_meme_kitten_tik_tok_video_funny_cats/",
+                        "domain": "rumble.com",
+                        "title": "#shorts cat meme &amp; kitten (tik tok video] - funny cats meow baby cute compilation [cat-cash home",
+                        "selftext": null,
+                        "url": "https://rumble.com/v2rm9m6-shorts-cat-meme-and-kitten-tik-tok-video-funny-cats-meow-baby-cute-compilat.html",
+                        "score": 1
+                    },
+                    {
+                        "type": "post",
+                        "id": "1473ttw",
+                        "subreddit": {
+                            "id": "2qh33",
+                            "name": "funny",
+                            "nsfw": false
+                        },
+                        "created_utc": 1686513981,
+                        "permalink": "https://old.reddit.com/r/funny/comments/1473ttw/the_shrine_at_my_mother_in_laws_house_i_love_that/",
+                        "domain": "i.redd.it",
+                        "title": "The shrine at my mother in law\u2019s house. I love that the cat is in the middle and the Virgin Mary on the side \ud83d\ude43",
+                        "selftext": null,
+                        "url": "https://i.redd.it/as3zzhhp3g5b1.jpg",
+                        "score": 3
+                    },
+                    {
+                        "type": "post",
+                        "id": "146y583",
+                        "subreddit": {
+                            "id": "2qh33",
+                            "name": "funny",
+                            "nsfw": false
+                        },
+                        "created_utc": 1686500625,
+                        "permalink": "https://old.reddit.com/r/funny/comments/146y583/cat/",
+                        "domain": "v.redd.it",
+                        "title": "Cat",
+                        "selftext": null,
+                        "url": "https://v.redd.it/mqva1o510f5b1",
+                        "score": 0
+                    },
+                    {
+                        "type": "post",
+                        "id": "146xb4n",
+                        "subreddit": {
+                            "id": "2qh33",
+                            "name": "funny",
+                            "nsfw": false
+                        },
+                        "created_utc": 1686498575,
+                        "permalink": "https://old.reddit.com/r/funny/comments/146xb4n/my_cat_is_trying_to_become_a_frying_pan/",
+                        "domain": "v.redd.it",
+                        "title": "My cat is trying to become a frying pan ",
+                        "selftext": null,
+                        "url": "https://v.redd.it/cumfc7l4ue5b1",
+                        "score": 804
+                    },
+                    {
+                        "type": "post",
+                        "id": "146b25a",
+                        "subreddit": {
+                            "id": "2qh33",
+                            "name": "funny",
+                            "nsfw": false
+                        },
+                        "created_utc": 1686431054,
+                        "permalink": "https://old.reddit.com/r/funny/comments/146b25a/cat_with_a_mask/",
+                        "domain": "i.redd.it",
+                        "title": "Cat with a mask \ud83d\ude3b",
+                        "selftext": null,
+                        "url": "https://i.redd.it/i1ee07hc995b1.jpg",
+                        "score": 1
+                    },
+                    {
+                        "type": "post",
+                        "id": "14682ko",
+                        "subreddit": {
+                            "id": "2qh33",
+                            "name": "funny",
+                            "nsfw": false
+                        },
+                        "created_utc": 1686423399,
+                        "permalink": "https://old.reddit.com/r/funny/comments/14682ko/gandalf_sniffing_a_cats_butt_that_is_also_a/",
+                        "domain": "",
+                        "title": "Gandalf sniffing a cats butt, that is also a Gandalf cat",
+                        "selftext": "[removed]",
+                        "url": "",
+                        "score": 1
+                    },
+                    {
+                        "type": "post",
+                        "id": "145khy5",
+                        "subreddit": {
+                            "id": "2qh33",
+                            "name": "funny",
+                            "nsfw": false
+                        },
+                        "created_utc": 1686353880,
+                        "permalink": "https://old.reddit.com/r/funny/comments/145khy5/cat_thinks_shes_the_prettiest_girl_in_the_room/",
+                        "domain": "",
+                        "title": "Cat thinks she\u2019s the prettiest girl in the room",
+                        "selftext": "[removed]",
+                        "url": "",
+                        "score": 1
+                    },
+                    {
+                        "type": "post",
+                        "id": "145fr6z",
+                        "subreddit": {
+                            "id": "2qh33",
+                            "name": "funny",
+                            "nsfw": false
+                        },
+                        "created_utc": 1686342260,
+                        "permalink": "https://old.reddit.com/r/funny/comments/145fr6z/grumpy_cat/",
+                        "domain": "i.redd.it",
+                        "title": "Grumpy cat",
+                        "selftext": null,
+                        "url": "https://i.redd.it/ymod4v3cx15b1.jpg",
+                        "score": 26
+                    },
+                    {
+                        "type": "post",
+                        "id": "1454i0e",
+                        "subreddit": {
+                            "id": "2qh33",
+                            "name": "funny",
+                            "nsfw": false
+                        },
+                        "created_utc": 1686315277,
+                        "permalink": "https://old.reddit.com/r/funny/comments/1454i0e/seeing_people_come_to_buy_fish_and_handing_the/",
+                        "domain": "i.redd.it",
+                        "title": "Seeing people come to buy fish and handing the owner, money, this cat went out and got a leaf to pay for her fish. On the first day, the owner of the shop thought this was very cute, so he gave her a small fish. Now everyday this cat comes in to buy a fish with a leaf. Not mine source fb",
+                        "selftext": null,
+                        "url": "https://i.redd.it/ynfkn8o3pz4b1.jpg",
+                        "score": 17
+                    },
+                    {
+                        "type": "post",
+                        "id": "144t379",
+                        "subreddit": {
+                            "id": "2qh33",
+                            "name": "funny",
+                            "nsfw": false
+                        },
+                        "created_utc": 1686278716,
+                        "permalink": "https://old.reddit.com/r/funny/comments/144t379/i_meowed_at_my_cat_and_i_dont_know_what_i_said/",
+                        "domain": "i.redd.it",
+                        "title": "I meowed at my cat and I don\u2019t know what I said because...",
+                        "selftext": null,
+                        "url": "https://i.redd.it/9uhgea2dow4b1.png",
+                        "score": 1
+                    },
+                    {
+                        "type": "post",
+                        "id": "144n05q",
+                        "subreddit": {
+                            "id": "2qh33",
+                            "name": "funny",
+                            "nsfw": false
+                        },
+                        "created_utc": 1686262627,
+                        "permalink": "https://old.reddit.com/r/funny/comments/144n05q/my_friends_dad_successfully_dodges_a_cat/",
+                        "domain": "v.redd.it",
+                        "title": "My friend's dad (successfully?) dodges a cat",
+                        "selftext": null,
+                        "url": "https://v.redd.it/int2rp2jcv4b1",
+                        "score": 29
+                    },
+                    {
+                        "type": "post",
+                        "id": "144j4yn",
+                        "subreddit": {
+                            "id": "2qh33",
+                            "name": "funny",
+                            "nsfw": false
+                        },
+                        "created_utc": 1686253869,
+                        "permalink": "https://old.reddit.com/r/funny/comments/144j4yn/cat_dance/",
+                        "domain": "youtube.com",
+                        "title": "Cat Dance \ud83d\ude2e",
+                        "selftext": null,
+                        "url": "https://youtube.com/shorts/5i_v8-RPnoE?feature=share",
+                        "score": 1
+                    },
+                    {
+                        "type": "post",
+                        "id": "144ejeb",
+                        "subreddit": {
+                            "id": "2qh33",
+                            "name": "funny",
+                            "nsfw": false
+                        },
+                        "created_utc": 1686243253,
+                        "permalink": "https://old.reddit.com/r/funny/comments/144ejeb/meow_madness_a_pawsitively_funny_cat_video/",
+                        "domain": "youtube.com",
+                        "title": "Meow Madness: A Paw-sitively Funny Cat Video!",
+                        "selftext": null,
+                        "url": "https://youtube.com/shorts/yTiVVgfQBHw?feature=share",
+                        "score": 1
+                    },
+                    {
+                        "type": "post",
+                        "id": "144d0mg",
+                        "subreddit": {
+                            "id": "2qh33",
+                            "name": "funny",
+                            "nsfw": false
+                        },
+                        "created_utc": 1686239786,
+                        "permalink": "https://old.reddit.com/r/funny/comments/144d0mg/nice_cat/",
+                        "domain": "",
+                        "title": "Nice Cat",
+                        "selftext": "[removed]",
+                        "url": "",
+                        "score": 1
+                    },
+                    {
+                        "type": "post",
+                        "id": "144alv1",
+                        "subreddit": {
+                            "id": "2qh33",
+                            "name": "funny",
+                            "nsfw": false
+                        },
+                        "created_utc": 1686234046,
+                        "permalink": "https://old.reddit.com/r/funny/comments/144alv1/this_squirrel_likes_to_terrorize_my_cat_every_day/",
+                        "domain": "i.redd.it",
+                        "title": "This squirrel likes to terrorize my cat every day",
+                        "selftext": null,
+                        "url": "https://i.redd.it/n345cm2kzs4b1.jpg",
+                        "score": 572
+                    },
+                    {
+                        "type": "post",
+                        "id": "1442cgq",
+                        "subreddit": {
+                            "id": "2qh33",
+                            "name": "funny",
+                            "nsfw": false
+                        },
+                        "created_utc": 1686208969,
+                        "permalink": "https://old.reddit.com/r/funny/comments/1442cgq/why_do_i_always_find_this_cat_so_cutie_d/",
+                        "domain": "",
+                        "title": "Why do I always find this cat so cutie? :D",
+                        "selftext": "[removed]",
+                        "url": "",
+                        "score": 1
+                    },
+                    {
+                        "type": "post",
+                        "id": "1441qse",
+                        "subreddit": {
+                            "id": "2qh33",
+                            "name": "funny",
+                            "nsfw": false
+                        },
+                        "created_utc": 1686206899,
+                        "permalink": "https://old.reddit.com/r/funny/comments/1441qse/catgpt/",
+                        "domain": "v.redd.it",
+                        "title": "Cat-gpt",
+                        "selftext": "[removed]",
+                        "url": "https://v.redd.it/z56q56ltqq4b1",
+                        "score": 1
+                    },
+                    {
+                        "type": "post",
+                        "id": "143t4rt",
+                        "subreddit": {
+                            "id": "2qh33",
+                            "name": "funny",
+                            "nsfw": false
+                        },
+                        "created_utc": 1686181801,
+                        "permalink": "https://old.reddit.com/r/funny/comments/143t4rt/is_this_how_you_do_the_cucumber_cat_trick/",
+                        "domain": "",
+                        "title": "Is this how you do the cucumber cat trick?",
+                        "selftext": "[removed]",
+                        "url": "",
+                        "score": 1
+                    },
+                    {
+                        "type": "post",
+                        "id": "143k613",
+                        "subreddit": {
+                            "id": "2qh33",
+                            "name": "funny",
+                            "nsfw": false
+                        },
+                        "created_utc": 1686160763,
+                        "permalink": "https://old.reddit.com/r/funny/comments/143k613/is_ai_too_powerful_cat_edition/",
+                        "domain": "v.redd.it",
+                        "title": "Is AI Too Powerful? - Cat Edition",
+                        "selftext": null,
+                        "url": "https://v.redd.it/ui9s1mumxm4b1",
+                        "score": 1
+                    },
+                    {
+                        "type": "post",
+                        "id": "143erm7",
+                        "subreddit": {
+                            "id": "2qh33",
+                            "name": "funny",
+                            "nsfw": false
+                        },
+                        "created_utc": 1686148138,
+                        "permalink": "https://old.reddit.com/r/funny/comments/143erm7/very_easy_how_to_turn_words_cat_into_a_cartoon/",
+                        "domain": "rumble.com",
+                        "title": "Very Easy! How to turn Words Cat Into a Cartoon Cat. learning step by step for kid",
+                        "selftext": null,
+                        "url": "https://rumble.com/v2qyu26-very-easy-how-to-turn-words-cat-into-a-cartoon-cat.-learning-step-by-step-f.html",
+                        "score": 1
+                    }
+                ],
+                "total_count": 125218,
+                "query": "/r/funny,cat",
+                "sort_key": [
+                    [
+                        1686148138000
+                    ]
+                ]
+            },
+            "statuscode": 200,
+            "schema": {
+                "properties": {
+                    "data": {
+                        "items": {
+                            "type": "object"
+                        },
+                        "type": "array"
+                    },
+                    "query": {
+                        "type": "string"
+                    },
+                    "sort_key": {
+                        "items": {
+                            "type": "integer"
+                        },
+                        "type": "array"
+                    },
+                    "type": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        {
+            "name": "Comment search",
+            "url": "https://socialgrep.p.rapidapi.com/search/comments",
+            "description": "Searches Reddit comments.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "query",
+                    "type": "STRING",
+                    "description": "The comma-separated query for the search. Supports the following term types:\n\n`/r/{subreddit}` - search only comments from the subreddit {subreddit}.\n\n`-/r/{subreddit}` - search only comments not from the subreddit {subreddit}.\n\n`{term}` - search only comments containing the term {term}.\n\n`-{term}` - search only comments not containing the term {term}.\n\n`score:{score}` - search only comments with score at least {score}.\n\n`before:{YYYY-mm-dd}`, `after:{YYYY-mm-dd}` - search only comments within the date range. `before` is inclusive, `after` is not.\n\n`post:{post_id}` - search only comments for the given post.",
+                    "default": "/r/funny,cat"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "after",
+                    "type": "NUMBER",
+                    "description": "The previous result's `sort_key` value. Used for pagination.",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://socialgrep.p.rapidapi.com/search/comments\"\nquerystring = {\"after\": \"\", \"query\": \"/r/funny,cat\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"socialgrep.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://socialgrep.p.rapidapi.com/search/comments\"\nquerystring = {\"after\": \"\", \"query\": \"/r/funny,cat\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"socialgrep.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "type": "comment",
+                "data": [
+                    {
+                        "type": "comment",
+                        "id": "jlnr41y",
+                        "subreddit": {
+                            "id": "2qh33",
+                            "name": "funny",
+                            "nsfw": false
+                        },
+                        "created_utc": 1685074833,
+                        "permalink": "https://old.reddit.com/r/funny/comments/13rnfib/my_cat_risking_it_all_for_some_banana_oat_meal/jlnr41y/",
+                        "body": "Just depends on the cat.. I have 2 right now. 1 that will eat anything you put in front of it and the other will only eat cat food.",
+                        "sentiment": 0,
+                        "score": 1
+                    },
+                    {
+                        "type": "comment",
+                        "id": "jlnqvvu",
+                        "subreddit": {
+                            "id": "2qh33",
+                            "name": "funny",
+                            "nsfw": false
+                        },
+                        "created_utc": 1685074696,
+                        "permalink": "https://old.reddit.com/r/funny/comments/13rnfib/my_cat_risking_it_all_for_some_banana_oat_meal/jlnqvvu/",
+                        "body": "Unfortunately they tried to spin the wheel of justice and the cat went berserk and knocked it over so. They've decided to issue fines to all feline offenders.",
+                        "sentiment": -0.128,
+                        "score": 5
+                    },
+                    {
+                        "type": "comment",
+                        "id": "jlnqtzz",
+                        "subreddit": {
+                            "id": "2qh33",
+                            "name": "funny",
+                            "nsfw": false
+                        },
+                        "created_utc": 1685074663,
+                        "permalink": "https://old.reddit.com/r/funny/comments/13s18gq/he_tries_to_eat_everything_i_have/jlnqtzz/",
+                        "body": "I miss my cat Sam he would come running for his own bacon",
+                        "sentiment": -0.1531,
+                        "score": 2
+                    },
+                    {
+                        "type": "comment",
+                        "id": "jlnqi5q",
+                        "subreddit": {
+                            "id": "2qh33",
+                            "name": "funny",
+                            "nsfw": false
+                        },
+                        "created_utc": 1685074464,
+                        "permalink": "https://old.reddit.com/r/funny/comments/13rnfib/my_cat_risking_it_all_for_some_banana_oat_meal/jlnqi5q/",
+                        "body": "thats hilarious. when I was a kid our neighbors cat would come over and I'd feed it meat from the fridge. one time I gave her some meat and rice. i think it was beef or pulled pork. she ate all the pork and left all the rice, lol",
+                        "sentiment": 0.6705,
+                        "score": 1
+                    },
+                    {
+                        "type": "comment",
+                        "id": "jlnqhnb",
+                        "subreddit": {
+                            "id": "2qh33",
+                            "name": "funny",
+                            "nsfw": false
+                        },
+                        "created_utc": 1685074456,
+                        "permalink": "https://old.reddit.com/r/funny/comments/13rnfib/my_cat_risking_it_all_for_some_banana_oat_meal/jlnqhnb/",
+                        "body": "Ah the humans always ruining the cat videos",
+                        "sentiment": -0.25,
+                        "score": 2
+                    },
+                    {
+                        "type": "comment",
+                        "id": "jlnqcea",
+                        "subreddit": {
+                            "id": "2qh33",
+                            "name": "funny",
+                            "nsfw": false
+                        },
+                        "created_utc": 1685074367,
+                        "permalink": "https://old.reddit.com/r/funny/comments/13rnfib/my_cat_risking_it_all_for_some_banana_oat_meal/jlnqcea/",
+                        "body": "my friends cat LOVED French fries when he was still alive. that cat lived to be about 22 years old. He also, or course loved chicken tendies. we never fed a lot to him, just a few tiny pieces here and there",
+                        "sentiment": 0.9353,
+                        "score": 2
+                    },
+                    {
+                        "type": "comment",
+                        "id": "jlnpewx",
+                        "subreddit": {
+                            "id": "2qh33",
+                            "name": "funny",
+                            "nsfw": false
+                        },
+                        "created_utc": 1685073820,
+                        "permalink": "https://old.reddit.com/r/funny/comments/13rnfib/my_cat_risking_it_all_for_some_banana_oat_meal/jlnpewx/",
+                        "body": "If you don't touch your food for 5 secs, it's unattended. Cat Law 101.",
+                        "sentiment": 0,
+                        "score": 1
+                    },
+                    {
+                        "type": "comment",
+                        "id": "jlnouq9",
+                        "subreddit": {
+                            "id": "2qh33",
+                            "name": "funny",
+                            "nsfw": false
+                        },
+                        "created_utc": 1685073487,
+                        "permalink": "https://old.reddit.com/r/funny/comments/13rnfib/my_cat_risking_it_all_for_some_banana_oat_meal/jlnouq9/",
+                        "body": "My cat is vegetarian, in the sense that we feed him meat and he licks in once and walks away(to our amazement)\n\nVeggies, corn and his dry food in particular? If it isn\u2019t locked up while we don\u2019t look, it\u2019s going down that idiots throat",
+                        "sentiment": 0.5423,
+                        "score": 1
+                    },
+                    {
+                        "type": "comment",
+                        "id": "jlnnmyf",
+                        "subreddit": {
+                            "id": "2qh33",
+                            "name": "funny",
+                            "nsfw": false
+                        },
+                        "created_utc": 1685072794,
+                        "permalink": "https://old.reddit.com/r/funny/comments/13rnfib/my_cat_risking_it_all_for_some_banana_oat_meal/jlnnmyf/",
+                        "body": "How starved is that cat to be craving fucking *oatmeal?*",
+                        "sentiment": -0.5574,
+                        "score": 1
+                    },
+                    {
+                        "type": "comment",
+                        "id": "jlnmeno",
+                        "subreddit": {
+                            "id": "2qh33",
+                            "name": "funny",
+                            "nsfw": false
+                        },
+                        "created_utc": 1685072105,
+                        "permalink": "https://old.reddit.com/r/funny/comments/13rnfib/my_cat_risking_it_all_for_some_banana_oat_meal/jlnmeno/",
+                        "body": "My cat too. I can\u2019t bring baked goods, especially Asian baked goods home without putting them away immediately. My cat goes crazy for a red bean bun and Ezekiel bread",
+                        "sentiment": -0.34,
+                        "score": 3
+                    },
+                    {
+                        "type": "comment",
+                        "id": "jlnm5vi",
+                        "subreddit": {
+                            "id": "2qh33",
+                            "name": "funny",
+                            "nsfw": false
+                        },
+                        "created_utc": 1685071969,
+                        "permalink": "https://old.reddit.com/r/funny/comments/13rnfib/my_cat_risking_it_all_for_some_banana_oat_meal/jlnm5vi/",
+                        "body": "Your cat just earned itself a $5000 fine. (Hello fellow hockey fan.)",
+                        "sentiment": 0.4767,
+                        "score": 4
+                    },
+                    {
+                        "type": "comment",
+                        "id": "jlnlqx8",
+                        "subreddit": {
+                            "id": "2qh33",
+                            "name": "funny",
+                            "nsfw": false
+                        },
+                        "created_utc": 1685071735,
+                        "permalink": "https://old.reddit.com/r/funny/comments/13rnfib/my_cat_risking_it_all_for_some_banana_oat_meal/jlnlqx8/",
+                        "body": "Awesome cat. Go Knights, go!!!",
+                        "sentiment": 0.7163,
+                        "score": 2
+                    },
+                    {
+                        "type": "comment",
+                        "id": "jlnlkx3",
+                        "subreddit": {
+                            "id": "2qh33",
+                            "name": "funny",
+                            "nsfw": false
+                        },
+                        "created_utc": 1685071644,
+                        "permalink": "https://old.reddit.com/r/funny/comments/13rnfib/my_cat_risking_it_all_for_some_banana_oat_meal/jlnlkx3/",
+                        "body": "CAD and cat. Classic combo",
+                        "sentiment": 0,
+                        "score": 2
+                    },
+                    {
+                        "type": "comment",
+                        "id": "jlnjsni",
+                        "subreddit": {
+                            "id": "2qh33",
+                            "name": "funny",
+                            "nsfw": false
+                        },
+                        "created_utc": 1685070680,
+                        "permalink": "https://old.reddit.com/r/funny/comments/13rnfib/my_cat_risking_it_all_for_some_banana_oat_meal/jlnjsni/",
+                        "body": "&gt;My cat doesn't even like most meat or even a lot of wet cat food\n\nMine too! I feel like I've been pretty blessed with her though, she's so good in general and literally never tries to get at any food I have or leave around. \n\n:D",
+                        "sentiment": 0.9465,
+                        "score": 2
+                    },
+                    {
+                        "type": "comment",
+                        "id": "jlnjgls",
+                        "subreddit": {
+                            "id": "2qh33",
+                            "name": "funny",
+                            "nsfw": false
+                        },
+                        "created_utc": 1685070504,
+                        "permalink": "https://old.reddit.com/r/funny/comments/13rnfib/my_cat_risking_it_all_for_some_banana_oat_meal/jlnjgls/",
+                        "body": "I was going to say he's doing work for their local DOT or something haha! I know this is a wild guess, but based off elevation i deal with, looks like central Texas. 100% guess tho.  \nAll I could focus on was AutoCAD haha. At this point the cat was just a bonus to seeing AutoCAD in the wild!",
+                        "sentiment": 0.9391,
+                        "score": 1
+                    },
+                    {
+                        "type": "comment",
+                        "id": "jlnj44q",
+                        "subreddit": {
+                            "id": "2qh33",
+                            "name": "funny",
+                            "nsfw": false
+                        },
+                        "created_utc": 1685070326,
+                        "permalink": "https://old.reddit.com/r/funny/comments/13rnfib/my_cat_risking_it_all_for_some_banana_oat_meal/jlnj44q/",
+                        "body": "I had a cat like that. Over the years she purposely ate: popcorn, potato chips, green beans, peas, sun dried tomatoes, bread, cookies, bagels, pancakes and anything she could steal or beg from us or our neighbors. She was quite the character.",
+                        "sentiment": -0.1779,
+                        "score": 9
+                    },
+                    {
+                        "type": "comment",
+                        "id": "jlniau5",
+                        "subreddit": {
+                            "id": "2qh33",
+                            "name": "funny",
+                            "nsfw": false
+                        },
+                        "created_utc": 1685069911,
+                        "permalink": "https://old.reddit.com/r/funny/comments/13ryhlf/the_wizard_cat/jlniau5/",
+                        "body": "I like the confused look on the cat at the end. \u201cWait. What the\u2026?\u201d",
+                        "sentiment": 0.0516,
+                        "score": 8
+                    },
+                    {
+                        "type": "comment",
+                        "id": "jlng6e3",
+                        "subreddit": {
+                            "id": "2qh33",
+                            "name": "funny",
+                            "nsfw": false
+                        },
+                        "created_utc": 1685068845,
+                        "permalink": "https://old.reddit.com/r/funny/comments/13rnfib/my_cat_risking_it_all_for_some_banana_oat_meal/jlng6e3/",
+                        "body": "I open a yogurt and my cat comes SPRINTING I can leave most meat and dairy unattended but she becomes evil if she can get yogurt",
+                        "sentiment": -0.802,
+                        "score": 1
+                    },
+                    {
+                        "type": "comment",
+                        "id": "jlnfyoc",
+                        "subreddit": {
+                            "id": "2qh33",
+                            "name": "funny",
+                            "nsfw": false
+                        },
+                        "created_utc": 1685068739,
+                        "permalink": "https://old.reddit.com/r/funny/comments/13rnfib/my_cat_risking_it_all_for_some_banana_oat_meal/jlnfyoc/",
+                        "body": "We're lucky that the only thing our cat likes for some reason is shaved ice and tuna, everything else can be left out risk free",
+                        "sentiment": 0.7783,
+                        "score": 1
+                    },
+                    {
+                        "type": "comment",
+                        "id": "jlnfwde",
+                        "subreddit": {
+                            "id": "2qh33",
+                            "name": "funny",
+                            "nsfw": false
+                        },
+                        "created_utc": 1685068707,
+                        "permalink": "https://old.reddit.com/r/funny/comments/13rnfib/my_cat_risking_it_all_for_some_banana_oat_meal/jlnfwde/",
+                        "body": "I use Zoneminder:\n\nhttps://zoneminder.com\n\nIt should work fine on a Raspberry Pi. I don't know if it works with Wyze cameras. I use Amcrest cameras myself.\n\nIt's nice to be able to see what my cat is up to when I'm not at home and especially if I'm away for a couple of days.",
+                        "sentiment": 0.5574,
+                        "score": 2
+                    },
+                    {
+                        "type": "comment",
+                        "id": "jlnc5vm",
+                        "subreddit": {
+                            "id": "2qh33",
+                            "name": "funny",
+                            "nsfw": false
+                        },
+                        "created_utc": 1685066890,
+                        "permalink": "https://old.reddit.com/r/funny/comments/13rnfib/my_cat_risking_it_all_for_some_banana_oat_meal/jlnc5vm/",
+                        "body": "You do NOT want your cat eating oatmeal if the horrifying gas our cat got is any indication.\n\nWe're talking about clearing a room level of bad.",
+                        "sentiment": -0.8137,
+                        "score": 1
+                    },
+                    {
+                        "type": "comment",
+                        "id": "jlnc5sh",
+                        "subreddit": {
+                            "id": "2qh33",
+                            "name": "funny",
+                            "nsfw": false
+                        },
+                        "created_utc": 1685066889,
+                        "permalink": "https://old.reddit.com/r/funny/comments/13rnfib/my_cat_risking_it_all_for_some_banana_oat_meal/jlnc5sh/",
+                        "body": "My cat stole salt and vinegar chips from me the other day. I caught her chomping on them under my bed",
+                        "sentiment": 0,
+                        "score": 1
+                    },
+                    {
+                        "type": "comment",
+                        "id": "jlnc4bj",
+                        "subreddit": {
+                            "id": "2qh33",
+                            "name": "funny",
+                            "nsfw": false
+                        },
+                        "created_utc": 1685066870,
+                        "permalink": "https://old.reddit.com/r/funny/comments/13rnfib/my_cat_risking_it_all_for_some_banana_oat_meal/jlnc4bj/",
+                        "body": "Looks like you found the right man. Caring, supportive, the cat doesn't mind manipulating him for some oatmeal. What more could women want?",
+                        "sentiment": 0.8616,
+                        "score": 2
+                    },
+                    {
+                        "type": "comment",
+                        "id": "jln73ui",
+                        "subreddit": {
+                            "id": "2qh33",
+                            "name": "funny",
+                            "nsfw": false
+                        },
+                        "created_utc": 1685064490,
+                        "permalink": "https://old.reddit.com/r/funny/comments/13rnfib/my_cat_risking_it_all_for_some_banana_oat_meal/jln73ui/",
+                        "body": "If you watch it carefully, the cat moved before he did. I expected the bowl to be on the floor when he whipped around, but the cat saw in to the future apparently",
+                        "sentiment": 0.0644,
+                        "score": 1
+                    },
+                    {
+                        "type": "comment",
+                        "id": "jln655s",
+                        "subreddit": {
+                            "id": "2qh33",
+                            "name": "funny",
+                            "nsfw": false
+                        },
+                        "created_utc": 1685064045,
+                        "permalink": "https://old.reddit.com/r/funny/comments/13rnfib/my_cat_risking_it_all_for_some_banana_oat_meal/jln655s/",
+                        "body": "Get your cat tested for vitamin deficiencies.",
+                        "sentiment": 0.296,
+                        "score": 1
+                    }
+                ],
+                "total_count": 720206,
+                "query": "/r/funny,cat",
+                "sort_key": [
+                    [
+                        1685064045000
+                    ]
+                ]
+            },
+            "statuscode": 200,
+            "schema": {
+                "properties": {
+                    "data": {
+                        "type": "array"
+                    },
+                    "query": {
+                        "type": "string"
+                    },
+                    "sort_key": {
+                        "type": "array"
+                    },
+                    "type": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    ],
+    "standardized_name": "socialgrep"
+}

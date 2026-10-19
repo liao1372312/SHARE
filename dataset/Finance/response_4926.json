@@ -1,0 +1,26 @@
+{
+"user_query":"I want to conduct research on the real estate market in Santa Monica and get data on properties for sale with a minimum of 3 bedrooms and 2 bathrooms, sorted by the newest listing.",
+"domain":"Finance",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Query the real estate database to retrieve listings of properties for sale in Santa Monica.",
+        "domain": "finance",
+        "required_inputs": ["location='Santa Monica'"]
+    },
+    {
+        "id": 2,
+        "description": "Filter the results to only include properties that have at least 3 bedrooms and 2 bathrooms.",
+        "domain": "finance",
+        "required_inputs": ["minimum_bedrooms=3", "minimum_bathrooms=2"],
+        "dependencies": [1]
+    },
+    {
+        "id": 3,
+        "description": "Sort the filtered properties by the newest listing date.",
+        "domain": "finance",
+        "required_inputs": ["sort_order='newest'"],
+        "dependencies": [2]
+    }
+]
+}

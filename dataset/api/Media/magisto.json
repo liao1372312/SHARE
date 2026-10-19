@@ -1,0 +1,72 @@
+{
+    "product_id": "53aa34f1e4b0b60946a2e19d",
+    "tool_description": "Magically transform your videos.  Magisto turns your everyday videos into exciting, memorable movies you'll want to watch again and again.",
+    "home_url": "https://rapidapi.com/magisto/api/magisto/",
+    "name": "Magisto",
+    "title": "Magisto",
+    "pricing": "FREE",
+    "tool_name": "Magisto",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 278,
+        "avgSuccessRate": 0,
+        "popularityScore": 0.1,
+        "__typename": "Score"
+    },
+    "host": "magisto.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Get Movie",
+            "url": "https://magisto.p.rapidapi.com/video/{hash}",
+            "description": "Downloading of the completed movie",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "vsid",
+                    "type": "STRING",
+                    "description": "From Start Movie Session API call response",
+                    "default": ""
+                },
+                {
+                    "name": "hash",
+                    "type": "STRING",
+                    "description": "Returned from Check Status API when \"movie_status\" = \"DONE\"",
+                    "default": ""
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://magisto.p.rapidapi.com/video/{hash}\"\nquerystring = {\"vsid\": \"\", \"hash\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"magisto.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://magisto.p.rapidapi.com/video/{hash}\"\nquerystring = {\"vsid\": \"\", \"hash\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"magisto.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "status": "FAIL",
+                "error": "Requested API was not found",
+                "errcode": 7020
+            },
+            "statuscode": 1,
+            "schema": ""
+        },
+        {
+            "name": "Check Movie Status",
+            "url": "https://magisto.p.rapidapi.com/video/check",
+            "description": "Check the state of the movie session",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "vsid",
+                    "type": "STRING",
+                    "description": "From Start Movie Session API call response",
+                    "default": ""
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://magisto.p.rapidapi.com/video/check\"\nquerystring = {\"vsid\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"magisto.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://magisto.p.rapidapi.com/video/check\"\nquerystring = {\"vsid\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"magisto.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "status": "FAIL"
+            },
+            "statuscode": 1,
+            "schema": ""
+        }
+    ],
+    "standardized_name": "magisto"
+}

@@ -1,0 +1,898 @@
+{
+    "product_id": "api_e35558b4-3f7b-410a-aeff-9068c25ab51f",
+    "tool_description": "The fastest API to access countries, states, cities, continents, dial and zip codes in up to 20 languages. A collection of data APIs to support forms, signups, search and lookup. Our endpoints are optimized for speed and size. Our data is regularly maintained and comes from International Standardization bodies, the United Nations, government surveys and GIS datasets. We do not scrape WikiPedia etc",
+    "home_url": "https://rapidapi.com/referential/api/referential/",
+    "name": "Referential",
+    "title": "Referential",
+    "pricing": "FREEMIUM",
+    "tool_name": "Referential",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 35,
+        "avgSuccessRate": 99,
+        "popularityScore": 9.8,
+        "__typename": "Score"
+    },
+    "host": "referential.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "City by IP address (Geo IP)",
+            "url": "https://referential.p.rapidapi.com/v1/city",
+            "description": "Find a city, state, country and continent by IP address. For some results, the closest result within 10 miles will be provided.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "ip",
+                    "type": "STRING",
+                    "description": "ip4 pr ip6 formatted IP address",
+                    "default": "128.218.229.26"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "fields",
+                    "type": "STRING",
+                    "description": "Select fields to return in result [geonameid, timezone,state_code,iso_a2]",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://referential.p.rapidapi.com/v1/city\"\nquerystring = {\"fields\": \"\", \"ip\": \"128.218.229.26\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"referential.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://referential.p.rapidapi.com/v1/city\"\nquerystring = {\"fields\": \"\", \"ip\": \"128.218.229.26\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"referential.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {
+                "items": {
+                    "properties": {
+                        "key": {
+                            "type": "string"
+                        },
+                        "value": {
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "type": "array"
+            }
+        },
+        {
+            "name": "Countries",
+            "url": "https://referential.p.rapidapi.com/v1/country",
+            "description": "List or search countries of the world in different languages.. Get iso a2, a3 country code and localized country name",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "currency",
+                    "type": "STRING",
+                    "description": "Filter on currency name in chosen lang",
+                    "default": ""
+                },
+                {
+                    "name": "dial_code",
+                    "type": "NUMBER",
+                    "description": "Filter on country dial code",
+                    "default": ""
+                },
+                {
+                    "name": "currency_code",
+                    "type": "STRING",
+                    "description": "Filter on 3 letter currency code (ISO)",
+                    "default": ""
+                },
+                {
+                    "name": "fields",
+                    "type": "STRING",
+                    "description": "Select fields to return for each country [iso_a2, iso_a3, continent_code, dial_code, currency_code, currency_num_code, currency]",
+                    "default": "currency,currency_num_code,currency_code,continent_code,currency,iso_a3,dial_code"
+                },
+                {
+                    "name": "iso_a2",
+                    "type": "STRING",
+                    "description": "Filter on 2 letter iso country code",
+                    "default": ""
+                },
+                {
+                    "name": "name",
+                    "type": "STRING",
+                    "description": "Country name search string. Can be partial contains...",
+                    "default": ""
+                },
+                {
+                    "name": "limit",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "250"
+                },
+                {
+                    "name": "continent_code",
+                    "type": "STRING",
+                    "description": "Two letter region/continent code (eu, na, sa, as, af, oc, an). Lookup at /v1/continent.",
+                    "default": ""
+                },
+                {
+                    "name": "iso_a3",
+                    "type": "STRING",
+                    "description": "Filter on 3 letter iso country code",
+                    "default": ""
+                },
+                {
+                    "name": "currency_num_code",
+                    "type": "STRING",
+                    "description": "Filter on 3 digit numeric currency code (ISO)",
+                    "default": ""
+                },
+                {
+                    "name": "lang",
+                    "type": "STRING",
+                    "description": "Language selection ISO 639-2 letter code. Overrides Accept-Language header. Defaults to browser value. Default: en",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://referential.p.rapidapi.com/v1/country\"\nquerystring = {\"currency\": \"\", \"dial_code\": \"\", \"currency_code\": \"\", \"fields\": \"currency,currency_num_code,currency_code,continent_code,currency,iso_a3,dial_code\", \"iso_a2\": \"\", \"name\": \"\", \"limit\": \"250\", \"continent_code\": \"\", \"iso_a3\": \"\", \"currency_num_code\": \"\", \"lang\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"referential.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://referential.p.rapidapi.com/v1/country\"\nquerystring = {\"currency\": \"\", \"dial_code\": \"\", \"currency_code\": \"\", \"fields\": \"currency,currency_num_code,currency_code,continent_code,currency,iso_a3,dial_code\", \"iso_a2\": \"\", \"name\": \"\", \"limit\": \"250\", \"continent_code\": \"\", \"iso_a3\": \"\", \"currency_num_code\": \"\", \"lang\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"referential.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per second for your plan, BASIC, by the API provider"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "array",
+                "items": {
+                    "type": "object"
+                }
+            }
+        },
+        {
+            "name": "Cities",
+            "url": "https://referential.p.rapidapi.com/v1/city",
+            "description": "List and search over 75,000 world cities in 20 languages.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "limit",
+                    "type": "NUMBER",
+                    "description": "Limit results to N results",
+                    "default": "250"
+                },
+                {
+                    "name": "state_hasc",
+                    "type": "STRING",
+                    "description": "Filter on state's HASC code. List at /v1/state.",
+                    "default": ""
+                },
+                {
+                    "name": "timezone",
+                    "type": "STRING",
+                    "description": "Filter on timezone name. List at /v1/timezone.",
+                    "default": ""
+                },
+                {
+                    "name": "geonameid",
+                    "type": "STRING",
+                    "description": "Filter on geonameid",
+                    "default": ""
+                },
+                {
+                    "name": "prefix",
+                    "type": "STRING",
+                    "description": "Search by names starting with prefix. See also limit, order and sort fields.",
+                    "default": "san fr"
+                },
+                {
+                    "name": "timezone_offset",
+                    "type": "NUMBER",
+                    "description": "Filter on timezone offset in hours",
+                    "default": ""
+                },
+                {
+                    "name": "sort",
+                    "type": "STRING",
+                    "description": "Sort on field [population, state_code, name, timezone, state_hasc, iso_a2]. Please see limit and order fields.",
+                    "default": ""
+                },
+                {
+                    "name": "lang",
+                    "type": "STRING",
+                    "description": "Language selection ISO 639-2 letter code. Overrides Accept-Language header. Defaults to browser value. Default: en",
+                    "default": "en"
+                },
+                {
+                    "name": "iso_a2",
+                    "type": "STRING",
+                    "description": "Filter on 2 letter country code",
+                    "default": "us"
+                },
+                {
+                    "name": "name",
+                    "type": "STRING",
+                    "description": "Search as \\\"contains\\\" on city name in chosen lang",
+                    "default": ""
+                },
+                {
+                    "name": "state_code",
+                    "type": "STRING",
+                    "description": "Filter on state's ISO-3166-2 letter code. List at /v1/state",
+                    "default": "US-CA"
+                },
+                {
+                    "name": "fields",
+                    "type": "STRING",
+                    "description": "Select fields to return in result [iso_a2,state_code,timezone,timezone_offset,state_hasc,geonameid]",
+                    "default": "iso_a2,state_code,state_hasc,timezone,timezone_offset"
+                },
+                {
+                    "name": "order",
+                    "type": "STRING",
+                    "description": "Sort order [asc | desc]",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://referential.p.rapidapi.com/v1/city\"\nquerystring = {\"limit\": \"250\", \"state_hasc\": \"\", \"timezone\": \"\", \"geonameid\": \"\", \"prefix\": \"san fr\", \"timezone_offset\": \"\", \"sort\": \"\", \"lang\": \"en\", \"iso_a2\": \"us\", \"name\": \"\", \"state_code\": \"US-CA\", \"fields\": \"iso_a2,state_code,state_hasc,timezone,timezone_offset\", \"order\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"referential.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://referential.p.rapidapi.com/v1/city\"\nquerystring = {\"limit\": \"250\", \"state_hasc\": \"\", \"timezone\": \"\", \"geonameid\": \"\", \"prefix\": \"san fr\", \"timezone_offset\": \"\", \"sort\": \"\", \"lang\": \"en\", \"iso_a2\": \"us\", \"name\": \"\", \"state_code\": \"US-CA\", \"fields\": \"iso_a2,state_code,state_hasc,timezone,timezone_offset\", \"order\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"referential.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per second for your plan, BASIC, by the API provider"
+            },
+            "statuscode": 200,
+            "schema": {
+                "items": {
+                    "properties": {
+                        "iso_a2": {
+                            "type": "string"
+                        },
+                        "key": {
+                            "type": "string"
+                        },
+                        "state_code": {
+                            "type": "string"
+                        },
+                        "state_hasc": {
+                            "type": "string"
+                        },
+                        "timezone": {
+                            "type": "string"
+                        },
+                        "timezone_offset": {
+                            "type": "string"
+                        },
+                        "value": {
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "type": "array"
+            }
+        },
+        {
+            "name": "State",
+            "url": "https://referential.p.rapidapi.com/v1/state",
+            "description": "List the sub-regions/states/provinces/departments of the world's countries",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "limit",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "250"
+                },
+                {
+                    "name": "iso_a2",
+                    "type": "STRING",
+                    "description": "Filter on 2 letter country code",
+                    "default": "us"
+                },
+                {
+                    "name": "iso_3166_2",
+                    "type": "STRING",
+                    "description": "Filter on Subregion's ISO-3166-2 letter code",
+                    "default": ""
+                },
+                {
+                    "name": "fields",
+                    "type": "STRING",
+                    "description": "Select fields to select in the result [iso_a2]",
+                    "default": "iso_a2"
+                },
+                {
+                    "name": "name",
+                    "type": "STRING",
+                    "description": "Filter as \\\"contains\\\" on the states's name in chosen lang",
+                    "default": "tex"
+                },
+                {
+                    "name": "lang",
+                    "type": "STRING",
+                    "description": "Language selection ISO 639-2 letter code. Overrides Accept-Language header. Defaults to browser value. Default: en",
+                    "default": "en"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://referential.p.rapidapi.com/v1/state\"\nquerystring = {\"limit\": \"250\", \"iso_a2\": \"us\", \"iso_3166_2\": \"\", \"fields\": \"iso_a2\", \"name\": \"tex\", \"lang\": \"en\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"referential.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://referential.p.rapidapi.com/v1/state\"\nquerystring = {\"limit\": \"250\", \"iso_a2\": \"us\", \"iso_3166_2\": \"\", \"fields\": \"iso_a2\", \"name\": \"tex\", \"lang\": \"en\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"referential.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per second for your plan, BASIC, by the API provider"
+            },
+            "statuscode": 200,
+            "schema": {
+                "items": {
+                    "properties": {
+                        "iso_a2": {
+                            "type": "string"
+                        },
+                        "key": {
+                            "type": "string"
+                        },
+                        "value": {
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "type": "array"
+            }
+        },
+        {
+            "name": "Timezones",
+            "url": "https://referential.p.rapidapi.com/v1/timezone",
+            "description": "List the world's time zones in 20 languages",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "offset",
+                    "type": "STRING",
+                    "description": "Filter on non daylights savings offset in hours",
+                    "default": ""
+                },
+                {
+                    "name": "name",
+                    "type": "STRING",
+                    "description": "Filter as \"contains\" on timezone name in chosen lang",
+                    "default": ""
+                },
+                {
+                    "name": "code",
+                    "type": "STRING",
+                    "description": "Filter on 3 letter non daylight savings timezone code (not unique)",
+                    "default": ""
+                },
+                {
+                    "name": "timezone",
+                    "type": "STRING",
+                    "description": "Filter on timezone name in english",
+                    "default": ""
+                },
+                {
+                    "name": "daylights_offset",
+                    "type": "STRING",
+                    "description": "Filter on daylights savings offset in hours",
+                    "default": ""
+                },
+                {
+                    "name": "lang",
+                    "type": "STRING",
+                    "description": "Language selection ISO 639-2 letter code. Overrides Accept-Language header. Defaults to browser value. Default: en",
+                    "default": "de"
+                },
+                {
+                    "name": "daylights_code",
+                    "type": "STRING",
+                    "description": "Filter on daylights savings letter code (not unique)",
+                    "default": ""
+                },
+                {
+                    "name": "fields",
+                    "type": "STRING",
+                    "description": "Select fields to return in result [code,timezone,daylights_code,daylights_offset,daylights,hours_offset,offset]",
+                    "default": "offset,daylights_offset,daylights,daylights_code,timezone"
+                },
+                {
+                    "name": "daylights",
+                    "type": "STRING",
+                    "description": "Filter on daylights savings/non daylight savings timezones (true,false)",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://referential.p.rapidapi.com/v1/timezone\"\nquerystring = {\"offset\": \"\", \"name\": \"\", \"code\": \"\", \"timezone\": \"\", \"daylights_offset\": \"\", \"lang\": \"de\", \"daylights_code\": \"\", \"fields\": \"offset,daylights_offset,daylights,daylights_code,timezone\", \"daylights\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"referential.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://referential.p.rapidapi.com/v1/timezone\"\nquerystring = {\"offset\": \"\", \"name\": \"\", \"code\": \"\", \"timezone\": \"\", \"daylights_offset\": \"\", \"lang\": \"de\", \"daylights_code\": \"\", \"fields\": \"offset,daylights_offset,daylights,daylights_code,timezone\", \"daylights\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"referential.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per second for your plan, BASIC, by the API provider"
+            },
+            "statuscode": 200,
+            "schema": {
+                "items": {
+                    "properties": {
+                        "daylights": {
+                            "type": "string"
+                        },
+                        "daylights_offset": {
+                            "type": "string"
+                        },
+                        "key": {
+                            "type": "string"
+                        },
+                        "offset": {
+                            "type": "string"
+                        },
+                        "timezone": {
+                            "type": "string"
+                        },
+                        "value": {
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "type": "array"
+            }
+        },
+        {
+            "name": "City by id",
+            "url": "https://referential.p.rapidapi.com/v1/city/DULUTH|US-GA",
+            "description": "Direct lookup of over 75,000 cities by id. See the v1/city API to search for city ids.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "id",
+                    "type": "string",
+                    "description": "Lookup at /v1/city.",
+                    "default": "DULUTH|US-GA"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "lang",
+                    "type": "STRING",
+                    "description": "Language selection ISO 639-2 letter code. Overrides Accept-Language header. Defaults to browser value. Default: en",
+                    "default": "en"
+                },
+                {
+                    "name": "fields",
+                    "type": "STRING",
+                    "description": "Select fields to return in result [iso_a2,state_code,timezone,timezone_offset,state_hasc]",
+                    "default": "iso_a2,state_code,state_hasc,timezone, timezone_offset"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://referential.p.rapidapi.com/v1/city/DULUTH|US-GA\"\nquerystring = {\"lang\": \"en\", \"fields\": \"iso_a2,state_code,state_hasc,timezone, timezone_offset\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"referential.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://referential.p.rapidapi.com/v1/city/{id}\"\nquerystring = {\"lang\": \"en\", \"fields\": \"iso_a2,state_code,state_hasc,timezone, timezone_offset\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"referential.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per second for your plan, BASIC, by the API provider"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "get": {
+                        "type": "string"
+                    },
+                    "parameters": {
+                        "type": "array"
+                    },
+                    "errors": {
+                        "type": "array"
+                    },
+                    "results": {
+                        "type": "integer"
+                    },
+                    "response": {
+                        "type": "array",
+                        "items": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Country by iso code",
+            "url": "https://referential.p.rapidapi.com/v1/country/US",
+            "description": "Get country by 2 letter iso code localized to a given language",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "iso_code",
+                    "type": "string",
+                    "description": "2 letter iso country code. ",
+                    "default": "US"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "fields",
+                    "type": "STRING",
+                    "description": "Comma deliminated list of fields to return in response",
+                    "default": ""
+                },
+                {
+                    "name": "lang",
+                    "type": "STRING",
+                    "description": "2 letter iso language code to localize country name",
+                    "default": "en"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://referential.p.rapidapi.com/v1/country/US\"\nquerystring = {\"fields\": \"\", \"lang\": \"en\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"referential.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://referential.p.rapidapi.com/v1/country/{iso_code}\"\nquerystring = {\"fields\": \"\", \"lang\": \"en\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"referential.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per second for your plan, BASIC, by the API provider"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "get": {
+                        "type": "string"
+                    },
+                    "parameters": {
+                        "type": "array"
+                    },
+                    "errors": {
+                        "type": "array"
+                    },
+                    "results": {
+                        "type": "integer"
+                    },
+                    "response": {
+                        "type": "array",
+                        "items": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "State by id",
+            "url": "https://referential.p.rapidapi.com/v1/state/US-MN",
+            "description": "Lookup sub-regions/states/provinces/departments by iso 3166-2 code",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "code",
+                    "type": "string",
+                    "description": "ISO 3166-2 state/province/deparm",
+                    "default": "US-MN"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "fields",
+                    "type": "STRING",
+                    "description": "Select fields to return in result [iso_a2]",
+                    "default": ""
+                },
+                {
+                    "name": "lang",
+                    "type": "STRING",
+                    "description": "Language selection ISO 639-2 letter code. Overrides Accept-Language header. Defaults to browser value. Default: en",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://referential.p.rapidapi.com/v1/state/US-MN\"\nquerystring = {\"fields\": \"\", \"lang\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"referential.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://referential.p.rapidapi.com/v1/state/{code}\"\nquerystring = {\"fields\": \"\", \"lang\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"referential.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per second for your plan, BASIC, by the API provider"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "get": {
+                        "type": "string"
+                    },
+                    "parameters": {
+                        "type": "array"
+                    },
+                    "errors": {
+                        "type": "array"
+                    },
+                    "results": {
+                        "type": "integer"
+                    },
+                    "response": {
+                        "type": "array",
+                        "items": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Continent by id",
+            "url": "https://referential.p.rapidapi.com/v1/continent/NA",
+            "description": "Lookup a continent by id",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "code",
+                    "type": "string",
+                    "description": "Two letter iso continent code. Lookup /v1/continent.",
+                    "default": "NA"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "lang",
+                    "type": "STRING",
+                    "description": "Two letter iso 639-2 language code (i.e. en, sv, pl etc). Lookup /v1/lang.",
+                    "default": ""
+                },
+                {
+                    "name": "continent_code",
+                    "type": "STRING",
+                    "description": "Filter on 2 letter continent code",
+                    "default": ""
+                },
+                {
+                    "name": "name",
+                    "type": "STRING",
+                    "description": "Filter on continent name (value field) as \\\"contains\\\"",
+                    "default": ""
+                },
+                {
+                    "name": "fields",
+                    "type": "STRING",
+                    "description": "Select fields to return for each continent [iso_a2, iso_a3, continent_code, dial_code, currency_code, currency_num_code, currency]",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://referential.p.rapidapi.com/v1/continent/NA\"\nquerystring = {\"lang\": \"\", \"continent_code\": \"\", \"name\": \"\", \"fields\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"referential.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://referential.p.rapidapi.com/v1/continent/{code}\"\nquerystring = {\"lang\": \"\", \"continent_code\": \"\", \"name\": \"\", \"fields\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"referential.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per second for your plan, BASIC, by the API provider"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "get": {
+                        "type": "string"
+                    },
+                    "parameters": {
+                        "type": "array"
+                    },
+                    "errors": {
+                        "type": "array"
+                    },
+                    "results": {
+                        "type": "integer"
+                    },
+                    "response": {
+                        "type": "array",
+                        "items": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Continents",
+            "url": "https://referential.p.rapidapi.com/v1/continent",
+            "description": "List continents of the world localized to requested language",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "fields",
+                    "type": "STRING",
+                    "description": "Select fields to return for each continent [iso_a2, iso_a3, continent_code, dial_code, currency_code, currency_num_code, currency]",
+                    "default": ""
+                },
+                {
+                    "name": "continent_code",
+                    "type": "STRING",
+                    "description": "Filter on 2 letter continent code",
+                    "default": ""
+                },
+                {
+                    "name": "lang",
+                    "type": "STRING",
+                    "description": "Two letter iso 639-2 language code (i.e. en, sv, pl etc). Lookup /v1/lang.",
+                    "default": ""
+                },
+                {
+                    "name": "name",
+                    "type": "STRING",
+                    "description": "Filter as \"contains\" on continent name in chosen lang",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://referential.p.rapidapi.com/v1/continent\"\nquerystring = {\"fields\": \"\", \"continent_code\": \"\", \"lang\": \"\", \"name\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"referential.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://referential.p.rapidapi.com/v1/continent\"\nquerystring = {\"fields\": \"\", \"continent_code\": \"\", \"lang\": \"\", \"name\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"referential.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per second for your plan, BASIC, by the API provider"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "get": {
+                        "type": "string"
+                    },
+                    "parameters": {
+                        "type": "array"
+                    },
+                    "errors": {
+                        "type": "array"
+                    },
+                    "results": {
+                        "type": "integer"
+                    },
+                    "response": {
+                        "type": "array",
+                        "items": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Languages",
+            "url": "https://referential.p.rapidapi.com/v1/lang",
+            "description": "List the world's languages translated into 20 languages",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "lang_3",
+                    "type": "STRING",
+                    "description": "Filter by 3 letter ISO language code",
+                    "default": ""
+                },
+                {
+                    "name": "iso_a2",
+                    "type": "STRING",
+                    "description": "Filter on 2 letter country code",
+                    "default": ""
+                },
+                {
+                    "name": "fields",
+                    "type": "STRING",
+                    "description": "Select fields to return in result [flag,iso_a2,lang_3,lang]",
+                    "default": "iso_a2,lang_3,flag"
+                },
+                {
+                    "name": "lang",
+                    "type": "STRING",
+                    "description": "Returns a language translated into lang language",
+                    "default": "en"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://referential.p.rapidapi.com/v1/lang\"\nquerystring = {\"lang_3\": \"\", \"iso_a2\": \"\", \"fields\": \"iso_a2,lang_3,flag\", \"lang\": \"en\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"referential.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://referential.p.rapidapi.com/v1/lang\"\nquerystring = {\"lang_3\": \"\", \"iso_a2\": \"\", \"fields\": \"iso_a2,lang_3,flag\", \"lang\": \"en\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"referential.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per second for your plan, BASIC, by the API provider"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "get": {
+                        "type": "string"
+                    },
+                    "parameters": {
+                        "type": "array"
+                    },
+                    "errors": {
+                        "type": "array"
+                    },
+                    "results": {
+                        "type": "integer"
+                    },
+                    "response": {
+                        "type": "array",
+                        "items": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Language by id",
+            "url": "https://referential.p.rapidapi.com/v1/lang/es",
+            "description": "Find language by id translated into 20 languages",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "lang",
+                    "type": "string",
+                    "description": "2 letter iso language code. Lookup at /v1/lang.",
+                    "default": "es"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "lang",
+                    "type": "STRING",
+                    "description": "Returns a language translated into lang language",
+                    "default": "sv"
+                },
+                {
+                    "name": "lang_3",
+                    "type": "STRING",
+                    "description": "Filter by 3 letter ISO language code",
+                    "default": ""
+                },
+                {
+                    "name": "iso_a2",
+                    "type": "STRING",
+                    "description": "Filter on 2 letter country code",
+                    "default": ""
+                },
+                {
+                    "name": "fields",
+                    "type": "STRING",
+                    "description": "Select fields to return in result [flag,iso_a2,lang_3,lang]",
+                    "default": "iso_a2,lang_3,flag"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://referential.p.rapidapi.com/v1/lang/es\"\nquerystring = {\"lang_3\": \"\", \"iso_a2\": \"\", \"fields\": \"iso_a2,lang_3,flag\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"referential.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://referential.p.rapidapi.com/v1/lang/{lang}\"\nquerystring = {\"lang_3\": \"\", \"iso_a2\": \"\", \"fields\": \"iso_a2,lang_3,flag\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"referential.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per second for your plan, BASIC, by the API provider"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "get": {
+                        "type": "string"
+                    },
+                    "parameters": {
+                        "type": "array"
+                    },
+                    "errors": {
+                        "type": "array"
+                    },
+                    "results": {
+                        "type": "integer"
+                    },
+                    "response": {
+                        "type": "array",
+                        "items": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Timezone by id",
+            "url": "https://referential.p.rapidapi.com/v1/timezone/Afrika/Dakar",
+            "description": "Lookup a time zone",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "timezone",
+                    "type": "string",
+                    "description": "Timezone",
+                    "default": "Afrika/Dakar"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "fields",
+                    "type": "STRING",
+                    "description": "Select fields to return in result [code,timezone,daylights_code,daylights_offset,daylights,hours_offset,offset]",
+                    "default": "offset,daylights_offset,daylights,daylights_code,timezone"
+                },
+                {
+                    "name": "lang",
+                    "type": "STRING",
+                    "description": "Language selection ISO 639-2 letter code. Overrides Accept-Language header. Defaults to browser value. Default: en",
+                    "default": "de"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://referential.p.rapidapi.com/v1/timezone/Afrika/Dakar\"\nquerystring = {\"fields\": \"offset,daylights_offset,daylights,daylights_code,timezone\", \"lang\": \"de\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"referential.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://referential.p.rapidapi.com/v1/timezone/{timezone}\"\nquerystring = {\"fields\": \"offset,daylights_offset,daylights,daylights_code,timezone\", \"lang\": \"de\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"referential.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per second for your plan, BASIC, by the API provider"
+            }
+        }
+    ],
+    "standardized_name": "referential"
+}

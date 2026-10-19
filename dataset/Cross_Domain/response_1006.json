@@ -1,0 +1,40 @@
+{
+"user_query":"I'm organizing a surprise anniversary party for my parents and I want to create a playlist featuring songs by their favorite artist. Can you recommend albums and singles from this artist? Also, provide the necessary enums for the API requests.",
+"domain":"Cross-Domain",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Identify the favorite artist of the user's parents.",
+        "domain": "Cross-Domain",
+        "required_inputs": ["parent_favorite_artist"]
+    },
+    {
+        "id": 2,
+        "description": "Query for albums by the identified artist.",
+        "domain": "Cross-Domain",
+        "required_inputs": ["parent_favorite_artist"],
+        "dependency": [1]
+    },
+    {
+        "id": 3,
+        "description": "Query for singles by the identified artist.",
+        "domain": "Cross-Domain",
+        "required_inputs": ["parent_favorite_artist"],
+        "dependency": [1]
+    },
+    {
+        "id": 4,
+        "description": "Compile the results from the albums and singles into a playlist format.",
+        "domain": "Cross-Domain",
+        "required_inputs": ["albums", "singles"],
+        "dependency": [2, 3]
+    },
+    {
+        "id": 5,
+        "description": "Suggest additional songs based on the compiled playlist for variety.",
+        "domain": "Cross-Domain",
+        "required_inputs": ["playlist"],
+        "dependency": [4]
+    }
+]
+}

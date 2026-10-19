@@ -1,0 +1,32 @@
+{
+"user_query":"I'm planning a vacation with my family and need to find the best travel deals. Can you suggest some affordable destinations? Additionally, I need to verify the email addresses of hotels for smooth communication during the booking process.",
+"domain":"Tourism",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Research and compile a list of affordable travel destinations suitable for families.",
+        "domain": "tourism",
+        "required_inputs": ["budget", "family preferences", "travel dates"]
+    },
+    {
+        "id": 2,
+        "description": "Fetch travel deals and offers for the selected family-friendly destinations.",
+        "domain": "tourism",
+        "required_inputs": ["selected destinations", "travel dates", "number of travelers"],
+        "dependency": "Step 1 needs the results of Step 1"
+    },
+    {
+        "id": 3,
+        "description": "Collect email addresses of hotels available in the selected affordable destinations.",
+        "domain": "tourism",
+        "required_inputs": ["selected destinations"]
+    },
+    {
+        "id": 4,
+        "description": "Verify the collected email addresses of hotels to ensure they are valid and reachable.",
+        "domain": "tourism",
+        "required_inputs": ["email addresses from hotels"],
+        "dependency": "Step 3 needs the results of Step 3"
+    }
+]
+}

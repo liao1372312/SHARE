@@ -1,0 +1,59 @@
+{
+    "product_id": "api_4d67540e-61ef-4361-9074-b73e13796ae0",
+    "tool_description": "Calculate US sales tax by city or zip code. See more info at https://api-ninjas.com/api/salestax",
+    "home_url": "https://rapidapi.com/apininjas/api/sales-tax-by-api-ninjas/",
+    "name": "Sales Tax by API-Ninjas",
+    "title": "Sales Tax by API-Ninjas",
+    "pricing": "FREEMIUM",
+    "tool_name": "Sales Tax by API-Ninjas",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 1355,
+        "avgSuccessRate": 79,
+        "popularityScore": 8.4,
+        "__typename": "Score"
+    },
+    "host": "sales-tax-by-api-ninjas.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "/v1/salestax",
+            "url": "https://sales-tax-by-api-ninjas.p.rapidapi.com/v1/salestax",
+            "description": "API Ninjas Sales Tax API endpoint. Returns one or more sales tax breakdowns by ZIP code according to the specified parameters. Each breakdown includes the state sales tax (if any), county sales tax (if any), city sales tax (if any), and any additional special sales taxes. All tax values are presented in decimals (e.g. 0.1 means 10% tax).\n\nExactly one of the following must be set: zip_code or (city + state)",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "state",
+                    "type": "STRING",
+                    "description": "State name.",
+                    "default": ""
+                },
+                {
+                    "name": "city",
+                    "type": "STRING",
+                    "description": "City name.",
+                    "default": ""
+                },
+                {
+                    "name": "zip_code",
+                    "type": "STRING",
+                    "description": "Valid US ZIP code.",
+                    "default": "90210"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://sales-tax-by-api-ninjas.p.rapidapi.com/v1/salestax\"\nquerystring = {\"state\": \"\", \"city\": \"\", \"zip_code\": \"90210\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sales-tax-by-api-ninjas.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://sales-tax-by-api-ninjas.p.rapidapi.com/v1/salestax\"\nquerystring = {\"state\": \"\", \"city\": \"\", \"zip_code\": \"90210\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sales-tax-by-api-ninjas.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "zip_code": "90210",
+                    "total_rate": "0.102500",
+                    "state_rate": "0.060000",
+                    "city_rate": "0.007500",
+                    "county_rate": "0.002500",
+                    "additional_rate": "0.032500"
+                }
+            ]
+        }
+    ],
+    "standardized_name": "sales_tax_by_api_ninjas"
+}

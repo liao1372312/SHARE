@@ -1,0 +1,71 @@
+{
+    "product_id": "api_bb7ff1ea-3c77-40ce-b550-af9923b57a01",
+    "tool_description": "This API scrapes the most recent F1 news articles from, the official F1 website, Sky F1, BBC F1, WTF1, and Autosport. More may be added in the future...",
+    "home_url": "https://rapidapi.com/mattfoster02/api/f1-latest-news/",
+    "name": "F1 Latest News",
+    "title": "F1 Latest News",
+    "pricing": "FREE",
+    "tool_name": "F1 Latest News",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 8,
+        "avgSuccessRate": 100,
+        "popularityScore": 9.2,
+        "__typename": "Score"
+    },
+    "host": "f1-latest-news.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "News from individual source",
+            "url": "https://f1-latest-news.p.rapidapi.com/news/f1",
+            "description": "With this endpoint you can specify the source of the articles you wish to get\n/news/f1 for example, or any of the other 4: skyf1, BBCF1, WTF1, autosport.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "sourceID",
+                    "type": "string",
+                    "description": "",
+                    "default": "f1"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://f1-latest-news.p.rapidapi.com/news/f1\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"f1-latest-news.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://f1-latest-news.p.rapidapi.com/news/{sourceid}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"f1-latest-news.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "title": "TEAM GUIDE: Everything you need to know about F1 champions Red Bull ahead of the 2023 season",
+                    "url": "https://www.formula1.com//en/latest/article.team-guide-everything-you-need-to-know-about-f1-champions-red-bull-ahead-of.6eh0euPCyY8QCdRf3dKtP9.html",
+                    "source": "f1"
+                },
+                {
+                    "title": "Schumacher joins McLaren's reserve driver pool ahead of 2023 season",
+                    "url": "https://www.formula1.com//en/latest/article.schumacher-joins-mclarens-reserve-driver-pool-ahead-of-2023-season.2HZUYtaEja4Fcng2RXbmAZ.html",
+                    "source": "f1"
+                }
+            ]
+        },
+        {
+            "name": "GET recent F1 news from all sources",
+            "url": "https://f1-latest-news.p.rapidapi.com/news",
+            "description": "This endpoint returns back recent articles from all sources",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://f1-latest-news.p.rapidapi.com/news\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"f1-latest-news.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://f1-latest-news.p.rapidapi.com/news\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"f1-latest-news.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "title": "How F1's bigger wheels have impacted car designs",
+                    "url": "https://www.autosport.com//f1/news/how-f1s-bigger-wheels-have-impacted-car-designs/10423665/",
+                    "source": "autosport"
+                },
+                {
+                    "title": "Drivers 'should say what they want': Bottas questions FIA's 'unnecessary' ban",
+                    "url": "https://www.skysports.com/f1/news/27993/12800879/valtteri-bottas-questions-fia-ban-on-f1-political-statements-drivers-should-say-what-they-want",
+                    "source": "skyf1"
+                }
+            ]
+        }
+    ],
+    "standardized_name": "f1_latest_news"
+}

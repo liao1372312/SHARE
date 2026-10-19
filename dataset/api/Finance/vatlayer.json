@@ -1,0 +1,176 @@
+{
+    "product_id": "558144cae4b030865222eae7",
+    "tool_description": "Vatlayer is a simple REST-based JSON API offering instant EU VAT number validation, VAT compliant price calculations and VAT rates for all 28 current member states of the European Union. Its system is secured by HTTPS and focused on ease of use & integration, delivering all VAT data in lightweight and highly portable JSON format.\r\n\r\nThis level of compatibility, paired with startup- and developer-friendly pricing and a full stack of features makes the vatlayer API a perfect VAT rate automation and number validation tool for individuals, businesses and merchants selling and buying goods in and around the European Union.",
+    "home_url": "https://rapidapi.com/apilayer/api/vatlayer/",
+    "name": "vatlayer",
+    "title": "vatlayer",
+    "pricing": "FREE",
+    "tool_name": "vatlayer",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 307,
+        "avgSuccessRate": 100,
+        "popularityScore": 7.6,
+        "__typename": "Score"
+    },
+    "host": "apilayer-vatlayer-v1.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Single EU VAT Rate",
+            "url": "https://apilayer-vatlayer-v1.p.rapidapi.com/rate",
+            "description": "Using the \"rate\" endpoint, you may request the API to return standard and reduced VAT rates for a EU member state you specify. Important: Only one of the following three parameters for defining the country is allowed.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "country_code",
+                    "type": "STRING",
+                    "description": "Option 1 - define country by 2-letter country code",
+                    "default": ""
+                },
+                {
+                    "name": "ip_address",
+                    "type": "STRING",
+                    "description": "Option 2 - define country by IP address",
+                    "default": ""
+                },
+                {
+                    "name": "use_client_ip",
+                    "type": "STRING",
+                    "description": "Option 3 - set to \"1\" in order to use the IP of the client making the API request",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://apilayer-vatlayer-v1.p.rapidapi.com/rate\"\nquerystring = {\"country_code\": \"\", \"ip_address\": \"\", \"use_client_ip\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"apilayer-vatlayer-v1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://apilayer-vatlayer-v1.p.rapidapi.com/rate\"\nquerystring = {\"country_code\": \"\", \"ip_address\": \"\", \"use_client_ip\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"apilayer-vatlayer-v1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "success": false,
+                "error": {
+                    "code": 101,
+                    "type": "missing_access_key",
+                    "info": "You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]"
+                }
+            }
+        },
+        {
+            "name": "Request all EU VAT Rates",
+            "url": "https://apilayer-vatlayer-v1.p.rapidapi.com/rate_list",
+            "description": "Use the API's \"rate_list\" endpoint to obtain standard & reduced VAT rates for all 28 current member states",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://apilayer-vatlayer-v1.p.rapidapi.com/rate_list\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"apilayer-vatlayer-v1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://apilayer-vatlayer-v1.p.rapidapi.com/rate_list\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"apilayer-vatlayer-v1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "success": false,
+                "error": {
+                    "code": 101,
+                    "type": "missing_access_key",
+                    "info": "You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]"
+                }
+            }
+        },
+        {
+            "name": "Calculate EU VAT Compliant Price",
+            "url": "https://apilayer-vatlayer-v1.p.rapidapi.com/price",
+            "description": "Use the \"price\" endpoint, you may request the API to calculate a country-specific VAT compliant price on your behalf. Important: There are 3 options to define a country - choose only one!",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "amount",
+                    "type": "STRING",
+                    "description": "\"amount\" parameter - append the amount to convert to VAT compliant price",
+                    "default": ""
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "country_code",
+                    "type": "STRING",
+                    "description": "Option 1 - define country by 2-letter country code",
+                    "default": ""
+                },
+                {
+                    "name": "ip_address",
+                    "type": "STRING",
+                    "description": "Option 2 - define country by IP address",
+                    "default": ""
+                },
+                {
+                    "name": "use_client_ip",
+                    "type": "STRING",
+                    "description": "Option 3 - set to \"1\" in order to use the IP of the client making the API request",
+                    "default": ""
+                },
+                {
+                    "name": "incl",
+                    "type": "STRING",
+                    "description": "set to \"1\" in case your amount already contains the respective VAT percentage",
+                    "default": ""
+                },
+                {
+                    "name": "type",
+                    "type": "STRING",
+                    "description": "define a reduced VAT \"type\" (product category) according to the API's \"type\" endpoint",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://apilayer-vatlayer-v1.p.rapidapi.com/price\"\nquerystring = {\"amount\": \"\", \"country_code\": \"\", \"ip_address\": \"\", \"use_client_ip\": \"\", \"incl\": \"\", \"type\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"apilayer-vatlayer-v1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://apilayer-vatlayer-v1.p.rapidapi.com/price\"\nquerystring = {\"amount\": \"\", \"country_code\": \"\", \"ip_address\": \"\", \"use_client_ip\": \"\", \"incl\": \"\", \"type\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"apilayer-vatlayer-v1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "success": false,
+                "error": {
+                    "code": 101,
+                    "type": "missing_access_key",
+                    "info": "You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]"
+                }
+            },
+            "statuscode": 1,
+            "schema": ""
+        },
+        {
+            "name": "Request list of types of goods",
+            "url": "https://apilayer-vatlayer-v1.p.rapidapi.com/types",
+            "description": "Request an entire list of all available \"types of goods\", which fall into reduced VAT categories in specific EU member states",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://apilayer-vatlayer-v1.p.rapidapi.com/types\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"apilayer-vatlayer-v1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://apilayer-vatlayer-v1.p.rapidapi.com/types\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"apilayer-vatlayer-v1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "success": false,
+                "error": {
+                    "code": 101,
+                    "type": "missing_access_key",
+                    "info": "You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]"
+                }
+            }
+        },
+        {
+            "name": "Validate VAT Number",
+            "url": "https://apilayer-vatlayer-v1.p.rapidapi.com/validate",
+            "description": "Using the \"validate\" endpoint, you may request the API to validate any EU VAT number and obtain information about the company it is assigned to",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "vat_number",
+                    "type": "STRING",
+                    "description": "\"vat_number\" parameter - append the VAT number you want to validate",
+                    "default": ""
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://apilayer-vatlayer-v1.p.rapidapi.com/validate\"\nquerystring = {\"vat_number\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"apilayer-vatlayer-v1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://apilayer-vatlayer-v1.p.rapidapi.com/validate\"\nquerystring = {\"vat_number\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"apilayer-vatlayer-v1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "success": false,
+                "error": {
+                    "code": 101,
+                    "type": "missing_access_key",
+                    "info": "You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]"
+                }
+            }
+        }
+    ],
+    "standardized_name": "vatlayer"
+}

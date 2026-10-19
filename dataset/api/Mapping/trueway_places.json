@@ -1,0 +1,252 @@
+{
+    "product_id": "api_fbfed0c5-e977-452c-b309-00057b12523a",
+    "tool_description": "Search for places. Provides detailed information for over 100 million places and points of interest.",
+    "home_url": "https://rapidapi.com/trueway/api/trueway-places/",
+    "name": "TrueWay Places",
+    "title": "TrueWay Places",
+    "pricing": "FREEMIUM",
+    "tool_name": "TrueWay Places",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 241,
+        "avgSuccessRate": 100,
+        "popularityScore": 9.8,
+        "__typename": "Score"
+    },
+    "host": "trueway-places.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "FindPlacesNearby",
+            "url": "https://trueway-places.p.rapidapi.com/FindPlacesNearby",
+            "description": "Search for nearby places",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "location",
+                    "type": "STRING",
+                    "description": "The latitude/longitude around which to retrieve places",
+                    "default": "37.783366,-122.402325"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "language",
+                    "type": "STRING",
+                    "description": "The language in which to return results",
+                    "default": "en"
+                },
+                {
+                    "name": "radius",
+                    "type": "NUMBER",
+                    "description": "The distance (in meters) within which to return results. Max = 10000 m",
+                    "default": "180"
+                },
+                {
+                    "name": "type",
+                    "type": "STRING",
+                    "description": "The type of places that are returned",
+                    "default": "cafe"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://trueway-places.p.rapidapi.com/FindPlacesNearby\"\nquerystring = {\"location\": \"37.783366,-122.402325\", \"language\": \"en\", \"radius\": \"180\", \"type\": \"cafe\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"trueway-places.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://trueway-places.p.rapidapi.com/FindPlacesNearby\"\nquerystring = {\"location\": \"37.783366,-122.402325\", \"language\": \"en\", \"radius\": \"180\", \"type\": \"cafe\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"trueway-places.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "results": [
+                    {
+                        "id": "48572BB70C6182059545149CBF7D7655",
+                        "name": "Bean Bar Cafe",
+                        "address": "250 4th St, San Francisco, CA 94103, USA",
+                        "location": {
+                            "lat": 37.782493,
+                            "lng": -122.402019
+                        },
+                        "types": [
+                            "cafe",
+                            "food",
+                            "store"
+                        ],
+                        "distance": 101
+                    },
+                    {
+                        "id": "E589482A44946401768873E03800D061",
+                        "name": "Sharetea",
+                        "address": "135 4th St, San Francisco, CA 94103, USA",
+                        "phone_number": "+14152270888",
+                        "website": "http://www.shareteametreon.com/",
+                        "location": {
+                            "lat": 37.784604,
+                            "lng": -122.403389
+                        },
+                        "types": [
+                            "cafe",
+                            "food"
+                        ],
+                        "distance": 167
+                    },
+                    {
+                        "id": "3461028807BC250BAC0F00BB6C70505C",
+                        "name": "Starbucks",
+                        "address": "789 Mission St, San Francisco, CA 94103, USA",
+                        "phone_number": "+14153436272",
+                        "website": "https://www.starbucks.com/store-locator/store/92309",
+                        "location": {
+                            "lat": 37.784431,
+                            "lng": -122.40382
+                        },
+                        "types": [
+                            "cafe",
+                            "food",
+                            "store"
+                        ],
+                        "distance": 177
+                    }
+                ]
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "results": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "id": {
+                                    "type": "string"
+                                },
+                                "name": {
+                                    "type": "string"
+                                },
+                                "address": {
+                                    "type": "string"
+                                },
+                                "phone_number": {
+                                    "type": "string"
+                                },
+                                "website": {
+                                    "type": "string"
+                                },
+                                "location": {
+                                    "type": "object",
+                                    "properties": {
+                                        "lat": {
+                                            "type": "number"
+                                        },
+                                        "lng": {
+                                            "type": "number"
+                                        }
+                                    }
+                                },
+                                "types": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                },
+                                "distance": {
+                                    "type": "integer"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "FindPlaceByText",
+            "url": "https://trueway-places.p.rapidapi.com/FindPlaceByText",
+            "description": "Search for places by text string",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "text",
+                    "type": "STRING",
+                    "description": "A text string on which to search",
+                    "default": "Children's Creativity Museum"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "language",
+                    "type": "STRING",
+                    "description": "The language in which to return results",
+                    "default": "en"
+                },
+                {
+                    "name": "bounds",
+                    "type": "STRING",
+                    "description": "Rectangular bounds (south,west,north,east)",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://trueway-places.p.rapidapi.com/FindPlaceByText\"\nquerystring = {\"text\": \"Children's Creativity Museum\", \"language\": \"en\", \"bounds\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"trueway-places.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://trueway-places.p.rapidapi.com/FindPlaceByText\"\nquerystring = {\"text\": \"Children's Creativity Museum\", \"language\": \"en\", \"bounds\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"trueway-places.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "results": [
+                    {
+                        "id": "578A19E791A33F37C5189F95D428ED1E",
+                        "name": "Children's Creativity Museum",
+                        "address": "221 4th St, San Francisco, CA 94103, United States",
+                        "phone_number": "+14158203320",
+                        "website": "http://www.creativity.org/",
+                        "location": {
+                            "lat": 37.783381,
+                            "lng": -122.402308
+                        },
+                        "types": [
+                            "museum",
+                            "tourist_attraction"
+                        ]
+                    }
+                ]
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "results": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "id": {
+                                    "type": "string"
+                                },
+                                "name": {
+                                    "type": "string"
+                                },
+                                "address": {
+                                    "type": "string"
+                                },
+                                "phone_number": {
+                                    "type": "string"
+                                },
+                                "website": {
+                                    "type": "string"
+                                },
+                                "location": {
+                                    "type": "object",
+                                    "properties": {
+                                        "lat": {
+                                            "type": "number"
+                                        },
+                                        "lng": {
+                                            "type": "number"
+                                        }
+                                    }
+                                },
+                                "types": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "standardized_name": "trueway_places"
+}

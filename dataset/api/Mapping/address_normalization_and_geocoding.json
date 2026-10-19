@@ -1,0 +1,99 @@
+{
+    "product_id": "api_79608966-dafb-4c61-ab8b-3ee69d24360f",
+    "tool_description": "Takes free text address input, standardizes and outputs rooftop latitude/longitude geocode coordinates.",
+    "home_url": "https://rapidapi.com/AddressBox/api/address-normalization-and-geocoding/",
+    "name": "Address Normalization and Geocoding",
+    "title": "Address Normalization and Geocoding",
+    "pricing": "FREEMIUM",
+    "tool_name": "Address Normalization and Geocoding",
+    "score": {
+        "avgServiceLevel": 95,
+        "avgLatency": 474,
+        "avgSuccessRate": 94,
+        "popularityScore": 9.1,
+        "__typename": "Score"
+    },
+    "host": "address-normalization-and-geocoding.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Geocoding",
+            "url": "https://address-normalization-and-geocoding.p.rapidapi.com/geocode",
+            "description": "Returns standard, normalized address and geocode lat/long rooftop coordinates.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "address",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "1600 pennsylvania ave washington dc"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://address-normalization-and-geocoding.p.rapidapi.com/geocode\"\nquerystring = {\"address\": \"1600 pennsylvania ave washington dc\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"address-normalization-and-geocoding.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://address-normalization-and-geocoding.p.rapidapi.com/geocode\"\nquerystring = {\"address\": \"1600 pennsylvania ave washington dc\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"address-normalization-and-geocoding.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "address": "1600 Pennsylvania Ave SE, Washington, DC, 20003, USA",
+                "addressDetail": {
+                    "number": "1600",
+                    "country": "USA",
+                    "municipality": "Washington",
+                    "postalCode": "20003 3228",
+                    "region": "District of Columbia",
+                    "street": "Pennsylvania Ave SE",
+                    "subRegion": "District of Columbia"
+                },
+                "coordinates": {
+                    "latitude": 38.87921342108362,
+                    "longitude": -76.98197628230879
+                }
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "address": {
+                        "type": "string"
+                    },
+                    "addressDetail": {
+                        "type": "object",
+                        "properties": {
+                            "number": {
+                                "type": "string"
+                            },
+                            "country": {
+                                "type": "string"
+                            },
+                            "municipality": {
+                                "type": "string"
+                            },
+                            "postalCode": {
+                                "type": "string"
+                            },
+                            "region": {
+                                "type": "string"
+                            },
+                            "street": {
+                                "type": "string"
+                            },
+                            "subRegion": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "coordinates": {
+                        "type": "object",
+                        "properties": {
+                            "latitude": {
+                                "type": "number"
+                            },
+                            "longitude": {
+                                "type": "number"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "standardized_name": "address_normalization_and_geocoding"
+}

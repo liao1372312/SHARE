@@ -1,0 +1,32 @@
+{
+"user_query":"I want to browse through the history of images I uploaded using the Web Image Storage tool. Fetch the first 3 pages, each containing 10 images. Additionally, show me the list of images I uploaded using the Image CDN tool, starting from page 7.",
+"domain":"Cross-Domain",
+"TaskList": [
+{
+"id": 1,
+"description": "Fetch the first page of images from the Web Image Storage tool, containing 10 images.",
+"domain": "image storage",
+"required_inputs": ["page_number=1", "images_per_page=10"]
+},
+{
+"id": 2,
+"description": "Fetch the second page of images from the Web Image Storage tool, containing 10 images.",
+"domain": "image storage",
+"required_inputs": ["page_number=2", "images_per_page=10"],
+"dependencies": [1]
+},
+{
+"id": 3,
+"description": "Fetch the third page of images from the Web Image Storage tool, containing 10 images.",
+"domain": "image storage",
+"required_inputs": ["page_number=3", "images_per_page=10"],
+"dependencies": [2]
+},
+{
+"id": 4,
+"description": "Fetch the list of images uploaded using the Image CDN tool, starting from page 7.",
+"domain": "image CDN",
+"required_inputs": ["page_number=7"]
+}
+]
+}

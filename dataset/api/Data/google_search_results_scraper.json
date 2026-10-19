@@ -1,0 +1,785 @@
+{
+    "product_id": "api_eecfe38e-eafd-4f24-a2de-1250856bac88",
+    "tool_description": "Scrapes search results from google including ads, translation, weather, knowledge graph results, image search, top news results, people also ask, did you mean, dictionary results and more.",
+    "home_url": "https://rapidapi.com/williambarberjr/api/google-search-results-scraper/",
+    "name": "Google Search Results Scraper",
+    "title": "Google Search Results Scraper",
+    "pricing": "FREEMIUM",
+    "tool_name": "Google Search Results Scraper",
+    "score": {
+        "avgServiceLevel": 83,
+        "avgLatency": 2108,
+        "avgSuccessRate": 83,
+        "popularityScore": 8.8,
+        "__typename": "Score"
+    },
+    "host": "google-search-results-scraper.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Image Search",
+            "url": "https://google-search-results-scraper.p.rapidapi.com/v1/scrapeGoogleImages",
+            "description": "Runs a standard image search and parses the output to a clean json object.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "keyword",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "pale blue dot"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "page",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "0"
+                },
+                {
+                    "name": "hl",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "en"
+                },
+                {
+                    "name": "safe",
+                    "type": "BOOLEAN",
+                    "description": "",
+                    "default": "false"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://google-search-results-scraper.p.rapidapi.com/v1/scrapeGoogleImages\"\nquerystring = {\"page\": \"0\", \"hl\": \"en\", \"safe\": \"false\", \"keyword\": \"pale blue dot\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"google-search-results-scraper.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://google-search-results-scraper.p.rapidapi.com/v1/scrapeGoogleImages\"\nquerystring = {\"page\": \"0\", \"hl\": \"en\", \"safe\": \"false\", \"keyword\": \"pale blue dot\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"google-search-results-scraper.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "success",
+                "result": []
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "message": {
+                        "type": "string"
+                    },
+                    "result": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "id": {
+                                    "type": "string"
+                                },
+                                "url": {
+                                    "type": "string"
+                                },
+                                "width": {
+                                    "type": "integer"
+                                },
+                                "height": {
+                                    "type": "integer"
+                                },
+                                "color": {
+                                    "type": "string"
+                                },
+                                "preview": {
+                                    "type": "object",
+                                    "properties": {
+                                        "url": {
+                                            "type": "string"
+                                        },
+                                        "width": {
+                                            "type": "integer"
+                                        },
+                                        "height": {
+                                            "type": "integer"
+                                        }
+                                    }
+                                },
+                                "origin": {
+                                    "type": "object",
+                                    "properties": {
+                                        "title": {
+                                            "type": "string"
+                                        },
+                                        "website": {
+                                            "type": "object",
+                                            "properties": {
+                                                "name": {
+                                                    "type": "string"
+                                                },
+                                                "domain": {
+                                                    "type": "string"
+                                                },
+                                                "url": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Top News",
+            "url": "https://google-search-results-scraper.p.rapidapi.com/v1/scrapeGoogleTopNews",
+            "description": "Returns current top news by region and language as a clean json object.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "region",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "US"
+                },
+                {
+                    "name": "hl",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "en"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://google-search-results-scraper.p.rapidapi.com/v1/scrapeGoogleTopNews\"\nquerystring = {\"region\": \"US\", \"hl\": \"en\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"google-search-results-scraper.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://google-search-results-scraper.p.rapidapi.com/v1/scrapeGoogleTopNews\"\nquerystring = {\"region\": \"US\", \"hl\": \"en\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"google-search-results-scraper.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "success",
+                "result": {
+                    "headline_stories": [
+                        {
+                            "title": "Minneapolis Police Used Illegal, Abusive Practices for Years, Justice Dept. Finds",
+                            "url": "https://news.google.com/articles/CBMiSGh0dHBzOi8vd3d3Lm55dGltZXMuY29tLzIwMjMvMDYvMTYvdXMvZG9qLXJlcG9ydC1taW5uZWFwb2xpcy1wb2xpY2UuaHRtbNIBAA?hl=en-US&gl=US&ceid=US%3Aen",
+                            "image": "https://lh3.googleusercontent.com/proxy/ARe0oeRMHm6owjGGL8y3Yj9kDkfWnZEpjSs5uJCkZngw6AYb8UsLaMiBYTOlBV5SlVV-NKNZTzZU8P0PacH68Su1p40bncCPmLdf5p1ng9LGoqb3Ua87pzzASE4LpcnbXP3qIRpBQGQL-4_VaDw90fd7HtJ5lCbnW1GOEOTx1MB3NHXRTS1FOl3ysOZnRgCBSjYUskW98_ykAExVz-FSRxZii-dXyajm=s0-w350-h175-dcAVAG",
+                            "published": "1 hour ago",
+                            "by": "The New York Times"
+                        },
+                        {
+                            "title": "DOJ investigation reveals patterns of abuse and discrimination by Minneapolis police",
+                            "url": "https://news.google.com/articles/CCAiC2FVY3U5SFlLZ2pRmAEB?hl=en-US&gl=US&ceid=US%3Aen",
+                            "image": "https://lh3.googleusercontent.com/proxy/y7PXLFk7eToONgOhCNsQeeAkVZbSLbg5oFYLKfNXrvljj9rpm8Bp8BPLOeDmQc0ETYmDHTCO1qBCmFh0N3y0ZPNW38N3tfDN7tdQTfDcy1UlvmioMkJmGGstLcA7Mt2gCUtuXLtWuLFCz-ZzgUiSsX3GAttn8GfXLNO8I0RVQWk59JU5mbC8CGRH8n55Fv6zYORBWdIjHCW_q2t77ncMkJ-aR_fyI2Yj8iinOY0IexPPBhwT2vpY=s0-w350-h175-dcAXCKKS4oNa4B",
+                            "published": "1 hour ago",
+                            "by": "PBS NewsHour"
+                        },
+                        {
+                            "title": "Barack Obama criticizes non-White Republicans who say racism is over",
+                            "url": "https://news.google.com/articles/CBMiSmh0dHBzOi8vd3d3Lndhc2hpbmd0b25wb3N0LmNvbS9wb2xpdGljcy8yMDIzLzA2LzE2L3JhY2UtcmVwdWJsaWNhbnMtb2JhbWEv0gEA?hl=en-US&gl=US&ceid=US%3Aen",
+                            "image": "https://lh3.googleusercontent.com/proxy/n8j7Cdtg2hc0rvxwowBBqyMuWRXVX719E5Obeydy0ARXGDdt65A47HUYEMAyGm4wy1fvQ99j3zglWKxrvRVSULN9DeC5E_URb4uTNm8DDtsU_qPR20rAjSWq0WSNT5_XMhQqy8CCoa8HI3pi9wWn7qh_kw3FGw6h7xYv=s0-w350-h175-dcGUSUcBkJ",
+                            "published": "4 hours ago",
+                            "by": "The Washington Post"
+                        },
+                        {
+                            "title": "Court-enforceable police reform is coming to Minneapolis. How did we get here?",
+                            "url": "https://news.google.com/articles/CBMifGh0dHBzOi8vd3d3Lm1pbm5wb3N0LmNvbS9wdWJsaWMtc2FmZXR5LzIwMjMvMDYvY291cnQtZW5mb3JjZWFibGUtcG9saWNlLXJlZm9ybS1pcy1jb21pbmctdG8tbWlubmVhcG9saXMtaG93LWRpZC13ZS1nZXQtaGVyZS_SAQA?hl=en-US&gl=US&ceid=US%3Aen",
+                            "image": "https://lh3.googleusercontent.com/proxy/u26Yq82pl3pnf-sgYRuPjbvSKptX86-Uwyu4FLHg3q-h5AxYN5Ts9n1XmIN7LGGVbolg0yQvgLInov0y05oUgg2YiKJ9kVJNoN5l0nqUNubTjcf2PLOLjzmKLRCzkHD_eV7wDZsFPJCLtIOJ7M85ghsmB7c=s0-w350-h175-dcITaQCx4J",
+                            "published": "6 hours ago",
+                            "by": "MinnPost"
+                        },
+                        {
+                            "title": "Minneapolis Police: Scathing Report Exposes Racist and Unconstitutional Policing",
+                            "url": "https://news.google.com/articles/CBMiSmh0dHBzOi8vd3d3Lm55dGltZXMuY29tL2xpdmUvMjAyMy8wNi8xNi91cy9taW5uZWFwb2xpcy1wb2xpY2UtZ2VvcmdlLWZsb3lk0gEA?hl=en-US&gl=US&ceid=US%3Aen",
+                            "image": "https://lh3.googleusercontent.com/proxy/jTmcGvtd3BWNHCKPrxs6hz2N_NIN18NTZ4KAOL7dHQuovzobOPUm1BDBBSMsSlKIi12Lh9EikSO2b2e85p-YidOMYS4QdjoZA1rg-LgI3tH5xu5WRUJJibVP6giYm7aajJLonZrAJ4Fc85iu2UPnj8F6HifvGpUZ_Inm0bDVYgtuQ-B9x5mziy_soxULKTY0_7M793FEEsyKoq57ws1HVo7z1AKxSNE=s0-w350-h175-dcreGKDsUE",
+                            "published": "1 hour ago",
+                            "by": "The New York Times"
+                        },
+                        {
+                            "title": "Daniel Ellsberg, who leaked the Pentagon Papers, dies at 92",
+                            "url": "https://news.google.com/articles/CBMiWmh0dHBzOi8vd3d3Lndhc2hpbmd0b25wb3N0LmNvbS9vYml0dWFyaWVzLzIwMjMvMDYvMTYvZGFuaWVsLWVsbHNiZXJnLXBlbnRhZ29uLXBhcGVycy1kZWFkL9IBAA?hl=en-US&gl=US&ceid=US%3Aen",
+                            "image": "https://lh3.googleusercontent.com/proxy/DcwpKh-rveDl1NYuny-GjmrELxVqbsivASxYKLKgKQu_bJbU_e1GRmnc9_mqxMjtGSx4CjqwrlJALGHosDaTvkC41QYd3tdfHzsOynMkmWZ2AZgDzfLj3dhrB2FgmkfbDcqX5LoYCFrl4KHfVTf9bKq5cpyKeulnq8xna95r-1zVarYy7w=s0-w350-h175-dckRKcFA3rqWYC",
+                            "published": "2 hours ago",
+                            "by": "The Washington Post"
+                        },
+                        {
+                            "title": "Daniel Ellsberg, who leaked 'Pentagon Papers,' dies at 92",
+                            "url": "https://news.google.com/articles/CBMiU2h0dHBzOi8vbmV3cy55YWhvby5jb20vcGVudGFnb24tcGFwZXJzLXdoaXN0bGVibG93ZXItZGFuaWVsLWVsbHNiZXJnLTE4MjE1NTg5NS5odG1s0gFbaHR0cHM6Ly9uZXdzLnlhaG9vLmNvbS9hbXBodG1sL3BlbnRhZ29uLXBhcGVycy13aGlzdGxlYmxvd2VyLWRhbmllbC1lbGxzYmVyZy0xODIxNTU4OTUuaHRtbA?hl=en-US&gl=US&ceid=US%3Aen",
+                            "published": "5 hours ago",
+                            "by": "Yahoo News"
+                        },
+                        {
+                            "title": "Daniel Ellsberg, Who Leaked the Pentagon Papers, Is Dead at 92",
+                            "url": "https://news.google.com/articles/CBMiP2h0dHBzOi8vd3d3Lm55dGltZXMuY29tLzIwMjMvMDYvMTYvdXMvZGFuaWVsLWVsbHNiZXJnLWRlYWQuaHRtbNIBAA?hl=en-US&gl=US&ceid=US%3Aen",
+                            "published": "2 hours ago",
+                            "by": "The New York Times"
+                        },
+                        {
+                            "title": "Pentagon Papers whistleblower Daniel Ellsberg has died",
+                            "url": "https://news.google.com/articles/CCAiCzl6cW1WZUhqNzZjmAEB?hl=en-US&gl=US&ceid=US%3Aen",
+                            "published": "3 hours ago",
+                            "by": "WPRI"
+                        },
+                        {
+                            "title": "Like Daniel Ellsberg, others who leaked US government secrets have been seen as traitors and heroes",
+                            "url": "https://news.google.com/articles/CBMijwFodHRwczovL3RoZWhpbGwuY29tL2hvbWVuZXdzL2FwL2FwLXBvbGl0aWNzL2xpa2UtZGFuaWVsLWVsbHNiZXJnLW90aGVycy13aG8tbGVha2VkLXVzLWdvdmVybm1lbnQtc2VjcmV0cy1oYXZlLWJlZW4tc2Vlbi1hcy10cmFpdG9ycy1hbmQtaGVyb2VzL9IBkwFodHRwczovL3RoZWhpbGwuY29tL2hvbWVuZXdzL2FwL2FwLXBvbGl0aWNzL2xpa2UtZGFuaWVsLWVsbHNiZXJnLW90aGVycy13aG8tbGVha2VkLXVzLWdvdmVybm1lbnQtc2VjcmV0cy1oYXZlLWJlZW4tc2Vlbi1hcy10cmFpdG9ycy1hbmQtaGVyb2VzL2FtcC8?hl=en-US&gl=US&ceid=US%3Aen",
+                            "published": "2 hours ago",
+                            "by": "The Hill"
+                        },
+                        {
+                            "title": "Biden says the gun safety movement has reached a \u2018tipping point\u2019 as he marks one year since passage of major legislation",
+                            "url": "https://news.google.com/articles/CBMiTWh0dHBzOi8vd3d3LmNubi5jb20vMjAyMy8wNi8xNi9wb2xpdGljcy9qb2UtYmlkZW4tZ3Vucy1jb25uZWN0aWN1dC9pbmRleC5odG1s0gFRaHR0cHM6Ly9hbXAuY25uLmNvbS9jbm4vMjAyMy8wNi8xNi9wb2xpdGljcy9qb2UtYmlkZW4tZ3Vucy1jb25uZWN0aWN1dC9pbmRleC5odG1s?hl=en-US&gl=US&ceid=US%3Aen",
+                            "published": "3 hours ago",
+                            "by": "CNN"
+                        },
+                        {
+                            "title": "Biden bizarrely ends Connecticut speech with 'God Save the Queen,' sparking uproar: 'Truly incapacitated'",
+                            "url": "https://news.google.com/articles/CBMieGh0dHBzOi8vd3d3LmZveG5ld3MuY29tL21lZGlhL2JpZGVuLWJpemFycmVseS1lbmRzLWNvbm5lY3RpY3V0LXNwZWVjaC1nb2Qtc2F2ZS1xdWVlbi1zcGFya2luZy11cHJvYXItdHJ1bHktaW5jYXBhY2l0YXRlZNIBfGh0dHBzOi8vd3d3LmZveG5ld3MuY29tL21lZGlhL2JpZGVuLWJpemFycmVseS1lbmRzLWNvbm5lY3RpY3V0LXNwZWVjaC1nb2Qtc2F2ZS1xdWVlbi1zcGFya2luZy11cHJvYXItdHJ1bHktaW5jYXBhY2l0YXRlZC5hbXA?hl=en-US&gl=US&ceid=US%3Aen",
+                            "published": "2 hours ago",
+                            "by": "Fox News"
+                        },
+                        {
+                            "title": "'We're going to win regularly on behalf of kids, families': Sen. Murphy on gun safety summit",
+                            "url": "https://news.google.com/articles/CCAiC0dyUmdDVjJiUFZFmAEB?hl=en-US&gl=US&ceid=US%3Aen",
+                            "published": "21 hours ago",
+                            "by": "MSNBC"
+                        },
+                        {
+                            "title": "Editorial (opinion): The torch of gun safety is passed on",
+                            "url": "https://news.google.com/articles/CBMiYGh0dHBzOi8vd3d3LmN0cG9zdC5jb20vb3Bpbmlvbi9hcnRpY2xlL2VkaXRvcmlhbC1vcGluaW9uLTEwLXllYXJzLWFnby1vYmFtYS10b2xkLWN0LTE4MTU0MzY3LnBocNIBAA?hl=en-US&gl=US&ceid=US%3Aen",
+                            "published": "Yesterday",
+                            "by": "CTPost"
+                        },
+                        {
+                            "title": "Biden Isn't Giving Up on Gun Safety, Despite the Gridlock",
+                            "url": "https://news.google.com/articles/CBMiO2h0dHBzOi8vdGltZS5jb20vNjI4Nzc1OC9iaWRlbi1ndW4tdmlvbGVuY2UtbWFzcy1zaG9vdGluZ3Mv0gEA?hl=en-US&gl=US&ceid=US%3Aen",
+                            "published": "12 hours ago",
+                            "by": "TIME"
+                        },
+                        {
+                            "title": "Russia has sent nuclear warheads to Belarus, says Putin",
+                            "url": "https://news.google.com/articles/CBMiP2h0dHBzOi8vd3d3LmZ0LmNvbS9jb250ZW50LzIzNTNiZTZkLTc1NzMtNGIyNC1iZjc2LWU3N2Y0MDM5Zjk1N9IBAA?hl=en-US&gl=US&ceid=US%3Aen",
+                            "published": "6 hours ago",
+                            "by": "Financial Times"
+                        },
+                        {
+                            "title": "Ukraine war: Putin confirms first nuclear weapons moved to Belarus",
+                            "url": "https://news.google.com/articles/CBMiLmh0dHBzOi8vd3d3LmJiYy5jb20vbmV3cy93b3JsZC1ldXJvcGUtNjU5MzI3MDDSATJodHRwczovL3d3dy5iYmMuY29tL25ld3Mvd29ybGQtZXVyb3BlLTY1OTMyNzAwLmFtcA?hl=en-US&gl=US&ceid=US%3Aen",
+                            "published": "3 hours ago",
+                            "by": "BBC"
+                        },
+                        {
+                            "title": "Putin warns the West of Russian tactical nukes being put in Belarus",
+                            "url": "https://news.google.com/articles/CBMiY2h0dHBzOi8vd3d3LmJ1c2luZXNzaW5zaWRlci5jb20vcHV0aW4td2FybnMtd2VzdC1ydXNzaWFuLXRhY3RpY2FsLW51a2VzLWJlaW5nLXB1dC1pbi1iZWxhcnVzLTIwMjMtNtIBZ2h0dHBzOi8vd3d3LmJ1c2luZXNzaW5zaWRlci5jb20vcHV0aW4td2FybnMtd2VzdC1ydXNzaWFuLXRhY3RpY2FsLW51a2VzLWJlaW5nLXB1dC1pbi1iZWxhcnVzLTIwMjMtNj9hbXA?hl=en-US&gl=US&ceid=US%3Aen",
+                            "published": "1 hour ago",
+                            "by": "Business Insider"
+                        },
+                        {
+                            "title": "Live news: EU acknowledges role of nuclear energy in draft declaration to placate France",
+                            "url": "https://news.google.com/articles/CBMiP2h0dHBzOi8vd3d3LmZ0LmNvbS9jb250ZW50L2NkZWNkNzFkLWZiNDktNDVlZC1iY2NiLTNjY2VlMDJmNTIzM9IBAA?hl=en-US&gl=US&ceid=US%3Aen",
+                            "published": "7 hours ago",
+                            "by": "Financial Times"
+                        },
+                        {
+                            "title": "Putin Says Belarus Got First Russian Nuclear Weapons as Planned",
+                            "url": "https://news.google.com/articles/CBMicmh0dHBzOi8vd3d3LmJsb29tYmVyZy5jb20vbmV3cy9hcnRpY2xlcy8yMDIzLTA2LTE2L3B1dGluLXNheXMtYmVsYXJ1cy1nb3QtZmlyc3QtcnVzc2lhbi1udWNsZWFyLXdlYXBvbnMtYXMtcGxhbm5lZNIBAA?hl=en-US&gl=US&ceid=US%3Aen",
+                            "published": "8 hours ago",
+                            "by": "Bloomberg"
+                        },
+                        {
+                            "title": "Russian malware compromises Energy Department, other federal agencies",
+                            "url": "https://news.google.com/articles/CBMiX2h0dHBzOi8vd3d3LmZveG5ld3MuY29tL3VzL3J1c3NpYW4tbWFsd2FyZS1jb21wcm9taXNlcy1lbmVyZ3ktZGVwYXJ0bWVudC1vdGhlci1mZWRlcmFsLWFnZW5jaWVz0gFjaHR0cHM6Ly93d3cuZm94bmV3cy5jb20vdXMvcnVzc2lhbi1tYWx3YXJlLWNvbXByb21pc2VzLWVuZXJneS1kZXBhcnRtZW50LW90aGVyLWZlZGVyYWwtYWdlbmNpZXMuYW1w?hl=en-US&gl=US&ceid=US%3Aen",
+                            "published": "8 hours ago",
+                            "by": "Fox News"
+                        },
+                        {
+                            "title": "U.S. government agencies hit in global cyberattack",
+                            "url": "https://news.google.com/articles/CCAiC1VZSUQ5SktEaEE4mAEB?hl=en-US&gl=US&ceid=US%3Aen",
+                            "published": "22 hours ago",
+                            "by": "CBS News"
+                        },
+                        {
+                            "title": "Russian ransomware gang breaches the Energy Department and other federal agencies",
+                            "url": "https://news.google.com/articles/CBMifWh0dHBzOi8vd3d3LmNsZXZlbGFuZC5jb20vbmV3cy8yMDIzLzA2L3J1c3NpYW4tcmFuc29td2FyZS1nYW5nLWJyZWFjaGVzLXRoZS1lbmVyZ3ktZGVwYXJ0bWVudC1hbmQtb3RoZXItZmVkZXJhbC1hZ2VuY2llcy5odG1s0gEA?hl=en-US&gl=US&ceid=US%3Aen",
+                            "published": "12 hours ago",
+                            "by": "cleveland.com"
+                        },
+                        {
+                            "title": "US Energy Dept., Other Agencies Hacked",
+                            "url": "https://news.google.com/articles/CBMiS2h0dHBzOi8vd3d3LnZvYW5ld3MuY29tL2EvdXMtZW5lcmd5LWRlcHQtb3RoZXItYWdlbmNpZXMtaGFja2VkLzcxMzk4NjEuaHRtbNIBTWh0dHBzOi8vd3d3LnZvYW5ld3MuY29tL2FtcC91cy1lbmVyZ3ktZGVwdC1vdGhlci1hZ2VuY2llcy1oYWNrZWQvNzEzOTg2MS5odG1s?hl=en-US&gl=US&ceid=US%3Aen",
+                            "published": "17 hours ago",
+                            "by": "Voice of America - VOA News"
+                        },
+                        {
+                            "title": "Officials blame Russia-based criminal gang for large-scale cyberattack",
+                            "url": "https://news.google.com/articles/CCAiC3RNSS1VTnZoYUdZmAEB?hl=en-US&gl=US&ceid=US%3Aen",
+                            "published": "10 hours ago",
+                            "by": "CBS Mornings"
+                        },
+                        {
+                            "title": "Special counsel asks judge to keep Trump from disclosing evidence in classified documents case",
+                            "url": "https://news.google.com/articles/CBMibGh0dHBzOi8vYWJjbmV3cy5nby5jb20vVVMvc3BlY2lhbC1jb3Vuc2VsLWFza3MtanVkZ2UtdHJ1bXAtZGlzY2xvc2luZy1ldmlkZW5jZS1jbGFzc2lmaWVkL3N0b3J5P2lkPTEwMDE1NDE5M9IBAA?hl=en-US&gl=US&ceid=US%3Aen",
+                            "published": "1 hour ago",
+                            "by": "ABC News"
+                        },
+                        {
+                            "title": "DOJ seeks protective order to prevent Trump from releasing classified materials amid ongoing investigation",
+                            "url": "https://news.google.com/articles/CBMijQFodHRwczovL3RoZWhpbGwuY29tL3JlZ3VsYXRpb24vY291cnQtYmF0dGxlcy80MDU0MTk0LWp1c3RpY2UtZmlsZXMtZm9yLXByb3RlY3RpdmUtb3JkZXItdG8tcHJldmVudC10cnVtcC1mcm9tLXJlbGVhc2luZy1jbGFzc2lmaWVkLW1hdGVyaWFscy_SAZEBaHR0cHM6Ly90aGVoaWxsLmNvbS9yZWd1bGF0aW9uL2NvdXJ0LWJhdHRsZXMvNDA1NDE5NC1qdXN0aWNlLWZpbGVzLWZvci1wcm90ZWN0aXZlLW9yZGVyLXRvLXByZXZlbnQtdHJ1bXAtZnJvbS1yZWxlYXNpbmctY2xhc3NpZmllZC1tYXRlcmlhbHMvYW1wLw?hl=en-US&gl=US&ceid=US%3Aen",
+                            "published": "3 hours ago",
+                            "by": "The Hill"
+                        },
+                        {
+                            "title": "Evidence in Trump Documents Case Hints at 'Ongoing Investigations,' Filing Says",
+                            "url": "https://news.google.com/articles/CBMiSGh0dHBzOi8vd3d3Lm55dGltZXMuY29tLzIwMjMvMDYvMTYvdXMvcG9saXRpY3MvdHJ1bXAtZG9jdW1lbnRzLWNhc2UuaHRtbNIBAA?hl=en-US&gl=US&ceid=US%3Aen",
+                            "published": "1 hour ago",
+                            "by": "The New York Times"
+                        },
+                        {
+                            "title": "Special counsel seeks court order to ensure Trump and his defense don\u2019t share materials turned over in discovery",
+                            "url": "https://news.google.com/articles/CBMiXWh0dHBzOi8vd3d3LmNubi5jb20vMjAyMy8wNi8xNi9wb2xpdGljcy9qdXN0aWNlLXRydW1wLXByb3NlY3V0aW9uLXByb3RlY3RpdmUtb3JkZXIvaW5kZXguaHRtbNIBYWh0dHBzOi8vYW1wLmNubi5jb20vY25uLzIwMjMvMDYvMTYvcG9saXRpY3MvanVzdGljZS10cnVtcC1wcm9zZWN1dGlvbi1wcm90ZWN0aXZlLW9yZGVyL2luZGV4Lmh0bWw?hl=en-US&gl=US&ceid=US%3Aen",
+                            "published": "2 hours ago",
+                            "by": "CNN"
+                        },
+                        {
+                            "title": "Trump indictment: Prosecutors want to protect 'ongoing investigations'",
+                            "url": "https://news.google.com/articles/CBMie2h0dHBzOi8vd3d3LmJ1c2luZXNzaW5zaWRlci5jb20vdHJ1bXAtaW5kaWN0bWVudC1wcm9zZWN1dG9ycy1ldmlkZW5jZS1zZWNyZXQtcHJvdGVjdGl2ZS1vcmRlci1vbmdvaW5nLWludmVzdGlnYXRpb25zLTIwMjMtNtIBf2h0dHBzOi8vd3d3LmJ1c2luZXNzaW5zaWRlci5jb20vdHJ1bXAtaW5kaWN0bWVudC1wcm9zZWN1dG9ycy1ldmlkZW5jZS1zZWNyZXQtcHJvdGVjdGl2ZS1vcmRlci1vbmdvaW5nLWludmVzdGlnYXRpb25zLTIwMjMtNj9hbXA?hl=en-US&gl=US&ceid=US%3Aen",
+                            "published": "2 hours ago",
+                            "by": "Business Insider"
+                        }
+                    ]
+                }
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "message": {
+                        "type": "string"
+                    },
+                    "result": {
+                        "type": "object",
+                        "properties": {
+                            "headline_stories": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Web Search",
+            "url": "https://google-search-results-scraper.p.rapidapi.com/v1/scrapeGoogle",
+            "description": "Runs a standard google web search and parses the results returning a clean json object",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "keyword",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "seo tools"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "hl",
+                    "type": "STRING",
+                    "description": "Two letter language code, defaults to english (en) for other codes see https://developers.google.com/admin-sdk/directory/v1/languages",
+                    "default": "en"
+                },
+                {
+                    "name": "gl",
+                    "type": "STRING",
+                    "description": "Sets the country from which the search is run, defaults to US",
+                    "default": "us"
+                },
+                {
+                    "name": "page",
+                    "type": "STRING",
+                    "description": "The page of the search results, defaults to 0",
+                    "default": "0"
+                },
+                {
+                    "name": "parse_ads",
+                    "type": "BOOLEAN",
+                    "description": "A boolean for returning ad results which will be labeled \\\"is_sponsored\\\":true. Defaults to true.",
+                    "default": "true"
+                },
+                {
+                    "name": "safe",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "false"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://google-search-results-scraper.p.rapidapi.com/v1/scrapeGoogle\"\nquerystring = {\"hl\": \"en\", \"gl\": \"us\", \"keyword\": \"seo tools\", \"page\": \"0\", \"parse_ads\": \"true\", \"safe\": \"false\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"google-search-results-scraper.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://google-search-results-scraper.p.rapidapi.com/v1/scrapeGoogle\"\nquerystring = {\"hl\": \"en\", \"gl\": \"us\", \"keyword\": \"seo tools\", \"page\": \"0\", \"parse_ads\": \"true\", \"safe\": \"false\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"google-search-results-scraper.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "success",
+                "result": {
+                    "results": [
+                        {
+                            "title": "1st Truly Global SEO Platform - Increase Traffic Worldwide",
+                            "description": "See your SEO data from around the world and at every angle with dozens of in-depth reports. Automatically discover competitors. Learn from...",
+                            "url": "https://www.dragonmetrics.com/",
+                            "is_sponsored": true,
+                            "favicons": {
+                                "high_res": "https://api.faviconkit.com/www.dragonmetrics.com/192",
+                                "low_res": "https://www.google.com/s2/favicons?sz=64&domain_url=www.dragonmetrics.com"
+                            }
+                        },
+                        {
+                            "title": "Free SEO Tool - Research Your Competitors",
+                            "description": "Research your competitors, find traffic-driving keywords, build quality backlinks & more. Competitor...",
+                            "url": "https://www.semrush.com/lp/seo-challenges/en/",
+                            "is_sponsored": true,
+                            "favicons": {
+                                "high_res": "https://api.faviconkit.com/www.semrush.com/192",
+                                "low_res": "https://www.google.com/s2/favicons?sz=64&domain_url=www.semrush.com"
+                            }
+                        },
+                        {
+                            "title": "The Only 30 Free SEO Tools You Need - Ahrefs",
+                            "description": "May 17, 2023 \u2014 You don't need every free SEO tool under the sun. You just need enough of them to cover your use cases. After a few years in SEO and content\u00a0...",
+                            "url": "https://ahrefs.com/blog/free-seo-tools/",
+                            "is_sponsored": false,
+                            "favicons": {
+                                "high_res": "https://api.faviconkit.com/ahrefs.com/192",
+                                "low_res": "https://www.google.com/s2/favicons?sz=64&domain_url=ahrefs.com"
+                            }
+                        },
+                        {
+                            "title": "32 of the Best SEO Tools for Auditing & Monitoring Your Website in 2023",
+                            "description": "Apr 4, 2023 \u2014 Seolyzer is a free site crawling, log analysis, and SEO tool that helps you determine how search engines like Google view your website. Seolyzer\u00a0...",
+                            "url": "https://blog.hubspot.com/marketing/seo-analysis-tools",
+                            "is_sponsored": false,
+                            "favicons": {
+                                "high_res": "https://api.faviconkit.com/blog.hubspot.com/192",
+                                "low_res": "https://www.google.com/s2/favicons?sz=64&domain_url=blog.hubspot.com"
+                            }
+                        },
+                        {
+                            "title": "27 Simple and Free SEO Tools [Updated for 2023]",
+                            "description": "Feb 2, 2023",
+                            "url": "https://buffer.com/library/free-seo-tools/amp/",
+                            "is_sponsored": false,
+                            "favicons": {
+                                "high_res": "https://api.faviconkit.com/buffer.com/192",
+                                "low_res": "https://www.google.com/s2/favicons?sz=64&domain_url=buffer.com"
+                            }
+                        },
+                        {
+                            "title": "100% Free SEO Tools - SmallSEOTools.com",
+                            "description": "You need effective SEO tools which are 100% free? Check out our Search Engine Optimization tools for checking backlinks, tracking keyword positions and\u00a0...",
+                            "url": "https://smallseotools.com/",
+                            "is_sponsored": false,
+                            "favicons": {
+                                "high_res": "https://api.faviconkit.com/smallseotools.com/192",
+                                "low_res": "https://www.google.com/s2/favicons?sz=64&domain_url=smallseotools.com"
+                            }
+                        },
+                        {
+                            "title": "110 Top SEO Tools That Are 100% Free",
+                            "description": "May 25, 2022 \u2014 Google Analytics is one of the best free SEO tools that every digital marketer should be using. 2. Data Studio. Google Data Studio lets you\u00a0...",
+                            "url": "https://www.searchenginejournal.com/top-free-seo-tools/302553/",
+                            "is_sponsored": false,
+                            "favicons": {
+                                "high_res": "https://api.faviconkit.com/www.searchenginejournal.com/192",
+                                "low_res": "https://www.google.com/s2/favicons?sz=64&domain_url=www.searchenginejournal.com"
+                            }
+                        },
+                        {
+                            "title": "The Ultimate List of the 53 Best SEO Tools (Free & Paid)",
+                            "description": "Dec 2, 2021 \u2014 Learn about our favorite SEO tools, both free and paid. Whether you're in need of technical solutions, keyword research assistance, or local\u00a0...",
+                            "url": "https://www.semrush.com/blog/free-seo-tools/",
+                            "is_sponsored": false,
+                            "favicons": {
+                                "high_res": "https://api.faviconkit.com/www.semrush.com/192",
+                                "low_res": "https://www.google.com/s2/favicons?sz=64&domain_url=www.semrush.com"
+                            }
+                        },
+                        {
+                            "title": "25 Best Free SEO Tools (2023)",
+                            "description": "Oct 29, 2021 \u2014 All of these tools work GREAT in 2023. Let's get started\u2026 1. Answer The Public; 2. Woorank's SEO & Website Analysis Tool; 3. Animalz Revive; 4.",
+                            "url": "https://backlinko.com/best-free-seo-tools",
+                            "is_sponsored": false,
+                            "favicons": {
+                                "high_res": "https://api.faviconkit.com/backlinko.com/192",
+                                "low_res": "https://www.google.com/s2/favicons?sz=64&domain_url=backlinko.com"
+                            }
+                        },
+                        {
+                            "title": "18 Best SEO Tools to Use for Organic Traffic in 2023",
+                            "description": "Mar 18, 2022 \u2014 Ahrefs is one of the most recommended SEO tools online. It's only second to Google when it comes to being the largest website crawlers. SEO\u00a0...",
+                            "url": "https://www.oberlo.com/blog/seo-tools",
+                            "is_sponsored": false,
+                            "favicons": {
+                                "high_res": "https://api.faviconkit.com/www.oberlo.com/192",
+                                "low_res": "https://www.google.com/s2/favicons?sz=64&domain_url=www.oberlo.com"
+                            }
+                        },
+                        {
+                            "title": "56 Top Free SEO Tools - Neil Patel",
+                            "description": "SEO tools are software that works to help marketers improve their site's visibility and ranking on search engines such as Google, Bing, and Yahoo. These tools\u00a0...",
+                            "url": "https://neilpatel.com/blog/free-seo-tools/?amp",
+                            "is_sponsored": false,
+                            "favicons": {
+                                "high_res": "https://api.faviconkit.com/neilpatel.com/192",
+                                "low_res": "https://www.google.com/s2/favicons?sz=64&domain_url=neilpatel.com"
+                            }
+                        },
+                        {
+                            "title": "Moz Free SEO Checkers & Premium Search Tools",
+                            "description": "More Free SEO Tools from Moz \u00b7 Keyword Explorer \u00b7 Free Competitive Research \u00b7 Link Explorer \u00b7 MozBar \u00b7 My Online Presence \u00b7 Free Domain Analysis \u00b7 MozCast.",
+                            "url": "https://moz.com/free-seo-tools",
+                            "is_sponsored": false,
+                            "favicons": {
+                                "high_res": "https://api.faviconkit.com/moz.com/192",
+                                "low_res": "https://www.google.com/s2/favicons?sz=64&domain_url=moz.com"
+                            }
+                        }
+                    ],
+                    "people_also_ask": [
+                        "What is the most popular SEO tool?",
+                        "Is it possible to do SEO for free?",
+                        "How can I use SEO tools for free?"
+                    ],
+                    "people_also_search": [
+                        {
+                            "title": "Screaming Frog",
+                            "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtAa8x3L0yR4VZG6SWmBswpQQLei2caV4CFpBi&s=0"
+                        },
+                        {
+                            "title": "Similarweb",
+                            "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXBCtxsdiomwk7fX-Ed-Rf7vhMPrna8XYE7QHF&s=0"
+                        },
+                        {
+                            "title": "Yoast",
+                            "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlGPN1RodcYCROCC6p3zPUDC_Ny2mrWrYRZX57&s=0"
+                        },
+                        {
+                            "title": "WooRank",
+                            "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdy5C19CPlrBMrPg8E_eRdGxi9v_MuA6VW5vNI&s=0"
+                        }
+                    ]
+                }
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "message": {
+                        "type": "string"
+                    },
+                    "result": {
+                        "type": "object",
+                        "properties": {
+                            "results": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "title": {
+                                            "type": "string"
+                                        },
+                                        "description": {
+                                            "type": "string"
+                                        },
+                                        "url": {
+                                            "type": "string"
+                                        },
+                                        "is_sponsored": {
+                                            "type": "boolean"
+                                        },
+                                        "favicons": {
+                                            "type": "object",
+                                            "properties": {
+                                                "high_res": {
+                                                    "type": "string"
+                                                },
+                                                "low_res": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "videos": {
+                                "type": "array"
+                            },
+                            "knowledge_panel": {
+                                "type": "object",
+                                "properties": {
+                                    "type": {
+                                        "type": "null"
+                                    },
+                                    "title": {
+                                        "type": "null"
+                                    },
+                                    "description": {
+                                        "type": "null"
+                                    },
+                                    "url": {
+                                        "type": "null"
+                                    },
+                                    "metadata": {
+                                        "type": "array"
+                                    },
+                                    "books": {
+                                        "type": "array"
+                                    },
+                                    "tv_shows_and_movies": {
+                                        "type": "array"
+                                    },
+                                    "ratings": {
+                                        "type": "array"
+                                    },
+                                    "available_on": {
+                                        "type": "array"
+                                    },
+                                    "images": {
+                                        "type": "array"
+                                    },
+                                    "songs": {
+                                        "type": "array"
+                                    },
+                                    "socials": {
+                                        "type": "array"
+                                    },
+                                    "demonstration": {
+                                        "type": "null"
+                                    },
+                                    "lyrics": {
+                                        "type": "null"
+                                    }
+                                }
+                            },
+                            "featured_snippet": {
+                                "type": "object",
+                                "properties": {
+                                    "title": {
+                                        "type": "null"
+                                    },
+                                    "description": {
+                                        "type": "null"
+                                    },
+                                    "url": {
+                                        "type": "null"
+                                    }
+                                }
+                            },
+                            "did_you_mean": {
+                                "type": "null"
+                            },
+                            "weather": {
+                                "type": "object",
+                                "properties": {
+                                    "location": {
+                                        "type": "null"
+                                    },
+                                    "forecast": {
+                                        "type": "null"
+                                    },
+                                    "precipitation": {
+                                        "type": "null"
+                                    },
+                                    "humidity": {
+                                        "type": "null"
+                                    },
+                                    "temperature": {
+                                        "type": "null"
+                                    },
+                                    "wind": {
+                                        "type": "null"
+                                    }
+                                }
+                            },
+                            "time": {
+                                "type": "object",
+                                "properties": {
+                                    "hours": {
+                                        "type": "null"
+                                    },
+                                    "date": {
+                                        "type": "null"
+                                    }
+                                }
+                            },
+                            "location": {
+                                "type": "object",
+                                "properties": {
+                                    "title": {
+                                        "type": "null"
+                                    },
+                                    "distance": {
+                                        "type": "null"
+                                    },
+                                    "map": {
+                                        "type": "null"
+                                    }
+                                }
+                            },
+                            "dictionary": {
+                                "type": "object",
+                                "properties": {
+                                    "word": {
+                                        "type": "null"
+                                    },
+                                    "phonetic": {
+                                        "type": "null"
+                                    },
+                                    "audio": {
+                                        "type": "null"
+                                    },
+                                    "definitions": {
+                                        "type": "array"
+                                    },
+                                    "examples": {
+                                        "type": "array"
+                                    }
+                                }
+                            },
+                            "translation": {
+                                "type": "object",
+                                "properties": {
+                                    "source_language": {
+                                        "type": "null"
+                                    },
+                                    "target_language": {
+                                        "type": "null"
+                                    },
+                                    "source_text": {
+                                        "type": "null"
+                                    },
+                                    "target_text": {
+                                        "type": "null"
+                                    }
+                                }
+                            },
+                            "top_stories": {
+                                "type": "array"
+                            },
+                            "unit_converter": {
+                                "type": "object"
+                            },
+                            "people_also_ask": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            },
+                            "people_also_search": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "title": {
+                                            "type": "string"
+                                        },
+                                        "thumbnail": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "standardized_name": "google_search_results_scraper"
+}

@@ -1,0 +1,1248 @@
+{
+    "product_id": "api_aec19e3a-8b45-479c-be78-11bfce5584d2",
+    "tool_description": "",
+    "home_url": "https://rapidapi.com/traject-data-traject-data-default/api/rainforest2/",
+    "name": "Rainforest",
+    "title": "Rainforest",
+    "pricing": "FREEMIUM",
+    "tool_name": "Rainforest",
+    "score": {
+        "avgServiceLevel": 42,
+        "avgLatency": 10056,
+        "avgSuccessRate": 42,
+        "popularityScore": 8.9,
+        "__typename": "Score"
+    },
+    "host": "rainforest2.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Author Page",
+            "url": "https://rainforest2.p.rapidapi.com/request",
+            "description": "The Author Page Parameters are applicable when making a request with type=author_page to retrieve data from the authors page single author on Amazon - the author is specified using either the author asin and amazon_domain parameters or the url parameter (where the url parameter contains a link to an Amazon authors page). The parameters should be appended as querystring parameters to the Product Data API GET HTTP request.\n\nAuthor Page data is retrieved from the author page for a single author on Amazon.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "type",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "author_page"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "url",
+                    "type": "STRING",
+                    "description": "\nThe Amazon author page URL to retrieve data from.\n\nNote: If the url parameter is supplied then the amazon_domain and asin parameters are ignored.",
+                    "default": ""
+                },
+                {
+                    "name": "format_id",
+                    "type": "STRING",
+                    "description": "\nA format ID to determine the format of author titles returned in the titles array. Format ID's are returned in the format_ids array in each type=author_page results (this is necessary are the format_id value is dynamic and can change over time).",
+                    "default": ""
+                },
+                {
+                    "name": "amazon_domain",
+                    "type": "STRING",
+                    "description": "The Amazon domain to retrieve author page data for the author specified in the asin parameter. For a full list of supported Amazon domains see Supported Amazon Domains.\n\nNote: If the amazon_domain and asin parameters are supplied then the url parameter is ignored.",
+                    "default": "amazon.com"
+                },
+                {
+                    "name": "asin",
+                    "type": "STRING",
+                    "description": "\nThe Amazon author ASIN to retrieve author page data for. Used in combination with the amazon_domain parameter.\n\nNote: If the asin and amazon_domain parameters are supplied then the url parameter is ignored.",
+                    "default": "B000APVZ7W"
+                },
+                {
+                    "name": "page",
+                    "type": "NUMBER",
+                    "description": "The current page of search results to retrieve. Inspect the pagination.total_pages property in the Search results to see how many pages of search results are available.\n\nupdate value of num to get additional pages",
+                    "default": ""
+                },
+                {
+                    "name": "sort_by",
+                    "type": "STRING",
+                    "description": "Determines the sort order of author titles array that is returned. Valid values are:\npopularity\nSort the author titles array by most popular first.\nprice_low_to_high\nSort the author titles array by lowest price first.\nprice_high_to_low\nSort the author titles array by highest price first.\naverage_review\nSort the author titles array by highest average review first.\npublication_date\nSort the author titles array by most recent publication date first.\nmost_reviews\nSort the author titles array by those with the most reviews first.\n",
+                    "default": ""
+                },
+                {
+                    "name": "customer_location",
+                    "type": "STRING",
+                    "description": "Rainforest API supports retrieving data from the following Customer Locations.\n\nThe Customer Locations is specified via the customer_location request parameter.\n\nThe Customer Location determines the location that Rainforest uses when retrieving pages from Amazon. This is useful, for example, for seeing details of how a product appears on amazon.com, to a customer located in a different country. Can be used to identify cross-border shipping data and opportunities.\n\nIf no value for customer_location is supplied then Rainforest defaults to making the request from the country of the Amazon page requested - i.e. \\\"France\\\" for requests for pages from \\\"amazon.fr\\\".\n\nThe table below shows which customer_location values can be used in combination with requests to which amazon_domains. If you require another Amazon domain / customer location combination please contact our support team.\n\nSee the Request Parameters documentation for more information.",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://rainforest2.p.rapidapi.com/request\"\nquerystring = {\"type\": \"author_page\", \"url\": \"\", \"format_id\": \"\", \"amazon_domain\": \"amazon.com\", \"asin\": \"B000APVZ7W\", \"page\": \"\", \"sort_by\": \"\", \"customer_location\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"rainforest2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://rainforest2.p.rapidapi.com/request\"\nquerystring = {\"type\": \"author_page\", \"url\": \"\", \"format_id\": \"\", \"amazon_domain\": \"amazon.com\", \"asin\": \"B000APVZ7W\", \"page\": \"\", \"sort_by\": \"\", \"customer_location\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"rainforest2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "API Request failed due to Provider configuration error: The API response body transformation failed to parse content-type application/json. Please contact the API Provider",
+                "info": "Your Client (working) ---> Gateway (working) ---> API (not working)"
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Also Bought",
+            "url": "https://rainforest2.p.rapidapi.com/request",
+            "description": "The Also Bought Parameters are applicable when making a request with type=also_bought to retrieve also bought details for a single product on Amazon - the product is specified using either the asin and amazon_domain parameters or the url parameter (where the url parameter contains a link to an Amazon product page). The parameters should be appended as querystring parameters to the Product Data APIGETHTTP request.\n\nAlso bought details are retrieved from the product page for a single product on Amazon. An type=also_bought request will automatically paginate through all of the pages of also-bought data and return every also bought result.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "type",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "also_bought"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "url",
+                    "type": "STRING",
+                    "description": "The Amazon product page URL to retrieve also bought results from.\n",
+                    "default": ""
+                },
+                {
+                    "name": "asin",
+                    "type": "STRING",
+                    "description": "The Amazon ASIN (product ID) to retrieve also bought details for. Used in combination with the amazon_domain parameter.\n\nNote: If the asin and amazon_domain parameters are supplied then the url parameter is ignored.",
+                    "default": "B084ZF5D65"
+                },
+                {
+                    "name": "amazon_domain",
+                    "type": "STRING",
+                    "description": "\nThe Amazon domain to retrieve also bought details from for the product specified in the asin parameter. For a full list of supported Amazon domains see Supported Amazon Domains.\n\nNote: If the amazon_domain and asin parameters are supplied then the url parameter is ignored.",
+                    "default": "amazon.com"
+                },
+                {
+                    "name": "customer_location",
+                    "type": "STRING",
+                    "description": "Rainforest API supports retrieving data from the following Customer Locations.\n\nThe Customer Locations is specified via the customer_location request parameter.\n\nThe Customer Location determines the location that Rainforest uses when retrieving pages from Amazon. This is useful, for example, for seeing details of how a product appears on amazon.com, to a customer located in a different country. Can be used to identify cross-border shipping data and opportunities.\n\nIf no value for customer_location is supplied then Rainforest defaults to making the request from the country of the Amazon page requested - i.e. \\\"France\\\" for requests for pages from \\\"amazon.fr\\\".\n\nThe table below shows which customer_location values can be used in combination with requests to which amazon_domains. If you require another Amazon domain / customer location combination please contact our support team.\n\nSee the Request Parameters documentation for more information.",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://rainforest2.p.rapidapi.com/request\"\nquerystring = {\"type\": \"also_bought\", \"url\": \"\", \"asin\": \"B084ZF5D65\", \"amazon_domain\": \"amazon.com\", \"customer_location\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"rainforest2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://rainforest2.p.rapidapi.com/request\"\nquerystring = {\"type\": \"also_bought\", \"url\": \"\", \"asin\": \"B084ZF5D65\", \"amazon_domain\": \"amazon.com\", \"customer_location\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"rainforest2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Offers",
+            "url": "https://rainforest2.p.rapidapi.com/request",
+            "description": "Offers are retrieved from the offers listing popup window for a single product on Amazon.\n\nThe Offers Parameters are applicable when making a request with type=offers to retrieve seller Offers for a single product on Amazon - the product is specified using either the asin and amazon_domain parameters or the url parameter (where the url parameter contains a link to an Amazon product offers page). The parameters should be appended as querystring parameters to the Product Data APIGETHTTP request.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "type",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "offers"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "offers_prime",
+                    "type": "BOOLEAN",
+                    "description": "\nLimit the offers returned to just those that are Prime-eligible. Valid values are:\ntrue\nOnly include offers that are Prime-eligible.\nfalse\nInclude all offers, regardless of whether they are Prime-eligible or not.",
+                    "default": "false"
+                },
+                {
+                    "name": "offers_condition_used_very_good",
+                    "type": "BOOLEAN",
+                    "description": "",
+                    "default": "false"
+                },
+                {
+                    "name": "offers_condition_used_acceptable",
+                    "type": "BOOLEAN",
+                    "description": "",
+                    "default": "false"
+                },
+                {
+                    "name": "offers_condition_new",
+                    "type": "BOOLEAN",
+                    "description": "",
+                    "default": "false"
+                },
+                {
+                    "name": "url",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "page",
+                    "type": "NUMBER",
+                    "description": "The current page of search results to retrieve. Inspect the pagination.total_pages property in the Search results to see how many pages of search results are available.\n\nupdate value of num to get additional pages",
+                    "default": ""
+                },
+                {
+                    "name": "offers_condition_used_like_new",
+                    "type": "BOOLEAN",
+                    "description": "",
+                    "default": "false"
+                },
+                {
+                    "name": "amazon_domain",
+                    "type": "STRING",
+                    "description": "The Amazon domain to retrieve Offers for the product specified in the asin parameter from. For a full list of supported Amazon domains see [Supported Amazon Domains.](https://www.rainforestapi.com/docs/product-data-api/reference/amazon-domains)\n\n**Note: If the amazon_domain and asin parameters are supplied then the url parameter is ignored.**",
+                    "default": "amazon.com"
+                },
+                {
+                    "name": "asin",
+                    "type": "STRING",
+                    "description": "The Amazon ASIN (product ID) to retrieve Offers for. Used in combination with the amazon_domain parameter.\n\n**Note: If the asin and amazon_domain parameters are supplied then the url parameter is ignored.**",
+                    "default": "B073JYC4XM"
+                },
+                {
+                    "name": "gtin",
+                    "type": "STRING",
+                    "description": "A GTIN, ISBN, UPC or EAN code to retrieve results for. Internally Rainforest will first convert the GTIN/ISBN/UPC/EAN to an Amazon ASIN, then retrieve the results for that ASIN from Amazon. Used in combination with the amazon_domain parameter.\n\nNote: If the gtin and amazon_domain parameters are supplied then the url parameter is ignored.",
+                    "default": ""
+                },
+                {
+                    "name": "offers_condition_used_good",
+                    "type": "BOOLEAN",
+                    "description": "",
+                    "default": "false"
+                },
+                {
+                    "name": "offers_free_shipping",
+                    "type": "BOOLEAN",
+                    "description": "\nLimit the offers returned to just those that have Free Shipping. Valid values are:\ntrue\nOnly include offers that have Free Shipping.\nfalse\nInclude all offers, regardless of whether they have Free Shipping or not.",
+                    "default": "false"
+                },
+                {
+                    "name": "customer_location",
+                    "type": "STRING",
+                    "description": "Rainforest API supports retrieving data from the following Customer Locations.\n\nThe Customer Locations is specified via the customer_location request parameter.\n\nThe Customer Location determines the location that Rainforest uses when retrieving pages from Amazon. This is useful, for example, for seeing details of how a product appears on amazon.com, to a customer located in a different country. Can be used to identify cross-border shipping data and opportunities.\n\nIf no value for customer_location is supplied then Rainforest defaults to making the request from the country of the Amazon page requested - i.e. `France` for requests for pages from `amazon.fr`\n\nThe table below shows which customer_location values can be used in combination with requests to which amazon_domains. If you require another Amazon domain / customer location combination please contact our support team.\n\nSee the Request Parameters documentation for more information.",
+                    "default": ""
+                },
+                {
+                    "name": "show_different_asins",
+                    "type": "BOOLEAN",
+                    "description": "Sometimes Amazon will return Offers from ASINs other than the ASIN supplied in the asin request parameter (for example, when the original ASIN is out of stock). show_different_asins controls whether you want these other-ASIN offer results returned, or not. Can be set to true to include offers from other ASINs, or false (the default) to hide offers from ASINs other than the ASIN supplied in the asin parameter. Note that if you supply a url instead of asin in your request this parameter is ignored.",
+                    "default": "false"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://rainforest2.p.rapidapi.com/request\"\nquerystring = {\"type\": \"offers\", \"offers_prime\": \"false\", \"offers_condition_used_very_good\": \"false\", \"offers_condition_used_acceptable\": \"false\", \"offers_condition_new\": \"false\", \"url\": \"\", \"page\": \"\", \"offers_condition_used_like_new\": \"false\", \"amazon_domain\": \"amazon.com\", \"asin\": \"B073JYC4XM\", \"gtin\": \"\", \"offers_condition_used_good\": \"false\", \"offers_free_shipping\": \"false\", \"customer_location\": \"\", \"show_different_asins\": \"false\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"rainforest2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://rainforest2.p.rapidapi.com/request\"\nquerystring = {\"type\": \"offers\", \"offers_prime\": \"false\", \"offers_condition_used_very_good\": \"false\", \"offers_condition_used_acceptable\": \"false\", \"offers_condition_new\": \"false\", \"url\": \"\", \"page\": \"\", \"offers_condition_used_like_new\": \"false\", \"amazon_domain\": \"amazon.com\", \"asin\": \"B073JYC4XM\", \"gtin\": \"\", \"offers_condition_used_good\": \"false\", \"offers_free_shipping\": \"false\", \"customer_location\": \"\", \"show_different_asins\": \"false\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"rainforest2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Questions",
+            "url": "https://rainforest2.p.rapidapi.com/request",
+            "description": "The Questions Parameters are applicable when making a request with type=questions to retrieve customer Questions & Answers for a single product on Amazon - the product is specified using either the asin and amazon_domain parameters or the url parameter (where the url parameter contains a link to an Amazon product page). The parameters should be appended as querystring parameters to the Product Data APIGETHTTP request.\n\nQuestions are retrieved from the customer questions page for a single product on Amazon",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "type",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "questions"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "asin",
+                    "type": "STRING",
+                    "description": "The Amazon ASIN (product ID) to retrieve Questions & Answers for. Used in combination with the amazon_domain parameter.\n\n**Note: If the asin and amazon_domain parameters are supplied then the url parameter is ignored.**",
+                    "default": "B073JYC4XM"
+                },
+                {
+                    "name": "sort_by",
+                    "type": "STRING",
+                    "description": "Determines the sort order of Questions & Answers to return. Valid values are:\n\nmost_helpful\nReturns Questions & Answers with the most helpful first.\nmost_recent\nReturns Questions & Answers in date order, with the most recent first.\n",
+                    "default": ""
+                },
+                {
+                    "name": "customer_location",
+                    "type": "STRING",
+                    "description": "Rainforest API supports retrieving data from the following Customer Locations.\n\nThe Customer Locations is specified via the customer_location request parameter.\n\nThe Customer Location determines the location that Rainforest uses when retrieving pages from Amazon. This is useful, for example, for seeing details of how a product appears on amazon.com, to a customer located in a different country. Can be used to identify cross-border shipping data and opportunities.\n\nIf no value for customer_location is supplied then Rainforest defaults to making the request from the country of the Amazon page requested - i.e. \\\\\\\"France\\\\\\\" for requests for pages from \\\\\\\"amazon.fr\\\\\\\".\n\nThe table below shows which customer_location values can be used in combination with requests to which amazon_domains. If you require another Amazon domain / customer location combination please contact our support team.\n\nSee the Request Parameters documentation for more information.",
+                    "default": ""
+                },
+                {
+                    "name": "amazon_domain",
+                    "type": "STRING",
+                    "description": "The Amazon domain to retrieve Questions & Answers for the product specified in the asin parameter from. For a full list of supported Amazon domains see Supported Amazon Domains.\n\n**Note: If the amazon_domain and asin parameters are supplied then the url parameter is ignored.**",
+                    "default": "amazon.com"
+                },
+                {
+                    "name": "page",
+                    "type": "NUMBER",
+                    "description": "The current page of search results to retrieve. Inspect the pagination.total_pages property in the Search results to see how many pages of search results are available.\n\nupdate value of num to get additional pages",
+                    "default": ""
+                },
+                {
+                    "name": "url",
+                    "type": "STRING",
+                    "description": "The Amazon product-page URL to retrieve Questions & Answers from.\n\n**Note: If the url parameter is supplied then the amazon_domain and asin parameters are ignored.**",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://rainforest2.p.rapidapi.com/request\"\nquerystring = {\"asin\": \"B073JYC4XM\", \"sort_by\": \"\", \"type\": \"questions\", \"customer_location\": \"\", \"amazon_domain\": \"amazon.com\", \"page\": \"\", \"url\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"rainforest2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://rainforest2.p.rapidapi.com/request\"\nquerystring = {\"asin\": \"B073JYC4XM\", \"sort_by\": \"\", \"type\": \"questions\", \"customer_location\": \"\", \"amazon_domain\": \"amazon.com\", \"page\": \"\", \"url\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"rainforest2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Deals",
+            "url": "https://rainforest2.p.rapidapi.com/request",
+            "description": "The Deals Parameters are applicable when making a request with type=deals to retrieve Lightning Deal / Daily Deals results for an Amazon lightning deals / daily deals / 'goldbox' page. The category of deals and Amazon domain are specified using the category_id and amazon_domain parameter. The parameters should be appended as querystring parameters to the Product Data APIGETHTTP request.\n\nDeals results are retrieved from the deals listing page on Amazon.\n\nYou can retrieve category IDs for each amazon_domain using the Categories API. Category IDs are also returned in the categories array in each type=deals response.\n\nMultiple category IDs can be supplied, comma seperated, in the category_id parameter. For example, to request deals for Beauty (3760911) and Electronics (172282) categories on amazon.com the parameters would be category_id=3760911,172282&amazon_domain=amazon.com.\n\nIf you wish to retrieve Deals from the deals homepage for a given amazon_domain, simply omit the category_id parameter entirely.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "type",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "deals"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "prime_eligible",
+                    "type": "BOOLEAN",
+                    "description": "",
+                    "default": "false"
+                },
+                {
+                    "name": "minimum_rating",
+                    "type": "STRING",
+                    "description": "Only include deals for products with a customer rating meeting the specified criteria. If you omit the minimum_rating parameter deals for products with any rating are included. Valid values are:\n\n1_and_up\nInclude deals for products with a 1-star customer rating and upwards.\n2_and_up\nInclude deals for products with a 2-star customer rating and upwards.\n3_and_up\nInclude deals for products with a 3-star customer rating and upwards.\n4_and_up\nInclude deals for products with a 4-star customer rating and upwards.",
+                    "default": "1_and_up"
+                },
+                {
+                    "name": "deal_states",
+                    "type": "STRING",
+                    "description": "The types of deal state to include. If you omit the deal_states parameter then all deal states are included.\n\n**Note multiple deal states can be specified, comma-separated.**\n\nValid values are:\n- available\n- Include available-state deals.\n\nupcoming\nInclude upcoming-state deals.\nexpired\nInclude expired-state deals.",
+                    "default": ""
+                },
+                {
+                    "name": "amazon_domain",
+                    "type": "STRING",
+                    "description": "The Amazon domain to retrieve Deals from for the category ID(s) specified in the category_id parameter. For a full list of supported Amazon domains see Supported Amazon Domains.",
+                    "default": "amazon.com"
+                },
+                {
+                    "name": "category_id",
+                    "type": "STRING",
+                    "description": "A comma-seperated list of Deals category IDs to retrieve deals results from, as returned by the Categories API. Category IDs are also returned in the categories array in each type=deals response.\n\nMultiple category IDs can be supplied, comma seperated, in the category_id parameter. For example, to request deals for Beauty (3760911) and Electronics (172282) categories on amazon.com the parameters would be category_id=3760911,172282&amazon_domain=amazon.com.\n\nIf you wish to retrieve Deals from the deals homepage for a given amazon_domain, simply omit the category_id parameter entirely.",
+                    "default": "2619525011"
+                },
+                {
+                    "name": "url",
+                    "type": "STRING",
+                    "description": "The Amazon deals page URL to retrieve deals results from. This parameter, as it specifies a URL, should itself be url encoded.\n\n**Note using the url parameter for Deals requests is not recommended as due to the session and pagination characteristics of the Deals pages simply specifying the url can prove unreliable in all but the simplest use-cases. It is recommended that you use the category_id and amazon_domain parameters to specify your Deals request instead.**",
+                    "default": ""
+                },
+                {
+                    "name": "sort_by",
+                    "type": "STRING",
+                    "description": "Determines the sort order of the deals returned.\n\nValid values are:\n\nfeatured\nSort by featured deals.\ndiscount_low_to_high\nSort by discount, lowest discount first.\ndiscount_high_to_low\nSort by discount, highest discount first.\nprice_low_to_high\nSort by price, lowest price first.\nprice_high_to_low\nSort by price, highest price first.",
+                    "default": "price_high_to_low"
+                },
+                {
+                    "name": "deal_types",
+                    "type": "STRING",
+                    "description": "The types of deal to include. If you omit the deal_types parameter then all deal types are included.\n\n**Note multiple deal types can be specified, comma-separated.**\nValid values are:\n\ndeal_of_the_day\nInclude deal-of-the-day deals.\nlightning_deal\nInclude lightning deals.\nbest_deal\nInclude best-deal deals.",
+                    "default": "best_deal"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://rainforest2.p.rapidapi.com/request\"\nquerystring = {\"prime_eligible\": \"false\", \"minimum_rating\": \"1_and_up\", \"type\": \"deals\", \"deal_states\": \"\", \"amazon_domain\": \"amazon.com\", \"category_id\": \"2619525011\", \"url\": \"\", \"sort_by\": \"price_high_to_low\", \"deal_types\": \"best_deal\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"rainforest2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://rainforest2.p.rapidapi.com/request\"\nquerystring = {\"prime_eligible\": \"false\", \"minimum_rating\": \"1_and_up\", \"type\": \"deals\", \"deal_states\": \"\", \"amazon_domain\": \"amazon.com\", \"category_id\": \"2619525011\", \"url\": \"\", \"sort_by\": \"price_high_to_low\", \"deal_types\": \"best_deal\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"rainforest2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Autcomplete",
+            "url": "https://rainforest2.p.rapidapi.com/request",
+            "description": "When making a request with the type parameter set to type=autocomplete Rainforest API will return autocomplete suggestions for the search term specified in the search_term parameter, on the Amazon domain specified in the amazon_domain parameter.\nYou may scope your autocomplete request to an Amazon autocomplete alias (synonymous with a product area or top-level category) by specifying the alias using the autocomplete_alias parameter. The available autocomplete_alias values vary depending on the amazon_domain used. You can find a full list of all autocomplete aliaes, per Amazon-domain, in the autocomplete aliases reference.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "search_term",
+                    "type": "STRING",
+                    "description": "The search term to get autocomplete suggestions for. Used in combination with the amazon_domain parameter.",
+                    "default": "dog"
+                },
+                {
+                    "name": "type",
+                    "type": "STRING",
+                    "description": "The Amazon domain to retrieve autocomplete details from for the search term specified in the search_term parameter. For a full list of supported Amazon domains see Supported Amazon Domains.",
+                    "default": "autocomplete"
+                },
+                {
+                    "name": "amazon_domain",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "amazon.com"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "autcomplete_alias",
+                    "type": "STRING",
+                    "description": "\nThe alias to use to scope the autocomplete request. Autocomplete aliases can be thought of as the \\\"category\\\" area that the autocomplete request runs in. If none is specified then Rainforest will default to running the autocomplete request in the top-level \\\"All Departments\\\" autocomplete alias.\n\nFor a full list of supported Autocomplete Aliases see Supported Autocomplete Aliases.",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://rainforest2.p.rapidapi.com/request\"\nquerystring = {\"autcomplete_alias\": \"\", \"search_term\": \"dog\", \"type\": \"autocomplete\", \"amazon_domain\": \"amazon.com\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"rainforest2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://rainforest2.p.rapidapi.com/request\"\nquerystring = {\"autcomplete_alias\": \"\", \"search_term\": \"dog\", \"type\": \"autocomplete\", \"amazon_domain\": \"amazon.com\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"rainforest2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "ASIN to GTIN",
+            "url": "https://rainforest2.p.rapidapi.com/request",
+            "description": "When making a request with the type parameter set to type=asin_to_gtin Rainforest API will attempt to look up GTIN / EAN / UPC / ISBN numbers for the ASIN and Amazon domain specified in the asin and amazon_domain parameters.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "amazon_domain",
+                    "type": "STRING",
+                    "description": "The Amazon domain to retrieve ASIN to GTIN details from for the ASIN specified in the asin parameter. For a full list of supported Amazon domains see Supported Amazon Domains.",
+                    "default": "amazon.com"
+                },
+                {
+                    "name": "type",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "asin_to_gtin"
+                },
+                {
+                    "name": "asin",
+                    "type": "STRING",
+                    "description": "The Amazon ASIN (product ID) to retrieve GTIN(s) for. Used in combination with the amazon_domain parameter.",
+                    "default": "B0933C2PZP"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://rainforest2.p.rapidapi.com/request\"\nquerystring = {\"amazon_domain\": \"amazon.com\", \"type\": \"asin_to_gtin\", \"asin\": \"B0933C2PZP\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"rainforest2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://rainforest2.p.rapidapi.com/request\"\nquerystring = {\"amazon_domain\": \"amazon.com\", \"type\": \"asin_to_gtin\", \"asin\": \"B0933C2PZP\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"rainforest2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Formats & Editions",
+            "url": "https://rainforest2.p.rapidapi.com/request",
+            "description": "The Formats & Editions Parameters are applicable when making a request with the type parameter set to type=formats_editions Rainforest API will return data from the Formats & Editions popup (typically shown on books and collectables product pages to list all of the ASINs of different formats of the current ASIN) for the product specified in either the asin and amazon_domain parameters or the url parameter. The parameters should be appended as querystring parameters to the Product Data APIGETHTTP request.\n\nFormats & Editions data is retrieved from the Formats & Editions popup for a single product on Amazon",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "type",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "formats_editions"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "amazon_domain",
+                    "type": "STRING",
+                    "description": "\nThe Amazon domain to retrieve Formats & Editions for the product specified in the asin parameter from. For a full list of supported Amazon domains see Supported Amazon Domains.\n\nNote: If the amazon_domain and asin parameters are supplied then the url parameter is ignored.",
+                    "default": ""
+                },
+                {
+                    "name": "url",
+                    "type": "STRING",
+                    "description": "The Amazon product-page URL to retrieve Formats & Editions from.\n\nNote: If the url parameter is supplied then the amazon_domain and asin parameters are ignor",
+                    "default": ""
+                },
+                {
+                    "name": "asin",
+                    "type": "STRING",
+                    "description": "The Amazon ASIN (product ID) to retrieve Formats & Editions for. Used in combination with the amazon_domain parameter.\n\nNote: If the asin and amazon_domain parameters are supplied then the url parameter is ignored.",
+                    "default": ""
+                },
+                {
+                    "name": "page",
+                    "type": "STRING",
+                    "description": "The current page of search results to retrieve. Inspect the pagination.total_pages property in the Search results to see how many pages of search results are available.\n\nupdate value of num to get additional pages",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://rainforest2.p.rapidapi.com/request\"\nquerystring = {\"type\": \"formats_editions\", \"amazon_domain\": \"\", \"url\": \"\", \"asin\": \"\", \"page\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"rainforest2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://rainforest2.p.rapidapi.com/request\"\nquerystring = {\"type\": \"formats_editions\", \"amazon_domain\": \"\", \"url\": \"\", \"asin\": \"\", \"page\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"rainforest2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "Question Answers",
+            "url": "https://rainforest2.p.rapidapi.com/request",
+            "description": "The Question Answers Parameters are applicable when making a request with type=question_answers to retrieve all answers for a single question on Amazon - the question is specified using either the question_id and amazon_domain parameters or the url parameter (where the url parameter contains a link to a question answers page). The parameters should be appended as querystring parameters to the Product Data APIGETHTTP request.\n\nQuestion Answers are retrieved from the customer question answers page for a single question on Amazon.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "type",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "question_answers"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "question_id",
+                    "type": "STRING",
+                    "description": "The ID of the question to retrieve answers for.\n\nRainforest API returns question_id's from `type=questions` requests in the id parameter. See the questions parameters for further information.",
+                    "default": "Tx2YPKCGKAORFA4"
+                },
+                {
+                    "name": "page",
+                    "type": "NUMBER",
+                    "description": "The current page of search results to retrieve. Inspect the pagination.total_pages property in the Search results to see how many pages of search results are available.\n\nupdate value of num to get additional pages",
+                    "default": ""
+                },
+                {
+                    "name": "amazon_domain",
+                    "type": "STRING",
+                    "description": "The Amazon domain to retrieve answers for the question specified in the question_id parameter from. For a full list of supported Amazon domains see Supported Amazon Domains.\n\n**Note: If the amazon_domain and question_id parameters are supplied then the url parameter is ignored**.",
+                    "default": "amazon.com"
+                },
+                {
+                    "name": "customer_location",
+                    "type": "STRING",
+                    "description": "Rainforest API supports retrieving data from the following Customer Locations.\n\nThe Customer Locations is specified via the customer_location request parameter.\n\nThe Customer Location determines the location that Rainforest uses when retrieving pages from Amazon. This is useful, for example, for seeing details of how a product appears on amazon.com, to a customer located in a different country. Can be used to identify cross-border shipping data and opportunities.\n\nIf no value for customer_location is supplied then Rainforest defaults to making the request from the country of the Amazon page requested - i.e. \\\\\\\"France\\\\\\\" for requests for pages from \\\\\\\"amazon.fr\\\\\\\".\n\nThe table below shows which customer_location values can be used in combination with requests to which amazon_domains. If you require another Amazon domain / customer location combination please contact our support team.\n\nSee the Request Parameters documentation for more information.",
+                    "default": ""
+                },
+                {
+                    "name": "url",
+                    "type": "STRING",
+                    "description": "The Amazon product-page URL to retrieve Question Answers from.\n\n**Note: If the url parameter is supplied then the amazon_domain and question_id parameters are ignored.**",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://rainforest2.p.rapidapi.com/request\"\nquerystring = {\"question_id\": \"Tx2YPKCGKAORFA4\", \"type\": \"question_answers\", \"page\": \"\", \"amazon_domain\": \"amazon.com\", \"customer_location\": \"\", \"url\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"rainforest2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://rainforest2.p.rapidapi.com/request\"\nquerystring = {\"question_id\": \"Tx2YPKCGKAORFA4\", \"type\": \"question_answers\", \"page\": \"\", \"amazon_domain\": \"amazon.com\", \"customer_location\": \"\", \"url\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"rainforest2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Reviews",
+            "url": "https://rainforest2.p.rapidapi.com/request",
+            "description": "The Reviews Parameters are applicable when making a request with type=reviews to retrieve customer Reviews for a single product on Amazon - the product is specified using either the asin and amazon_domain parameters or the url parameter (where the url parameter contains a link to an Amazon reviews page). The parameters should be appended as querystring parameters to the Product Data APIGETHTTP request.\n\nReviews are retrieved from the customer reviews page for a single product on Amazon.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "type",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "reviews"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "url",
+                    "type": "STRING",
+                    "description": "The Amazon product-page URL to retrieve Reviews from.\n\n**Note: If the url parameter is supplied then the amazon_domain and asin parameters are ignored.**",
+                    "default": ""
+                },
+                {
+                    "name": "global_reviews",
+                    "type": "BOOLEAN",
+                    "description": "Determines whether Global Reviews are included, or not Global Reviews are reviews from other Amazon domains outside of the Amazon domain specified in the request. Valid values are:\n\ntrue\nThe default, Global Reviews are included in the results.\nfalse\nGlobal reviews are excluded from the results.",
+                    "default": ""
+                },
+                {
+                    "name": "review_stars",
+                    "type": "STRING",
+                    "description": "The star rating of reviews to retrieve. Valid values are:\n\n- all_stars\n- five_star\n- four_star\n- three_star\n- two_star\n- one_star\n- all_positive\n- all_critical",
+                    "default": ""
+                },
+                {
+                    "name": "sort_by",
+                    "type": "STRING",
+                    "description": "Determines the sort order of reviews to return. Valid values are:\n\n- most_helpful\n- most_recent",
+                    "default": ""
+                },
+                {
+                    "name": "search_term",
+                    "type": "STRING",
+                    "description": "A search term to use to search reviews.",
+                    "default": ""
+                },
+                {
+                    "name": "page",
+                    "type": "NUMBER",
+                    "description": "The current page of search results to retrieve. Inspect the `pagination.total_pages` property in the Search results to see how many pages of search results are available.\n\nupdate value of num to get additional pages",
+                    "default": ""
+                },
+                {
+                    "name": "reviewer_type",
+                    "type": "STRING",
+                    "description": "The type of reviewer to retrieve reviews from. Valid values are:\n\n`verified_purchase`\nInclude reviews by Amazon Verified Purchasers only.\n`all`\nInclude all reviews, regardless of whether they are from Amazon Verified Purchasers or not.",
+                    "default": ""
+                },
+                {
+                    "name": "review_media_type",
+                    "type": "STRING",
+                    "description": "Filter the reviews to those containing a specific media type. Valid values are:\n\nall_reviews\nInclude reviews with text, images or video.\nmedia_reviews_only\nInclude only reviews containing images or video.",
+                    "default": ""
+                },
+                {
+                    "name": "customer_location",
+                    "type": "STRING",
+                    "description": "Rainforest API supports retrieving data from the following Customer Locations.\n\nThe Customer Locations is specified via the customer_location request parameter.\n\nThe Customer Location determines the location that Rainforest uses when retrieving pages from Amazon. This is useful, for example, for seeing details of how a product appears on amazon.com, to a customer located in a different country. Can be used to identify cross-border shipping data and opportunities.\n\nIf no value for customer_location is supplied then Rainforest defaults to making the request from the country of the Amazon page requested - i.e. \\\\\\\"France\\\\\\\" for requests for pages from \\\\\\\"amazon.fr\\\\\\\".\n\nThe table below shows which customer_location values can be used in combination with requests to which amazon_domains. If you require another Amazon domain / customer location combination please contact our support team.",
+                    "default": ""
+                },
+                {
+                    "name": "gtin",
+                    "type": "STRING",
+                    "description": "A GTIN, ISBN, UPC or EAN code to retrieve results for. Internally Rainforest will first convert the GTIN/ISBN/UPC/EAN to an Amazon ASIN, then retrieve the results for that ASIN from Amazon. Used in combination with the amazon_domain parameter.\n\n**Note: If the gtin and amazon_domain parameters are supplied then the url parameter is ignored.**",
+                    "default": ""
+                },
+                {
+                    "name": "asin",
+                    "type": "STRING",
+                    "description": "The Amazon ASIN (product ID) to retrieve Reviews for. Used in combination with the amazon_domain parameter.\n\n**Note: If the asin and amazon_domain parameters are supplied then the url parameter is ignored.**",
+                    "default": "B073JYC4XM"
+                },
+                {
+                    "name": "amazon_domain",
+                    "type": "STRING",
+                    "description": "The Amazon domain to retrieve Reviews for the product specified in the asin parameter from. For a full list of supported Amazon domains see Supported Amazon Domains.\n\n**Note: If the amazon_domain and asin parameters are supplied then the url parameter is ignored.**",
+                    "default": "amazon.com"
+                },
+                {
+                    "name": "review_format",
+                    "type": "STRING",
+                    "description": "he type of reviewer to retrieve reviews from. Valid values are:\n\nall_formats\nInclude reviews of any product format/variant.\ncurrent_format\nInclude reviews relating specifically to the current format/variant.",
+                    "default": ""
+                },
+                {
+                    "name": "show_different_asins",
+                    "type": "BOOLEAN",
+                    "description": "\nSometimes Amazon will return Reviews from ASINs other than the ASIN supplied in the asin request parameter (for example, when the original ASIN is out of stock). show_different_asins controls whether you want these other-ASIN review results returned, or not. Can be set to true (the default) to include reviews from other ASINs, or false to hide reviews from ASINs other than the ASIN supplied in the asin parameter. Note that if you supply a url instead of asin in your request this parameter is ignored.\n\nNote in the event of `show_different_asins=false` and the ASIN shown by Amazon being different from the requested ASIN, then all fields apart from product will be removed from the response.",
+                    "default": ""
+                },
+                {
+                    "name": "review_id",
+                    "type": "STRING",
+                    "description": "A single Review ID, as returned by a prior type=reviews request, to retrieve. Useful if you wish to check for the presence of a single review. Use in combination with the amazon_domain parameter.",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://rainforest2.p.rapidapi.com/request\"\nquerystring = {\"type\": \"reviews\", \"url\": \"\", \"global_reviews\": \"\", \"review_stars\": \"\", \"sort_by\": \"\", \"search_term\": \"\", \"page\": \"\", \"reviewer_type\": \"\", \"review_media_type\": \"\", \"customer_location\": \"\", \"gtin\": \"\", \"asin\": \"B073JYC4XM\", \"amazon_domain\": \"amazon.com\", \"review_format\": \"\", \"show_different_asins\": \"\", \"review_id\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"rainforest2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://rainforest2.p.rapidapi.com/request\"\nquerystring = {\"type\": \"reviews\", \"url\": \"\", \"global_reviews\": \"\", \"review_stars\": \"\", \"sort_by\": \"\", \"search_term\": \"\", \"page\": \"\", \"reviewer_type\": \"\", \"review_media_type\": \"\", \"customer_location\": \"\", \"gtin\": \"\", \"asin\": \"B073JYC4XM\", \"amazon_domain\": \"amazon.com\", \"review_format\": \"\", \"show_different_asins\": \"\", \"review_id\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"rainforest2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Reviewer Comments",
+            "url": "https://rainforest2.p.rapidapi.com/request",
+            "description": "The Review Comments Parameters are applicable when making a request with type=review_comments to retrieve customer Review Comments for a single customer review on Amazon - the review is specified using the review_id, asin and amazon_domain parameters. The parameters should be appended as querystring parameters to the Product Data APIGETHTTP request.\n\nReview comments are retrieved from the customer reviews page for a single customer review for a single product on Amazon.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "asin",
+                    "type": "STRING",
+                    "description": "The Amazon ASIN to retrieve Review Comments for. Used in combination with the amazon_domain and review_id parameters.",
+                    "default": "B073JYC4XM"
+                },
+                {
+                    "name": "review_id",
+                    "type": "STRING",
+                    "description": "The Review ID, as returned by a type=reviews request, to retrieve Review Comments for. Used in combination with the amazon_domain and asin parameters.",
+                    "default": "ROPW8TWWT5D7Z"
+                },
+                {
+                    "name": "amazon_domain",
+                    "type": "STRING",
+                    "description": "The Amazon domain to retrieve Review Comments for the Review ID specified in the review_id parameter and ASIN specified in the asin parameter. For a full list of supported Amazon domains see Supported Amazon Domains. Used in combination with the asin and review_id parameters.",
+                    "default": "amazon.com"
+                },
+                {
+                    "name": "type",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "review_comments"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "sort_by",
+                    "type": "STRING",
+                    "description": "An optional sort order for the returned review comments. Valid values are:\n\n- most_recent \n- oldest",
+                    "default": ""
+                },
+                {
+                    "name": "customer_location",
+                    "type": "STRING",
+                    "description": "Rainforest API supports retrieving data from the following Customer Locations.\n\nThe Customer Locations is specified via the customer_location request parameter.\n\nThe Customer Location determines the location that Rainforest uses when retrieving pages from Amazon. This is useful, for example, for seeing details of how a product appears on amazon.com, to a customer located in a different country. Can be used to identify cross-border shipping data and opportunities.\n\nIf no value for customer_location is supplied then Rainforest defaults to making the request from the country of the Amazon page requested - i.e. \\\\\\\"France\\\\\\\" for requests for pages from \\\\\\\"amazon.fr\\\\\\\".\n\nThe table below shows which customer_location values can be used in combination with requests to which amazon_domains. If you require another Amazon domain / customer location combination please contact our support team.\n\nSee the Request Parameters documentation for more information.",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://rainforest2.p.rapidapi.com/request\"\nquerystring = {\"sort_by\": \"\", \"asin\": \"B073JYC4XM\", \"customer_location\": \"\", \"review_id\": \"ROPW8TWWT5D7Z\", \"amazon_domain\": \"amazon.com\", \"type\": \"review_comments\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"rainforest2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://rainforest2.p.rapidapi.com/request\"\nquerystring = {\"sort_by\": \"\", \"asin\": \"B073JYC4XM\", \"customer_location\": \"\", \"review_id\": \"ROPW8TWWT5D7Z\", \"amazon_domain\": \"amazon.com\", \"type\": \"review_comments\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"rainforest2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "Wishlist",
+            "url": "https://rainforest2.p.rapidapi.com/request",
+            "description": "The Wishlist Parameters are applicable when making a request with the type parameter set to type=wishlist Rainforest API will return data from the Wishlist page for the wishlist specified in either the wishlist_id and amazon_domain parameters or the url parameter. The parameters should be appended as querystring parameters to the Product Data APIGETHTTP request.\n\nWishlist data is retrieved from the Wishlist popup.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "type",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "wishlist"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "url",
+                    "type": "STRING",
+                    "description": "\nThe Amazon wishlist-page URL to retrieve Wishlist results from.\n\nNote: If the url parameter is supplied then the amazon_domain and wishlist_url parameters are ignored.",
+                    "default": ""
+                },
+                {
+                    "name": "amazon_domain",
+                    "type": "STRING",
+                    "description": "\nThe Amazon domain to retrieve Wishlist for the product specified in the asin parameter from. For a full list of supported Amazon domains see Supported Amazon Domains.\n\nNote: If the amazon_domain and asin parameters are supplied then the url parameter is ignored.",
+                    "default": "amazon.com"
+                },
+                {
+                    "name": "wishlist_id",
+                    "type": "STRING",
+                    "description": "\nThe Amazon wishlist ID to retrieve Wishlist results for. Used in combination with the amazon_domain parameter. The wishlist ID can be found in any Amazon wishlist URL after the /ls/ component of the wishlist URL.\n\nNote: If the wishlist_id and amazon_domain parameters are supplied then the url parameter is ignored.",
+                    "default": "38B3V3AT7UH9B"
+                },
+                {
+                    "name": "sort_by",
+                    "type": "STRING",
+                    "description": "\nDetermines the sort order of wishlist items to return. Omit the sort_by parameter to return results in the default sort order. Valid values are:\nprice_high_to_low\nReturns highest priced wishlist items first.\nprice_low_to_high\nReturns lowest priced wishlist items first.\npriority_high_to_low\nReturns highest priority wishlist items first.",
+                    "default": ""
+                },
+                {
+                    "name": "next_page_token",
+                    "type": "STRING",
+                    "description": "the current page of Wishlist results to retrieve. Inspect the pagination.next_page_token property in the Wishlist results to retrieve the next_page_token of the subsequent page.",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://rainforest2.p.rapidapi.com/request\"\nquerystring = {\"type\": \"wishlist\", \"url\": \"\", \"amazon_domain\": \"amazon.com\", \"wishlist_id\": \"38B3V3AT7UH9B\", \"sort_by\": \"\", \"next_page_token\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"rainforest2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://rainforest2.p.rapidapi.com/request\"\nquerystring = {\"type\": \"wishlist\", \"url\": \"\", \"amazon_domain\": \"amazon.com\", \"wishlist_id\": \"38B3V3AT7UH9B\", \"sort_by\": \"\", \"next_page_token\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"rainforest2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Charts",
+            "url": "https://rainforest2.p.rapidapi.com/request",
+            "description": "The Charts parameters are applicable when making a request with type=charts to retrieve Charts results. The Charts page can be specified using the url parameter. The parameters should be appended as querystring parameters to the Product Data APIGETHTTP request.\n\nCharts results are retrieved from the charts page on Amazon.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "type",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "charts"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "url",
+                    "type": "STRING",
+                    "description": "The Charts page URL to retrieve Charts results from. Be sure to URL-encode the url parameter.",
+                    "default": "https://www.amazon.com/charts"
+                },
+                {
+                    "name": "customer_location",
+                    "type": "STRING",
+                    "description": "Rainforest API supports retrieving data from the following Customer Locations.\n\nThe Customer Locations is specified via the customer_location request parameter.\n\nThe Customer Location determines the location that Rainforest uses when retrieving pages from Amazon. This is useful, for example, for seeing details of how a product appears on amazon.com, to a customer located in a different country. Can be used to identify cross-border shipping data and opportunities.\n\nIf no value for customer_location is supplied then Rainforest defaults to making the request from the country of the Amazon page requested - i.e. \\\"France\\\" for requests for pages from \\\"amazon.fr\\\".\n\nThe table below shows which customer_location values can be used in combination with requests to which amazon_domains. If you require another Amazon domain / customer location combination please contact our support team.\n\nSee the Request Parameters documentation for more information.",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://rainforest2.p.rapidapi.com/request\"\nquerystring = {\"type\": \"charts\", \"url\": \"https://www.amazon.com/charts\", \"customer_location\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"rainforest2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://rainforest2.p.rapidapi.com/request\"\nquerystring = {\"type\": \"charts\", \"url\": \"https://www.amazon.com/charts\", \"customer_location\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"rainforest2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Store",
+            "url": "https://rainforest2.p.rapidapi.com/request",
+            "description": "The Store parameters are applicable when making a request with type=store to retrieve Brand Store results for a Brand Store. The Brand Store can be specified either by the url parameter, or by a combination of the store_id and amazon_domain parameters. The parameters should be appended as querystring parameters to the Product Data APIGETHTTP request.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "type",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "store"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "page",
+                    "type": "STRING",
+                    "description": "The current page of search results to retrieve. Inspect the pagination.total_pages property in the Search results to see how many pages of search results are available.\n\nupdate value of num to get additional pages",
+                    "default": ""
+                },
+                {
+                    "name": "amazon_domain",
+                    "type": "STRING",
+                    "description": "\nThe Amazon domain to retrieve Brand Store results from. For a full list of supported Amazon domains see Supported Amazon Domains. Should be used in combination with the store_id parameter.\n\nNote if the url parameter is supplied then the amazon_domain parameter is ignored as the url itself specifies the Amazon domain.",
+                    "default": "amazon.com"
+                },
+                {
+                    "name": "store_id",
+                    "type": "STRING",
+                    "description": "\nA Brand Store ID to retrieve results from. Should be used in combination with the amazon_domain parameter.\n\nNote if the url parameter is supplied then the store_id parameter is ignored as the url itself specifies the store ID.",
+                    "default": "70F3122D-4966-4242-A8A6-871C8D7E6F8B"
+                },
+                {
+                    "name": "url",
+                    "type": "STRING",
+                    "description": "\nThe Brand Store page URL to retrieve Brand Store results from. Be sure to URL-encode the url parameter.\n\nNote the url parameter is supplied, the store_id and amazon_domain parameters cannot be used (as the url itself defines the Store ID and Amazon domain used).",
+                    "default": ""
+                },
+                {
+                    "name": "customer_location",
+                    "type": "STRING",
+                    "description": "Rainforest API supports retrieving data from the following Customer Locations.\n\nThe Customer Locations is specified via the customer_location request parameter.\n\nThe Customer Location determines the location that Rainforest uses when retrieving pages from Amazon. This is useful, for example, for seeing details of how a product appears on amazon.com, to a customer located in a different country. Can be used to identify cross-border shipping data and opportunities.\n\nIf no value for customer_location is supplied then Rainforest defaults to making the request from the country of the Amazon page requested - i.e. \\\"France\\\" for requests for pages from \\\"amazon.fr\\\".\n\nThe table below shows which customer_location values can be used in combination with requests to which amazon_domains. If you require another Amazon domain / customer location combination please contact our support team.\n\nSee the Request Parameters documentation for more information.",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://rainforest2.p.rapidapi.com/request\"\nquerystring = {\"page\": \"\", \"type\": \"store\", \"amazon_domain\": \"amazon.com\", \"store_id\": \"70F3122D-4966-4242-A8A6-871C8D7E6F8B\", \"url\": \"\", \"customer_location\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"rainforest2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://rainforest2.p.rapidapi.com/request\"\nquerystring = {\"page\": \"\", \"type\": \"store\", \"amazon_domain\": \"amazon.com\", \"store_id\": \"70F3122D-4966-4242-A8A6-871C8D7E6F8B\", \"url\": \"\", \"customer_location\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"rainforest2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Seller Products",
+            "url": "https://rainforest2.p.rapidapi.com/request",
+            "description": "The Seller Products Parameters are applicable when making a request with type=seller_products to retrieve seller product listing results for a single seller on Amazon - the seller is specified using either the seller_id and amazon_domain parameters or the url parameter (where the url parameter contains a link to an Amazon seller product listing page). The parameters should be appended as querystring parameters to the Product Data APIGETHTTP request.\n\nSeller product listing results are retrieved from the seller product listings page for a single seller on Amazon. You can retrieve the seller_id value for a given seller from other Rainforest requests, such as type=offers requests.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "type",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "seller_products"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "url",
+                    "type": "STRING",
+                    "description": "The Amazon seller products listing page URL to retrieve seller products results from.\n",
+                    "default": ""
+                },
+                {
+                    "name": "amazon_domain",
+                    "type": "STRING",
+                    "description": "\nThe Amazon domain to retrieve seller product listings from for the seller specified in the seller_id parameter. For a full list of supported Amazon domains see Supported Amazon Domains.\n\nNote: If the amazon_domain and seller_id parameters are supplied then the url parameter is ignored.",
+                    "default": "amazon.com"
+                },
+                {
+                    "name": "seller_id",
+                    "type": "STRING",
+                    "description": "The Amazon Seller ID to retrieve seller product listings for. Used in combination with the amazon_domain parameter.\n\nNote: If the seller_id and amazon_domain parameters are supplied then the url parameter is ignored. Note: Seller IDs can be retrieved from Rainforest API type=offers requests.",
+                    "default": "A02211013Q5HP3OMSZC7W"
+                },
+                {
+                    "name": "refinements",
+                    "type": "STRING",
+                    "description": "\nA comma-seperated list of refinement values to filter the seller product results by. These allow you to refine your request by values such as \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"Reviews rating 4 and over\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"price range\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\" and \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"brand\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\".\n\nRefinement values are returned in the refinements array of each type=seller_products result (if they are displayed). Refinement values are dynamic and change by seller. If you wish to use refinements you should first issue a type=seller_products request without specifying any refinements to retrieve a master list of the avaialble refinements for the given request. You can then cache these refinement values for use on subsequent requests.\n\nFor example, to run a type=seller_products request specifying two refinements with values p_85/2470955011 and p_36/2421886011 the value of the refinements parameter would be refinements=p_85/2470955011,p_36/2421886011",
+                    "default": ""
+                },
+                {
+                    "name": "page",
+                    "type": "NUMBER",
+                    "description": "The current page of search results to retrieve. Inspect the pagination.total_pages property in the Search results to see how many pages of search results are available.\n\nupdate value of num to get additional pages",
+                    "default": ""
+                },
+                {
+                    "name": "customer_location",
+                    "type": "STRING",
+                    "description": "Rainforest API supports retrieving data from the following Customer Locations.\n\nThe Customer Locations is specified via the customer_location request parameter.\n\nThe Customer Location determines the location that Rainforest uses when retrieving pages from Amazon. This is useful, for example, for seeing details of how a product appears on amazon.com, to a customer located in a different country. Can be used to identify cross-border shipping data and opportunities.\n\nIf no value for customer_location is supplied then Rainforest defaults to making the request from the country of the Amazon page requested - i.e. \\\"France\\\" for requests for pages from \\\"amazon.fr\\\".\n\nThe table below shows which customer_location values can be used in combination with requests to which amazon_domains. If you require another Amazon domain / customer location combination please contact our support team.\n\nSee the Request Parameters documentation for more information.",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://rainforest2.p.rapidapi.com/request\"\nquerystring = {\"type\": \"seller_products\", \"url\": \"\", \"amazon_domain\": \"amazon.com\", \"seller_id\": \"A02211013Q5HP3OMSZC7W\", \"refinements\": \"\", \"page\": \"\", \"customer_location\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"rainforest2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://rainforest2.p.rapidapi.com/request\"\nquerystring = {\"type\": \"seller_products\", \"url\": \"\", \"amazon_domain\": \"amazon.com\", \"seller_id\": \"A02211013Q5HP3OMSZC7W\", \"refinements\": \"\", \"page\": \"\", \"customer_location\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"rainforest2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Seller Feedback",
+            "url": "https://rainforest2.p.rapidapi.com/request",
+            "description": "The Seller Feedback Parameters are applicable when making a request with type=seller_feedback to retrieve seller customer feedback details for a seller on Amazon - the seller is specified using the seller_id and amazon_domain parameters. The parameters should be appended as querystring parameters to the Product Data APIGETHTTP request.\n\nSeller feedback details are retrieved from the feedback section of the seller profile page. You can retrieve the seller_id value for a given seller from other Rainforest requests, such as type=offers requests.\n\nA maximum of 5 seller feedback records can be returned per request. You can paginate through multiple pages of seller feedback records using the page parameter. Inspect the pagination.has_next_page property to determine whether there is a next page of results to retrieve.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "type",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "seller_feedback"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "amazon_domain",
+                    "type": "STRING",
+                    "description": "The Amazon domain to retrieve seller feedback results from for the seller specified in the seller_id parameter. For a full list of supported Amazon domains see Supported Amazon Domains.",
+                    "default": "amazon.com"
+                },
+                {
+                    "name": "page",
+                    "type": "NUMBER",
+                    "description": "The current page of search results to retrieve. Inspect the pagination.total_pages property in the Search results to see how many pages of search results are available.\n\nupdate value of num to get additional pages",
+                    "default": ""
+                },
+                {
+                    "name": "seller_id",
+                    "type": "STRING",
+                    "description": "\nThe Amazon Seller ID to retrieve seller feedback results for. Used in combination with the amazon_domain parameter.\n\nNote: Seller IDs can be retrieved from Rainforest API type=offers re",
+                    "default": "A02211013Q5HP3OMSZC7W"
+                },
+                {
+                    "name": "customer_location",
+                    "type": "STRING",
+                    "description": "Rainforest API supports retrieving data from the following Customer Locations.\n\nThe Customer Locations is specified via the customer_location request parameter.\n\nThe Customer Location determines the location that Rainforest uses when retrieving pages from Amazon. This is useful, for example, for seeing details of how a product appears on amazon.com, to a customer located in a different country. Can be used to identify cross-border shipping data and opportunities.\n\nIf no value for customer_location is supplied then Rainforest defaults to making the request from the country of the Amazon page requested - i.e. \\\"France\\\" for requests for pages from \\\"amazon.fr\\\".\n\nThe table below shows which customer_location values can be used in combination with requests to which amazon_domains. If you require another Amazon domain / customer location combination please contact our support team.\n\nSee the Request Parameters documentation for more information.",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://rainforest2.p.rapidapi.com/request\"\nquerystring = {\"type\": \"seller_feedback\", \"amazon_domain\": \"amazon.com\", \"page\": \"\", \"seller_id\": \"A02211013Q5HP3OMSZC7W\", \"customer_location\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"rainforest2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://rainforest2.p.rapidapi.com/request\"\nquerystring = {\"type\": \"seller_feedback\", \"amazon_domain\": \"amazon.com\", \"page\": \"\", \"seller_id\": \"A02211013Q5HP3OMSZC7W\", \"customer_location\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"rainforest2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Seller Profile",
+            "url": "https://rainforest2.p.rapidapi.com/request",
+            "description": "The Seller Profile Parameters are applicable when making a request with type=seller_profile to retrieve seller profile details for a single seller on Amazon - the seller is specified using either the seller_id and amazon_domain parameters or the url parameter (where the url parameter contains a link to an Amazon seller profile page). The parameters should be appended as querystring parameters to the Product Data APIGETHTTP request.\n\nSeller profile details are retrieved from the seller profile page for a single seller on Amazon. You can retrieve the seller_id value for a given seller from other Rainforest requests, such as type=offers requests.\n\nYou can use subsequent seller products and seller feedback requests to retrieve iterate all of the products and customer feedback from a given seller.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "type",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "seller_profile"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "url",
+                    "type": "STRING",
+                    "description": "The Amazon seller profile page URL of the seller to retrieve results from.\n",
+                    "default": ""
+                },
+                {
+                    "name": "seller_id",
+                    "type": "STRING",
+                    "description": "The Amazon Seller ID to retrieve seller profile details for. Used in combination with the amazon_domain parameter.\n\nNote: If the seller_id and amazon_domain parameters are supplied then the url parameter is ignored. Note: Seller IDs can be retrieved from Rainforest API type=offers requests.",
+                    "default": "A02211013Q5HP3OMSZC7W"
+                },
+                {
+                    "name": "amazon_domain",
+                    "type": "STRING",
+                    "description": "The Amazon domain to retrieve seller profile details from for the seller specified in the seller_id parameter. For a full list of supported Amazon domains see Supported Amazon Domains.\n\nNote: If the amazon_domain and seller_id parameters are supplied then the url parameter is ignored.",
+                    "default": "amazon.com"
+                },
+                {
+                    "name": "customer_location",
+                    "type": "STRING",
+                    "description": "Rainforest API supports retrieving data from the following Customer Locations.\n\nThe Customer Locations is specified via the customer_location request parameter.\n\nThe Customer Location determines the location that Rainforest uses when retrieving pages from Amazon. This is useful, for example, for seeing details of how a product appears on amazon.com, to a customer located in a different country. Can be used to identify cross-border shipping data and opportunities.\n\nIf no value for customer_location is supplied then Rainforest defaults to making the request from the country of the Amazon page requested - i.e. \\\"France\\\" for requests for pages from \\\"amazon.fr\\\".\n\nThe table below shows which customer_location values can be used in combination with requests to which amazon_domains. If you require another Amazon domain / customer location combination please contact our support team.\n\nSee the Request Parameters documentation for more information.",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://rainforest2.p.rapidapi.com/request\"\nquerystring = {\"type\": \"seller_profile\", \"url\": \"\", \"seller_id\": \"A02211013Q5HP3OMSZC7W\", \"amazon_domain\": \"amazon.com\", \"customer_location\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"rainforest2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://rainforest2.p.rapidapi.com/request\"\nquerystring = {\"type\": \"seller_profile\", \"url\": \"\", \"seller_id\": \"A02211013Q5HP3OMSZC7W\", \"amazon_domain\": \"amazon.com\", \"customer_location\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"rainforest2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Reviewer Profile",
+            "url": "https://rainforest2.p.rapidapi.com/request",
+            "description": "When making a request with the type parameter set to type=reviewer_profile Rainforest API will return details of reviewer specified in either the reviewer_id and amazon_domain parameters or the url parameter.\n\nReviewer profile details are retrieved from the reviewer profile page. You can retrieve the reviewer_id value for a given reviewer from other Rainforest requests, such as type=reviews requests.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "type",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "reviewer_profile"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "reviewer_profile_pages",
+                    "type": "STRING",
+                    "description": "The number of pages of reviews to retrieve from the reviewer profile page when `type=reviewer_profile`.\n\nThis parameter is different from the more usual page parameter as pagination of reviewer profile reviews is performed from an infinate-scrolling list.\n\nIt is not possible to \\\\\\\"go to page 3\\\\\\\", so the reviewer_profile_pages allows you retrieve \\\\\\\"the first X\\\\\\\" pages of reviews (a maximum of 10 reviews are returned per page).\n\nNote: that using reviewer_profile_pages decrements a credit for each page of reviews retrieved, for example, reviewer_profile_pages=3 would decrement 3 credits from your balance.",
+                    "default": ""
+                },
+                {
+                    "name": "url",
+                    "type": "STRING",
+                    "description": "The Amazon reviewer profile page URL of the reviewer to retrieve results from.",
+                    "default": ""
+                },
+                {
+                    "name": "amazon_domain",
+                    "type": "STRING",
+                    "description": "The Amazon domain to retrieve reviewer profile details from for the reviewer specified in the reviewer_id parameter. For a full list of supported Amazon domains see Supported Amazon Domains.\n\n**Note: If the amazon_domain and reviewer_id parameters are supplied then the url parameter is ignored.**",
+                    "default": "amazon.com"
+                },
+                {
+                    "name": "reviewer_id",
+                    "type": "STRING",
+                    "description": "The Amazon Reviewer ID to retrieve reviewer profile details for. Used in combination with the amazon_domain parameter.\n\n**Note: If the reviewer_id and amazon_domain parameters are supplied then the url parameter is ignored. Reviewer IDs can be retrieved from other Rainforest API requests, for example `type=reviews requests`.**",
+                    "default": "AHBEI6Q4F4WHRIFK5CWQMRVPOQMA"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://rainforest2.p.rapidapi.com/request\"\nquerystring = {\"type\": \"reviewer_profile\", \"reviewer_profile_pages\": \"\", \"url\": \"\", \"amazon_domain\": \"amazon.com\", \"reviewer_id\": \"AHBEI6Q4F4WHRIFK5CWQMRVPOQMA\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"rainforest2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://rainforest2.p.rapidapi.com/request\"\nquerystring = {\"type\": \"reviewer_profile\", \"reviewer_profile_pages\": \"\", \"url\": \"\", \"amazon_domain\": \"amazon.com\", \"reviewer_id\": \"AHBEI6Q4F4WHRIFK5CWQMRVPOQMA\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"rainforest2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Bestsellers",
+            "url": "https://rainforest2.p.rapidapi.com/request",
+            "description": "The Bestsellers Parameters are applicable when making a request with type=bestsellers to retrieve Bestseller results from an Amazon bestsellers page - the bestsellers page is specified either using the category_id and amazon_domain parameters (where category_id is a Category ID returned from the Categories API, or by using the url parameter. The parameters should be appended as querystring parameters to the Product Data API GET HTTP request.\n\nNote that, if using the url parameter it should be url-encoded.\n\nBestsellers results are retrieved from the bestsellers listing page on Amazon. Rainforest supports all types of Amazon Bestseller pages, bestsellers, new releases, movers & shakers, most wished for and gift ideas.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "type",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "bestsellers"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "url",
+                    "type": "STRING",
+                    "description": "The Amazon Bestsellesr results page URL to retrieve bestsellers results from.\n\n**Note: The url parameter should be url-encoded.**\n\nNote: Either the url or category_id & amazon_domain parameters can be used.",
+                    "default": ""
+                },
+                {
+                    "name": "page",
+                    "type": "NUMBER",
+                    "description": "The current page of search results to retrieve. Inspect the pagination.total_pages property in the Search results to see how many pages of search results are available.\n\nupdate value of num to get additional pages",
+                    "default": "2"
+                },
+                {
+                    "name": "amazon_domain",
+                    "type": "STRING",
+                    "description": "The Amazon domain to retrieve bestsellers results from. For a full list of supported Amazon domains see Supported Amazon Domains.",
+                    "default": "amazon.com"
+                },
+                {
+                    "name": "category_id",
+                    "type": "STRING",
+                    "description": "A category ID to retrieve bestsellers results from. You must supply a category_id returned from the Categories API in to the category_id parameter.",
+                    "default": "bestsellers_appliances"
+                },
+                {
+                    "name": "top_free",
+                    "type": "BOOLEAN",
+                    "description": "Set to true to retrieve the \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"Top 100 Free\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\" version of the specified Bestsellers category_id or url. See screenshot below for how the Top 100 Paid / Top 100 Free bestsellers for a given category are displayed on the Amazon site.",
+                    "default": ""
+                },
+                {
+                    "name": "customer_location",
+                    "type": "STRING",
+                    "description": "Rainforest API supports retrieving data from the following Customer Locations.\n\nThe Customer Locations is specified via the customer_location request parameter.\n\nThe Customer Location determines the location that Rainforest uses when retrieving pages from Amazon. This is useful, for example, for seeing details of how a product appears on amazon.com, to a customer located in a different country. Can be used to identify cross-border shipping data and opportunities.\n\nIf no value for customer_location is supplied then Rainforest defaults to making the request from the country of the Amazon page requested - i.e. \\\\\\\"France\\\\\\\" for requests for pages from \\\\\\\"amazon.fr\\\\\\\".\n\nThe table below shows which customer_location values can be used in combination with requests to which amazon_domains. If you require another Amazon domain / customer location combination please contact our support team.\n\nSee the Request Parameters documentation for more information.",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://rainforest2.p.rapidapi.com/request\"\nquerystring = {\"url\": \"\", \"type\": \"bestsellers\", \"page\": \"2\", \"amazon_domain\": \"amazon.com\", \"category_id\": \"bestsellers_appliances\", \"top_free\": \"\", \"customer_location\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"rainforest2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://rainforest2.p.rapidapi.com/request\"\nquerystring = {\"url\": \"\", \"type\": \"bestsellers\", \"page\": \"2\", \"amazon_domain\": \"amazon.com\", \"category_id\": \"bestsellers_appliances\", \"top_free\": \"\", \"customer_location\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"rainforest2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Category",
+            "url": "https://rainforest2.p.rapidapi.com/request",
+            "description": "The Category Parameters are applicable when making a request with type=category to retrieve category results for an Amazon category. Categories can be specified either via passing an Amazon category URL in to the url parameter, or by passing a Category ID in to the category_id (where the category_id is returned from the Categories API) and an Amazon domain in to the amazon_domain parameter. The parameters should be appended as querystring parameters to the Product Data APIGETHTTP request.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "type",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "category"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "amazon_domain",
+                    "type": "STRING",
+                    "description": "The Amazon domain to retrieve category results from. For a full list of supported Amazon domains see Supported Amazon Domains.",
+                    "default": "amazon.com"
+                },
+                {
+                    "name": "url",
+                    "type": "STRING",
+                    "description": "The Amazon category results page URL to retrieve category results from. Be sure to URL-encode the url parameter.\n\nNote the url parameter is supplied, the category_id parameter cannot be used (as the url itself defines the category ID used).",
+                    "default": ""
+                },
+                {
+                    "name": "category_id",
+                    "type": "STRING",
+                    "description": "\nA category ID to retrieve results from. You may supply any arbitary value in the category_id parameter however we recommend using a category ID returned from the Categories API as these are known-good category IDs from Amazon.\n\nRainforest will use the category_id in the following form: https://amazon_domain/s?node=category_id.\n\nNote that pagination for top-level categories is not supported by the Amazon sites. If you wish to iterate the contents of a category the recommended approach is to pick the lowest level categories to perform your iteration / pagination on.",
+                    "default": "2619526011"
+                },
+                {
+                    "name": "refinements",
+                    "type": "STRING",
+                    "description": "A comma-seperated list of refinement values to filter the category results by. These allow you to refine your category results by values such as \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"Reviews rating 4 and over\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\", \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"price range\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\" and \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"brand\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\".\n\nRefinement values are returned in the refinements array of each type=category result. Refinement values are dynamic and change by category area or search term used. If you wish to use refinements you should first issue a type=category request without specifying any refinements to retrieve a master list of the avaialble refinements for the given category area/search term. You can then cache these refinement values for use on subsequent requests.\n\nFor example, to run a type=search request specifying two refinements with values p_85/2470955011 and p_36/2421886011 the value of the refinements parameter would be refinements=p_85/2470955011,p_36/2421886011\n\nNote that sometimes Amazon do not present a explicit refinement value and instead a link is returned. In this instance you should pass the link into the url request parameter of your type=category request to retrieve data from that refinement-filtered page.\n",
+                    "default": ""
+                },
+                {
+                    "name": "sort_by",
+                    "type": "STRING",
+                    "description": "Determines the sort order of category results to return. Valid values are:\nmost_recent\nSort category results by newest arrivals.\nprice_low_to_high\nSort category results by lowest to highest price.\nprice_high_to_low\nSort category results by highest to lowest price.\nfeatured\nSort category results by featured first.\naverage_review\nSort category results by average customer review.",
+                    "default": "average_review"
+                },
+                {
+                    "name": "page",
+                    "type": "NUMBER",
+                    "description": "The current page of search results to retrieve. Inspect the pagination.total_pages property in the Search results to see how many pages of search results are available.\n\nupdate value of num to get additional pages",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://rainforest2.p.rapidapi.com/request\"\nquerystring = {\"type\": \"category\", \"amazon_domain\": \"amazon.com\", \"url\": \"\", \"category_id\": \"2619526011\", \"refinements\": \"\", \"sort_by\": \"average_review\", \"page\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"rainforest2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://rainforest2.p.rapidapi.com/request\"\nquerystring = {\"type\": \"category\", \"amazon_domain\": \"amazon.com\", \"url\": \"\", \"category_id\": \"2619526011\", \"refinements\": \"\", \"sort_by\": \"average_review\", \"page\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"rainforest2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Search",
+            "url": "https://rainforest2.p.rapidapi.com/request",
+            "description": "The Search Parameters are applicable when making a request with type=search to retrieve search results for an Amazon domain - the Amazon domain is specified using the amazon_domain parameter and the search term is specified in the search_term parameter. The parameters should be appended as querystring parameters to the Product Data API GET HTTP request.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "type",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "search"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "sort_by",
+                    "type": "STRING",
+                    "description": "Determines the sort order of search results to return. Valid values are:\n\n- most_recent\n- price_low_to_high\n- price_high_to_low\n- featured\n- average_review\n- \n\nrelevance\n- Sort search results by most relevant first.\n- Applies only to Audible Amazon Domains.\n\nbestsellers\n- Sort search results by best sellers first.\n- Applies only to Audible Amazon Domains.\n\nrunning_time_ascending\n- Sort search results by shortest running time first, from short to long.\n- Applies only to Audible Amazon Domains.\n\nrunning_time_descending\n- Sort search results by shortest running time first, from long to short.\n- Applies only to Audible Amazon Domains.\n\ntitle_ascending\n- Sort search results alphabetically by title from A to Z.\n- Applies only to Audible Amazon Domains.\n\ntitle_descending\n- Sort search results alphabetically by title from Z to A.\n- Applies only to Audible Amazon Domains.",
+                    "default": "featured"
+                },
+                {
+                    "name": "refinements",
+                    "type": "STRING",
+                    "description": "A comma-seperated list of refinement values to filter the search results by. These allow you to refine your search by values such as \\\"Reviews rating 4 and over\\\", \\\"price range\\\" and \\\"brand\\\".\n\nRefinement values are returned in the refinements array of each type=search result. Refinement values are dynamic and change by category area or search term used. If you wish to use refinements you should first issue a `type=search` request without specifying any refinements to retrieve a master list of the avaialble refinements for the given category area/search term. You can then cache these refinement values for use on subsequent requests.\n\nFor example, to run a `type=search` request specifying two refinements with values `p_85/2470955011 `and `p_36/2421886011` the value of the refinements parameter would be `refinements=p_85/2470955011,p_36/2421886011`",
+                    "default": ""
+                },
+                {
+                    "name": "url",
+                    "type": "STRING",
+                    "description": "The Amazon search results page URL to retrieve search results from. Be sure to URL-encode the url parameter.\n\n**Note the url parameter is supplied, the search_term parameter cannot be used (as the url itself defines the search term used).**",
+                    "default": ""
+                },
+                {
+                    "name": "search_term",
+                    "type": "STRING",
+                    "description": "A search term to use to search products.",
+                    "default": "hiking backpack"
+                },
+                {
+                    "name": "amazon_domain",
+                    "type": "STRING",
+                    "description": "The Amazon domain to retrieve search results from. For a full list of supported Amazon domains see [Supported Amazon Domains](https://www.rainforestapi.com/docs/product-data-api/reference/amazon-domains).\n\n**Note: If the amazon_domain and asin parameters are supplied then the url parameter is ignored.**",
+                    "default": "amazon.com"
+                },
+                {
+                    "name": "page",
+                    "type": "NUMBER",
+                    "description": "The current page of search results to retrieve. Inspect the pagination.total_pages property in the Search results to see how many pages of search results are available.\n\nupdate value of num to get additional pages",
+                    "default": ""
+                },
+                {
+                    "name": "category_id",
+                    "type": "STRING",
+                    "description": "A category ID to limit search results to. You may supply any arbitary value in the category_id parameter however we recommend using a category ID returned from the Categories API as these are known-good category IDs from Amazon.\n\nRainforest will use the category_id in the following form: `https://amazon_domain/s?node=category_id.`\n\nNote that pagination for top-level categories is not supported by the Amazon sites. If you wish to iterate the contents of a category the recommended approach is to pick the lowest level categories to perform your iteration / pagination on.",
+                    "default": ""
+                },
+                {
+                    "name": "customer_location",
+                    "type": "STRING",
+                    "description": "Rainforest API supports retrieving data from the following Customer Locations.\n\nThe Customer Locations is specified via the customer_location request parameter.\n\nThe Customer Location determines the location that Rainforest uses when retrieving pages from Amazon. This is useful, for example, for seeing details of how a product appears on amazon.com, to a customer located in a different country. Can be used to identify cross-border shipping data and opportunities.\n\nIf no value for customer_location is supplied then Rainforest defaults to making the request from the country of the Amazon page requested - i.e. \\\\\\\"France\\\\\\\" for requests for pages from \\\\\\\"amazon.fr\\\\\\\".\n\nThe table below shows which customer_location values can be used in combination with requests to which amazon_domains. If you require another Amazon domain / customer location combination please contact our support team.\n\nSee the Request Parameters documentation for more information.",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://rainforest2.p.rapidapi.com/request\"\nquerystring = {\"type\": \"search\", \"sort_by\": \"featured\", \"refinements\": \"\", \"url\": \"\", \"search_term\": \"hiking backpack\", \"amazon_domain\": \"amazon.com\", \"page\": \"\", \"category_id\": \"\", \"customer_location\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"rainforest2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://rainforest2.p.rapidapi.com/request\"\nquerystring = {\"type\": \"search\", \"sort_by\": \"featured\", \"refinements\": \"\", \"url\": \"\", \"search_term\": \"hiking backpack\", \"amazon_domain\": \"amazon.com\", \"page\": \"\", \"category_id\": \"\", \"customer_location\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"rainforest2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Single Product",
+            "url": "https://rainforest2.p.rapidapi.com/request",
+            "description": "The Product Parameters are applicable when making a request with type=product to retrieve details of a single product on Amazon - the product is specified using either the asin and amazon_domain parameters or the url parameter (where the url parameter contains a link to an Amazon product page). The parameters should be appended as querystring parameters to the Product Data API GET HTTP request",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "type",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "product"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "url",
+                    "type": "STRING",
+                    "description": "The Amazon product-page URL to retrieve product details from.\n\n**Ensure that the url parameter is URL-encoded.**\n\nNote: If the url parameter is supplied then the amazon_domain and asin parameters are ignored.",
+                    "default": ""
+                },
+                {
+                    "name": "amazon_domain",
+                    "type": "STRING",
+                    "description": "The Amazon domain to retrieve product details from for the product specified in the asin parameter. For a full list of supported Amazon domains see Supported Amazon Domains.\n\n**Note: If the amazon_domain and asin parameters are supplied then the url parameter is ignored.**",
+                    "default": "amazon.com"
+                },
+                {
+                    "name": "gtin",
+                    "type": "STRING",
+                    "description": "A GTIN, ISBN, UPC or EAN code to retrieve results for. Internally Rainforest will first convert the GTIN/ISBN/UPC/EAN to an Amazon ASIN, then retrieve the results for that ASIN from Amazon. Used in combination with the amazon_domain parameter.\n\n**Note: If the gtin and amazon_domain parameters are supplied then the url parameter is ignored.**",
+                    "default": ""
+                },
+                {
+                    "name": "asin",
+                    "type": "STRING",
+                    "description": "The Amazon ASIN (product ID) to retrieve product details for. Used in combination with the amazon_domain parameter.\n\n**Note: If the asin and amazon_domain parameters are supplied then the url parameter is ignored.**",
+                    "default": "B073JYC4XM"
+                },
+                {
+                    "name": "customer_location",
+                    "type": "STRING",
+                    "description": "Rainforest API supports retrieving data from the following Customer Locations.\n\nThe Customer Locations is specified via the customer_location request parameter.\n\nThe Customer Location determines the location that Rainforest uses when retrieving pages from Amazon. This is useful, for example, for seeing details of how a product appears on amazon.com, to a customer located in a different country. Can be used to identify cross-border shipping data and opportunities.\n\nIf no value for customer_location is supplied then Rainforest defaults to making the request from the country of the Amazon page requested - i.e. `France` for requests for pages from `amazon.fr`\n\nThe table below shows which customer_location values can be used in combination with requests to which amazon_domains. If you require another Amazon domain / customer location combination please contact our support team.\n\nSee the Request Parameters documentation for more information.",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://rainforest2.p.rapidapi.com/request\"\nquerystring = {\"type\": \"product\", \"url\": \"\", \"amazon_domain\": \"amazon.com\", \"gtin\": \"\", \"asin\": \"B073JYC4XM\", \"customer_location\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"rainforest2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://rainforest2.p.rapidapi.com/request\"\nquerystring = {\"type\": \"product\", \"url\": \"\", \"amazon_domain\": \"amazon.com\", \"gtin\": \"\", \"asin\": \"B073JYC4XM\", \"customer_location\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"rainforest2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "rainforest"
+}

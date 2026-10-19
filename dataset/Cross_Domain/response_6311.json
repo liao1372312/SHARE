@@ -1,0 +1,37 @@
+{
+  "user_query": "I'm planning a surprise birthday party for my best friend and I need some ideas for food and desserts. Suggest some chicken dishes, desserts, and pizza that would be perfect for the party. Additionally, fetch me the details of an individual asset from the finance market.",
+  "domain": "medical/finance",
+  "TaskList": [
+    {
+      "id": 1,
+      "description": "Fetch a list of popular chicken dishes suitable for parties.",
+      "domain": "medical",
+      "required_inputs": ["cuisine type: chicken", "occasion: party"]
+    },
+    {
+      "id": 2,
+      "description": "Fetch a list of popular dessert options suitable for parties.",
+      "domain": "medical",
+      "required_inputs": ["dessert type", "occasion: party"]
+    },
+    {
+      "id": 3,
+      "description": "Fetch a list of popular pizza varieties suitable for parties.",
+      "domain": "medical",
+      "required_inputs": ["pizza type", "occasion: party"]
+    },
+    {
+      "id": 4,
+      "description": "Aggregate and suggest the best food and dessert ideas from the fetched lists for the birthday party.",
+      "domain": "medical",
+      "required_inputs": ["results from subtasks 1, 2, 3"],
+      "dependency": [1, 2, 3]
+    },
+    {
+      "id": 5,
+      "description": "Fetch detailed information of a specified individual asset from the finance market.",
+      "domain": "finance",
+      "required_inputs": ["asset identifier (e.g., stock symbol)"]
+    }
+  ]
+}

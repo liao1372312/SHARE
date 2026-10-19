@@ -1,0 +1,99 @@
+{
+    "product_id": "api_8b0397db-1a1b-43a2-8548-d461253504ec",
+    "tool_description": "Our SERP API allows you to Scrape Search results from Search Engines and obtain valuable SEO data insights",
+    "home_url": "https://rapidapi.com/christophleitner/api/zenserp/",
+    "name": "Zenserp",
+    "title": "Zenserp",
+    "pricing": "FREEMIUM",
+    "tool_name": "Zenserp",
+    "score": {
+        "avgServiceLevel": 66,
+        "avgLatency": 4073,
+        "avgSuccessRate": 66,
+        "popularityScore": 8.7,
+        "__typename": "Score"
+    },
+    "host": "zenserp.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Search",
+            "url": "https://zenserp.p.rapidapi.com/search",
+            "description": "Get a SERP",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "q",
+                    "type": "STRING",
+                    "description": "Query String (keyword)",
+                    "default": "Pied Piper"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "device",
+                    "type": "STRING",
+                    "description": "Which device to use: ['desktop', 'mobile']",
+                    "default": ""
+                },
+                {
+                    "name": "tbm",
+                    "type": "STRING",
+                    "description": "Set to 'isch' for image results",
+                    "default": ""
+                },
+                {
+                    "name": "location",
+                    "type": "STRING",
+                    "description": "location for the search engine",
+                    "default": "United States"
+                },
+                {
+                    "name": "search_engine",
+                    "type": "STRING",
+                    "description": "The url of the search engine to query",
+                    "default": "google.com"
+                },
+                {
+                    "name": "num",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://zenserp.p.rapidapi.com/search\"\nquerystring = {\"device\": \"\", \"tbm\": \"\", \"location\": \"United States\", \"q\": \"Pied Piper\", \"search_engine\": \"google.com\", \"num\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"zenserp.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://zenserp.p.rapidapi.com/search\"\nquerystring = {\"device\": \"\", \"tbm\": \"\", \"location\": \"United States\", \"q\": \"Pied Piper\", \"search_engine\": \"google.com\", \"num\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"zenserp.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "errors": [
+                    {
+                        "num": "num parameters needs to be a number."
+                    }
+                ]
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "get": {
+                        "type": "string"
+                    },
+                    "parameters": {
+                        "type": "array"
+                    },
+                    "errors": {
+                        "type": "array"
+                    },
+                    "results": {
+                        "type": "integer"
+                    },
+                    "response": {
+                        "type": "array",
+                        "items": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "standardized_name": "zenserp"
+}

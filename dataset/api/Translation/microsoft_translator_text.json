@@ -1,0 +1,172 @@
+{
+    "product_id": "api_49fb5925-ac53-476e-9e87-4a71674ff02a",
+    "tool_description": "An AI service from Microsoft Azure that enables you to easily conduct real-time text translation.",
+    "home_url": "https://rapidapi.com/microsoft-azure-org-microsoft-cognitive-services/api/microsoft-translator-text/",
+    "name": "Microsoft Translator Text",
+    "title": "Microsoft Translator Text",
+    "pricing": "FREEMIUM",
+    "tool_name": "Microsoft Translator Text",
+    "score": {
+        "avgServiceLevel": 83,
+        "avgLatency": 752,
+        "avgSuccessRate": 77,
+        "popularityScore": 9.9,
+        "__typename": "Score"
+    },
+    "host": "microsoft-translator-text.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Languages",
+            "url": "https://microsoft-translator-text.p.rapidapi.com/languages",
+            "description": "Gets the set of languages currently supported by other operations of the Translator Text API.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "api-version",
+                    "type": "STRING",
+                    "description": "Version of the API requested by the client. Value must be **3.0**.",
+                    "default": "3.0"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "scope",
+                    "type": "STRING",
+                    "description": "A comma-separated list of names defining the group of languages to return. Allowed group names are- `translation`, `transliteration` and `dictionary`. If no scope is given, then all groups are returned, which is equivalent to passing `scope=translation,transliteration,dictionary`. To decide which set of supported languages is appropriate for your scenario, see the description of the response object.",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://microsoft-translator-text.p.rapidapi.com/languages\"\nquerystring = {\"api-version\": \"3.0\", \"scope\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"microsoft-translator-text.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://microsoft-translator-text.p.rapidapi.com/languages\"\nquerystring = {\"api-version\": \"3.0\", \"scope\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"microsoft-translator-text.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "error": {
+                    "code": 400001,
+                    "message": "The scope parameter is invalid."
+                }
+            },
+            "statuscode": 200,
+            "schema": {
+                "$schema": "http://json-schema.org/draft-04/schema#",
+                "description": "Example of a successful languages request",
+                "properties": {
+                    "dictionary": {
+                        "properties": {
+                            "languageCode": {
+                                "properties": {
+                                    "dir": {
+                                        "type": "string"
+                                    },
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "nativeName": {
+                                        "type": "string"
+                                    },
+                                    "translations": {
+                                        "items": {
+                                            "properties": {
+                                                "code": {
+                                                    "type": "string"
+                                                },
+                                                "dir": {
+                                                    "type": "string"
+                                                },
+                                                "name": {
+                                                    "type": "string"
+                                                },
+                                                "nativeName": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "type": "array"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "translation": {
+                        "properties": {
+                            "languageCode": {
+                                "properties": {
+                                    "dir": {
+                                        "type": "string"
+                                    },
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "nativeName": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "transliteration": {
+                        "properties": {
+                            "languageCode": {
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "nativeName": {
+                                        "type": "string"
+                                    },
+                                    "scripts": {
+                                        "items": {
+                                            "properties": {
+                                                "code": {
+                                                    "type": "string"
+                                                },
+                                                "dir": {
+                                                    "type": "string"
+                                                },
+                                                "name": {
+                                                    "type": "string"
+                                                },
+                                                "nativeName": {
+                                                    "type": "string"
+                                                },
+                                                "toScripts": {
+                                                    "items": {
+                                                        "properties": {
+                                                            "code": {
+                                                                "type": "string"
+                                                            },
+                                                            "dir": {
+                                                                "type": "string"
+                                                            },
+                                                            "name": {
+                                                                "type": "string"
+                                                            },
+                                                            "nativeName": {
+                                                                "type": "string"
+                                                            }
+                                                        },
+                                                        "type": "object"
+                                                    },
+                                                    "type": "array"
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "type": "array"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        },
+                        "type": "object"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    ],
+    "standardized_name": "microsoft_translator_text"
+}

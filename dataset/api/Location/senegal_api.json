@@ -1,0 +1,525 @@
+{
+    "product_id": "api_b6c2e2ac-cb03-489e-91bc-9dfaf761b7a7",
+    "tool_description": "The Senegal Lookup API allows you to look up the latitude, longitude, and address of a location in Senegal.",
+    "home_url": "https://rapidapi.com/kidddevs/api/senegal-api/",
+    "name": "Senegal API",
+    "title": "Senegal API",
+    "pricing": "FREEMIUM",
+    "tool_name": "Senegal API",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 498,
+        "avgSuccessRate": 100,
+        "popularityScore": 8.1,
+        "__typename": "Score"
+    },
+    "host": "senegal-api.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Directions Between 2 Locations",
+            "url": "https://senegal-api.p.rapidapi.com/directions",
+            "description": "This endpoint returns information about the route between two locations in terms of distance, duration, and steps.\n\nBelow Example: **Directions from a hospital in Koalack to Dakar**",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "start_lon",
+                    "type": "NUMBER",
+                    "description": "Longitude of the starting point (required)",
+                    "default": "-16.0755888102153"
+                },
+                {
+                    "name": "end_lon",
+                    "type": "NUMBER",
+                    "description": "Longitude of the ending point (required)",
+                    "default": "-17.447938"
+                },
+                {
+                    "name": "end_lat",
+                    "type": "NUMBER",
+                    "description": "Latitude of the ending point (required)",
+                    "default": "14.693425"
+                },
+                {
+                    "name": "start_lat",
+                    "type": "NUMBER",
+                    "description": "Latitude of the starting point (required)",
+                    "default": "14.14129815"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "distance_unit",
+                    "type": "STRING",
+                    "description": "Unit of distance measurement, valid options are **km** (default), and **mi**.",
+                    "default": "km"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://senegal-api.p.rapidapi.com/directions\"\nquerystring = {\"start_lon\": \"-16.0755888102153\", \"distance_unit\": \"km\", \"end_lon\": \"-17.447938\", \"end_lat\": \"14.693425\", \"start_lat\": \"14.14129815\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"senegal-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://senegal-api.p.rapidapi.com/directions\"\nquerystring = {\"start_lon\": \"-16.0755888102153\", \"distance_unit\": \"km\", \"end_lon\": \"-17.447938\", \"end_lat\": \"14.693425\", \"start_lat\": \"14.14129815\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"senegal-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "distance": "190.46km",
+                "duration": "2h 38min",
+                "steps": [
+                    {
+                        "direction": "depart",
+                        "distance": "0.28km",
+                        "duration": "0min:41s",
+                        "instruction": "",
+                        "location": [
+                            -16.074948,
+                            14.141293
+                        ]
+                    },
+                    {
+                        "direction": "turn",
+                        "distance": "0.15km",
+                        "duration": "0min:12s",
+                        "instruction": "",
+                        "location": [
+                            -16.074947,
+                            14.138792
+                        ]
+                    },
+                    {
+                        "direction": "roundabout",
+                        "distance": "0.03km",
+                        "duration": "0min:4s",
+                        "instruction": "",
+                        "location": [
+                            -16.076284,
+                            14.138841
+                        ]
+                    },
+                    {
+                        "direction": "exit roundabout",
+                        "distance": "49.26km",
+                        "duration": "47min:39s",
+                        "instruction": "",
+                        "location": [
+                            -16.076475,
+                            14.138834
+                        ]
+                    },
+                    {
+                        "direction": "turn",
+                        "distance": "7.67km",
+                        "duration": "7min:39s",
+                        "instruction": "",
+                        "location": [
+                            -16.464434,
+                            14.344348
+                        ]
+                    },
+                    {
+                        "direction": "new name",
+                        "distance": "6.59km",
+                        "duration": "5min:31s",
+                        "instruction": "",
+                        "location": [
+                            -16.527274,
+                            14.371222
+                        ]
+                    },
+                    {
+                        "direction": "new name",
+                        "distance": "36.89km",
+                        "duration": "34min:54s",
+                        "instruction": "",
+                        "location": [
+                            -16.572222,
+                            14.407216
+                        ]
+                    },
+                    {
+                        "direction": "off ramp",
+                        "distance": "1.60km",
+                        "duration": "2min:7s",
+                        "instruction": "",
+                        "location": [
+                            -16.903589,
+                            14.430608
+                        ]
+                    },
+                    {
+                        "direction": "merge",
+                        "distance": "86.60km",
+                        "duration": "57min:25s",
+                        "instruction": "",
+                        "location": [
+                            -16.911053,
+                            14.437686
+                        ]
+                    },
+                    {
+                        "direction": "off ramp",
+                        "distance": "0.42km",
+                        "duration": "0min:33s",
+                        "instruction": "",
+                        "location": [
+                            -17.442147,
+                            14.701305
+                        ]
+                    },
+                    {
+                        "direction": "rotary",
+                        "distance": "0.03km",
+                        "duration": "0min:1s",
+                        "instruction": "",
+                        "location": [
+                            -17.443896,
+                            14.698164
+                        ]
+                    },
+                    {
+                        "direction": "exit rotary",
+                        "distance": "0.38km",
+                        "duration": "0min:24s",
+                        "instruction": "",
+                        "location": [
+                            -17.444109,
+                            14.698083
+                        ]
+                    },
+                    {
+                        "direction": "rotary",
+                        "distance": "0.06km",
+                        "duration": "0min:4s",
+                        "instruction": "",
+                        "location": [
+                            -17.447158,
+                            14.698289
+                        ]
+                    },
+                    {
+                        "direction": "exit rotary",
+                        "distance": "0.52km",
+                        "duration": "0min:46s",
+                        "instruction": "",
+                        "location": [
+                            -17.44736,
+                            14.698115
+                        ]
+                    },
+                    {
+                        "direction": "arrive",
+                        "distance": "0.00km",
+                        "duration": "0min:0s",
+                        "instruction": "",
+                        "location": [
+                            -17.447646,
+                            14.693412
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Measure Distance",
+            "url": "https://senegal-api.p.rapidapi.com/distance",
+            "description": "This endpoint calculates the distance between two locations based on their latitude and longitude coordinates, while allowing the user to specify the unit of measurement.\n\nBelow Example: **Distance from a hospital in Koalack to Dakar**",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "lon2",
+                    "type": "NUMBER",
+                    "description": "Longitude of the second location (required)",
+                    "default": "-17.447938"
+                },
+                {
+                    "name": "lat2",
+                    "type": "NUMBER",
+                    "description": "Latitude of the second location (required)",
+                    "default": "14.693425"
+                },
+                {
+                    "name": "lon1",
+                    "type": "NUMBER",
+                    "description": "Longitude of the first location (required)",
+                    "default": "-16.0755888102153"
+                },
+                {
+                    "name": "lat1",
+                    "type": "NUMBER",
+                    "description": "Latitude of the first location (required)",
+                    "default": "14.14129815"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "unit",
+                    "type": "STRING",
+                    "description": "Unit of distance measurement, valid options are **km** (default), **mi**, **ft**, and **yd**.\n",
+                    "default": "km"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://senegal-api.p.rapidapi.com/distance\"\nquerystring = {\"unit\": \"km\", \"lon2\": \"-17.447938\", \"lat2\": \"14.693425\", \"lon1\": \"-16.0755888102153\", \"lat1\": \"14.14129815\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"senegal-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://senegal-api.p.rapidapi.com/distance\"\nquerystring = {\"unit\": \"km\", \"lon2\": \"-17.447938\", \"lat2\": \"14.693425\", \"lon1\": \"-16.0755888102153\", \"lat1\": \"14.14129815\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"senegal-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "distance": "190.46km",
+                "duration": "2h 38min",
+                "unit": "km"
+            }
+        },
+        {
+            "name": "Reverse Geocode",
+            "url": "https://senegal-api.p.rapidapi.com/georev",
+            "description": "This endpoint allows you to perform reverse geocoding in Senegal by providing query parameters for latitude and longitude. It returns the name of the city where the location is located.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "lon",
+                    "type": "STRING",
+                    "description": "The longitude of the location.",
+                    "default": "-17.447938"
+                },
+                {
+                    "name": "lat",
+                    "type": "STRING",
+                    "description": "The latitude of the location.",
+                    "default": "14.693425"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://senegal-api.p.rapidapi.com/georev\"\nquerystring = {\"lon\": \"-17.447938\", \"lat\": \"14.693425\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"senegal-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://senegal-api.p.rapidapi.com/georev\"\nquerystring = {\"lon\": \"-17.447938\", \"lat\": \"14.693425\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"senegal-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "amenity": "",
+                "boundingbox": [
+                    "14.6925858",
+                    "14.6936614",
+                    "-17.4476996",
+                    "-17.4476037"
+                ],
+                "category": "highway",
+                "city": "Dakar",
+                "country": "S\u00e9n\u00e9gal",
+                "display_name": "Avenue Cheikh Amadou Bamba Mbak\u00e9, HLM Fass, Commune de Gueule Tap\u00e9e-Fass-Colobane, Arrondissement de Dakar-Plateau, Dakar, R\u00e9gion de Dakar, 13500, S\u00e9n\u00e9gal",
+                "region": "R\u00e9gion de Dakar",
+                "suburb": "Commune de Gueule Tap\u00e9e-Fass-Colobane"
+            }
+        },
+        {
+            "name": "Facilities Lookup",
+            "url": "https://senegal-api.p.rapidapi.com/facility",
+            "description": "This endpoint allows you to get facilities in Senegal like hospital, bank, college, etc. by providing optional query parameters for facility type, region and city. It returns a list of facilities that match the query parameters.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "region",
+                    "type": "STRING",
+                    "description": "The region where the facility is located",
+                    "default": "Dakar"
+                },
+                {
+                    "name": "type",
+                    "type": "STRING",
+                    "description": "The type of amenity facility to search for (default: **hospital**)\nOptions:\n**aerodrome, bar, cafe, fast_food, pub, restaurant, college, driving_school, school, university, bank, atm, pharmacy,** etc..        \n\n[More options->](https://wiki.openstreetmap.org/wiki/Map_features#Amenity)",
+                    "default": "hospital"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "city",
+                    "type": "STRING",
+                    "description": "The city where the facility is located",
+                    "default": "Touba"
+                },
+                {
+                    "name": "limit",
+                    "type": "STRING",
+                    "description": "The number of facilities to query.",
+                    "default": "10"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://senegal-api.p.rapidapi.com/facility\"\nquerystring = {\"city\": \"Touba\", \"region\": \"Dakar\", \"limit\": \"10\", \"type\": \"hospital\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"senegal-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://senegal-api.p.rapidapi.com/facility\"\nquerystring = {\"city\": \"Touba\", \"region\": \"Dakar\", \"limit\": \"10\", \"type\": \"hospital\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"senegal-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "hospital": [
+                    {
+                        "ISO3166-2-lvl4": "SN-DK",
+                        "address": "Avenue Cheikh Anta Diop, Dakar, S\u00e9n\u00e9gal",
+                        "amenity": "Centre hospitalier national pour enfant Albert Royer",
+                        "country_code": "sn",
+                        "county": "",
+                        "display_name": "Centre hospitalier national pour enfant Albert Royer, Avenue Cheikh Anta Diop, Point E, Commune de Fann-Point E-Amiti\u00e9, Arrondissement de Dakar-Plateau, Dakar, R\u00e9gion de Dakar, 10500, S\u00e9n\u00e9gal",
+                        "latitude": "14.692106800000001",
+                        "longitude": "-17.465006225784176",
+                        "postcode": "10500",
+                        "region": "R\u00e9gion de Dakar",
+                        "road": "Avenue Cheikh Anta Diop",
+                        "suburb": "Commune de Fann-Point E-Amiti\u00e9",
+                        "village": "",
+                        "website": ""
+                    },
+                    {
+                        "ISO3166-2-lvl4": "SN-DK",
+                        "address": "Avenue Nelson Mandela, Dakar, S\u00e9n\u00e9gal",
+                        "amenity": "Hopital Principal de Dakar",
+                        "country_code": "sn",
+                        "county": "",
+                        "display_name": "Hopital Principal de Dakar, Avenue Nelson Mandela, Commune de Dakar-Plateau, Arrondissement de Dakar-Plateau, Dakar, R\u00e9gion de Dakar, 99900, S\u00e9n\u00e9gal",
+                        "latitude": "14.6611201",
+                        "longitude": "-17.43478162726754",
+                        "postcode": "99900",
+                        "region": "R\u00e9gion de Dakar",
+                        "road": "Avenue Nelson Mandela",
+                        "suburb": "Commune de Dakar-Plateau",
+                        "village": "",
+                        "website": ""
+                    },
+                    {
+                        "ISO3166-2-lvl4": "SN-DK",
+                        "address": "Avenue Blaise Diagne, Dakar, S\u00e9n\u00e9gal",
+                        "amenity": "Polyclinique de la M\u00e9dina",
+                        "country_code": "sn",
+                        "county": "",
+                        "display_name": "Polyclinique de la M\u00e9dina, Avenue Blaise Diagne, Commune de M\u00e9dina, Arrondissement de Dakar-Plateau, Dakar, R\u00e9gion de Dakar, 10500, S\u00e9n\u00e9gal",
+                        "latitude": "14.67809475",
+                        "longitude": "-17.445644232458775",
+                        "postcode": "10500",
+                        "region": "R\u00e9gion de Dakar",
+                        "road": "Avenue Blaise Diagne",
+                        "suburb": "Commune de M\u00e9dina",
+                        "village": "",
+                        "website": ""
+                    },
+                    {
+                        "ISO3166-2-lvl4": "SN-DK",
+                        "address": "rue de l'Universit\u00e9 (FN-30), Dakar, S\u00e9n\u00e9gal",
+                        "amenity": "Hopital COUD",
+                        "country_code": "sn",
+                        "county": "",
+                        "display_name": "Hopital COUD, rue de l'Universit\u00e9 (FN-30), Fann R\u00e9sidence, Commune de Fann-Point E-Amiti\u00e9, Arrondissement de Dakar-Plateau, Dakar, R\u00e9gion de Dakar, 10500, S\u00e9n\u00e9gal",
+                        "latitude": "14.6898608",
+                        "longitude": "-17.46315619193956",
+                        "postcode": "10500",
+                        "region": "R\u00e9gion de Dakar",
+                        "road": "rue de l'Universit\u00e9 (FN-30)",
+                        "suburb": "Commune de Fann-Point E-Amiti\u00e9",
+                        "village": "",
+                        "website": ""
+                    },
+                    {
+                        "ISO3166-2-lvl4": "SN-DK",
+                        "address": "Avenue Blaise Diagne, Dakar, S\u00e9n\u00e9gal",
+                        "amenity": "",
+                        "country_code": "sn",
+                        "county": "",
+                        "display_name": "Avenue Blaise Diagne, Commune de M\u00e9dina, Arrondissement de Dakar-Plateau, Dakar, R\u00e9gion de Dakar, 10500, S\u00e9n\u00e9gal",
+                        "latitude": "14.68212825",
+                        "longitude": "-17.450605144005372",
+                        "postcode": "10500",
+                        "region": "R\u00e9gion de Dakar",
+                        "road": "Avenue Blaise Diagne",
+                        "suburb": "Commune de M\u00e9dina",
+                        "village": "",
+                        "website": ""
+                    },
+                    {
+                        "ISO3166-2-lvl4": "SN-DK",
+                        "address": "FN-48, Dakar, S\u00e9n\u00e9gal",
+                        "amenity": "Clinique Fann Hock;SOS Cardio",
+                        "country_code": "sn",
+                        "county": "",
+                        "display_name": "Clinique Fann Hock;SOS Cardio, FN-48, Fann Hock, Commune de Fann-Point E-Amiti\u00e9, Arrondissement de Dakar-Plateau, Dakar, R\u00e9gion de Dakar, 10500, S\u00e9n\u00e9gal",
+                        "latitude": "14.679869199999999",
+                        "longitude": "-17.46203386829936",
+                        "postcode": "10500",
+                        "region": "R\u00e9gion de Dakar",
+                        "road": "FN-48",
+                        "suburb": "Commune de Fann-Point E-Amiti\u00e9",
+                        "village": "",
+                        "website": ""
+                    },
+                    {
+                        "ISO3166-2-lvl4": "SN-DK",
+                        "address": "Rue Aim\u00e9 C\u00e9saire, Dakar, S\u00e9n\u00e9gal",
+                        "amenity": "Hopital de Fann",
+                        "country_code": "sn",
+                        "county": "",
+                        "display_name": "Hopital de Fann, Rue Aim\u00e9 C\u00e9saire, Point E, Commune de Fann-Point E-Amiti\u00e9, Arrondissement de Dakar-Plateau, Dakar, R\u00e9gion de Dakar, 10700, S\u00e9n\u00e9gal",
+                        "latitude": "14.6932321",
+                        "longitude": "-17.46654607415244",
+                        "postcode": "10700",
+                        "region": "R\u00e9gion de Dakar",
+                        "road": "Rue Aim\u00e9 C\u00e9saire",
+                        "suburb": "Commune de Fann-Point E-Amiti\u00e9",
+                        "village": "",
+                        "website": ""
+                    },
+                    {
+                        "ISO3166-2-lvl4": "SN-DK",
+                        "address": "Rue Mouss\u00e9 Diop, Dakar, S\u00e9n\u00e9gal",
+                        "amenity": "Centre medico-social de la fonction publique",
+                        "country_code": "sn",
+                        "county": "",
+                        "display_name": "Centre medico-social de la fonction publique, Rue Mouss\u00e9 Diop, Commune de Dakar-Plateau, Arrondissement de Dakar-Plateau, Dakar, R\u00e9gion de Dakar, 99900, S\u00e9n\u00e9gal",
+                        "latitude": "14.665693749999999",
+                        "longitude": "-17.43481028477472",
+                        "postcode": "99900",
+                        "region": "R\u00e9gion de Dakar",
+                        "road": "Rue Mouss\u00e9 Diop",
+                        "suburb": "Commune de Dakar-Plateau",
+                        "village": "",
+                        "website": ""
+                    },
+                    {
+                        "ISO3166-2-lvl4": "SN-DK",
+                        "address": "Route de la Corniche Est, Dakar, S\u00e9n\u00e9gal",
+                        "amenity": "H\u00f4pital Aristide Le Dantec",
+                        "country_code": "sn",
+                        "county": "",
+                        "display_name": "H\u00f4pital Aristide Le Dantec, Route de la Corniche Est, Commune de Dakar-Plateau, Arrondissement de Dakar-Plateau, Dakar, R\u00e9gion de Dakar, 99900, S\u00e9n\u00e9gal",
+                        "latitude": "14.657246449999999",
+                        "longitude": "-17.43666351052356",
+                        "postcode": "99900",
+                        "region": "R\u00e9gion de Dakar",
+                        "road": "Route de la Corniche Est",
+                        "suburb": "Commune de Dakar-Plateau",
+                        "village": "",
+                        "website": ""
+                    },
+                    {
+                        "ISO3166-2-lvl4": "SN-DK",
+                        "address": "Rue GD-29, Dakar, S\u00e9n\u00e9gal",
+                        "amenity": "Centre de sant\u00e9 de Grand Dakar",
+                        "country_code": "sn",
+                        "county": "",
+                        "display_name": "Centre de sant\u00e9 de Grand Dakar, Rue GD-29, Commune de Grand-Dakar, Arrondissement de Grand Dakar, Dakar, R\u00e9gion de Dakar, 13000, S\u00e9n\u00e9gal",
+                        "latitude": "14.705957000000001",
+                        "longitude": "-17.453948930403243",
+                        "postcode": "13000",
+                        "region": "R\u00e9gion de Dakar",
+                        "road": "Rue GD-29",
+                        "suburb": "Commune de Grand-Dakar",
+                        "village": "",
+                        "website": ""
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Geocode",
+            "url": "https://senegal-api.p.rapidapi.com/geofy",
+            "description": "This endpoint allows you to lookup locations in Senegal by providing an address query parameter. It returns the latitude, longitude and city name of the location.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "address",
+                    "type": "STRING",
+                    "description": "he name of the location to look up.",
+                    "default": "Dakar"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://senegal-api.p.rapidapi.com/geofy\"\nquerystring = {\"address\": \"Dakar\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"senegal-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://senegal-api.p.rapidapi.com/geofy\"\nquerystring = {\"address\": \"Dakar\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"senegal-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "display_name": "Dakar, R\u00e9gion de Dakar, S\u00e9n\u00e9gal",
+                "latitude": "14.693425",
+                "longitude": "-17.447938"
+            }
+        }
+    ],
+    "standardized_name": "senegal_api"
+}

@@ -1,0 +1,58 @@
+{
+    "product_id": "api_9a738e15-cb88-4ccd-ac39-66a9fbcd9e3f",
+    "tool_description": "Enter coordinates (latitude, longitude) to look up the location info within the US. From our vast database, simply provide the desired coordinates and we will send back the city info you need",
+    "home_url": "https://rapidapi.com/evlar-evlar-default/api/reverse-geocode-locator-u-s/",
+    "name": "Reverse Geocode Locator (U.S)",
+    "title": "Reverse Geocode Locator (U.S)",
+    "pricing": "FREEMIUM",
+    "tool_name": "Reverse Geocode Locator (U.S)",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 3094,
+        "avgSuccessRate": 100,
+        "popularityScore": 5.5,
+        "__typename": "Score"
+    },
+    "host": "reverse-geocode-locator-u-s.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Lookup Coordinates",
+            "url": "https://reverse-geocode-locator-u-s.p.rapidapi.com/v1/geocode",
+            "description": "Convert US latitude and longitude coordinates into local city information",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "lat",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "40.785091"
+                },
+                {
+                    "name": "long",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "-73.968285"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://reverse-geocode-locator-u-s.p.rapidapi.com/v1/geocode\"\nquerystring = {\"lat\": \"40.785091\", \"long\": \"-73.968285\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"reverse-geocode-locator-u-s.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://reverse-geocode-locator-u-s.p.rapidapi.com/v1/geocode\"\nquerystring = {\"lat\": \"40.785091\", \"long\": \"-73.968285\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"reverse-geocode-locator-u-s.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "status": "ok",
+                "timestamp": 1686922917437,
+                "data": {
+                    "zipcode": "10024",
+                    "state_abbr": "NY",
+                    "latitude": "40.786387",
+                    "longitude": "-73.97709",
+                    "city": "New York",
+                    "state": "New York",
+                    "distance": 0.755188609784236
+                }
+            },
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "reverse_geocode_locator_u_s"
+}

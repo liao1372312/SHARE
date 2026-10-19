@@ -1,0 +1,235 @@
+{
+    "product_id": "api_2c7567cb-c848-44e7-a8ac-731ae52bcf50",
+    "tool_description": "An API for testing endpoints at custom intervals with email notifications and previous result comparison",
+    "home_url": "https://rapidapi.com/awittman/api/endpoint-monitor-tool1/",
+    "name": "Endpoint Monitor Tool",
+    "title": "Endpoint Monitor Tool",
+    "pricing": "FREEMIUM",
+    "tool_name": "Endpoint Monitor Tool",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 1949,
+        "avgSuccessRate": 53,
+        "popularityScore": 7.7,
+        "__typename": "Score"
+    },
+    "host": "endpoint-monitor-tool1.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "GetUser",
+            "url": "https://endpoint-monitor-tool1.p.rapidapi.com/GetUser",
+            "description": "Gets and returns the current user data from the associated userId.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "userId",
+                    "type": "STRING",
+                    "description": "The Id of the user",
+                    "default": ""
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://endpoint-monitor-tool1.p.rapidapi.com/GetUser\"\nquerystring = {\"userId\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"endpoint-monitor-tool1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://endpoint-monitor-tool1.p.rapidapi.com/GetUser\"\nquerystring = {\"userId\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"endpoint-monitor-tool1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "businessName": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        {
+            "name": "RemoveEndpointData",
+            "url": "https://endpoint-monitor-tool1.p.rapidapi.com/RemoveEndpointData",
+            "description": "Remove an endpoint from you user account by Id.\n\n(KNOWN ISSUE with RAPIDAPI)\nSuccessfully deleting an enpoint will result with a 200, however it MAY provide an ERROR stating \"src property must be a valid json object\". This is an issue with RAPIDAPI and not our API.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "endpointId",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "userId",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://endpoint-monitor-tool1.p.rapidapi.com/RemoveEndpointData\"\nquerystring = {\"endpointId\": \"\", \"userId\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"endpoint-monitor-tool1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://endpoint-monitor-tool1.p.rapidapi.com/RemoveEndpointData\"\nquerystring = {\"endpointId\": \"\", \"userId\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"endpoint-monitor-tool1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "GetEndpointData",
+            "url": "https://endpoint-monitor-tool1.p.rapidapi.com/GetEndpointData",
+            "description": "This Endpoint retrieves the endpoint data from the specified UserId and EndpointId.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "UserId",
+                    "type": "STRING",
+                    "description": "The Id of the user",
+                    "default": ""
+                },
+                {
+                    "name": "EndpointId",
+                    "type": "STRING",
+                    "description": "The Id of the endpoint requested",
+                    "default": ""
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://endpoint-monitor-tool1.p.rapidapi.com/GetEndpointData\"\nquerystring = {\"UserId\": \"\", \"EndpointId\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"endpoint-monitor-tool1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://endpoint-monitor-tool1.p.rapidapi.com/GetEndpointData\"\nquerystring = {\"UserId\": \"\", \"EndpointId\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"endpoint-monitor-tool1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "apiId": {
+                        "format": "int32",
+                        "type": "integer",
+                        "minimum": -2147483648,
+                        "maximum": 2147483647
+                    },
+                    "apiUrl": {
+                        "type": "string"
+                    },
+                    "apiNickName": {
+                        "type": "string"
+                    },
+                    "mostRecentResult": {
+                        "type": "object",
+                        "properties": {
+                            "runId": {
+                                "format": "int32",
+                                "type": "integer",
+                                "minimum": -2147483648,
+                                "maximum": 2147483647
+                            },
+                            "statusResult": {
+                                "type": "string"
+                            },
+                            "results": {
+                                "type": "string"
+                            },
+                            "dateAndTime": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "active": {
+                        "type": "boolean"
+                    },
+                    "lastUpdated": {
+                        "format": "date-time",
+                        "type": "string"
+                    },
+                    "cronString": {
+                        "type": "string"
+                    },
+                    "emailOnSuccess": {
+                        "type": "boolean"
+                    },
+                    "emailOnError": {
+                        "type": "boolean"
+                    },
+                    "emailForNotifications": {
+                        "type": "string"
+                    },
+                    "redirectSuccess": {
+                        "type": "boolean"
+                    },
+                    "timeoutLength": {
+                        "format": "int32",
+                        "type": "integer",
+                        "minimum": -2147483648,
+                        "maximum": 2147483647
+                    },
+                    "postBody": {
+                        "type": "string"
+                    },
+                    "saveResponses": {
+                        "type": "boolean"
+                    },
+                    "requestMethod": {
+                        "format": "int32",
+                        "default": 0,
+                        "enum": [
+                            0,
+                            1,
+                            2,
+                            3,
+                            4
+                        ],
+                        "type": "integer",
+                        "minimum": -2147483648,
+                        "maximum": 2147483647
+                    },
+                    "timeZone": {
+                        "type": "string"
+                    },
+                    "jobAuth": {
+                        "type": "object",
+                        "properties": {
+                            "enable": {
+                                "type": "boolean"
+                            },
+                            "claims": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "claimName": {
+                                            "type": "string"
+                                        },
+                                        "claimValue": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "results": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "runId": {
+                                    "format": "int32",
+                                    "type": "integer",
+                                    "minimum": -2147483648,
+                                    "maximum": 2147483647
+                                },
+                                "statusResult": {
+                                    "type": "string"
+                                },
+                                "results": {
+                                    "type": "string"
+                                },
+                                "dateAndTime": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "standardized_name": "endpoint_monitor_tool"
+}

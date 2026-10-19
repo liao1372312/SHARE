@@ -1,0 +1,216 @@
+{
+    "product_id": "api_8c66cff5-a689-419c-a1d8-11975ffc601e",
+    "tool_description": "Rivet SMS API offers programmable SMS APIs, so you can get maximum value from your messages. Use our APIs to send single, bulk messages , schedule broadcasts, configure/ triggers messages and much more.",
+    "home_url": "https://rapidapi.com/rivetsolutionsfze/api/rivet-sms/",
+    "name": "Rivet SMS",
+    "title": "Rivet SMS",
+    "pricing": "FREE",
+    "tool_name": "Rivet SMS",
+    "score": {
+        "avgServiceLevel": 83,
+        "avgLatency": 488,
+        "avgSuccessRate": 67,
+        "popularityScore": 8.1,
+        "__typename": "Score"
+    },
+    "host": "rivet-sms.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Sent Message Status",
+            "url": "https://rivet-sms.p.rapidapi.com/MessageStatus",
+            "description": "Get the sent message status of the message using the message id.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "ClientId",
+                    "type": "STRING",
+                    "description": "Use Rivet SMS API client Id(You can get it from https://app.rivet.solutions/ApiDocument/ApiDocs#)",
+                    "default": "client id"
+                },
+                {
+                    "name": "ApiKey",
+                    "type": "STRING",
+                    "description": "Use Rivet SMS API API key (You can get it from https://app.rivet.solutions/ApiDocument/ApiDocs#)",
+                    "default": "api key"
+                },
+                {
+                    "name": "MessageId",
+                    "type": "STRING",
+                    "description": "Id of the message for which you need its status.",
+                    "default": "message id"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://rivet-sms.p.rapidapi.com/MessageStatus\"\nquerystring = {\"ClientId\": \"client id\", \"ApiKey\": \"api key\", \"MessageId\": \"message id\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"rivet-sms.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://rivet-sms.p.rapidapi.com/MessageStatus\"\nquerystring = {\"ClientId\": \"client id\", \"ApiKey\": \"api key\", \"MessageId\": \"message id\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"rivet-sms.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "ErrorCode": 7,
+                "ErrorDescription": "Invalid ApiCredentials",
+                "Data": null
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Get Sender ID",
+            "url": "https://rivet-sms.p.rapidapi.com/SenderId",
+            "description": "Get the list of all Sender ID that are registered for your account to send SMS.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "ClientId",
+                    "type": "STRING",
+                    "description": "You can get the Client ID at https://app.rivet.solutions/ApiDocument/ApiDocs, once your account is created.",
+                    "default": "clientid"
+                },
+                {
+                    "name": "ApiKey",
+                    "type": "STRING",
+                    "description": "You can get the API key at https://app.rivet.solutions/ApiDocument/ApiDocs, once your account is created.",
+                    "default": "apikey"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://rivet-sms.p.rapidapi.com/SenderId\"\nquerystring = {\"ClientId\": \"clientid\", \"ApiKey\": \"apikey\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"rivet-sms.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://rivet-sms.p.rapidapi.com/SenderId\"\nquerystring = {\"ClientId\": \"clientid\", \"ApiKey\": \"apikey\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"rivet-sms.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "ErrorCode": 7,
+                "ErrorDescription": "Invalid ApiCredentials",
+                "Data": null
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Bulk SMS",
+            "url": "https://rivet-sms.p.rapidapi.com/SendBulkSMS",
+            "description": "Send bulk sms  to multiple numbers .",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "SenderId",
+                    "type": "STRING",
+                    "description": "Registered sender ID.",
+                    "default": "sender id"
+                },
+                {
+                    "name": "MobileNumber_Message",
+                    "type": "STRING",
+                    "description": "sample: 9138764782364^message1~91344873637^message2~916846465464^message3",
+                    "default": "mobilenumber_message"
+                },
+                {
+                    "name": "ApiKey",
+                    "type": "STRING",
+                    "description": "Use Rivet SMS API API key (You can get it from https://app.rivet.solutions/ApiDocument/ApiDocs#)",
+                    "default": "api key"
+                },
+                {
+                    "name": "ClientId",
+                    "type": "STRING",
+                    "description": "Use Rivet SMS API client Id(You can get it from https://app.rivet.solutions/ApiDocument/ApiDocs#)",
+                    "default": "client id"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "Is_Flash",
+                    "type": "STRING",
+                    "description": "Is_Flash is true or false for flash message",
+                    "default": ""
+                },
+                {
+                    "name": "ScheduleTime",
+                    "type": "STRING",
+                    "description": "Date in yyyy-MM-dd HH:MM (only for schedule message)",
+                    "default": ""
+                },
+                {
+                    "name": "Is_Unicode",
+                    "type": "STRING",
+                    "description": "Is_Unicode is true ,if the message is unicode message else  false for non-unicode message",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://rivet-sms.p.rapidapi.com/SendBulkSMS\"\nquerystring = {\"Is_Flash\": \"\", \"ScheduleTime\": \"\", \"Is_Unicode\": \"\", \"SenderId\": \"sender id\", \"MobileNumber_Message\": \"mobilenumber_message\", \"ApiKey\": \"api key\", \"ClientId\": \"client id\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"rivet-sms.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://rivet-sms.p.rapidapi.com/SendBulkSMS\"\nquerystring = {\"Is_Flash\": \"\", \"ScheduleTime\": \"\", \"Is_Unicode\": \"\", \"SenderId\": \"sender id\", \"MobileNumber_Message\": \"mobilenumber_message\", \"ApiKey\": \"api key\", \"ClientId\": \"client id\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"rivet-sms.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "ErrorCode": 20,
+                "ErrorDescription": "Message or mobile number cannot be blank",
+                "Data": null
+            }
+        },
+        {
+            "name": "SendSMS",
+            "url": "https://rivet-sms.p.rapidapi.com/SendSMS/",
+            "description": "Send single messages",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "SenderId",
+                    "type": "STRING",
+                    "description": "Use  Rivet SMS  sender ID that is assigned to you (You can get it from https://app.rivet.solutions/Management/ManageSenderID)",
+                    "default": "sender id"
+                },
+                {
+                    "name": "ClientId",
+                    "type": "STRING",
+                    "description": "Use  Rivet SMS API client ID (You can get it from https://app.rivet.solutions/ApiDocument/ApiDocs#)",
+                    "default": "client id"
+                },
+                {
+                    "name": "MobileNumbers",
+                    "type": "STRING",
+                    "description": "Recipient number \u2013  numbers in format - 971 223344566(please enter mobile number with country code, without preceding 00 or +). Multiple recipients can be specified separated by commas.",
+                    "default": "971009900990"
+                },
+                {
+                    "name": "Message",
+                    "type": "STRING",
+                    "description": "Write the content of your SMS ",
+                    "default": "your message"
+                },
+                {
+                    "name": "ApiKey",
+                    "type": "STRING",
+                    "description": "Use  Rivet SMS API API key (You can get it from https://app.rivet.solutions/ApiDocument/ApiDocs#)",
+                    "default": "api key"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "Is_Unicode",
+                    "type": "BOOLEAN",
+                    "description": "Boolean value : Is_Unicode is true for unicode message else false.",
+                    "default": ""
+                },
+                {
+                    "name": "ScheduleTime",
+                    "type": "STRING",
+                    "description": "Date in yyyy-MM-dd HH:MM (only for schedule message)",
+                    "default": ""
+                },
+                {
+                    "name": "GroupId",
+                    "type": "STRING",
+                    "description": "Valid group-id of current user (only for group message otherwise leave empty string)",
+                    "default": ""
+                },
+                {
+                    "name": "Is_Flash",
+                    "type": "BOOLEAN",
+                    "description": "Boolean value: True if flash message else false.",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://rivet-sms.p.rapidapi.com/SendSMS/\"\nquerystring = {\"SenderId\": \"sender id\", \"Is_Unicode\": \"\", \"ScheduleTime\": \"\", \"GroupId\": \"\", \"Is_Flash\": \"\", \"ClientId\": \"client id\", \"MobileNumbers\": \"971009900990\", \"Message\": \"your message\", \"ApiKey\": \"api key\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"rivet-sms.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://rivet-sms.p.rapidapi.com/SendSMS/\"\nquerystring = {\"SenderId\": \"sender id\", \"Is_Unicode\": \"\", \"ScheduleTime\": \"\", \"GroupId\": \"\", \"Is_Flash\": \"\", \"ClientId\": \"client id\", \"MobileNumbers\": \"971009900990\", \"Message\": \"your message\", \"ApiKey\": \"api key\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"rivet-sms.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "ErrorCode": 7,
+                "ErrorDescription": "Invalid ApiCredentials",
+                "Data": ""
+            }
+        }
+    ],
+    "standardized_name": "rivet_sms"
+}

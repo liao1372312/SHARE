@@ -1,0 +1,1134 @@
+{
+    "product_id": "api_b7f1c164-5916-45cb-8b55-332d9023f4cd",
+    "tool_description": "Connect with 40 + eCommerce solutions in just one API, and start making requests in under 15 min. Integrations inlcude Wix, Shopify, Amazon, Mercado Libre, Unicommerce, SAP Commerce and more. https://docs.ecartapi.com",
+    "home_url": "https://rapidapi.com/ecartapi-ecartapi-default/api/ecartapi1/",
+    "name": "EcartAPI",
+    "title": "EcartAPI",
+    "pricing": "PAID",
+    "tool_name": "EcartAPI",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 524,
+        "avgSuccessRate": 0,
+        "popularityScore": 0.2,
+        "__typename": "Score"
+    },
+    "host": "ecartapi1.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Getasinglecustomer",
+            "url": "https://ecartapi1.p.rapidapi.com/api/v2/customers/id",
+            "description": "<p>Searches for the selected customer and shows detailed information.<br></p>\n<b>Important information:<br><b/>\n\t<b><ul>\n\t<li><a href = \"https://docs.ecartapi.com/?version=latest#222f52a0-58f0-4cd9-bd11-68eb488a010b\"> The costumer's ID must exist</a></li>\n\t</ul></b>",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "id",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "id"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://ecartapi1.p.rapidapi.com/api/v2/customers/id\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ecartapi1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ecartapi1.p.rapidapi.com/api/v2/customers/{id}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ecartapi1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You are not subscribed to this API."
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Getallproductvariants",
+            "url": "https://ecartapi1.p.rapidapi.com/api/v2/products/productId/variants",
+            "description": "<p>Searches for all the registered variants of a single product.<br></p>\n\n<b>Important information:<br><b/>\n\t<b><ul>\n\t<li><a href = \"https://docs.ecartapi.com/?version=latest#6870b009-81d8-42c6-b910-3aaca8e5d0f2\"> The product's ID must exist</a></li>\n\t</ul></b>\n\n<h3>FILTERS </h3>\n<table>\n\t<thead>\n\t\t<tr>\n\t\t\t<td>Filter</td>\n\t\t\t<td>Description</td>\n\t\t</tr>\n\t</thead>\n\t<tbody>\n\t\t<tr>\n\t\t\t<td><code>limit</code></td>\n\t\t\t<td>Limit size of the search.</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td><code>page</code></td>\n\t\t\t<td>Pagination number.</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td><code>sinceId</code></td>\n\t\t\t<td>Filter items since the Id given.</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td><code>offset</code></td>\n\t\t\t<td>Lower limit of the results block. Modifies the range of the results provided, range goes from offset to limit.</td>\n\t\t</tr>\n\t</tbody>\n</table>",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "productId",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "productId"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://ecartapi1.p.rapidapi.com/api/v2/products/productId/variants\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ecartapi1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ecartapi1.p.rapidapi.com/api/v2/products/{productid}/variants\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ecartapi1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "statusCode": 401,
+                "error": "Unauthorized",
+                "message": "Missing authentication",
+                "ecartapiError": true
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Getsallorder'sfulfillments",
+            "url": "https://ecartapi1.p.rapidapi.com/api/v2/orders/orderId/fulfillments",
+            "description": "<p>Shows all of the order's fulfillments detailed.<br></p>\n<b>Important information:<br><b/>\n\t<b><ul>\n<li>Filters are subject to ecommerce.</li>\n\t<li><a href = \"https://docs.ecartapi.com/?version=latest#646f03ea-0962-4570-9a23-fa06320fc2e6\"> The order's ID must exist</a></li>\n\t</ul></b>",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "orderId",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "orderId"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "offset",
+                    "type": "STRING",
+                    "description": "Lower limit of the results block. Modifies the range of the results provided, range goes from offset to limit\n",
+                    "default": "Integer [ 1, 2, 3 ... ]"
+                },
+                {
+                    "name": "page",
+                    "type": "STRING",
+                    "description": "Pagination number or token (Only when page object is available in response)",
+                    "default": "[ token, 1 ]"
+                },
+                {
+                    "name": "limit",
+                    "type": "STRING",
+                    "description": "Limit size of the search",
+                    "default": "Integer [ 1, 100, 250 ]"
+                },
+                {
+                    "name": "sinceId",
+                    "type": "STRING",
+                    "description": "Filter items since the Id given",
+                    "default": "[ id ]"
+                },
+                {
+                    "name": "allStores",
+                    "type": "STRING",
+                    "description": "Search items in all stores. ONLY Shiphero.",
+                    "default": "[ true, false ]"
+                },
+                {
+                    "name": "createdAt[from]",
+                    "type": "STRING",
+                    "description": "Filter items by date created from. ",
+                    "default": "Date [ 2021-09-22T13:46:16-05:00 ]"
+                },
+                {
+                    "name": "createdAt[to]",
+                    "type": "STRING",
+                    "description": "Filter items by date created to.",
+                    "default": "Date [ 2021-09-22T13:46:16-05:00 ]"
+                },
+                {
+                    "name": "updatedAt[to]",
+                    "type": "STRING",
+                    "description": "Filter items by date updated to. ",
+                    "default": "Date [ 2021-09-22T13:46:16-05:00 ]"
+                },
+                {
+                    "name": "updatedAt[from]",
+                    "type": "STRING",
+                    "description": "Filter items by date updated from. ",
+                    "default": "Date [ 2021-09-22T13:46:16-05:00 ]"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://ecartapi1.p.rapidapi.com/api/v2/orders/orderId/fulfillments\"\nquerystring = {\"offset\": \"Integer [ 1, 2, 3 ... ]\", \"page\": \"[ token, 1 ]\", \"limit\": \"Integer [ 1, 100, 250 ]\", \"sinceId\": \"[ id ]\", \"allStores\": \"[ true, false ]\", \"createdAt[from]\": \"Date [ 2021-09-22T13:46:16-05:00 ]\", \"createdAt[to]\": \"Date [ 2021-09-22T13:46:16-05:00 ]\", \"updatedAt[to]\": \"Date [ 2021-09-22T13:46:16-05:00 ]\", \"updatedAt[from]\": \"Date [ 2021-09-22T13:46:16-05:00 ]\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ecartapi1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ecartapi1.p.rapidapi.com/api/v2/orders/{orderid}/fulfillments\"\nquerystring = {\"offset\": \"Integer [ 1, 2, 3 ... ]\", \"page\": \"[ token, 1 ]\", \"limit\": \"Integer [ 1, 100, 250 ]\", \"sinceId\": \"[ id ]\", \"allStores\": \"[ true, false ]\", \"createdAt[from]\": \"Date [ 2021-09-22T13:46:16-05:00 ]\", \"createdAt[to]\": \"Date [ 2021-09-22T13:46:16-05:00 ]\", \"updatedAt[to]\": \"Date [ 2021-09-22T13:46:16-05:00 ]\", \"updatedAt[from]\": \"Date [ 2021-09-22T13:46:16-05:00 ]\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ecartapi1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "statusCode": 401,
+                "error": "Unauthorized",
+                "message": "Missing authentication",
+                "ecartapiError": true
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Getallcategories",
+            "url": "https://ecartapi1.p.rapidapi.com/api/v2/categories",
+            "description": "<p>Searches for all the available categories.<br></p>\n\n<h3>FILTERS</h3>\n<table>\n\t<thead>\n\t\t<tr>\n\t\t\t<td>Filter</td>\n\t\t\t<td>Description</td>\n\t\t</tr>\n\t</thead>\n\t<tbody>\n\t\t<tr>\n\t\t\t<td><code>ids</code></td>\n\t\t\t<td>Filter categories by the ids given</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td><code>limit</code></td>\n\t\t\t<td>Limit size of the search</td>\n\t\t</tr>\n<tr>\n\t\t\t<td><code>page</code></td>\n\t\t\t<td>Pagination number.</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td><code>sinceId</code></td>\n\t\t\t<td>Filter categories since the Id given</td>\n\t\t</tr>\n\t\t<tr>\n      \t\t<td><code>name</code></td>\n      \t\t<td>Filter categories by name</td>\n    \t</tr>\n\t\t<tr>\n\t\t\t<td><code>productId</code></td>\n\t\t\t<td>Filter categories by product id</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td><code>siteId</code></td>\n\t\t\t<td>Filter items by site id </td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td><code>offset</code></td>\n\t\t\t<td>Lower limit of the results block. Modifies the range of the results provided, range goes from offset to limit</td>\n\t\t</tr>\n\t</tbody>\n</table>",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "siteId",
+                    "type": "STRING",
+                    "description": "Filter results based of the site id.",
+                    "default": "String"
+                },
+                {
+                    "name": "limit",
+                    "type": "STRING",
+                    "description": "Default 50. Quantity of documents to be returned in the response.",
+                    "default": "Int"
+                },
+                {
+                    "name": "productId",
+                    "type": "STRING",
+                    "description": "Filter results based of products.",
+                    "default": "String"
+                },
+                {
+                    "name": "name",
+                    "type": "STRING",
+                    "description": "Filter results based of the category name.",
+                    "default": "String"
+                },
+                {
+                    "name": "sinceId",
+                    "type": "STRING",
+                    "description": "Filter results to be returned only after certain ID.",
+                    "default": "String"
+                },
+                {
+                    "name": "page",
+                    "type": "STRING",
+                    "description": "Allows iteration through the results.",
+                    "default": "String or number"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://ecartapi1.p.rapidapi.com/api/v2/categories\"\nquerystring = {\"siteId\": \"String\", \"limit\": \"Int\", \"productId\": \"String\", \"name\": \"String\", \"sinceId\": \"String\", \"page\": \"String or number\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ecartapi1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ecartapi1.p.rapidapi.com/api/v2/categories\"\nquerystring = {\"siteId\": \"String\", \"limit\": \"Int\", \"productId\": \"String\", \"name\": \"String\", \"sinceId\": \"String\", \"page\": \"String or number\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ecartapi1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "statusCode": 401,
+                "error": "Unauthorized",
+                "message": "Missing authentication",
+                "ecartapiError": true
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Countallproducts",
+            "url": "https://ecartapi1.p.rapidapi.com/api/v2/products/count",
+            "description": " ",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://ecartapi1.p.rapidapi.com/api/v2/products/count\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ecartapi1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ecartapi1.p.rapidapi.com/api/v2/products/count\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ecartapi1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "statusCode": 401,
+                "error": "Unauthorized",
+                "message": "Missing authentication",
+                "ecartapiError": true
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Getasingleproductimage",
+            "url": "https://ecartapi1.p.rapidapi.com/api/v2/products/productId/images/id",
+            "description": "<p>Searches for the selected image of a product.<br></p>\n\n<b>Important information:<br><b/>\n\t<b><ul>\n\t<li><a href = \"https://docs.ecartapi.com/?version=latest#6870b009-81d8-42c6-b910-3aaca8e5d0f2\"> The product's ID must exist</a></li>\n\t<li><a href= \"https://docs.ecartapi.com/?version=latest#ff23601f-006f-4680-a5be-4607ff6bbc34\">The product's image ID must exist.</a></li>\n\t</ul></b>",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "id",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "id"
+                },
+                {
+                    "name": "productId",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "productId"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://ecartapi1.p.rapidapi.com/api/v2/products/productId/images/id\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ecartapi1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ecartapi1.p.rapidapi.com/api/v2/products/{productid}/images/{id}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ecartapi1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "statusCode": 401,
+                "error": "Unauthorized",
+                "message": "Missing authentication",
+                "ecartapiError": true
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Allproductlistings",
+            "url": "https://ecartapi1.p.rapidapi.com/api/v2/products/listings",
+            "description": " ",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "limit",
+                    "type": "STRING",
+                    "description": "Default 50. Quantity of documents to be returned in the response.",
+                    "default": "Int. Min: 0, Max: Subject to ecommerce."
+                },
+                {
+                    "name": "createdAt[from]",
+                    "type": "STRING",
+                    "description": "Filter items by date of creation.",
+                    "default": "YYYY-MM-DD"
+                },
+                {
+                    "name": "page",
+                    "type": "STRING",
+                    "description": "Allows iteration through the results",
+                    "default": "Number or hash."
+                },
+                {
+                    "name": "createdAt[to]",
+                    "type": "STRING",
+                    "description": "Filter items between their creation date range. createdAt[from]Required",
+                    "default": "YYYY-MM-DD"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://ecartapi1.p.rapidapi.com/api/v2/products/listings\"\nquerystring = {\"limit\": \"Int. Min: 0, Max: Subject to ecommerce.\", \"createdAt[from]\": \"YYYY-MM-DD\", \"page\": \"Number or hash.\", \"createdAt[to]\": \"YYYY-MM-DD\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ecartapi1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ecartapi1.p.rapidapi.com/api/v2/products/listings\"\nquerystring = {\"limit\": \"Int. Min: 0, Max: Subject to ecommerce.\", \"createdAt[from]\": \"YYYY-MM-DD\", \"page\": \"Number or hash.\", \"createdAt[to]\": \"YYYY-MM-DD\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ecartapi1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "statusCode": 401,
+                "error": "Unauthorized",
+                "message": "Missing authentication",
+                "ecartapiError": true
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Getasingleorder",
+            "url": "https://ecartapi1.p.rapidapi.com/api/v2/orders/id",
+            "description": "<p>Searches for a selected order and shows the detailed information.<br></p>\n<b>Important information:<br><b/>\n\t<b><ul>\n\t<li><a href = \"https://docs.ecartapi.com/?version=latest#646f03ea-0962-4570-9a23-fa06320fc2e6\"> The order's ID must exist</a></li>\n\t</ul></b>",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "id",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "id"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://ecartapi1.p.rapidapi.com/api/v2/orders/id\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ecartapi1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ecartapi1.p.rapidapi.com/api/v2/orders/{id}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ecartapi1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "statusCode": 401,
+                "error": "Unauthorized",
+                "message": "Missing authentication",
+                "ecartapiError": true
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Getallcustomers",
+            "url": "https://ecartapi1.p.rapidapi.com/api/v2/customers",
+            "description": "<h3>FILTERS</h3>\n<table>\n\t<thead>\n\t\t<tr>\n\t\t\t<td>Filter</td>\n\t\t\t<td>Description</td>\n\t\t</tr>\n\t</thead>\n\t<tbody>\n\t\t<tr>\n\t\t\t<td><code>ids</code></td>\n\t\t\t<td>Filter cutomers by Id's provided</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td><code>limit</code></td>\n\t\t\t<td>Limit size of the search</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td><code>page</code></td>\n\t\t\t<td>Pagination number.</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td><code>sinceId</code></td>\n\t\t\t<td>Filter customers since the Id given</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td><code>createdAt[from]</code></td>\n\t\t\t<td>Filter customers by date created from. When used <code>createdAt[to]</code><i>Required</i></td>\n\t\t</tr>\n\t\t<tr>\n      \t\t<td><code>createdAt[to]</code></td>\n      \t\t<td>Filter customers by date created to. When used <code>createdAt[from]</code><i>Required</i></td>\n    \t</tr>\n\t\t<tr>\n\t\t\t<td><code>updatedAt[from]</code></td>\n\t\t\t<td>Filter customers by date updated from. When used <code>updatedAt[to]</code><i>Required</i></td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td><code>updatedAt[to]</code></td>\n\t\t\t<td>Filter customers by date updated to. When used <code>updatedAt[from]</code><i>Required</i></td>\n\t\t</tr>\n\t\t<tr>\n      \t\t<td><code>name</code></td>\n      \t\t<td>Filter categories by name</td>\n    \t</tr>\n\t\t<tr>\n      \t\t<td><code>search</code></td>\n      \t\t<td>Search by string</td>\n    \t</tr>\n\t\t<tr>\n      \t\t<td><code>email</code></td>\n      \t\t<td>Search customers by email</td>\n    \t</tr>\n\t\t<tr>\n\t\t\t<td><code>offset</code></td>\n\t\t\t<td>Lower limit of the results block.\n\t\t\t\tModifies the range of the results provided range goes from offset to limit</td>\n\t\t</tr>\n\t</tbody>\n</table>",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "email",
+                    "type": "STRING",
+                    "description": "Search based of email information.",
+                    "default": "String"
+                },
+                {
+                    "name": "updatedAt[to]",
+                    "type": "STRING",
+                    "description": "Filter results between a date range. updatedAt[from]Required",
+                    "default": "YYYY-MM-DD"
+                },
+                {
+                    "name": "name",
+                    "type": "STRING",
+                    "description": "Filter results based of the customers name.",
+                    "default": "String"
+                },
+                {
+                    "name": "ids",
+                    "type": "STRING",
+                    "description": "Returns the items inside of a list of ids separated by comas",
+                    "default": "String"
+                },
+                {
+                    "name": "page",
+                    "type": "STRING",
+                    "description": "Allows iteration through the results.",
+                    "default": "String or Number"
+                },
+                {
+                    "name": "createdAt[to]",
+                    "type": "STRING",
+                    "description": "Filter results between their creation date range. createdAt[from]Required",
+                    "default": "YYYY-MM-DD"
+                },
+                {
+                    "name": "limit",
+                    "type": "STRING",
+                    "description": "Default 50. Quantity of documents to be returned in the response.",
+                    "default": "Int"
+                },
+                {
+                    "name": "sinceId",
+                    "type": "STRING",
+                    "description": "Filter results to be returned only after certain ID.",
+                    "default": "String"
+                },
+                {
+                    "name": "updatedAt[from]",
+                    "type": "STRING",
+                    "description": "Filter results by date last update.",
+                    "default": "YYYY-MM-DD"
+                },
+                {
+                    "name": "createdAt[from]",
+                    "type": "STRING",
+                    "description": "Filter results by date of creation.",
+                    "default": "YYYY-MM-DD"
+                },
+                {
+                    "name": "search",
+                    "type": "STRING",
+                    "description": "General search on the resource.",
+                    "default": "String"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://ecartapi1.p.rapidapi.com/api/v2/customers\"\nquerystring = {\"email\": \"String\", \"updatedAt[to]\": \"YYYY-MM-DD\", \"name\": \"String\", \"ids\": \"String\", \"page\": \"String or Number\", \"createdAt[to]\": \"YYYY-MM-DD\", \"limit\": \"Int\", \"sinceId\": \"String\", \"updatedAt[from]\": \"YYYY-MM-DD\", \"createdAt[from]\": \"YYYY-MM-DD\", \"search\": \"String\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ecartapi1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ecartapi1.p.rapidapi.com/api/v2/customers\"\nquerystring = {\"email\": \"String\", \"updatedAt[to]\": \"YYYY-MM-DD\", \"name\": \"String\", \"ids\": \"String\", \"page\": \"String or Number\", \"createdAt[to]\": \"YYYY-MM-DD\", \"limit\": \"Int\", \"sinceId\": \"String\", \"updatedAt[from]\": \"YYYY-MM-DD\", \"createdAt[from]\": \"YYYY-MM-DD\", \"search\": \"String\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ecartapi1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "statusCode": 401,
+                "error": "Unauthorized",
+                "message": "Missing authentication",
+                "ecartapiError": true
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "GetAllOrderFulfillments",
+            "url": "https://ecartapi1.p.rapidapi.com/api/v2/orders/services/fulfillment",
+            "description": " ",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "status[status]",
+                    "type": "STRING",
+                    "description": "Filters by orders fulfillment status",
+                    "default": "fulfillment_requested/cancellation_requested"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://ecartapi1.p.rapidapi.com/api/v2/orders/services/fulfillment\"\nquerystring = {\"status[status]\": \"fulfillment_requested/cancellation_requested\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ecartapi1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ecartapi1.p.rapidapi.com/api/v2/orders/services/fulfillment\"\nquerystring = {\"status[status]\": \"fulfillment_requested/cancellation_requested\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ecartapi1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "statusCode": 401,
+                "error": "Unauthorized",
+                "message": "Missing authentication",
+                "ecartapiError": true
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Getallproducts",
+            "url": "https://ecartapi1.p.rapidapi.com/api/v2/products",
+            "description": "Request used to obtain all the products in a store catalog.\n\nFind a general representation of all the filters and information EcartAPI can abet.\n\n#### For more detailed information please refer to our Supported Requests By Cart folder and find the eCommerce of your choice.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "searchType",
+                    "type": "STRING",
+                    "description": "General search on the resource.",
+                    "default": "String"
+                },
+                {
+                    "name": "status[active]",
+                    "type": "STRING",
+                    "description": "Filter items by their inventory availability status.",
+                    "default": "Boolean."
+                },
+                {
+                    "name": "sinceId",
+                    "type": "STRING",
+                    "description": "Filter results to be returned only after certain ID.",
+                    "default": "String."
+                },
+                {
+                    "name": "createdAt[to]",
+                    "type": "STRING",
+                    "description": "Filter items between their creation date range. createdAt[from]Required",
+                    "default": "YYYY-MM-DD"
+                },
+                {
+                    "name": "price[min]",
+                    "type": "STRING",
+                    "description": "Filter items based on the minimum price.",
+                    "default": "Number."
+                },
+                {
+                    "name": "price[max]",
+                    "type": "STRING",
+                    "description": "Filter items based on the max price.",
+                    "default": "Number"
+                },
+                {
+                    "name": "createdAt[from]",
+                    "type": "STRING",
+                    "description": "Filter items by date of creation.",
+                    "default": "YYYY-MM-DD"
+                },
+                {
+                    "name": "productType",
+                    "type": "STRING",
+                    "description": "Filter results based of the product's type.",
+                    "default": "String."
+                },
+                {
+                    "name": "sku",
+                    "type": "STRING",
+                    "description": "Filter results by sku.",
+                    "default": "String."
+                },
+                {
+                    "name": "sort",
+                    "type": "STRING",
+                    "description": "Default desc. Order of the results returned.",
+                    "default": "String. [ asc, desc ]"
+                },
+                {
+                    "name": "ids",
+                    "type": "STRING",
+                    "description": "Send a list of id's separated by commas.",
+                    "default": "String."
+                },
+                {
+                    "name": "status[status]",
+                    "type": "STRING",
+                    "description": "Filter items by the current status of the product.",
+                    "default": "String"
+                },
+                {
+                    "name": "name",
+                    "type": "STRING",
+                    "description": "Filter results based of the item's name.",
+                    "default": "String."
+                },
+                {
+                    "name": "categoryId",
+                    "type": "STRING",
+                    "description": "Filter results based of the category they are in.",
+                    "default": "String."
+                },
+                {
+                    "name": "status[visibility]",
+                    "type": "STRING",
+                    "description": "Filter items by their visibility status.",
+                    "default": "Boolean."
+                },
+                {
+                    "name": "updatedAt[to]",
+                    "type": "STRING",
+                    "description": "Filter items between a date range. updatedAt[from]Required",
+                    "default": "YYYY-MM-DD"
+                },
+                {
+                    "name": "page",
+                    "type": "STRING",
+                    "description": "Allows iteration through the results",
+                    "default": "String or Number."
+                },
+                {
+                    "name": "sortBy",
+                    "type": "STRING",
+                    "description": "Default createdAt. The response will be sorted based on the key chosen.",
+                    "default": "String."
+                },
+                {
+                    "name": "limit",
+                    "type": "STRING",
+                    "description": "Default 50. Quantity of documents to be returned in the response.",
+                    "default": "String. Min: 0 Max: Subject to ecommerce."
+                },
+                {
+                    "name": "updatedAt[from]",
+                    "type": "STRING",
+                    "description": "Filter items by date last update.",
+                    "default": "YYYY-MM-DD"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://ecartapi1.p.rapidapi.com/api/v2/products\"\nquerystring = {\"searchType\": \"String\", \"status[active]\": \"Boolean.\", \"sinceId\": \"String.\", \"createdAt[to]\": \"YYYY-MM-DD\", \"price[min]\": \"Number.\", \"price[max]\": \"Number\", \"createdAt[from]\": \"YYYY-MM-DD\", \"productType\": \"String.\", \"sku\": \"String.\", \"sort\": \"String. [ asc, desc ]\", \"ids\": \"String.\", \"status[status]\": \"String\", \"name\": \"String.\", \"categoryId\": \"String.\", \"status[visibility]\": \"Boolean.\", \"updatedAt[to]\": \"YYYY-MM-DD\", \"page\": \"String or Number.\", \"sortBy\": \"String.\", \"limit\": \"String. Min: 0 Max: Subject to ecommerce.\", \"updatedAt[from]\": \"YYYY-MM-DD\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ecartapi1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ecartapi1.p.rapidapi.com/api/v2/products\"\nquerystring = {\"searchType\": \"String\", \"status[active]\": \"Boolean.\", \"sinceId\": \"String.\", \"createdAt[to]\": \"YYYY-MM-DD\", \"price[min]\": \"Number.\", \"price[max]\": \"Number\", \"createdAt[from]\": \"YYYY-MM-DD\", \"productType\": \"String.\", \"sku\": \"String.\", \"sort\": \"String. [ asc, desc ]\", \"ids\": \"String.\", \"status[status]\": \"String\", \"name\": \"String.\", \"categoryId\": \"String.\", \"status[visibility]\": \"Boolean.\", \"updatedAt[to]\": \"YYYY-MM-DD\", \"page\": \"String or Number.\", \"sortBy\": \"String.\", \"limit\": \"String. Min: 0 Max: Subject to ecommerce.\", \"updatedAt[from]\": \"YYYY-MM-DD\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ecartapi1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "statusCode": 401,
+                "error": "Unauthorized",
+                "message": "Missing authentication",
+                "ecartapiError": true
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Getasingleproduct",
+            "url": "https://ecartapi1.p.rapidapi.com/api/v2/products/id",
+            "description": "<p>Searches for a selected product and shows the detailed information.<br></p>\n<b>Important information:<br><b/>\n\t<b><ul>\n\t<li><a href = \"https://docs.ecartapi.com/?version=latest#6870b009-81d8-42c6-b910-3aaca8e5d0f2\"> The product's ID must exist</a></li>\n\t</ul></b>",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "id",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "id"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://ecartapi1.p.rapidapi.com/api/v2/products/id\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ecartapi1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ecartapi1.p.rapidapi.com/api/v2/products/{id}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ecartapi1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "statusCode": 401,
+                "error": "Unauthorized",
+                "message": "Missing authentication",
+                "ecartapiError": true
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Countallcostumers",
+            "url": "https://ecartapi1.p.rapidapi.com/api/v2/customers/count",
+            "description": " ",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://ecartapi1.p.rapidapi.com/api/v2/customers/count\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ecartapi1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ecartapi1.p.rapidapi.com/api/v2/customers/count\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ecartapi1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "statusCode": 401,
+                "error": "Unauthorized",
+                "message": "Missing authentication",
+                "ecartapiError": true
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Countallproductvariants",
+            "url": "https://ecartapi1.p.rapidapi.com/api/v2/products/productId/variants/count",
+            "description": "<p>Counts all the registered variants of a single product.<br></p>\n\n<b>Important information:<br><b/>\n\t<b><ul>\n\t<li><a href = \"https://docs.ecartapi.com/?version=latest#6870b009-81d8-42c6-b910-3aaca8e5d0f2\"> The product's ID must exist</a></li>\n\t</ul></b>",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "productId",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "productId"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://ecartapi1.p.rapidapi.com/api/v2/products/productId/variants/count\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ecartapi1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ecartapi1.p.rapidapi.com/api/v2/products/{productid}/variants/count\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ecartapi1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "statusCode": 401,
+                "error": "Unauthorized",
+                "message": "Missing authentication",
+                "ecartapiError": true
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Getsingleproductvariant",
+            "url": "https://ecartapi1.p.rapidapi.com/api/v2/products/productId/variants/id",
+            "description": "<p>Searches for the selected variant and shows the detailed information.<br></p>\n\n<b>Important information:<br><b/>\n\t<b><ul>\n\t<li><a href = \"https://docs.ecartapi.com/?version=latest#6870b009-81d8-42c6-b910-3aaca8e5d0f2\"> The product's ID must exist</a></li>\n\t<li><a href = \"https://docs.ecartapi.com/?version=latest#5e6aa8c0-1d39-4a0e-8d8c-a2f2d294528a\"> The product's variant ID must exist.</a></li>\n\t</ul></b>",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "id",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "id"
+                },
+                {
+                    "name": "productId",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "productId"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://ecartapi1.p.rapidapi.com/api/v2/products/productId/variants/id\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ecartapi1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ecartapi1.p.rapidapi.com/api/v2/products/{productid}/variants/{id}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ecartapi1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "statusCode": 401,
+                "error": "Unauthorized",
+                "message": "Missing authentication",
+                "ecartapiError": true
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Getcarrierservices",
+            "url": "https://ecartapi1.p.rapidapi.com/api/v2/services/carriers",
+            "description": " ",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://ecartapi1.p.rapidapi.com/api/v2/services/carriers\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ecartapi1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ecartapi1.p.rapidapi.com/api/v2/services/carriers\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ecartapi1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "statusCode": 401,
+                "error": "Unauthorized",
+                "message": "Missing authentication",
+                "ecartapiError": true
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Getallproduct'simages",
+            "url": "https://ecartapi1.p.rapidapi.com/api/v2/products/productId/images",
+            "description": "<p>Searches for all the images of a single product.<br></p>\n\n<b>Important information:<br><b/>\n\t<b><ul>\n\t<li><a href = \"https://docs.ecartapi.com/?version=latest#6870b009-81d8-42c6-b910-3aaca8e5d0f2\"> The product's ID must exist</a></li>\n\t</ul></b>\n\t\n<h3>FILTERS</h3>\n<table>\n\t<thead>\n\t\t<tr>\n\t\t\t<td>Filter</td>\n\t\t\t<td>Description</td>\n\t\t</tr>\n\t</thead>\n\t<tbody>\n<tr>\n\t\t\t<td><code>sinceId</code></td>\n\t\t\t<td>Filter items since the Id given</td>\n\t\t</tr>\n</tbody>\n</table>",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "productId",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "productId"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://ecartapi1.p.rapidapi.com/api/v2/products/productId/images\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ecartapi1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ecartapi1.p.rapidapi.com/api/v2/products/{productid}/images\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ecartapi1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "statusCode": 401,
+                "error": "Unauthorized",
+                "message": "Missing authentication",
+                "ecartapiError": true
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Getsasingleorderfulfillment",
+            "url": "https://ecartapi1.p.rapidapi.com/api/v2/orders/orderId/fulfillments/id",
+            "description": "<p>Shows a selected order fulfillment with detail.<br></p>\n<b>Important information:<br><b/>\n\t<b><ul>\n\t<li><a href = \"https://docs.ecartapi.com/?version=latest#646f03ea-0962-4570-9a23-fa06320fc2e6\"> The order's ID must exist</a></li>\n\t<li><a href = \"https://docs.ecartapi.com/?version=latest#043a96c7-cf6d-4dd7-8f3e-76dba5a8a2d1\"> The fulfillment order's ID must exist</a></li>\n\t</ul></b>",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "orderId",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "orderId"
+                },
+                {
+                    "name": "id",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "id"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://ecartapi1.p.rapidapi.com/api/v2/orders/orderId/fulfillments/id\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ecartapi1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ecartapi1.p.rapidapi.com/api/v2/orders/{orderid}/fulfillments/{id}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ecartapi1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "statusCode": 401,
+                "error": "Unauthorized",
+                "message": "Missing authentication",
+                "ecartapiError": true
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Countallcategories",
+            "url": "https://ecartapi1.p.rapidapi.com/api/v2/categories/count",
+            "description": " ",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://ecartapi1.p.rapidapi.com/api/v2/categories/count\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ecartapi1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ecartapi1.p.rapidapi.com/api/v2/categories/count\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ecartapi1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "statusCode": 401,
+                "error": "Unauthorized",
+                "message": "Missing authentication",
+                "ecartapiError": true
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Getsinglecarrierservices",
+            "url": "https://ecartapi1.p.rapidapi.com/api/v1/services/carriers/id",
+            "description": " ",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "id",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "id"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://ecartapi1.p.rapidapi.com/api/v1/services/carriers/id\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ecartapi1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ecartapi1.p.rapidapi.com/api/v1/services/carriers/{id}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ecartapi1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "statusCode": 401,
+                "error": "Unauthorized",
+                "message": "Missing authentication",
+                "ecartapiError": true
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Getasinglecategory",
+            "url": "https://ecartapi1.p.rapidapi.com/api/v2/categories/id",
+            "description": "<p>Searches for the selected category and shows detailed information.<br></p>\n<b>Important information:<br><b/>\n\t<b><ul>\n\t<li><a href = \"https://docs.ecartapi.com/?version=latest#aa4a4c0b-6ab3-49e8-b7e3-931c8226af66\"> The categories ID must exist</a></li>\n\t</ul></b>",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "id",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "id"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://ecartapi1.p.rapidapi.com/api/v2/categories/id\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ecartapi1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ecartapi1.p.rapidapi.com/api/v2/categories/{id}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ecartapi1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "statusCode": 401,
+                "error": "Unauthorized",
+                "message": "Missing authentication",
+                "ecartapiError": true
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Getyourstoreinformation",
+            "url": "https://ecartapi1.p.rapidapi.com/accesses/me",
+            "description": "Access store information fast with the access token we provided.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://ecartapi1.p.rapidapi.com/accesses/me\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ecartapi1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ecartapi1.p.rapidapi.com/accesses/me\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ecartapi1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "statusCode": 401,
+                "error": "Unauthorized",
+                "message": "Missing authentication",
+                "ecartapiError": true
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Infoproductlisting",
+            "url": "https://ecartapi1.p.rapidapi.com/api/v2/products/listings/id",
+            "description": " ",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "id",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "id"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://ecartapi1.p.rapidapi.com/api/v2/products/listings/id\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ecartapi1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ecartapi1.p.rapidapi.com/api/v2/products/listings/{id}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ecartapi1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "statusCode": 401,
+                "error": "Unauthorized",
+                "message": "Missing authentication",
+                "ecartapiError": true
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Getallorders",
+            "url": "https://ecartapi1.p.rapidapi.com/api/v2/orders",
+            "description": "<p><b>Note:</b><br>\nFilters are available depending of the ecommerce\n</p>",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "search",
+                    "type": "STRING",
+                    "description": "Search by key-word",
+                    "default": "String. [ customer@email.com ]"
+                },
+                {
+                    "name": "sinceId",
+                    "type": "STRING",
+                    "description": "Request orders since a certain Id",
+                    "default": "String"
+                },
+                {
+                    "name": "page",
+                    "type": "STRING",
+                    "description": "Pagination is numbered or by token(only when response includes page object)",
+                    "default": "String or Number"
+                },
+                {
+                    "name": "status[financial]",
+                    "type": "STRING",
+                    "description": "Filter orders by financial status. Values subject to ecommerce",
+                    "default": "Values subject to ecommerce"
+                },
+                {
+                    "name": "status[status]",
+                    "type": "STRING",
+                    "description": "Filter orders by status. Values subject to ecommerce",
+                    "default": "Values subject to ecommerce"
+                },
+                {
+                    "name": "draft",
+                    "type": "STRING",
+                    "description": "Shopify Only.",
+                    "default": "[ true, false ]"
+                },
+                {
+                    "name": "status[ecartapi]",
+                    "type": "STRING",
+                    "description": "Filter orders by status.",
+                    "default": "[ pending, authorized, paid, partially_paid, refunded, partially_refunded, cancelled, delete, shipped, other ]"
+                },
+                {
+                    "name": "createdAt[to]",
+                    "type": "STRING",
+                    "description": "Filter orders by date created to.",
+                    "default": "YYYY-MM-DD"
+                },
+                {
+                    "name": "ids",
+                    "type": "STRING",
+                    "description": "List of order ids separated by comas",
+                    "default": "String"
+                },
+                {
+                    "name": "recent",
+                    "type": "STRING",
+                    "description": "Shows the most recent orders, including the ones with dates before e expiration_date and have not been qualified",
+                    "default": "[ true, false ]"
+                },
+                {
+                    "name": "fulfillmentStatus",
+                    "type": "STRING",
+                    "description": "Filter orders by the fulfillment status. Values subject to ecommerce",
+                    "default": "Values subject to ecommerce"
+                },
+                {
+                    "name": "offset",
+                    "type": "STRING",
+                    "description": "Lower limit of the results block. Modifies the range of the results provided, range goes from offset to limit",
+                    "default": "Int"
+                },
+                {
+                    "name": "createdAt[from]",
+                    "type": "STRING",
+                    "description": "Filter orders by date created from.",
+                    "default": "YYYY-MM-DD"
+                },
+                {
+                    "name": "updatedAt[to]",
+                    "type": "STRING",
+                    "description": "Filter orders by date updated to.",
+                    "default": "YYYY-MM-DD"
+                },
+                {
+                    "name": "limit",
+                    "type": "STRING",
+                    "description": "Limit of documents requested by call",
+                    "default": "Int"
+                },
+                {
+                    "name": "status[id]",
+                    "type": "STRING",
+                    "description": "Filter orders by status Id. Values are subject to ecommerce",
+                    "default": "Values subject to ecommerce"
+                },
+                {
+                    "name": "allStores",
+                    "type": "STRING",
+                    "description": "Search items in all stores.",
+                    "default": "[true, false]"
+                },
+                {
+                    "name": "sort",
+                    "type": "STRING",
+                    "description": "Shows orders by ascending or descending dates.",
+                    "default": "[ asc, desc ]"
+                },
+                {
+                    "name": "updatedAt[from]",
+                    "type": "STRING",
+                    "description": "Filter orders by date updatedfrom.",
+                    "default": "YYYY-MM-DD"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://ecartapi1.p.rapidapi.com/api/v2/orders\"\nquerystring = {\"search\": \"String. [ customer@email.com ]\", \"sinceId\": \"String\", \"page\": \"String or Number\", \"status[financial]\": \"Values subject to ecommerce\", \"status[status]\": \"Values subject to ecommerce\", \"draft\": \"[ true, false ]\", \"status[ecartapi]\": \"[ pending, authorized, paid, partially_paid, refunded, partially_refunded, cancelled, delete, shipped, other ]\", \"createdAt[to]\": \"YYYY-MM-DD\", \"ids\": \"String\", \"recent\": \"[ true, false ]\", \"fulfillmentStatus\": \"Values subject to ecommerce\", \"offset\": \"Int\", \"createdAt[from]\": \"YYYY-MM-DD\", \"updatedAt[to]\": \"YYYY-MM-DD\", \"limit\": \"Int\", \"status[id]\": \"Values subject to ecommerce\", \"allStores\": \"[true, false]\", \"sort\": \"[ asc, desc ]\", \"updatedAt[from]\": \"YYYY-MM-DD\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ecartapi1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ecartapi1.p.rapidapi.com/api/v2/orders\"\nquerystring = {\"search\": \"String. [ customer@email.com ]\", \"sinceId\": \"String\", \"page\": \"String or Number\", \"status[financial]\": \"Values subject to ecommerce\", \"status[status]\": \"Values subject to ecommerce\", \"draft\": \"[ true, false ]\", \"status[ecartapi]\": \"[ pending, authorized, paid, partially_paid, refunded, partially_refunded, cancelled, delete, shipped, other ]\", \"createdAt[to]\": \"YYYY-MM-DD\", \"ids\": \"String\", \"recent\": \"[ true, false ]\", \"fulfillmentStatus\": \"Values subject to ecommerce\", \"offset\": \"Int\", \"createdAt[from]\": \"YYYY-MM-DD\", \"updatedAt[to]\": \"YYYY-MM-DD\", \"limit\": \"Int\", \"status[id]\": \"Values subject to ecommerce\", \"allStores\": \"[true, false]\", \"sort\": \"[ asc, desc ]\", \"updatedAt[from]\": \"YYYY-MM-DD\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ecartapi1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "statusCode": 401,
+                "error": "Unauthorized",
+                "message": "Missing authentication",
+                "ecartapiError": true
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "GetFulfillmentService",
+            "url": "https://ecartapi1.p.rapidapi.com/api/v2/services/fulfillment/id",
+            "description": " ",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "id",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "id"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "ecommerce",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "true"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://ecartapi1.p.rapidapi.com/api/v2/services/fulfillment/id\"\nquerystring = {\"ecommerce\": \"true\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ecartapi1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ecartapi1.p.rapidapi.com/api/v2/services/fulfillment/{id}\"\nquerystring = {\"ecommerce\": \"true\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ecartapi1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "statusCode": 401,
+                "error": "Unauthorized",
+                "message": "Missing authentication",
+                "ecartapiError": true
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "GetallFulfillmentServices",
+            "url": "https://ecartapi1.p.rapidapi.com/api/v2/services/fulfillment",
+            "description": " ",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "ecommerce",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "true"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://ecartapi1.p.rapidapi.com/api/v2/services/fulfillment\"\nquerystring = {\"ecommerce\": \"true\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ecartapi1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ecartapi1.p.rapidapi.com/api/v2/services/fulfillment\"\nquerystring = {\"ecommerce\": \"true\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ecartapi1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "statusCode": 401,
+                "error": "Unauthorized",
+                "message": "Missing authentication",
+                "ecartapiError": true
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Countallorders",
+            "url": "https://ecartapi1.p.rapidapi.com/api/v2/orders/count",
+            "description": " ",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://ecartapi1.p.rapidapi.com/api/v2/orders/count\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ecartapi1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ecartapi1.p.rapidapi.com/api/v2/orders/count\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ecartapi1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "statusCode": 401,
+                "error": "Unauthorized",
+                "message": "Missing authentication",
+                "ecartapiError": true
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "GetasingleWebhoook",
+            "url": "https://ecartapi1.p.rapidapi.com/api/v2/webhooks/id",
+            "description": " ",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "id",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "id"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://ecartapi1.p.rapidapi.com/api/v2/webhooks/id\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ecartapi1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ecartapi1.p.rapidapi.com/api/v2/webhooks/{id}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ecartapi1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per second for your plan, BASIC, by the API provider"
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "GetallstoreWebhoooks",
+            "url": "https://ecartapi1.p.rapidapi.com/api/v2/webhooks",
+            "description": " ",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://ecartapi1.p.rapidapi.com/api/v2/webhooks\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ecartapi1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ecartapi1.p.rapidapi.com/api/v2/webhooks\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ecartapi1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per second for your plan, BASIC, by the API provider"
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Getallcarts",
+            "url": "https://ecartapi1.p.rapidapi.com/api/v2/carts",
+            "description": " ",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://ecartapi1.p.rapidapi.com/api/v2/carts\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ecartapi1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ecartapi1.p.rapidapi.com/api/v2/carts\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ecartapi1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per second for your plan, BASIC, by the API provider"
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Getsinglecart",
+            "url": "https://ecartapi1.p.rapidapi.com/api/v2/carts/id",
+            "description": " ",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "id",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "id"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://ecartapi1.p.rapidapi.com/api/v2/carts/id\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ecartapi1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ecartapi1.p.rapidapi.com/api/v2/carts/{id}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ecartapi1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per second for your plan, BASIC, by the API provider"
+            },
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "ecartapi"
+}

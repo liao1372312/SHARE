@@ -1,0 +1,50 @@
+{
+    "product_id": "api_e00baab5-3d24-42eb-9bd1-4917d44ed267",
+    "tool_description": "API returns location data such as country, city, latitude, longitude, timezone, asn, currency, security data for IPv4 and IPv6 addresses in JSON formats.",
+    "home_url": "https://rapidapi.com/baranes.dorian/api/ip-geo3/",
+    "name": "IP Geo",
+    "title": "IP Geo",
+    "pricing": "FREEMIUM",
+    "tool_name": "IP Geo",
+    "score": {
+        "avgServiceLevel": 50,
+        "avgLatency": 1550,
+        "avgSuccessRate": 50,
+        "popularityScore": 7.4,
+        "__typename": "Score"
+    },
+    "host": "ip-geo3.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Location IP",
+            "url": "https://ip-geo3.p.rapidapi.com/location",
+            "description": "Location IP",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "ip",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "77.129.21.184"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://ip-geo3.p.rapidapi.com/location\"\nquerystring = {\"ip\": \"77.129.21.184\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ip-geo3.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ip-geo3.p.rapidapi.com/location\"\nquerystring = {\"ip\": \"77.129.21.184\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ip-geo3.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "ip": "77.129.21.184",
+                "country_code": "FR",
+                "country_name": "France",
+                "region_name": "Ile-de-France",
+                "city_name": "Paris",
+                "latitude": "48.858364",
+                "longitude": "2.294532",
+                "zipcode": "92659",
+                "timezone": "+02:00"
+            },
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "ip_geo"
+}

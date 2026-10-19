@@ -1,0 +1,41 @@
+{
+    "product_id": "api_35d9d5d3-67c2-4ef1-9f2d-35353da7c4bf",
+    "tool_description": "This API uses natural language processing and machine learning to detect and flag inappropriate or offensive comments in multiple languages, helping to create a safer online environment and assist moderators in taking appropriate action.",
+    "home_url": "https://rapidapi.com/admiral-x/api/offensive-user-comment-detection/",
+    "name": "Offensive User Comment Detection",
+    "title": "Offensive User Comment Detection",
+    "pricing": "FREE",
+    "tool_name": "Offensive User Comment Detection",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 564,
+        "avgSuccessRate": 100,
+        "popularityScore": 7.6,
+        "__typename": "Score"
+    },
+    "host": "offensive-user-comment-detection.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Detect Offensive Message",
+            "url": "https://offensive-user-comment-detection.p.rapidapi.com/predict",
+            "description": "This endpoint will detect hate speech, offensive language in a message",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "q",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "son of a ***"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://offensive-user-comment-detection.p.rapidapi.com/predict\"\nquerystring = {\"q\": \"son of a ***\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"offensive-user-comment-detection.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://offensive-user-comment-detection.p.rapidapi.com/predict\"\nquerystring = {\"q\": \"son of a ***\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"offensive-user-comment-detection.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "query": "son of a ***",
+                "hate_score": "0.6987067"
+            }
+        }
+    ],
+    "standardized_name": "offensive_user_comment_detection"
+}

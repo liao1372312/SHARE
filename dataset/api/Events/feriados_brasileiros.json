@@ -1,0 +1,251 @@
+{
+    "product_id": "api_af108ed5-e6fe-46d7-b69d-f9ca6d35cfe8",
+    "tool_description": "API para obter feriados nacionais para uma cidade/estado espec\u00edfica durante um determinado ano.",
+    "home_url": "https://rapidapi.com/davidsimonmarques/api/feriados-brasileiros1/",
+    "name": "feriados-brasileiros",
+    "title": "feriados-brasileiros",
+    "pricing": "FREEMIUM",
+    "tool_name": "feriados-brasileiros",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 5594,
+        "avgSuccessRate": 100,
+        "popularityScore": 8.7,
+        "__typename": "Score"
+    },
+    "host": "feriados-brasileiros1.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Feriados dos Estados",
+            "url": "https://feriados-brasileiros1.p.rapidapi.com/read_uf",
+            "description": "Retorna os feriados de certo estado. Os par\u00e2metros necess\u00e1rios s\u00e3o: 1. Estado - Sigla da Unidade Federativa em letra ma\u00eduscula. 2. Ano",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "estado",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "MG"
+                },
+                {
+                    "name": "ano",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "2023"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://feriados-brasileiros1.p.rapidapi.com/read_uf\"\nquerystring = {\"estado\": \"MG\", \"ano\": \"2023\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"feriados-brasileiros1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://feriados-brasileiros1.p.rapidapi.com/read_uf\"\nquerystring = {\"estado\": \"MG\", \"ano\": \"2023\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"feriados-brasileiros1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "data": "01/01/2023",
+                    "feriado": "Ano Novo",
+                    "tipo": "feriado"
+                },
+                {
+                    "data": "07/04/2023",
+                    "feriado": "Sexta-Feira Santa",
+                    "tipo": "feriado"
+                },
+                {
+                    "data": "21/04/2023",
+                    "feriado": "Dia de Tiradentes",
+                    "tipo": "feriado"
+                },
+                {
+                    "data": "01/05/2023",
+                    "feriado": "Dia do Trabalho",
+                    "tipo": "feriado"
+                },
+                {
+                    "data": "07/09/2023",
+                    "feriado": "Independencia do Brasil",
+                    "tipo": "feriado"
+                },
+                {
+                    "data": "12/10/2023",
+                    "feriado": "Nossa Senhora Aparecida",
+                    "tipo": "feriado"
+                },
+                {
+                    "data": "02/11/2023",
+                    "feriado": "Dia de Finados",
+                    "tipo": "feriado"
+                },
+                {
+                    "data": "15/11/2023",
+                    "feriado": "Proclamacao da Republica",
+                    "tipo": "feriado"
+                },
+                {
+                    "data": "25/12/2023",
+                    "feriado": "Natal",
+                    "tipo": "feriado"
+                },
+                {
+                    "data": "20/02/2023",
+                    "feriado": "Carnaval",
+                    "tipo": "facultativo"
+                },
+                {
+                    "data": "21/02/2023",
+                    "feriado": "Carnaval",
+                    "tipo": "facultativo"
+                },
+                {
+                    "data": "22/02/2023",
+                    "feriado": "Carnaval",
+                    "tipo": "facultativo"
+                },
+                {
+                    "data": "08/06/2023",
+                    "feriado": "Corpus Christi",
+                    "tipo": "facultativo"
+                },
+                {
+                    "data": "15/10/2023",
+                    "feriado": "Dia do Professor",
+                    "tipo": "facultativo"
+                },
+                {
+                    "data": "28/10/2023",
+                    "feriado": "Dia do Servidor Publico",
+                    "tipo": "facultativo"
+                }
+            ]
+        },
+        {
+            "name": "Feriados das Cidades",
+            "url": "https://feriados-brasileiros1.p.rapidapi.com/read",
+            "description": "Retorna os feriados de certa cidade brasileira. Os par\u00e2metros necess\u00e1rios s\u00e3o: 1. Cidade - Nome da cidade sem acentos ou s\u00edmbolos especiais, com exce\u00e7\u00e3o do h\u00edfen (\"-\") que deve ser mantido. 2. Estado - Unidade Federativa correspondente \u00e0 cidade. Usar a sigla e em letra ma\u00eduscula. 3. Ano",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "cidade",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "belo_horizonte"
+                },
+                {
+                    "name": "ano",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "2023"
+                },
+                {
+                    "name": "estado",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "MG"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://feriados-brasileiros1.p.rapidapi.com/read\"\nquerystring = {\"cidade\": \"belo_horizonte\", \"ano\": \"2023\", \"estado\": \"MG\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"feriados-brasileiros1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://feriados-brasileiros1.p.rapidapi.com/read\"\nquerystring = {\"cidade\": \"belo_horizonte\", \"ano\": \"2023\", \"estado\": \"MG\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"feriados-brasileiros1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "data": "01/01/2023",
+                    "feriado": "Ano Novo",
+                    "tipo": "feriado"
+                },
+                {
+                    "data": "07/04/2023",
+                    "feriado": "Sexta-Feira Santa",
+                    "tipo": "feriado"
+                },
+                {
+                    "data": "07/04/2023",
+                    "feriado": "Sexta-feira Santa",
+                    "tipo": "feriado"
+                },
+                {
+                    "data": "21/04/2023",
+                    "feriado": "Dia de Tiradentes",
+                    "tipo": "feriado"
+                },
+                {
+                    "data": "01/05/2023",
+                    "feriado": "Dia do Trabalho",
+                    "tipo": "feriado"
+                },
+                {
+                    "data": "08/06/2023",
+                    "feriado": "Corpus Christi",
+                    "tipo": "feriado"
+                },
+                {
+                    "data": "15/08/2023",
+                    "feriado": "Assuncao de Nossa Senhora",
+                    "tipo": "feriado"
+                },
+                {
+                    "data": "07/09/2023",
+                    "feriado": "Independencia do Brasil",
+                    "tipo": "feriado"
+                },
+                {
+                    "data": "12/10/2023",
+                    "feriado": "Nossa Senhora Aparecida",
+                    "tipo": "feriado"
+                },
+                {
+                    "data": "02/11/2023",
+                    "feriado": "Dia de Finados",
+                    "tipo": "feriado"
+                },
+                {
+                    "data": "15/11/2023",
+                    "feriado": "Proclamacao da Republica",
+                    "tipo": "feriado"
+                },
+                {
+                    "data": "08/12/2023",
+                    "feriado": "Imaculada Conceicao",
+                    "tipo": "feriado"
+                },
+                {
+                    "data": "25/12/2023",
+                    "feriado": "Natal",
+                    "tipo": "feriado"
+                },
+                {
+                    "data": "20/02/2023",
+                    "feriado": "Carnaval",
+                    "tipo": "facultativo"
+                },
+                {
+                    "data": "21/02/2023",
+                    "feriado": "Carnaval",
+                    "tipo": "facultativo"
+                },
+                {
+                    "data": "21/02/2023",
+                    "feriado": "Terca de Carnaval",
+                    "tipo": "facultativo"
+                },
+                {
+                    "data": "22/02/2023",
+                    "feriado": "Carnaval",
+                    "tipo": "facultativo"
+                },
+                {
+                    "data": "08/06/2023",
+                    "feriado": "Corpus Christi",
+                    "tipo": "facultativo"
+                },
+                {
+                    "data": "15/10/2023",
+                    "feriado": "Dia do Professor",
+                    "tipo": "facultativo"
+                },
+                {
+                    "data": "28/10/2023",
+                    "feriado": "Dia do Servidor Publico",
+                    "tipo": "facultativo"
+                }
+            ]
+        }
+    ],
+    "standardized_name": "feriados_brasileiros"
+}

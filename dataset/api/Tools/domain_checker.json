@@ -1,0 +1,377 @@
+{
+    "product_id": "api_cdbb1153-7aaf-47ce-a968-0b64858f08a8",
+    "tool_description": "The Domain Checker API allows users to quickly and easily check the validity, availability, expiration, and DNS settings of a given domain name. With features such as keyword search and validation, it's an efficient tool for developers, businesses, and individuals looking to manage or purchase domain names.",
+    "home_url": "https://rapidapi.com/MASNathan/api/domain-checker7/",
+    "name": "Domain Checker",
+    "title": "Domain Checker",
+    "pricing": "FREEMIUM",
+    "tool_name": "Domain Checker",
+    "score": {
+        "avgServiceLevel": 99,
+        "avgLatency": 949,
+        "avgSuccessRate": 99,
+        "popularityScore": 9.9,
+        "__typename": "Score"
+    },
+    "host": "domain-checker7.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "DNS",
+            "url": "https://domain-checker7.p.rapidapi.com/dns",
+            "description": "Checks the domain DNS records",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "domain",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "rapidapi.com"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://domain-checker7.p.rapidapi.com/dns\"\nquerystring = {\"domain\": \"rapidapi.com\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"domain-checker7.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://domain-checker7.p.rapidapi.com/dns\"\nquerystring = {\"domain\": \"rapidapi.com\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"domain-checker7.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "domain": "rapidapi.com",
+                "valid": true,
+                "A": [
+                    "172.66.42.232",
+                    "172.66.41.24"
+                ],
+                "AAAA": [
+                    "2606:4700:3108::ac42:2ae8",
+                    "2606:4700:3108::ac42:2918"
+                ],
+                "CNAME": [
+                    "rapidapi.com."
+                ],
+                "NS": [
+                    "gina.ns.cloudflare.com.",
+                    "jim.ns.cloudflare.com."
+                ],
+                "MX": [
+                    "aspmx.l.google.com.",
+                    "alt1.aspmx.l.google.com.",
+                    "alt2.aspmx.l.google.com.",
+                    "alt4.aspmx.l.google.com.",
+                    "alt3.aspmx.l.google.com."
+                ],
+                "TXT": [
+                    "MS=ms97466995",
+                    "NH1fns+rbsdfqi5E4pv+5JTN1emwNnEucqrZtauqynw=",
+                    "ahrefs-site-verification_1a6bc56426ad47fce3331f012be06d1441c1eff0f0f7fa6a22cb40526a3af128",
+                    "apple-domain-verification=gHme8EYibWvC69Zs",
+                    "dropbox-domain-verification=vy0ywlhkqor2",
+                    "google-site-verification=5D8msgzDrB_P7yk2nORD6u9iQ200UpzX_h0IHNhiEy4",
+                    "google-site-verification=HSguy8eoaBoTu2FGVGKlC4q92qAoLOYjuFxy9CVwkmg",
+                    "google-site-verification=PfB9oX9nR8VvaA6XaOxFkKP1G1CM2MW7ZMauxrCdfrw",
+                    "google-site-verification=Q9tIWfeOEuVw2A1JCagzIiOD7wkOXZlNwlt0L3cDmaM",
+                    "google-site-verification=SsM5ZFiwhHIBM_5YWKOYcQ04ctceKXonlaI07CUwHkc",
+                    "google-site-verification=gk7v-Dy0fU2t7HsMbzP4arw8zv5J0I3pEYVr15-2BQg",
+                    "google-site-verification=kW871o5r5XgVllrVqxxv61ILhKlq8mWCr3XQKJW8kCA",
+                    "google-site-verification=oupHAAhcosV0XRGG83ChJ8QlqBsUrn1WjFomA9LU234",
+                    "google-site-verification=sQUzezp-cjolniR4xrDvCLJyS9dhYWKQReVeHbzYAvQ",
+                    "google-site-verification=vUEB9fbPaeGeCI5yeJVj63n0RcaonEa-c4d8d028JNw",
+                    "v=spf1 mx include:mktomail.com include:servers.mcsv.net include:customeriomail.com include:sendgrid.net include:_spf.google.com ~all",
+                    "yandex-verification: 0a16003cdf81d1f0",
+                    "9E9FE098CF",
+                    "MS=A6DBD7A60A4E0D16BDD65EB53B7CC412C2BB8CBB"
+                ]
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "domain": {
+                        "type": "string"
+                    },
+                    "sld": {
+                        "type": "string"
+                    },
+                    "tld": {
+                        "type": "string"
+                    },
+                    "valid": {
+                        "type": "boolean"
+                    },
+                    "available": {
+                        "type": "boolean"
+                    },
+                    "created_at": {
+                        "type": "string"
+                    },
+                    "updated_at": {
+                        "type": "string"
+                    },
+                    "expires_at": {
+                        "type": "string"
+                    },
+                    "registrar": {
+                        "type": "string"
+                    },
+                    "whois": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        {
+            "name": "Keyword Search",
+            "url": "https://domain-checker7.p.rapidapi.com/whois/lookup",
+            "description": "Query up to 333 TLDs to check registered domains",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "sld",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "rapidapi"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://domain-checker7.p.rapidapi.com/whois/lookup\"\nquerystring = {\"sld\": \"rapidapi\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"domain-checker7.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://domain-checker7.p.rapidapi.com/whois/lookup\"\nquerystring = {\"sld\": \"rapidapi\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"domain-checker7.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "sld": "rapidapi",
+                "found": true,
+                "lookup_tlds": 333,
+                "found_tlds": 18,
+                "registered": [
+                    {
+                        "domain": "rapidapi.xyz",
+                        "tld": "xyz",
+                        "created_at": "2016-08-04 11:27:46",
+                        "updated_at": "2021-08-25 01:16:46",
+                        "expires_at": "2024-08-04 23:59:59"
+                    },
+                    {
+                        "domain": "rapidapi.cloud",
+                        "tld": "cloud",
+                        "created_at": "2016-10-30 15:19:56",
+                        "updated_at": "2021-06-27 17:19:43",
+                        "expires_at": "2023-10-30 15:19:56"
+                    },
+                    {
+                        "domain": "rapidapi.com",
+                        "tld": "com",
+                        "created_at": "2014-09-02 18:49:14",
+                        "updated_at": "2021-07-14 14:19:04",
+                        "expires_at": "2023-09-02 18:49:14"
+                    },
+                    {
+                        "domain": "rapidapi.ca",
+                        "tld": "ca",
+                        "created_at": "2020-11-25 01:16:56",
+                        "updated_at": "2021-12-15 00:52:05",
+                        "expires_at": "2023-11-25 01:16:56"
+                    },
+                    {
+                        "domain": "rapidapi.net",
+                        "tld": "net",
+                        "created_at": "2022-08-18 18:35:30",
+                        "updated_at": "2023-01-13 08:10:27",
+                        "expires_at": "2023-08-18 18:35:30"
+                    },
+                    {
+                        "domain": "rapidapi.in",
+                        "tld": "in",
+                        "created_at": "2020-05-21 13:12:20",
+                        "updated_at": "2022-05-22 14:29:31",
+                        "expires_at": "2023-05-21 13:12:20"
+                    },
+                    {
+                        "domain": "rapidapi.co",
+                        "tld": "co",
+                        "created_at": "2019-01-10 01:46:35",
+                        "updated_at": "2023-01-16 13:46:44",
+                        "expires_at": "2024-01-10 01:46:35"
+                    },
+                    {
+                        "domain": "rapidapi.me",
+                        "tld": "me",
+                        "created_at": "2022-12-26 18:46:32",
+                        "updated_at": "2023-04-04 07:17:13",
+                        "expires_at": "2023-12-26 18:46:32"
+                    },
+                    {
+                        "domain": "rapidapi.uk",
+                        "tld": "uk",
+                        "created_at": "2020-11-25 00:00:00",
+                        "updated_at": "2023-06-08 00:00:00",
+                        "expires_at": "2023-11-25 00:00:00"
+                    },
+                    {
+                        "domain": "rapidapi.info",
+                        "tld": "info",
+                        "created_at": "2019-01-10 01:46:25",
+                        "updated_at": "2023-02-24 01:47:12",
+                        "expires_at": "2024-01-10 01:46:25"
+                    },
+                    {
+                        "domain": "rapidapi.us",
+                        "tld": "us",
+                        "created_at": "2020-11-25 01:17:31",
+                        "updated_at": "2023-06-08 21:08:56",
+                        "expires_at": "2023-11-25 01:17:31"
+                    },
+                    {
+                        "domain": "rapidapi.online",
+                        "tld": "online",
+                        "created_at": "2023-02-01 06:46:15",
+                        "updated_at": "2023-03-30 09:03:38",
+                        "expires_at": "2024-02-01 23:59:59"
+                    },
+                    {
+                        "domain": "rapidapi.dev",
+                        "tld": "dev",
+                        "created_at": "2020-02-03 19:52:50",
+                        "updated_at": "2023-03-20 19:52:50",
+                        "expires_at": "2024-02-03 19:52:50"
+                    },
+                    {
+                        "domain": "rapidapi.fr",
+                        "tld": "fr",
+                        "created_at": "2017-05-28 22:00:37",
+                        "updated_at": "2023-06-11 18:44:57",
+                        "expires_at": "2023-06-26 17:08:08"
+                    },
+                    {
+                        "domain": "rapidapi.co.uk",
+                        "tld": "co.uk",
+                        "created_at": "2017-05-28 00:00:00",
+                        "updated_at": "2023-05-30 00:00:00",
+                        "expires_at": "2023-05-28 00:00:00"
+                    },
+                    {
+                        "domain": "rapidapi.io",
+                        "tld": "io",
+                        "created_at": "2016-01-16 07:04:32",
+                        "updated_at": "2022-12-16 20:50:18",
+                        "expires_at": "2024-01-16 07:04:32"
+                    },
+                    {
+                        "domain": "rapidapi.nl",
+                        "tld": "nl",
+                        "created_at": "2020-05-21 00:00:00",
+                        "updated_at": "2023-05-20 00:00:00",
+                        "expires_at": ""
+                    },
+                    {
+                        "domain": "rapidapi.co.nz",
+                        "tld": "co.nz",
+                        "created_at": "2020-11-25 01:17:14",
+                        "updated_at": "2023-06-08 21:06:02",
+                        "expires_at": ""
+                    }
+                ]
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "sld": {
+                        "type": "string"
+                    },
+                    "found": {
+                        "type": "boolean"
+                    },
+                    "lookup_tlds": {
+                        "type": "integer"
+                    },
+                    "found_tlds": {
+                        "type": "integer"
+                    },
+                    "registered": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "domain": {
+                                    "type": "string"
+                                },
+                                "tld": {
+                                    "type": "string"
+                                },
+                                "created_at": {
+                                    "type": "string"
+                                },
+                                "updated_at": {
+                                    "type": "string"
+                                },
+                                "expires_at": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Whois",
+            "url": "https://domain-checker7.p.rapidapi.com/whois",
+            "description": "Checks the domain Whois Details",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "domain",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "rapidapi.com"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://domain-checker7.p.rapidapi.com/whois\"\nquerystring = {\"domain\": \"rapidapi.com\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"domain-checker7.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://domain-checker7.p.rapidapi.com/whois\"\nquerystring = {\"domain\": \"rapidapi.com\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"domain-checker7.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "domain": "rapidapi.com",
+                "sld": "rapidapi",
+                "tld": "com",
+                "valid": true,
+                "available": false,
+                "created_at": "2014-09-02 18:49:14",
+                "updated_at": "2021-07-14 14:19:04",
+                "expires_at": "2023-09-02 18:49:14",
+                "registrar": "MarkMonitor Inc.",
+                "whois": "whois.markmonitor.com"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "domain": {
+                        "type": "string"
+                    },
+                    "sld": {
+                        "type": "string"
+                    },
+                    "tld": {
+                        "type": "string"
+                    },
+                    "valid": {
+                        "type": "boolean"
+                    },
+                    "available": {
+                        "type": "boolean"
+                    },
+                    "created_at": {
+                        "type": "string"
+                    },
+                    "updated_at": {
+                        "type": "string"
+                    },
+                    "expires_at": {
+                        "type": "string"
+                    },
+                    "registrar": {
+                        "type": "string"
+                    },
+                    "whois": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    ],
+    "standardized_name": "domain_checker"
+}

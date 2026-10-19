@@ -1,0 +1,89 @@
+{
+    "product_id": "api_119eecae-c297-469b-9b6c-b37ad4e13319",
+    "tool_description": "This API calculates the simple interest, compound interest, investment returns, return on investment, capital gains tax, and annual percentage yield of an investment based on the input parameters.",
+    "home_url": "https://rapidapi.com/kidddevs/api/calcx-investment-api/",
+    "name": "CalcX - Investment API",
+    "title": "CalcX - Investment API",
+    "pricing": "FREEMIUM",
+    "tool_name": "CalcX - Investment API",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 407,
+        "avgSuccessRate": 55,
+        "popularityScore": 7.9,
+        "__typename": "Score"
+    },
+    "host": "calcx-investment-api.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "GET - Calculate Investment",
+            "url": "https://calcx-investment-api.p.rapidapi.com/calculate",
+            "description": "This endpoint performs multiple investment calculations in a single request. It accepts a list of investment parameters, such as principal amount, rate of return, time period, and compounding frequency, and returns a list of investment results, including the simple interest, compound interest, investment returns, return on investment, capital gains tax, and annual percentage yield of each investment.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "rate",
+                    "type": "NUMBER",
+                    "description": "The interest rate of the investment",
+                    "default": "6.5"
+                },
+                {
+                    "name": "principal",
+                    "type": "NUMBER",
+                    "description": "The amount of money invested",
+                    "default": "50000.00"
+                },
+                {
+                    "name": "time",
+                    "type": "NUMBER",
+                    "description": "The length of the investment in months",
+                    "default": "36"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "compounding",
+                    "type": "STRING",
+                    "description": "The frequency of compounding interest. Valid options are **yearly**, **semi-annually**, **quarterly**, and **monthly**. Default is **yearly**",
+                    "default": "yearly"
+                },
+                {
+                    "name": "format",
+                    "type": "STRING",
+                    "description": "Whether to format the result. Valid options are **yes** and **no**. Default is **yes**",
+                    "default": "yes"
+                },
+                {
+                    "name": "to_currency",
+                    "type": "STRING",
+                    "description": "The currency to convert the result to. Default is USD\n\nCurrencies currently supported include:\nCurrency\tCode\tName\nNOK\tkr\tNorwegian Krone\nEUR\t\u20ac\tEuro\nHKD\t$\tHong Kong Dollar\nCZK\tK\u010d\tCzech Koruna\nTHB\t\u0e3f\tThai Baht\nCHF\tCHF\tSwiss Franc\nUSD\t$\tUS Dollar\nISK\tkr\tIcelandic Kr\u00f3na\nGBP\t\u00a3\tBritish Pound Sterling\nJPY\t\u00a5\tJapanese Yen\nBGN\t\u043b\u0432\tBulgarian Lev\nCNY\t\u00a5\tChinese Yuan\nIDR\tRp\tIndonesian Rupiah\nTRY\t\u20ba\tTurkish Lira\nNZD\t$\tNew Zealand Dollar\nSGD\t$\tSingapore Dollar\nDKK\tkr\tDanish Krone\nAUD\t$\tAustralian Dollar\nBRL\tR$\tBrazilian Real\nILS\t\u20aa\tIsraeli Shekel\nSEK\tkr\tSwedish Krona\nCAD\t$\tCanadian Dollar\nHUF\tFt\tHungarian Forint\nZAR\tR\tSouth African Rand\nMYR\tRM\tMalaysian Ringgit\nKRW\t\u20a9\tSouth Korean Won\nMXN\t$\tMexican Peso\nINR\t\u20b9\tIndian Rupee\nPHP\t\u20b1\tPhilippine Peso\nPLN\tz\u0142\tPolish Zloty\nRON\tlei\tRomanian Leu",
+                    "default": "USD"
+                },
+                {
+                    "name": "in_currency",
+                    "type": "STRING",
+                    "description": "The currency of the investment. Default is USD\n\nCurrencies currently supported include:\nCurrency\tCode\tName\nNOK\tkr\tNorwegian Krone\nEUR\t\u20ac\tEuro\nHKD\t$\tHong Kong Dollar\nCZK\tK\u010d\tCzech Koruna\nTHB\t\u0e3f\tThai Baht\nCHF\tCHF\tSwiss Franc\nUSD\t$\tUS Dollar\nISK\tkr\tIcelandic Kr\u00f3na\nGBP\t\u00a3\tBritish Pound Sterling\nJPY\t\u00a5\tJapanese Yen\nBGN\t\u043b\u0432\tBulgarian Lev\nCNY\t\u00a5\tChinese Yuan\nIDR\tRp\tIndonesian Rupiah\nTRY\t\u20ba\tTurkish Lira\nNZD\t$\tNew Zealand Dollar\nSGD\t$\tSingapore Dollar\nDKK\tkr\tDanish Krone\nAUD\t$\tAustralian Dollar\nBRL\tR$\tBrazilian Real\nILS\t\u20aa\tIsraeli Shekel\nSEK\tkr\tSwedish Krona\nCAD\t$\tCanadian Dollar\nHUF\tFt\tHungarian Forint\nZAR\tR\tSouth African Rand\nMYR\tRM\tMalaysian Ringgit\nKRW\t\u20a9\tSouth Korean Won\nMXN\t$\tMexican Peso\nINR\t\u20b9\tIndian Rupee\nPHP\t\u20b1\tPhilippine Peso\nPLN\tz\u0142\tPolish Zloty\nRON\tlei\tRomanian Leu",
+                    "default": "USD"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://calcx-investment-api.p.rapidapi.com/calculate\"\nquerystring = {\"compounding\": \"yearly\", \"format\": \"yes\", \"to_currency\": \"USD\", \"in_currency\": \"USD\", \"rate\": \"6.5\", \"principal\": \"50000.00\", \"time\": \"36\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"calcx-investment-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://calcx-investment-api.p.rapidapi.com/calculate\"\nquerystring = {\"compounding\": \"yearly\", \"format\": \"yes\", \"to_currency\": \"USD\", \"in_currency\": \"USD\", \"rate\": \"6.5\", \"principal\": \"50000.00\", \"time\": \"36\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"calcx-investment-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "apy": "6.50%",
+                "cg_tax": "$161.87",
+                "compound_interest": "$10397.48",
+                "compounding_freq": "yearly",
+                "investment_returns": "$60397.48",
+                "principal": "$50000.00",
+                "principal_in": "USD",
+                "rate": "6.50%",
+                "results_in": "USD",
+                "roi": "$20.79",
+                "simple_interest": "$9750.00",
+                "time_months": "36 M",
+                "time_years": "3.00 Y"
+            }
+        }
+    ],
+    "standardized_name": "calcx_investment_api"
+}

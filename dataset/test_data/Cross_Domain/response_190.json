@@ -1,0 +1,35 @@
+{
+"user_query":"I'm organizing a charity event and I need to send out invitations to potential donors. Can you provide me with a list of email addresses for individuals who have previously donated to similar causes? Additionally, I would like to create personalized invitations with unique QR codes for each recipient. Is there an API that can help me generate QR codes based on email addresses?",
+"domain":"Cross-Domain",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Query the database for email addresses of individuals who have previously donated to similar causes.",
+        "domain": "Cross-Domain",
+        "required_inputs": ["charity_category", "donation_history"]
+    },
+    {
+        "id": 2,
+        "description": "Generate unique QR codes for the email addresses retrieved from Step 1.",
+        "domain": "Cross-Domain",
+        "required_inputs": ["list_of_email_addresses"]
+    },
+    {
+        "id": 3,
+        "description": "Create personalized invitations for each recipient, incorporating their unique QR code.",
+        "domain": "Cross-Domain",
+        "required_inputs": ["list_of_email_addresses", "qr_code_data"]
+    },
+    {
+        "id": 4,
+        "description": "Send out the personalized invitations via email to each recipient.",
+        "domain": "Cross-Domain",
+        "required_inputs": ["personalized_invitations"]
+    }
+],
+"dependencies": {
+    "2": ["1"],
+    "3": ["2"],
+    "4": ["3"]
+}
+}

@@ -1,0 +1,55 @@
+{
+    "product_id": "api_f935cbc9-7737-42cb-9af3-8297074441b9",
+    "tool_description": "Verifies EU & GB VAT Numbers and gets company information, and address details.  Extended documentation can be found here: https://www.apitier.com/api-catalogue/validate-vat-api",
+    "home_url": "https://rapidapi.com/api-tier1-apitier-team/api/validate-vat/",
+    "name": "Validate VAT",
+    "title": "Validate VAT",
+    "pricing": "FREEMIUM",
+    "tool_name": "Validate VAT",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 1366,
+        "avgSuccessRate": 77,
+        "popularityScore": 7.2,
+        "__typename": "Score"
+    },
+    "host": "validate-vat.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Validate VAT",
+            "url": "https://validate-vat.p.rapidapi.com/v1/validate",
+            "description": "\u201cValidate VAT\u201d validates VAT numbers, get company information, including address, returned for each VAT number.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "vat_number",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "IE6388047V"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://validate-vat.p.rapidapi.com/v1/validate\"\nquerystring = {\"vat_number\": \"IE6388047V\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"validate-vat.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://validate-vat.p.rapidapi.com/v1/validate\"\nquerystring = {\"vat_number\": \"IE6388047V\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"validate-vat.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "status": 200,
+                "message": "Success",
+                "result": {
+                    "vatNumber": "6388047V",
+                    "isValid": true,
+                    "company": {
+                        "name": "GOOGLE IRELAND LIMITED",
+                        "address": "3RD FLOOR, GORDON HOUSE, BARROW STREET, DUBLIN 4"
+                    },
+                    "country": {
+                        "code": "IE",
+                        "name": "Ireland"
+                    }
+                }
+            },
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "validate_vat"
+}

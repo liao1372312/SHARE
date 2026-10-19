@@ -1,0 +1,168 @@
+{
+    "product_id": "api_ef34a5c2-b753-41bc-8165-014b1b79c7fc",
+    "tool_description": "API to validate email and normalize email",
+    "home_url": "https://rapidapi.com/cognitivecamp-cognitivecamp-default/api/email-utilities/",
+    "name": "Email Utilities",
+    "title": "Email Utilities",
+    "pricing": "FREEMIUM",
+    "tool_name": "Email Utilities",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 773,
+        "avgSuccessRate": 0,
+        "popularityScore": 0.2,
+        "__typename": "Score"
+    },
+    "host": "email-utilities.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "/normalize",
+            "url": "https://email-utilities.p.rapidapi.com/normalize",
+            "description": "get normalized form of an email",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "email",
+                    "type": "STRING",
+                    "description": "email id",
+                    "default": "cognitive.camp@gmail.com"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://email-utilities.p.rapidapi.com/normalize\"\nquerystring = {\"email\": \"cognitive.camp@gmail.com\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"email-utilities.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://email-utilities.p.rapidapi.com/normalize\"\nquerystring = {\"email\": \"cognitive.camp@gmail.com\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"email-utilities.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "This account is suspended"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "email": {
+                        "type": "string"
+                    },
+                    "normalized_email": {
+                        "type": "string"
+                    }
+                },
+                "description": "Normalized Email information"
+            }
+        },
+        {
+            "name": "/verify",
+            "url": "https://email-utilities.p.rapidapi.com/verify",
+            "description": "get normalized form of an email",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "email",
+                    "type": "STRING",
+                    "description": "email id",
+                    "default": "cognitive.camp@gmail.com"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "checkSMTP",
+                    "type": "BOOLEAN",
+                    "description": "Is SMTP check required on port 25",
+                    "default": "false"
+                },
+                {
+                    "name": "suggestDomain",
+                    "type": "BOOLEAN",
+                    "description": "Is Domain suggestion needed",
+                    "default": "false"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://email-utilities.p.rapidapi.com/verify\"\nquerystring = {\"checkSMTP\": \"false\", \"email\": \"cognitive.camp@gmail.com\", \"suggestDomain\": \"false\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"email-utilities.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://email-utilities.p.rapidapi.com/verify\"\nquerystring = {\"checkSMTP\": \"false\", \"email\": \"cognitive.camp@gmail.com\", \"suggestDomain\": \"false\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"email-utilities.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per minute for your plan, BASIC, by the API provider"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "disposable": {
+                        "type": "boolean",
+                        "description": "is this a DEA (disposable email address)"
+                    },
+                    "email": {
+                        "type": "string",
+                        "description": "passed email address"
+                    },
+                    "free": {
+                        "type": "boolean",
+                        "description": "is domain a free email domain"
+                    },
+                    "gravatar": {
+                        "type": "object",
+                        "properties": {
+                            "gravatarUrl": {
+                                "type": "string",
+                                "description": "gravatar url"
+                            },
+                            "hasGravatar": {
+                                "type": "boolean",
+                                "description": "whether has gravatar"
+                            }
+                        }
+                    },
+                    "has_mx_records": {
+                        "type": "boolean",
+                        "description": "whether or not MX-Records for the domain"
+                    },
+                    "reachable": {
+                        "type": "string",
+                        "description": "an enumeration to describe whether the recipient address is real"
+                    },
+                    "role_account": {
+                        "type": "boolean",
+                        "description": "is account a role-based account"
+                    },
+                    "smtp": {
+                        "type": "object",
+                        "properties": {
+                            "catch_all": {
+                                "type": "boolean",
+                                "description": "does the domain have a catch-all email address?"
+                            },
+                            "deliverable": {
+                                "type": "boolean",
+                                "description": "can send an email to the email server?"
+                            },
+                            "disabled": {
+                                "type": "boolean",
+                                "description": "is the email blocked or disabled by the provider?"
+                            },
+                            "full_inbox": {
+                                "type": "boolean",
+                                "description": "is the email account's inbox full?"
+                            },
+                            "host_exists": {
+                                "type": "boolean",
+                                "description": "is the host exists?"
+                            }
+                        }
+                    },
+                    "syntax": {
+                        "type": "object",
+                        "properties": {
+                            "domain": {
+                                "type": "string"
+                            },
+                            "username": {
+                                "type": "string"
+                            },
+                            "valid": {
+                                "type": "boolean"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "standardized_name": "email_utilities"
+}

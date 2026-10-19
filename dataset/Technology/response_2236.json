@@ -1,0 +1,33 @@
+{
+"user_query":"I want to educate myself about climate change and its global impact. Can you fetch news articles about climate change from different sources? Also, provide me with the bias ratings and credibility scores of these sources.",
+"domain":"technology",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Fetch news articles about climate change from various trusted news sources.",
+        "domain": "technology",
+        "required_inputs": ["search_query", "sources_list"]
+    },
+    {
+        "id": 2,
+        "description": "Retrieve bias ratings of the news sources used in Step 1.",
+        "domain": "technology",
+        "required_inputs": ["sources_list"],
+        "dependencies": [1]
+    },
+    {
+        "id": 3,
+        "description": "Get credibility scores for the news sources used in Step 1.",
+        "domain": "technology",
+        "required_inputs": ["sources_list"],
+        "dependencies": [1]
+    },
+    {
+        "id": 4,
+        "description": "Compile and present the fetched articles along with their corresponding bias ratings and credibility scores.",
+        "domain": "technology",
+        "required_inputs": ["articles", "bias_ratings", "credibility_scores"],
+        "dependencies": [1, 2, 3]
+    }
+]
+}

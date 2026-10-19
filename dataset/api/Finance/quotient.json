@@ -1,0 +1,2607 @@
+{
+    "product_id": "api_a2db9453-f71a-4b6b-9cca-2d6394400603",
+    "tool_description": "Market data API for intraday (1-minutes) data, end-of-day data, options data, crypto, forex, live prices, fundamental data, trading signal, and much more, on various assets (Stocks, ETFs, Funds, Indices, Forex, Cryptocurrencies, etc), on worldwide stock exchanges (us, canada, australia, uk and europe).",
+    "home_url": "https://rapidapi.com/dubois4and/api/quotient/",
+    "name": "Quotient",
+    "title": "Quotient",
+    "pricing": "FREEMIUM",
+    "tool_name": "Quotient",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 2058,
+        "avgSuccessRate": 100,
+        "popularityScore": 9.8,
+        "__typename": "Score"
+    },
+    "host": "quotient.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "/equity/dividends",
+            "url": "https://quotient.p.rapidapi.com/equity/dividends",
+            "description": "Return dividends history data for a given security.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "symbol",
+                    "type": "STRING",
+                    "description": "The symbol of the asset to look for, e.g., `AAPL` (Apple Inc), `T` (AT&T Inc).",
+                    "default": "AAPL"
+                },
+                {
+                    "name": "to",
+                    "type": "STRING",
+                    "description": "The query end date (supported format is : **YYYY-mm-dd**), e.g., `2020-04-17`.",
+                    "default": "2020-04-17"
+                },
+                {
+                    "name": "from",
+                    "type": "STRING",
+                    "description": "The query start date (supported format is : **YYYY-mm-dd**), e.g., `2019-01-01`.",
+                    "default": "2019-01-01"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://quotient.p.rapidapi.com/equity/dividends\"\nquerystring = {\"symbol\": \"AAPL\", \"to\": \"2020-04-17\", \"from\": \"2019-01-01\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"quotient.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://quotient.p.rapidapi.com/equity/dividends\"\nquerystring = {\"symbol\": \"AAPL\", \"to\": \"2020-04-17\", \"from\": \"2019-01-01\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"quotient.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "Date": "2019-02-08",
+                    "dividend": 0.73
+                },
+                {
+                    "Date": "2019-05-10",
+                    "dividend": 0.77
+                },
+                {
+                    "message": "Upgrade your subscription to MEGA plan to get all remaining data and unlimited access."
+                }
+            ],
+            "statuscode": 200,
+            "schema": {
+                "type": "array",
+                "items": {
+                    "title": "Items",
+                    "type": "object",
+                    "required": [
+                        "Date",
+                        "dividend"
+                    ],
+                    "properties": {
+                        "Date": {
+                            "title": "Date",
+                            "type": "string",
+                            "pattern": "^.*$"
+                        },
+                        "dividend": {
+                            "title": "Dividend",
+                            "type": "number"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "/search/symbol",
+            "url": "https://quotient.p.rapidapi.com/search/symbol",
+            "description": "Lookup for a Symbol or Name.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "query",
+                    "type": "STRING",
+                    "description": "Partial Company Name or Symbol, e.g., `apple`, `qualcomm`.",
+                    "default": "apple"
+                },
+                {
+                    "name": "categories",
+                    "type": "STRING",
+                    "description": "Asset categories. Supported categories are : [`EQT, IND, ETF, FUNDS, FX, CRYPTO`]. They can be mixed separated by a comma , e.g., `EQT,ETF`.",
+                    "default": "EQT,ETF"
+                },
+                {
+                    "name": "regions",
+                    "type": "STRING",
+                    "description": "The region(s) in which to look for. Supported regions are : [`US, CA, UK, EU, AU`]. They can be mixed separated by a comma. They can be mixed separated by a comma , e.g., `US,UK,EU`.",
+                    "default": "US,UK,EU"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://quotient.p.rapidapi.com/search/symbol\"\nquerystring = {\"query\": \"apple\", \"categories\": \"EQT,ETF\", \"regions\": \"US,UK,EU\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"quotient.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://quotient.p.rapidapi.com/search/symbol\"\nquerystring = {\"query\": \"apple\", \"categories\": \"EQT,ETF\", \"regions\": \"US,UK,EU\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"quotient.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "symbol": "AAPL",
+                    "name": "Apple Inc",
+                    "exchange": "NASDAQ"
+                },
+                {
+                    "symbol": "0R2V.L",
+                    "name": "Apple Ord [Cdi]",
+                    "exchange": "LSE"
+                },
+                {
+                    "symbol": "APLE",
+                    "name": "Apple Hospitality REIT Inc",
+                    "exchange": "NYSE"
+                },
+                {
+                    "symbol": "3LWP.L",
+                    "name": "Graniteshares 3X Long Apple Daily Etp",
+                    "exchange": "LSE"
+                },
+                {
+                    "symbol": "2AAP.L",
+                    "name": "Levshares 2X Apple Etp",
+                    "exchange": "LSE"
+                },
+                {
+                    "symbol": "PNPL.L",
+                    "name": "Pineapple Power Corporation Plc",
+                    "exchange": "LSE"
+                },
+                {
+                    "symbol": "3AAP.L",
+                    "name": "Levshares 3X Apple Etp",
+                    "exchange": "LSE"
+                },
+                {
+                    "symbol": "APC.DE",
+                    "name": "Apple Inc",
+                    "exchange": "XETRA"
+                },
+                {
+                    "symbol": "MLP",
+                    "name": "Maui Land & Pineapple Company",
+                    "exchange": "NYSE"
+                },
+                {
+                    "symbol": "SALE.L",
+                    "name": "Ls -3X Short Apple [Aapl] Etp",
+                    "exchange": "LSE"
+                },
+                {
+                    "symbol": "PEGY",
+                    "name": "Pineapple Energy Inc",
+                    "exchange": "NASDAQ"
+                },
+                {
+                    "symbol": "3LAP.L",
+                    "name": "Graniteshares 3X Long Apple Daily Etp",
+                    "exchange": "LSE"
+                },
+                {
+                    "symbol": "3AAP.AS",
+                    "name": "Leverage Shares 3X Apple Etp Securities",
+                    "exchange": "Amsterdam"
+                },
+                {
+                    "symbol": "AAP3.L",
+                    "name": "Levshares 3X Apple Etp",
+                    "exchange": "LSE"
+                },
+                {
+                    "symbol": "PNPL",
+                    "name": "Pineapple Express Inc",
+                    "exchange": "Other OTC"
+                },
+                {
+                    "symbol": "3APE.L",
+                    "name": "Levshares 3X Apple Etp",
+                    "exchange": "LSE"
+                },
+                {
+                    "symbol": "3SAP.L",
+                    "name": "Graniteshares 3X Short Apple Daily Etp",
+                    "exchange": "LSE"
+                },
+                {
+                    "symbol": "AAP2.L",
+                    "name": "Levshares 2X Apple Etp",
+                    "exchange": "LSE"
+                },
+                {
+                    "symbol": "SAPE.L",
+                    "name": "Levshares -1X Apple Etp",
+                    "exchange": "LSE"
+                },
+                {
+                    "symbol": "AAPS.L",
+                    "name": "Ls -3X Short Apple [Aapl] Etp",
+                    "exchange": "LSE"
+                },
+                {
+                    "symbol": "APRU",
+                    "name": "Apple Rush Co. Inc",
+                    "exchange": "Other OTC"
+                },
+                {
+                    "symbol": "3LAE.L",
+                    "name": "Graniteshares 3X Long Apple Daily Etp",
+                    "exchange": "LSE"
+                },
+                {
+                    "symbol": "3SAE.L",
+                    "name": "Graniteshares 3X Short Apple Daily Etp",
+                    "exchange": "LSE"
+                },
+                {
+                    "symbol": "GAPJ",
+                    "name": "Golden Apple Oil & Gas Inc",
+                    "exchange": "Other OTC"
+                },
+                {
+                    "symbol": "AAPE.L",
+                    "name": "Levshares 2X Apple Etp",
+                    "exchange": "LSE"
+                },
+                {
+                    "symbol": "APLS.L",
+                    "name": "Levshares -1X Apple Etp",
+                    "exchange": "LSE"
+                },
+                {
+                    "symbol": "SAPL.L",
+                    "name": "Levshares -1X Apple Etp",
+                    "exchange": "LSE"
+                },
+                {
+                    "symbol": "2AAP.AS",
+                    "name": "Leverage Shares 2X Apple Etp Securities",
+                    "exchange": "Amsterdam"
+                },
+                {
+                    "symbol": "SAPL.AS",
+                    "name": "Leverage Shares -1X Apple Etp Securities",
+                    "exchange": "Amsterdam"
+                },
+                {
+                    "symbol": "3SWP.L",
+                    "name": "Graniteshares 3X Short Apple Daily Etp",
+                    "exchange": "LSE"
+                },
+                {
+                    "symbol": "3SAA.L",
+                    "name": "Ls -3X Short Apple [Aapl] Etp",
+                    "exchange": "LSE"
+                }
+            ],
+            "statuscode": 200,
+            "schema": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "symbol": {
+                            "type": "string"
+                        },
+                        "name": {
+                            "type": "string"
+                        },
+                        "exchange": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "/crypto/daily",
+            "url": "https://quotient.p.rapidapi.com/crypto/daily",
+            "description": "Return end of day (daily) time series (Date, Open, High, Low, Close, Volume) given the input parameters.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "from",
+                    "type": "STRING",
+                    "description": "The query start date (supported format is : **YYYY-mm-dd**), e.g., `2018-04-01`.",
+                    "default": "2018-04-01"
+                },
+                {
+                    "name": "to",
+                    "type": "STRING",
+                    "description": "The query end date (supported format is : **YYYY-mm-dd**), e.g., `2020-04-21`.",
+                    "default": "2020-04-21"
+                },
+                {
+                    "name": "symbol",
+                    "type": "STRING",
+                    "description": "The symbol of the cryptocurrency pair to look for, e.g., `BTC/USD` (Bitcoin USD), `BTC-EUR` (Bitcoin EUR), `ETH/BTC` or `ETH-BTC` or `ETHBTC` (Ethereum BTC).",
+                    "default": "ETH-BTC"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://quotient.p.rapidapi.com/crypto/daily\"\nquerystring = {\"from\": \"2018-04-01\", \"to\": \"2020-04-21\", \"symbol\": \"ETH-BTC\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"quotient.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://quotient.p.rapidapi.com/crypto/daily\"\nquerystring = {\"from\": \"2018-04-01\", \"to\": \"2020-04-21\", \"symbol\": \"ETH-BTC\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"quotient.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "Date": "2020-04-21",
+                    "Open": 0.025027,
+                    "High": 0.025296,
+                    "Low": 0.024836,
+                    "Close": 0.025047,
+                    "Volume": 3210653
+                },
+                {
+                    "Date": "2020-04-20",
+                    "Open": 0.024187,
+                    "High": 0.02601,
+                    "Low": 0.024066,
+                    "Close": 0.025027,
+                    "Volume": 3874616
+                },
+                {
+                    "Date": "2020-04-17",
+                    "Open": 0.024432,
+                    "High": 0.024466,
+                    "Low": 0.023898,
+                    "Close": 0.024187,
+                    "Volume": 3168605
+                },
+                {
+                    "Date": "2020-04-16",
+                    "Open": 0.023368,
+                    "High": 0.024694,
+                    "Low": 0.022908,
+                    "Close": 0.024432,
+                    "Volume": 4460908
+                },
+                {
+                    "Date": "2020-04-15",
+                    "Open": 0.023172,
+                    "High": 0.023396,
+                    "Low": 0.022877,
+                    "Close": 0.023368,
+                    "Volume": 2998960
+                },
+                {
+                    "Date": "2020-04-14",
+                    "Open": 0.022939,
+                    "High": 0.023242,
+                    "Low": 0.022822,
+                    "Close": 0.023172,
+                    "Volume": 3046961
+                },
+                {
+                    "Date": "2020-04-13",
+                    "Open": 0.022981,
+                    "High": 0.023259,
+                    "Low": 0.022618,
+                    "Close": 0.022939,
+                    "Volume": 3228924
+                },
+                {
+                    "Date": "2020-04-10",
+                    "Open": 0.023327,
+                    "High": 0.023381,
+                    "Low": 0.022509,
+                    "Close": 0.022986,
+                    "Volume": 4000126
+                },
+                {
+                    "Date": "2020-04-09",
+                    "Open": 0.023497,
+                    "High": 0.023582,
+                    "Low": 0.023214,
+                    "Close": 0.023327,
+                    "Volume": 3051183
+                },
+                {
+                    "Date": "2020-04-08",
+                    "Open": 0.022978,
+                    "High": 0.023522,
+                    "Low": 0.022757,
+                    "Close": 0.023497,
+                    "Volume": 3390001
+                },
+                {
+                    "Date": "2020-04-07",
+                    "Open": 0.022711,
+                    "High": 0.023698,
+                    "Low": 0.022624,
+                    "Close": 0.022978,
+                    "Volume": 4120412
+                },
+                {
+                    "Date": "2020-04-06",
+                    "Open": 0.020997,
+                    "High": 0.023081,
+                    "Low": 0.020816,
+                    "Close": 0.022711,
+                    "Volume": 4157796
+                },
+                {
+                    "Date": "2020-04-03",
+                    "Open": 0.020859,
+                    "High": 0.021075,
+                    "Low": 0.020701,
+                    "Close": 0.020997,
+                    "Volume": 3271269
+                },
+                {
+                    "Date": "2020-04-02",
+                    "Open": 0.02078,
+                    "High": 0.02103,
+                    "Low": 0.020401,
+                    "Close": 0.020859,
+                    "Volume": 3926832
+                },
+                {
+                    "Date": "2020-04-01",
+                    "Open": 0.020786,
+                    "High": 0.021152,
+                    "Low": 0.020702,
+                    "Close": 0.02078,
+                    "Volume": 3063678
+                },
+                {
+                    "Date": "2020-03-31",
+                    "Open": 0.020718,
+                    "High": 0.020814,
+                    "Low": 0.020416,
+                    "Close": 0.020786,
+                    "Volume": 3009766
+                },
+                {
+                    "Date": "2020-03-30",
+                    "Open": 0.020577,
+                    "High": 0.021296,
+                    "Low": 0.020466,
+                    "Close": 0.020718,
+                    "Volume": 3045183
+                },
+                {
+                    "Date": "2020-03-27",
+                    "Open": 0.020265,
+                    "High": 0.020687,
+                    "Low": 0.020191,
+                    "Close": 0.020577,
+                    "Volume": 3216658
+                },
+                {
+                    "Date": "2020-03-26",
+                    "Open": 0.020518,
+                    "High": 0.020534,
+                    "Low": 0.020221,
+                    "Close": 0.020265,
+                    "Volume": 3214892
+                },
+                {
+                    "Date": "2020-03-25",
+                    "Open": 0.020697,
+                    "High": 0.02102,
+                    "Low": 0.020325,
+                    "Close": 0.020518,
+                    "Volume": 3472560
+                },
+                {
+                    "Date": "2020-03-24",
+                    "Open": 0.020634,
+                    "High": 0.021128,
+                    "Low": 0.020467,
+                    "Close": 0.020697,
+                    "Volume": 3896667
+                },
+                {
+                    "Date": "2020-03-23",
+                    "Open": 0.02099,
+                    "High": 0.021572,
+                    "Low": 0.020571,
+                    "Close": 0.020634,
+                    "Volume": 3979400
+                },
+                {
+                    "Date": "2020-03-20",
+                    "Open": 0.021958,
+                    "High": 0.022665,
+                    "Low": 0.020524,
+                    "Close": 0.02099,
+                    "Volume": 4570164
+                },
+                {
+                    "Date": "2020-03-19",
+                    "Open": 0.021813,
+                    "High": 0.022263,
+                    "Low": 0.02159,
+                    "Close": 0.021958,
+                    "Volume": 4054976
+                },
+                {
+                    "Date": "2020-03-18",
+                    "Open": 0.021811,
+                    "High": 0.022033,
+                    "Low": 0.021582,
+                    "Close": 0.021813,
+                    "Volume": 3313846
+                },
+                {
+                    "Date": "2020-03-17",
+                    "Open": 0.022324,
+                    "High": 0.022475,
+                    "Low": 0.021811,
+                    "Close": 0.021811,
+                    "Volume": 4185791
+                },
+                {
+                    "Date": "2020-03-16",
+                    "Open": 0.023698,
+                    "High": 0.024403,
+                    "Low": 0.022095,
+                    "Close": 0.022324,
+                    "Volume": 6475432
+                },
+                {
+                    "Date": "2020-03-13",
+                    "Open": 0.022518,
+                    "High": 0.024924,
+                    "Low": 0.021655,
+                    "Close": 0.023698,
+                    "Volume": 15948481
+                },
+                {
+                    "Date": "2020-03-12",
+                    "Open": 0.024512,
+                    "High": 0.024579,
+                    "Low": 0.021365,
+                    "Close": 0.022518,
+                    "Volume": 9286068
+                },
+                {
+                    "Date": "2020-03-11",
+                    "Open": 0.025407,
+                    "High": 0.025567,
+                    "Low": 0.023938,
+                    "Close": 0.024511,
+                    "Volume": 3982301
+                },
+                {
+                    "Date": "2020-03-10",
+                    "Open": 0.025256,
+                    "High": 0.025708,
+                    "Low": 0.024946,
+                    "Close": 0.025407,
+                    "Volume": 4127262
+                },
+                {
+                    "Date": "2020-03-09",
+                    "Open": 0.026378,
+                    "High": 0.027428,
+                    "Low": 0.024524,
+                    "Close": 0.025256,
+                    "Volume": 4448271
+                },
+                {
+                    "Date": "2020-03-06",
+                    "Open": 0.025371,
+                    "High": 0.026428,
+                    "Low": 0.025048,
+                    "Close": 0.026378,
+                    "Volume": 3224747
+                },
+                {
+                    "Date": "2020-03-05",
+                    "Open": 0.025528,
+                    "High": 0.025739,
+                    "Low": 0.02533,
+                    "Close": 0.025371,
+                    "Volume": 2676271
+                },
+                {
+                    "Date": "2020-03-04",
+                    "Open": 0.025621,
+                    "High": 0.025917,
+                    "Low": 0.025412,
+                    "Close": 0.025528,
+                    "Volume": 2584914
+                },
+                {
+                    "Date": "2020-03-03",
+                    "Open": 0.026047,
+                    "High": 0.026117,
+                    "Low": 0.02543,
+                    "Close": 0.025621,
+                    "Volume": 3238519
+                },
+                {
+                    "Date": "2020-03-02",
+                    "Open": 0.026113,
+                    "High": 0.026577,
+                    "Low": 0.025144,
+                    "Close": 0.026047,
+                    "Volume": 3089942
+                },
+                {
+                    "Date": "2020-02-28",
+                    "Open": 0.025842,
+                    "High": 0.026351,
+                    "Low": 0.025313,
+                    "Close": 0.026113,
+                    "Volume": 3435328
+                },
+                {
+                    "Date": "2020-02-27",
+                    "Open": 0.025585,
+                    "High": 0.026614,
+                    "Low": 0.024656,
+                    "Close": 0.025842,
+                    "Volume": 3701762
+                },
+                {
+                    "Date": "2020-02-26",
+                    "Open": 0.026685,
+                    "High": 0.02687,
+                    "Low": 0.024812,
+                    "Close": 0.025585,
+                    "Volume": 4015632
+                },
+                {
+                    "Date": "2020-02-25",
+                    "Open": 0.027264,
+                    "High": 0.027524,
+                    "Low": 0.026468,
+                    "Close": 0.026685,
+                    "Volume": 2417266
+                },
+                {
+                    "Date": "2020-02-24",
+                    "Open": 0.027208,
+                    "High": 0.02776,
+                    "Low": 0.026849,
+                    "Close": 0.027264,
+                    "Volume": 1696058
+                },
+                {
+                    "Date": "2020-02-21",
+                    "Open": 0.026968,
+                    "High": 0.027531,
+                    "Low": 0.026541,
+                    "Close": 0.027208,
+                    "Volume": 2956782
+                },
+                {
+                    "Date": "2020-02-20",
+                    "Open": 0.027273,
+                    "High": 0.0275,
+                    "Low": 0.025985,
+                    "Close": 0.026968,
+                    "Volume": 2903966
+                },
+                {
+                    "Date": "2020-02-19",
+                    "Open": 0.027692,
+                    "High": 0.027913,
+                    "Low": 0.026766,
+                    "Close": 0.027282,
+                    "Volume": 2607247
+                },
+                {
+                    "Date": "2020-02-18",
+                    "Open": 0.026975,
+                    "High": 0.028462,
+                    "Low": 0.026934,
+                    "Close": 0.027693,
+                    "Volume": 3597764
+                },
+                {
+                    "Date": "2020-02-17",
+                    "Open": 0.027323,
+                    "High": 0.027806,
+                    "Low": 0.024628,
+                    "Close": 0.026975,
+                    "Volume": 3590223
+                },
+                {
+                    "Date": "2020-02-14",
+                    "Open": 0.025821,
+                    "High": 0.027471,
+                    "Low": 0.025766,
+                    "Close": 0.027323,
+                    "Volume": 2856176
+                },
+                {
+                    "Date": "2020-02-13",
+                    "Open": 0.025993,
+                    "High": 0.026741,
+                    "Low": 0.02525,
+                    "Close": 0.025821,
+                    "Volume": 4064032
+                },
+                {
+                    "Date": "2020-02-12",
+                    "Open": 0.02317,
+                    "High": 0.026417,
+                    "Low": 0.023067,
+                    "Close": 0.025993,
+                    "Volume": 4121976
+                },
+                {
+                    "message": "Upgrade your subscription to MEGA plan to get all remaining data and unlimited access."
+                }
+            ],
+            "statuscode": 200,
+            "schema": {
+                "type": "array",
+                "items": {
+                    "title": "Items",
+                    "type": "object",
+                    "required": [
+                        "Date",
+                        "Open",
+                        "High",
+                        "Low",
+                        "Close",
+                        "Volume"
+                    ],
+                    "properties": {
+                        "Date": {
+                            "title": "Date",
+                            "type": "string",
+                            "pattern": "^.*$"
+                        },
+                        "Open": {
+                            "title": "Open",
+                            "type": "number",
+                            "format": "double",
+                            "minimum": -1.7976931348623157e+308,
+                            "maximum": 1.7976931348623157e+308
+                        },
+                        "High": {
+                            "title": "High",
+                            "type": "number",
+                            "format": "double",
+                            "minimum": -1.7976931348623157e+308,
+                            "maximum": 1.7976931348623157e+308
+                        },
+                        "Low": {
+                            "title": "Low",
+                            "type": "number",
+                            "format": "double",
+                            "minimum": -1.7976931348623157e+308,
+                            "maximum": 1.7976931348623157e+308
+                        },
+                        "Close": {
+                            "title": "Close",
+                            "type": "number",
+                            "format": "double",
+                            "minimum": -1.7976931348623157e+308,
+                            "maximum": 1.7976931348623157e+308
+                        },
+                        "Volume": {
+                            "title": "Volume",
+                            "type": "integer",
+                            "format": "int64",
+                            "minimum": -9223372036854776000,
+                            "maximum": 9223372036854776000
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "/crypto/intraday",
+            "url": "https://quotient.p.rapidapi.com/crypto/intraday",
+            "description": "Return intraday time series (Date, Open, High, Low, Close, Volume) given the input parameters.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "interval",
+                    "type": "NUMBER",
+                    "description": "1-minute level time interval, e.g., `1` (1 min), `5` (5 min).",
+                    "default": "1"
+                },
+                {
+                    "name": "to",
+                    "type": "STRING",
+                    "description": "The query end date (supported formats are : **YYYY-mm-dd HH:MM**, **YYYY-mm-dd**), e.g., `2020-04-21 10:30` or simply `2020-04-22`.",
+                    "default": "2020-04-21 10:30"
+                },
+                {
+                    "name": "symbol",
+                    "type": "STRING",
+                    "description": "The symbol of the cryptocurrency pair to look for, e.g., `BTC/USD` (Bitcoin USD), `BTC-EUR` (Bitcoin EUR), `ETH/BTC` or `ETH-BTC` or `ETHBTC` (Ethereum BTC).",
+                    "default": "BTC-USD"
+                },
+                {
+                    "name": "from",
+                    "type": "STRING",
+                    "description": "The query start date (supported formats are : **YYYY-mm-dd HH:MM**, **YYYY-mm-dd**), e.g., `2020-04-21 10:00` or simply `2020-04-21`.",
+                    "default": "2020-04-21 10:00"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://quotient.p.rapidapi.com/crypto/intraday\"\nquerystring = {\"interval\": \"1\", \"to\": \"2020-04-21 10:30\", \"symbol\": \"BTC-USD\", \"from\": \"2020-04-21 10:00\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"quotient.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://quotient.p.rapidapi.com/crypto/intraday\"\nquerystring = {\"interval\": \"1\", \"to\": \"2020-04-21 10:30\", \"symbol\": \"BTC-USD\", \"from\": \"2020-04-21 10:00\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"quotient.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per minute for your plan, BASIC, by the API provider"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "array",
+                "items": {
+                    "title": "Items",
+                    "type": "object",
+                    "required": [
+                        "Date",
+                        "Open",
+                        "High",
+                        "Low",
+                        "Close",
+                        "Volume"
+                    ],
+                    "properties": {
+                        "Date": {
+                            "title": "Date",
+                            "type": "string",
+                            "pattern": "^.*$"
+                        },
+                        "Open": {
+                            "title": "Open",
+                            "type": "number",
+                            "format": "double",
+                            "minimum": -1.7976931348623157e+308,
+                            "maximum": 1.7976931348623157e+308
+                        },
+                        "High": {
+                            "title": "High",
+                            "type": "number",
+                            "format": "double",
+                            "minimum": -1.7976931348623157e+308,
+                            "maximum": 1.7976931348623157e+308
+                        },
+                        "Low": {
+                            "title": "Low",
+                            "type": "number",
+                            "format": "double",
+                            "minimum": -1.7976931348623157e+308,
+                            "maximum": 1.7976931348623157e+308
+                        },
+                        "Close": {
+                            "title": "Close",
+                            "type": "number",
+                            "format": "double",
+                            "minimum": -1.7976931348623157e+308,
+                            "maximum": 1.7976931348623157e+308
+                        },
+                        "Volume": {
+                            "title": "Volume",
+                            "type": "integer",
+                            "format": "int64",
+                            "minimum": -9223372036854776000,
+                            "maximum": 9223372036854776000
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "/crypto/live",
+            "url": "https://quotient.p.rapidapi.com/crypto/live",
+            "description": "Return current market price data given the input parameters.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "symbol",
+                    "type": "STRING",
+                    "description": "The symbol of the cryptocurrency pair to look for, e.g., `BTC/USD` (Bitcoin USD), `BTC-EUR` (Bitcoin EUR), `ETH/BTC` or `ETH-BTC` or `ETHBTC` (Ethereum BTC).",
+                    "default": "BTC-EUR"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "timezone",
+                    "type": "STRING",
+                    "description": "Alternatively, a valid time zone for the returned timestamp, e.g., `US/Eastern`.",
+                    "default": "UTC"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://quotient.p.rapidapi.com/crypto/live\"\nquerystring = {\"timezone\": \"UTC\", \"symbol\": \"BTC-EUR\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"quotient.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://quotient.p.rapidapi.com/crypto/live\"\nquerystring = {\"timezone\": \"UTC\", \"symbol\": \"BTC-EUR\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"quotient.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per minute for your plan, BASIC, by the API provider"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "required": [
+                    "Last",
+                    "Change",
+                    "ChangePercent",
+                    "Timestamp",
+                    "PreviousClose",
+                    "Open",
+                    "Bid",
+                    "BidSize",
+                    "Ask",
+                    "AskSize",
+                    "High",
+                    "Low",
+                    "52WeekHigh",
+                    "52WeekLow",
+                    "Volume",
+                    "AvgVolume",
+                    "Symbol",
+                    "Name"
+                ],
+                "properties": {
+                    "Last": {
+                        "title": "Last",
+                        "type": "number"
+                    },
+                    "Change": {
+                        "title": "Change",
+                        "type": "number"
+                    },
+                    "ChangePercent": {
+                        "title": "Changepercent",
+                        "type": "number"
+                    },
+                    "Timestamp": {
+                        "title": "Timestamp",
+                        "type": "string",
+                        "pattern": "^.*$"
+                    },
+                    "PreviousClose": {
+                        "title": "Previousclose",
+                        "type": "number"
+                    },
+                    "Open": {
+                        "title": "Open",
+                        "type": "number"
+                    },
+                    "Bid": {
+                        "title": "Bid",
+                        "type": "number"
+                    },
+                    "BidSize": {
+                        "title": "Bidsize",
+                        "type": "integer"
+                    },
+                    "Ask": {
+                        "title": "Ask",
+                        "type": "number"
+                    },
+                    "AskSize": {
+                        "title": "Asksize",
+                        "type": "integer"
+                    },
+                    "High": {
+                        "title": "High",
+                        "type": "number"
+                    },
+                    "Low": {
+                        "title": "Low",
+                        "type": "number"
+                    },
+                    "52WeekHigh": {
+                        "title": "52weekhigh",
+                        "type": "number"
+                    },
+                    "52WeekLow": {
+                        "title": "52weeklow",
+                        "type": "number"
+                    },
+                    "Volume": {
+                        "title": "Volume",
+                        "type": "integer"
+                    },
+                    "AvgVolume": {
+                        "title": "Avgvolume",
+                        "type": "integer"
+                    },
+                    "Symbol": {
+                        "title": "Symbol",
+                        "type": "string",
+                        "pattern": "^.*$"
+                    },
+                    "Name": {
+                        "title": "Name",
+                        "type": "string",
+                        "pattern": "^.*$"
+                    }
+                }
+            }
+        },
+        {
+            "name": "/crypto/signal",
+            "url": "https://quotient.p.rapidapi.com/crypto/signal",
+            "description": "Return a trading signal based on market sentiment, reliable indicators, analyst ratings and news. Signal : `1`=**buy**, `0`=**hold** and `-1`=**sell**. Confidence interval : [0%-100%].",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "symbol",
+                    "type": "STRING",
+                    "description": "The symbol of the cryptocurrency pair to look for, e.g., `BTC/USD` (Bitcoin USD), `BTC-EUR` (Bitcoin EUR), `ETH/BTC` or `ETH-BTC` or `ETHBTC` (Ethereum BTC).",
+                    "default": "ETH-BTC"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://quotient.p.rapidapi.com/crypto/signal\"\nquerystring = {\"symbol\": \"ETH-BTC\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"quotient.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://quotient.p.rapidapi.com/crypto/signal\"\nquerystring = {\"symbol\": \"ETH-BTC\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"quotient.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per minute for your plan, BASIC, by the API provider"
+            },
+            "statuscode": 1,
+            "schema": ""
+        },
+        {
+            "name": "/forex/live",
+            "url": "https://quotient.p.rapidapi.com/forex/live",
+            "description": "Return current market price data given the input parameters.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "symbol",
+                    "type": "STRING",
+                    "description": "The symbol of the currency pair to look for, e.g., `EUR/USD` or `EUR-USD` or `EURUSD`.",
+                    "default": "EUR/USD"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "timezone",
+                    "type": "STRING",
+                    "description": "Alternatively, a valid time zone for the returned timestamp, e.g., `US/Eastern`.",
+                    "default": "UTC"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://quotient.p.rapidapi.com/forex/live\"\nquerystring = {\"symbol\": \"EUR/USD\", \"timezone\": \"UTC\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"quotient.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://quotient.p.rapidapi.com/forex/live\"\nquerystring = {\"symbol\": \"EUR/USD\", \"timezone\": \"UTC\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"quotient.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per minute for your plan, BASIC, by the API provider"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "required": [
+                    "Last",
+                    "Change",
+                    "ChangePercent",
+                    "Timestamp",
+                    "PreviousClose",
+                    "Open",
+                    "Bid",
+                    "BidSize",
+                    "Ask",
+                    "AskSize",
+                    "High",
+                    "Low",
+                    "52WeekHigh",
+                    "52WeekLow",
+                    "Volume",
+                    "AvgVolume",
+                    "Symbol",
+                    "Name"
+                ],
+                "properties": {
+                    "Last": {
+                        "title": "Last",
+                        "type": "number"
+                    },
+                    "Change": {
+                        "title": "Change",
+                        "type": "number"
+                    },
+                    "ChangePercent": {
+                        "title": "Changepercent",
+                        "type": "number"
+                    },
+                    "Timestamp": {
+                        "title": "Timestamp",
+                        "type": "string",
+                        "pattern": "^.*$"
+                    },
+                    "PreviousClose": {
+                        "title": "Previousclose",
+                        "type": "number"
+                    },
+                    "Open": {
+                        "title": "Open",
+                        "type": "number"
+                    },
+                    "Bid": {
+                        "title": "Bid",
+                        "type": "number"
+                    },
+                    "BidSize": {
+                        "title": "Bidsize",
+                        "type": "integer"
+                    },
+                    "Ask": {
+                        "title": "Ask",
+                        "type": "number"
+                    },
+                    "AskSize": {
+                        "title": "Asksize",
+                        "type": "integer"
+                    },
+                    "High": {
+                        "title": "High",
+                        "type": "number"
+                    },
+                    "Low": {
+                        "title": "Low",
+                        "type": "number"
+                    },
+                    "52WeekHigh": {
+                        "title": "52weekhigh",
+                        "type": "number"
+                    },
+                    "52WeekLow": {
+                        "title": "52weeklow",
+                        "type": "number"
+                    },
+                    "Volume": {
+                        "title": "Volume",
+                        "type": "integer"
+                    },
+                    "AvgVolume": {
+                        "title": "Avgvolume",
+                        "type": "integer"
+                    },
+                    "Symbol": {
+                        "title": "Symbol",
+                        "type": "string",
+                        "pattern": "^.*$"
+                    },
+                    "Name": {
+                        "title": "Name",
+                        "type": "string",
+                        "pattern": "^.*$"
+                    }
+                }
+            }
+        },
+        {
+            "name": "/forex/daily",
+            "url": "https://quotient.p.rapidapi.com/forex/daily",
+            "description": "Return end of day (daily) time series (Date, Open, High, Low, Close, Volume) given the input parameters.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "from",
+                    "type": "STRING",
+                    "description": "The query start date (supported format is : **YYYY-mm-dd**), e.g., `2018-04-01`.",
+                    "default": "2018-04-01"
+                },
+                {
+                    "name": "symbol",
+                    "type": "STRING",
+                    "description": "The symbol of the currency pair to look for, e.g., `EUR/USD` or `EUR-USD` or `EURUSD`.",
+                    "default": "EUR-USD"
+                },
+                {
+                    "name": "to",
+                    "type": "STRING",
+                    "description": "The query end date (supported format is : **YYYY-mm-dd**), e.g., `2020-04-21`.",
+                    "default": "2020-04-21"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://quotient.p.rapidapi.com/forex/daily\"\nquerystring = {\"from\": \"2018-04-01\", \"symbol\": \"EUR-USD\", \"to\": \"2020-04-21\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"quotient.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://quotient.p.rapidapi.com/forex/daily\"\nquerystring = {\"from\": \"2018-04-01\", \"symbol\": \"EUR-USD\", \"to\": \"2020-04-21\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"quotient.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per minute for your plan, BASIC, by the API provider"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "array",
+                "items": {
+                    "title": "Items",
+                    "type": "object",
+                    "required": [
+                        "Date",
+                        "Open",
+                        "High",
+                        "Low",
+                        "Close",
+                        "Volume"
+                    ],
+                    "properties": {
+                        "Date": {
+                            "title": "Date",
+                            "type": "string",
+                            "pattern": "^.*$"
+                        },
+                        "Open": {
+                            "title": "Open",
+                            "type": "number",
+                            "format": "double",
+                            "minimum": -1.7976931348623157e+308,
+                            "maximum": 1.7976931348623157e+308
+                        },
+                        "High": {
+                            "title": "High",
+                            "type": "number",
+                            "format": "double",
+                            "minimum": -1.7976931348623157e+308,
+                            "maximum": 1.7976931348623157e+308
+                        },
+                        "Low": {
+                            "title": "Low",
+                            "type": "number",
+                            "format": "double",
+                            "minimum": -1.7976931348623157e+308,
+                            "maximum": 1.7976931348623157e+308
+                        },
+                        "Close": {
+                            "title": "Close",
+                            "type": "number",
+                            "format": "double",
+                            "minimum": -1.7976931348623157e+308,
+                            "maximum": 1.7976931348623157e+308
+                        },
+                        "Volume": {
+                            "title": "Volume",
+                            "type": "integer",
+                            "format": "int64",
+                            "minimum": -9223372036854776000,
+                            "maximum": 9223372036854776000
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "/indexes/signal",
+            "url": "https://quotient.p.rapidapi.com/indexes/signal",
+            "description": "Return a trading signal based on market sentiment, reliable indicators, analyst ratings and news. Signal : `1`=**buy**, `0`=**hold** and `-1`=**sell**. Confidence interval : [0%-100%].",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "symbol",
+                    "type": "STRING",
+                    "description": "The symbol of the index to look for, e.g., `^GSPC` (S&P 500 index) or with suffix notation `SPX:INDEX` (S&P 500 index), `^GSPTSE` (TSX Composite Index) or with suffix notation `TXCX:INDEXCA` (TSX Composite Index). Valid suffixes are :\n\n  - `:INDEX`: for world indices, e.g., `SPX:INDEX` (S&P 500 index) or `^GSPC`\n  - `:INDEXUS`: for us specific indices, e.g., `SREN:INDEXUS` (S&P 500 Energy (Sector)) or `^GSPE`\n  - `:INDEXCA`: for canadian specific indices, e.g., `TXCX:INDEXCA` (TSX Composite Index) or `^GSPTSE`\n  - `:INDEXAU`: for australian specific indices, e.g., `XTO:INDEXAU` (ASX 100 Index) or `^ATOI`\n  - `:INDEXEU`: for european specific indices, e.g., `BEL2I:INDEXEU` (BEL 20 Gr) or `BEL2I.BR`\n\n  Please use the lookup endpoint to find out the symbol you're looking for.\n",
+                    "default": "SPX:INDEX"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://quotient.p.rapidapi.com/indexes/signal\"\nquerystring = {\"symbol\": \"SPX:INDEX\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"quotient.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://quotient.p.rapidapi.com/indexes/signal\"\nquerystring = {\"symbol\": \"SPX:INDEX\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"quotient.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per minute for your plan, BASIC, by the API provider"
+            },
+            "statuscode": 1,
+            "schema": ""
+        },
+        {
+            "name": "/indexes/daily",
+            "url": "https://quotient.p.rapidapi.com/indexes/daily",
+            "description": "Return end of day (daily) time series (Date, Open, High, Low, Close, Volume) given the input parameters.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "from",
+                    "type": "STRING",
+                    "description": "The query start date (supported format is : **YYYY-mm-dd**), e.g., `2018-04-01`.",
+                    "default": "2018-04-01"
+                },
+                {
+                    "name": "to",
+                    "type": "STRING",
+                    "description": "The query end date (supported format is : **YYYY-mm-dd**), e.g., `2020-04-21`.",
+                    "default": "2020-04-21"
+                },
+                {
+                    "name": "symbol",
+                    "type": "STRING",
+                    "description": "The symbol of the index to look for, e.g., `^GSPC` (S&P 500 index) or with suffix notation `SPX:INDEX` (S&P 500 index), `^GSPTSE` (TSX Composite Index) or with suffix notation `TXCX:INDEXCA` (TSX Composite Index). Valid suffixes are :\n\n  - `:INDEX`: for world indices, e.g., `SPX:INDEX` (S&P 500 index) or `^GSPC`\n  - `:INDEXUS`: for us specific indices, e.g., `SREN:INDEXUS` (S&P 500 Energy (Sector)) or `^GSPE`\n  - `:INDEXCA`: for canadian specific indices, e.g., `TXCX:INDEXCA` (TSX Composite Index) or `^GSPTSE`\n  - `:INDEXAU`: for australian specific indices, e.g., `XTO:INDEXAU` (ASX 100 Index) or `^ATOI`\n  - `:INDEXEU`: for european specific indices, e.g., `BEL2I:INDEXEU` (BEL 20 Gr) or `BEL2I.BR`\n\n  Please use the lookup endpoint to find out the symbol you're looking for.\n",
+                    "default": "^GSPC"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "adjust",
+                    "type": "BOOLEAN",
+                    "description": "Tell if price need to be adjusted.",
+                    "default": "false"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://quotient.p.rapidapi.com/indexes/daily\"\nquerystring = {\"from\": \"2018-04-01\", \"to\": \"2020-04-21\", \"symbol\": \"^GSPC\", \"adjust\": \"false\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"quotient.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://quotient.p.rapidapi.com/indexes/daily\"\nquerystring = {\"from\": \"2018-04-01\", \"to\": \"2020-04-21\", \"symbol\": \"^GSPC\", \"adjust\": \"false\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"quotient.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per minute for your plan, BASIC, by the API provider"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "array",
+                "items": {
+                    "title": "Items",
+                    "type": "object",
+                    "required": [
+                        "Date",
+                        "Open",
+                        "High",
+                        "Low",
+                        "Close",
+                        "Volume"
+                    ],
+                    "properties": {
+                        "Date": {
+                            "title": "Date",
+                            "type": "string",
+                            "pattern": "^.*$"
+                        },
+                        "Open": {
+                            "title": "Open",
+                            "type": "number",
+                            "format": "double",
+                            "minimum": -1.7976931348623157e+308,
+                            "maximum": 1.7976931348623157e+308
+                        },
+                        "High": {
+                            "title": "High",
+                            "type": "number",
+                            "format": "double",
+                            "minimum": -1.7976931348623157e+308,
+                            "maximum": 1.7976931348623157e+308
+                        },
+                        "Low": {
+                            "title": "Low",
+                            "type": "number",
+                            "format": "double",
+                            "minimum": -1.7976931348623157e+308,
+                            "maximum": 1.7976931348623157e+308
+                        },
+                        "Close": {
+                            "title": "Close",
+                            "type": "number",
+                            "format": "double",
+                            "minimum": -1.7976931348623157e+308,
+                            "maximum": 1.7976931348623157e+308
+                        },
+                        "Volume": {
+                            "title": "Volume",
+                            "type": "integer",
+                            "format": "int64",
+                            "minimum": -9223372036854776000,
+                            "maximum": 9223372036854776000
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "/indexes/live",
+            "url": "https://quotient.p.rapidapi.com/indexes/live",
+            "description": "Return current market price data given the input parameters.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "symbol",
+                    "type": "STRING",
+                    "description": "The symbol of the index to look for, e.g., `^GSPC` (S&P 500 index) or with suffix notation `SPX:INDEX` (S&P 500 index), `^GSPTSE` (TSX Composite Index) or with suffix notation `TXCX:INDEXCA` (TSX Composite Index). Valid suffixes are :\n\n  - `:INDEX`: for world indices, e.g., `SPX:INDEX` (S&P 500 index) or `^GSPC`\n  - `:INDEXUS`: for us specific indices, e.g., `SREN:INDEXUS` (S&P 500 Energy (Sector)) or `^GSPE`\n  - `:INDEXCA`: for canadian specific indices, e.g., `TXCX:INDEXCA` (TSX Composite Index) or `^GSPTSE`\n  - `:INDEXAU`: for australian specific indices, e.g., `XTO:INDEXAU` (ASX 100 Index) or `^ATOI`\n  - `:INDEXEU`: for european specific indices, e.g., `BEL2I:INDEXEU` (BEL 20 Gr) or `BEL2I.BR`\n\n  Please use the lookup endpoint to find out the symbol you're looking for.\n",
+                    "default": "^GSPC"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "timezone",
+                    "type": "STRING",
+                    "description": "Alternatively, a valid time zone for the returned timestamp, e.g., `US/Eastern`.",
+                    "default": "UTC"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://quotient.p.rapidapi.com/indexes/live\"\nquerystring = {\"timezone\": \"UTC\", \"symbol\": \"^GSPC\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"quotient.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://quotient.p.rapidapi.com/indexes/live\"\nquerystring = {\"timezone\": \"UTC\", \"symbol\": \"^GSPC\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"quotient.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per minute for your plan, BASIC, by the API provider"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "required": [
+                    "Last",
+                    "Change",
+                    "ChangePercent",
+                    "Timestamp",
+                    "PreviousClose",
+                    "Open",
+                    "Bid",
+                    "BidSize",
+                    "Ask",
+                    "AskSize",
+                    "High",
+                    "Low",
+                    "52WeekHigh",
+                    "52WeekLow",
+                    "Volume",
+                    "AvgVolume",
+                    "Symbol",
+                    "Name"
+                ],
+                "properties": {
+                    "Last": {
+                        "title": "Last",
+                        "type": "number"
+                    },
+                    "Change": {
+                        "title": "Change",
+                        "type": "number"
+                    },
+                    "ChangePercent": {
+                        "title": "Changepercent",
+                        "type": "number"
+                    },
+                    "Timestamp": {
+                        "title": "Timestamp",
+                        "type": "string",
+                        "pattern": "^.*$"
+                    },
+                    "PreviousClose": {
+                        "title": "Previousclose",
+                        "type": "number"
+                    },
+                    "Open": {
+                        "title": "Open",
+                        "type": "number"
+                    },
+                    "Bid": {
+                        "title": "Bid",
+                        "type": "number"
+                    },
+                    "BidSize": {
+                        "title": "Bidsize",
+                        "type": "integer"
+                    },
+                    "Ask": {
+                        "title": "Ask",
+                        "type": "number"
+                    },
+                    "AskSize": {
+                        "title": "Asksize",
+                        "type": "integer"
+                    },
+                    "High": {
+                        "title": "High",
+                        "type": "number"
+                    },
+                    "Low": {
+                        "title": "Low",
+                        "type": "number"
+                    },
+                    "52WeekHigh": {
+                        "title": "52weekhigh",
+                        "type": "number"
+                    },
+                    "52WeekLow": {
+                        "title": "52weeklow",
+                        "type": "number"
+                    },
+                    "Volume": {
+                        "title": "Volume",
+                        "type": "integer"
+                    },
+                    "AvgVolume": {
+                        "title": "Avgvolume",
+                        "type": "integer"
+                    },
+                    "Symbol": {
+                        "title": "Symbol",
+                        "type": "string",
+                        "pattern": "^.*$"
+                    },
+                    "Name": {
+                        "title": "Name",
+                        "type": "string",
+                        "pattern": "^.*$"
+                    }
+                }
+            }
+        },
+        {
+            "name": "/equity/financial",
+            "url": "https://quotient.p.rapidapi.com/equity/financial",
+            "description": "Return financial data (revenue, earnings, ratios, etc) for a given security.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "symbol",
+                    "type": "STRING",
+                    "description": "The symbol of the asset to look for, e.g., `AAPL` (Apple Inc), `F` (Ford Motor Company).",
+                    "default": "AAPL"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://quotient.p.rapidapi.com/equity/financial\"\nquerystring = {\"symbol\": \"AAPL\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"quotient.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://quotient.p.rapidapi.com/equity/financial\"\nquerystring = {\"symbol\": \"AAPL\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"quotient.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per minute for your plan, BASIC, by the API provider"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "required": [
+                    "Symbol",
+                    "MarketCap",
+                    "Beta",
+                    "EpsDilutedTtm",
+                    "EpsDilutedQuarterly",
+                    "EpsDilutedAnnually",
+                    "1YearEpsGrowth",
+                    "P/E",
+                    "P/S",
+                    "P/B",
+                    "ROA",
+                    "ROE",
+                    "NetProfitMargin",
+                    "D/E",
+                    "BookValuePerShare",
+                    "TimesInterestEarned",
+                    "Payout",
+                    "ForwardDividendYield"
+                ],
+                "properties": {
+                    "Symbol": {
+                        "title": "Symbol",
+                        "type": "string",
+                        "pattern": "^.*$"
+                    },
+                    "MarketCap": {
+                        "title": "Marketcap",
+                        "type": "integer"
+                    },
+                    "Beta": {
+                        "title": "Beta",
+                        "type": "number"
+                    },
+                    "EpsDilutedTtm": {
+                        "title": "Epsdilutedttm",
+                        "type": "number"
+                    },
+                    "EpsDilutedQuarterly": {
+                        "title": "Epsdilutedquarterly",
+                        "type": "number"
+                    },
+                    "EpsDilutedAnnually": {
+                        "title": "Epsdilutedannually",
+                        "type": "number"
+                    },
+                    "1YearEpsGrowth": {
+                        "title": "1yearepsgrowth",
+                        "type": "number"
+                    },
+                    "P/E": {
+                        "title": "P/e",
+                        "type": "number"
+                    },
+                    "P/S": {
+                        "title": "P/s",
+                        "type": "number"
+                    },
+                    "P/B": {
+                        "title": "P/b",
+                        "type": "number"
+                    },
+                    "ROA": {
+                        "title": "Roa",
+                        "type": "number"
+                    },
+                    "ROE": {
+                        "title": "Roe",
+                        "type": "number"
+                    },
+                    "NetProfitMargin": {
+                        "title": "Netprofitmargin",
+                        "type": "number"
+                    },
+                    "D/E": {
+                        "title": "D/e",
+                        "type": "number"
+                    },
+                    "BookValuePerShare": {
+                        "title": "Bookvaluepershare",
+                        "type": "number"
+                    },
+                    "TimesInterestEarned": {
+                        "title": "Timesinterestearned",
+                        "type": "integer"
+                    },
+                    "Payout": {
+                        "title": "Payout",
+                        "type": "number"
+                    },
+                    "ForwardDividendYield": {
+                        "title": "Forwarddividendyield",
+                        "type": "number"
+                    }
+                }
+            }
+        },
+        {
+            "name": "/equity/live",
+            "url": "https://quotient.p.rapidapi.com/equity/live",
+            "description": "Return current market price data given the input parameters.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "symbol",
+                    "type": "STRING",
+                    "description": "The symbol of the asset to look for, e.g., `AAPL` (Apple Inc), `TSLA` (Tesla Inc).",
+                    "default": "TSLA"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "timezone",
+                    "type": "STRING",
+                    "description": "Alternatively, a valid time zone for the returned timestamp, e.g., `US/Eastern`.",
+                    "default": "UTC"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://quotient.p.rapidapi.com/equity/live\"\nquerystring = {\"symbol\": \"TSLA\", \"timezone\": \"UTC\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"quotient.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://quotient.p.rapidapi.com/equity/live\"\nquerystring = {\"symbol\": \"TSLA\", \"timezone\": \"UTC\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"quotient.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per minute for your plan, BASIC, by the API provider"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "required": [
+                    "Last",
+                    "Change",
+                    "ChangePercent",
+                    "Timestamp",
+                    "PreviousClose",
+                    "Open",
+                    "Bid",
+                    "BidSize",
+                    "Ask",
+                    "AskSize",
+                    "High",
+                    "Low",
+                    "52WeekHigh",
+                    "52WeekLow",
+                    "Volume",
+                    "AvgVolume",
+                    "Symbol",
+                    "Name"
+                ],
+                "properties": {
+                    "Last": {
+                        "title": "Last",
+                        "type": "number"
+                    },
+                    "Change": {
+                        "title": "Change",
+                        "type": "number"
+                    },
+                    "ChangePercent": {
+                        "title": "Changepercent",
+                        "type": "number"
+                    },
+                    "Timestamp": {
+                        "title": "Timestamp",
+                        "type": "string",
+                        "pattern": "^.*$"
+                    },
+                    "PreviousClose": {
+                        "title": "Previousclose",
+                        "type": "number"
+                    },
+                    "Open": {
+                        "title": "Open",
+                        "type": "number"
+                    },
+                    "Bid": {
+                        "title": "Bid",
+                        "type": "number"
+                    },
+                    "BidSize": {
+                        "title": "Bidsize",
+                        "type": "integer"
+                    },
+                    "Ask": {
+                        "title": "Ask",
+                        "type": "number"
+                    },
+                    "AskSize": {
+                        "title": "Asksize",
+                        "type": "integer"
+                    },
+                    "High": {
+                        "title": "High",
+                        "type": "number"
+                    },
+                    "Low": {
+                        "title": "Low",
+                        "type": "number"
+                    },
+                    "52WeekHigh": {
+                        "title": "52weekhigh",
+                        "type": "number"
+                    },
+                    "52WeekLow": {
+                        "title": "52weeklow",
+                        "type": "number"
+                    },
+                    "Volume": {
+                        "title": "Volume",
+                        "type": "integer"
+                    },
+                    "AvgVolume": {
+                        "title": "Avgvolume",
+                        "type": "integer"
+                    },
+                    "Symbol": {
+                        "title": "Symbol",
+                        "type": "string",
+                        "pattern": "^.*$"
+                    },
+                    "Name": {
+                        "title": "Name",
+                        "type": "string",
+                        "pattern": "^.*$"
+                    }
+                }
+            }
+        },
+        {
+            "name": "/options/prices",
+            "url": "https://quotient.p.rapidapi.com/options/prices",
+            "description": "Return current options data given the input parameters.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "type",
+                    "type": "STRING",
+                    "description": "The type of option contract. (`Call` or `Put`).",
+                    "default": "Call"
+                },
+                {
+                    "name": "symbol",
+                    "type": "STRING",
+                    "description": "The symbol of the asset to look for, e.g., `AAPL` (Apple Inc), `MSFT` (Microsoft).",
+                    "default": "AAPL"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "min_strike",
+                    "type": "NUMBER",
+                    "description": "Alternatively, a lower bound for strike price, e.g., `50`. If given, strike range **[`min_strike`, `max_strike`]** takes priority over `strike` parameter.",
+                    "default": "50"
+                },
+                {
+                    "name": "min_expiry",
+                    "type": "STRING",
+                    "description": "Alternatively, a lower bound for the expiration date (supported format is : **YYYY-mm-dd**), e.g., `2021-05-21`. If given, expiry range **[`min_expiry`, `max_expiry`]** takes priority over `expiration` parameter.",
+                    "default": "2021-05-21"
+                },
+                {
+                    "name": "max_expiry",
+                    "type": "STRING",
+                    "description": "Alternatively, an upper bound for the expiration date (supported format is : **YYYY-mm-dd**), e.g., `2021-12-14`. If given, expiry range **[`min_expiry`, `max_expiry`]** takes priority over `expiration` parameter.",
+                    "default": "2023-12-14"
+                },
+                {
+                    "name": "max_strike",
+                    "type": "NUMBER",
+                    "description": "Alternatively, an upper bound for strike price, e.g., `90`. If given, strike range **[`min_strike`, `max_strike`]** takes priority over `strike` parameter.",
+                    "default": "90"
+                },
+                {
+                    "name": "strike",
+                    "type": "NUMBER",
+                    "description": "The strike price of the option, e.g., `122.00`.",
+                    "default": "122.00"
+                },
+                {
+                    "name": "expiration",
+                    "type": "STRING",
+                    "description": "The expiration date of the option (supported format is : **YYYY-mm-dd**), e.g., `2021-12-14`.",
+                    "default": "2023-12-14"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://quotient.p.rapidapi.com/options/prices\"\nquerystring = {\"type\": \"Call\", \"min_strike\": \"50\", \"min_expiry\": \"2021-05-21\", \"max_expiry\": \"2023-12-14\", \"max_strike\": \"90\", \"strike\": \"122.00\", \"symbol\": \"AAPL\", \"expiration\": \"2023-12-14\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"quotient.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://quotient.p.rapidapi.com/options/prices\"\nquerystring = {\"type\": \"Call\", \"min_strike\": \"50\", \"min_expiry\": \"2021-05-21\", \"max_expiry\": \"2023-12-14\", \"max_strike\": \"90\", \"strike\": \"122.00\", \"symbol\": \"AAPL\", \"expiration\": \"2023-12-14\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"quotient.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per minute for your plan, BASIC, by the API provider"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "array",
+                "items": {
+                    "title": "Items",
+                    "type": "object",
+                    "required": [
+                        "Contract",
+                        "Expiration",
+                        "Strike",
+                        "Type",
+                        "LastTradeDate",
+                        "Bid",
+                        "BidSize",
+                        "Ask",
+                        "AskSize",
+                        "Open",
+                        "High",
+                        "Low",
+                        "Close",
+                        "PreviousClose",
+                        "Change",
+                        "Volume",
+                        "OpenInterest",
+                        "ImpliedVolatility",
+                        "Theoretical",
+                        "Delta",
+                        "Gamma",
+                        "Theta",
+                        "Vega",
+                        "Rho"
+                    ],
+                    "properties": {
+                        "Contract": {
+                            "title": "Contract",
+                            "type": "string",
+                            "pattern": "^.*$"
+                        },
+                        "Expiration": {
+                            "title": "Expiration",
+                            "type": "string",
+                            "pattern": "^.*$"
+                        },
+                        "Strike": {
+                            "title": "Strike",
+                            "type": "integer"
+                        },
+                        "Type": {
+                            "title": "Type",
+                            "type": "string",
+                            "pattern": "^.*$"
+                        },
+                        "LastTradeDate": {
+                            "title": "Lasttradedate",
+                            "type": "string",
+                            "pattern": "^.*$"
+                        },
+                        "Bid": {
+                            "title": "Bid",
+                            "type": "number"
+                        },
+                        "BidSize": {
+                            "title": "Bidsize",
+                            "type": "integer"
+                        },
+                        "Ask": {
+                            "title": "Ask",
+                            "type": "number"
+                        },
+                        "AskSize": {
+                            "title": "Asksize",
+                            "type": "integer"
+                        },
+                        "Open": {
+                            "title": "Open",
+                            "type": "number"
+                        },
+                        "High": {
+                            "title": "High",
+                            "type": "number"
+                        },
+                        "Low": {
+                            "title": "Low",
+                            "type": "number"
+                        },
+                        "Close": {
+                            "title": "Close",
+                            "type": "number"
+                        },
+                        "PreviousClose": {
+                            "title": "Previousclose",
+                            "type": "number"
+                        },
+                        "Change": {
+                            "title": "Change",
+                            "type": "number"
+                        },
+                        "Volume": {
+                            "title": "Volume",
+                            "type": "integer"
+                        },
+                        "OpenInterest": {
+                            "title": "Openinterest",
+                            "type": "integer"
+                        },
+                        "ImpliedVolatility": {
+                            "title": "Impliedvolatility",
+                            "type": "number"
+                        },
+                        "Theoretical": {
+                            "title": "Theoretical",
+                            "type": "number"
+                        },
+                        "Delta": {
+                            "title": "Delta",
+                            "type": "number"
+                        },
+                        "Gamma": {
+                            "title": "Gamma",
+                            "type": "number"
+                        },
+                        "Theta": {
+                            "title": "Theta",
+                            "type": "number"
+                        },
+                        "Vega": {
+                            "title": "Vega",
+                            "type": "number"
+                        },
+                        "Rho": {
+                            "title": "Rho",
+                            "type": "number"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "/equity/daily",
+            "url": "https://quotient.p.rapidapi.com/equity/daily",
+            "description": "Return end of day (daily) time series (Date, Open, High, Low, Close, Volume) given the input parameters.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "from",
+                    "type": "STRING",
+                    "description": "The query start date (supported format is : **YYYY-mm-dd**), e.g., `2018-04-01`.",
+                    "default": "2018-04-01"
+                },
+                {
+                    "name": "to",
+                    "type": "STRING",
+                    "description": "The query end date (supported format is : **YYYY-mm-dd**), e.g., `2020-04-21`.",
+                    "default": "2020-04-21"
+                },
+                {
+                    "name": "symbol",
+                    "type": "STRING",
+                    "description": "The symbol of the asset to look for, e.g., `AAPL` (Apple Inc), `MSFT` (Microsoft).",
+                    "default": "AAPL"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "adjust",
+                    "type": "BOOLEAN",
+                    "description": "Tell if price need to be adjusted.",
+                    "default": "false"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://quotient.p.rapidapi.com/equity/daily\"\nquerystring = {\"adjust\": \"false\", \"from\": \"2018-04-01\", \"to\": \"2020-04-21\", \"symbol\": \"AAPL\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"quotient.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://quotient.p.rapidapi.com/equity/daily\"\nquerystring = {\"adjust\": \"false\", \"from\": \"2018-04-01\", \"to\": \"2020-04-21\", \"symbol\": \"AAPL\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"quotient.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per minute for your plan, BASIC, by the API provider"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "array",
+                "items": {
+                    "title": "Items",
+                    "type": "object",
+                    "required": [
+                        "Date",
+                        "Open",
+                        "High",
+                        "Low",
+                        "Close",
+                        "Volume"
+                    ],
+                    "properties": {
+                        "Date": {
+                            "title": "Date",
+                            "type": "string",
+                            "pattern": "^.*$"
+                        },
+                        "Open": {
+                            "title": "Open",
+                            "type": "number",
+                            "format": "double",
+                            "minimum": -1.7976931348623157e+308,
+                            "maximum": 1.7976931348623157e+308
+                        },
+                        "High": {
+                            "title": "High",
+                            "type": "number",
+                            "format": "double",
+                            "minimum": -1.7976931348623157e+308,
+                            "maximum": 1.7976931348623157e+308
+                        },
+                        "Low": {
+                            "title": "Low",
+                            "type": "number",
+                            "format": "double",
+                            "minimum": -1.7976931348623157e+308,
+                            "maximum": 1.7976931348623157e+308
+                        },
+                        "Close": {
+                            "title": "Close",
+                            "type": "number",
+                            "format": "double",
+                            "minimum": -1.7976931348623157e+308,
+                            "maximum": 1.7976931348623157e+308
+                        },
+                        "Volume": {
+                            "title": "Volume",
+                            "type": "integer",
+                            "format": "int64",
+                            "minimum": -9223372036854776000,
+                            "maximum": 9223372036854776000
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "/equity/intraday",
+            "url": "https://quotient.p.rapidapi.com/equity/intraday",
+            "description": "Return intraday time series (Date, Open, High, Low, Close, Volume) given the input parameters.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "interval",
+                    "type": "NUMBER",
+                    "description": "1-minute level time interval, e.g., `1` (1 min), `5` (5 min).",
+                    "default": "1"
+                },
+                {
+                    "name": "to",
+                    "type": "STRING",
+                    "description": "The query end date (supported formats are : **YYYY-mm-dd HH:MM**, **YYYY-mm-dd**), e.g., `2020-04-21 10:30` or simply `2020-04-22`.",
+                    "default": "2020-04-21 10:30"
+                },
+                {
+                    "name": "from",
+                    "type": "STRING",
+                    "description": "The query start date (supported formats are : **YYYY-mm-dd HH:MM**, **YYYY-mm-dd**), e.g., `2020-04-21 10:00` or simply `2020-04-21`.",
+                    "default": "2020-04-21 10:00"
+                },
+                {
+                    "name": "symbol",
+                    "type": "STRING",
+                    "description": "The symbol of the asset to look for, e.g., `AAPL` (Apple Inc), `MSFT` (Microsoft).",
+                    "default": "AAPL"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "adjust",
+                    "type": "BOOLEAN",
+                    "description": "Tell if price need to be adjusted.",
+                    "default": "false"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://quotient.p.rapidapi.com/equity/intraday\"\nquerystring = {\"interval\": \"1\", \"adjust\": \"false\", \"to\": \"2020-04-21 10:30\", \"from\": \"2020-04-21 10:00\", \"symbol\": \"AAPL\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"quotient.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://quotient.p.rapidapi.com/equity/intraday\"\nquerystring = {\"interval\": \"1\", \"adjust\": \"false\", \"to\": \"2020-04-21 10:30\", \"from\": \"2020-04-21 10:00\", \"symbol\": \"AAPL\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"quotient.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per minute for your plan, BASIC, by the API provider"
+            },
+            "statuscode": 1,
+            "schema": ""
+        },
+        {
+            "name": "/indexes/intraday",
+            "url": "https://quotient.p.rapidapi.com/indexes/intraday",
+            "description": "Return intraday time series (Date, Open, High, Low, Close, Volume) given the input parameters.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "interval",
+                    "type": "NUMBER",
+                    "description": "1-minute level time interval, e.g., `1` (1 min), `5` (5 min).",
+                    "default": "1"
+                },
+                {
+                    "name": "from",
+                    "type": "STRING",
+                    "description": "The query start date (supported formats are : **YYYY-mm-dd HH:MM**, **YYYY-mm-dd**), e.g., `2020-04-21 10:00` or simply `2020-04-21`.",
+                    "default": "2020-04-21 10:00"
+                },
+                {
+                    "name": "to",
+                    "type": "STRING",
+                    "description": "The query end date (supported formats are : **YYYY-mm-dd HH:MM**, **YYYY-mm-dd**), e.g., `2020-04-21 10:30` or simply `2020-04-22`.",
+                    "default": "2020-04-21 10:30"
+                },
+                {
+                    "name": "symbol",
+                    "type": "STRING",
+                    "description": "The symbol of the index to look for, e.g., `^GSPC` (S&P 500 index) or with suffix notation `SPX:INDEX` (S&P 500 index), `^GSPTSE` (TSX Composite Index) or with suffix notation `TXCX:INDEXCA` (TSX Composite Index). Valid suffixes are :\n\n  - `:INDEX`: for world indices, e.g., `SPX:INDEX` (S&P 500 index) or `^GSPC`\n  - `:INDEXUS`: for us specific indices, e.g., `SREN:INDEXUS` (S&P 500 Energy (Sector)) or `^GSPE`\n  - `:INDEXCA`: for canadian specific indices, e.g., `TXCX:INDEXCA` (TSX Composite Index) or `^GSPTSE`\n  - `:INDEXAU`: for australian specific indices, e.g., `XTO:INDEXAU` (ASX 100 Index) or `^ATOI`\n  - `:INDEXEU`: for european specific indices, e.g., `BEL2I:INDEXEU` (BEL 20 Gr) or `BEL2I.BR`\n\n  Please use the lookup endpoint to find out the symbol you're looking for.\n",
+                    "default": "^GSPC"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "adjust",
+                    "type": "BOOLEAN",
+                    "description": "Tell if price need to be adjusted.",
+                    "default": "false"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://quotient.p.rapidapi.com/indexes/intraday\"\nquerystring = {\"interval\": \"1\", \"from\": \"2020-04-21 10:00\", \"adjust\": \"false\", \"to\": \"2020-04-21 10:30\", \"symbol\": \"^GSPC\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"quotient.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://quotient.p.rapidapi.com/indexes/intraday\"\nquerystring = {\"interval\": \"1\", \"from\": \"2020-04-21 10:00\", \"adjust\": \"false\", \"to\": \"2020-04-21 10:30\", \"symbol\": \"^GSPC\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"quotient.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per minute for your plan, BASIC, by the API provider"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "array",
+                "items": {
+                    "title": "Items",
+                    "type": "object",
+                    "required": [
+                        "Date",
+                        "Open",
+                        "High",
+                        "Low",
+                        "Close",
+                        "Volume"
+                    ],
+                    "properties": {
+                        "Date": {
+                            "title": "Date",
+                            "type": "string",
+                            "pattern": "^.*$"
+                        },
+                        "Open": {
+                            "title": "Open",
+                            "type": "number",
+                            "format": "double",
+                            "minimum": -1.7976931348623157e+308,
+                            "maximum": 1.7976931348623157e+308
+                        },
+                        "High": {
+                            "title": "High",
+                            "type": "number",
+                            "format": "double",
+                            "minimum": -1.7976931348623157e+308,
+                            "maximum": 1.7976931348623157e+308
+                        },
+                        "Low": {
+                            "title": "Low",
+                            "type": "number",
+                            "format": "double",
+                            "minimum": -1.7976931348623157e+308,
+                            "maximum": 1.7976931348623157e+308
+                        },
+                        "Close": {
+                            "title": "Close",
+                            "type": "number",
+                            "format": "double",
+                            "minimum": -1.7976931348623157e+308,
+                            "maximum": 1.7976931348623157e+308
+                        },
+                        "Volume": {
+                            "title": "Volume",
+                            "type": "integer",
+                            "format": "int64",
+                            "minimum": -9223372036854776000,
+                            "maximum": 9223372036854776000
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "/equity/splits",
+            "url": "https://quotient.p.rapidapi.com/equity/splits",
+            "description": "Return splits history data for a given security.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "symbol",
+                    "type": "STRING",
+                    "description": "The symbol of the asset to look for, e.g., `AAPL` (Apple Inc), `MSFT` (Microsoft Corporation).",
+                    "default": "MSFT"
+                },
+                {
+                    "name": "from",
+                    "type": "STRING",
+                    "description": "The query start date (supported format is : **YYYY-mm-dd**), e.g., `2019-01-01`.",
+                    "default": "1991-01-01"
+                },
+                {
+                    "name": "to",
+                    "type": "STRING",
+                    "description": "The query end date (supported format is : **YYYY-mm-dd**), e.g., `2020-04-17`.",
+                    "default": "2020-04-17"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://quotient.p.rapidapi.com/equity/splits\"\nquerystring = {\"symbol\": \"MSFT\", \"from\": \"1991-01-01\", \"to\": \"2020-04-17\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"quotient.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://quotient.p.rapidapi.com/equity/splits\"\nquerystring = {\"symbol\": \"MSFT\", \"from\": \"1991-01-01\", \"to\": \"2020-04-17\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"quotient.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per minute for your plan, BASIC, by the API provider"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "array",
+                "items": {
+                    "title": "Items",
+                    "type": "object",
+                    "required": [
+                        "Date",
+                        "split"
+                    ],
+                    "properties": {
+                        "Date": {
+                            "title": "Date",
+                            "type": "string",
+                            "pattern": "^.*$"
+                        },
+                        "split": {
+                            "title": "Split",
+                            "type": "string",
+                            "pattern": "^.*$"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "/forex/signal",
+            "url": "https://quotient.p.rapidapi.com/forex/signal",
+            "description": "Return a trading signal based on market sentiment, reliable indicators, analyst ratings and news. Signal : `1`=**buy**, `0`=**hold** and `-1`=**sell**. Confidence interval : [0%-100%].",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "symbol",
+                    "type": "STRING",
+                    "description": "The symbol of the currency pair to look for, e.g., `EUR/USD` or `EUR-USD` or `EURUSD`.",
+                    "default": "EUR-USD"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://quotient.p.rapidapi.com/forex/signal\"\nquerystring = {\"symbol\": \"EUR-USD\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"quotient.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://quotient.p.rapidapi.com/forex/signal\"\nquerystring = {\"symbol\": \"EUR-USD\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"quotient.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per minute for your plan, BASIC, by the API provider"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "required": [
+                    "Symbol",
+                    "Signal",
+                    "ConfidenceInterval"
+                ],
+                "properties": {
+                    "Symbol": {
+                        "title": "Symbol",
+                        "type": "string",
+                        "pattern": "^.*$"
+                    },
+                    "Signal": {
+                        "title": "Signal",
+                        "type": "integer"
+                    },
+                    "ConfidenceInterval": {
+                        "title": "Confidenceinterval",
+                        "type": "string",
+                        "pattern": "^.*$"
+                    }
+                }
+            }
+        },
+        {
+            "name": "/equity/earnings",
+            "url": "https://quotient.p.rapidapi.com/equity/earnings",
+            "description": "Return earnings (EPS, quarterly) history data for a given security.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "to",
+                    "type": "STRING",
+                    "description": "The query end date (supported format is : **YYYY-mm-dd**), e.g., `2020-04-17`.",
+                    "default": "2020-04-17"
+                },
+                {
+                    "name": "from",
+                    "type": "STRING",
+                    "description": "The query start date (supported format is : **YYYY-mm-dd**), e.g., `2019-01-01`.",
+                    "default": "2019-01-01"
+                },
+                {
+                    "name": "symbol",
+                    "type": "STRING",
+                    "description": "The symbol of the asset to look for, e.g., `AAPL` (Apple Inc), `T` (AT&T Inc).",
+                    "default": "AAPL"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://quotient.p.rapidapi.com/equity/earnings\"\nquerystring = {\"to\": \"2020-04-17\", \"from\": \"2019-01-01\", \"symbol\": \"AAPL\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"quotient.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://quotient.p.rapidapi.com/equity/earnings\"\nquerystring = {\"to\": \"2020-04-17\", \"from\": \"2019-01-01\", \"symbol\": \"AAPL\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"quotient.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per minute for your plan, BASIC, by the API provider"
+            },
+            "statuscode": 1,
+            "schema": ""
+        },
+        {
+            "name": "/forex/intraday",
+            "url": "https://quotient.p.rapidapi.com/forex/intraday",
+            "description": "Return intraday time series (Date, Open, High, Low, Close, Volume) given the input parameters.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "interval",
+                    "type": "NUMBER",
+                    "description": "1-minute level time interval, e.g., `1` (1 min), `5` (5 min).",
+                    "default": "1"
+                },
+                {
+                    "name": "symbol",
+                    "type": "STRING",
+                    "description": "The symbol of the currency pair to look for, e.g., `EUR/USD` or `EUR-USD` or `EURUSD`.",
+                    "default": "EUR/USD"
+                },
+                {
+                    "name": "to",
+                    "type": "STRING",
+                    "description": "The query end date (supported formats are : **YYYY-mm-dd HH:MM**, **YYYY-mm-dd**), e.g., `2020-04-21 10:30` or simply `2020-04-22`.",
+                    "default": "2020-04-21 10:30"
+                },
+                {
+                    "name": "from",
+                    "type": "STRING",
+                    "description": "The query start date (supported formats are : **YYYY-mm-dd HH:MM**, **YYYY-mm-dd**), e.g., `2020-04-21 10:00` or simply `2020-04-21`.",
+                    "default": "2020-04-21 10:00"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://quotient.p.rapidapi.com/forex/intraday\"\nquerystring = {\"interval\": \"1\", \"symbol\": \"EUR/USD\", \"to\": \"2020-04-21 10:30\", \"from\": \"2020-04-21 10:00\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"quotient.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://quotient.p.rapidapi.com/forex/intraday\"\nquerystring = {\"interval\": \"1\", \"symbol\": \"EUR/USD\", \"to\": \"2020-04-21 10:30\", \"from\": \"2020-04-21 10:00\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"quotient.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per minute for your plan, BASIC, by the API provider"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "array",
+                "items": {
+                    "title": "Items",
+                    "type": "object",
+                    "required": [
+                        "Date",
+                        "Open",
+                        "High",
+                        "Low",
+                        "Close",
+                        "Volume"
+                    ],
+                    "properties": {
+                        "Date": {
+                            "title": "Date",
+                            "type": "string",
+                            "pattern": "^.*$"
+                        },
+                        "Open": {
+                            "title": "Open",
+                            "type": "number",
+                            "format": "double",
+                            "minimum": -1.7976931348623157e+308,
+                            "maximum": 1.7976931348623157e+308
+                        },
+                        "High": {
+                            "title": "High",
+                            "type": "number",
+                            "format": "double",
+                            "minimum": -1.7976931348623157e+308,
+                            "maximum": 1.7976931348623157e+308
+                        },
+                        "Low": {
+                            "title": "Low",
+                            "type": "number",
+                            "format": "double",
+                            "minimum": -1.7976931348623157e+308,
+                            "maximum": 1.7976931348623157e+308
+                        },
+                        "Close": {
+                            "title": "Close",
+                            "type": "number",
+                            "format": "double",
+                            "minimum": -1.7976931348623157e+308,
+                            "maximum": 1.7976931348623157e+308
+                        },
+                        "Volume": {
+                            "title": "Volume",
+                            "type": "integer",
+                            "format": "int64",
+                            "minimum": -9223372036854776000,
+                            "maximum": 9223372036854776000
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "/options/historical",
+            "url": "https://quotient.p.rapidapi.com/options/historical",
+            "description": "Return historical options data given the input parameters.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "expiration",
+                    "type": "STRING",
+                    "description": "The expiration date of the option (supported format is : **YYYY-mm-dd**), e.g., `2018-04-20`.",
+                    "default": "2018-04-20"
+                },
+                {
+                    "name": "type",
+                    "type": "STRING",
+                    "description": "The type of option contract. (`Call` or `Put`).",
+                    "default": "Call"
+                },
+                {
+                    "name": "strike",
+                    "type": "NUMBER",
+                    "description": "The strike price of the option, e.g., `100`.",
+                    "default": "100"
+                },
+                {
+                    "name": "symbol",
+                    "type": "STRING",
+                    "description": "The symbol of the asset to look for, e.g., `AAPL` (Apple Inc), `MSFT` (Microsoft).",
+                    "default": "AAPL"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://quotient.p.rapidapi.com/options/historical\"\nquerystring = {\"expiration\": \"2018-04-20\", \"type\": \"Call\", \"strike\": \"100\", \"symbol\": \"AAPL\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"quotient.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://quotient.p.rapidapi.com/options/historical\"\nquerystring = {\"expiration\": \"2018-04-20\", \"type\": \"Call\", \"strike\": \"100\", \"symbol\": \"AAPL\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"quotient.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per minute for your plan, BASIC, by the API provider"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "array",
+                "items": {
+                    "title": "Items",
+                    "type": "object",
+                    "required": [
+                        "Contract",
+                        "Expiration",
+                        "Strike",
+                        "Type",
+                        "Date",
+                        "Bid",
+                        "BidSize",
+                        "Ask",
+                        "AskSize",
+                        "Open",
+                        "High",
+                        "Low",
+                        "Close",
+                        "Change",
+                        "Volume",
+                        "OpenInterest",
+                        "ImpliedVolatility",
+                        "Theoretical",
+                        "Delta",
+                        "Gamma",
+                        "Theta",
+                        "Vega",
+                        "Rho"
+                    ],
+                    "properties": {
+                        "Contract": {
+                            "title": "Contract",
+                            "type": "string",
+                            "pattern": "^.*$"
+                        },
+                        "Expiration": {
+                            "title": "Expiration",
+                            "type": "string",
+                            "pattern": "^.*$"
+                        },
+                        "Strike": {
+                            "title": "Strike",
+                            "type": "integer"
+                        },
+                        "Type": {
+                            "title": "Type",
+                            "type": "string",
+                            "pattern": "^.*$"
+                        },
+                        "Date": {
+                            "title": "Date",
+                            "type": "string",
+                            "pattern": "^.*$"
+                        },
+                        "Bid": {
+                            "title": "Bid",
+                            "type": "number"
+                        },
+                        "BidSize": {
+                            "title": "Bidsize",
+                            "type": "integer"
+                        },
+                        "Ask": {
+                            "title": "Ask",
+                            "type": "number"
+                        },
+                        "AskSize": {
+                            "title": "Asksize",
+                            "type": "integer"
+                        },
+                        "Open": {
+                            "title": "Open",
+                            "type": "integer"
+                        },
+                        "High": {
+                            "title": "High",
+                            "type": "integer"
+                        },
+                        "Low": {
+                            "title": "Low",
+                            "type": "integer"
+                        },
+                        "Close": {
+                            "title": "Close",
+                            "type": "integer"
+                        },
+                        "Change": {
+                            "title": "Change",
+                            "type": "integer"
+                        },
+                        "Volume": {
+                            "title": "Volume",
+                            "type": "integer"
+                        },
+                        "OpenInterest": {
+                            "title": "Openinterest",
+                            "type": "integer"
+                        },
+                        "ImpliedVolatility": {
+                            "title": "Impliedvolatility",
+                            "type": "number"
+                        },
+                        "Theoretical": {
+                            "title": "Theoretical",
+                            "type": "number"
+                        },
+                        "Delta": {
+                            "title": "Delta",
+                            "type": "number"
+                        },
+                        "Gamma": {
+                            "title": "Gamma",
+                            "type": "number"
+                        },
+                        "Theta": {
+                            "title": "Theta",
+                            "type": "number"
+                        },
+                        "Vega": {
+                            "title": "Vega",
+                            "type": "number"
+                        },
+                        "Rho": {
+                            "title": "Rho",
+                            "type": "number"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "/equity/signal",
+            "url": "https://quotient.p.rapidapi.com/equity/signal",
+            "description": "Return a trading signal based on market sentiment, reliable indicators, analyst ratings and news. Signal : `1`=**buy**, `0`=**hold** and `-1`=**sell**. Confidence interval : [0%-100%].",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "symbol",
+                    "type": "STRING",
+                    "description": "The symbol of the asset to look for, e.g., `AAPL` (Apple Inc), `F` (Ford Motor Company).",
+                    "default": "F"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://quotient.p.rapidapi.com/equity/signal\"\nquerystring = {\"symbol\": \"F\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"quotient.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://quotient.p.rapidapi.com/equity/signal\"\nquerystring = {\"symbol\": \"F\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"quotient.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per minute for your plan, BASIC, by the API provider"
+            },
+            "statuscode": 1,
+            "schema": ""
+        }
+    ],
+    "standardized_name": "quotient"
+}

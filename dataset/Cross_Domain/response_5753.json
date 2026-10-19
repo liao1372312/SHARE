@@ -1,0 +1,28 @@
+{
+  "user_query": "I want to research the history of ancient civilizations, get relevant historical events and images for a presentation, and find supported languages for translation of ancient texts.",
+  "domain": "education",
+  "TaskList": [
+    {
+      "id": 1,
+      "description": "查询关于古代文明的历史事件信息，收集相关内容以支持研究和演示材料。",
+      "domain": "education",
+      "required_inputs": ["topic: ancient civilizations"]
+    },
+    {
+      "id": 2,
+      "description": "获取适合用于演示的相关历史图片，辅助展示古代文明。",
+      "domain": "media",
+      "required_inputs": ["historical_event_ids"]
+    },
+    {
+      "id": 3,
+      "description": "查询支持的古代文本翻译语言，以便探索不同古代文字的翻译可能性。",
+      "domain": "linguistics",
+      "required_inputs": []
+    }
+  ],
+  "dependencies": [
+    {"from": 1, "to": 2, "type": "result"},
+    {"from": 3, "to": 2, "type": "optional"}
+  ]
+}

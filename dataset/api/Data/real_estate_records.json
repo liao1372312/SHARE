@@ -1,0 +1,2046 @@
+{
+    "product_id": "api_7f82f19a-407d-4c22-a389-31bbf6f1795d",
+    "tool_description": "Real estate transaction records for New York City and whole New Jersey. Public records have been collected from various sites, standardized using Here.com API, with geolocation information for your consumption. ",
+    "home_url": "https://rapidapi.com/richliao/api/real-estate-records/",
+    "name": "Real Estate Records",
+    "title": "Real Estate Records",
+    "pricing": "FREEMIUM",
+    "tool_name": "Real Estate Records",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 737,
+        "avgSuccessRate": 100,
+        "popularityScore": 8.4,
+        "__typename": "Score"
+    },
+    "host": "real-estate-records.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "transactions",
+            "url": "https://real-estate-records.p.rapidapi.com/search/zipcode",
+            "description": "Show transactions given a zipcode. The API returns 50 records each time in descending order by date and supports pagination. This API requires a subscription cost.\n\nThe returned data shows the summary of information. To get further detail (such as the unit of a building that posts the most recent transaction, use summary API.\n\nSample data of the API when query zipcode 10019 is:\n \"data\": [\n    {\n      \"_id\": {\n        \"STREET_NUMBER\": \"310\",\n        \"STREET\": \"W 56th St\",\n        \"PROPERTY_TYPE\": \"SINGLE RESIDENTIAL COOP UNIT\",\n        \"ZIPCODE\": \"10019\",\n        \"STATE\": \"NY\"\n      },\n      \"lastSalesDate\": \"2021-07-21T00:00:00.000Z\",\n      \"lastSalesAmount\": 514000,\n      \"maxSalesAmount\": 1359000,\n      \"TotalRecords\": 74\n    },",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "zipcode",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "10019"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "page",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "1"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://real-estate-records.p.rapidapi.com/search/zipcode\"\nquerystring = {\"page\": \"1\", \"zipcode\": \"10019\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"real-estate-records.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://real-estate-records.p.rapidapi.com/search/zipcode\"\nquerystring = {\"page\": \"1\", \"zipcode\": \"10019\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"real-estate-records.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "title": "Property",
+                "err": null,
+                "count": 10588,
+                "data": [
+                    {
+                        "_id": {
+                            "STREET_NUMBER": "301",
+                            "STREET": "W 57th St",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL CONDO UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2023-05-25T00:00:00.000Z",
+                        "lastSalesAmount": 1680000,
+                        "maxSalesAmount": 5250000,
+                        "TotalRecords": 194
+                    },
+                    {
+                        "_id": {
+                            "STREET_NUMBER": "15",
+                            "STREET": "W 53rd St",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL CONDO UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2023-05-23T00:00:00.000Z",
+                        "lastSalesAmount": 960000,
+                        "maxSalesAmount": 9250000,
+                        "TotalRecords": 172
+                    },
+                    {
+                        "_id": {
+                            "STREET_NUMBER": "20",
+                            "STREET": "W 53rd St",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL CONDO UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2023-05-22T00:00:00.000Z",
+                        "lastSalesAmount": 5446303.08,
+                        "maxSalesAmount": 42550000,
+                        "TotalRecords": 59
+                    },
+                    {
+                        "_id": {
+                            "STREET_NUMBER": "106",
+                            "STREET": "Central Park S",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL CONDO UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2023-05-22T00:00:00.000Z",
+                        "lastSalesAmount": 1350000,
+                        "maxSalesAmount": 14250000,
+                        "TotalRecords": 188
+                    },
+                    {
+                        "_id": {
+                            "STREET_NUMBER": "345",
+                            "STREET": "W 58th St",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL COOP UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2023-05-17T00:00:00.000Z",
+                        "lastSalesAmount": 435000,
+                        "maxSalesAmount": 2495000,
+                        "TotalRecords": 135
+                    },
+                    {
+                        "_id": {
+                            "STREET_NUMBER": "350",
+                            "STREET": "W 50th St",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL CONDO UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2023-05-16T00:00:00.000Z",
+                        "lastSalesAmount": 800000,
+                        "maxSalesAmount": 2350000,
+                        "TotalRecords": 381
+                    },
+                    {
+                        "_id": {
+                            "STREET_NUMBER": "467",
+                            "STREET": "W 57th St",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL COOP UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2023-05-16T00:00:00.000Z",
+                        "lastSalesAmount": 450000,
+                        "maxSalesAmount": 500000,
+                        "TotalRecords": 8
+                    },
+                    {
+                        "_id": {
+                            "STREET_NUMBER": "768",
+                            "STREET": "5th Ave",
+                            "PROPERTY_TYPE": "COMMERCIAL CONDO UNIT(S)",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2023-05-15T00:00:00.000Z",
+                        "lastSalesAmount": 770000,
+                        "maxSalesAmount": 111600000,
+                        "TotalRecords": 133
+                    },
+                    {
+                        "_id": {
+                            "STREET_NUMBER": "555",
+                            "STREET": "W 59th St",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL CONDO UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2023-05-12T00:00:00.000Z",
+                        "lastSalesAmount": 2600000,
+                        "maxSalesAmount": 5675000,
+                        "TotalRecords": 197
+                    },
+                    {
+                        "_id": {
+                            "STREET_NUMBER": "217",
+                            "STREET": "W 57th St",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL CONDO UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2023-05-11T00:00:00.000Z",
+                        "lastSalesAmount": 8574300,
+                        "maxSalesAmount": 50021000,
+                        "TotalRecords": 88
+                    },
+                    {
+                        "_id": {
+                            "STREET_NUMBER": "310",
+                            "STREET": "W 52nd St",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL CONDO UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2023-05-11T00:00:00.000Z",
+                        "lastSalesAmount": 2230000,
+                        "maxSalesAmount": 4950000,
+                        "TotalRecords": 247
+                    },
+                    {
+                        "_id": {
+                            "STREET_NUMBER": "146",
+                            "STREET": "W 57th St",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL CONDO UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2023-05-11T00:00:00.000Z",
+                        "lastSalesAmount": 5800000,
+                        "maxSalesAmount": 8960000,
+                        "TotalRecords": 206
+                    },
+                    {
+                        "_id": {
+                            "STREET_NUMBER": "421",
+                            "STREET": "W 57th St",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL COOP UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2023-05-11T00:00:00.000Z",
+                        "lastSalesAmount": 650000,
+                        "maxSalesAmount": 650000,
+                        "TotalRecords": 22
+                    },
+                    {
+                        "_id": {
+                            "STREET_NUMBER": "150",
+                            "STREET": "W 51st St",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL CONDO UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2023-05-10T00:00:00.000Z",
+                        "lastSalesAmount": 698000,
+                        "maxSalesAmount": 1600000,
+                        "TotalRecords": 268
+                    },
+                    {
+                        "_id": {
+                            "STREET_NUMBER": "150",
+                            "STREET": "W 56th St",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL CONDO UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2023-05-09T00:00:00.000Z",
+                        "lastSalesAmount": 1039777,
+                        "maxSalesAmount": 6500000,
+                        "TotalRecords": 210
+                    },
+                    {
+                        "_id": {
+                            "STREET_NUMBER": "322",
+                            "STREET": "W 57th St",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL CONDO UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2023-05-05T00:00:00.000Z",
+                        "lastSalesAmount": 980000,
+                        "maxSalesAmount": 53268315.93,
+                        "TotalRecords": 736
+                    },
+                    {
+                        "_id": {
+                            "STREET_NUMBER": "1600",
+                            "STREET": "Broadway",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL CONDO UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2023-05-05T00:00:00.000Z",
+                        "lastSalesAmount": 945000,
+                        "maxSalesAmount": 3156575,
+                        "TotalRecords": 138
+                    },
+                    {
+                        "_id": {
+                            "STREET_NUMBER": "611",
+                            "STREET": "W 56th St",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL CONDO UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2023-05-03T00:00:00.000Z",
+                        "lastSalesAmount": 2500000,
+                        "maxSalesAmount": 3080000,
+                        "TotalRecords": 32
+                    },
+                    {
+                        "_id": {
+                            "STREET_NUMBER": "157",
+                            "STREET": "W 57th St",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL CONDO UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2023-05-03T00:00:00.000Z",
+                        "lastSalesAmount": 12854742.5,
+                        "maxSalesAmount": 100471452.77,
+                        "TotalRecords": 131
+                    },
+                    {
+                        "_id": {
+                            "STREET_NUMBER": "342",
+                            "STREET": "W 56th St",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL COOP UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2023-05-02T00:00:00.000Z",
+                        "lastSalesAmount": 455000,
+                        "maxSalesAmount": 755000,
+                        "TotalRecords": 34
+                    },
+                    {
+                        "_id": {
+                            "STREET_NUMBER": "200",
+                            "STREET": "Central Park S",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL COOP UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2023-04-28T00:00:00.000Z",
+                        "lastSalesAmount": 1050000,
+                        "maxSalesAmount": 12288000,
+                        "TotalRecords": 171
+                    },
+                    {
+                        "_id": {
+                            "STREET_NUMBER": "301",
+                            "STREET": "W 53rd St",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL CONDO UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2023-04-27T00:00:00.000Z",
+                        "lastSalesAmount": 1905000,
+                        "maxSalesAmount": 231254659,
+                        "TotalRecords": 246
+                    },
+                    {
+                        "_id": {
+                            "STREET_NUMBER": "220",
+                            "STREET": "Central Park S",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL CONDO UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2023-04-27T00:00:00.000Z",
+                        "lastSalesAmount": 5000000,
+                        "maxSalesAmount": 239958219.15,
+                        "TotalRecords": 106
+                    },
+                    {
+                        "_id": {
+                            "STREET_NUMBER": "150",
+                            "STREET": "Central Park S",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL COOP UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2023-04-24T00:00:00.000Z",
+                        "lastSalesAmount": 525000,
+                        "maxSalesAmount": 35200000,
+                        "TotalRecords": 123
+                    },
+                    {
+                        "_id": {
+                            "STREET_NUMBER": "37",
+                            "STREET": "W 57th St",
+                            "PROPERTY_TYPE": "COMMERCIAL REAL ESTATE",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2023-04-24T00:00:00.000Z",
+                        "lastSalesAmount": 77500000,
+                        "maxSalesAmount": 77500000,
+                        "TotalRecords": 1
+                    },
+                    {
+                        "_id": {
+                            "STREET_NUMBER": "160",
+                            "STREET": "Central Park S",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL CONDO UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2023-04-24T00:00:00.000Z",
+                        "lastSalesAmount": 1400000,
+                        "maxSalesAmount": 335131744.16,
+                        "TotalRecords": 132
+                    },
+                    {
+                        "_id": {
+                            "STREET_NUMBER": "431",
+                            "STREET": "W 54th St",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL COOP UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2023-04-20T00:00:00.000Z",
+                        "lastSalesAmount": 465000,
+                        "maxSalesAmount": 500000,
+                        "TotalRecords": 15
+                    },
+                    {
+                        "_id": {
+                            "STREET_NUMBER": "159",
+                            "STREET": "W 53rd St",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL CONDO UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2023-04-20T00:00:00.000Z",
+                        "lastSalesAmount": 865000,
+                        "maxSalesAmount": 2200000,
+                        "TotalRecords": 128
+                    },
+                    {
+                        "_id": {
+                            "STREET_NUMBER": "230",
+                            "STREET": "W 56th St",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL CONDO UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2023-04-19T00:00:00.000Z",
+                        "lastSalesAmount": 14500000,
+                        "maxSalesAmount": 14500000,
+                        "TotalRecords": 77
+                    },
+                    {
+                        "_id": {
+                            "STREET_NUMBER": "100",
+                            "STREET": "W 58th St",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL CONDO UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2023-04-19T00:00:00.000Z",
+                        "lastSalesAmount": 1240000,
+                        "maxSalesAmount": 4950000,
+                        "TotalRecords": 161
+                    },
+                    {
+                        "_id": {
+                            "STREET_NUMBER": "354",
+                            "STREET": "W 52nd St",
+                            "PROPERTY_TYPE": "NON-RESIDENTIAL VACANT LAND",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2023-04-18T00:00:00.000Z",
+                        "lastSalesAmount": 15488000,
+                        "maxSalesAmount": 15488000,
+                        "TotalRecords": 1
+                    },
+                    {
+                        "_id": {
+                            "STREET_NUMBER": "111",
+                            "STREET": "W 57th St",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL CONDO UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2023-04-14T00:00:00.000Z",
+                        "lastSalesAmount": 9250000,
+                        "maxSalesAmount": 50518750,
+                        "TotalRecords": 20
+                    },
+                    {
+                        "_id": {
+                            "STREET_NUMBER": "347",
+                            "STREET": "W 57th St",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL CONDO UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2023-04-13T00:00:00.000Z",
+                        "lastSalesAmount": 625000,
+                        "maxSalesAmount": 2800000,
+                        "TotalRecords": 129
+                    },
+                    {
+                        "_id": {
+                            "STREET_NUMBER": "457",
+                            "STREET": "W 57th St",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL COOP UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2023-04-13T00:00:00.000Z",
+                        "lastSalesAmount": 240000,
+                        "maxSalesAmount": 1085000,
+                        "TotalRecords": 154
+                    },
+                    {
+                        "_id": {
+                            "STREET_NUMBER": "310",
+                            "STREET": "W 52nd St",
+                            "PROPERTY_TYPE": "STORAGE ROOM",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2023-04-12T00:00:00.000Z",
+                        "lastSalesAmount": 1150000,
+                        "maxSalesAmount": 4950000,
+                        "TotalRecords": 217
+                    },
+                    {
+                        "_id": {
+                            "STREET_NUMBER": "333",
+                            "STREET": "W 56th St",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL CONDO UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2023-04-11T00:00:00.000Z",
+                        "lastSalesAmount": 829000,
+                        "maxSalesAmount": 2725000,
+                        "TotalRecords": 103
+                    },
+                    {
+                        "_id": {
+                            "STREET_NUMBER": "100",
+                            "STREET": "W 57th St",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL COOP UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2023-04-10T00:00:00.000Z",
+                        "lastSalesAmount": 228000,
+                        "maxSalesAmount": 2620000,
+                        "TotalRecords": 249
+                    },
+                    {
+                        "_id": {
+                            "STREET_NUMBER": "24",
+                            "STREET": "Central Park S",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL COOP UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2023-04-07T00:00:00.000Z",
+                        "lastSalesAmount": 3700000,
+                        "maxSalesAmount": 5400000,
+                        "TotalRecords": 18
+                    },
+                    {
+                        "_id": {
+                            "STREET_NUMBER": "25",
+                            "STREET": "W 54th St",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL COOP UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2023-04-06T00:00:00.000Z",
+                        "lastSalesAmount": 1225000,
+                        "maxSalesAmount": 1900000,
+                        "TotalRecords": 44
+                    },
+                    {
+                        "_id": {
+                            "STREET_NUMBER": "314",
+                            "STREET": "W 51st St",
+                            "PROPERTY_TYPE": "APARTMENT BUILDING",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2023-04-05T00:00:00.000Z",
+                        "lastSalesAmount": 4750000,
+                        "maxSalesAmount": 4750000,
+                        "TotalRecords": 1
+                    },
+                    {
+                        "_id": {
+                            "STREET_NUMBER": "128",
+                            "STREET": "Central Park S",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL COOP UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2023-04-04T00:00:00.000Z",
+                        "lastSalesAmount": 2990000,
+                        "maxSalesAmount": 11375000,
+                        "TotalRecords": 36
+                    },
+                    {
+                        "_id": {
+                            "STREET_NUMBER": "552",
+                            "STREET": "W 54th St",
+                            "PROPERTY_TYPE": "COMMERCIAL CONDO UNIT(S)",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2023-04-04T00:00:00.000Z",
+                        "lastSalesAmount": 100125000,
+                        "maxSalesAmount": 170000000,
+                        "TotalRecords": 1
+                    },
+                    {
+                        "_id": {
+                            "STREET_NUMBER": "53",
+                            "STREET": "W 53rd St",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL CONDO UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2023-04-03T00:00:00.000Z",
+                        "lastSalesAmount": 12500000,
+                        "maxSalesAmount": 29939550,
+                        "TotalRecords": 73
+                    },
+                    {
+                        "_id": {
+                            "STREET_NUMBER": "249",
+                            "STREET": "W 49th St",
+                            "PROPERTY_TYPE": "COMMERCIAL REAL ESTATE",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2023-04-03T00:00:00.000Z",
+                        "lastSalesAmount": 5800000,
+                        "maxSalesAmount": 5800000,
+                        "TotalRecords": 1
+                    },
+                    {
+                        "_id": {
+                            "STREET_NUMBER": "837",
+                            "STREET": "11th Ave",
+                            "PROPERTY_TYPE": "OTHER",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2023-03-31T00:00:00.000Z",
+                        "lastSalesAmount": 23317290,
+                        "maxSalesAmount": 23317290,
+                        "TotalRecords": 1
+                    },
+                    {
+                        "_id": {
+                            "STREET_NUMBER": "135",
+                            "STREET": "W 50th St",
+                            "PROPERTY_TYPE": "COMMERCIAL REAL ESTATE",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2023-03-31T00:00:00.000Z",
+                        "lastSalesAmount": 83000000,
+                        "maxSalesAmount": 285000000,
+                        "TotalRecords": 4
+                    },
+                    {
+                        "_id": {
+                            "STREET_NUMBER": "637",
+                            "STREET": "W 50th St",
+                            "PROPERTY_TYPE": "OTHER",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2023-03-31T00:00:00.000Z",
+                        "lastSalesAmount": 23317290,
+                        "maxSalesAmount": 23317290,
+                        "TotalRecords": 2
+                    },
+                    {
+                        "_id": {
+                            "STREET_NUMBER": "1627",
+                            "STREET": "Broadway",
+                            "PROPERTY_TYPE": "OTHER",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2023-03-31T00:00:00.000Z",
+                        "lastSalesAmount": 23317290,
+                        "maxSalesAmount": 35658069,
+                        "TotalRecords": 1
+                    },
+                    {
+                        "_id": {
+                            "STREET_NUMBER": "728",
+                            "STREET": "10th Ave",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL COOP UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2023-03-30T00:00:00.000Z",
+                        "lastSalesAmount": 810000,
+                        "maxSalesAmount": 895000,
+                        "TotalRecords": 6
+                    },
+                    {
+                        "_id": {
+                            "STREET_NUMBER": "768",
+                            "STREET": "5th Ave",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL CONDO UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2023-03-30T00:00:00.000Z",
+                        "lastSalesAmount": 1100000,
+                        "maxSalesAmount": 99700000,
+                        "TotalRecords": 252
+                    }
+                ]
+            }
+        },
+        {
+            "name": "detail",
+            "url": "https://real-estate-records.p.rapidapi.com/search/detail",
+            "description": "Return all detailed historical transactions of a given address. To call this API, it requires to call summary API first using address information. Then use the Id value returned from the summary API and call this API with the same Id. This API requires a subscription cost.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "id",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "6144a05f3afc5ca06e88a2ab"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://real-estate-records.p.rapidapi.com/search/detail\"\nquerystring = {\"id\": \"6144a05f3afc5ca06e88a2ab\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"real-estate-records.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://real-estate-records.p.rapidapi.com/search/detail\"\nquerystring = {\"id\": \"6144a05f3afc5ca06e88a2ab\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"real-estate-records.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "title": "Property",
+                "err": null,
+                "data": []
+            }
+        },
+        {
+            "name": "summary",
+            "url": "https://real-estate-records.p.rapidapi.com/search/summary",
+            "description": "Get a summary of property records by units given an address (if it's a multi-unit building). Street number, name and zipcode are needed to match records. The street names are normalized using Here.com conventions. This API requires a subscription cost. \n\nThis API provides details a level further than the \"address\" endpoint. For instance,  for 220 Central Park S, New York, NY 10019 it returns\n  \"data\": [\n    {\n      \"_id\": {\n        \"id\": \"6144a17b3afc5ca06ea0dd95\",\n        \"Loc\": {\n          \"coordinates\": [\n            -73.9802,\n            40.76719\n          ],\n          \"type\": \"Point\"\n        },\n        \"STREET_NUMBER\": \"220\",\n        \"STREET\": \"Central Park S\",\n        \"UNIT\": \"67\",\n        \"PROPERTY_TYPE\": \"SINGLE RESIDENTIAL CONDO UNIT\",\n        \"ZIPCODE\": \"10019\",\n        \"STATE\": \"NY\"\n      },\n      \"lastSalesDate\": \"2021-05-24T00:00:00.000Z\",\n      \"lastSalesAmount\": 59500000,\n      \"maxSalesAmount\": 59500000,\n      \"SQFT\": 0,\n      \"TotalRecords\": 1\n    },\n\nThe API is available for public records for New York City 5 boroughs, all New Jersey Counties and DC. \nSources of information are:\nNJ: http://tax1.co.monmouth.nj.us/cgi-bin/prc6.cgi?&ms_user=monm&passwd=&srch_type=0&adv=0&out_type=0&district=0200\nNYC Acris: https://a836-acris.nyc.gov/DS/DocumentSearch/Index",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "number",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "220"
+                },
+                {
+                    "name": "street",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "Central Park S"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "zipcode",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "10019"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://real-estate-records.p.rapidapi.com/search/summary\"\nquerystring = {\"number\": \"220\", \"street\": \"Central Park S\", \"zipcode\": \"10019\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"real-estate-records.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://real-estate-records.p.rapidapi.com/search/summary\"\nquerystring = {\"number\": \"220\", \"street\": \"Central Park S\", \"zipcode\": \"10019\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"real-estate-records.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "title": "Property",
+                "err": null,
+                "count": 114,
+                "data": [
+                    {
+                        "_id": {
+                            "id": "64867515ef52d29a0b87b39b",
+                            "Loc": {
+                                "coordinates": [
+                                    -73.9802,
+                                    40.76719
+                                ],
+                                "type": "Point"
+                            },
+                            "STREET_NUMBER": "220",
+                            "STREET": "Central Park S",
+                            "UNIT": "19B",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL CONDO UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2023-04-27T00:00:00.000Z",
+                        "lastSalesAmount": 5000000,
+                        "maxSalesAmount": 5000000,
+                        "SQFT": 0,
+                        "TotalRecords": 2
+                    },
+                    {
+                        "_id": {
+                            "id": "6486751aef52d29a0b87f59c",
+                            "Loc": {
+                                "coordinates": [
+                                    -73.9802,
+                                    40.76719
+                                ],
+                                "type": "Point"
+                            },
+                            "STREET_NUMBER": "220",
+                            "STREET": "Central Park S",
+                            "UNIT": "22B",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL CONDO UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2023-03-03T00:00:00.000Z",
+                        "lastSalesAmount": 14800875,
+                        "maxSalesAmount": 14800875,
+                        "SQFT": 0,
+                        "TotalRecords": 1
+                    },
+                    {
+                        "_id": {
+                            "id": "64867523ef52d29a0b88716a",
+                            "Loc": {
+                                "coordinates": [
+                                    -73.9802,
+                                    40.76719
+                                ],
+                                "type": "Point"
+                            },
+                            "STREET_NUMBER": "220",
+                            "STREET": "Central Park S",
+                            "UNIT": "37B",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL CONDO UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2023-02-07T00:00:00.000Z",
+                        "lastSalesAmount": 33800000,
+                        "maxSalesAmount": 33800000,
+                        "SQFT": 0,
+                        "TotalRecords": 1
+                    },
+                    {
+                        "_id": {
+                            "id": "64867541ef52d29a0b8a1e46",
+                            "Loc": {
+                                "coordinates": [
+                                    -73.9802,
+                                    40.76719
+                                ],
+                                "type": "Point"
+                            },
+                            "STREET_NUMBER": "220",
+                            "STREET": "Central Park S",
+                            "UNIT": "PH 75",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL CONDO UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2022-10-28T00:00:00.000Z",
+                        "lastSalesAmount": 72000000,
+                        "maxSalesAmount": 72000000,
+                        "SQFT": 0,
+                        "TotalRecords": 1
+                    },
+                    {
+                        "_id": {
+                            "id": "64867515ef52d29a0b87b230",
+                            "Loc": {
+                                "coordinates": [
+                                    -73.9802,
+                                    40.76719
+                                ],
+                                "type": "Point"
+                            },
+                            "STREET_NUMBER": "220",
+                            "STREET": "Central Park S",
+                            "UNIT": "19A",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL CONDO UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2022-10-28T00:00:00.000Z",
+                        "lastSalesAmount": 3000000,
+                        "maxSalesAmount": 3000000,
+                        "SQFT": 0,
+                        "TotalRecords": 1
+                    },
+                    {
+                        "_id": {
+                            "id": "6486752eef52d29a0b890be2",
+                            "Loc": {
+                                "coordinates": [
+                                    -73.9802,
+                                    40.76719
+                                ],
+                                "type": "Point"
+                            },
+                            "STREET_NUMBER": "220",
+                            "STREET": "Central Park S",
+                            "UNIT": "54B",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL CONDO UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2022-07-21T00:00:00.000Z",
+                        "lastSalesAmount": 36000000,
+                        "maxSalesAmount": 36000000,
+                        "SQFT": 0,
+                        "TotalRecords": 2
+                    },
+                    {
+                        "_id": {
+                            "id": "6486751cef52d29a0b88132c",
+                            "Loc": {
+                                "coordinates": [
+                                    -73.9802,
+                                    40.76719
+                                ],
+                                "type": "Point"
+                            },
+                            "STREET_NUMBER": "220",
+                            "STREET": "Central Park S",
+                            "UNIT": "27C",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL CONDO UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2022-01-06T00:00:00.000Z",
+                        "lastSalesAmount": 14800875,
+                        "maxSalesAmount": 14800875,
+                        "SQFT": 0,
+                        "TotalRecords": 1
+                    },
+                    {
+                        "_id": {
+                            "id": "64867523ef52d29a0b887330",
+                            "Loc": {
+                                "coordinates": [
+                                    -73.9802,
+                                    40.76719
+                                ],
+                                "type": "Point"
+                            },
+                            "STREET_NUMBER": "220",
+                            "STREET": "Central Park S",
+                            "UNIT": "38A",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL CONDO UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2021-12-29T00:00:00.000Z",
+                        "lastSalesAmount": 32000000,
+                        "maxSalesAmount": 32000000,
+                        "SQFT": 0,
+                        "TotalRecords": 2
+                    },
+                    {
+                        "_id": {
+                            "id": "64867516ef52d29a0b87b8ad",
+                            "Loc": {
+                                "coordinates": [
+                                    -73.9802,
+                                    40.76719
+                                ],
+                                "type": "Point"
+                            },
+                            "STREET_NUMBER": "220",
+                            "STREET": "Central Park S",
+                            "UNIT": "19J",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL CONDO UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2021-12-28T00:00:00.000Z",
+                        "lastSalesAmount": 188000000,
+                        "maxSalesAmount": 188000000,
+                        "SQFT": 0,
+                        "TotalRecords": 2
+                    },
+                    {
+                        "_id": {
+                            "id": "64867541ef52d29a0b8a1e41",
+                            "Loc": {
+                                "coordinates": [
+                                    -73.9802,
+                                    40.76719
+                                ],
+                                "type": "Point"
+                            },
+                            "STREET_NUMBER": "220",
+                            "STREET": "Central Park S",
+                            "UNIT": "PH 73",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL CONDO UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2021-12-28T00:00:00.000Z",
+                        "lastSalesAmount": 188000000,
+                        "maxSalesAmount": 188000000,
+                        "SQFT": 0,
+                        "TotalRecords": 2
+                    },
+                    {
+                        "_id": {
+                            "id": "64867523ef52d29a0b886a07",
+                            "Loc": {
+                                "coordinates": [
+                                    -73.9802,
+                                    40.76719
+                                ],
+                                "type": "Point"
+                            },
+                            "STREET_NUMBER": "220",
+                            "STREET": "Central Park S",
+                            "UNIT": "34B",
+                            "PROPERTY_TYPE": "PARKING SPACE",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2021-12-17T00:00:00.000Z",
+                        "lastSalesAmount": 750000,
+                        "maxSalesAmount": 750000,
+                        "SQFT": 0,
+                        "TotalRecords": 1
+                    },
+                    {
+                        "_id": {
+                            "id": "6486751bef52d29a0b880905",
+                            "Loc": {
+                                "coordinates": [
+                                    -73.9802,
+                                    40.76719
+                                ],
+                                "type": "Point"
+                            },
+                            "STREET_NUMBER": "220",
+                            "STREET": "Central Park S",
+                            "UNIT": "25C",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL CONDO UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2021-12-10T00:00:00.000Z",
+                        "lastSalesAmount": 14494650,
+                        "maxSalesAmount": 14494650,
+                        "SQFT": 0,
+                        "TotalRecords": 1
+                    },
+                    {
+                        "_id": {
+                            "id": "64867523ef52d29a0b887378",
+                            "Loc": {
+                                "coordinates": [
+                                    -73.9802,
+                                    40.76719
+                                ],
+                                "type": "Point"
+                            },
+                            "STREET_NUMBER": "220",
+                            "STREET": "Central Park S",
+                            "UNIT": "38B",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL CONDO UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2021-10-12T00:00:00.000Z",
+                        "lastSalesAmount": 27407137.5,
+                        "maxSalesAmount": 27407137.5,
+                        "SQFT": 0,
+                        "TotalRecords": 1
+                    },
+                    {
+                        "_id": {
+                            "id": "64867543ef52d29a0b8a4483",
+                            "Loc": {
+                                "coordinates": [
+                                    -73.9802,
+                                    40.76719
+                                ],
+                                "type": "Point"
+                            },
+                            "STREET_NUMBER": "220",
+                            "STREET": "Central Park S",
+                            "UNIT": "V-11",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL CONDO UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2021-09-15T00:00:00.000Z",
+                        "lastSalesAmount": 66000000,
+                        "maxSalesAmount": 66000000,
+                        "SQFT": 0,
+                        "TotalRecords": 2
+                    },
+                    {
+                        "_id": {
+                            "id": "64867516ef52d29a0b87b69d",
+                            "Loc": {
+                                "coordinates": [
+                                    -73.9802,
+                                    40.76719
+                                ],
+                                "type": "Point"
+                            },
+                            "STREET_NUMBER": "220",
+                            "STREET": "Central Park S",
+                            "UNIT": "19E",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL CONDO UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2021-09-15T00:00:00.000Z",
+                        "lastSalesAmount": 66000000,
+                        "maxSalesAmount": 66000000,
+                        "SQFT": 0,
+                        "TotalRecords": 2
+                    },
+                    {
+                        "_id": {
+                            "id": "64867522ef52d29a0b885f09",
+                            "Loc": {
+                                "coordinates": [
+                                    -73.9802,
+                                    40.76719
+                                ],
+                                "type": "Point"
+                            },
+                            "STREET_NUMBER": "220",
+                            "STREET": "Central Park S",
+                            "UNIT": "31A",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL CONDO UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2021-09-08T00:00:00.000Z",
+                        "lastSalesAmount": 33000000,
+                        "maxSalesAmount": 33000000,
+                        "SQFT": 0,
+                        "TotalRecords": 2
+                    },
+                    {
+                        "_id": {
+                            "id": "64867528ef52d29a0b88ba7f",
+                            "Loc": {
+                                "coordinates": [
+                                    -73.9802,
+                                    40.76719
+                                ],
+                                "type": "Point"
+                            },
+                            "STREET_NUMBER": "220",
+                            "STREET": "Central Park S",
+                            "UNIT": "41B",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL CONDO UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2021-08-25T00:00:00.000Z",
+                        "lastSalesAmount": 26284312.5,
+                        "maxSalesAmount": 26284312.5,
+                        "SQFT": 0,
+                        "TotalRecords": 1
+                    },
+                    {
+                        "_id": {
+                            "id": "6486752eef52d29a0b890bcd",
+                            "Loc": {
+                                "coordinates": [
+                                    -73.9802,
+                                    40.76719
+                                ],
+                                "type": "Point"
+                            },
+                            "STREET_NUMBER": "220",
+                            "STREET": "Central Park S",
+                            "UNIT": "54A",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL CONDO UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2021-08-18T00:00:00.000Z",
+                        "lastSalesAmount": 40097000,
+                        "maxSalesAmount": 40097000,
+                        "SQFT": 0,
+                        "TotalRecords": 2
+                    },
+                    {
+                        "_id": {
+                            "id": "64867515ef52d29a0b87a96c",
+                            "Loc": {
+                                "coordinates": [
+                                    -73.9802,
+                                    40.76719
+                                ],
+                                "type": "Point"
+                            },
+                            "STREET_NUMBER": "220",
+                            "STREET": "Central Park S",
+                            "UNIT": "18C",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL CONDO UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2021-05-24T00:00:00.000Z",
+                        "lastSalesAmount": 1858306.25,
+                        "maxSalesAmount": 1858306.25,
+                        "SQFT": 0,
+                        "TotalRecords": 1
+                    },
+                    {
+                        "_id": {
+                            "id": "64867533ef52d29a0b894fe6",
+                            "Loc": {
+                                "coordinates": [
+                                    -73.9802,
+                                    40.76719
+                                ],
+                                "type": "Point"
+                            },
+                            "STREET_NUMBER": "220",
+                            "STREET": "Central Park S",
+                            "UNIT": "67",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL CONDO UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2021-05-24T00:00:00.000Z",
+                        "lastSalesAmount": 59500000,
+                        "maxSalesAmount": 59500000,
+                        "SQFT": 0,
+                        "TotalRecords": 1
+                    },
+                    {
+                        "_id": {
+                            "id": "64867532ef52d29a0b894b7a",
+                            "Loc": {
+                                "coordinates": [
+                                    -73.9802,
+                                    40.76719
+                                ],
+                                "type": "Point"
+                            },
+                            "STREET_NUMBER": "220",
+                            "STREET": "Central Park S",
+                            "UNIT": "61",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL CONDO UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2021-05-20T00:00:00.000Z",
+                        "lastSalesAmount": 75000000,
+                        "maxSalesAmount": 75000000,
+                        "SQFT": 0,
+                        "TotalRecords": 2
+                    },
+                    {
+                        "_id": {
+                            "id": "64867505ef52d29a0b86c47e",
+                            "Loc": {
+                                "coordinates": [
+                                    -73.9802,
+                                    40.76719
+                                ],
+                                "type": "Point"
+                            },
+                            "STREET_NUMBER": "220",
+                            "STREET": "Central Park S",
+                            "UNIT": "",
+                            "PROPERTY_TYPE": "OTHER",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2021-05-20T00:00:00.000Z",
+                        "lastSalesAmount": 82500000,
+                        "maxSalesAmount": 82500000,
+                        "SQFT": 0,
+                        "TotalRecords": 3
+                    },
+                    {
+                        "_id": {
+                            "id": "64867532ef52d29a0b89485d",
+                            "Loc": {
+                                "coordinates": [
+                                    -73.9802,
+                                    40.76719
+                                ],
+                                "type": "Point"
+                            },
+                            "STREET_NUMBER": "220",
+                            "STREET": "Central Park S",
+                            "UNIT": "60",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL CONDO UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2021-05-20T00:00:00.000Z",
+                        "lastSalesAmount": 82500000,
+                        "maxSalesAmount": 82500000,
+                        "SQFT": 0,
+                        "TotalRecords": 2
+                    },
+                    {
+                        "_id": {
+                            "id": "64867523ef52d29a0b886f63",
+                            "Loc": {
+                                "coordinates": [
+                                    -73.9802,
+                                    40.76719
+                                ],
+                                "type": "Point"
+                            },
+                            "STREET_NUMBER": "220",
+                            "STREET": "Central Park S",
+                            "UNIT": "36B",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL CONDO UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2021-05-19T00:00:00.000Z",
+                        "lastSalesAmount": 23000000,
+                        "maxSalesAmount": 23000000,
+                        "SQFT": 0,
+                        "TotalRecords": 2
+                    },
+                    {
+                        "_id": {
+                            "id": "6486751def52d29a0b881bdb",
+                            "Loc": {
+                                "coordinates": [
+                                    -73.9802,
+                                    40.76719
+                                ],
+                                "type": "Point"
+                            },
+                            "STREET_NUMBER": "220",
+                            "STREET": "Central Park S",
+                            "UNIT": "29B",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL CONDO UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2021-05-17T00:00:00.000Z",
+                        "lastSalesAmount": 16076812.5,
+                        "maxSalesAmount": 16076812.5,
+                        "SQFT": 0,
+                        "TotalRecords": 1
+                    },
+                    {
+                        "_id": {
+                            "id": "6486752eef52d29a0b890ca2",
+                            "Loc": {
+                                "coordinates": [
+                                    -73.9802,
+                                    40.76719
+                                ],
+                                "type": "Point"
+                            },
+                            "STREET_NUMBER": "220",
+                            "STREET": "Central Park S",
+                            "UNIT": "55B",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL CONDO UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2021-04-23T00:00:00.000Z",
+                        "lastSalesAmount": 33000000,
+                        "maxSalesAmount": 33000000,
+                        "SQFT": 0,
+                        "TotalRecords": 2
+                    },
+                    {
+                        "_id": {
+                            "id": "64867515ef52d29a0b87aa96",
+                            "Loc": {
+                                "coordinates": [
+                                    -73.9802,
+                                    40.76719
+                                ],
+                                "type": "Point"
+                            },
+                            "STREET_NUMBER": "220",
+                            "STREET": "Central Park S",
+                            "UNIT": "18D",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL CONDO UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2020-12-18T00:00:00.000Z",
+                        "lastSalesAmount": 5193075,
+                        "maxSalesAmount": 5193075,
+                        "SQFT": 0,
+                        "TotalRecords": 1
+                    },
+                    {
+                        "_id": {
+                            "id": "64867515ef52d29a0b87b5da",
+                            "Loc": {
+                                "coordinates": [
+                                    -73.9802,
+                                    40.76719
+                                ],
+                                "type": "Point"
+                            },
+                            "STREET_NUMBER": "220",
+                            "STREET": "Central Park S",
+                            "UNIT": "19D",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL CONDO UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2020-10-16T00:00:00.000Z",
+                        "lastSalesAmount": 1807393.75,
+                        "maxSalesAmount": 1807393.75,
+                        "SQFT": 0,
+                        "TotalRecords": 1
+                    },
+                    {
+                        "_id": {
+                            "id": "64867543ef52d29a0b8a4482",
+                            "Loc": {
+                                "coordinates": [
+                                    -73.9802,
+                                    40.76719
+                                ],
+                                "type": "Point"
+                            },
+                            "STREET_NUMBER": "220",
+                            "STREET": "Central Park S",
+                            "UNIT": "V-10",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL CONDO UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2020-10-16T00:00:00.000Z",
+                        "lastSalesAmount": 40000000,
+                        "maxSalesAmount": 40000000,
+                        "SQFT": 0,
+                        "TotalRecords": 1
+                    },
+                    {
+                        "_id": {
+                            "id": "64867543ef52d29a0b8a4489",
+                            "Loc": {
+                                "coordinates": [
+                                    -73.9802,
+                                    40.76719
+                                ],
+                                "type": "Point"
+                            },
+                            "STREET_NUMBER": "220",
+                            "STREET": "Central Park S",
+                            "UNIT": "V-8",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL CONDO UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2020-10-09T00:00:00.000Z",
+                        "lastSalesAmount": 65593125,
+                        "maxSalesAmount": 65593125,
+                        "SQFT": 0,
+                        "TotalRecords": 1
+                    },
+                    {
+                        "_id": {
+                            "id": "64867519ef52d29a0b87e681",
+                            "Loc": {
+                                "coordinates": [
+                                    -73.9802,
+                                    40.76719
+                                ],
+                                "type": "Point"
+                            },
+                            "STREET_NUMBER": "220",
+                            "STREET": "Central Park S",
+                            "UNIT": "20E",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL CONDO UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2020-10-09T00:00:00.000Z",
+                        "lastSalesAmount": 1405185,
+                        "maxSalesAmount": 1405185,
+                        "SQFT": 0,
+                        "TotalRecords": 1
+                    },
+                    {
+                        "_id": {
+                            "id": "64867536ef52d29a0b898386",
+                            "Loc": {
+                                "coordinates": [
+                                    -73.9802,
+                                    40.76719
+                                ],
+                                "type": "Point"
+                            },
+                            "STREET_NUMBER": "220",
+                            "STREET": "Central Park S",
+                            "UNIT": "71",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL CONDO UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2020-09-18T00:00:00.000Z",
+                        "lastSalesAmount": 62622375,
+                        "maxSalesAmount": 62622375,
+                        "SQFT": 0,
+                        "TotalRecords": 1
+                    },
+                    {
+                        "_id": {
+                            "id": "64867515ef52d29a0b87a81c",
+                            "Loc": {
+                                "coordinates": [
+                                    -73.9802,
+                                    40.76719
+                                ],
+                                "type": "Point"
+                            },
+                            "STREET_NUMBER": "220",
+                            "STREET": "Central Park S",
+                            "UNIT": "18B",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL CONDO UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2020-09-18T00:00:00.000Z",
+                        "lastSalesAmount": 3411137.5,
+                        "maxSalesAmount": 3411137.5,
+                        "SQFT": 0,
+                        "TotalRecords": 1
+                    },
+                    {
+                        "_id": {
+                            "id": "64867514ef52d29a0b87a6a4",
+                            "Loc": {
+                                "coordinates": [
+                                    -73.9802,
+                                    40.76719
+                                ],
+                                "type": "Point"
+                            },
+                            "STREET_NUMBER": "220",
+                            "STREET": "Central Park S",
+                            "UNIT": "18A",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL CONDO UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2020-09-10T00:00:00.000Z",
+                        "lastSalesAmount": 3156575,
+                        "maxSalesAmount": 3156575,
+                        "SQFT": 0,
+                        "TotalRecords": 1
+                    },
+                    {
+                        "_id": {
+                            "id": "64867536ef52d29a0b8984e4",
+                            "Loc": {
+                                "coordinates": [
+                                    -73.9802,
+                                    40.76719
+                                ],
+                                "type": "Point"
+                            },
+                            "STREET_NUMBER": "220",
+                            "STREET": "Central Park S",
+                            "UNIT": "72",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL CONDO UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2020-09-04T00:00:00.000Z",
+                        "lastSalesAmount": 63131500,
+                        "maxSalesAmount": 63131500,
+                        "SQFT": 0,
+                        "TotalRecords": 1
+                    },
+                    {
+                        "_id": {
+                            "id": "64867533ef52d29a0b895048",
+                            "Loc": {
+                                "coordinates": [
+                                    -73.9802,
+                                    40.76719
+                                ],
+                                "type": "Point"
+                            },
+                            "STREET_NUMBER": "220",
+                            "STREET": "Central Park S",
+                            "UNIT": "69",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL CONDO UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2020-09-03T00:00:00.000Z",
+                        "lastSalesAmount": 61604125,
+                        "maxSalesAmount": 61604125,
+                        "SQFT": 0,
+                        "TotalRecords": 1
+                    },
+                    {
+                        "_id": {
+                            "id": "64867515ef52d29a0b87b4d6",
+                            "Loc": {
+                                "coordinates": [
+                                    -73.9802,
+                                    40.76719
+                                ],
+                                "type": "Point"
+                            },
+                            "STREET_NUMBER": "220",
+                            "STREET": "Central Park S",
+                            "UNIT": "19C",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL CONDO UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2020-08-27T00:00:00.000Z",
+                        "lastSalesAmount": 1545375,
+                        "maxSalesAmount": 1545375,
+                        "SQFT": 0,
+                        "TotalRecords": 1
+                    },
+                    {
+                        "_id": {
+                            "id": "64867536ef52d29a0b89810c",
+                            "Loc": {
+                                "coordinates": [
+                                    -73.9802,
+                                    40.76719
+                                ],
+                                "type": "Point"
+                            },
+                            "STREET_NUMBER": "220",
+                            "STREET": "Central Park S",
+                            "UNIT": "70",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL CONDO UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2020-08-19T00:00:00.000Z",
+                        "lastSalesAmount": 61000000,
+                        "maxSalesAmount": 61000000,
+                        "SQFT": 0,
+                        "TotalRecords": 1
+                    },
+                    {
+                        "_id": {
+                            "id": "64867543ef52d29a0b8a4486",
+                            "Loc": {
+                                "coordinates": [
+                                    -73.9802,
+                                    40.76719
+                                ],
+                                "type": "Point"
+                            },
+                            "STREET_NUMBER": "220",
+                            "STREET": "Central Park S",
+                            "UNIT": "V-3",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL CONDO UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2020-08-14T00:00:00.000Z",
+                        "lastSalesAmount": 30500000,
+                        "maxSalesAmount": 30500000,
+                        "SQFT": 0,
+                        "TotalRecords": 1
+                    },
+                    {
+                        "_id": {
+                            "id": "64867519ef52d29a0b87e5d3",
+                            "Loc": {
+                                "coordinates": [
+                                    -73.9802,
+                                    40.76719
+                                ],
+                                "type": "Point"
+                            },
+                            "STREET_NUMBER": "220",
+                            "STREET": "Central Park S",
+                            "UNIT": "20D",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL CONDO UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2020-08-14T00:00:00.000Z",
+                        "lastSalesAmount": 1816425,
+                        "maxSalesAmount": 1816425,
+                        "SQFT": 0,
+                        "TotalRecords": 1
+                    },
+                    {
+                        "_id": {
+                            "id": "64867519ef52d29a0b87e3e3",
+                            "Loc": {
+                                "coordinates": [
+                                    -73.9802,
+                                    40.76719
+                                ],
+                                "type": "Point"
+                            },
+                            "STREET_NUMBER": "220",
+                            "STREET": "Central Park S",
+                            "UNIT": "20B",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL CONDO UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2020-07-30T00:00:00.000Z",
+                        "lastSalesAmount": 3767525,
+                        "maxSalesAmount": 3767525,
+                        "SQFT": 0,
+                        "TotalRecords": 1
+                    },
+                    {
+                        "_id": {
+                            "id": "64867543ef52d29a0b8a4488",
+                            "Loc": {
+                                "coordinates": [
+                                    -73.9802,
+                                    40.76719
+                                ],
+                                "type": "Point"
+                            },
+                            "STREET_NUMBER": "220",
+                            "STREET": "Central Park S",
+                            "UNIT": "V-7",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL CONDO UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2020-07-30T00:00:00.000Z",
+                        "lastSalesAmount": 40730000,
+                        "maxSalesAmount": 40730000,
+                        "SQFT": 0,
+                        "TotalRecords": 1
+                    },
+                    {
+                        "_id": {
+                            "id": "64867519ef52d29a0b87e8a6",
+                            "Loc": {
+                                "coordinates": [
+                                    -73.9802,
+                                    40.76719
+                                ],
+                                "type": "Point"
+                            },
+                            "STREET_NUMBER": "220",
+                            "STREET": "Central Park S",
+                            "UNIT": "20K",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL CONDO UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2020-07-23T00:00:00.000Z",
+                        "lastSalesAmount": 1816425,
+                        "maxSalesAmount": 1816425,
+                        "SQFT": 0,
+                        "TotalRecords": 1
+                    },
+                    {
+                        "_id": {
+                            "id": "64867541ef52d29a0b8a1e47",
+                            "Loc": {
+                                "coordinates": [
+                                    -73.9802,
+                                    40.76719
+                                ],
+                                "type": "Point"
+                            },
+                            "STREET_NUMBER": "220",
+                            "STREET": "Central Park S",
+                            "UNIT": "PH 76",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL CONDO UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2020-07-23T00:00:00.000Z",
+                        "lastSalesAmount": 99903375,
+                        "maxSalesAmount": 99903375,
+                        "SQFT": 0,
+                        "TotalRecords": 1
+                    },
+                    {
+                        "_id": {
+                            "id": "64867519ef52d29a0b87e791",
+                            "Loc": {
+                                "coordinates": [
+                                    -73.9802,
+                                    40.76719
+                                ],
+                                "type": "Point"
+                            },
+                            "STREET_NUMBER": "220",
+                            "STREET": "Central Park S",
+                            "UNIT": "20G",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL CONDO UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2020-07-23T00:00:00.000Z",
+                        "lastSalesAmount": 1811379.38,
+                        "maxSalesAmount": 1811379.38,
+                        "SQFT": 0,
+                        "TotalRecords": 1
+                    },
+                    {
+                        "_id": {
+                            "id": "64867533ef52d29a0b895022",
+                            "Loc": {
+                                "coordinates": [
+                                    -73.9802,
+                                    40.76719
+                                ],
+                                "type": "Point"
+                            },
+                            "STREET_NUMBER": "220",
+                            "STREET": "Central Park S",
+                            "UNIT": "68",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL CONDO UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2020-07-21T00:00:00.000Z",
+                        "lastSalesAmount": 55500000,
+                        "maxSalesAmount": 55500000,
+                        "SQFT": 0,
+                        "TotalRecords": 1
+                    },
+                    {
+                        "_id": {
+                            "id": "64867532ef52d29a0b894ed9",
+                            "Loc": {
+                                "coordinates": [
+                                    -73.9802,
+                                    40.76719
+                                ],
+                                "type": "Point"
+                            },
+                            "STREET_NUMBER": "220",
+                            "STREET": "Central Park S",
+                            "UNIT": "64",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL CONDO UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2020-07-14T00:00:00.000Z",
+                        "lastSalesAmount": 53967250,
+                        "maxSalesAmount": 53967250,
+                        "SQFT": 0,
+                        "TotalRecords": 1
+                    },
+                    {
+                        "_id": {
+                            "id": "64867532ef52d29a0b894f46",
+                            "Loc": {
+                                "coordinates": [
+                                    -73.9802,
+                                    40.76719
+                                ],
+                                "type": "Point"
+                            },
+                            "STREET_NUMBER": "220",
+                            "STREET": "Central Park S",
+                            "UNIT": "65",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL CONDO UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2020-04-17T00:00:00.000Z",
+                        "lastSalesAmount": 56258312.5,
+                        "maxSalesAmount": 56258312.5,
+                        "SQFT": 0,
+                        "TotalRecords": 1
+                    },
+                    {
+                        "_id": {
+                            "id": "64867532ef52d29a0b894e2f",
+                            "Loc": {
+                                "coordinates": [
+                                    -73.9802,
+                                    40.76719
+                                ],
+                                "type": "Point"
+                            },
+                            "STREET_NUMBER": "220",
+                            "STREET": "Central Park S",
+                            "UNIT": "63",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL CONDO UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2020-04-14T00:00:00.000Z",
+                        "lastSalesAmount": 53585406.25,
+                        "maxSalesAmount": 53585406.25,
+                        "SQFT": 0,
+                        "TotalRecords": 1
+                    },
+                    {
+                        "_id": {
+                            "id": "64867515ef52d29a0b87ade7",
+                            "Loc": {
+                                "coordinates": [
+                                    -73.9802,
+                                    40.76719
+                                ],
+                                "type": "Point"
+                            },
+                            "STREET_NUMBER": "220",
+                            "STREET": "Central Park S",
+                            "UNIT": "18J",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL CONDO UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "lastSalesDate": "2020-04-09T00:00:00.000Z",
+                        "lastSalesAmount": 2036500,
+                        "maxSalesAmount": 2036500,
+                        "SQFT": 0,
+                        "TotalRecords": 1
+                    }
+                ]
+            }
+        },
+        {
+            "name": "address",
+            "url": "https://real-estate-records.p.rapidapi.com/search/address",
+            "description": "Get a high level of summary of property records given an address. Street number, name and zipcode are needed to match records. The street names are normalized using Here.com conventions. **This API is free to use.**\n\nIf it's an apartment building, it will return total records available for every property type. For instance,  for 220 Central Park S, New York, NY 10019,  it returns:\n  \"data\": [\n    {\n      \"_id\": {\n        \"STREET_NUMBER\": \"220\",\n        \"STREET\": \"Central Park S\",\n        \"PROPERTY_TYPE\": \"SINGLE RESIDENTIAL CONDO UNIT\",\n        \"ZIPCODE\": \"10019\",\n        \"STATE\": \"NY\"\n      },\n      \"Location\": {\n        \"coordinates\": [\n          -73.9802,\n          40.76719\n        ],\n        \"type\": \"Point\"\n      },\n      \"lastSalesDate\": \"2021-05-24T00:00:00.000Z\",\n      \"lastSalesAmount\": 59500000,\n      \"maxSalesAmount\": 239958219.15,\n      \"TotalRecords\": 100\n    },\n\nThe API is available for public records for New York City 5 boroughs, all New Jersey Counties and DC. \nSources of information are:\nNJ: http://tax1.co.monmouth.nj.us/cgi-bin/prc6.cgi?&ms_user=monm&passwd=&srch_type=0&adv=0&out_type=0&district=0200\nNYC Acris: https://a836-acris.nyc.gov/DS/DocumentSearch/Index",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "street",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "Central Park S"
+                },
+                {
+                    "name": "number",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "220"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "zipcode",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "10019"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://real-estate-records.p.rapidapi.com/search/address\"\nquerystring = {\"street\": \"Central Park S\", \"number\": \"220\", \"zipcode\": \"10019\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"real-estate-records.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://real-estate-records.p.rapidapi.com/search/address\"\nquerystring = {\"street\": \"Central Park S\", \"number\": \"220\", \"zipcode\": \"10019\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"real-estate-records.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "title": "Property",
+                "err": null,
+                "data": [
+                    {
+                        "_id": {
+                            "STREET_NUMBER": "220",
+                            "STREET": "Central Park S",
+                            "PROPERTY_TYPE": "PARKING SPACE",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "Location": {
+                            "coordinates": [
+                                -73.9802,
+                                40.76719
+                            ],
+                            "type": "Point"
+                        },
+                        "lastSalesDate": "2021-12-17T00:00:00.000Z",
+                        "lastSalesAmount": 750000,
+                        "maxSalesAmount": 750000,
+                        "TotalRecords": 1
+                    },
+                    {
+                        "_id": {
+                            "STREET_NUMBER": "220",
+                            "STREET": "Central Park S",
+                            "PROPERTY_TYPE": "MULTIPLE RESIDENTIAL CONDO UNT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "Location": {
+                            "coordinates": [
+                                -73.9802,
+                                40.76719
+                            ],
+                            "type": "Point"
+                        },
+                        "lastSalesDate": "2019-07-31T00:00:00.000Z",
+                        "lastSalesAmount": 24107850,
+                        "maxSalesAmount": 24107850,
+                        "TotalRecords": 2
+                    },
+                    {
+                        "_id": {
+                            "STREET_NUMBER": "220",
+                            "STREET": "Central Park S",
+                            "PROPERTY_TYPE": "OTHER",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "Location": {
+                            "coordinates": [
+                                -73.9802,
+                                40.76719
+                            ],
+                            "type": "Point"
+                        },
+                        "lastSalesDate": "2021-05-20T00:00:00.000Z",
+                        "lastSalesAmount": 82500000,
+                        "maxSalesAmount": 82500000,
+                        "TotalRecords": 3
+                    },
+                    {
+                        "_id": {
+                            "STREET_NUMBER": "220",
+                            "STREET": "Central Park S",
+                            "PROPERTY_TYPE": "SINGLE RESIDENTIAL CONDO UNIT",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "Location": {
+                            "coordinates": [
+                                -73.9802,
+                                40.76719
+                            ],
+                            "type": "Point"
+                        },
+                        "lastSalesDate": "2023-04-27T00:00:00.000Z",
+                        "lastSalesAmount": 5000000,
+                        "maxSalesAmount": 239958219.15,
+                        "TotalRecords": 106
+                    },
+                    {
+                        "_id": {
+                            "STREET_NUMBER": "220",
+                            "STREET": "Central Park S",
+                            "PROPERTY_TYPE": "DWELLING ONLY - 1 FAMILY",
+                            "ZIPCODE": "10019",
+                            "STATE": "NY"
+                        },
+                        "Location": {
+                            "coordinates": [
+                                -73.9802,
+                                40.76719
+                            ],
+                            "type": "Point"
+                        },
+                        "lastSalesDate": "2008-09-29T00:00:00.000Z",
+                        "lastSalesAmount": 900000,
+                        "maxSalesAmount": 950000,
+                        "TotalRecords": 2
+                    }
+                ]
+            }
+        }
+    ],
+    "standardized_name": "real_estate_records"
+}

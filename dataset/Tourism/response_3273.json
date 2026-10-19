@@ -1,0 +1,44 @@
+{
+"user_query":"My friends and I are looking for an adventurous trip and we want to go hiking in the mountains. Can you suggest some webcams in popular hiking spots like the Swiss Alps, the Rocky Mountains, and the Himalayas? It would also be great if you could fetch the latest product reviews for hiking gear to help us make informed decisions.",
+"domain":"Tourism",
+"TaskList": [
+{
+"id": 1,
+"description": "Fetch webcams from hiking spots in the Swiss Alps.",
+"domain": "tourism",
+"required_inputs": ["location=Swiss Alps"]
+},
+{
+"id": 2,
+"description": "Fetch webcams from hiking spots in the Rocky Mountains.",
+"domain": "tourism",
+"required_inputs": ["location=Rocky Mountains"]
+},
+{
+"id": 3,
+"description": "Fetch webcams from hiking spots in the Himalayas.",
+"domain": "tourism",
+"required_inputs": ["location=Himalayas"]
+},
+{
+"id": 4,
+"description": "Compile a list of webcams from the results of steps 1, 2, and 3.",
+"domain": "tourism",
+"required_inputs": ["webcam_data_from_steps_1_2_3"],
+"dependency": ["1", "2", "3"]
+},
+{
+"id": 5,
+"description": "Fetch the latest product reviews for hiking gear.",
+"domain": "tourism",
+"required_inputs": ["product_type=hiking gear"]
+},
+{
+"id": 6,
+"description": "Compile the hiking gear reviews results.",
+"domain": "tourism",
+"required_inputs": ["hiking_gear_reviews"],
+"dependency": ["5"]
+}
+]
+}

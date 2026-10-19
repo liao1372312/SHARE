@@ -1,0 +1,156 @@
+{
+    "product_id": "api_b86c2a62-3592-41fd-b8b1-1fedc48df51f",
+    "tool_description": "The CalcX Loan Cost Calculator is a simple API that calculates the cost of a loan and generates an amortization schedule. The API takes in inputs like loan amount, interest rate, and repayment term, and generates estimates of the total cost of the loan over time.",
+    "home_url": "https://rapidapi.com/kidddevs/api/calcx-loan-calculator/",
+    "name": "CalcX -  Loan Calculator",
+    "title": "CalcX -  Loan Calculator",
+    "pricing": "FREEMIUM",
+    "tool_name": "CalcX -  Loan Calculator",
+    "score": {
+        "avgServiceLevel": 66,
+        "avgLatency": 265,
+        "avgSuccessRate": 61,
+        "popularityScore": 8.8,
+        "__typename": "Score"
+    },
+    "host": "calcx-loan-calculator.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "GET - Calculate Loan Cost",
+            "url": "https://calcx-loan-calculator.p.rapidapi.com/calculate",
+            "description": "This endpoint calculates the total cost of a loan given the loan amount, interest rate, and repayment term.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "term",
+                    "type": "NUMBER",
+                    "description": "The repayment term in months as an integer. **Example: term=12**.",
+                    "default": "12"
+                },
+                {
+                    "name": "loan",
+                    "type": "NUMBER",
+                    "description": "The loan amount as a float. **Example: loan=10000**.",
+                    "default": "10000"
+                },
+                {
+                    "name": "rate",
+                    "type": "NUMBER",
+                    "description": "The annual interest rate as a float. **Example: rate=5.5**.",
+                    "default": "5.5"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "type",
+                    "type": "STRING",
+                    "description": "The loan type as a string. This parameter is case-insensitive and can take one of the following values:  **mortgage**, **auto**, **business**, **student**, **medical** or **personal**. (optional)",
+                    "default": "student"
+                },
+                {
+                    "name": "extra",
+                    "type": "NUMBER",
+                    "description": "The extra payment per month as a float. **Example: extra=500.0**. **Default value: 0.0**. (optional)",
+                    "default": "0.0"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://calcx-loan-calculator.p.rapidapi.com/calculate\"\nquerystring = {\"type\": \"student\", \"term\": \"12\", \"loan\": \"10000\", \"rate\": \"5.5\", \"extra\": \"0.0\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"calcx-loan-calculator.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://calcx-loan-calculator.p.rapidapi.com/calculate\"\nquerystring = {\"type\": \"student\", \"term\": \"12\", \"loan\": \"10000\", \"rate\": \"5.5\", \"extra\": \"0.0\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"calcx-loan-calculator.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "interest_rate": "5.50%",
+                "loan_amount": "$10000.00",
+                "loan_interest": "$300.41",
+                "loan_type": "student",
+                "monthly_payment": "$858.37",
+                "repayment_term": "12 months",
+                "schedule": [
+                    {
+                        "balance": "$9187.47",
+                        "interest": "$45.83",
+                        "payment": "$858.37",
+                        "period": 1,
+                        "principal": "$812.53"
+                    },
+                    {
+                        "balance": "$8371.21",
+                        "interest": "$42.11",
+                        "payment": "$858.37",
+                        "period": 2,
+                        "principal": "$816.26"
+                    },
+                    {
+                        "balance": "$7551.21",
+                        "interest": "$38.37",
+                        "payment": "$858.37",
+                        "period": 3,
+                        "principal": "$820.00"
+                    },
+                    {
+                        "balance": "$6727.45",
+                        "interest": "$34.61",
+                        "payment": "$858.37",
+                        "period": 4,
+                        "principal": "$823.76"
+                    },
+                    {
+                        "balance": "$5899.92",
+                        "interest": "$30.83",
+                        "payment": "$858.37",
+                        "period": 5,
+                        "principal": "$827.53"
+                    },
+                    {
+                        "balance": "$5068.59",
+                        "interest": "$27.04",
+                        "payment": "$858.37",
+                        "period": 6,
+                        "principal": "$831.33"
+                    },
+                    {
+                        "balance": "$4233.45",
+                        "interest": "$23.23",
+                        "payment": "$858.37",
+                        "period": 7,
+                        "principal": "$835.14"
+                    },
+                    {
+                        "balance": "$3394.49",
+                        "interest": "$19.40",
+                        "payment": "$858.37",
+                        "period": 8,
+                        "principal": "$838.96"
+                    },
+                    {
+                        "balance": "$2551.68",
+                        "interest": "$15.56",
+                        "payment": "$858.37",
+                        "period": 9,
+                        "principal": "$842.81"
+                    },
+                    {
+                        "balance": "$1705.00",
+                        "interest": "$11.70",
+                        "payment": "$858.37",
+                        "period": 10,
+                        "principal": "$846.67"
+                    },
+                    {
+                        "balance": "$854.45",
+                        "interest": "$7.81",
+                        "payment": "$858.37",
+                        "period": 11,
+                        "principal": "$850.55"
+                    },
+                    {
+                        "balance": "$0.00",
+                        "interest": "$3.92",
+                        "payment": "$858.37",
+                        "period": 12,
+                        "principal": "$854.45"
+                    }
+                ]
+            }
+        }
+    ],
+    "standardized_name": "calcx_loan_calculator"
+}

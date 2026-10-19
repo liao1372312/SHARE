@@ -1,0 +1,32 @@
+{
+"user_query":"Find me the trending images of beaches in Australia and provide the URLs. Also, suggest some popular tourist attractions in Sydney and their details.",
+"domain":"Tourism",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Retrieve trending images of beaches in Australia.",
+        "domain": "tourism",
+        "required_inputs": ["search_location", "image_type"]
+    },
+    {
+        "id": 2,
+        "description": "Extract URLs of the retrieved beach images.",
+        "domain": "tourism",
+        "required_inputs": ["image_data"],
+        "dependencies": [1]
+    },
+    {
+        "id": 3,
+        "description": "Gather information on popular tourist attractions in Sydney.",
+        "domain": "tourism",
+        "required_inputs": ["city_name"]
+    },
+    {
+        "id": 4,
+        "description": "Compile the details of the tourist attractions.",
+        "domain": "tourism",
+        "required_inputs": ["attraction_data"],
+        "dependencies": [3]
+    }
+]
+}

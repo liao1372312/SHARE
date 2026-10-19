@@ -1,0 +1,31 @@
+{
+"user_query":"I need news about Covid 19 from multiple sources. Please gather news articles, headlines, authors, and publication dates from sources like WHO, CNN, and the guardian.",
+"domain":"Cross-Domain",
+"TaskList": [
+{
+"id": 1,
+"description": "Gather news articles from the WHO website including headlines, authors, and publication dates.",
+"domain": "news",
+"required_inputs": []
+},
+{
+"id": 2,
+"description": "Gather news articles from CNN including headlines, authors, and publication dates.",
+"domain": "news",
+"required_inputs": []
+},
+{
+"id": 3,
+"description": "Gather news articles from The Guardian including headlines, authors, and publication dates.",
+"domain": "news",
+"required_inputs": []
+},
+{
+"id": 4,
+"description": "Compile and merge all collected news articles from WHO, CNN, and The Guardian into a single document or list.",
+"domain": "data aggregation",
+"required_inputs": ["news_articles_from_WHO", "news_articles_from_CNN", "news_articles_from_Guardian"],
+"dependency": [1, 2, 3]
+}
+]
+}

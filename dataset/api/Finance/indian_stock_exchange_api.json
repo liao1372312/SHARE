@@ -1,0 +1,52 @@
+{
+    "product_id": "api_e0d2038e-23d7-439a-a669-776bc49d60f0",
+    "tool_description": "API for Indian Stock Exchange BSE/NSE.\nContact me at: vuesdata@gmail.com or visit https://www.vuesdata.com for building custom spiders or custom requests.",
+    "home_url": "https://rapidapi.com/vuesdata/api/indian-stock-exchange-api1/",
+    "name": "Indian Stock Exchange API",
+    "title": "Indian Stock Exchange API",
+    "pricing": "FREEMIUM",
+    "tool_name": "Indian Stock Exchange API",
+    "score": {
+        "avgServiceLevel": 99,
+        "avgLatency": 1565,
+        "avgSuccessRate": 98,
+        "popularityScore": 9.2,
+        "__typename": "Score"
+    },
+    "host": "indian-stock-exchange-api1.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "StockPrice",
+            "url": "https://indian-stock-exchange-api1.p.rapidapi.com/stock_price/",
+            "description": "Enter the SYMBOL such as TATAMOTORS, M&M etc as a parameter at the endpoint and it will give your the Live Price updates from exchange.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "symbol",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "TATAMOTORS"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://indian-stock-exchange-api1.p.rapidapi.com/stock_price/\"\nquerystring = {\"symbol\": \"TATAMOTORS\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"indian-stock-exchange-api1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://indian-stock-exchange-api1.p.rapidapi.com/stock_price/\"\nquerystring = {\"symbol\": \"TATAMOTORS\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"indian-stock-exchange-api1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "symbol": "TATAMOTORS",
+                "open": 569.65,
+                "day_high": 572.2,
+                "day_low": 566.05,
+                "previous_close": 568.45,
+                "last_trading_price": 569.8,
+                "lowPriceRange": 511.6,
+                "highPriceRange": 625.25,
+                "volume": 8736313,
+                "day_change": 1.349999999999909,
+                "day_change_percent": 0.23748790570848957,
+                "totalBuyQty": 0,
+                "totalSellQty": 309
+            }
+        }
+    ],
+    "standardized_name": "indian_stock_exchange_api"
+}

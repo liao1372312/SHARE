@@ -1,0 +1,40 @@
+{
+"user_query":"I want to find unique tracks to sample from Soundcloud and get information about those tracks and related albums.",
+"domain":"Technology",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Search for unique tracks on Soundcloud to sample.",
+        "domain": "technology",
+        "required_inputs": ["search_keywords", "genre", "duration", "quality"]
+    },
+    {
+        "id": 2,
+        "description": "Retrieve basic information about the selected tracks.",
+        "domain": "technology",
+        "required_inputs": ["track_ids"], 
+        "dependencies": [1]
+    },
+    {
+        "id": 3,
+        "description": "Search for albums related to the identified tracks.",
+        "domain": "technology",
+        "required_inputs": ["track_ids"], 
+        "dependencies": [2]
+    },
+    {
+        "id": 4,
+        "description": "Retrieve information about the artists associated with these albums.",
+        "domain": "technology",
+        "required_inputs": ["album_ids"], 
+        "dependencies": [3]
+    },
+    {
+        "id": 5,
+        "description": "Compile the information gathered to present to the user.",
+        "domain": "technology",
+        "required_inputs": ["track_info", "album_info", "artist_info"], 
+        "dependencies": [2, 3, 4]
+    }
+]
+}

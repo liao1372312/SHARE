@@ -1,0 +1,288 @@
+{
+    "product_id": "api_86e5e51b-8c89-4ea9-a02b-56df78cb77c9",
+    "tool_description": "Query millions of historical vehicle sales in all 50 states of the United States based on license plate number or VIN to obtain market value assessments of new and used vehicles. Data is updated monthly.\n[View documents](https://rapidapi.com/dominonet-lTpEE6zONeS/api/vehicle-market-value/details)",
+    "home_url": "https://rapidapi.com/dominonet-lTpEE6zONeS/api/vehicle-market-value/",
+    "name": "Vehicle Market Value",
+    "title": "Vehicle Market Value",
+    "pricing": "FREEMIUM",
+    "tool_name": "Vehicle Market Value",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 1077,
+        "avgSuccessRate": 100,
+        "popularityScore": 8.6,
+        "__typename": "Score"
+    },
+    "host": "vehicle-market-value.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Vehicle Market Value by License Plate",
+            "url": "https://vehicle-market-value.p.rapidapi.com/vmv",
+            "description": "Vehicle Market Value by License Plate",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "state_code",
+                    "type": "STRING",
+                    "description": "State Code\nAL,AK,AZ,AR,CA,CO,CT,DE,DC,FL,GA,HI,ID,IL,IN,IA,KS,KY,LA,ME,MD,MA,MI,MN,MS,MO,MT,NE,NV,NH,NJ,NM,NY,NC,ND,OH,OK,OR,PA,RI,SC,SD,TN,TX,UT,VT,VA,WA,WV,WI,WY",
+                    "default": "AL"
+                },
+                {
+                    "name": "license_plate",
+                    "type": "STRING",
+                    "description": "License plate number",
+                    "default": "S8TAN"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "mileage",
+                    "type": "STRING",
+                    "description": "The current mileage of the vehicle, or if not specified, the average mileage is used.For example: 50000\n",
+                    "default": ""
+                },
+                {
+                    "name": "period",
+                    "type": "STRING",
+                    "description": "Number of days to look back for sales data ,maximum value: 365.For example: 180",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://vehicle-market-value.p.rapidapi.com/vmv\"\nquerystring = {\"mileage\": \"\", \"period\": \"\", \"state_code\": \"AL\", \"license_plate\": \"S8TAN\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"vehicle-market-value.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://vehicle-market-value.p.rapidapi.com/vmv\"\nquerystring = {\"mileage\": \"\", \"period\": \"\", \"state_code\": \"AL\", \"license_plate\": \"S8TAN\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"vehicle-market-value.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "service": "vmv",
+                "date": "06/16/2023 02:54:56 AM",
+                "status": "SUCCESS",
+                "vehicle": "2020 Mitsubishi Outlander SE",
+                "mileage": 43635,
+                "count": 4475,
+                "average_market_price": 22981.82,
+                "market_prices": {
+                    "average": 22981.82,
+                    "below": 19694.4,
+                    "above": 26269.24,
+                    "distribution": [
+                        {
+                            "group": {
+                                "min": 13950,
+                                "max": 19297,
+                                "count": 448
+                            }
+                        },
+                        {
+                            "group": {
+                                "min": 19297,
+                                "max": 20000,
+                                "count": 448
+                            }
+                        },
+                        {
+                            "group": {
+                                "min": 20000,
+                                "max": 20998,
+                                "count": 447
+                            }
+                        },
+                        {
+                            "group": {
+                                "min": 20998,
+                                "max": 21966,
+                                "count": 448
+                            }
+                        },
+                        {
+                            "group": {
+                                "min": 21966,
+                                "max": 22697,
+                                "count": 447
+                            }
+                        },
+                        {
+                            "group": {
+                                "min": 22697,
+                                "max": 23385,
+                                "count": 448
+                            }
+                        },
+                        {
+                            "group": {
+                                "min": 23385,
+                                "max": 23999,
+                                "count": 447
+                            }
+                        },
+                        {
+                            "group": {
+                                "min": 23999,
+                                "max": 24998,
+                                "count": 448
+                            }
+                        },
+                        {
+                            "group": {
+                                "min": 24998,
+                                "max": 26996,
+                                "count": 447
+                            }
+                        },
+                        {
+                            "group": {
+                                "min": 26996,
+                                "max": 33999,
+                                "count": 447
+                            }
+                        }
+                    ]
+                },
+                "standard_deviation": 3287,
+                "sales_period": [
+                    "2021-05-02",
+                    "2023-06-12"
+                ],
+                "adjustments": {
+                    "mileage": {
+                        "average": 43635.32,
+                        "input": 43635.32,
+                        "adjustment": 0
+                    }
+                },
+                "statistical_confidence": "99%"
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Vehicle Market Value by VIN",
+            "url": "https://vehicle-market-value.p.rapidapi.com/vmv",
+            "description": "Vehicle Market Value by VIN",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "vin",
+                    "type": "STRING",
+                    "description": "The vehicle identification number",
+                    "default": "5UXKR0C58JL074657"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "mileage",
+                    "type": "STRING",
+                    "description": "The current mileage of the vehicle, or if not specified, the average mileage is used.For example: 50000",
+                    "default": ""
+                },
+                {
+                    "name": "period",
+                    "type": "STRING",
+                    "description": "Number of days to look back for sales data ,maximum value: 365.For example: 180",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://vehicle-market-value.p.rapidapi.com/vmv\"\nquerystring = {\"mileage\": \"\", \"vin\": \"5UXKR0C58JL074657\", \"period\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"vehicle-market-value.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://vehicle-market-value.p.rapidapi.com/vmv\"\nquerystring = {\"mileage\": \"\", \"vin\": \"5UXKR0C58JL074657\", \"period\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"vehicle-market-value.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "service": "vmv",
+                "date": "06/16/2023 02:55:00 AM",
+                "status": "SUCCESS",
+                "vehicle": "2018 BMW X5 XDrive35i",
+                "mileage": 40476,
+                "count": 8862,
+                "average_market_price": 42664.68,
+                "market_prices": {
+                    "average": 42664.68,
+                    "below": 36792.32,
+                    "above": 48537.04,
+                    "distribution": [
+                        {
+                            "group": {
+                                "min": 21980,
+                                "max": 34855,
+                                "count": 887
+                            }
+                        },
+                        {
+                            "group": {
+                                "min": 34855,
+                                "max": 37998,
+                                "count": 886
+                            }
+                        },
+                        {
+                            "group": {
+                                "min": 37998,
+                                "max": 39997,
+                                "count": 886
+                            }
+                        },
+                        {
+                            "group": {
+                                "min": 39997,
+                                "max": 41980,
+                                "count": 886
+                            }
+                        },
+                        {
+                            "group": {
+                                "min": 41980,
+                                "max": 43288,
+                                "count": 887
+                            }
+                        },
+                        {
+                            "group": {
+                                "min": 43288,
+                                "max": 44501,
+                                "count": 886
+                            }
+                        },
+                        {
+                            "group": {
+                                "min": 44501,
+                                "max": 45835,
+                                "count": 886
+                            }
+                        },
+                        {
+                            "group": {
+                                "min": 45835,
+                                "max": 46995,
+                                "count": 886
+                            }
+                        },
+                        {
+                            "group": {
+                                "min": 46995,
+                                "max": 49352,
+                                "count": 886
+                            }
+                        },
+                        {
+                            "group": {
+                                "min": 49352,
+                                "max": 64235,
+                                "count": 886
+                            }
+                        }
+                    ]
+                },
+                "standard_deviation": 5872,
+                "sales_period": [
+                    "2021-05-03",
+                    "2023-04-18"
+                ],
+                "adjustments": {
+                    "mileage": {
+                        "average": 40476.49,
+                        "input": 40476.49,
+                        "adjustment": 0
+                    }
+                },
+                "statistical_confidence": "99%"
+            },
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "vehicle_market_value"
+}

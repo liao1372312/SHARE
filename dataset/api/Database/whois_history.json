@@ -1,0 +1,95 @@
+{
+    "product_id": "api_efdda658-7b10-4331-8289-d04875a2a3d6",
+    "tool_description": "WHOIS History API lets you find out about current and past domain owners and all other relevant registration details that can be gathered from WHOIS records. ",
+    "home_url": "https://rapidapi.com/whoisapi/api/whois-history1/",
+    "name": "Whois History",
+    "title": "Whois History",
+    "pricing": "FREE",
+    "tool_name": "Whois History",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 749,
+        "avgSuccessRate": 0,
+        "popularityScore": 0.2,
+        "__typename": "Score"
+    },
+    "host": "whois-history1.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Whois History (v1)",
+            "url": "https://whois-history1.p.rapidapi.com/api/v1",
+            "description": "Check Whois  record's history",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "domainName",
+                    "type": "STRING",
+                    "description": "The domain for which historic WHOIS data is requested.",
+                    "default": "google.com"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "createdDateTo",
+                    "type": "STRING",
+                    "description": "If present, search through domains created before the given date. Acceptable values: date in \"YYYY-MM-DD\" format.",
+                    "default": ""
+                },
+                {
+                    "name": "createdDateFrom",
+                    "type": "STRING",
+                    "description": "If present, search through domains created after the given date. Acceptable values: date in \"YYYY-MM-DD\" format.",
+                    "default": ""
+                },
+                {
+                    "name": "outputFormat",
+                    "type": "STRING",
+                    "description": "Response output format. Acceptable values: XML or JSON. Defaults to JSON.",
+                    "default": ""
+                },
+                {
+                    "name": "expiredDateTo",
+                    "type": "STRING",
+                    "description": "If present, search through domains expired before the given date. Acceptable values: date in \"YYYY-MM-DD\" format.",
+                    "default": ""
+                },
+                {
+                    "name": "updatedDateTo",
+                    "type": "STRING",
+                    "description": "If present, search through domains updated before the given date. Acceptable values: date in \"YYYY-MM-DD\" format.",
+                    "default": ""
+                },
+                {
+                    "name": "mode",
+                    "type": "STRING",
+                    "description": "preview \u2013 return only the number of domains. No credits deducted. purchase \u2013 return the actual list of domains (limited to 10,000). 1 request costs 50 DRS credits. Default: preview",
+                    "default": ""
+                },
+                {
+                    "name": "updatedDateFrom",
+                    "type": "STRING",
+                    "description": "If present, search through domains updated after the given date. Acceptable values: date in \"YYYY-MM-DD\" format.",
+                    "default": ""
+                },
+                {
+                    "name": "expiredDateFrom",
+                    "type": "STRING",
+                    "description": "If present, search through domains expired after the given date. Acceptable values: date in \"YYYY-MM-DD\" format.",
+                    "default": ""
+                },
+                {
+                    "name": "sinceDate",
+                    "type": "STRING",
+                    "description": "If present, search through activities discovered since the given date. Sometimes there is a latency between the actual added/renewal/expired date and the date when our system detected this change. Acceptable values: date in \"YYYY-MM-DD\" format.",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://whois-history1.p.rapidapi.com/api/v1\"\nquerystring = {\"createdDateTo\": \"\", \"domainName\": \"google.com\", \"createdDateFrom\": \"\", \"outputFormat\": \"\", \"expiredDateTo\": \"\", \"updatedDateTo\": \"\", \"mode\": \"\", \"updatedDateFrom\": \"\", \"expiredDateFrom\": \"\", \"sinceDate\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"whois-history1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://whois-history1.p.rapidapi.com/api/v1\"\nquerystring = {\"createdDateTo\": \"\", \"domainName\": \"google.com\", \"createdDateFrom\": \"\", \"outputFormat\": \"\", \"expiredDateTo\": \"\", \"updatedDateTo\": \"\", \"mode\": \"\", \"updatedDateFrom\": \"\", \"expiredDateFrom\": \"\", \"sinceDate\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"whois-history1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "whois_history"
+}

@@ -1,0 +1,361 @@
+{
+    "product_id": "api_9b66c2c5-d1f1-4f81-8a3c-107cfa52ec59",
+    "tool_description": "",
+    "home_url": "https://rapidapi.com/traject-data-traject-data-default/api/bigbox/",
+    "name": "BigBox",
+    "title": "BigBox",
+    "pricing": "FREEMIUM",
+    "tool_name": "BigBox",
+    "score": {
+        "avgServiceLevel": 50,
+        "avgLatency": 30351,
+        "avgSuccessRate": 50,
+        "popularityScore": 7.6,
+        "__typename": "Score"
+    },
+    "host": "bigbox.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Product",
+            "url": "https://bigbox.p.rapidapi.com/request",
+            "description": "The Product Parameters are applicable when making a request with `type=product` to retrieve details of a single product on Home Depot - the product is specified using either the item_id parameter or the url parameter (where the url parameter contains a link to a Home Depot product page). The parameters should be appended as querystring parameters to the Home Depot Product Data APIGETHTTP request.\n\nProduct details are retrieved from the product page for a single product on Home Depot",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "type",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "product"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "gtin",
+                    "type": "STRING",
+                    "description": "The GTIN/ISBN/UPC code to look up a matching product on Home Depot for. If the gtin parameter is supplied then the item_id parameter is ignored. GTIN-based requests work by looking up the GTIN/ISBN/UPC on Home Depot first, then retrieving the product details for the first matching item_id.",
+                    "default": "317061059"
+                },
+                {
+                    "name": "url",
+                    "type": "STRING",
+                    "description": "The Home Depot product-page URL to retrieve product details from.\n\nUse either `item_id` OR `url`. \n\nIf the item_id is included, do **NOT** include the URL\n\n**Note: If the url parameter is supplied then the item_id and gtin parameters are ignored (the url overrides other parameters).**",
+                    "default": ""
+                },
+                {
+                    "name": "output",
+                    "type": "STRING",
+                    "description": "Determines the format in which results are returned: `JSON`, `HTML` or `CSV`\n\nJSON is the default ",
+                    "default": ""
+                },
+                {
+                    "name": "item_id",
+                    "type": "NUMBER",
+                    "description": "The Home Depot Item ID to retrieve product details for.",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://bigbox.p.rapidapi.com/request\"\nquerystring = {\"gtin\": \"317061059\", \"url\": \"\", \"output\": \"\", \"type\": \"product\", \"item_id\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"bigbox.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://bigbox.p.rapidapi.com/request\"\nquerystring = {\"gtin\": \"317061059\", \"url\": \"\", \"output\": \"\", \"type\": \"product\", \"item_id\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"bigbox.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "request_info": {
+                    "success": false,
+                    "message": "'gtin' parameter is not a valid GTIN or UPC code."
+                }
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Reviews",
+            "url": "https://bigbox.p.rapidapi.com/request",
+            "description": "The Reviews Parameters are applicable when making a request with `type=reviews` to retrieve customer Reviews for a single product on Home Depot - the product is specified using either the item_id or url parameter (where the url parameter contains a link to a Home Depot product page). The parameters should be appended as querystring parameters to the Home Depot Product Data API GET HTTP request.\n\nReviews are retrieved from the customer reviews page for a single product on Home Depot.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "item_id",
+                    "type": "NUMBER",
+                    "description": "The Home Depot Item ID to retrieve Reviews for.\n\n**Note: If the item_id parameter is supplied then the url parameter is ignored.**",
+                    "default": "317061059"
+                },
+                {
+                    "name": "type",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "reviews"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "page",
+                    "type": "STRING",
+                    "description": "The current page of reviews to retrieve. Inspect the pagination.total_pages property in the Reviews results to see how many pages of reviews are available.\n\n**Note the maximum number of reviews per page is 10 (this is a Home Depot limit).**\n\nupdate value of num to get additional pages",
+                    "default": ""
+                },
+                {
+                    "name": "output",
+                    "type": "STRING",
+                    "description": "Determines the format in which results are returned: `JSON`, `HTML` or `CSV`\n\nJSON is the default ",
+                    "default": ""
+                },
+                {
+                    "name": "four_star",
+                    "type": "BOOLEAN",
+                    "description": "Set to true to filter to only reviews that give the product a 4-star rating.",
+                    "default": ""
+                },
+                {
+                    "name": "sort_by",
+                    "type": "STRING",
+                    "description": "Determines the sort order of reviews to return. Valid values are:\n\n- photo_reviews\n- most_helpful\n- newest_to_oldest\n- oldest_to_newest\n- high_to_low_rating\n- low_to_high_rating",
+                    "default": ""
+                },
+                {
+                    "name": "reviewer_type",
+                    "type": "STRING",
+                    "description": "The type of reviewer to retrieve reviews from. Valid values are:\n\n`verified_purchase` : Include reviews by Verified Purchasers only.\n`all` : Include all reviews, regardless of whether they are from Verified Purchasers or not.",
+                    "default": ""
+                },
+                {
+                    "name": "gtin",
+                    "type": "STRING",
+                    "description": "The GTIN/ISBN/UPC code to look up a matching product on Home Depot for to retrieve reviews for. If the gtin parameter is supplied then the `item_id` parameter is ignored. GTIN-based requests work by looking up the GTIN/ISBN/UPC on Home Depot first, then retrieving the reviews for the first matching `item_id`.",
+                    "default": ""
+                },
+                {
+                    "name": "two_star",
+                    "type": "BOOLEAN",
+                    "description": "Set to true to filter to only reviews that give the product a 2-star rating.",
+                    "default": ""
+                },
+                {
+                    "name": "five_star",
+                    "type": "BOOLEAN",
+                    "description": "Set to true to filter to only reviews that give the product a 5-star rating.",
+                    "default": ""
+                },
+                {
+                    "name": "one_star",
+                    "type": "BOOLEAN",
+                    "description": "Set to true to filter to only reviews that give the product a 1-star rating.",
+                    "default": ""
+                },
+                {
+                    "name": "three_star",
+                    "type": "BOOLEAN",
+                    "description": "Set to true to filter to only reviews that give the product a 3-star rating.",
+                    "default": ""
+                },
+                {
+                    "name": "search_term",
+                    "type": "STRING",
+                    "description": "A search term to use to search reviews.",
+                    "default": ""
+                },
+                {
+                    "name": "url",
+                    "type": "STRING",
+                    "description": "The Home Depot reviews-page URL to retrieve Reviews from.\n",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://bigbox.p.rapidapi.com/request\"\nquerystring = {\"page\": \"\", \"output\": \"\", \"four_star\": \"\", \"sort_by\": \"\", \"reviewer_type\": \"\", \"gtin\": \"\", \"two_star\": \"\", \"item_id\": \"317061059\", \"five_star\": \"\", \"one_star\": \"\", \"three_star\": \"\", \"search_term\": \"\", \"url\": \"\", \"type\": \"reviews\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"bigbox.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://bigbox.p.rapidapi.com/request\"\nquerystring = {\"page\": \"\", \"output\": \"\", \"four_star\": \"\", \"sort_by\": \"\", \"reviewer_type\": \"\", \"gtin\": \"\", \"two_star\": \"\", \"item_id\": \"317061059\", \"five_star\": \"\", \"one_star\": \"\", \"three_star\": \"\", \"search_term\": \"\", \"url\": \"\", \"type\": \"reviews\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"bigbox.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "API Request failed due to Provider configuration error: The API response body transformation failed to parse content-type application/json. Please contact the API Provider",
+                "info": "Your Client (working) ---> Gateway (working) ---> API (not working)"
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Questions",
+            "url": "https://bigbox.p.rapidapi.com/request",
+            "description": "The Questions Parameters are applicable when making a request with type=questions to retrieve customer Questions for a single product on Home Depot - the product is specified using either the item_id or url parameter (where the url parameter contains a link to a Home Depot product page). The parameters should be appended as querystring parameters to the Home Depot Product Data APIGETHTTP request.\n\nQuestions are retrieved from the customer questions page for a single product on Home Depot.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "type",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "questions"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "output",
+                    "type": "STRING",
+                    "description": "Determines the format in which results are returned: `JSON`, `HTML` or `CSV`\n\nJSON is the default ",
+                    "default": ""
+                },
+                {
+                    "name": "page",
+                    "type": "STRING",
+                    "description": "The current page of questions to retrieve. Inspect the pagination.total_pages property in the Questions results to see how many pages of questions are available.\n\n**Note the maximum number of questions per page is 10 (this is a Home Depot limit).**\n\nupdate value of num to get additional pages",
+                    "default": ""
+                },
+                {
+                    "name": "sort_by",
+                    "type": "STRING",
+                    "description": "Determines the sort order of questions to return. Valid values are:\n\n- newest_to_oldest\n- oldest_to_newest\n- most_answered\n- most_helpful\n- featured_questions\n- can_you_answer\n- filter first [questions with no answer yet]",
+                    "default": ""
+                },
+                {
+                    "name": "gtin",
+                    "type": "STRING",
+                    "description": "The GTIN/ISBN/UPC code to look up a matching product on Home Depot for to retrieve questions for. If the gtin parameter is supplied then the `item_id `parameter is ignored. GTIN-based requests work by looking up the GTIN/ISBN/UPC on Home Depot first, then retrieving the questions for the first matching `item_id`",
+                    "default": ""
+                },
+                {
+                    "name": "item_id",
+                    "type": "NUMBER",
+                    "description": "The Home Depot Item ID to retrieve Questions for.\n\n**Note: If the item_id parameter is supplied then the url parameter is ignored.**",
+                    "default": "317061059"
+                },
+                {
+                    "name": "url",
+                    "type": "STRING",
+                    "description": "The Home Depot questions-page URL to retrieve Questions from.",
+                    "default": ""
+                },
+                {
+                    "name": "search_term",
+                    "type": "STRING",
+                    "description": "A search term to use to search questions.",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://bigbox.p.rapidapi.com/request\"\nquerystring = {\"output\": \"\", \"page\": \"\", \"sort_by\": \"\", \"gtin\": \"\", \"item_id\": \"317061059\", \"type\": \"questions\", \"url\": \"\", \"search_term\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"bigbox.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://bigbox.p.rapidapi.com/request\"\nquerystring = {\"output\": \"\", \"page\": \"\", \"sort_by\": \"\", \"gtin\": \"\", \"item_id\": \"317061059\", \"type\": \"questions\", \"url\": \"\", \"search_term\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"bigbox.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Category",
+            "url": "https://bigbox.p.rapidapi.com/request",
+            "description": "The Category Parameters are applicable when making a request with `type=category` to retrieve category results from Home Depot. The category is specified in the category_id parameter. The parameters should be appended as querystring parameters to the Home Depot Product Data API GET HTTP request.\n\nCategory results are retrieved from the Category results page on Home Depot.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "category_id",
+                    "type": "STRING",
+                    "description": "A category ID to retrieve results from. You may supply any arbitary value in the category_id parameter however we recommend using a category ID returned from the Categories API as these are known-good category IDs from Home Depot.",
+                    "default": "N-5yc1vZbzb3"
+                },
+                {
+                    "name": "type",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "category"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "sort_by",
+                    "type": "STRING",
+                    "description": "Determines how the results are sorted. Valid values are:\n\n- best_seller\n- most_popular\n- price_high_to_low\n- price_low_to_high\n- highest_rating",
+                    "default": ""
+                },
+                {
+                    "name": "output",
+                    "type": "STRING",
+                    "description": "Determines the format in which results are returned: `JSON`, `HTML` or `CSV`\n\nJSON is the default ",
+                    "default": ""
+                },
+                {
+                    "name": "max_price",
+                    "type": "STRING",
+                    "description": "\nDetermines the maximum price of results to return, expressed in dollars and cents (i.e. `min_price=39.99` for $39.99).",
+                    "default": ""
+                },
+                {
+                    "name": "min_price",
+                    "type": "STRING",
+                    "description": "\nDetermines the maximum price of results to return, expressed in dollars and cents (i.e. `min_price=39.99` for $39.99).",
+                    "default": ""
+                },
+                {
+                    "name": "page",
+                    "type": "STRING",
+                    "description": "The current page of results to retrieve. Inspect the pagination results property for details on the number of pages available.\n\nupdate value of num to get additional pages",
+                    "default": "2"
+                },
+                {
+                    "name": "url",
+                    "type": "STRING",
+                    "description": "The Home Depot category results page to retrieve results from.\n\n**Note: If the url parameter is supplied then all other parameters are ignored as they are overriden be those specified in the url parameter.**",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://bigbox.p.rapidapi.com/request\"\nquerystring = {\"sort_by\": \"\", \"output\": \"\", \"max_price\": \"\", \"category_id\": \"N-5yc1vZbzb3\", \"min_price\": \"\", \"page\": \"2\", \"url\": \"\", \"type\": \"category\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"bigbox.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://bigbox.p.rapidapi.com/request\"\nquerystring = {\"sort_by\": \"\", \"output\": \"\", \"max_price\": \"\", \"category_id\": \"N-5yc1vZbzb3\", \"min_price\": \"\", \"page\": \"2\", \"url\": \"\", \"type\": \"category\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"bigbox.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Search",
+            "url": "https://bigbox.p.rapidapi.com/request",
+            "description": "The Search Parameters are applicable when making a request with `type=search` to retrieve search results from Home Depot. The search term is specified in the search_term parameter. The parameters should be appended as querystring parameters to the Home Depot Product Data API GET HTTP request.\n\nSearch results are retrieved from the Search results page on Home Depot.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "search_term",
+                    "type": "STRING",
+                    "description": "A search term to use to search for Home Depot items.\nEither the search_term or url parameter must be supplied.",
+                    "default": "lawn mower"
+                },
+                {
+                    "name": "type",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "search"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "output",
+                    "type": "STRING",
+                    "description": "Determines the format in which results are returned: `JSON`, `HTML` or `CSV`\n\nJSON is the default ",
+                    "default": ""
+                },
+                {
+                    "name": "max_price",
+                    "type": "STRING",
+                    "description": "Determines the maximum price of results to return, expressed in dollars and cents (i.e. `max_price=39.99` for $39.99).",
+                    "default": "max_price=500"
+                },
+                {
+                    "name": "sort_by",
+                    "type": "STRING",
+                    "description": "Determines how the results are sorted. Valid values are:\n\n- best_seller\n- most_popular\n- price_high_to_low\n- price_low_to_high\n- highest_rating",
+                    "default": ""
+                },
+                {
+                    "name": "url",
+                    "type": "STRING",
+                    "description": "The Home Depot search results page to retrieve results from.\n\n**Note: If the url parameter is supplied then all other parameters are ignored as they are overriden be those specified in the url parameter**",
+                    "default": ""
+                },
+                {
+                    "name": "page",
+                    "type": "NUMBER",
+                    "description": "The current page of results to retrieve. Inspect the pagination results property for details on the number of pages available.\n\nupdate value of num to get additional pages",
+                    "default": ""
+                },
+                {
+                    "name": "min_price",
+                    "type": "STRING",
+                    "description": "Determines the minimum price of results to return, expressed in dollars and cents (i.e. `min_price=2.99` for $2.99).",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://bigbox.p.rapidapi.com/request\"\nquerystring = {\"output\": \"\", \"max_price\": \"max_price=500\", \"sort_by\": \"\", \"url\": \"\", \"search_term\": \"lawn mower\", \"page\": \"\", \"min_price\": \"\", \"type\": \"search\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"bigbox.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://bigbox.p.rapidapi.com/request\"\nquerystring = {\"output\": \"\", \"max_price\": \"max_price=500\", \"sort_by\": \"\", \"url\": \"\", \"search_term\": \"lawn mower\", \"page\": \"\", \"min_price\": \"\", \"type\": \"search\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"bigbox.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "bigbox"
+}

@@ -1,0 +1,138 @@
+{
+    "product_id": "api_8fe83c87-e0df-46f1-9eb1-84e06d52bf63",
+    "tool_description": "Global phone number verification in a free, fast, reliable JSON API",
+    "home_url": "https://rapidapi.com/Veriphone/api/veriphone/",
+    "name": "Veriphone",
+    "title": "Veriphone",
+    "pricing": "FREEMIUM",
+    "tool_name": "Veriphone",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 501,
+        "avgSuccessRate": 98,
+        "popularityScore": 9.7,
+        "__typename": "Score"
+    },
+    "host": "veriphone.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "verify",
+            "url": "https://veriphone.p.rapidapi.com/verify",
+            "description": "Global phone number verification",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "phone",
+                    "type": "STRING",
+                    "description": "The phone number to verify",
+                    "default": "+4915123577723"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "default_country",
+                    "type": "STRING",
+                    "description": "The default country in a 2 letters ISO format. Example: US, RU.  Optional: the country will be infered from the prefix, from this parameter or from the IP address (in that order).",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://veriphone.p.rapidapi.com/verify\"\nquerystring = {\"default_country\": \"\", \"phone\": \"+4915123577723\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"veriphone.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://veriphone.p.rapidapi.com/verify\"\nquerystring = {\"default_country\": \"\", \"phone\": \"+4915123577723\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"veriphone.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "status": "success",
+                "phone": "+4915123577723",
+                "phone_valid": true,
+                "phone_type": "mobile",
+                "phone_region": "Germany",
+                "country": "Germany",
+                "country_code": "DE",
+                "country_prefix": "49",
+                "international_number": "+49 1512 3577723",
+                "local_number": "01512 3577723",
+                "e164": "+4915123577723",
+                "carrier": "T-Mobile"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "get": {
+                        "type": "string"
+                    },
+                    "parameters": {
+                        "type": "array"
+                    },
+                    "errors": {
+                        "type": "array"
+                    },
+                    "results": {
+                        "type": "integer"
+                    },
+                    "response": {
+                        "type": "array",
+                        "items": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "example",
+            "url": "https://veriphone.p.rapidapi.com/example",
+            "description": "Get an example phone number for any country",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "country_code",
+                    "type": "STRING",
+                    "description": "The example number's country in a 2 letters ISO format. Example: US, RU.  Optional: the country will be infered from the IP address if this parameter is absent or invalid.",
+                    "default": "GB"
+                },
+                {
+                    "name": "type",
+                    "type": "STRING",
+                    "description": "The type of example number to return. Values: fixed_line, mobile , premium_rate, shared_cost, toll_free, voip",
+                    "default": "mobile"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://veriphone.p.rapidapi.com/example\"\nquerystring = {\"country_code\": \"GB\", \"type\": \"mobile\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"veriphone.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://veriphone.p.rapidapi.com/example\"\nquerystring = {\"country_code\": \"GB\", \"type\": \"mobile\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"veriphone.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "status": "success",
+                "phone_type": "MOBILE",
+                "country_code": "GB",
+                "country_prefix": "44",
+                "international_number": "+44 7400 123456",
+                "local_number": "07400 123456",
+                "e164": "+447400123456"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "get": {
+                        "type": "string"
+                    },
+                    "parameters": {
+                        "type": "array"
+                    },
+                    "errors": {
+                        "type": "array"
+                    },
+                    "results": {
+                        "type": "integer"
+                    },
+                    "response": {
+                        "type": "array",
+                        "items": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "standardized_name": "veriphone"
+}

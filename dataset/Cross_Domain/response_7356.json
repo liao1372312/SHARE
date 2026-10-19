@@ -1,0 +1,28 @@
+{
+  "user_query": "I want to organize a movie marathon with my friends, check the status of the movie session with VSID 'yzab5678', get download links if ready, and download some Instagram reels and posts to share.",
+  "domain": "entertainment",
+  "TaskList": [
+    {
+      "id": 1,
+      "description": "Check the status of the movie session with VSID 'yzab5678' to see if the movies are ready for download.",
+      "domain": "entertainment",
+      "required_inputs": ["vsid"]
+    },
+    {
+      "id": 2,
+      "description": "Retrieve download links for the movies if they are ready.",
+      "domain": "entertainment",
+      "required_inputs": ["session_status"]
+    },
+    {
+      "id": 3,
+      "description": "Download Instagram reels and posts for sharing with friends.",
+      "domain": "entertainment",
+      "required_inputs": ["instagram_reels", "instagram_posts"]
+    }
+  ],
+  "dependencies": [
+    {"from": 1, "to": 2, "condition": "if movies are ready"},
+    {"from": 2, "to": 3, "condition": "after obtaining download links"}
+  ]
+}

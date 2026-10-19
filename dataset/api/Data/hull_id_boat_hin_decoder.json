@@ -1,0 +1,155 @@
+{
+    "product_id": "api_ea67d218-56b1-44ad-8d44-d9a9a1939302",
+    "tool_description": "Decode the 12 digit HIN and check if it is valid. HINDecoder is used by many State DMV's and has been running for 7+ years.",
+    "home_url": "https://rapidapi.com/nadkabbani/api/hull-id-boat-hin-decoder/",
+    "name": "Hull ID Boat HIN Decoder",
+    "title": "Hull ID Boat HIN Decoder",
+    "pricing": "FREEMIUM",
+    "tool_name": "Hull ID Boat HIN Decoder",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 530,
+        "avgSuccessRate": 100,
+        "popularityScore": 9.1,
+        "__typename": "Score"
+    },
+    "host": "hull-id-boat-hin-decoder.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "HIN Decoder - Return Json",
+            "url": "https://hull-id-boat-hin-decoder.p.rapidapi.com/api-decoder.php",
+            "description": "returns json decoded data",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "HIN",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "MVIPK003G607"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://hull-id-boat-hin-decoder.p.rapidapi.com/api-decoder.php\"\nquerystring = {\"HIN\": \"MVIPK003G607\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"hull-id-boat-hin-decoder.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://hull-id-boat-hin-decoder.p.rapidapi.com/api-decoder.php\"\nquerystring = {\"HIN\": \"MVIPK003G607\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"hull-id-boat-hin-decoder.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "OrigHIN": "MVIPK003G607",
+                "IsCIN": false,
+                "UsedHIN": "MVIPK003G607",
+                "IsValid": true,
+                "IsValidMIC": true,
+                "InvalidReasons": null,
+                "HINType": "Current",
+                "IsVIN": false,
+                "Year": 2007,
+                "Company": "Maverick Boat Company Inc",
+                "SerialNo": "PK003",
+                "IsStateIssued": false,
+                "SuggestMICTypos": "",
+                "IsENI": false,
+                "IsIMO": false,
+                "IsStateReg": false,
+                "IsUSCGNo": false,
+                "CompanyStatus": "In Business",
+                "CompanyAddress": "Ft Pierce Fl 3207 Industrial 29th Street",
+                "Website": "mbcboats.com",
+                "NumRecalls": 0
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Year & Make Lookup (returns json)",
+            "url": "https://hull-id-boat-hin-decoder.p.rapidapi.com/API-year-make-MIC-lookup.php",
+            "description": "Lookup the boat manufacturers (makes) for a given year. This API can be used to create selection drop down menu for year and make. It will return json results",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "year",
+                    "type": "NUMBER",
+                    "description": "The year you want to look for the boat builders. format YYYY.  From 1970 to present year.",
+                    "default": "1970"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://hull-id-boat-hin-decoder.p.rapidapi.com/API-year-make-MIC-lookup.php\"\nquerystring = {\"year\": \"1970\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"hull-id-boat-hin-decoder.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://hull-id-boat-hin-decoder.p.rapidapi.com/API-year-make-MIC-lookup.php\"\nquerystring = {\"year\": \"1970\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"hull-id-boat-hin-decoder.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": [
+                [
+                    "APA",
+                    "AMERICAN PLEASURE PRODUCTS"
+                ],
+                [
+                    "MCH",
+                    "UNICRAFT BOATS"
+                ]
+            ],
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "MIC Lookup",
+            "url": "https://hull-id-boat-hin-decoder.p.rapidapi.com/mic-api-lookup.php",
+            "description": "Enter a boat manuf. code (3 letter MIC) to find info about the company",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "MIC",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "YAM"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://hull-id-boat-hin-decoder.p.rapidapi.com/mic-api-lookup.php\"\nquerystring = {\"MIC\": \"YAM\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"hull-id-boat-hin-decoder.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://hull-id-boat-hin-decoder.p.rapidapi.com/mic-api-lookup.php\"\nquerystring = {\"MIC\": \"YAM\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"hull-id-boat-hin-decoder.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "Company": "Yamaha Motor Corp Usa",
+                "Status": "In Business",
+                "Company2": "YAMAHA MOTOR CO LTD",
+                "Company3": "",
+                "Company4": "",
+                "Company5": "",
+                "LastName": "OSTROSKY",
+                "FirstName": "DAN",
+                "Address": "6555 Katella Avenue",
+                "City": "Cypress",
+                "State": "Ca",
+                "ParentCompany": "",
+                "ParentCompanyMIC": "",
+                "DateInBusiness": "7/6/1976",
+                "DateOutofBusiness": null,
+                "Country": "",
+                "Comments": "MOVED FROM JAPAN.  HULLS & DECKS FOR NEWNAN GA PLANT MADE BY S-2 TIARA,  725 E 40TH STREET, HOLLAND MI 49423-5392.  941123 NEW CONTACT DAN OSTROSKY; FERNANDO GARCIA WENT TO BOMBARDIER. 950802 YAMAHA ALSO OWNS CENTURY SEE CEB. YAMAHA ALSO OWNS TENNESSEE WATERCRAFT.  05/12/10: Conducted MR visit at Newnan, GA plant. CA201.",
+                "Website": "Http://www.yamaha-motor.com/"
+            }
+        },
+        {
+            "name": "HIN Decoder - Return html",
+            "url": "https://hull-id-boat-hin-decoder.p.rapidapi.com/api-decoder.php",
+            "description": "setting usertable=1 will return an html table instead of json",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "HIN",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "MVIPK003G607"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "usertable",
+                    "type": "STRING",
+                    "description": "setting usertable to 1 will give an html output instead of json",
+                    "default": "1"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://hull-id-boat-hin-decoder.p.rapidapi.com/api-decoder.php\"\nquerystring = {\"HIN\": \"MVIPK003G607\", \"usertable\": \"1\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"hull-id-boat-hin-decoder.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://hull-id-boat-hin-decoder.p.rapidapi.com/api-decoder.php\"\nquerystring = {\"HIN\": \"MVIPK003G607\", \"usertable\": \"1\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"hull-id-boat-hin-decoder.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "hull_id_boat_hin_decoder"
+}

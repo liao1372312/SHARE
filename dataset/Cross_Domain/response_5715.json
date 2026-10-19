@@ -1,0 +1,28 @@
+{
+  "user_query": "I want to surprise my mom with a special gift. Can you find a playlist with her favorite songs? Also, get me a random fact about the number 7 to share with her. Additionally, provide me with the information about the album 'Back to Black' by Amy Winehouse.",
+  "domain": "entertainment",
+  "TaskList": [
+    {
+      "id": 1,
+      "description": "Search for a playlist containing your mom's favorite songs.",
+      "domain": "entertainment",
+      "required_inputs": ["favorite_songs"]
+    },
+    {
+      "id": 2,
+      "description": "Retrieve a random interesting fact about the number 7 to share with your mom.",
+      "domain": "general_knowledge",
+      "required_inputs": ["topic:7"]
+    },
+    {
+      "id": 3,
+      "description": "Get detailed information about the album 'Back to Black' by Amy Winehouse.",
+      "domain": "music",
+      "required_inputs": ["album_title:Back to Black", "artist:Amy Winehouse"]
+    }
+  ],
+  "dependencies": [
+    {"from": 1, "to": 2, "note": "The playlist can be used to make the gift more special, but not strictly dependent."},
+    {"from": 1, "to": 3, "note": "The album info can be added to the gift if desired."}
+  ]
+}

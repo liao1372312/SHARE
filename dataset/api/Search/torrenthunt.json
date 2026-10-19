@@ -1,0 +1,388 @@
+{
+    "product_id": "api_142ce6c1-2059-4b27-b5e2-d3904c39e8e8",
+    "tool_description": "API to self host Torrent Hunt Bot",
+    "home_url": "https://rapidapi.com/hemantapkh/api/torrenthunt/",
+    "name": "TorrentHunt",
+    "title": "TorrentHunt",
+    "pricing": "FREEMIUM",
+    "tool_name": "TorrentHunt",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 125,
+        "avgSuccessRate": 100,
+        "popularityScore": 8,
+        "__typename": "Score"
+    },
+    "host": "torrenthunt.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Config",
+            "url": "https://torrenthunt.p.rapidapi.com/config",
+            "description": "Get config and available sites",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://torrenthunt.p.rapidapi.com/config\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"torrenthunt.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://torrenthunt.p.rapidapi.com/config\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"torrenthunt.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "1337x": {
+                    "title": "1337x",
+                    "code": "!1337x"
+                },
+                "piratebay": {
+                    "title": "The Pirate Bay",
+                    "code": "!pb"
+                },
+                "rarbg": {
+                    "title": "RARBG",
+                    "code": "!rb",
+                    "deactivated": true
+                },
+                "nyaasi": {
+                    "title": "Nyaa.si",
+                    "code": "!nyaa"
+                },
+                "yts": {
+                    "title": "YTS",
+                    "code": "!yts"
+                },
+                "eztv": {
+                    "title": "Ez Tv",
+                    "code": "!ez",
+                    "deactivated": true
+                },
+                "ettv": {
+                    "title": "Et Tv",
+                    "code": "!et",
+                    "deactivated": true
+                },
+                "torlock": {
+                    "title": "Torlock",
+                    "code": "!tl"
+                },
+                "tgx": {
+                    "title": "Torrent Galaxy",
+                    "code": "!tg"
+                },
+                "zooqle": {
+                    "title": "Zooqle",
+                    "code": "!zoo",
+                    "deactivated": true
+                },
+                "kickass": {
+                    "title": "Kick Ass",
+                    "code": "!ka"
+                },
+                "bitsearch": {
+                    "title": "Bit Search",
+                    "code": "!bs"
+                },
+                "glodls": {
+                    "title": "Glodls",
+                    "code": "!gl"
+                },
+                "magnetdl": {
+                    "title": "magnetDL",
+                    "code": "!mdl"
+                },
+                "limetorrent": {
+                    "title": "Lime Torrents",
+                    "code": "!lt"
+                },
+                "torrentfunk": {
+                    "title": "Torrent Funk",
+                    "code": "!tf"
+                },
+                "torrentproject": {
+                    "title": "Torrent Project",
+                    "code": "!tp"
+                },
+                "libgen": {
+                    "title": "Libgen",
+                    "code": "!lg"
+                },
+                "ybt": {
+                    "title": "Your BitTorrent",
+                    "code": "!ybt"
+                }
+            }
+        },
+        {
+            "name": "Search",
+            "url": "https://torrenthunt.p.rapidapi.com/search",
+            "description": "Search queries on different torrent sources",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "query",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "inception"
+                },
+                {
+                    "name": "site",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "piratebay"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "limit",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "20"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://torrenthunt.p.rapidapi.com/search\"\nquerystring = {\"limit\": \"20\", \"query\": \"inception\", \"site\": \"piratebay\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"torrenthunt.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://torrenthunt.p.rapidapi.com/search\"\nquerystring = {\"limit\": \"20\", \"query\": \"inception\", \"site\": \"piratebay\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"torrenthunt.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "status": 200,
+                "items": [
+                    {
+                        "name": "Inception (2010) 1080p BrRip x264 - 1.85GB - YIFY",
+                        "size": "1.85\u00a0GiB",
+                        "seeders": "305",
+                        "leechers": "54",
+                        "category": "Video",
+                        "uploader": "YIFY",
+                        "link": "https://thepiratebay10.org/torrent/7349754/Inception_(2010)_1080p_BrRip_x264_-_1.85GB_-_YIFY",
+                        "uploadDate": "06-13\u00a02012",
+                        "infoHash": "224BF45881252643DFC2E71ABC7B2660A21C68C4",
+                        "magnetLink": "magnet:?xt=urn:btih:224BF45881252643DFC2E71ABC7B2660A21C68C4&dn=Inception+%282010%29+1080p+BrRip+x264+-+1.85GB+-+YIFY&tr=http%3A%2F%2Fp4p.arenabg.com%3A1337%2Fannounce&tr=udp%3A%2F%2F47.ip-51-68-199.eu%3A6969%2Fannounce&tr=udp%3A%2F%2F9.rarbg.me%3A2780%2Fannounce&tr=udp%3A%2F%2F9.rarbg.to%3A2710%2Fannounce&tr=udp%3A%2F%2F9.rarbg.to%3A2730%2Fannounce&tr=udp%3A%2F%2F9.rarbg.to%3A2920%2Fannounce&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&tr=udp%3A%2F%2Fopentracker.i2p.rocks%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.cyberia.is%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.dler.org%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.internetwarriors.net%3A1337%2Fannounce&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337&tr=udp%3A%2F%2Ftracker.pirateparty.gr%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.tiny-vps.com%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"
+                    },
+                    {
+                        "name": "Inception (2010) 720p - mkv - 1.0GB - YIFY",
+                        "size": "1.07\u00a0GiB",
+                        "seeders": "59",
+                        "leechers": "15",
+                        "category": "Video",
+                        "uploader": "YIFY",
+                        "link": "https://thepiratebay10.org/torrent/5959984/Inception_(2010)_720p_-_mkv_-_1.0GB_-_YIFY",
+                        "uploadDate": "11-16\u00a02010",
+                        "infoHash": "CE9156EB497762F8B7577B71C0647A4B0C3423E1",
+                        "magnetLink": "magnet:?xt=urn:btih:CE9156EB497762F8B7577B71C0647A4B0C3423E1&dn=Inception+%282010%29+720p+-+mkv+-+1.0GB+-+YIFY&tr=http%3A%2F%2Fp4p.arenabg.com%3A1337%2Fannounce&tr=udp%3A%2F%2F47.ip-51-68-199.eu%3A6969%2Fannounce&tr=udp%3A%2F%2F9.rarbg.me%3A2780%2Fannounce&tr=udp%3A%2F%2F9.rarbg.to%3A2710%2Fannounce&tr=udp%3A%2F%2F9.rarbg.to%3A2730%2Fannounce&tr=udp%3A%2F%2F9.rarbg.to%3A2920%2Fannounce&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&tr=udp%3A%2F%2Fopentracker.i2p.rocks%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.cyberia.is%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.dler.org%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.internetwarriors.net%3A1337%2Fannounce&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337&tr=udp%3A%2F%2Ftracker.pirateparty.gr%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.tiny-vps.com%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"
+                    },
+                    {
+                        "name": "Inception (2010) [Leonardo DiCaprio] 1080p BluRay H264 DolbyD 5.1 + nickarad",
+                        "size": "2.27\u00a0GiB",
+                        "seeders": "33",
+                        "leechers": "1",
+                        "category": "Video",
+                        "uploader": "nickarad",
+                        "link": "https://thepiratebay10.org/torrent/64893765/Inception_(2010)_[Leonardo_DiCaprio]_1080p_BluRay_H264_DolbyD_5.1___nickarad",
+                        "uploadDate": "12-25\u00a02022",
+                        "infoHash": "C1F205F29550822DBA125EF89C51CD907A67D9E6",
+                        "magnetLink": "magnet:?xt=urn:btih:C1F205F29550822DBA125EF89C51CD907A67D9E6&dn=Inception+%282010%29+%5BLeonardo+DiCaprio%5D+1080p+BluRay+H264+DolbyD+5.1+%2B+nickarad&tr=http%3A%2F%2Fp4p.arenabg.com%3A1337%2Fannounce&tr=udp%3A%2F%2F47.ip-51-68-199.eu%3A6969%2Fannounce&tr=udp%3A%2F%2F9.rarbg.me%3A2780%2Fannounce&tr=udp%3A%2F%2F9.rarbg.to%3A2710%2Fannounce&tr=udp%3A%2F%2F9.rarbg.to%3A2730%2Fannounce&tr=udp%3A%2F%2F9.rarbg.to%3A2920%2Fannounce&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&tr=udp%3A%2F%2Fopentracker.i2p.rocks%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.cyberia.is%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.dler.org%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.internetwarriors.net%3A1337%2Fannounce&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337&tr=udp%3A%2F%2Ftracker.pirateparty.gr%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.tiny-vps.com%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"
+                    },
+                    {
+                        "name": "Inception - Directors Cut 2010 Eng Ita Multi-Subs 4K 1080p",
+                        "size": "5.01\u00a0GiB",
+                        "seeders": "27",
+                        "leechers": "8",
+                        "category": "Video",
+                        "uploader": "eyezin",
+                        "link": "https://thepiratebay10.org/torrent/35021842/Inception_-_Directors_Cut_2010_Eng_Ita_Multi-Subs_4K_1080p",
+                        "uploadDate": "11-18\u00a02019",
+                        "infoHash": "284499354B9280DA45495CB8E2569B24842DFF18",
+                        "magnetLink": "magnet:?xt=urn:btih:284499354B9280DA45495CB8E2569B24842DFF18&dn=Inception+-+Directors+Cut+2010+Eng+Ita+Multi-Subs+4K+1080p&tr=http%3A%2F%2Fp4p.arenabg.com%3A1337%2Fannounce&tr=udp%3A%2F%2F47.ip-51-68-199.eu%3A6969%2Fannounce&tr=udp%3A%2F%2F9.rarbg.me%3A2780%2Fannounce&tr=udp%3A%2F%2F9.rarbg.to%3A2710%2Fannounce&tr=udp%3A%2F%2F9.rarbg.to%3A2730%2Fannounce&tr=udp%3A%2F%2F9.rarbg.to%3A2920%2Fannounce&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&tr=udp%3A%2F%2Fopentracker.i2p.rocks%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.cyberia.is%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.dler.org%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.internetwarriors.net%3A1337%2Fannounce&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337&tr=udp%3A%2F%2Ftracker.pirateparty.gr%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.tiny-vps.com%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"
+                    },
+                    {
+                        "name": "Inception.2010.2160p.BluRay.REMUX.HEVC.DTS-HD.MA.5.1-FGT",
+                        "size": "79.57\u00a0GiB",
+                        "seeders": "22",
+                        "leechers": "3",
+                        "category": "Video",
+                        "uploader": "Cybotage",
+                        "link": "https://thepiratebay10.org/torrent/36517954/Inception.2010.2160p.BluRay.REMUX.HEVC.DTS-HD.MA.5.1-FGT",
+                        "uploadDate": "09-12\u00a02020",
+                        "infoHash": "AE3CD89C76804ABFEB8977318AFDC240DE2EF246",
+                        "magnetLink": "magnet:?xt=urn:btih:AE3CD89C76804ABFEB8977318AFDC240DE2EF246&dn=Inception.2010.2160p.BluRay.REMUX.HEVC.DTS-HD.MA.5.1-FGT&tr=http%3A%2F%2Fp4p.arenabg.com%3A1337%2Fannounce&tr=udp%3A%2F%2F47.ip-51-68-199.eu%3A6969%2Fannounce&tr=udp%3A%2F%2F9.rarbg.me%3A2780%2Fannounce&tr=udp%3A%2F%2F9.rarbg.to%3A2710%2Fannounce&tr=udp%3A%2F%2F9.rarbg.to%3A2730%2Fannounce&tr=udp%3A%2F%2F9.rarbg.to%3A2920%2Fannounce&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&tr=udp%3A%2F%2Fopentracker.i2p.rocks%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.cyberia.is%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.dler.org%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.internetwarriors.net%3A1337%2Fannounce&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337&tr=udp%3A%2F%2Ftracker.pirateparty.gr%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.tiny-vps.com%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"
+                    },
+                    {
+                        "name": "Inception.2010.1080p.BluRay.REMUX-DDB",
+                        "size": "28.87\u00a0GiB",
+                        "seeders": "15",
+                        "leechers": "6",
+                        "category": "Video",
+                        "uploader": "Anonymous",
+                        "link": "https://thepiratebay10.org/torrent/34332833/Inception.2010.1080p.BluRay.REMUX-DDB",
+                        "uploadDate": "08-15\u00a02019",
+                        "infoHash": "CF0D0D9770201BB496CB0838B6D2DA91EFAF8202",
+                        "magnetLink": "magnet:?xt=urn:btih:CF0D0D9770201BB496CB0838B6D2DA91EFAF8202&dn=Inception.2010.1080p.BluRay.REMUX-DDB&tr=http%3A%2F%2Fp4p.arenabg.com%3A1337%2Fannounce&tr=udp%3A%2F%2F47.ip-51-68-199.eu%3A6969%2Fannounce&tr=udp%3A%2F%2F9.rarbg.me%3A2780%2Fannounce&tr=udp%3A%2F%2F9.rarbg.to%3A2710%2Fannounce&tr=udp%3A%2F%2F9.rarbg.to%3A2730%2Fannounce&tr=udp%3A%2F%2F9.rarbg.to%3A2920%2Fannounce&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&tr=udp%3A%2F%2Fopentracker.i2p.rocks%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.cyberia.is%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.dler.org%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.internetwarriors.net%3A1337%2Fannounce&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337&tr=udp%3A%2F%2Ftracker.pirateparty.gr%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.tiny-vps.com%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"
+                    },
+                    {
+                        "name": "Inception.2010.720p.BluRay.999MB.x265.10bit-GalaxyRG",
+                        "size": "991.48\u00a0MiB",
+                        "seeders": "15",
+                        "leechers": "2",
+                        "category": "Video",
+                        "uploader": "sotnikam",
+                        "link": "https://thepiratebay10.org/torrent/36236025/Inception.2010.720p.BluRay.999MB.x265.10bit-GalaxyRG",
+                        "uploadDate": "07-04\u00a02020",
+                        "infoHash": "00A781BAF81AF07C73B96FACEB3182EB260098F6",
+                        "magnetLink": "magnet:?xt=urn:btih:00A781BAF81AF07C73B96FACEB3182EB260098F6&dn=Inception.2010.720p.BluRay.999MB.x265.10bit-GalaxyRG&tr=http%3A%2F%2Fp4p.arenabg.com%3A1337%2Fannounce&tr=udp%3A%2F%2F47.ip-51-68-199.eu%3A6969%2Fannounce&tr=udp%3A%2F%2F9.rarbg.me%3A2780%2Fannounce&tr=udp%3A%2F%2F9.rarbg.to%3A2710%2Fannounce&tr=udp%3A%2F%2F9.rarbg.to%3A2730%2Fannounce&tr=udp%3A%2F%2F9.rarbg.to%3A2920%2Fannounce&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&tr=udp%3A%2F%2Fopentracker.i2p.rocks%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.cyberia.is%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.dler.org%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.internetwarriors.net%3A1337%2Fannounce&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337&tr=udp%3A%2F%2Ftracker.pirateparty.gr%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.tiny-vps.com%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"
+                    },
+                    {
+                        "name": "Hans Zimmer - Inception OST (2010) [FLAC] [24bit 96kHz]",
+                        "size": "1.24\u00a0GiB",
+                        "seeders": "12",
+                        "leechers": "0",
+                        "category": "Audio",
+                        "uploader": "Anonymous",
+                        "link": "https://thepiratebay10.org/torrent/5933915/Hans_Zimmer_-_Inception_OST_(2010)_[FLAC]_[24bit_96kHz]",
+                        "uploadDate": "11-04\u00a02010",
+                        "infoHash": "6B2D367D03DA0823BA57F76D20B8180D6F44B2BA",
+                        "magnetLink": "magnet:?xt=urn:btih:6B2D367D03DA0823BA57F76D20B8180D6F44B2BA&dn=Hans+Zimmer+-+Inception+OST+%282010%29+%5BFLAC%5D+%5B24bit+96kHz%5D&tr=http%3A%2F%2Fp4p.arenabg.com%3A1337%2Fannounce&tr=udp%3A%2F%2F47.ip-51-68-199.eu%3A6969%2Fannounce&tr=udp%3A%2F%2F9.rarbg.me%3A2780%2Fannounce&tr=udp%3A%2F%2F9.rarbg.to%3A2710%2Fannounce&tr=udp%3A%2F%2F9.rarbg.to%3A2730%2Fannounce&tr=udp%3A%2F%2F9.rarbg.to%3A2920%2Fannounce&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&tr=udp%3A%2F%2Fopentracker.i2p.rocks%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.cyberia.is%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.dler.org%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.internetwarriors.net%3A1337%2Fannounce&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337&tr=udp%3A%2F%2Ftracker.pirateparty.gr%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.tiny-vps.com%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"
+                    },
+                    {
+                        "name": "Inception.2010.Multi.2160p.UHD.Bluray.x265.DTS-HDMA.5.1.[En+Hi]-",
+                        "size": "24.43\u00a0GiB",
+                        "seeders": "12",
+                        "leechers": "2",
+                        "category": "Video",
+                        "uploader": "SaM",
+                        "link": "https://thepiratebay10.org/torrent/28025460/Inception.2010.Multi.2160p.UHD.Bluray.x265.DTS-HDMA.5.1.[En_Hi]-",
+                        "uploadDate": "12-29\u00a02018",
+                        "infoHash": "82574DE3AFAD807DCC25DBBD794D69F67B143311",
+                        "magnetLink": "magnet:?xt=urn:btih:82574DE3AFAD807DCC25DBBD794D69F67B143311&dn=Inception.2010.Multi.2160p.UHD.Bluray.x265.DTS-HDMA.5.1.%5BEn%2BHi%5D-&tr=http%3A%2F%2Fp4p.arenabg.com%3A1337%2Fannounce&tr=udp%3A%2F%2F47.ip-51-68-199.eu%3A6969%2Fannounce&tr=udp%3A%2F%2F9.rarbg.me%3A2780%2Fannounce&tr=udp%3A%2F%2F9.rarbg.to%3A2710%2Fannounce&tr=udp%3A%2F%2F9.rarbg.to%3A2730%2Fannounce&tr=udp%3A%2F%2F9.rarbg.to%3A2920%2Fannounce&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&tr=udp%3A%2F%2Fopentracker.i2p.rocks%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.cyberia.is%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.dler.org%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.internetwarriors.net%3A1337%2Fannounce&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337&tr=udp%3A%2F%2Ftracker.pirateparty.gr%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.tiny-vps.com%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"
+                    },
+                    {
+                        "name": "Inception.2010.2160p.UHD.BluRay.x265.10bit.HDR.DTS-HD.MA.5.1-TER",
+                        "size": "23.98\u00a0GiB",
+                        "seeders": "11",
+                        "leechers": "0",
+                        "category": "Video",
+                        "uploader": "GoodFilms",
+                        "link": "https://thepiratebay10.org/torrent/34732141/Inception.2010.2160p.UHD.BluRay.x265.10bit.HDR.DTS-HD.MA.5.1-TER",
+                        "uploadDate": "09-26\u00a02019",
+                        "infoHash": "17E4C600C0BA13E18DF6D4881016434C6BF2D107",
+                        "magnetLink": "magnet:?xt=urn:btih:17E4C600C0BA13E18DF6D4881016434C6BF2D107&dn=Inception.2010.2160p.UHD.BluRay.x265.10bit.HDR.DTS-HD.MA.5.1-TER&tr=http%3A%2F%2Fp4p.arenabg.com%3A1337%2Fannounce&tr=udp%3A%2F%2F47.ip-51-68-199.eu%3A6969%2Fannounce&tr=udp%3A%2F%2F9.rarbg.me%3A2780%2Fannounce&tr=udp%3A%2F%2F9.rarbg.to%3A2710%2Fannounce&tr=udp%3A%2F%2F9.rarbg.to%3A2730%2Fannounce&tr=udp%3A%2F%2F9.rarbg.to%3A2920%2Fannounce&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&tr=udp%3A%2F%2Fopentracker.i2p.rocks%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.cyberia.is%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.dler.org%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.internetwarriors.net%3A1337%2Fannounce&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337&tr=udp%3A%2F%2Ftracker.pirateparty.gr%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.tiny-vps.com%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"
+                    },
+                    {
+                        "name": "Inception (2010) 1080p Rifftrax 6ch 2ch",
+                        "size": "2.79\u00a0GiB",
+                        "seeders": "9",
+                        "leechers": "0",
+                        "category": "Video",
+                        "uploader": "bsg4you",
+                        "link": "https://thepiratebay10.org/torrent/11118453/Inception_(2010)_1080p_Rifftrax_6ch_2ch",
+                        "uploadDate": "09-28\u00a02014",
+                        "infoHash": "D94D994C5D25B6A6BF235904DC92F54367111764",
+                        "magnetLink": "magnet:?xt=urn:btih:D94D994C5D25B6A6BF235904DC92F54367111764&dn=Inception+%282010%29+1080p+Rifftrax+6ch+2ch&tr=http%3A%2F%2Fp4p.arenabg.com%3A1337%2Fannounce&tr=udp%3A%2F%2F47.ip-51-68-199.eu%3A6969%2Fannounce&tr=udp%3A%2F%2F9.rarbg.me%3A2780%2Fannounce&tr=udp%3A%2F%2F9.rarbg.to%3A2710%2Fannounce&tr=udp%3A%2F%2F9.rarbg.to%3A2730%2Fannounce&tr=udp%3A%2F%2F9.rarbg.to%3A2920%2Fannounce&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&tr=udp%3A%2F%2Fopentracker.i2p.rocks%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.cyberia.is%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.dler.org%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.internetwarriors.net%3A1337%2Fannounce&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337&tr=udp%3A%2F%2Ftracker.pirateparty.gr%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.tiny-vps.com%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"
+                    },
+                    {
+                        "name": "Inception [2010] 1080p BluRay AAC x264-ETRG",
+                        "size": "3.9\u00a0GiB",
+                        "seeders": "8",
+                        "leechers": "2",
+                        "category": "Video",
+                        "uploader": "tomcat-12",
+                        "link": "https://thepiratebay10.org/torrent/9101813/Inception_[2010]_1080p_BluRay_AAC_x264-ETRG",
+                        "uploadDate": "10-26\u00a02013",
+                        "infoHash": "2EF50CC10F6EB563314C2DB47D6A4E04734312E1",
+                        "magnetLink": "magnet:?xt=urn:btih:2EF50CC10F6EB563314C2DB47D6A4E04734312E1&dn=Inception+%5B2010%5D+1080p+BluRay+AAC+x264-ETRG&tr=http%3A%2F%2Fp4p.arenabg.com%3A1337%2Fannounce&tr=udp%3A%2F%2F47.ip-51-68-199.eu%3A6969%2Fannounce&tr=udp%3A%2F%2F9.rarbg.me%3A2780%2Fannounce&tr=udp%3A%2F%2F9.rarbg.to%3A2710%2Fannounce&tr=udp%3A%2F%2F9.rarbg.to%3A2730%2Fannounce&tr=udp%3A%2F%2F9.rarbg.to%3A2920%2Fannounce&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&tr=udp%3A%2F%2Fopentracker.i2p.rocks%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.cyberia.is%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.dler.org%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.internetwarriors.net%3A1337%2Fannounce&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337&tr=udp%3A%2F%2Ftracker.pirateparty.gr%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.tiny-vps.com%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"
+                    },
+                    {
+                        "name": "Inception(2010) UHD BDRemux 2160p, HDR10, Dolby Vision",
+                        "size": "86.15\u00a0GiB",
+                        "seeders": "7",
+                        "leechers": "0",
+                        "category": "Video",
+                        "uploader": "rjaa",
+                        "link": "https://thepiratebay10.org/torrent/58381726/Inception(2010)_UHD_BDRemux_2160p__HDR10__Dolby_Vision",
+                        "uploadDate": "04-19\u00a02022",
+                        "infoHash": "10C93A2AD69B9C576A5DE6F9495B266FC992C889",
+                        "magnetLink": "magnet:?xt=urn:btih:10C93A2AD69B9C576A5DE6F9495B266FC992C889&dn=Inception%282010%29+UHD+BDRemux+2160p%2C+HDR10%2C+Dolby+Vision&tr=http%3A%2F%2Fp4p.arenabg.com%3A1337%2Fannounce&tr=udp%3A%2F%2F47.ip-51-68-199.eu%3A6969%2Fannounce&tr=udp%3A%2F%2F9.rarbg.me%3A2780%2Fannounce&tr=udp%3A%2F%2F9.rarbg.to%3A2710%2Fannounce&tr=udp%3A%2F%2F9.rarbg.to%3A2730%2Fannounce&tr=udp%3A%2F%2F9.rarbg.to%3A2920%2Fannounce&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&tr=udp%3A%2F%2Fopentracker.i2p.rocks%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.cyberia.is%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.dler.org%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.internetwarriors.net%3A1337%2Fannounce&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337&tr=udp%3A%2F%2Ftracker.pirateparty.gr%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.tiny-vps.com%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"
+                    },
+                    {
+                        "name": "Inception 2010 720p BluRay Hindi English x264 AAC 5.1 MSubs - LO",
+                        "size": "1.55\u00a0GiB",
+                        "seeders": "7",
+                        "leechers": "0",
+                        "category": "Video",
+                        "uploader": "lokioddin",
+                        "link": "https://thepiratebay10.org/torrent/36163286/Inception_2010_720p_BluRay_Hindi_English_x264_AAC_5.1_MSubs_-_LO",
+                        "uploadDate": "05-25\u00a02020",
+                        "infoHash": "7E6571DB15D48874458B091F8CBCB03F388F6595",
+                        "magnetLink": "magnet:?xt=urn:btih:7E6571DB15D48874458B091F8CBCB03F388F6595&dn=Inception+2010+720p+BluRay+Hindi+English+x264+AAC+5.1+MSubs+-+LO&tr=http%3A%2F%2Fp4p.arenabg.com%3A1337%2Fannounce&tr=udp%3A%2F%2F47.ip-51-68-199.eu%3A6969%2Fannounce&tr=udp%3A%2F%2F9.rarbg.me%3A2780%2Fannounce&tr=udp%3A%2F%2F9.rarbg.to%3A2710%2Fannounce&tr=udp%3A%2F%2F9.rarbg.to%3A2730%2Fannounce&tr=udp%3A%2F%2F9.rarbg.to%3A2920%2Fannounce&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&tr=udp%3A%2F%2Fopentracker.i2p.rocks%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.cyberia.is%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.dler.org%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.internetwarriors.net%3A1337%2Fannounce&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337&tr=udp%3A%2F%2Ftracker.pirateparty.gr%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.tiny-vps.com%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"
+                    },
+                    {
+                        "name": "Art Nation - Inception (2023) [24Bit-44.1kHz] FLAC [PMEDIA] \u00e2\u00ad\u0090\u00ef\u00b8\u008f",
+                        "size": "480.69\u00a0MiB",
+                        "seeders": "6",
+                        "leechers": "1",
+                        "category": "Audio",
+                        "uploader": "Anonymous",
+                        "link": "https://thepiratebay10.org/torrent/69322029/Art_Nation_-_Inception_(2023)_[24Bit-44.1kHz]_FLAC_[PMEDIA]___",
+                        "uploadDate": "06-09\u00a006:37",
+                        "infoHash": "A571EB597A619BA57CA40F0CB79AD7ED9A1EC6EE",
+                        "magnetLink": "magnet:?xt=urn:btih:A571EB597A619BA57CA40F0CB79AD7ED9A1EC6EE&dn=Art+Nation+-+Inception+%282023%29+%5B24Bit-44.1kHz%5D+FLAC+%5BPMEDIA%5D+%E2%AD%90%EF%B8%8F&tr=http%3A%2F%2Fp4p.arenabg.com%3A1337%2Fannounce&tr=udp%3A%2F%2F47.ip-51-68-199.eu%3A6969%2Fannounce&tr=udp%3A%2F%2F9.rarbg.me%3A2780%2Fannounce&tr=udp%3A%2F%2F9.rarbg.to%3A2710%2Fannounce&tr=udp%3A%2F%2F9.rarbg.to%3A2730%2Fannounce&tr=udp%3A%2F%2F9.rarbg.to%3A2920%2Fannounce&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&tr=udp%3A%2F%2Fopentracker.i2p.rocks%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.cyberia.is%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.dler.org%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.internetwarriors.net%3A1337%2Fannounce&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337&tr=udp%3A%2F%2Ftracker.pirateparty.gr%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.tiny-vps.com%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"
+                    },
+                    {
+                        "name": "Inception.2010.2160p.BluRay.HEVC.DTS-HD.MA.5.1-COASTER",
+                        "size": "86.12\u00a0GiB",
+                        "seeders": "6",
+                        "leechers": "5",
+                        "category": "Video",
+                        "uploader": "Cybotage",
+                        "link": "https://thepiratebay10.org/torrent/36517953/Inception.2010.2160p.BluRay.HEVC.DTS-HD.MA.5.1-COASTER",
+                        "uploadDate": "09-12\u00a02020",
+                        "infoHash": "A75B82AD8477187109F80E7D3FEE845923B78D7C",
+                        "magnetLink": "magnet:?xt=urn:btih:A75B82AD8477187109F80E7D3FEE845923B78D7C&dn=Inception.2010.2160p.BluRay.HEVC.DTS-HD.MA.5.1-COASTER&tr=http%3A%2F%2Fp4p.arenabg.com%3A1337%2Fannounce&tr=udp%3A%2F%2F47.ip-51-68-199.eu%3A6969%2Fannounce&tr=udp%3A%2F%2F9.rarbg.me%3A2780%2Fannounce&tr=udp%3A%2F%2F9.rarbg.to%3A2710%2Fannounce&tr=udp%3A%2F%2F9.rarbg.to%3A2730%2Fannounce&tr=udp%3A%2F%2F9.rarbg.to%3A2920%2Fannounce&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&tr=udp%3A%2F%2Fopentracker.i2p.rocks%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.cyberia.is%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.dler.org%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.internetwarriors.net%3A1337%2Fannounce&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337&tr=udp%3A%2F%2Ftracker.pirateparty.gr%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.tiny-vps.com%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"
+                    },
+                    {
+                        "name": "Inception.2010.1080p.10bit.BluRay.6CH.x265.HEVC-PSA",
+                        "size": "2.22\u00a0GiB",
+                        "seeders": "5",
+                        "leechers": "1",
+                        "category": "Video",
+                        "uploader": "Dr.XJ",
+                        "link": "https://thepiratebay10.org/torrent/15756151/Inception.2010.1080p.10bit.BluRay.6CH.x265.HEVC-PSA",
+                        "uploadDate": "09-05\u00a02016",
+                        "infoHash": "5500F6EE5CA29F04913DD69FC9FB45E6CAEFEA08",
+                        "magnetLink": "magnet:?xt=urn:btih:5500F6EE5CA29F04913DD69FC9FB45E6CAEFEA08&dn=Inception.2010.1080p.10bit.BluRay.6CH.x265.HEVC-PSA&tr=http%3A%2F%2Fp4p.arenabg.com%3A1337%2Fannounce&tr=udp%3A%2F%2F47.ip-51-68-199.eu%3A6969%2Fannounce&tr=udp%3A%2F%2F9.rarbg.me%3A2780%2Fannounce&tr=udp%3A%2F%2F9.rarbg.to%3A2710%2Fannounce&tr=udp%3A%2F%2F9.rarbg.to%3A2730%2Fannounce&tr=udp%3A%2F%2F9.rarbg.to%3A2920%2Fannounce&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&tr=udp%3A%2F%2Fopentracker.i2p.rocks%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.cyberia.is%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.dler.org%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.internetwarriors.net%3A1337%2Fannounce&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337&tr=udp%3A%2F%2Ftracker.pirateparty.gr%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.tiny-vps.com%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"
+                    },
+                    {
+                        "name": "Inception.2010.1080p.BluRay.x264.DTS-HD.MA.5.1-SWTYBLZ",
+                        "size": "17.49\u00a0GiB",
+                        "seeders": "5",
+                        "leechers": "1",
+                        "category": "Video",
+                        "uploader": "Cybotage",
+                        "link": "https://thepiratebay10.org/torrent/36517955/Inception.2010.1080p.BluRay.x264.DTS-HD.MA.5.1-SWTYBLZ",
+                        "uploadDate": "09-12\u00a02020",
+                        "infoHash": "AB1809BBE20A6A73827049E2539EF64BFA054CA7",
+                        "magnetLink": "magnet:?xt=urn:btih:AB1809BBE20A6A73827049E2539EF64BFA054CA7&dn=Inception.2010.1080p.BluRay.x264.DTS-HD.MA.5.1-SWTYBLZ&tr=http%3A%2F%2Fp4p.arenabg.com%3A1337%2Fannounce&tr=udp%3A%2F%2F47.ip-51-68-199.eu%3A6969%2Fannounce&tr=udp%3A%2F%2F9.rarbg.me%3A2780%2Fannounce&tr=udp%3A%2F%2F9.rarbg.to%3A2710%2Fannounce&tr=udp%3A%2F%2F9.rarbg.to%3A2730%2Fannounce&tr=udp%3A%2F%2F9.rarbg.to%3A2920%2Fannounce&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&tr=udp%3A%2F%2Fopentracker.i2p.rocks%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.cyberia.is%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.dler.org%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.internetwarriors.net%3A1337%2Fannounce&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337&tr=udp%3A%2F%2Ftracker.pirateparty.gr%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.tiny-vps.com%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"
+                    },
+                    {
+                        "name": "Inception 5.1 Soundtrack (2010, Hans Zimmer) FLAC",
+                        "size": "1.02\u00a0GiB",
+                        "seeders": "3",
+                        "leechers": "0",
+                        "category": "Audio",
+                        "uploader": "Anonymous",
+                        "link": "https://thepiratebay10.org/torrent/6212354/Inception_5.1_Soundtrack_(2010__Hans_Zimmer)_FLAC",
+                        "uploadDate": "03-02\u00a02011",
+                        "infoHash": "01B662C0DB3203C7E4DF9B0F2D30EEE2E421499A",
+                        "magnetLink": "magnet:?xt=urn:btih:01B662C0DB3203C7E4DF9B0F2D30EEE2E421499A&dn=Inception+5.1+Soundtrack+%282010%2C+Hans+Zimmer%29+FLAC&tr=http%3A%2F%2Fp4p.arenabg.com%3A1337%2Fannounce&tr=udp%3A%2F%2F47.ip-51-68-199.eu%3A6969%2Fannounce&tr=udp%3A%2F%2F9.rarbg.me%3A2780%2Fannounce&tr=udp%3A%2F%2F9.rarbg.to%3A2710%2Fannounce&tr=udp%3A%2F%2F9.rarbg.to%3A2730%2Fannounce&tr=udp%3A%2F%2F9.rarbg.to%3A2920%2Fannounce&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&tr=udp%3A%2F%2Fopentracker.i2p.rocks%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.cyberia.is%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.dler.org%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.internetwarriors.net%3A1337%2Fannounce&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337&tr=udp%3A%2F%2Ftracker.pirateparty.gr%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.tiny-vps.com%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"
+                    },
+                    {
+                        "name": "Inception.The.Cobol.Job.2010.720p.BDRip.XviD.AC3-ViSiON",
+                        "size": "240.36\u00a0MiB",
+                        "seeders": "3",
+                        "leechers": "0",
+                        "category": "Video",
+                        "uploader": ".BONE.",
+                        "link": "https://thepiratebay10.org/torrent/6019565/Inception.The.Cobol.Job.2010.720p.BDRip.XviD.AC3-ViSiON",
+                        "uploadDate": "12-07\u00a02010",
+                        "infoHash": "47294734CB6898A8A093999EF3B7A744E2ECBAA8",
+                        "magnetLink": "magnet:?xt=urn:btih:47294734CB6898A8A093999EF3B7A744E2ECBAA8&dn=Inception.The.Cobol.Job.2010.720p.BDRip.XviD.AC3-ViSiON&tr=http%3A%2F%2Fp4p.arenabg.com%3A1337%2Fannounce&tr=udp%3A%2F%2F47.ip-51-68-199.eu%3A6969%2Fannounce&tr=udp%3A%2F%2F9.rarbg.me%3A2780%2Fannounce&tr=udp%3A%2F%2F9.rarbg.to%3A2710%2Fannounce&tr=udp%3A%2F%2F9.rarbg.to%3A2730%2Fannounce&tr=udp%3A%2F%2F9.rarbg.to%3A2920%2Fannounce&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&tr=udp%3A%2F%2Fopentracker.i2p.rocks%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.cyberia.is%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.dler.org%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.internetwarriors.net%3A1337%2Fannounce&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337&tr=udp%3A%2F%2Ftracker.pirateparty.gr%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.tiny-vps.com%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"
+                    }
+                ],
+                "error": ""
+            }
+        }
+    ],
+    "standardized_name": "torrenthunt"
+}

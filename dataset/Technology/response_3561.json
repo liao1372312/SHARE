@@ -1,0 +1,33 @@
+{
+"user_query":"I want to check if the domain 'example.com' is a free domain, and if it is a role account or disposable, while suggesting an alternative domain if necessary.",
+"domain":"Technology",
+"TaskList": [
+{
+"id": 1,
+"description": "Check if the domain 'example.com' is available for registration.",
+"domain": "technology",
+"required_inputs": ["domain_name"]
+},
+{
+"id": 2,
+"description": "Determine if 'example.com' is a role account (e.g., admin@example.com).",
+"domain": "technology",
+"required_inputs": ["domain_name"],
+"dependencies": [1]
+},
+{
+"id": 3,
+"description": "Check if 'example.com' is a disposable email domain.",
+"domain": "technology",
+"required_inputs": ["domain_name"],
+"dependencies": [1]
+},
+{
+"id": 4,
+"description": "Suggest an alternative domain name if 'example.com' is not available or is a disposable email domain.",
+"domain": "technology",
+"required_inputs": ["domain_name", "availability_status", "disposable_status"],
+"dependencies": [1, 3]
+}
+]
+}

@@ -1,0 +1,259 @@
+{
+    "product_id": "api_7fcebb69-7362-45fd-b1cc-f55674acd09d",
+    "tool_description": "Amazon Tr data scraper is easiest way to get access product prices with Turkish Liras, sales rank and reviews data from Amazon Turkey in JSON format",
+    "home_url": "https://rapidapi.com/snldnc-kpCtDKbxo_F/api/amazon-turkey-data-scrapeer/",
+    "name": "Amazon Turkey Data Scrapeer",
+    "title": "Amazon Turkey Data Scrapeer",
+    "pricing": "FREEMIUM",
+    "tool_name": "Amazon Turkey Data Scrapeer",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 5835,
+        "avgSuccessRate": 100,
+        "popularityScore": 8,
+        "__typename": "Score"
+    },
+    "host": "amazon-turkey-data-scrapeer.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Get Product Offers in Turkey",
+            "url": "https://amazon-turkey-data-scrapeer.p.rapidapi.com/products/B08HM9LVD1/offers",
+            "description": "This endpoint can get you product offers in amazon tr products. This method is required the product id in the amazon tr page if you don't know you can get search with my method to. And you need to api_key scraperapi you can get easly in this site ; https://www.scraperapi.com/",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "productId",
+                    "type": "string",
+                    "description": "",
+                    "default": "B08HM9LVD1"
+                },
+                {
+                    "name": "api_key",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "8b019bccf487085276e843da7a76f57f"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://amazon-turkey-data-scrapeer.p.rapidapi.com/products/B08HM9LVD1/offers\"\nquerystring = {\"api_key\": \"8b019bccf487085276e843da7a76f57f\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"amazon-turkey-data-scrapeer.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://amazon-turkey-data-scrapeer.p.rapidapi.com/products/{productid}/offers\"\nquerystring = {\"api_key\": \"8b019bccf487085276e843da7a76f57f\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"amazon-turkey-data-scrapeer.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You are not subscribed to this API."
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "product_information": {
+                        "type": "object",
+                        "properties": {
+                            "Sat\u0131\u015fa Sunuldu\u011fu \u0130lk Tarih\n                                    \u200f": {
+                                "type": "string"
+                            },
+                            "\u00dcretici\n                                    \u200f": {
+                                "type": "string"
+                            },
+                            "ASIN\n                                    \u200f": {
+                                "type": "string"
+                            },
+                            "Kategori\n                                    \u200f": {
+                                "type": "string"
+                            },
+                            "En \u00c7ok Satanlar S\u0131ralamas\u0131": {
+                                "type": "string"
+                            },
+                            "\u015eu kategoride 166. s\u0131rada": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "brand": {
+                        "type": "string"
+                    },
+                    "brand_url": {
+                        "type": "string"
+                    },
+                    "full_description": {
+                        "type": "string"
+                    },
+                    "pricing": {
+                        "type": "string"
+                    },
+                    "list_price": {
+                        "type": "string"
+                    },
+                    "availability_status": {
+                        "type": "string"
+                    },
+                    "images": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "product_category": {
+                        "type": "string"
+                    },
+                    "average_rating": {
+                        "type": "integer"
+                    },
+                    "small_description": {
+                        "type": "string"
+                    },
+                    "total_reviews": {
+                        "type": "integer"
+                    },
+                    "total_answered_questions": {
+                        "type": "integer"
+                    },
+                    "customization_options": {
+                        "type": "object",
+                        "properties": {
+                            "Numara": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "is_selected": {
+                                            "type": "boolean"
+                                        },
+                                        "is_available": {
+                                            "type": "boolean"
+                                        },
+                                        "value": {
+                                            "type": "string"
+                                        },
+                                        "asin": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            },
+                            "Renk": {
+                                "type": "null"
+                            }
+                        }
+                    },
+                    "seller_id": {
+                        "type": "null"
+                    },
+                    "seller_name": {
+                        "type": "null"
+                    },
+                    "fulfilled_by_amazon": {
+                        "type": "null"
+                    },
+                    "fast_track_message": {
+                        "type": "string"
+                    },
+                    "aplus_present": {
+                        "type": "boolean"
+                    }
+                }
+            }
+        },
+        {
+            "name": "Get Product Reviews in Turkey",
+            "url": "https://amazon-turkey-data-scrapeer.p.rapidapi.com/products/B08HM9LVD1/reviews",
+            "description": "This endpoint can get you product reviews in amazon tr products. This method is required the product id in the amazon tr page if you don't know you can get search with my method to. And you need to api_key scraperapi you can get easly in this site ; https://www.scraperapi.com/",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "productId",
+                    "type": "string",
+                    "description": "",
+                    "default": "B08HM9LVD1"
+                },
+                {
+                    "name": "api_key",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "8b019bccf487085276e843da7a76f57f"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://amazon-turkey-data-scrapeer.p.rapidapi.com/products/B08HM9LVD1/reviews\"\nquerystring = {\"api_key\": \"8b019bccf487085276e843da7a76f57f\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"amazon-turkey-data-scrapeer.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://amazon-turkey-data-scrapeer.p.rapidapi.com/products/{productid}/reviews\"\nquerystring = {\"api_key\": \"8b019bccf487085276e843da7a76f57f\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"amazon-turkey-data-scrapeer.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "name": "StatusCodeError",
+                "statusCode": 401,
+                "message": "401 - \"Unauthorized request, please make sure your API key is valid.\"",
+                "error": "Unauthorized request, please make sure your API key is valid.",
+                "options": {
+                    "uri": "http://api.scraperapi.com?api_key=8b019bccf487085276e843da7a76f57f&autoparse=true&url=https://www.amazon.com.tr/product-reviews/B08HM9LVD1",
+                    "simple": true,
+                    "resolveWithFullResponse": false,
+                    "transform2xxOnly": false
+                },
+                "response": {
+                    "statusCode": 401,
+                    "body": "Unauthorized request, please make sure your API key is valid.",
+                    "headers": {
+                        "date": "Fri, 16 Jun 2023 20:52:48 GMT",
+                        "content-type": "text/html; charset=utf-8",
+                        "content-length": "61",
+                        "connection": "close",
+                        "x-powered-by": "Express",
+                        "access-control-allow-origin": "undefined",
+                        "access-control-allow-headers": "Origin, X-Requested-With, Content-Type, Accept",
+                        "access-control-allow-methods": "HEAD,GET,POST,DELETE,OPTIONS,PUT",
+                        "access-control-allow-credentials": "true",
+                        "x-robots-tag": "none",
+                        "etag": "W/\"3d-jr2uHCCFu/XcPLkZtEYX1XNsziQ\"",
+                        "vary": "Accept-Encoding"
+                    },
+                    "request": {
+                        "uri": {
+                            "protocol": "http:",
+                            "slashes": true,
+                            "auth": null,
+                            "host": "api.scraperapi.com",
+                            "port": 80,
+                            "hostname": "api.scraperapi.com",
+                            "hash": null,
+                            "search": "?api_key=8b019bccf487085276e843da7a76f57f&autoparse=true&url=https://www.amazon.com.tr/product-reviews/B08HM9LVD1",
+                            "query": "api_key=8b019bccf487085276e843da7a76f57f&autoparse=true&url=https://www.amazon.com.tr/product-reviews/B08HM9LVD1",
+                            "pathname": "/",
+                            "path": "/?api_key=8b019bccf487085276e843da7a76f57f&autoparse=true&url=https://www.amazon.com.tr/product-reviews/B08HM9LVD1",
+                            "href": "http://api.scraperapi.com/?api_key=8b019bccf487085276e843da7a76f57f&autoparse=true&url=https://www.amazon.com.tr/product-reviews/B08HM9LVD1"
+                        },
+                        "method": "GET",
+                        "headers": {}
+                    }
+                }
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Search Product in Turkey",
+            "url": "https://amazon-turkey-data-scrapeer.p.rapidapi.com/search/krampon",
+            "description": "This endpoint can get you search all product in amazon tr . This method is required the search key . And you need to api_key scraperapi you can get easly in this site ; https://www.scraperapi.com/",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "searchQuery",
+                    "type": "string",
+                    "description": "",
+                    "default": "krampon"
+                },
+                {
+                    "name": "api_key",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "8b019bccf487085276e843da7a76f57f"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://amazon-turkey-data-scrapeer.p.rapidapi.com/search/krampon\"\nquerystring = {\"api_key\": \"8b019bccf487085276e843da7a76f57f\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"amazon-turkey-data-scrapeer.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://amazon-turkey-data-scrapeer.p.rapidapi.com/search/{searchquery}\"\nquerystring = {\"api_key\": \"8b019bccf487085276e843da7a76f57f\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"amazon-turkey-data-scrapeer.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {},
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "amazon_turkey_data_scrapeer"
+}

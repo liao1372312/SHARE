@@ -1,0 +1,74 @@
+{
+    "product_id": "api_22aca504-b917-4e2b-be07-930bbbb610c7",
+    "tool_description": "Introducing the World History Timeline API by Pizza API - an extensive resource for exploring world historical events from 3200 BCE to the year 2000. This API gives you access to a vast database of information on the most significant moments in human history, including the dates and events all organized in an easy-to-use format for developers.  \n\nWith the World History Timeline API, you can delve into the history of ancient civilizations, witness the key events of the Middle Ages, and underst...",
+    "home_url": "https://rapidapi.com/raajreact/api/world-history-timeline/",
+    "name": "World History Timeline",
+    "title": "World History Timeline",
+    "pricing": "FREEMIUM",
+    "tool_name": "World History Timeline",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 610,
+        "avgSuccessRate": 100,
+        "popularityScore": 8.8,
+        "__typename": "Score"
+    },
+    "host": "world-history-timeline.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Historic Event By year",
+            "url": "https://world-history-timeline.p.rapidapi.com/History-By-Year",
+            "description": "Give an year in the query and it returns all the available events from that year",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "year",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "400"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://world-history-timeline.p.rapidapi.com/History-By-Year\"\nquerystring = {\"year\": \"400\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"world-history-timeline.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://world-history-timeline.p.rapidapi.com/History-By-Year\"\nquerystring = {\"year\": \"400\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"world-history-timeline.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "results": [
+                    {
+                        "id": 215,
+                        "order": "213.00000000000000000000",
+                        "Year": "400",
+                        "Event": "Begins the decline of Maya culture and language in some parts of the highlands.",
+                        "UID": "215"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Random Historic Event",
+            "url": "https://world-history-timeline.p.rapidapi.com/History",
+            "description": "Returns a Random World Historic Event with the year and the event",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://world-history-timeline.p.rapidapi.com/History\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"world-history-timeline.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://world-history-timeline.p.rapidapi.com/History\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"world-history-timeline.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "data": {
+                    "count": 1,
+                    "next": null,
+                    "previous": null,
+                    "results": [
+                        {
+                            "id": 2450,
+                            "order": "2448.00000000000000000000",
+                            "Year": "1969",
+                            "Event": "October 29: Creation of Advanced Research Projects Agency Network (ARPANET), the earliest incarnation of the Internet.",
+                            "UID": "2450"
+                        }
+                    ]
+                }
+            }
+        }
+    ],
+    "standardized_name": "world_history_timeline"
+}

@@ -1,0 +1,25 @@
+{
+"user_query":"Convert 1000 AUD to USD, get historical rates of USD from 2023-01-01 to 2023-12-31, and fetch ticker values for ETHUSD on the Global Ethereum Price Index.",
+"domain":"Finance",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Convert 1000 AUD to USD using the CurrencyAPI.net",
+        "domain": "finance",
+        "required_inputs": ["amount", "from_currency", "to_currency"]
+    },
+    {
+        "id": 2,
+        "description": "Get historical rates of USD from 2023-01-01 to 2023-12-31",
+        "domain": "finance",
+        "required_inputs": ["currency", "start_date", "end_date"],
+        "dependency": [1]
+    },
+    {
+        "id": 3,
+        "description": "Fetch ticker values and price changes for ETHUSD on the Global Ethereum Price Index - GEX",
+        "domain": "finance",
+        "required_inputs": ["currency_pair"]
+    }
+]
+}

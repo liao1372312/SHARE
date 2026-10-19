@@ -1,0 +1,32 @@
+{
+"user_query":"I'm planning a surprise anniversary party for my parents and I want to create a special playlist. Can you help me search for songs similar to 'Can't Help Falling in Love' and 'Unchained Melody' on Shazam? Also, provide me with the basic user information of the top 5 artists of these songs on Soundcloud.",
+"domain":"Technology",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Search for songs similar to 'Can't Help Falling in Love' on Shazam.",
+        "domain": "technology",
+        "required_inputs": ["song_title"]
+    },
+    {
+        "id": 2,
+        "description": "Search for songs similar to 'Unchained Melody' on Shazam.",
+        "domain": "technology",
+        "required_inputs": ["song_title"]
+    },
+    {
+        "id": 3,
+        "description": "Collect the top 5 artists of the songs found in steps 1 and 2.",
+        "domain": "technology",
+        "required_inputs": ["results_from_step_1", "results_from_step_2"],
+        "dependencies": [1, 2]
+    },
+    {
+        "id": 4,
+        "description": "Fetch basic user information of the top 5 artists on Soundcloud.",
+        "domain": "technology",
+        "required_inputs": ["top_5_artists_from_step_3"],
+        "dependencies": [3]
+    }
+]
+}

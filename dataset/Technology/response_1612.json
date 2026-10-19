@@ -1,0 +1,73 @@
+{
+"user_query":"I'm organizing a photography contest and I'm looking for judges who have expertise in various genres. Can you provide me with the user information and recent media posts of photographers specializing in landscape, portrait, and wildlife photography?",
+"domain":"Technology",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Search for photographers specializing in landscape photography.",
+        "domain": "technology",
+        "required_inputs": ["genre: landscape"]
+    },
+    {
+        "id": 2,
+        "description": "Search for photographers specializing in portrait photography.",
+        "domain": "technology",
+        "required_inputs": ["genre: portrait"]
+    },
+    {
+        "id": 3,
+        "description": "Search for photographers specializing in wildlife photography.",
+        "domain": "technology",
+        "required_inputs": ["genre: wildlife"]
+    },
+    {
+        "id": 4,
+        "description": "Compile user information from the search results of landscape photographers.",
+        "domain": "technology",
+        "required_inputs": ["results from step 1"],
+        "dependencies": [1]
+    },
+    {
+        "id": 5,
+        "description": "Compile user information from the search results of portrait photographers.",
+        "domain": "technology",
+        "required_inputs": ["results from step 2"],
+        "dependencies": [2]
+    },
+    {
+        "id": 6,
+        "description": "Compile user information from the search results of wildlife photographers.",
+        "domain": "technology",
+        "required_inputs": ["results from step 3"],
+        "dependencies": [3]
+    },
+    {
+        "id": 7,
+        "description": "Retrieve the recent media posts of landscape photographers.",
+        "domain": "technology",
+        "required_inputs": ["results from step 1"],
+        "dependencies": [1]
+    },
+    {
+        "id": 8,
+        "description": "Retrieve the recent media posts of portrait photographers.",
+        "domain": "technology",
+        "required_inputs": ["results from step 2"],
+        "dependencies": [2]
+    },
+    {
+        "id": 9,
+        "description": "Retrieve the recent media posts of wildlife photographers.",
+        "domain": "technology",
+        "required_inputs": ["results from step 3"],
+        "dependencies": [3]
+    },
+    {
+        "id": 10,
+        "description": "Compile all user information and recent media posts into a final document.",
+        "domain": "technology",
+        "required_inputs": ["user info from steps 4, 5, 6 and media posts from steps 7, 8, 9"],
+        "dependencies": [4, 5, 6, 7, 8, 9]
+    }
+]
+}

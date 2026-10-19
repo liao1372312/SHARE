@@ -1,0 +1,57 @@
+{
+    "product_id": "api_14b97bae-8a99-447e-8c42-e97758e68c7b",
+    "tool_description": "Sourced from World Bank at https://datahelpdesk.worldbank.org/knowledgebase/articles/898581-api-basic-call-structures",
+    "home_url": "https://rapidapi.com/mazalgara/api/world-bank-gdp/",
+    "name": "World Bank | GDP",
+    "title": "World Bank | GDP",
+    "pricing": "FREE",
+    "tool_name": "World Bank | GDP",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 137,
+        "avgSuccessRate": 69,
+        "popularityScore": 9,
+        "__typename": "Score"
+    },
+    "host": "world-bank-gdp.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "List of countries with income level",
+            "url": "https://world-bank-gdp.p.rapidapi.com/",
+            "description": "Sourced from Developer Information issued by The World Bank Group at https://datahelpdesk.worldbank.org/knowledgebase/topics/125589-developer-information\n\nExternal Doc URL available at http://api.worldbank.org/V2/incomeLevel/LIC/country\n\nOutput format available at http://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://world-bank-gdp.p.rapidapi.com/\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"world-bank-gdp.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://world-bank-gdp.p.rapidapi.com/\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"world-bank-gdp.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {
+                "type": "array"
+            }
+        },
+        {
+            "name": "List all countries",
+            "url": "https://world-bank-gdp.p.rapidapi.com/",
+            "description": "Sourced from Developer Information issued by The World Bank Group at https://datahelpdesk.worldbank.org/knowledgebase/topics/125589-developer-information\n\nExternal Doc URL available at http://api.worldbank.org/v2/country\n\nOutput format available at http://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "iso2Code",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "br"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://world-bank-gdp.p.rapidapi.com/\"\nquerystring = {\"iso2Code\": \"br\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"world-bank-gdp.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://world-bank-gdp.p.rapidapi.com/\"\nquerystring = {\"iso2Code\": \"br\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"world-bank-gdp.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {
+                "type": "array"
+            }
+        }
+    ],
+    "standardized_name": "world_bank_gdp"
+}

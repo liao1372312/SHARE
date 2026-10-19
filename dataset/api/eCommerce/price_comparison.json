@@ -1,0 +1,183 @@
+{
+    "product_id": "api_36308ead-6572-4d54-86f7-eedcbc6c0f48",
+    "tool_description": "Amazon, Ebay, Target, Walmart, Google - price & product data from all marketplaces via one API. The Price Comparison API provides price & product data incl. product title, manufacturer, sellers, reviews, prices, size selection etc.",
+    "home_url": "https://rapidapi.com/pricecomparisonapi/api/price-comparison1/",
+    "name": "Price Comparison",
+    "title": "Price Comparison",
+    "pricing": "FREEMIUM",
+    "tool_name": "Price Comparison",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 3570,
+        "avgSuccessRate": 62,
+        "popularityScore": 9.2,
+        "__typename": "Score"
+    },
+    "host": "price-comparison1.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "offers",
+            "url": "https://price-comparison1.p.rapidapi.com/611247373064/offers",
+            "description": "list offers for the product",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "id",
+                    "type": "string",
+                    "description": "An identifier can be any of the following:\n\n- UPC\n- EAN\n- ISBN\n- GTIN\n- Amazon ASIN",
+                    "default": "611247373064"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "latitude",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "37.777805"
+                },
+                {
+                    "name": "longitude",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "-122.49493"
+                },
+                {
+                    "name": "country",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "US"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://price-comparison1.p.rapidapi.com/611247373064/offers\"\nquerystring = {\"latitude\": \"37.777805\", \"longitude\": \"-122.49493\", \"country\": \"US\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"price-comparison1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://price-comparison1.p.rapidapi.com/{id}/offers\"\nquerystring = {\"latitude\": \"37.777805\", \"longitude\": \"-122.49493\", \"country\": \"US\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"price-comparison1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You are not subscribed to this API."
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "details",
+            "url": "https://price-comparison1.p.rapidapi.com/611247373064",
+            "description": "get details on the product",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "id",
+                    "type": "string",
+                    "description": "An identifier can be any of the following:\n\n- UPC\n- EAN\n- ISBN\n- GTIN\n- Amazon ASIN",
+                    "default": "611247373064"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "country",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "US"
+                },
+                {
+                    "name": "longitude",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "-122.49493"
+                },
+                {
+                    "name": "latitude",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "37.777805"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://price-comparison1.p.rapidapi.com/611247373064\"\nquerystring = {\"country\": \"US\", \"longitude\": \"-122.49493\", \"latitude\": \"37.777805\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"price-comparison1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://price-comparison1.p.rapidapi.com/{id}\"\nquerystring = {\"country\": \"US\", \"longitude\": \"-122.49493\", \"latitude\": \"37.777805\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"price-comparison1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "ID": 611247373064,
+                "ASIN": "B07GV2S1GS",
+                "Title": "Keurig K-Mini Single Serve Coffee Maker, Black",
+                "BasePrice": 79.99,
+                "FormattedBasePrice": "$79.99",
+                "BestPrice": 27.17,
+                "FormattedBestPrice": "$27.17",
+                "ProductCategories": [
+                    {
+                        "Source": "Amazon",
+                        "Name": "Single-Serve Capsules & Pods",
+                        "FullName": "Grocery & Gourmet Food > Beverages > Coffee, Tea & Cocoa > Coffee > Single-Serve Capsules & Pods"
+                    }
+                ],
+                "Media": {
+                    "XImage": "https://x.shopsavvy.com/https://images-na.ssl-images-amazon.com/images/I/31jy5fSzyRL.jpg",
+                    "OriginalWidth": 489,
+                    "OriginalHeight": 500,
+                    "AverageColor": "E5E5E5",
+                    "DominantColor": "191932",
+                    "ImageAlternatives": [
+                        "https://x.shopsavvy.com/https://images-na.ssl-images-amazon.com/images/I/411uxu%2Bg17L.jpg",
+                        "https://x.shopsavvy.com/https://images-na.ssl-images-amazon.com/images/I/41jEx1YoTQL.jpg",
+                        "https://x.shopsavvy.com/https://images-na.ssl-images-amazon.com/images/I/41CanelWIlL.jpg",
+                        "https://x.shopsavvy.com/https://images-na.ssl-images-amazon.com/images/I/415VNQYTRzL.jpg",
+                        "https://x.shopsavvy.com/https://images-na.ssl-images-amazon.com/images/I/41M2wvFdi9L.jpg",
+                        "https://x.shopsavvy.com/https://images-na.ssl-images-amazon.com/images/I/41BYQRuEalL.jpg",
+                        "https://x.shopsavvy.com/https://images-na.ssl-images-amazon.com/images/I/41i7ZFVNUEL.jpg",
+                        "https://x.shopsavvy.com/https://images-na.ssl-images-amazon.com/images/I/41A9eW6drBL.jpg",
+                        "https://x.shopsavvy.com/https://images-na.ssl-images-amazon.com/images/I/51tU2J5V5WL.jpg",
+                        "https://x.shopsavvy.com/https://images-na.ssl-images-amazon.com/images/I/41-wrwhtovL.jpg",
+                        "https://x.shopsavvy.com/https://images-na.ssl-images-amazon.com/images/I/41jlRajUs6L.jpg",
+                        "https://x.shopsavvy.com/https://images-na.ssl-images-amazon.com/images/I/41kKBmHKOEL.jpg",
+                        "https://x.shopsavvy.com/https://images-na.ssl-images-amazon.com/images/I/51yjqVIsa4L.jpg",
+                        "https://x.shopsavvy.com/https://images-na.ssl-images-amazon.com/images/I/31jy5fSzyRL.jpg"
+                    ]
+                },
+                "Attributes": [
+                    {
+                        "Type": "Important",
+                        "Key": "color",
+                        "Value": "Matte Black"
+                    },
+                    {
+                        "Type": "Important",
+                        "Key": "brand",
+                        "Value": "Keurig"
+                    },
+                    {
+                        "Type": null,
+                        "Key": "model",
+                        "Value": "K-MINI"
+                    },
+                    {
+                        "Type": null,
+                        "Key": "mpn",
+                        "Value": "5000200237"
+                    }
+                ],
+                "Offers": [
+                    {
+                        "ID": null,
+                        "Merchant": "Target",
+                        "ProductID": 611247373064,
+                        "Quality": "New",
+                        "Venue": "Internet",
+                        "Price": 59.99,
+                        "FormattedPrice": "$59.99",
+                        "Link": "https://www.target.com/p/keurig-k-mini-single-serve-k-cup-pod-coffee-maker-black/-/A-53448183",
+                        "Links": {
+                            "AffiliateLink": "https://www.target.com/p/keurig-k-mini-single-serve-k-cup-pod-coffee-maker-black/-/A-53448183",
+                            "CashbackLink": null,
+                            "ParentLink": null,
+                            "ParentAffiliateLink": null,
+                            "ParentCashbackLink": null
+                        },
+                        "InStockStatus": "0",
+                        "BasePrice": 0,
+                        "FormattedBasePrice": "$0.00"
+                    }
+                ],
+                "Raw": null
+            },
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "price_comparison"
+}

@@ -1,0 +1,62 @@
+{
+    "product_id": "api_5a702210-d7bb-4751-9571-f92548c9c7e8",
+    "tool_description": "Feed it a ticker and return next payout date or yield  in response.\n\n/payout example: \nhttps://sundayfinance.p.rapidapi.com/stock/agnc\noutput:\n{\"result\":[\"agnc,14.56%\"]}\n\n/yield example: \nhttps://sundayfinance.p.rapidapi.com/yield/aapl\noutput:\n{\"result\":[\"aapl,16 Feb 2023 (Thu)\"]}\n",
+    "home_url": "https://rapidapi.com/daniel.hogrebe/api/sundayfinance/",
+    "name": "sundayfinance",
+    "title": "sundayfinance",
+    "pricing": "FREE",
+    "tool_name": "sundayfinance",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 2057,
+        "avgSuccessRate": 100,
+        "popularityScore": 7.8,
+        "__typename": "Score"
+    },
+    "host": "sundayfinance.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Get the yield",
+            "url": "https://sundayfinance.p.rapidapi.com/yield/agnc",
+            "description": "Feed in the ticker and get the yield",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "ticker",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "agnc"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://sundayfinance.p.rapidapi.com/yield/agnc\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sundayfinance.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://sundayfinance.p.rapidapi.com/yield/{ticker}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sundayfinance.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "result": [
+                    "agnc,14.56%"
+                ]
+            }
+        },
+        {
+            "name": "Get the next dividend payout date",
+            "url": "https://sundayfinance.p.rapidapi.com/payout/aapl",
+            "description": "Feed in the ticke and get the next dividend payout date.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "ticker",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "aapl"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://sundayfinance.p.rapidapi.com/payout/aapl\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sundayfinance.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://sundayfinance.p.rapidapi.com/payout/{ticker}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sundayfinance.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "result": []
+            }
+        }
+    ],
+    "standardized_name": "sundayfinance"
+}

@@ -1,0 +1,32 @@
+{
+"user_query":"I am organizing a charity event and need to send out invitations to potential donors. Can you help me with the SMS invitations? Retrieve the pricing information for sending SMS to different countries and provide me with the best rates. Additionally, suggest some engaging message templates to encourage people to attend the event.",
+"domain":"Technology",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Retrieve SMS pricing information for different countries.",
+        "domain": "technology",
+        "required_inputs": ["country_list"]
+    },
+    {
+        "id": 2,
+        "description": "Compare and determine the best SMS rates from the retrieved pricing information.",
+        "domain": "technology",
+        "required_inputs": ["pricing_info"],
+        "dependencies": [1]
+    },
+    {
+        "id": 3,
+        "description": "Generate engaging SMS invitation message templates for the charity event.",
+        "domain": "technology",
+        "required_inputs": ["event_details", "target_audience"]
+    },
+    {
+        "id": 4,
+        "description": "Send the SMS invitations to potential donors using the best rates identified.",
+        "domain": "technology",
+        "required_inputs": ["recipient_list", "message_template", "best_rate"],
+        "dependencies": [2, 3]
+    }
+]
+}

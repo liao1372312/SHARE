@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "kind": "share_swebench_ai_patch_generation_artifact",
+  "instance_id": "psf__requests-1142",
+  "branch": "ai",
+  "generated_at": "2026-08-21T08:44:48.977126+00:00",
+  "started_at": "2026-08-21T08:44:21.918246+00:00",
+  "profile": "primary",
+  "model": "gpt-5.4-mini",
+  "api_root_sha256": "8350a46cba5dae5daf04685d754664810f0dc8753cbaa51d27b359cdf06a5c37",
+  "image": "swebench/sweb.eval.x86_64.psf_1776_requests-1142:latest",
+  "image_id": "sha256:f3fd4d2f5e586941e431d591a488e499e7188a9b4348b7db8c9fddf6c0e89ab3",
+  "base_commit": "22623bd8c265b78b161542663ee980738441c307",
+  "initial_tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "initial_tracked_changes_reset": false,
+  "clean_tracked_baseline_verified": true,
+  "container_network": "none",
+  "gold_patch_withheld": true,
+  "test_patch_withheld": true,
+  "turns_used": 7,
+  "protocol": {
+    "schema_version": 1,
+    "generator_source_sha256": "e95f5b52b2196ff4b5b2f3cd2d14fb2f5b9dca3cd758000a544a3db0e1107578",
+    "system_prompt_sha256": "e365f6e7e004d9c82c1164067bcbc09ee7673e141ff37d51e9a6f5f1bbcfa074",
+    "user_prompt_template_sha256": "c8d3a121aaa8c4989a04e33505e7dfcc7118a1ec9609772c64ee8e9b3eb28248",
+    "workflows_sha256": "0861d12c9fbdb4a4f512884bcb0563fa4a4c1e0a38470bce15e5d39c14b1afbd",
+    "execution_specs_sha256": "e01b225626e3db0854cd43850bc9ccfd1fc22a100993b8cd0c42794f81f6872f",
+    "pilot_manifest_sha256": "394a43582fe916989e6ce0309576cd7414f01fe2dc6aebb2cebf822babb56d7d",
+    "max_turns": 20,
+    "max_output_tokens": 2048,
+    "api_timeout_seconds": 180,
+    "command_timeout_seconds": 180,
+    "temperature": 0.0,
+    "profile_reasoning_effort": null
+  },
+  "final_summary": "Implemented the minimal fix in requests/models.py so Content-Length is no longer automatically added for GET and HEAD requests. The repo’s test suite still has unrelated pre-existing failures (urllib3 strict= compatibility and a few test NameErrors), but the targeted change is in place.",
+  "generation_error": null,
+  "patch_empty": false,
+  "files": {
+    "model_patch": {
+      "path": "model.patch",
+      "sha256": "5341ac9ae18b9b5673f10c3a90631ae72318de2071a51565b3776ce27bf3fd6f"
+    },
+    "prediction": {
+      "path": "prediction.jsonl",
+      "sha256": "b2d0b7ba75a79e80c4f2838511cfcdc5b57c7a924c843ec766c10276d4437efa"
+    },
+    "transcript": {
+      "path": "transcript.jsonl",
+      "sha256": "ea7099e6202383a08ff6ebc112d31260f7c47d70dbd70655e4517ae7db25d03f"
+    }
+  },
+  "evidence_status": "generated_ai_patch_awaiting_swebench_execution"
+}

@@ -1,0 +1,34 @@
+{
+  "user_query": "I'm a film critic and I need to gather information about the latest releases. Can you provide me with the list of recently released movies and TV shows available on streaming platforms in the US? Additionally, give me the streaming availability details for the show 'Breaking Bad' and the basic information about the cast, including their names and professions.",
+  "domain": "entertainment",
+  "TaskList": [
+    {
+      "id": 1,
+      "description": "查询在美国地区上线并最近发行的影片和电视节目的列表，包含其基本信息和流媒体平台的可用性。",
+      "domain": "entertainment",
+      "required_inputs": ["地区", "最新发行时间"]
+    },
+    {
+      "id": 2,
+      "description": "获取《绝命毒师》(Breaking Bad)在各个平台上的流媒体可用性详细信息。",
+      "domain": "entertainment",
+      "required_inputs": ["节目名称", "地区"]
+    },
+    {
+      "id": 3,
+      "description": "获取《绝命毒师》的主要演员的基础信息，包括他们的名字和职业。",
+      "domain": "entertainment",
+      "required_inputs": ["节目信息"]
+    }
+  ],
+  "dependencies": [
+    {
+      "task_id": 2,
+      "depends_on": 1
+    },
+    {
+      "task_id": 3,
+      "depends_on": 2
+    }
+  ]
+}

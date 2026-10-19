@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "kind": "share_replayable_holdout_import_report",
+  "created_at_utc": "2026-08-26T00:08:00Z",
+  "protocol_id": "share-locked-replayable-400-v3",
+  "evidence_kind": "real_source_replayable_simulated_paired_outcomes",
+  "source": {
+    "path": "datasets/share_public_api_workflow_input.jsonl",
+    "sha256": "64125bb8750c07a0c2d53e555c1a7070aff4fdc77be395c93ee056d05f3f133f",
+    "records": 3000,
+    "groups": 884,
+    "synthetic": false
+  },
+  "output": {
+    "path": "datasets/share_locked_holdout_replayable_20260826/episodes.jsonl",
+    "sha256": "a7e66906538a419d1be18e78120f998e3a70a8776d84897b34ffa7cdd301b74f",
+    "episodes": 400,
+    "groups": 400,
+    "split": "test",
+    "holdout_status": "locked_holdout_unbound",
+    "synthetic": true
+  },
+  "selection": {
+    "unit": "workflow_group",
+    "episodes_per_group": 1,
+    "rejected_candidate_counts": {},
+    "selection_index_path": "datasets/share_locked_holdout_replayable_20260826/source_selection.jsonl",
+    "selection_index_sha256": "0c970a95cd596e044416b0dc1a39e375b25e30d44eed54f7676fea2f2a566bfb"
+  },
+  "distributions": {
+    "failure_type": {
+      "answer_grounding_failure": 66,
+      "parameter_binding_failure": 67,
+      "planning_failure": 67,
+      "service_selection_failure": 67,
+      "supervisor_failure": 66,
+      "tool_execution_failure": 67
+    },
+    "complexity": {
+      "high": 133,
+      "low": 134,
+      "medium": 133
+    },
+    "horizon": {
+      "2": 134,
+      "3": 133,
+      "5": 133
+    }
+  },
+  "duplicate_audit": {
+    "result": "PASS",
+    "duplicate_counts": {
+      "episode_id": 0,
+      "workflow_id": 0,
+      "group_id": 0,
+      "source_record_sha256": 0,
+      "normalized_source_fingerprint": 0
+    }
+  },
+  "historical_overlap_audit": {
+    "result": "PASS",
+    "zero_overlap": true,
+    "dimensions": {
+      "episode_id": {
+        "holdout_unique": 400,
+        "historical_unique": 7011,
+        "overlap_count": 0,
+        "overlap_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "workflow_id": {
+        "holdout_unique": 400,
+        "historical_unique": 0,
+        "overlap_count": 0,
+        "overlap_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "group_id": {
+        "holdout_unique": 400,
+        "historical_unique": 1778,
+        "overlap_count": 0,
+        "overlap_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "source_document_sha256": {
+        "holdout_unique": 400,
+        "historical_unique": 0,
+        "overlap_count": 0,
+        "overlap_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "normalized_source_fingerprint": {
+        "holdout_unique": 400,
+        "historical_unique": 0,
+        "overlap_count": 0,
+        "overlap_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  },
+  "canonical_schema_reload": "PASS",
+  "method_artifacts_accessed": false,
+  "method_level_outcomes_accessed": false,
+  "locked_evaluator_bound_or_run": false,
+  "eligibility_warning": "Not eligible for locked method evaluation as real paired evidence: all branch outcomes are simulated. Obtain immutable observed AI/Human/Stop branch artifacts and use the real-paired importer before binding."
+}

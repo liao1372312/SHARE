@@ -1,0 +1,32 @@
+{
+"user_query":"I want to find a venue and book transportation for a team-building event in Miami, Florida.",
+"domain":"tourism",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Research potential venues in Miami, Florida suitable for a team-building event.",
+        "domain": "tourism",
+        "required_inputs": ["event type", "number of attendees", "desired facilities"]
+    },
+    {
+        "id": 2,
+        "description": "Check the availability of the selected venues on the specified dates.",
+        "domain": "tourism",
+        "required_inputs": ["venue ID", "event dates"],
+        "dependencies": [1]
+    },
+    {
+        "id": 3,
+        "description": "Gather transportation options for the team members to and from the venue.",
+        "domain": "tourism",
+        "required_inputs": ["number of participants", "transportation type"]
+    },
+    {
+        "id": 4,
+        "description": "Book transportation based on the gathered options and finalize arrangements.",
+        "domain": "tourism",
+        "required_inputs": ["selected transportation option", "pickup location", "drop-off location"],
+        "dependencies": [3]
+    }
+]
+}

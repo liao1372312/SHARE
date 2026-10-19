@@ -1,0 +1,47 @@
+{
+    "product_id": "api_8e5e19b4-0f29-4cbf-9bf3-6abc2a1b191a",
+    "tool_description": "The Piotroski score is a discrete score between zero and nine that reflects nine criteria used to determine the strength of a firm's financial position. The Piotroski score is used to determine the best value stocks, with nine being the best and zero being the worst.",
+    "home_url": "https://rapidapi.com/d4rkn3ss1/api/piotrosky-f-score/",
+    "name": "Piotrosky F-Score",
+    "title": "Piotrosky F-Score",
+    "pricing": "FREEMIUM",
+    "tool_name": "Piotrosky F-Score",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 7625,
+        "avgSuccessRate": 100,
+        "popularityScore": 6.9,
+        "__typename": "Score"
+    },
+    "host": "piotrosky-f-score.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "GetFScore",
+            "url": "https://piotrosky-f-score.p.rapidapi.com/PiotriskyScore",
+            "description": "Gets the F-Score for the provided ticker in the query parameters.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "ticker",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "AAPL"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://piotrosky-f-score.p.rapidapi.com/PiotriskyScore\"\nquerystring = {\"ticker\": \"AAPL\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"piotrosky-f-score.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://piotrosky-f-score.p.rapidapi.com/PiotriskyScore\"\nquerystring = {\"ticker\": \"AAPL\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"piotrosky-f-score.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "Symbol": "AAPL",
+                "Name": "\t\n\t\tApple (NAS:AAPL)  ",
+                "FScore": {
+                    "Current": 6,
+                    "Min": 1,
+                    "Med": 6,
+                    "Max": 9
+                }
+            }
+        }
+    ],
+    "standardized_name": "piotrosky_f_score"
+}

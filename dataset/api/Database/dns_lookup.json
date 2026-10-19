@@ -1,0 +1,102 @@
+{
+    "product_id": "59cdf835e4b09ee12b02fc2f",
+    "tool_description": "DNS Lookup API lets you gather a domain' corresponding IP address/A record, mail server/MX record, DNS servers/NS nameservers, as well as other items like SPF records/TXT records.",
+    "home_url": "https://rapidapi.com/whoisapi/api/dns-lookup/",
+    "name": "DNS Lookup",
+    "title": "DNS Lookup",
+    "pricing": "FREE",
+    "tool_name": "DNS Lookup",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 452,
+        "avgSuccessRate": 100,
+        "popularityScore": 8.3,
+        "__typename": "Score"
+    },
+    "host": "whoisapi-dns-lookup-v1.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "/whoisserver/DNSService",
+            "url": "https://whoisapi-dns-lookup-v1.p.rapidapi.com/whoisserver/DNSService",
+            "description": "DNS Lookup API",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "type",
+                    "type": "STRING",
+                    "description": "DNS type: A, NS, SOA, MX, etc. You can specify multiple comma-separated values, e.g., A,SOA,TXT; all records can be retrieved with type=_all.\nAcceptable values: [A, NS, SOA, MX, etc.](https://dns-lookup.whoisxmlapi.com/api/documentation/making-requests#Supported-DNS-Types)",
+                    "default": "A"
+                },
+                {
+                    "name": "domainname",
+                    "type": "STRING",
+                    "description": "The target domain name.",
+                    "default": "google.com"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "outputFormat",
+                    "type": "STRING",
+                    "description": "Response output format.\nAcceptable values: JSON | XML\nDefault: XML",
+                    "default": "JSON"
+                },
+                {
+                    "name": "callback",
+                    "type": "STRING",
+                    "description": "A javascript function used when outputFormat is JSON; this is an implementation known as JSONP which invokes the callback on the returned response.",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://whoisapi-dns-lookup-v1.p.rapidapi.com/whoisserver/DNSService\"\nquerystring = {\"outputFormat\": \"JSON\", \"type\": \"A\", \"domainname\": \"google.com\", \"callback\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"whoisapi-dns-lookup-v1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://whoisapi-dns-lookup-v1.p.rapidapi.com/whoisserver/DNSService\"\nquerystring = {\"outputFormat\": \"JSON\", \"type\": \"A\", \"domainname\": \"google.com\", \"callback\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"whoisapi-dns-lookup-v1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "ErrorMessage": {
+                    "errorCode": "AUTHENTICATE_03",
+                    "msg": "username/password is missing"
+                }
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "DNSData": {
+                        "type": "object",
+                        "properties": {
+                            "domainName": {
+                                "type": "string"
+                            },
+                            "types": {
+                                "type": "array",
+                                "items": {
+                                    "type": "integer"
+                                }
+                            },
+                            "dnsTypes": {
+                                "type": "string"
+                            },
+                            "audit": {
+                                "type": "object",
+                                "properties": {
+                                    "createdDate": {
+                                        "type": "string"
+                                    },
+                                    "updatedDate": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "dnsRecords": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "standardized_name": "dns_lookup"
+}

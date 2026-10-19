@@ -1,0 +1,87 @@
+{
+    "product_id": "api_ddd47d2b-9657-4dc6-add1-00d0379b21c9",
+    "tool_description": "Access the official Slovenian Government company register, basic search only. ",
+    "home_url": "https://rapidapi.com/appaio/api/slovenia-company-data/",
+    "name": "Slovenia Company Data",
+    "title": "Slovenia Company Data",
+    "pricing": "FREE",
+    "tool_name": "Slovenia Company Data",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 1535,
+        "avgSuccessRate": 100,
+        "popularityScore": 6.5,
+        "__typename": "Score"
+    },
+    "host": "slovenia-company-data.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Basic Search",
+            "url": "https://slovenia-company-data.p.rapidapi.com/prs/ajax.asp",
+            "description": "Basic text based search for company names registered in Slovenia",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "s",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": 1
+                },
+                {
+                    "name": "method",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "getNaziv"
+                },
+                {
+                    "name": "term",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "adria"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://slovenia-company-data.p.rapidapi.com/prs/ajax.asp\"\nquerystring = {\"s\": 1, \"method\": \"getNaziv\", \"term\": \"adria\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"slovenia-company-data.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://slovenia-company-data.p.rapidapi.com/prs/ajax.asp\"\nquerystring = {\"s\": 1, \"method\": \"getNaziv\", \"term\": \"adria\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"slovenia-company-data.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "data": [
+                    "ADRIA AGENCY, poslovno svetovanje ter obratovanje in oddajanje nepremi\u010dnin, Izak Jur\u010di\u0107, s. p.",
+                    "ADRIA AGRIFOOD, uvoz izvoz d.o.o.",
+                    "ADRIA AIRWAYS LETALSKA \u0160OLA d.o.o. - V STE\u010cAJU",
+                    "ADRIA AIRWAYS, Slovenski letalski prevoznik, d.o.o. - V STE\u010cAJU",
+                    "Adria Aviation Academy, letalska \u0161ola, d.o.o.",
+                    "ADRIA AVTO, dru\u017eba za tr\u017eenje, d.o.o., \u0160kofja Loka",
+                    "ADRIA BANK AKTIENGESELLSCHAFT",
+                    "ADRIA BAU, trgovina in storitve, d.o.o.",
+                    "ADRIA BOATS, poslovne storitve, d.o.o.",
+                    "ADRIA CAPITAL KOPER, finan\u010dni in\u017eeniring, d.d. - v ste\u010daju"
+                ]
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "get": {
+                        "type": "string"
+                    },
+                    "parameters": {
+                        "type": "array"
+                    },
+                    "errors": {
+                        "type": "array"
+                    },
+                    "results": {
+                        "type": "integer"
+                    },
+                    "response": {
+                        "type": "array",
+                        "items": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "standardized_name": "slovenia_company_data"
+}

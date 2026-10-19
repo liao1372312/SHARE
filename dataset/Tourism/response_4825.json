@@ -1,0 +1,50 @@
+{
+"user_query":"I am planning a road trip across Europe and I need information about the best travel destinations, local attractions, and cultural events. Can you provide me with news articles, travel guides, and recommendations for must-visit places in Europe? Additionally, I would like to gather data on visa requirements and transportation options for each country.",
+"domain":"tourism",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Gather information on the best travel destinations in Europe.",
+        "domain": "tourism",
+        "required_inputs": ["country_name"]
+    },
+    {
+        "id": 2,
+        "description": "Compile a list of local attractions for each destination gathered from Step 1.",
+        "domain": "tourism",
+        "required_inputs": ["destination_data"],
+        "dependencies": [1]
+    },
+    {
+        "id": 3,
+        "description": "Research cultural events happening in Europe during the travel period.",
+        "domain": "tourism",
+        "required_inputs": ["travel_dates"]
+    },
+    {
+        "id": 4,
+        "description": "Find and summarize news articles relevant to travel destinations and cultural events.",
+        "domain": "tourism",
+        "required_inputs": ["destination_data", "event_data"],
+        "dependencies": [2, 3]
+    },
+    {
+        "id": 5,
+        "description": "Locate travel guides for each of the listed destinations.",
+        "domain": "tourism",
+        "required_inputs": ["destination_data"]
+    },
+    {
+        "id": 6,
+        "description": "Gather information on visa requirements for each country involved in the trip.",
+        "domain": "tourism",
+        "required_inputs": ["country_name"]
+    },
+    {
+        "id": 7,
+        "description": "Research transportation options available for traveling between the selected destinations.",
+        "domain": "tourism",
+        "required_inputs": ["destination_data"]
+    }
+]
+}

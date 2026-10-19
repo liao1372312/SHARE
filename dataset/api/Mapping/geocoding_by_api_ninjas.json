@@ -1,0 +1,103 @@
+{
+    "product_id": "api_46f6a473-510e-4d38-888e-d71b3ed60934",
+    "tool_description": "Convert city locations to latitude/longitude coordinates and vice versa. See more info at https://api-ninjas.com/api/geocoding and https://api-ninjas.com/api/reversegeocoding.",
+    "home_url": "https://rapidapi.com/apininjas/api/geocoding-by-api-ninjas/",
+    "name": "Geocoding by API-Ninjas",
+    "title": "Geocoding by API-Ninjas",
+    "pricing": "FREEMIUM",
+    "tool_name": "Geocoding by API-Ninjas",
+    "score": {
+        "avgServiceLevel": 93,
+        "avgLatency": 1859,
+        "avgSuccessRate": 81,
+        "popularityScore": 9.2,
+        "__typename": "Score"
+    },
+    "host": "geocoding-by-api-ninjas.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "/v1/geocoding",
+            "url": "https://geocoding-by-api-ninjas.p.rapidapi.com/v1/geocoding",
+            "description": "API Ninjas Geocoding API endpoint.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "city",
+                    "type": "STRING",
+                    "description": "City name.",
+                    "default": "Seattle"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "country",
+                    "type": "STRING",
+                    "description": "Country name, 2-letter ISO country code, or 3-letter ISO country code.",
+                    "default": ""
+                },
+                {
+                    "name": "state",
+                    "type": "STRING",
+                    "description": "US state (for United States cities only).",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://geocoding-by-api-ninjas.p.rapidapi.com/v1/geocoding\"\nquerystring = {\"country\": \"\", \"state\": \"\", \"city\": \"Seattle\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"geocoding-by-api-ninjas.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://geocoding-by-api-ninjas.p.rapidapi.com/v1/geocoding\"\nquerystring = {\"country\": \"\", \"state\": \"\", \"city\": \"Seattle\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"geocoding-by-api-ninjas.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "name": "Seattle",
+                    "latitude": 47.6038321,
+                    "longitude": -122.330062,
+                    "country": "US",
+                    "state": "Washington"
+                },
+                {
+                    "name": "Seattle",
+                    "latitude": 20.7199684,
+                    "longitude": -103.3763286,
+                    "country": "MX",
+                    "state": "Jalisco"
+                },
+                {
+                    "name": "Laurelhurst",
+                    "latitude": 45.5265116,
+                    "longitude": -122.6244677,
+                    "country": "US",
+                    "state": "Oregon"
+                }
+            ]
+        },
+        {
+            "name": "/v1/reversegeocoding",
+            "url": "https://geocoding-by-api-ninjas.p.rapidapi.com/v1/reversegeocoding",
+            "description": "API Ninjas Reverse Geocoding API endpoint.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "lat",
+                    "type": "NUMBER",
+                    "description": "Latitude coordinate.",
+                    "default": "47.6062"
+                },
+                {
+                    "name": "lon",
+                    "type": "NUMBER",
+                    "description": "Longitude coordinate.",
+                    "default": "-122.3321"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://geocoding-by-api-ninjas.p.rapidapi.com/v1/reversegeocoding\"\nquerystring = {\"lat\": \"47.6062\", \"lon\": \"-122.3321\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"geocoding-by-api-ninjas.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://geocoding-by-api-ninjas.p.rapidapi.com/v1/reversegeocoding\"\nquerystring = {\"lat\": \"47.6062\", \"lon\": \"-122.3321\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"geocoding-by-api-ninjas.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "name": "Seattle",
+                    "country": "US",
+                    "state": "Washington"
+                }
+            ]
+        }
+    ],
+    "standardized_name": "geocoding_by_api_ninjas"
+}

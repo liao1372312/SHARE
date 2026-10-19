@@ -1,0 +1,91 @@
+{
+    "product_id": "api_656631bd-6847-4a50-9522-a47ff8cc0c08",
+    "tool_description": "Customisable QR Codes. Support for styles, images and more! Bare metal engine gives it incredible speed. Full documentation can be found at: https://linqr.app/docs",
+    "home_url": "https://rapidapi.com/linqr-linqr-default/api/qrcode3/",
+    "name": "QRCode",
+    "title": "QRCode",
+    "pricing": "FREEMIUM",
+    "tool_name": "QRCode",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 203,
+        "avgSuccessRate": 100,
+        "popularityScore": 9.8,
+        "__typename": "Score"
+    },
+    "host": "qrcode3.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "List image",
+            "url": "https://qrcode3.p.rapidapi.com/images/{id}",
+            "description": "This endpoint allows you to list single image hosted in the LinQR storage.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "id",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://qrcode3.p.rapidapi.com/images/{id}\"\nquerystring = {\"id\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"qrcode3.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://qrcode3.p.rapidapi.com/images/{id}\"\nquerystring = {\"id\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"qrcode3.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "This endpoint is disabled for your subscription"
+            },
+            "statuscode": 200,
+            "schema": {
+                "title": "ImageMetadata",
+                "required": [
+                    "id",
+                    "source",
+                    "size",
+                    "created"
+                ],
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "title": "Id",
+                        "type": "string",
+                        "description": "Image identifier.",
+                        "format": "uuid4"
+                    },
+                    "source": {
+                        "title": "Source",
+                        "type": "string",
+                        "description": "Source file name."
+                    },
+                    "size": {
+                        "title": "Size",
+                        "type": "integer",
+                        "description": "Size of the source file in bytes"
+                    },
+                    "created": {
+                        "title": "Created",
+                        "type": "string",
+                        "description": "The creation time of the image.",
+                        "format": "date-time"
+                    }
+                },
+                "additionalProperties": false
+            }
+        },
+        {
+            "name": "List all images",
+            "url": "https://qrcode3.p.rapidapi.com/images",
+            "description": "This endpoint allows you to list images hosted in the LinQR storage. If there are no images hosted, an empty array is returned.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://qrcode3.p.rapidapi.com/images\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"qrcode3.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://qrcode3.p.rapidapi.com/images\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"qrcode3.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "This endpoint is disabled for your subscription"
+            },
+            "statuscode": 1,
+            "schema": ""
+        }
+    ],
+    "standardized_name": "qrcode"
+}

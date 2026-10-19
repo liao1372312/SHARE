@@ -1,0 +1,317 @@
+{
+    "product_id": "api_c9d50ea8-1cfb-479f-a8ad-9fd464fa987b",
+    "tool_description": "Powerful web image search with rating, reverse search by image and multi-lingual capabilities.",
+    "home_url": "https://rapidapi.com/webit/api/webit-image-search/",
+    "name": "Webit Image Search",
+    "title": "Webit Image Search",
+    "pricing": "FREEMIUM",
+    "tool_name": "Webit Image Search",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 7836,
+        "avgSuccessRate": 100,
+        "popularityScore": 9.2,
+        "__typename": "Score"
+    },
+    "host": "webit-image-search.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Reverse (Search by Image)",
+            "url": "https://webit-image-search.p.rapidapi.com/reverse",
+            "description": "Reverse search by Image between billion of images.\n\nThis endpoint supports \"URL\" parameter only. For \"image\" file upload, use POST endpoint.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "url",
+                    "type": "STRING",
+                    "description": "The URL to search images by. A default URL from Wikipedia containing the following pizza has been used.\n\n![](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Eq_it-na_pizza-margherita_sep2005_sml.jpg/260px-Eq_it-na_pizza-margherita_sep2005_sml.jpg)",
+                    "default": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Eq_it-na_pizza-margherita_sep2005_sml.jpg/260px-Eq_it-na_pizza-margherita_sep2005_sml.jpg"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "number",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "10"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://webit-image-search.p.rapidapi.com/reverse\"\nquerystring = {\"url\": \"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Eq_it-na_pizza-margherita_sep2005_sml.jpg/260px-Eq_it-na_pizza-margherita_sep2005_sml.jpg\", \"number\": \"10\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"webit-image-search.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://webit-image-search.p.rapidapi.com/reverse\"\nquerystring = {\"url\": \"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Eq_it-na_pizza-margherita_sep2005_sml.jpg/260px-Eq_it-na_pizza-margherita_sep2005_sml.jpg\", \"number\": \"10\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"webit-image-search.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "status": "success",
+                "data": {
+                    "results": [
+                        {
+                            "title": null,
+                            "url": null,
+                            "id": null,
+                            "confidence": 0.6666666666666666
+                        },
+                        {
+                            "title": null,
+                            "url": null,
+                            "id": null,
+                            "confidence": 0.6666666666666666
+                        },
+                        {
+                            "title": null,
+                            "url": null,
+                            "id": null,
+                            "confidence": 0.6666666666666666
+                        },
+                        {
+                            "title": null,
+                            "url": null,
+                            "id": null,
+                            "confidence": 0.6666666666666666
+                        },
+                        {
+                            "title": null,
+                            "url": null,
+                            "id": null,
+                            "confidence": 0.6666666666666666
+                        },
+                        {
+                            "title": null,
+                            "url": null,
+                            "id": null,
+                            "confidence": 0.6666666666666666
+                        },
+                        {
+                            "title": null,
+                            "url": null,
+                            "id": null,
+                            "confidence": 0.6666666666666666
+                        },
+                        {
+                            "title": null,
+                            "url": null,
+                            "id": null,
+                            "confidence": 0.6666666666666666
+                        },
+                        {
+                            "title": null,
+                            "url": null,
+                            "id": null,
+                            "confidence": 0.6666666666666666
+                        },
+                        {
+                            "title": null,
+                            "url": null,
+                            "id": null,
+                            "confidence": 0.6666666666666666
+                        }
+                    ],
+                    "results_count": 10,
+                    "number": 10,
+                    "offset": 0
+                },
+                "message": null
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Similar",
+            "url": "https://webit-image-search.p.rapidapi.com/similar",
+            "description": "Search for Visually Similar images to an image from a previous Search result.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "image_id",
+                    "type": "STRING",
+                    "description": "The \\\"image_id\\\" of an image from search results to search similar images by.\n\nThe used image_id corresponds to the following image:\n![](https://img.freepik.com/free-photo/3d-aesthetics-with-shapes-vaporwave-style_23-2148981118.jpg?size=262&ext=jpg)",
+                    "default": "7TJ6HT2DAUMDFITP4LSIJLWICKWRCQOE"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "number",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "10"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://webit-image-search.p.rapidapi.com/similar\"\nquerystring = {\"number\": \"10\", \"image_id\": \"7TJ6HT2DAUMDFITP4LSIJLWICKWRCQOE\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"webit-image-search.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://webit-image-search.p.rapidapi.com/similar\"\nquerystring = {\"number\": \"10\", \"image_id\": \"7TJ6HT2DAUMDFITP4LSIJLWICKWRCQOE\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"webit-image-search.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "status": "success",
+                "data": {
+                    "results": [
+                        {
+                            "title": null,
+                            "url": null,
+                            "id": null,
+                            "confidence": 0.6666666666666666
+                        },
+                        {
+                            "title": null,
+                            "url": null,
+                            "id": null,
+                            "confidence": 0.6666666666666666
+                        },
+                        {
+                            "title": null,
+                            "url": null,
+                            "id": null,
+                            "confidence": 0.6666666666666666
+                        },
+                        {
+                            "title": null,
+                            "url": null,
+                            "id": null,
+                            "confidence": 0.6666666666666666
+                        },
+                        {
+                            "title": null,
+                            "url": null,
+                            "id": null,
+                            "confidence": 0.6666666666666666
+                        },
+                        {
+                            "title": null,
+                            "url": null,
+                            "id": null,
+                            "confidence": 0.6666666666666666
+                        },
+                        {
+                            "title": null,
+                            "url": null,
+                            "id": null,
+                            "confidence": 0.6666666666666666
+                        },
+                        {
+                            "title": null,
+                            "url": null,
+                            "id": null,
+                            "confidence": 0.6666666666666666
+                        },
+                        {
+                            "title": null,
+                            "url": null,
+                            "id": null,
+                            "confidence": 0.6666666666666666
+                        },
+                        {
+                            "title": null,
+                            "url": null,
+                            "id": null,
+                            "confidence": 0.6666666666666666
+                        }
+                    ],
+                    "results_count": 10,
+                    "number": 10,
+                    "offset": 0
+                },
+                "message": null
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Search",
+            "url": "https://webit-image-search.p.rapidapi.com/search",
+            "description": "Webit Image Search API provides you a powerful endpoint to search billions of images from the world wide web featuring rating, reverse search by image and multi-lingual capabilities.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "q",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "pizza"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "number",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "10"
+                },
+                {
+                    "name": "search_filter",
+                    "type": "ENUM",
+                    "description": "",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://webit-image-search.p.rapidapi.com/search\"\nquerystring = {\"number\": \"10\", \"search_filter\": \"\", \"q\": \"pizza\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"webit-image-search.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://webit-image-search.p.rapidapi.com/search\"\nquerystring = {\"number\": \"10\", \"search_filter\": \"\", \"q\": \"pizza\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"webit-image-search.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "status": "success",
+                "data": {
+                    "results": [
+                        {
+                            "title": null,
+                            "url": null,
+                            "id": null,
+                            "confidence": 0.6666666666666666
+                        },
+                        {
+                            "title": null,
+                            "url": null,
+                            "id": null,
+                            "confidence": 0.6666666666666666
+                        },
+                        {
+                            "title": null,
+                            "url": null,
+                            "id": null,
+                            "confidence": 0.6666666666666666
+                        },
+                        {
+                            "title": null,
+                            "url": null,
+                            "id": null,
+                            "confidence": 0.6666666666666666
+                        },
+                        {
+                            "title": null,
+                            "url": null,
+                            "id": null,
+                            "confidence": 0.6666666666666666
+                        },
+                        {
+                            "title": null,
+                            "url": null,
+                            "id": null,
+                            "confidence": 0.6666666666666666
+                        },
+                        {
+                            "title": null,
+                            "url": null,
+                            "id": null,
+                            "confidence": 0.6666666666666666
+                        },
+                        {
+                            "title": null,
+                            "url": null,
+                            "id": null,
+                            "confidence": 0.6666666666666666
+                        },
+                        {
+                            "title": null,
+                            "url": null,
+                            "id": null,
+                            "confidence": 0.6666666666666666
+                        },
+                        {
+                            "title": null,
+                            "url": null,
+                            "id": null,
+                            "confidence": 0.6666666666666666
+                        }
+                    ],
+                    "results_count": 10,
+                    "number": 10,
+                    "offset": 0
+                },
+                "message": null
+            },
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "webit_image_search"
+}

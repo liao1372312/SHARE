@@ -1,0 +1,284 @@
+{
+    "product_id": "api_3dcdd6cb-1965-4f22-8229-bad1988265d2",
+    "tool_description": "Simple HTTP proxy API made for scrapers.  Scrape anonymously without having to worry about restrictions, blocks or captchas. Our goal is to provide you with faster response times and higher success rates.",
+    "home_url": "https://rapidapi.com/scapers-proxy-scapers-proxy-default/api/scrapers-proxy2/",
+    "name": "Scraper's Proxy",
+    "title": "Scraper's Proxy",
+    "pricing": "FREEMIUM",
+    "tool_name": "Scraper's Proxy",
+    "score": {
+        "avgServiceLevel": 99,
+        "avgLatency": 17288,
+        "avgSuccessRate": 99,
+        "popularityScore": 9.6,
+        "__typename": "Score"
+    },
+    "host": "scrapers-proxy2.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Tor GET",
+            "url": "https://scrapers-proxy2.p.rapidapi.com/tor",
+            "description": "Send request to the [Tor network](//www.torproject.org/). Use [Standard GET](//rapidapi.com/scapers-proxy-scapers-proxy-default/api/scrapers-proxy2) instead for better performance and reliability for normal websites. Only recommended to access websites that are only accessible from the Tor network (e.g. websites with a \".onion\" top level domain), since this enpoint is slower than other endpoints.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "user_agent",
+                    "type": "STRING",
+                    "description": "Pass in `user_agent` if the page you are trying to scrape requires a specific user agent. If the page does not require a specific user agent, but a user agent from a type of device using `device` is recommended",
+                    "default": ""
+                },
+                {
+                    "name": "device",
+                    "type": "STRING",
+                    "description": "Pass in `device` to specify the type of web page you would like to see without needing to specify a user agent. This is recommended as an alternative to using `user_agent ` since it has a higher success rate",
+                    "default": ""
+                },
+                {
+                    "name": "params",
+                    "type": "OBJECT",
+                    "description": " Pass in `params` as json serialized object to specify url query parameters. This is an alternative to adding a query string to the `url` parameter",
+                    "default": ""
+                },
+                {
+                    "name": "url",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "http://expyuzz4wqqyqhjn.onion/about/history/"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://scrapers-proxy2.p.rapidapi.com/tor\"\nquerystring = {\"user_agent\": \"\", \"device\": \"\", \"params\": \"\", \"url\": \"http://expyuzz4wqqyqhjn.onion/about/history/\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"scrapers-proxy2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://scrapers-proxy2.p.rapidapi.com/tor\"\nquerystring = {\"user_agent\": \"\", \"device\": \"\", \"params\": \"\", \"url\": \"http://expyuzz4wqqyqhjn.onion/about/history/\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"scrapers-proxy2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "errors": [
+                    {
+                        "value": "",
+                        "property": "params",
+                        "message": "params must be a json string"
+                    }
+                ]
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "JavaScript Rendered Page GET",
+            "url": "https://scrapers-proxy2.p.rapidapi.com/javascript",
+            "description": "Render html using a real browser. Useful for if content is loaded asynchronously or generated dynamically in the browser. JavaScript rendering is usually required to scrape websites that use React, Angular or Vue. For websites that do not need javascript rendering use [Standard GET](//rapidapi.com/scapers-proxy-scapers-proxy-default/api/scrapers-proxy2) instead for better performance and reliability.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "url",
+                    "type": "STRING",
+                    "description": " Pass in `url` to specify the url that you want to fetch. If you require  query parameters you can include a query string in the url or specify a json serialized object in the `params` parameter",
+                    "default": "https://example.com"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "session",
+                    "type": "STRING",
+                    "description": "Pass in `session` to keep cookies and ip address (if necessary) for future requests. You can obtain a session token from the response header `scrapers_proxy_session` after sending a request to the api. Session tokens will expire after 30 seconds of inactivity",
+                    "default": ""
+                },
+                {
+                    "name": "user_agent",
+                    "type": "STRING",
+                    "description": "Pass in `user_agent` if the page you are trying to scrape requires a specific user agent. If the page does not require a specific user agent, but a user agent from a type of device using `device` is recommended",
+                    "default": ""
+                },
+                {
+                    "name": "country",
+                    "type": "STRING",
+                    "description": "Pass in `country` for requests that require geolocation to route requests to proxies in specific country. Note: using `country` parameter can increase latency and decrease success rate for certain domains",
+                    "default": ""
+                },
+                {
+                    "name": "device",
+                    "type": "STRING",
+                    "description": "Pass in `device` to specify the type of web page you would like to see without needing to specify a user agent. This is recommended as an alternative to using `user_agent ` since it has a higher success rate",
+                    "default": ""
+                },
+                {
+                    "name": "click_selector",
+                    "type": "STRING",
+                    "description": "Pass in `click_selector` as a css selector to specify an element that the browser should click on before  capturing the html of the page",
+                    "default": ""
+                },
+                {
+                    "name": "params",
+                    "type": "OBJECT",
+                    "description": " Pass in `params` as json serialized object to specify url query parameters. This is an alternative to adding a query string to the `url` parameter",
+                    "default": ""
+                },
+                {
+                    "name": "wait_ajax",
+                    "type": "STRING",
+                    "description": "Pass in `wait_ajax` to specify if the browser should wait for ajax requests to finish before capturing the html of the page.",
+                    "default": ""
+                },
+                {
+                    "name": "wait_time",
+                    "type": "NUMBER",
+                    "description": "Pass in `wait_time` to specify the time in milliseconds to wait before capturing the resulting html of the page.",
+                    "default": "10000"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://scrapers-proxy2.p.rapidapi.com/javascript\"\nquerystring = {\"url\": \"https://example.com\", \"session\": \"\", \"user_agent\": \"\", \"country\": \"\", \"device\": \"\", \"click_selector\": \"\", \"params\": \"\", \"wait_ajax\": \"\", \"wait_time\": \"10000\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"scrapers-proxy2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://scrapers-proxy2.p.rapidapi.com/javascript\"\nquerystring = {\"url\": \"https://example.com\", \"session\": \"\", \"user_agent\": \"\", \"country\": \"\", \"device\": \"\", \"click_selector\": \"\", \"params\": \"\", \"wait_ajax\": \"\", \"wait_time\": \"10000\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"scrapers-proxy2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "errors": [
+                    {
+                        "value": "",
+                        "property": "wait_ajax",
+                        "message": "wait_ajax must be a boolean string"
+                    },
+                    {
+                        "value": "",
+                        "property": "params",
+                        "message": "params must be a json string"
+                    },
+                    {
+                        "value": "",
+                        "property": "session",
+                        "message": "Please use the session from the response header: scrapers_proxy_session"
+                    }
+                ]
+            },
+            "statuscode": 1,
+            "schema": ""
+        },
+        {
+            "name": "Standard GET",
+            "url": "https://scrapers-proxy2.p.rapidapi.com/standard",
+            "description": "Basic proxy GET request",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "url",
+                    "type": "STRING",
+                    "description": " Pass in `url` to specify the url that you want to fetch. If you require  query parameters you can include a query string in the url or specify a json serialized object in the `params` parameter",
+                    "default": "https://example.com"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "device",
+                    "type": "STRING",
+                    "description": "Pass in `device` to specify the type of web page you would like to see without needing to specify a user agent. This is recommended as an alternative to using `user_agent ` since it has a higher success rate",
+                    "default": ""
+                },
+                {
+                    "name": "country",
+                    "type": "STRING",
+                    "description": "Pass in `country` for requests that require geolocation to route requests to proxies in specific country. Note: using `country` parameter can increase latency and decrease success rate for certain domains",
+                    "default": ""
+                },
+                {
+                    "name": "session",
+                    "type": "STRING",
+                    "description": "Pass in `session` to keep cookies and ip address (if necessary) for future requests. You can obtain a session token from the response header `scrapers_proxy_session` after sending a request to the api. Session tokens will expire after 30 seconds of inactivity",
+                    "default": ""
+                },
+                {
+                    "name": "params",
+                    "type": "OBJECT",
+                    "description": " Pass in `params` as json serialized object to specify url query parameters. This is an alternative to adding a query string to the `url` parameter",
+                    "default": ""
+                },
+                {
+                    "name": "user_agent",
+                    "type": "STRING",
+                    "description": "Pass in `user_agent` if the page you are trying to scrape requires a specific user agent. If the page does not require a specific user agent, but a user agent from a type of device using `device` is recommended",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://scrapers-proxy2.p.rapidapi.com/standard\"\nquerystring = {\"device\": \"\", \"country\": \"\", \"session\": \"\", \"url\": \"https://example.com\", \"params\": \"\", \"user_agent\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"scrapers-proxy2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://scrapers-proxy2.p.rapidapi.com/standard\"\nquerystring = {\"device\": \"\", \"country\": \"\", \"session\": \"\", \"url\": \"https://example.com\", \"params\": \"\", \"user_agent\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"scrapers-proxy2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "errors": [
+                    {
+                        "value": "",
+                        "property": "session",
+                        "message": "Please use the session from the response header: scrapers_proxy_session"
+                    },
+                    {
+                        "value": "",
+                        "property": "params",
+                        "message": "params must be a json string"
+                    }
+                ]
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Parser GET",
+            "url": "https://scrapers-proxy2.p.rapidapi.com/parser",
+            "description": "Automatically parses html into an easily processable json format",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "url",
+                    "type": "STRING",
+                    "description": " Pass in `url` to specify the url that you want to fetch. If you require  query parameters you can include a query string in the url or specify a json serialized object in the `params` parameter",
+                    "default": "https://example.com"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "auto_detect",
+                    "type": "BOOLEAN",
+                    "description": "Pass in `auto_detect` to get our system to automatically detect which parser to use.",
+                    "default": "true"
+                },
+                {
+                    "name": "parser",
+                    "type": "STRING",
+                    "description": "Pass in `parser` to specify how to parse the page. For example, pass in `generic-extractor` to extract basic information from any page. For more options please contact support.",
+                    "default": ""
+                },
+                {
+                    "name": "country",
+                    "type": "STRING",
+                    "description": "Pass in `country` for requests that require geolocation to route requests to proxies in specific country. Note: using `country` parameter can increase latency and decrease success rate for certain domains",
+                    "default": ""
+                },
+                {
+                    "name": "user_agent",
+                    "type": "STRING",
+                    "description": "Pass in `user_agent` if the page you are trying to scrape requires a specific user agent. If the page does not require a specific user agent, but a user agent from a type of device using `device` is recommended",
+                    "default": ""
+                },
+                {
+                    "name": "device",
+                    "type": "STRING",
+                    "description": "Pass in `device` to specify the type of web page you would like to see without needing to specify a user agent. This is recommended as an alternative to using `user_agent ` since it has a higher success rate",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://scrapers-proxy2.p.rapidapi.com/parser\"\nquerystring = {\"auto_detect\": \"true\", \"parser\": \"\", \"country\": \"\", \"user_agent\": \"\", \"device\": \"\", \"url\": \"https://example.com\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"scrapers-proxy2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://scrapers-proxy2.p.rapidapi.com/parser\"\nquerystring = {\"auto_detect\": \"true\", \"parser\": \"\", \"country\": \"\", \"user_agent\": \"\", \"device\": \"\", \"url\": \"https://example.com\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"scrapers-proxy2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "alert": "A generic web scraper has been selected. Please contact support if you require a more detailed scraper for your given URL.",
+                "title": "Example Domain",
+                "favicon": null,
+                "meta": {
+                    "description": "",
+                    "keywords": ""
+                },
+                "content": "Example Domain This domain is for use in illustrative examples in documents. You may use this domain in literature without prior coordination or asking for permission.",
+                "canonical": null,
+                "images": [],
+                "grouped_images": {},
+                "og_images": [],
+                "links": [
+                    "https://www.iana.org/domains/example"
+                ]
+            },
+            "statuscode": 1,
+            "schema": ""
+        }
+    ],
+    "standardized_name": "scraper_s_proxy"
+}

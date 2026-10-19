@@ -1,0 +1,103 @@
+{
+    "product_id": "api_18d5c491-de09-4a0c-a6c9-d3c9ca8dc4c4",
+    "tool_description": "Horoscope API - Professional Horoscopes as a simple JSON API - Access 12 horoscopes every day, written by professional astrologers. Important: Only Portuguese (PT) language is currently available.",
+    "home_url": "https://rapidapi.com/webarjos/api/horoscope-api/",
+    "name": "Horoscope API",
+    "title": "Horoscope API",
+    "pricing": "FREE",
+    "tool_name": "Horoscope API",
+    "score": {
+        "avgServiceLevel": 99,
+        "avgLatency": 1044,
+        "avgSuccessRate": 82,
+        "popularityScore": 9.6,
+        "__typename": "Score"
+    },
+    "host": "horoscope-api.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Get a daily horoscope",
+            "url": "https://horoscope-api.p.rapidapi.com/pt/aquario",
+            "description": "Get a daily horoscope for the horoscope sign.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "signId",
+                    "type": "string",
+                    "description": "",
+                    "default": "aquario"
+                },
+                {
+                    "name": "langId",
+                    "type": "string",
+                    "description": "",
+                    "default": "pt"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://horoscope-api.p.rapidapi.com/pt/aquario\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"horoscope-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://horoscope-api.p.rapidapi.com/{langid}/{signid}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"horoscope-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "title": "Hor\u00f3scopo de hoje para Aqu\u00e1rio",
+                "date": "16 de junho de 2022",
+                "text": "Busque ser diplom\u00e1tica nos conflitos ideol\u00f3gicos e territoriais, devido \u00e0 tens\u00e3o promovida por Saturno. O intelecto tende a encontrar mais satisfa\u00e7\u00e3o nas trocas de conhecimento, nutrindo seu senso cr\u00edtico sobre os desafios coletivos."
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Glossary",
+            "url": "https://horoscope-api.p.rapidapi.com/",
+            "description": "This endpoint returns a JSON with information about the API. In it you can preview request and response templates, mandatory fields and much more.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://horoscope-api.p.rapidapi.com/\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"horoscope-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://horoscope-api.p.rapidapi.com/\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"horoscope-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "api_version": "1.4.7",
+                "request_example": {
+                    "method": "GET",
+                    "endpoint": "https://horoscope-api.p.rapidapi.com/:langId/:signId"
+                },
+                "url_parameters": {
+                    "langId": {
+                        "description": "In this field you must indicate the language. At the moment, only the Portuguese language is available. This is a required field.",
+                        "type": "string",
+                        "required": true,
+                        "option": [
+                            "pt"
+                        ]
+                    },
+                    "signId": {
+                        "description": "In this field you must indicate the sign, without using accents or special characters. This is a required field.",
+                        "type": "string",
+                        "required": true,
+                        "option": [
+                            "aries",
+                            "touro",
+                            "gemeos",
+                            "cancer",
+                            "leao",
+                            "virgem",
+                            "libra",
+                            "escorpiao",
+                            "sargitario",
+                            "capricornio",
+                            "aquario",
+                            "peixes"
+                        ]
+                    }
+                },
+                "response_example": {
+                    "title": "Hor\u00f3scopo de hoje para Aqu\u00e1rio",
+                    "date": "6 de outubro de 2022",
+                    "text": "A autoconfian\u00e7a se eleva com a harmonia Lua-Marte entre seu signo e a \u00e1rea social, levando-lhe a se articular proveitosamente com o entorno e a motivar seus pares em prol de interesses comuns. Procure estruturar sua rotina, de modo a criar condi\u00e7\u00f5es que lhe favore\u00e7am. No amo, \u00e9 dia de rever atitudes para com o romance e tentar de lidar com problemas s\u00e9rios que merecem solu\u00e7\u00e3o. N\u00e3o permita que o afeto enfraque\u00e7a devido a contratempos."
+                }
+            },
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "horoscope_api"
+}

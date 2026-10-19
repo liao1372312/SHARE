@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "kind": "share_swebench_ai_patch_generation_artifact",
+  "instance_id": "psf__requests-1142",
+  "branch": "ai",
+  "generated_at": "2026-08-21T08:47:13.185691+00:00",
+  "started_at": "2026-08-21T08:46:27.386276+00:00",
+  "profile": "backbone_3",
+  "model": "gpt-4.1-mini",
+  "api_root_sha256": "8350a46cba5dae5daf04685d754664810f0dc8753cbaa51d27b359cdf06a5c37",
+  "image": "swebench/sweb.eval.x86_64.psf_1776_requests-1142:latest",
+  "image_id": "sha256:f3fd4d2f5e586941e431d591a488e499e7188a9b4348b7db8c9fddf6c0e89ab3",
+  "base_commit": "22623bd8c265b78b161542663ee980738441c307",
+  "initial_tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "initial_tracked_changes_reset": false,
+  "clean_tracked_baseline_verified": true,
+  "container_network": "none",
+  "gold_patch_withheld": true,
+  "test_patch_withheld": true,
+  "turns_used": 19,
+  "protocol": {
+    "schema_version": 1,
+    "generator_source_sha256": "e95f5b52b2196ff4b5b2f3cd2d14fb2f5b9dca3cd758000a544a3db0e1107578",
+    "system_prompt_sha256": "e365f6e7e004d9c82c1164067bcbc09ee7673e141ff37d51e9a6f5f1bbcfa074",
+    "user_prompt_template_sha256": "c8d3a121aaa8c4989a04e33505e7dfcc7118a1ec9609772c64ee8e9b3eb28248",
+    "workflows_sha256": "0861d12c9fbdb4a4f512884bcb0563fa4a4c1e0a38470bce15e5d39c14b1afbd",
+    "execution_specs_sha256": "e01b225626e3db0854cd43850bc9ccfd1fc22a100993b8cd0c42794f81f6872f",
+    "pilot_manifest_sha256": "394a43582fe916989e6ce0309576cd7414f01fe2dc6aebb2cebf822babb56d7d",
+    "max_turns": 20,
+    "max_output_tokens": 2048,
+    "api_timeout_seconds": 180,
+    "command_timeout_seconds": 180,
+    "temperature": 0.0,
+    "profile_reasoning_effort": null
+  },
+  "final_summary": "Modified requests/models.py to only call prepare_content_length if the HTTP method is not GET or HEAD, preventing 'Content-Length' header from being added automatically to GET requests.",
+  "generation_error": null,
+  "patch_empty": false,
+  "files": {
+    "model_patch": {
+      "path": "model.patch",
+      "sha256": "c6acd2474c5ccdc7eb9809aad4c891f44f80ba7bb0453dd215dc89958ce166b1"
+    },
+    "prediction": {
+      "path": "prediction.jsonl",
+      "sha256": "88a5d7a59cbfac09c48cf6fa519a80de932f458120cb5097c00a85226af13e36"
+    },
+    "transcript": {
+      "path": "transcript.jsonl",
+      "sha256": "d0f250e6e8149662365888d092670e9c5f00c2578c767beaac281623bd4f5e93"
+    }
+  },
+  "evidence_status": "generated_ai_patch_awaiting_swebench_execution"
+}

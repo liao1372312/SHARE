@@ -1,0 +1,14 @@
+diff --git a/src/flask/blueprints.py b/src/flask/blueprints.py
+index eb50585d..d9bda779 100644
+--- a/src/flask/blueprints.py
++++ b/src/flask/blueprints.py
+@@ -115,6 +115,9 @@ class BlueprintSetupState:
+ 
+ 
+ class Blueprint(Scaffold):
++    def __init__(self, name, import_name, **options):
++        if not name:
++            raise ValueError('Blueprint name cannot be empty.')
+     """Represents a blueprint, a collection of routes and other
+     app-related functions that can be registered on a real application
+     later.

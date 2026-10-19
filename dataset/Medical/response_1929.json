@@ -1,0 +1,26 @@
+{
+"user_query":"I need to find jobs in the healthcare sector. Please search for job openings with the keyword 'nurse' in Chicago. Fetch the job titles, company names, locations, and links to apply. Also, provide details about the companies, such as their ratings and descriptions.",
+"domain":"Medical",
+"TaskList": [
+{
+"id": 1,
+"description": "Search for job openings in Chicago with the keyword 'nurse'.",
+"domain":"medical",
+"required_inputs": ["keyword", "location"]
+},
+{
+"id": 2,
+"description": "Extract job titles, company names, locations, and links to apply from the job openings obtained in step 1.",
+"domain":"medical",
+"required_inputs": ["job_openings_data"],
+"dependencies": [1]
+},
+{
+"id": 3,
+"description": "For each company identified in step 2, fetch company details including ratings and descriptions.",
+"domain":"medical",
+"required_inputs": ["company_names"],
+"dependencies": [2]
+}
+]
+}

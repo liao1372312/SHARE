@@ -1,0 +1,36 @@
+{
+  "user_query": "I am organizing a sports tournament and I need to know the results of a particular event. Can you provide me with the event result for the event with ID '987654'? Also, fetch the list of leagues and the prematch events.",
+  "domain": "sports",
+  "TaskList": [
+    {
+      "id": 1,
+      "description": "Retrieve the results of the specific event with ID '987654'.",
+      "domain": "sports",
+      "required_inputs": ["event_id"]
+    },
+    {
+      "id": 2,
+      "description": "Fetch the list of all leagues participating in the tournament.",
+      "domain": "sports",
+      "required_inputs": []
+    },
+    {
+      "id": 3,
+      "description": "Retrieve the list of prematch events for the tournament.",
+      "domain": "sports",
+      "required_inputs": []
+    }
+  ],
+  "dependencies": [
+    {
+      "from": 1,
+      "to": 2,
+      "type": "sequential"
+    },
+    {
+      "from": 1,
+      "to": 3,
+      "type": "sequential"
+    }
+  ]
+}

@@ -1,0 +1,635 @@
+{
+    "product_id": "api_b3b7e3f1-a924-40d3-8017-df2fc5e55f52",
+    "tool_description": "This is a lightweight web service, (REST interface), which provides an easy way to access the YTS website.  An API (Application programming interface) is a protocol intended to be used as an interface by software components to communicate with each other.  Our API supports many methods, so there should not be a problem coding some nice applications. ",
+    "home_url": "https://rapidapi.com/theapiguy/api/yts-am-torrent/",
+    "name": "YTS.am Torrent",
+    "title": "YTS.am Torrent",
+    "pricing": "FREE",
+    "tool_name": "YTS.am Torrent",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 47,
+        "avgSuccessRate": 100,
+        "popularityScore": 9.1,
+        "__typename": "Score"
+    },
+    "host": "yts-am-torrent.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "List Movies (XML)",
+            "url": "https://yts-am-torrent.p.rapidapi.com/list_movies.jsonp",
+            "description": "Used to list and search through out all the available movies. Can sort, filter, search and order the results",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "genre",
+                    "type": "STRING",
+                    "description": "\tUsed to filter by a given genre (See http://www.imdb.com/genre/ for full list)",
+                    "default": ""
+                },
+                {
+                    "name": "limit",
+                    "type": "NUMBER",
+                    "description": "Integer between 1 - 50 (inclusive): The limit of results per page that has been set",
+                    "default": ""
+                },
+                {
+                    "name": "query_term",
+                    "type": "STRING",
+                    "description": "Used for movie search, matching on: Movie Title/IMDb Code, Actor Name/IMDb Code, Director Name/IMDb Code",
+                    "default": ""
+                },
+                {
+                    "name": "quality",
+                    "type": "STRING",
+                    "description": "String (720p, 1080p, 3D): \tUsed to filter by a given quality",
+                    "default": ""
+                },
+                {
+                    "name": "minimum_rating",
+                    "type": "NUMBER",
+                    "description": "\tInteger between 0 - 9 (inclusive): \tUsed to filter movie by a given minimum IMDb rating",
+                    "default": ""
+                },
+                {
+                    "name": "with_rt_ratings",
+                    "type": "BOOLEAN",
+                    "description": "Returns the list with the Rotten Tomatoes rating included",
+                    "default": ""
+                },
+                {
+                    "name": "page",
+                    "type": "NUMBER",
+                    "description": "Integer (Unsigned): Used to see the next page of movies, eg limit=15 and page=2 will show you movies 15-30",
+                    "default": ""
+                },
+                {
+                    "name": "sort_by",
+                    "type": "STRING",
+                    "description": "String (title, year, rating, peers, seeds, download_count, like_count, date_added): Sorts the results by choosen value",
+                    "default": ""
+                },
+                {
+                    "name": "order_by",
+                    "type": "STRING",
+                    "description": "String (desc, asc): Orders the results by either Ascending or Descending order",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://yts-am-torrent.p.rapidapi.com/list_movies.jsonp\"\nquerystring = {\"genre\": \"\", \"limit\": \"\", \"query_term\": \"\", \"quality\": \"\", \"minimum_rating\": \"\", \"with_rt_ratings\": \"\", \"page\": \"\", \"sort_by\": \"\", \"order_by\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"yts-am-torrent.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://yts-am-torrent.p.rapidapi.com/list_movies.jsonp\"\nquerystring = {\"genre\": \"\", \"limit\": \"\", \"query_term\": \"\", \"quality\": \"\", \"minimum_rating\": \"\", \"with_rt_ratings\": \"\", \"page\": \"\", \"sort_by\": \"\", \"order_by\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"yts-am-torrent.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "Movie Reviews (XML)",
+            "url": "https://yts-am-torrent.p.rapidapi.com/movie_reviews.xml",
+            "description": "Returns all the IMDb movie reviews for the specified movie",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "movie_id",
+                    "type": "NUMBER",
+                    "description": "\tThe ID of the movie",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://yts-am-torrent.p.rapidapi.com/movie_reviews.xml\"\nquerystring = {\"movie_id\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"yts-am-torrent.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://yts-am-torrent.p.rapidapi.com/movie_reviews.xml\"\nquerystring = {\"movie_id\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"yts-am-torrent.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "Movie Details (XML)",
+            "url": "https://yts-am-torrent.p.rapidapi.com/movie_details.xml",
+            "description": "Returns the information about a specific movie",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "movie_id",
+                    "type": "NUMBER",
+                    "description": "The ID of the movie",
+                    "default": ""
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "with_cast",
+                    "type": "BOOLEAN",
+                    "description": "When set the data returned will include the added information about the cast",
+                    "default": ""
+                },
+                {
+                    "name": "with_images",
+                    "type": "BOOLEAN",
+                    "description": "When set the data returned will include the added image URLs",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://yts-am-torrent.p.rapidapi.com/movie_details.xml\"\nquerystring = {\"movie_id\": \"\", \"with_cast\": \"\", \"with_images\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"yts-am-torrent.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://yts-am-torrent.p.rapidapi.com/movie_details.xml\"\nquerystring = {\"movie_id\": \"\", \"with_cast\": \"\", \"with_images\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"yts-am-torrent.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "Movie Suggestions (XML)",
+            "url": "https://yts-am-torrent.p.rapidapi.com/movie_suggestions.xml",
+            "description": "Returns 4 related movies as suggestions for the user",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "movie_id",
+                    "type": "NUMBER",
+                    "description": "The ID of the movie",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://yts-am-torrent.p.rapidapi.com/movie_suggestions.xml\"\nquerystring = {\"movie_id\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"yts-am-torrent.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://yts-am-torrent.p.rapidapi.com/movie_suggestions.xml\"\nquerystring = {\"movie_id\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"yts-am-torrent.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "Movie Details (JSONP)",
+            "url": "https://yts-am-torrent.p.rapidapi.com/movie_details.jsonp",
+            "description": "Returns the information about a specific movie",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "movie_id",
+                    "type": "NUMBER",
+                    "description": "The ID of the movie",
+                    "default": ""
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "with_cast",
+                    "type": "BOOLEAN",
+                    "description": "When set the data returned will include the added information about the cast",
+                    "default": ""
+                },
+                {
+                    "name": "with_images",
+                    "type": "BOOLEAN",
+                    "description": "When set the data returned will include the added image URLs",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://yts-am-torrent.p.rapidapi.com/movie_details.jsonp\"\nquerystring = {\"with_cast\": \"\", \"with_images\": \"\", \"movie_id\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"yts-am-torrent.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://yts-am-torrent.p.rapidapi.com/movie_details.jsonp\"\nquerystring = {\"with_cast\": \"\", \"with_images\": \"\", \"movie_id\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"yts-am-torrent.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "User Details (JSON)",
+            "url": "https://yts-am-torrent.p.rapidapi.com/user_details.json",
+            "description": "Get the user details",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "user_id",
+                    "type": "NUMBER",
+                    "description": "The ID of the user",
+                    "default": ""
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "with_recently_downloaded",
+                    "type": "BOOLEAN",
+                    "description": "If set it will add the most recent downloads by the specified user",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://yts-am-torrent.p.rapidapi.com/user_details.json\"\nquerystring = {\"user_id\": \"\", \"with_recently_downloaded\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"yts-am-torrent.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://yts-am-torrent.p.rapidapi.com/user_details.json\"\nquerystring = {\"user_id\": \"\", \"with_recently_downloaded\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"yts-am-torrent.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "List Movies (JSONP)",
+            "url": "https://yts-am-torrent.p.rapidapi.com/list_movies.jsonp",
+            "description": "Used to list and search through out all the available movies. Can sort, filter, search and order the results",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "limit",
+                    "type": "NUMBER",
+                    "description": "Integer between 1 - 50 (inclusive): The limit of results per page that has been set",
+                    "default": ""
+                },
+                {
+                    "name": "sort_by",
+                    "type": "STRING",
+                    "description": "String (title, year, rating, peers, seeds, download_count, like_count, date_added): Sorts the results by choosen value",
+                    "default": ""
+                },
+                {
+                    "name": "page",
+                    "type": "NUMBER",
+                    "description": "Integer (Unsigned): Used to see the next page of movies, eg limit=15 and page=2 will show you movies 15-30",
+                    "default": ""
+                },
+                {
+                    "name": "genre",
+                    "type": "STRING",
+                    "description": "\tUsed to filter by a given genre (See http://www.imdb.com/genre/ for full list)",
+                    "default": ""
+                },
+                {
+                    "name": "quality",
+                    "type": "STRING",
+                    "description": "String (720p, 1080p, 3D): \tUsed to filter by a given quality",
+                    "default": ""
+                },
+                {
+                    "name": "with_rt_ratings",
+                    "type": "BOOLEAN",
+                    "description": "Returns the list with the Rotten Tomatoes rating included",
+                    "default": ""
+                },
+                {
+                    "name": "minimum_rating",
+                    "type": "NUMBER",
+                    "description": "\tInteger between 0 - 9 (inclusive): \tUsed to filter movie by a given minimum IMDb rating",
+                    "default": ""
+                },
+                {
+                    "name": "query_term",
+                    "type": "STRING",
+                    "description": "Used for movie search, matching on: Movie Title/IMDb Code, Actor Name/IMDb Code, Director Name/IMDb Code",
+                    "default": ""
+                },
+                {
+                    "name": "order_by",
+                    "type": "STRING",
+                    "description": "String (desc, asc): Orders the results by either Ascending or Descending order",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://yts-am-torrent.p.rapidapi.com/list_movies.jsonp\"\nquerystring = {\"limit\": \"\", \"sort_by\": \"\", \"page\": \"\", \"genre\": \"\", \"quality\": \"\", \"with_rt_ratings\": \"\", \"minimum_rating\": \"\", \"query_term\": \"\", \"order_by\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"yts-am-torrent.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://yts-am-torrent.p.rapidapi.com/list_movies.jsonp\"\nquerystring = {\"limit\": \"\", \"sort_by\": \"\", \"page\": \"\", \"genre\": \"\", \"quality\": \"\", \"with_rt_ratings\": \"\", \"minimum_rating\": \"\", \"query_term\": \"\", \"order_by\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"yts-am-torrent.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "Movie Reviews (JSONP)",
+            "url": "https://yts-am-torrent.p.rapidapi.com/movie_reviews.json",
+            "description": "Returns all the IMDb movie reviews for the specified movie",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "movie_id",
+                    "type": "NUMBER",
+                    "description": "\tThe ID of the movie",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://yts-am-torrent.p.rapidapi.com/movie_reviews.json\"\nquerystring = {\"movie_id\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"yts-am-torrent.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://yts-am-torrent.p.rapidapi.com/movie_reviews.json\"\nquerystring = {\"movie_id\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"yts-am-torrent.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "User Details (JSONP)",
+            "url": "https://yts-am-torrent.p.rapidapi.com/user_details.jsonp",
+            "description": "Get the user details",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "user_id",
+                    "type": "NUMBER",
+                    "description": "The ID of the user",
+                    "default": ""
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "with_recently_downloaded",
+                    "type": "BOOLEAN",
+                    "description": "If set it will add the most recent downloads by the specified user",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://yts-am-torrent.p.rapidapi.com/user_details.jsonp\"\nquerystring = {\"with_recently_downloaded\": \"\", \"user_id\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"yts-am-torrent.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://yts-am-torrent.p.rapidapi.com/user_details.jsonp\"\nquerystring = {\"with_recently_downloaded\": \"\", \"user_id\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"yts-am-torrent.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "Movie Suggestions (JSON)",
+            "url": "https://yts-am-torrent.p.rapidapi.com/movie_suggestions.json",
+            "description": "Returns 4 related movies as suggestions for the user",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "movie_id",
+                    "type": "NUMBER",
+                    "description": "The ID of the movie",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://yts-am-torrent.p.rapidapi.com/movie_suggestions.json\"\nquerystring = {\"movie_id\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"yts-am-torrent.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://yts-am-torrent.p.rapidapi.com/movie_suggestions.json\"\nquerystring = {\"movie_id\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"yts-am-torrent.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "Movie Suggestions (JSONP)",
+            "url": "https://yts-am-torrent.p.rapidapi.com/movie_suggestions.jsonp",
+            "description": "Returns 4 related movies as suggestions for the user",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "movie_id",
+                    "type": "NUMBER",
+                    "description": "The ID of the movie",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://yts-am-torrent.p.rapidapi.com/movie_suggestions.jsonp\"\nquerystring = {\"movie_id\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"yts-am-torrent.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://yts-am-torrent.p.rapidapi.com/movie_suggestions.jsonp\"\nquerystring = {\"movie_id\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"yts-am-torrent.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "List Upcoming (XML)",
+            "url": "https://yts-am-torrent.p.rapidapi.com/list_upcoming.xml",
+            "description": "Returns the 4 latest upcoming movies",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://yts-am-torrent.p.rapidapi.com/list_upcoming.xml\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"yts-am-torrent.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://yts-am-torrent.p.rapidapi.com/list_upcoming.xml\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"yts-am-torrent.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "Movie Reviews (JSON)",
+            "url": "https://yts-am-torrent.p.rapidapi.com/movie_reviews.json",
+            "description": "Returns all the IMDb movie reviews for the specified movie",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "movie_id",
+                    "type": "NUMBER",
+                    "description": "\tThe ID of the movie",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://yts-am-torrent.p.rapidapi.com/movie_reviews.json\"\nquerystring = {\"movie_id\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"yts-am-torrent.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://yts-am-torrent.p.rapidapi.com/movie_reviews.json\"\nquerystring = {\"movie_id\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"yts-am-torrent.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "Movie Details (JSON)",
+            "url": "https://yts-am-torrent.p.rapidapi.com/movie_details.json",
+            "description": "Returns the information about a specific movie",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "movie_id",
+                    "type": "NUMBER",
+                    "description": "The ID of the movie",
+                    "default": ""
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "with_cast",
+                    "type": "BOOLEAN",
+                    "description": "When set the data returned will include the added information about the cast",
+                    "default": ""
+                },
+                {
+                    "name": "with_images",
+                    "type": "BOOLEAN",
+                    "description": "When set the data returned will include the added image URLs",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://yts-am-torrent.p.rapidapi.com/movie_details.json\"\nquerystring = {\"with_cast\": \"\", \"with_images\": \"\", \"movie_id\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"yts-am-torrent.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://yts-am-torrent.p.rapidapi.com/movie_details.json\"\nquerystring = {\"with_cast\": \"\", \"with_images\": \"\", \"movie_id\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"yts-am-torrent.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "Movie Comments (JSONP)",
+            "url": "https://yts-am-torrent.p.rapidapi.com/movie_comments.jsonp",
+            "description": "Returns all the comments for the specified movie",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "movie_id",
+                    "type": "NUMBER",
+                    "description": "The ID of the movie",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://yts-am-torrent.p.rapidapi.com/movie_comments.jsonp\"\nquerystring = {\"movie_id\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"yts-am-torrent.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://yts-am-torrent.p.rapidapi.com/movie_comments.jsonp\"\nquerystring = {\"movie_id\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"yts-am-torrent.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "List Movies (JSON)",
+            "url": "https://yts-am-torrent.p.rapidapi.com/list_movies.json",
+            "description": "Used to list and search through out all the available movies. Can sort, filter, search and order the results",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "with_rt_ratings",
+                    "type": "BOOLEAN",
+                    "description": "Returns the list with the Rotten Tomatoes rating included",
+                    "default": ""
+                },
+                {
+                    "name": "minimum_rating",
+                    "type": "NUMBER",
+                    "description": "\tInteger between 0 - 9 (inclusive): \tUsed to filter movie by a given minimum IMDb rating",
+                    "default": ""
+                },
+                {
+                    "name": "limit",
+                    "type": "NUMBER",
+                    "description": "Integer between 1 - 50 (inclusive): The limit of results per page that has been set",
+                    "default": ""
+                },
+                {
+                    "name": "page",
+                    "type": "NUMBER",
+                    "description": "Integer (Unsigned): Used to see the next page of movies, eg limit=15 and page=2 will show you movies 15-30",
+                    "default": ""
+                },
+                {
+                    "name": "query_term",
+                    "type": "STRING",
+                    "description": "Used for movie search, matching on: Movie Title/IMDb Code, Actor Name/IMDb Code, Director Name/IMDb Code",
+                    "default": ""
+                },
+                {
+                    "name": "order_by",
+                    "type": "STRING",
+                    "description": "String (desc, asc): Orders the results by either Ascending or Descending order",
+                    "default": ""
+                },
+                {
+                    "name": "genre",
+                    "type": "STRING",
+                    "description": "\tUsed to filter by a given genre (See http://www.imdb.com/genre/ for full list)",
+                    "default": ""
+                },
+                {
+                    "name": "quality",
+                    "type": "STRING",
+                    "description": "String (720p, 1080p, 3D): \tUsed to filter by a given quality",
+                    "default": ""
+                },
+                {
+                    "name": "sort_by",
+                    "type": "STRING",
+                    "description": "String (title, year, rating, peers, seeds, download_count, like_count, date_added): Sorts the results by choosen value",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://yts-am-torrent.p.rapidapi.com/list_movies.json\"\nquerystring = {\"with_rt_ratings\": \"\", \"minimum_rating\": \"\", \"limit\": \"\", \"page\": \"\", \"query_term\": \"\", \"order_by\": \"\", \"genre\": \"\", \"quality\": \"\", \"sort_by\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"yts-am-torrent.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://yts-am-torrent.p.rapidapi.com/list_movies.json\"\nquerystring = {\"with_rt_ratings\": \"\", \"minimum_rating\": \"\", \"limit\": \"\", \"page\": \"\", \"query_term\": \"\", \"order_by\": \"\", \"genre\": \"\", \"quality\": \"\", \"sort_by\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"yts-am-torrent.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "Movie Parental Guides (JSONP)",
+            "url": "https://yts-am-torrent.p.rapidapi.com/movie_parental_guides.jsonp",
+            "description": "Returns all the parental guide ratings for the specified movie",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "movie_id",
+                    "type": "STRING",
+                    "description": "The ID of the movie",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://yts-am-torrent.p.rapidapi.com/movie_parental_guides.jsonp\"\nquerystring = {\"movie_id\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"yts-am-torrent.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://yts-am-torrent.p.rapidapi.com/movie_parental_guides.jsonp\"\nquerystring = {\"movie_id\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"yts-am-torrent.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "Movie Parental Guides (XML)",
+            "url": "https://yts-am-torrent.p.rapidapi.com/movie_parental_guides.xml",
+            "description": "Returns all the parental guide ratings for the specified movie",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "movie_id",
+                    "type": "STRING",
+                    "description": "The ID of the movie",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://yts-am-torrent.p.rapidapi.com/movie_parental_guides.xml\"\nquerystring = {\"movie_id\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"yts-am-torrent.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://yts-am-torrent.p.rapidapi.com/movie_parental_guides.xml\"\nquerystring = {\"movie_id\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"yts-am-torrent.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "Movie Comments (XML)",
+            "url": "https://yts-am-torrent.p.rapidapi.com/movie_comments.jsonp",
+            "description": "Returns all the comments for the specified movie",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "movie_id",
+                    "type": "NUMBER",
+                    "description": "The ID of the movie",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://yts-am-torrent.p.rapidapi.com/movie_comments.jsonp\"\nquerystring = {\"movie_id\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"yts-am-torrent.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://yts-am-torrent.p.rapidapi.com/movie_comments.jsonp\"\nquerystring = {\"movie_id\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"yts-am-torrent.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "User Details (XML)",
+            "url": "https://yts-am-torrent.p.rapidapi.com/user_details.xml",
+            "description": "Get the user details",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "user_id",
+                    "type": "NUMBER",
+                    "description": "The ID of the user",
+                    "default": ""
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "with_recently_downloaded",
+                    "type": "BOOLEAN",
+                    "description": "If set it will add the most recent downloads by the specified user",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://yts-am-torrent.p.rapidapi.com/user_details.xml\"\nquerystring = {\"with_recently_downloaded\": \"\", \"user_id\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"yts-am-torrent.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://yts-am-torrent.p.rapidapi.com/user_details.xml\"\nquerystring = {\"with_recently_downloaded\": \"\", \"user_id\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"yts-am-torrent.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "Movie Parental Guides (JSON)",
+            "url": "https://yts-am-torrent.p.rapidapi.com/movie_parental_guides.json",
+            "description": "Returns all the parental guide ratings for the specified movie",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "movie_id",
+                    "type": "STRING",
+                    "description": "The ID of the movie",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://yts-am-torrent.p.rapidapi.com/movie_parental_guides.json\"\nquerystring = {\"movie_id\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"yts-am-torrent.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://yts-am-torrent.p.rapidapi.com/movie_parental_guides.json\"\nquerystring = {\"movie_id\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"yts-am-torrent.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "Movie Comments (JSON)",
+            "url": "https://yts-am-torrent.p.rapidapi.com/movie_comments.json",
+            "description": "Returns all the comments for the specified movie",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "movie_id",
+                    "type": "NUMBER",
+                    "description": "The ID of the movie",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://yts-am-torrent.p.rapidapi.com/movie_comments.json\"\nquerystring = {\"movie_id\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"yts-am-torrent.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://yts-am-torrent.p.rapidapi.com/movie_comments.json\"\nquerystring = {\"movie_id\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"yts-am-torrent.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "List Upcoming (JSON)",
+            "url": "https://yts-am-torrent.p.rapidapi.com/list_upcoming.json",
+            "description": "Returns the 4 latest upcoming movies",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://yts-am-torrent.p.rapidapi.com/list_upcoming.json\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"yts-am-torrent.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://yts-am-torrent.p.rapidapi.com/list_upcoming.json\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"yts-am-torrent.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "List Upcoming (JSONP)",
+            "url": "https://yts-am-torrent.p.rapidapi.com/list_upcoming.jsonp",
+            "description": "Returns the 4 latest upcoming movies",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://yts-am-torrent.p.rapidapi.com/list_upcoming.jsonp\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"yts-am-torrent.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://yts-am-torrent.p.rapidapi.com/list_upcoming.jsonp\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"yts-am-torrent.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": ""
+        }
+    ],
+    "standardized_name": "yts_am_torrent"
+}

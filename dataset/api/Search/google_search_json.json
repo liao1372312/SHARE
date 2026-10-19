@@ -1,0 +1,357 @@
+{
+    "product_id": "api_2be14684-3b3c-4d1c-86a2-07cc59cf45c6",
+    "tool_description": "Provides Google search results in JSON format. Its features include web search, image search, autocomplete, and trending search.",
+    "home_url": "https://rapidapi.com/bfd-id/api/google-search-json/",
+    "name": "Google Search JSON",
+    "title": "Google Search JSON",
+    "pricing": "FREEMIUM",
+    "tool_name": "Google Search JSON",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 324,
+        "avgSuccessRate": 100,
+        "popularityScore": 9.4,
+        "__typename": "Score"
+    },
+    "host": "google-search-json.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "/search/image",
+            "url": "https://google-search-json.p.rapidapi.com/search/image",
+            "description": "This endpoint is used to perform image search using the Google Search JSON API. You can send a request with parameters like **q** (search query), **num** (desired number of images), **start** (starting index of results), and others. The request will generate a JSON response containing information about images that match the search query",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "q",
+                    "type": "STRING",
+                    "description": "Search query",
+                    "default": "Newyork City"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "num",
+                    "type": "NUMBER",
+                    "description": "Number of search results to return.\nValid values are integers between 1 and 20, inclusive",
+                    "default": "10"
+                },
+                {
+                    "name": "lr",
+                    "type": "STRING",
+                    "description": "Restricts the search to documents written in a particular language",
+                    "default": "lang_en"
+                },
+                {
+                    "name": "start",
+                    "type": "NUMBER",
+                    "description": "The index of the first result to return",
+                    "default": "0"
+                },
+                {
+                    "name": "gl",
+                    "type": "STRING",
+                    "description": "The **gl** parameter value is a two-letter country code. The **gl** parameter boosts search results whose country of origin matches the parameter value.\n\n",
+                    "default": "US"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://google-search-json.p.rapidapi.com/search/image\"\nquerystring = {\"num\": \"10\", \"lr\": \"lang_en\", \"start\": \"0\", \"q\": \"Newyork City\", \"gl\": \"US\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"google-search-json.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://google-search-json.p.rapidapi.com/search/image\"\nquerystring = {\"num\": \"10\", \"lr\": \"lang_en\", \"start\": \"0\", \"q\": \"Newyork City\", \"gl\": \"US\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"google-search-json.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "status": "success",
+                "items": [
+                    {
+                        "title": "New York City - Wikipedia",
+                        "thumbnailImageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpS7tRFPB9ErF1p2wtbUWj_Z2L-nfYHJ9lpVJ4lNkJzqYjoUwz&s",
+                        "originalImageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/View_of_Empire_State_Building_from_Rockefeller_Center_New_York_City_dllu_%28cropped%29.jpg/800px-View_of_Empire_State_Building_from_Rockefeller_Center_New_York_City_dllu_%28cropped%29.jpg",
+                        "height": 436,
+                        "width": 800,
+                        "size": "110KB",
+                        "contextLink": "https://en.wikipedia.org/wiki/New_York_City"
+                    },
+                    {
+                        "title": "New York City Travel Guide - Vacation Ideas",
+                        "thumbnailImageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjmRcKMUArc4wqaaeXdyK-YhHyEDowxYFpoBb_nljcH454_zbc&s",
+                        "originalImageUrl": "https://www.travelandleisure.com/thmb/91pb8LbDAUwUN_11wATYjx5oF8Q=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/new-york-city-evening-NYCTG0221-52492d6ccab44f328a1c89f41ac02aea.jpg",
+                        "height": 1000,
+                        "width": 1500,
+                        "size": "138KB",
+                        "contextLink": "https://www.travelandleisure.com/travel-guide/new-york-city"
+                    },
+                    {
+                        "title": "New York City | Layout, Map, Economy, Culture, Facts, & History ...",
+                        "thumbnailImageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVOpmBRXGmXrPKrfAZQbHbYe76hmXQL7zr4EY4wSzffXiJ7hxQ&s",
+                        "originalImageUrl": "https://cdn.britannica.com/70/20070-050-C2E2045C/Central-Park-Manhattan-New-York-City-apartment.jpg",
+                        "height": 1009,
+                        "width": 1600,
+                        "size": "482KB",
+                        "contextLink": "https://www.britannica.com/place/New-York-City"
+                    },
+                    {
+                        "title": "New York City Travel Guide",
+                        "thumbnailImageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBZmnX4SMWwGclX0XLZHdAXisicIvPQ6ZvXJrpILRRUC3E3o8&s",
+                        "originalImageUrl": "https://i.natgeofe.com/n/874df281-d3e0-489a-98c0-6b840023b828/newyork_NationalGeographic_2328428_2x1.jpg",
+                        "height": 1536,
+                        "width": 3072,
+                        "size": "1.6MB",
+                        "contextLink": "https://www.nationalgeographic.com/travel/destination/new-york-city"
+                    },
+                    {
+                        "title": "New York City is sinking due to weight of its skyscrapers, new ...",
+                        "thumbnailImageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQd8II8KT0f2_ljpKnDDjn-Xu3tX37duwdHJuYUZDumbg1E2-OP&s",
+                        "originalImageUrl": "https://i.guim.co.uk/img/media/b3585cf7b5525c4f27b924754ed98b3b7fbdaf53/0_383_8048_4831/master/8048.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=96b8d7008ff5f1d15724b17c17736f1c",
+                        "height": 1200,
+                        "width": 1200,
+                        "size": "370KB",
+                        "contextLink": "https://www.theguardian.com/us-news/2023/may/19/new-york-city-sinking-skyscrapers-climate-crisis"
+                    },
+                    {
+                        "title": "New York City Travel Guide & Tips | Cond\u00e9 Nast Traveler",
+                        "thumbnailImageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnJhNqqWD6EBLMzkqNNb0v3rbauT44fDqoYEI1J7O78iy7pP4W&s",
+                        "originalImageUrl": "https://media.cntraveler.com/photos/5a8f3b070e2cf839e9dbfa1d/2:1/w_2560%2Cc_limit/NYC_GettyImages-640006562.jpg",
+                        "height": 1280,
+                        "width": 2560,
+                        "size": "811KB",
+                        "contextLink": "https://www.cntraveler.com/destinations/new-york-city"
+                    },
+                    {
+                        "title": "Plan Your Visit | New York City Center",
+                        "thumbnailImageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTH0t2ssAt8oJbYrw3OUnoPt-rGbUCTtu24z66dQci8p6kR53nR&s",
+                        "originalImageUrl": "https://www.nycitycenter.org/globalassets/_plan-your-visit/nycc-marquee02-1080x679.jpg",
+                        "height": 679,
+                        "width": 1080,
+                        "size": "148KB",
+                        "contextLink": "https://www.nycitycenter.org/plan-your-visit/"
+                    },
+                    {
+                        "title": "The 31 Best Things to Do in New York City, From Chinatown to ...",
+                        "thumbnailImageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQymsbDeaOZqg64N9cqWT5hfYTOfN1JJhSPgvmHSmLDs1UCJY&s",
+                        "originalImageUrl": "https://media.cntraveler.com/photos/63483e15ef943eff59de603a/16:9/w_3000,h_1687,c_limit/New%20York%20City_GettyImages-1347979016.jpg",
+                        "height": 1687,
+                        "width": 3000,
+                        "size": "1.6MB",
+                        "contextLink": "https://www.cntraveler.com/gallery/best-things-to-do-in-new-york"
+                    },
+                    {
+                        "title": "Visit New York City | NYC Travel Guide",
+                        "thumbnailImageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeVpJ64yG74P_S-MmOG83xp2bCxSQXycpPL-W7K3CfygEkffKo&s",
+                        "originalImageUrl": "https://www.offsoho.com/images/NYC_000021208828-2100-980.jpg",
+                        "height": 980,
+                        "width": 2100,
+                        "size": "517KB",
+                        "contextLink": "https://www.offsoho.com/new-york-city.html"
+                    },
+                    {
+                        "title": "Centre in New York City - Main View | New York City | Study Abroad ...",
+                        "thumbnailImageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQF41FSZOEHaslTF_PM2jSmcc27N6xAeXs2eU3NTxA-fLud0s9&s",
+                        "originalImageUrl": "https://media.architecturaldigest.com/photos/5da74823d599ec0008227ea8/16:9/w_2560%2Cc_limit/GettyImages-946087016.jpg",
+                        "height": 1440,
+                        "width": 2560,
+                        "size": "1.3MB",
+                        "contextLink": "https://centrenet.centre.edu/ICS/Academic/Study_AbroadAway/New_York_City.jnz?portlet=Centre_in_New_York_City"
+                    }
+                ]
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "type": "string"
+                    },
+                    "items": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "title": {
+                                    "type": "string"
+                                },
+                                "thumbnailImageUrl": {
+                                    "type": "string"
+                                },
+                                "originalImageUrl": {
+                                    "type": "string"
+                                },
+                                "height": {
+                                    "type": "integer"
+                                },
+                                "width": {
+                                    "type": "integer"
+                                },
+                                "size": {
+                                    "type": "string"
+                                },
+                                "contextLink": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "/search/web",
+            "url": "https://google-search-json.p.rapidapi.com/search/web",
+            "description": "This endpoint is used to perform text search on the web using the Google Search JSON API. You can send a request with various parameters such as **q** (search query), **num** (desired number of results), **start** (starting index of results),  and more. The request will return search results in JSON format containing information such as titles, URLs, and descriptions of the search results.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "q",
+                    "type": "STRING",
+                    "description": "Search query",
+                    "default": "facebook"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "num",
+                    "type": "NUMBER",
+                    "description": "Number of search results to return.\nValid values are integers between 1 and 20, inclusive",
+                    "default": "10"
+                },
+                {
+                    "name": "start",
+                    "type": "NUMBER",
+                    "description": "The index of the first result to return",
+                    "default": "0"
+                },
+                {
+                    "name": "gl",
+                    "type": "STRING",
+                    "description": "The **gl** parameter value is a two-letter country code. The **gl** parameter boosts search results whose country of origin matches the parameter value.\n\n",
+                    "default": "US"
+                },
+                {
+                    "name": "lr",
+                    "type": "STRING",
+                    "description": "Restricts the search to documents written in a particular language",
+                    "default": "lang_en"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://google-search-json.p.rapidapi.com/search/web\"\nquerystring = {\"q\": \"facebook\", \"num\": \"10\", \"start\": \"0\", \"gl\": \"US\", \"lr\": \"lang_en\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"google-search-json.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://google-search-json.p.rapidapi.com/search/web\"\nquerystring = {\"q\": \"facebook\", \"num\": \"10\", \"start\": \"0\", \"gl\": \"US\", \"lr\": \"lang_en\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"google-search-json.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "status": "success",
+                "items": [
+                    {
+                        "title": "Log into Facebook | Facebook",
+                        "htmlTitle": "Log into <b>Facebook</b> | <b>Facebook</b>",
+                        "link": "https://m.facebook.com/login/?refsrc=deprecated",
+                        "displayLink": "m.facebook.com",
+                        "snippet": "Log into Facebook to start sharing and connecting with your friends, family, and people you know.",
+                        "htmlSnippet": "Log into <b>Facebook</b> to start sharing and connecting with your friends, family, and people you know."
+                    },
+                    {
+                        "title": "Facebook - Home",
+                        "htmlTitle": "<b>Facebook</b> - Home",
+                        "link": "https://m.facebook.com/facebook/",
+                        "displayLink": "m.facebook.com",
+                        "snippet": "Facebook. 183143898 likes \u00b7 66031 talking about this \u00b7 119 were here. The Facebook app Page celebrates how our friends inspire us, support us, and...",
+                        "htmlSnippet": "<b>Facebook</b>. 183143898 likes \u00b7 66031 talking about this \u00b7 119 were here. The <b>Facebook</b> app Page celebrates how our friends inspire us, support us, and..."
+                    },
+                    {
+                        "title": "Find groups and communities to connect with | Facebook",
+                        "htmlTitle": "Find groups and communities to connect with | <b>Facebook</b>",
+                        "link": "https://m.facebook.com/groups/",
+                        "displayLink": "m.facebook.com",
+                        "snippet": "Connect with people who share your interests. Meet new people, share knowledge or get support. Find the group for you.",
+                        "htmlSnippet": "Connect with people who share your interests. Meet new people, share knowledge or get support. Find the group for you."
+                    },
+                    {
+                        "title": "Facebook Help Center",
+                        "htmlTitle": "<b>Facebook</b> Help Center",
+                        "link": "https://m.facebook.com/help",
+                        "displayLink": "m.facebook.com",
+                        "snippet": "Hi, how can we help you? Need help logging in? Learn what to do if you're having trouble getting back on Facebook. Get Help. Account Settings.",
+                        "htmlSnippet": "Hi, how can we help you? Need help logging in? Learn what to do if you're having trouble getting back on <b>Facebook</b>. Get Help. Account Settings."
+                    },
+                    {
+                        "title": "Log into Facebook",
+                        "htmlTitle": "Log into <b>Facebook</b>",
+                        "link": "https://www.facebook.com/login.php/",
+                        "displayLink": "www.facebook.com",
+                        "snippet": "Log into Facebook to start sharing and connecting with your friends, family, and people you know.",
+                        "htmlSnippet": "Log into <b>Facebook</b> to start sharing and connecting with your friends, family, and people you know."
+                    },
+                    {
+                        "title": "You must confirm your password to edit your account settings. - Facebook",
+                        "htmlTitle": "You must confirm your password to edit your account settings. - <b>Facebook</b>",
+                        "link": "https://www.facebook.com/settings",
+                        "displayLink": "www.facebook.com",
+                        "snippet": "Log into Facebook to start sharing and connecting with your friends, family, and people you know.",
+                        "htmlSnippet": "Log into <b>Facebook</b> to start sharing and connecting with your friends, family, and people you know."
+                    },
+                    {
+                        "title": "Log into Facebook",
+                        "htmlTitle": "Log into <b>Facebook</b>",
+                        "link": "https://www.facebook.com/pages/?category=your_pages",
+                        "displayLink": "www.facebook.com",
+                        "snippet": "Log into Facebook to start sharing and connecting with your friends, family, and people you know.",
+                        "htmlSnippet": "Log into <b>Facebook</b> to start sharing and connecting with your friends, family, and people you know."
+                    },
+                    {
+                        "title": "Join Facebook",
+                        "htmlTitle": "Join <b>Facebook</b>",
+                        "link": "https://m.facebook.com/r.php",
+                        "displayLink": "m.facebook.com",
+                        "snippet": "Sign up for Facebook and find your friends. Create an account to start sharing photos and updates with people you know. It's easy to register.",
+                        "htmlSnippet": "Sign up for <b>Facebook</b> and find your friends. Create an account to start sharing photos and updates with people you know. It's easy to register."
+                    },
+                    {
+                        "title": "Create your Page - Facebook",
+                        "htmlTitle": "Create your Page - <b>Facebook</b>",
+                        "link": "https://m.facebook.com/pages/creation/",
+                        "displayLink": "m.facebook.com",
+                        "snippet": "Facebook. Get the app to make the most of the Pages experience. To make the most of the Pages experience, get the app in your device's app store. Loading.",
+                        "htmlSnippet": "<b>Facebook</b>. Get the app to make the most of the Pages experience. To make the most of the Pages experience, get the app in your device's app store. Loading."
+                    },
+                    {
+                        "title": "Log into Facebook",
+                        "htmlTitle": "Log into <b>Facebook</b>",
+                        "link": "https://www.facebook.com/stories/create",
+                        "displayLink": "www.facebook.com",
+                        "snippet": "Log into Facebook to start sharing and connecting with your friends, family, and people you know.",
+                        "htmlSnippet": "Log into <b>Facebook</b> to start sharing and connecting with your friends, family, and people you know."
+                    }
+                ]
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "type": "string"
+                    },
+                    "items": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "title": {
+                                    "type": "string"
+                                },
+                                "htmlTitle": {
+                                    "type": "string"
+                                },
+                                "link": {
+                                    "type": "string"
+                                },
+                                "displayLink": {
+                                    "type": "string"
+                                },
+                                "snippet": {
+                                    "type": "string"
+                                },
+                                "htmlSnippet": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "standardized_name": "google_search_json"
+}

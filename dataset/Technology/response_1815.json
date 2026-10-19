@@ -1,0 +1,26 @@
+{
+"user_query":"I'm interested in a specific user on Likee with the username 'MariamHany'. Can you retrieve all the information about this user, including their videos?",
+"domain":"Technology",
+"TaskList": [
+{
+"id": 1,
+"description": "Retrieve the user's profile information from Likee for the username 'MariamHany'.",
+"domain": "technology",
+"required_inputs": ["username"]
+},
+{
+"id": 2,
+"description": "Fetch all videos uploaded by the user 'MariamHany'.",
+"domain": "technology",
+"required_inputs": ["username", "user_profile_id"],
+"dependencies": [1]
+},
+{
+"id": 3,
+"description": "Compile the retrieved user profile information and their videos into a report.",
+"domain": "technology",
+"required_inputs": ["user_profile_info", "user_videos"],
+"dependencies": [1, 2]
+}
+]
+}

@@ -1,0 +1,45 @@
+{
+"user_query":"I'm planning a family gathering and I want to create a playlist of the top 10 songs in Bolivia, Peru, and Ireland. Can you provide me with the songs and their album information? Also, can you give me details about the radio stations that play these songs?",
+"domain":"Technology",
+"TaskList": [
+{
+"id": 1,
+"description": "Retrieve the top 10 songs from Bolivia.",
+"domain": "technology",
+"required_inputs": ["country = Bolivia"]
+},
+{
+"id": 2,
+"description": "Retrieve the top 10 songs from Peru.",
+"domain": "technology",
+"required_inputs": ["country = Peru"]
+},
+{
+"id": 3,
+"description": "Retrieve the top 10 songs from Ireland.",
+"domain": "technology",
+"required_inputs": ["country = Ireland"]
+},
+{
+"id": 4,
+"description": "Combine the top 10 songs from Bolivia, Peru, and Ireland into a single playlist.",
+"domain": "technology",
+"required_inputs": ["songs from step 1", "songs from step 2", "songs from step 3"],
+"depends_on": [1, 2, 3]
+},
+{
+"id": 5,
+"description": "Fetch album information for the combined playlist of songs.",
+"domain": "technology",
+"required_inputs": ["playlist from step 4"],
+"depends_on": [4]
+},
+{
+"id": 6,
+"description": "Find radio stations that play the songs in the combined playlist.",
+"domain": "technology",
+"required_inputs": ["playlist from step 4"],
+"depends_on": [4]
+}
+]
+}

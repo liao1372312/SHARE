@@ -1,0 +1,79 @@
+{
+    "product_id": "api_c1071ec6-1c65-49b2-bce8-caa817c9bcad",
+    "tool_description": "This REST API can be used to create, read, update or delete data from the Socie platform.",
+    "home_url": "https://rapidapi.com/socie-socie-default/api/socie/",
+    "name": "Socie",
+    "title": "Socie",
+    "pricing": "FREE",
+    "tool_name": "Socie",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 357,
+        "avgSuccessRate": 68,
+        "popularityScore": 8.5,
+        "__typename": "Score"
+    },
+    "host": "socie.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Get Member",
+            "url": "https://socie.p.rapidapi.com/api/v1/members/123456",
+            "description": "Return a specific member. To do this, you need the `externalId` you gave the member when you created it or the `id` provided by Socie.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "identifier",
+                    "type": "string",
+                    "description": "",
+                    "default": "123456"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "key",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "externalId"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://socie.p.rapidapi.com/api/v1/members/123456\"\nquerystring = {\"key\": \"externalId\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"socie.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://socie.p.rapidapi.com/api/v1/members/{identifier}\"\nquerystring = {\"key\": \"externalId\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"socie.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Get Members",
+            "url": "https://socie.p.rapidapi.com/api/v1/members",
+            "description": "Retrieve all or some members of your community.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "limit",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "10"
+                },
+                {
+                    "name": "skip",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "20"
+                },
+                {
+                    "name": "sort",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "createdAt"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://socie.p.rapidapi.com/api/v1/members\"\nquerystring = {\"limit\": \"10\", \"skip\": \"20\", \"sort\": \"createdAt\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"socie.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://socie.p.rapidapi.com/api/v1/members\"\nquerystring = {\"limit\": \"10\", \"skip\": \"20\", \"sort\": \"createdAt\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"socie.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "socie"
+}

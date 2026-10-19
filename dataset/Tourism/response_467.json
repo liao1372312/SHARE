@@ -1,0 +1,33 @@
+{
+"user_query":"I want to plan a road trip across the country, find gas stations along the route, and suggest scenic spots or landmarks to visit.",
+"domain":"Tourism",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Determine the starting point and destination for the road trip.",
+        "domain": "tourism",
+        "required_inputs": ["starting_point", "destination"]
+    },
+    {
+        "id": 2,
+        "description": "Calculate the route between the starting point and destination.",
+        "domain": "tourism",
+        "required_inputs": ["starting_point", "destination"],
+        "dependencies": [1]
+    },
+    {
+        "id": 3,
+        "description": "Find gas stations along the calculated route, including their addresses and contact numbers.",
+        "domain": "tourism",
+        "required_inputs": ["route"],
+        "dependencies": [2]
+    },
+    {
+        "id": 4,
+        "description": "Suggest scenic spots or landmarks to visit during the trip based on the calculated route.",
+        "domain": "tourism",
+        "required_inputs": ["route"],
+        "dependencies": [2]
+    }
+]
+}

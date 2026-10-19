@@ -1,0 +1,332 @@
+{
+    "product_id": "api_783946a6-f992-4681-8670-a96c4b2eb4e9",
+    "tool_description": "Zappos API helps to query for all information about categories, products, etc... as on official websites",
+    "home_url": "https://rapidapi.com/apidojo/api/zappos1/",
+    "name": "Zappos",
+    "title": "Zappos",
+    "pricing": "FREEMIUM",
+    "tool_name": "Zappos",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 1996,
+        "avgSuccessRate": 96,
+        "popularityScore": 9.6,
+        "__typename": "Score"
+    },
+    "host": "zappos1.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "brands/list",
+            "url": "https://zappos1.p.rapidapi.com/brands/list",
+            "description": "List all brands from Zappos",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://zappos1.p.rapidapi.com/brands/list\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"zappos1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://zappos1.p.rapidapi.com/brands/list\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"zappos1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You are not subscribed to this API."
+            }
+        },
+        {
+            "name": "products/detail",
+            "url": "https://zappos1.p.rapidapi.com/products/detail",
+            "description": "Get detail information of product by productId",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "productId",
+                    "type": "STRING",
+                    "description": "Get id value from products/list API",
+                    "default": "9143855"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://zappos1.p.rapidapi.com/products/detail\"\nquerystring = {\"productId\": \"9143855\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"zappos1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://zappos1.p.rapidapi.com/products/detail\"\nquerystring = {\"productId\": \"9143855\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"zappos1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "statusCode": "200",
+                "product": [
+                    {
+                        "reviewSummary": {
+                            "reviewWithMostVotes": null,
+                            "reviewWithLeastVotes": null,
+                            "totalCriticalReviews": "0",
+                            "totalFavorableReviews": "0",
+                            "totalReviews": "0",
+                            "totalReviewScore": null,
+                            "averageOverallRating": "0",
+                            "comfortRating": {},
+                            "overallRating": {},
+                            "lookRating": {},
+                            "archRatingCounts": {},
+                            "overallRatingCounts": {},
+                            "sizeRatingCounts": {},
+                            "widthRatingCounts": {},
+                            "archRatingPercentages": null,
+                            "overallRatingPercentages": {},
+                            "sizeRatingPercentages": null,
+                            "widthRatingPercentages": null,
+                            "maxArchRatingPercentage": null,
+                            "maxOverallRatingPercentage": {
+                                "percentage": "0",
+                                "text": null
+                            },
+                            "maxSizeRatingPercentage": null,
+                            "maxWidthRatingPercentage": null,
+                            "reviewingAShoe": "false",
+                            "hasFitRatings": "false"
+                        },
+                        "sizing": {
+                            "allUnits": [
+                                {
+                                    "id": "59561",
+                                    "name": "Men's Alpha Bottom Size",
+                                    "rank": "1",
+                                    "values": [
+                                        {
+                                            "id": "82253",
+                                            "rank": "700",
+                                            "value": "SM"
+                                        },
+                                        {
+                                            "id": "82254",
+                                            "rank": "1000",
+                                            "value": "MD"
+                                        },
+                                        {
+                                            "id": "82255",
+                                            "rank": "1399",
+                                            "value": "LG"
+                                        },
+                                        {
+                                            "id": "82256",
+                                            "rank": "1799",
+                                            "value": "XL"
+                                        },
+                                        {
+                                            "id": "82257",
+                                            "rank": "2199",
+                                            "value": "2XL"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "allValues": [
+                                {
+                                    "id": "82253",
+                                    "rank": "700",
+                                    "value": "SM"
+                                },
+                                {
+                                    "id": "82254",
+                                    "rank": "1000",
+                                    "value": "MD"
+                                },
+                                {
+                                    "id": "82255",
+                                    "rank": "1399",
+                                    "value": "LG"
+                                },
+                                {
+                                    "id": "82256",
+                                    "rank": "1799",
+                                    "value": "XL"
+                                },
+                                {
+                                    "id": "82257",
+                                    "rank": "2199",
+                                    "value": "2XL"
+                                }
+                            ],
+                            "dimensionsSet": [
+                                "d15"
+                            ],
+                            "dimensions": [
+                                {
+                                    "id": "15",
+                                    "rank": "1",
+                                    "name": "size",
+                                    "units": [
+                                        {
+                                            "id": "59561",
+                                            "name": "Men's Alpha Bottom Size",
+                                            "rank": "1",
+                                            "values": [
+                                                {
+                                                    "id": "82253",
+                                                    "rank": "700",
+                                                    "value": "SM"
+                                                },
+                                                {
+                                                    "id": "82254",
+                                                    "rank": "1000",
+                                                    "value": "MD"
+                                                },
+                                                {
+                                                    "id": "82255",
+                                                    "rank": "1399",
+                                                    "value": "LG"
+                                                },
+                                                {
+                                                    "id": "82256",
+                                                    "rank": "1799",
+                                                    "value": "XL"
+                                                },
+                                                {
+                                                    "id": "82257",
+                                                    "rank": "2199",
+                                                    "value": "2XL"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ],
+                            "stockData": [
+                                {
+                                    "id": "45398465",
+                                    "color": "2189",
+                                    "onHand": "0",
+                                    "d15": "82255"
+                                },
+                                {
+                                    "id": "45398466",
+                                    "color": "2189",
+                                    "onHand": "0",
+                                    "d15": "82254"
+                                },
+                                {
+                                    "id": "45398467",
+                                    "color": "2189",
+                                    "onHand": "0",
+                                    "d15": "82253"
+                                },
+                                {
+                                    "id": "45398468",
+                                    "color": "2189",
+                                    "onHand": "0",
+                                    "d15": "82256"
+                                },
+                                {
+                                    "id": "45398469",
+                                    "color": "2189",
+                                    "onHand": "0",
+                                    "d15": "82257"
+                                }
+                            ],
+                            "valuesSet": {
+                                "d15": {
+                                    "u59561": [
+                                        "82253",
+                                        "82254",
+                                        "82255",
+                                        "82256",
+                                        "82257"
+                                    ]
+                                }
+                            },
+                            "toggle": {},
+                            "airplaneSizingByStockId": {},
+                            "convertedValueIdToValueId": {
+                                "82255": "82255",
+                                "82256": "82256",
+                                "82257": "82257",
+                                "82253": "82253",
+                                "82254": "82254"
+                            },
+                            "dimensionIdToName": {
+                                "d15": "size"
+                            },
+                            "dimensionIdToTagToUnitAndValues": {},
+                            "dimensionIdToUnitId": {
+                                "d15": "u59561"
+                            },
+                            "unitIdToName": {
+                                "u59561": "Men's Alpha Bottom Size"
+                            },
+                            "valueIdToName": {
+                                "82253": {
+                                    "value": "SM",
+                                    "abbrValue": "SM"
+                                },
+                                "82254": {
+                                    "value": "MD",
+                                    "abbrValue": "MD"
+                                },
+                                "82255": {
+                                    "value": "LG",
+                                    "abbrValue": "LG"
+                                },
+                                "82256": {
+                                    "value": "XL",
+                                    "abbrValue": "XL"
+                                },
+                                "82257": {
+                                    "value": "2XL",
+                                    "abbrValue": "2XL"
+                                }
+                            }
+                        },
+                        "videos": [],
+                        "genders": [
+                            "Men"
+                        ],
+                        "brandId": "3451",
+                        "description": "<ul>\n<li><a href=\"/download/C/f/a/CfakepathToesOnTheNoseMENSsizechart.jpg\" class=\"popup-570-550\" target=\"_blank\">Toes on the Nose Size Chart</a> </li>\n<li>For those lazy days by the water, these Toes on the Nose&reg; Kelpfish Volley swim trumks will always be a stylish choice.</li>\n<li>Versatile short is crafted from a lightweight, stretch woven with a kelp design for effortless everyday wear. </li>\n<li>Comfortable four-way stretch with quick-dry properties keeps you cool and dry throughout the day. </li>\n<li>Antimicrobial fabrication provides lasting, continual protection against harmful microbes and is effective against stain and odor-causing bacteria. <br /></li>\n<li>UPF fabric helps protect your skin during outdoor activity by blocking harmful Ultraviolet A and Ultraviolet B rays (UVA and UVB).</li>\n<li>Stretch elasticized waist for a comfortable fit. </li>\n<li>On-seam hand pockets at the sides. </li>\n<li>Hidden side pocket at left hip. </li>\n<li>Shadowman logo at left hem. </li>\n<li>Lined with a lightweight compression brief short. </li>\n<li>87% polyester, 13% spandex. </li>\n<li>Machine wash, tumble dry. </li>\n<li>Made in the U.S.A and Imported. </li>\n<li class=\"measurements\">Measurements:\n<ul>\n    <li> Waist Measurement: 30 in</li>\n    <li> Outseam: 18 <sup>1</sup>&frasl;<sub>2</sub> in</li>\n    <li> Inseam: 8 in</li>\n    <li> Front Rise: 11 in</li>\n    <li> Back Rise: 16 in</li>\n    <li> Leg Opening: 11 in</li>\n    </ul>\n</li>\n<li>Product measurements were taken using size MD. Please note that measurements may vary by size.</li>\n<li>If you're not fully satisfied with your purchase, you are welcome to return any unworn and unwashed items with tags intact and original packaging included.</li>\n</ul>",
+                        "zombie": false,
+                        "brandName": "Toes on the Nose",
+                        "widthFit": {
+                            "percentage": "0",
+                            "text": "Felt true to width"
+                        },
+                        "archFit": {
+                            "text": "Moderate arch support",
+                            "percentage": "0"
+                        },
+                        "overallRating": {},
+                        "reviewCount": "0",
+                        "sizeFit": {
+                            "text": "Felt true to size",
+                            "percentage": "0"
+                        },
+                        "productId": "9143855",
+                        "defaultProductUrl": "/product/9143855",
+                        "defaultImageUrl": "/images/z/4/5/2/8/6/6/4528665-p-DETAILED.jpg",
+                        "defaultSubCategory": "Swim Bottoms",
+                        "defaultProductType": "Clothing",
+                        "defaultCategory": "Swimwear",
+                        "productName": "Kelpfish Volley",
+                        "productRating": "0",
+                        "styles": [],
+                        "videoUrl": null,
+                        "oos": true,
+                        "isReviewableWithMedia": true,
+                        "isWearable": true,
+                        "seo": {
+                            "breadcrumbs": {
+                                "zc1": "/clothing/CKvXAeICAQE.zso",
+                                "zc2": "/swimwear/CKvXARDR1wHiAgIBAg.zso",
+                                "brand": "/toes-on-the-nose/WgL7GuICAQs.zso"
+                            }
+                        }
+                    }
+                ],
+                "ts": 1631836689042,
+                "baseUrl": "https://www.zappos.com"
+            }
+        },
+        {
+            "name": "categories/list (Deprecated)",
+            "url": "https://zappos1.p.rapidapi.com/categories/list",
+            "description": "List all categories from Zappos",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://zappos1.p.rapidapi.com/categories/list\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"zappos1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://zappos1.p.rapidapi.com/categories/list\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"zappos1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": ""
+        }
+    ],
+    "standardized_name": "zappos"
+}

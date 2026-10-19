@@ -1,0 +1,86 @@
+{
+    "product_id": "api_c64017e0-dbeb-4ef7-8363-72d1c692f83c",
+    "tool_description": "Catalog",
+    "home_url": "https://rapidapi.com/DocsPortalKey/api/cryptocurrency-data2/",
+    "name": "Cryptocurrency Data",
+    "title": "Cryptocurrency Data",
+    "pricing": "FREE",
+    "tool_name": "Cryptocurrency Data",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 590,
+        "avgSuccessRate": 0,
+        "popularityScore": 0.1,
+        "__typename": "Score"
+    },
+    "host": "cryptocurrency-data2.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "metadata",
+            "url": "https://cryptocurrency-data2.p.rapidapi.com/metadata",
+            "description": "The list of all available assets",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "symbol",
+                    "type": "STRING",
+                    "description": "Define to check the coverage for specific symbol\nExample values: btc, eth",
+                    "default": ""
+                },
+                {
+                    "name": "base",
+                    "type": "STRING",
+                    "description": "Define to check the coverage for specific base\nExample values: usd, usdt",
+                    "default": ""
+                },
+                {
+                    "name": "market_venue",
+                    "type": "STRING",
+                    "description": "Define to check the coverage for specific data type\nExample values:  binance, ftx",
+                    "default": ""
+                },
+                {
+                    "name": "data_type",
+                    "type": "STRING",
+                    "description": "Define to check the coverage for specific exchange\nExample values: metrics, trades",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://cryptocurrency-data2.p.rapidapi.com/metadata\"\nquerystring = {\"symbol\": \"\", \"base\": \"\", \"market_venue\": \"\", \"data_type\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"cryptocurrency-data2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://cryptocurrency-data2.p.rapidapi.com/metadata\"\nquerystring = {\"symbol\": \"\", \"base\": \"\", \"market_venue\": \"\", \"data_type\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"cryptocurrency-data2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "Missing Authentication Token"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "spot": {
+                        "type": "object",
+                        "properties": {
+                            "metrics": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "market_venue": {
+                                            "type": "string"
+                                        },
+                                        "symbol": {
+                                            "type": "string"
+                                        },
+                                        "base": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "standardized_name": "cryptocurrency_data"
+}

@@ -1,0 +1,999 @@
+{
+    "product_id": "api_5410ebc6-3b71-4d0a-a108-5989317e060f",
+    "tool_description": "Real-time currency conversion on 152 currencies and cryptos",
+    "home_url": "https://rapidapi.com/currencyapinet/api/currencyapi-net/",
+    "name": "CurrencyAPI.net",
+    "title": "CurrencyAPI.net",
+    "pricing": "FREEMIUM",
+    "tool_name": "CurrencyAPI.net",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 114,
+        "avgSuccessRate": 99,
+        "popularityScore": 9.7,
+        "__typename": "Score"
+    },
+    "host": "currencyapi-net.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Convert",
+            "url": "https://currencyapi-net.p.rapidapi.com/convert",
+            "description": "Convert a custom amount value from one currency to another",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "to",
+                    "type": "STRING",
+                    "description": "Currency code of the currency you want to convert to. Eg, USD if you want to convert GBP to USD",
+                    "default": ""
+                },
+                {
+                    "name": "amount",
+                    "type": "STRING",
+                    "description": "The value you want to convert. Eg 10.99 or 15",
+                    "default": ""
+                },
+                {
+                    "name": "from",
+                    "type": "STRING",
+                    "description": "Currency code of the currency you want to convert from. Eg, GBP if you want to convert GBP to USD",
+                    "default": ""
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "output",
+                    "type": "STRING",
+                    "description": "The output of the response. Either JSON or XML",
+                    "default": "JSON"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://currencyapi-net.p.rapidapi.com/convert\"\nquerystring = {\"output\": \"JSON\", \"to\": \"\", \"amount\": \"\", \"from\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"currencyapi-net.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://currencyapi-net.p.rapidapi.com/convert\"\nquerystring = {\"output\": \"JSON\", \"to\": \"\", \"amount\": \"\", \"from\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"currencyapi-net.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "valid": false,
+                "error": {
+                    "code": 416,
+                    "message": "Your subscription plan does not allow you to use this endpoint"
+                }
+            }
+        },
+        {
+            "name": "Currencies",
+            "url": "https://currencyapi-net.p.rapidapi.com/currencies",
+            "description": "Gets list of currencies we support",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "output",
+                    "type": "STRING",
+                    "description": "The output of the response. Either JSON or XML",
+                    "default": "JSON"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://currencyapi-net.p.rapidapi.com/currencies\"\nquerystring = {\"output\": \"JSON\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"currencyapi-net.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://currencyapi-net.p.rapidapi.com/currencies\"\nquerystring = {\"output\": \"JSON\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"currencyapi-net.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "valid": true,
+                "currencies": {
+                    "AED": "United Arab Emirates Dirham",
+                    "AFN": "Afghan Afghani",
+                    "ALL": "Albanian Lek",
+                    "AMD": "Armenian Dram",
+                    "ANG": "Netherlands Antillean Guilder",
+                    "AOA": "Angolan Kwanza",
+                    "ARS": "Argentine Peso",
+                    "AUD": "Australian Dollar",
+                    "AWG": "Aruban Florin",
+                    "AZN": "Azerbaijani Manat",
+                    "BAM": "Bosnia-Herzegovina Convertible Mark",
+                    "BBD": "Barbadian Dollar",
+                    "BCH": "Bitcoin Cash",
+                    "BDT": "Bangladeshi Taka",
+                    "BGN": "Bulgarian Lev",
+                    "BHD": "Bahraini Dinar",
+                    "BIF": "Burundian Franc",
+                    "BMD": "Bermudan Dollar",
+                    "BND": "Brunei Dollar",
+                    "BOB": "Bolivian Boliviano",
+                    "BRL": "Brazilian Real",
+                    "BSD": "Bahamian Dollar",
+                    "BTC": "Bitcoin",
+                    "BTG": "Bitcoin Gold",
+                    "BWP": "Botswanan Pula",
+                    "BZD": "Belize Dollar",
+                    "CAD": "Canadian Dollar",
+                    "CDF": "Congolese Franc",
+                    "CHF": "Swiss Franc",
+                    "CLP": "Chilean Peso",
+                    "CNH": "Chinese Yuan (offshore)",
+                    "CNY": "Chinese Yuan",
+                    "COP": "Colombian Peso",
+                    "CRC": "Costa Rican Col\u00f3n",
+                    "CUC": "Cuban Convertible Peso",
+                    "CUP": "Cuban Peso",
+                    "CVE": "Cape Verdean Escudo",
+                    "CZK": "Czech Republic Koruna",
+                    "DASH": "DASH",
+                    "DJF": "Djiboutian Franc",
+                    "DKK": "Danish Krone",
+                    "DOP": "Dominican Peso",
+                    "DZD": "Algerian Dinar",
+                    "EGP": "Egyptian Pound",
+                    "EOS": "EOS",
+                    "ETB": "Ethiopian Birr",
+                    "ETH": "Ethereum",
+                    "EUR": "Euro",
+                    "FJD": "Fijian Dollar",
+                    "GBP": "British Pound Sterling",
+                    "GEL": "Georgian Lari",
+                    "GHS": "Ghanaian Cedi",
+                    "GIP": "Gibraltar Pound",
+                    "GMD": "Gambian Dalasi",
+                    "GNF": "Guinean Franc",
+                    "GTQ": "Guatemalan Quetzal",
+                    "GYD": "Guyanaese Dollar",
+                    "HKD": "Hong Kong Dollar",
+                    "HNL": "Honduran Lempira",
+                    "HRK": "Croatian Kuna",
+                    "HTG": "Haitian Gourde",
+                    "HUF": "Hungarian Forint",
+                    "IDR": "Indonesian Rupiah",
+                    "ILS": "Israeli New Sheqel",
+                    "INR": "Indian Rupee",
+                    "IQD": "Iraqi Dinar",
+                    "IRR": "Iranian Rial",
+                    "ISK": "Icelandic Kr\u00f3na",
+                    "JMD": "Jamaican Dollar",
+                    "JOD": "Jordanian Dinar",
+                    "JPY": "Japanese Yen",
+                    "KES": "Kenyan Shilling",
+                    "KGS": "Kyrgystani Som",
+                    "KHR": "Cambodian Riel",
+                    "KMF": "Comorian Franc",
+                    "KRW": "South Korean Won",
+                    "KWD": "Kuwaiti Dinar",
+                    "KYD": "Cayman Islands Dollar",
+                    "KZT": "Kazakhstani Tenge",
+                    "LAK": "Laotian Kip",
+                    "LBP": "Lebanese Pound",
+                    "LKR": "Sri Lankan Rupee",
+                    "LRD": "Liberian Dollar",
+                    "LSL": "Lesotho Loti",
+                    "LTC": "Litecoin",
+                    "LYD": "Libyan Dinar",
+                    "MAD": "Moroccan Dirham",
+                    "MDL": "Moldovan Leu",
+                    "MKD": "Macedonian Denar",
+                    "MMK": "Myanma Kyat",
+                    "MOP": "Macanese Pataca",
+                    "MUR": "Mauritian Rupee",
+                    "MVR": "Maldivian Rufiyaa",
+                    "MWK": "Malawian Kwacha",
+                    "MXN": "Mexican Peso",
+                    "MYR": "Malaysian Ringgit",
+                    "MZN": "Mozambican Metical",
+                    "NAD": "Namibian Dollar",
+                    "NGN": "Nigerian Naira",
+                    "NIO": "Nicaraguan C\u00f3rdoba",
+                    "NOK": "Norwegian Krone",
+                    "NPR": "Nepalese Rupee",
+                    "NZD": "New Zealand Dollar",
+                    "OMR": "Omani Rial",
+                    "PAB": "Panamanian Balboa",
+                    "PEN": "Peruvian Nuevo Sol",
+                    "PGK": "Papua New Guinean Kina",
+                    "PHP": "Philippine Peso",
+                    "PKR": "Pakistani Rupee",
+                    "PLN": "Polish Zloty",
+                    "PYG": "Paraguayan Guarani",
+                    "QAR": "Qatari Rial",
+                    "RON": "Romanian Leu",
+                    "RSD": "Serbian Dinar",
+                    "RUB": "Russian Ruble",
+                    "RWF": "Rwandan Franc",
+                    "SAR": "Saudi Riyal",
+                    "SBD": "Solomon Islands Dollar",
+                    "SCR": "Seychellois Rupee",
+                    "SDG": "Sudanese Pound",
+                    "SEK": "Swedish Krona",
+                    "SGD": "Singapore Dollar",
+                    "SLL": "Sierra Leonean Leone",
+                    "SOS": "Somali Shilling",
+                    "SRD": "Surinamese Dollar",
+                    "SVC": "Salvadoran Col\u00f3n",
+                    "SZL": "Swazi Lilangeni",
+                    "THB": "Thai Baht",
+                    "TJS": "Tajikistani Somoni",
+                    "TMT": "Turkmenistani Manat",
+                    "TND": "Tunisian Dinar",
+                    "TOP": "Tongan Pa\u02bbanga",
+                    "TRY": "Turkish Lira",
+                    "TTD": "Trinidad and Tobago Dollar",
+                    "TWD": "New Taiwan Dollar",
+                    "TZS": "Tanzanian Shilling",
+                    "UAH": "Ukrainian Hryvnia",
+                    "UGX": "Ugandan Shilling",
+                    "USD": "United States Dollar",
+                    "UYU": "Uruguayan Peso",
+                    "UZS": "Uzbekistan Som",
+                    "VND": "Vietnamese Dong",
+                    "XAF": "CFA Franc BEAC",
+                    "XAG": "Silver (troy ounce)",
+                    "XAU": "Gold (troy ounce)",
+                    "XCD": "East Caribbean Dollar",
+                    "XLM": "Stellar Lumens",
+                    "XOF": "CFA Franc BCEAO",
+                    "XRP": "Ripple",
+                    "YER": "Yemeni Rial",
+                    "ZAR": "South African Rand",
+                    "ZMW": "Zambian Kwacha"
+                }
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "get": {
+                        "type": "string"
+                    },
+                    "parameters": {
+                        "type": "array"
+                    },
+                    "errors": {
+                        "type": "array"
+                    },
+                    "results": {
+                        "type": "integer"
+                    },
+                    "response": {
+                        "type": "array",
+                        "items": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Timeframe",
+            "url": "https://currencyapi-net.p.rapidapi.com/timeframe",
+            "description": "Display a currency conversion's historical rates within a given timeframe",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "end_date",
+                    "type": "DATE (YYYY-MM-DD)",
+                    "description": "Display the start date you wish to get the historical data from. Eg 2010-12-29",
+                    "default": ""
+                },
+                {
+                    "name": "base",
+                    "type": "STRING",
+                    "description": "The currency code you want to get the historical data of. Eg, USD",
+                    "default": "USD"
+                },
+                {
+                    "name": "start_date",
+                    "type": "DATE (YYYY-MM-DD)",
+                    "description": "Display the start date you wish to get the historical data from. Eg 2010-12-25",
+                    "default": ""
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "output",
+                    "type": "STRING",
+                    "description": "The output of the response. Either JSON or XML",
+                    "default": "JSON"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://currencyapi-net.p.rapidapi.com/timeframe\"\nquerystring = {\"output\": \"JSON\", \"end_date\": \"\", \"base\": \"USD\", \"start_date\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"currencyapi-net.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://currencyapi-net.p.rapidapi.com/timeframe\"\nquerystring = {\"output\": \"JSON\", \"end_date\": \"\", \"base\": \"USD\", \"start_date\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"currencyapi-net.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "valid": false,
+                "error": {
+                    "code": 416,
+                    "message": "Your subscription plan does not allow you to use this endpoint"
+                }
+            }
+        },
+        {
+            "name": "Rates",
+            "url": "https://currencyapi-net.p.rapidapi.com/rates",
+            "description": "Get live currency conversion rates of a given currency",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "output",
+                    "type": "STRING",
+                    "description": "The output of the response. Either JSON or XML",
+                    "default": "JSON"
+                },
+                {
+                    "name": "base",
+                    "type": "STRING",
+                    "description": "Change the base currency. Eg GBP or BTC",
+                    "default": "USD"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://currencyapi-net.p.rapidapi.com/rates\"\nquerystring = {\"output\": \"JSON\", \"base\": \"USD\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"currencyapi-net.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://currencyapi-net.p.rapidapi.com/rates\"\nquerystring = {\"output\": \"JSON\", \"base\": \"USD\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"currencyapi-net.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "valid": true,
+                "updated": 1686938405,
+                "base": "USD",
+                "rates": {
+                    "AED": 3.67307,
+                    "AFN": 85.2975,
+                    "ALL": 98.61489,
+                    "AMD": 383.12656,
+                    "ANG": 1.78593,
+                    "AOA": 705.05,
+                    "ARS": 248.49313,
+                    "AUD": 1.45161,
+                    "AWG": 1.80259,
+                    "AZN": 1.7,
+                    "BAM": 1.7875,
+                    "BBD": 2.00081,
+                    "BCH": 0.009450455984501253,
+                    "BDT": 107.26997,
+                    "BGN": 1.7878,
+                    "BHD": 0.37703,
+                    "BIF": 2798.76695,
+                    "BMD": 1,
+                    "BND": 1.33034,
+                    "BOB": 6.84729,
+                    "BRL": 4.81084,
+                    "BSD": 0.99099,
+                    "BTC": 3.801077453414945e-05,
+                    "BTG": 0.09250693802035152,
+                    "BWP": 13.21293,
+                    "BZD": 1.99743,
+                    "CAD": 1.31837,
+                    "CDF": 2375.1,
+                    "CHF": 0.89354,
+                    "CLP": 793.83,
+                    "CNH": 7.12849,
+                    "CNY": 7.1274,
+                    "COP": 4148.2,
+                    "CRC": 536.57093,
+                    "CUC": 1,
+                    "CUP": 25.75,
+                    "CVE": 100.78094,
+                    "CZK": 21.74979,
+                    "DASH": 0.03280839895013123,
+                    "DJF": 176.43752,
+                    "DKK": 6.8096,
+                    "DOP": 54.36997,
+                    "DZD": 135.68219,
+                    "EGP": 30.90985,
+                    "EOS": 1.6025641025641026,
+                    "ETB": 54.43759,
+                    "ETH": 0.0005890669180018851,
+                    "EUR": 0.9135,
+                    "FJD": 2.19656,
+                    "GBP": 0.78115,
+                    "GEL": 2.60515,
+                    "GHS": 11.24703,
+                    "GIP": 0.78115,
+                    "GMD": 59.353,
+                    "GNF": 8519.69795,
+                    "GTQ": 7.76398,
+                    "GYD": 209.58638,
+                    "HKD": 7.8203,
+                    "HNL": 24.39291,
+                    "HRK": 6.8253273,
+                    "HTG": 138.21681,
+                    "HUF": 341.15,
+                    "IDR": 14939.445,
+                    "ILS": 3.5554,
+                    "INR": 81.934,
+                    "IQD": 1297.165,
+                    "IRR": 42259.615,
+                    "ISK": 136.357,
+                    "JMD": 153.02985,
+                    "JOD": 0.70944,
+                    "JPY": 141.779,
+                    "KES": 139.905,
+                    "KGS": 87.5945,
+                    "KHR": 4080.252,
+                    "KMF": 454.325,
+                    "KRW": 1271.6835,
+                    "KWD": 0.30678,
+                    "KYD": 0.82584,
+                    "KZT": 448.65663,
+                    "LAK": 18158.298,
+                    "LBP": 15133.0865,
+                    "LKR": 304.23471,
+                    "LRD": 175.61,
+                    "LSL": 18.221,
+                    "LTC": 0.013142331449599158,
+                    "LYD": 4.77355,
+                    "MAD": 9.975,
+                    "MDL": 17.71321,
+                    "MKD": 56.28584,
+                    "MMK": 2080.96605,
+                    "MOP": 7.98835,
+                    "MUR": 45.40388,
+                    "MVR": 15.35575,
+                    "MWK": 1017.12285,
+                    "MXN": 17.0571,
+                    "MYR": 4.61473,
+                    "MZN": 63.253,
+                    "NAD": 18.221,
+                    "NGN": 465.525,
+                    "NIO": 36.2468,
+                    "NOK": 10.5487,
+                    "NPR": 130.15161,
+                    "NZD": 1.60361,
+                    "OMR": 0.38505,
+                    "PAB": 0.9909,
+                    "PEN": 3.61466,
+                    "PGK": 3.5744,
+                    "PHP": 55.8118,
+                    "PKR": 284.60003,
+                    "PLN": 4.0822,
+                    "PYG": 7168.0864,
+                    "QAR": 3.64068,
+                    "RON": 4.52833,
+                    "RSD": 107.08095,
+                    "RUB": 83.8202,
+                    "RWF": 1130.3595,
+                    "SAR": 3.75056,
+                    "SBD": 8.33473,
+                    "SCR": 13.41383,
+                    "SDG": 601.53,
+                    "SEK": 10.6266,
+                    "SGD": 1.3369,
+                    "SLL": 19751,
+                    "SOS": 569.53,
+                    "SRD": 37.6,
+                    "SVC": 8.67062,
+                    "SZL": 18.21771,
+                    "THB": 34.64775,
+                    "TJS": 10.81116,
+                    "TMT": 3.5,
+                    "TND": 3.07566,
+                    "TOP": 2.33782,
+                    "TRY": 23.604,
+                    "TTD": 6.72208,
+                    "TWD": 30.70284,
+                    "TZS": 2390.1,
+                    "UAH": 36.59255,
+                    "UGX": 3656.70185,
+                    "USD": 1,
+                    "UYU": 38.09296,
+                    "UZS": 11356.708,
+                    "VND": 23523.675,
+                    "XAF": 599.50448,
+                    "XAG": 0.04148344810420642,
+                    "XAU": 0.000510394177423224,
+                    "XCD": 2.70269,
+                    "XLM": 12.919896640826874,
+                    "XOF": 599.51,
+                    "XRP": 2.1715526601520088,
+                    "YER": 250.31302,
+                    "ZAR": 18.1665,
+                    "ZMW": 19.12526
+                }
+            },
+            "statuscode": 200,
+            "schema": {
+                "properties": {
+                    "base": {
+                        "type": "string"
+                    },
+                    "rates": {
+                        "properties": {
+                            "AED": {
+                                "type": "number"
+                            },
+                            "AFN": {
+                                "type": "number"
+                            },
+                            "ALL": {
+                                "type": "number"
+                            },
+                            "AMD": {
+                                "type": "number"
+                            },
+                            "ANG": {
+                                "type": "number"
+                            },
+                            "AOA": {
+                                "type": "number"
+                            },
+                            "ARS": {
+                                "type": "number"
+                            },
+                            "AUD": {
+                                "type": "number"
+                            },
+                            "AWG": {
+                                "type": "number"
+                            },
+                            "AZN": {
+                                "type": "number"
+                            },
+                            "BAM": {
+                                "type": "number"
+                            },
+                            "BBD": {
+                                "type": "number"
+                            },
+                            "BCH": {
+                                "type": "number"
+                            },
+                            "BDT": {
+                                "type": "number"
+                            },
+                            "BGN": {
+                                "type": "number"
+                            },
+                            "BHD": {
+                                "type": "number"
+                            },
+                            "BIF": {
+                                "type": "number"
+                            },
+                            "BMD": {
+                                "type": "integer"
+                            },
+                            "BND": {
+                                "type": "number"
+                            },
+                            "BOB": {
+                                "type": "number"
+                            },
+                            "BRL": {
+                                "type": "number"
+                            },
+                            "BSD": {
+                                "type": "number"
+                            },
+                            "BTC": {
+                                "type": "number"
+                            },
+                            "BTG": {
+                                "type": "number"
+                            },
+                            "BWP": {
+                                "type": "number"
+                            },
+                            "BZD": {
+                                "type": "number"
+                            },
+                            "CAD": {
+                                "type": "number"
+                            },
+                            "CDF": {
+                                "type": "number"
+                            },
+                            "CHF": {
+                                "type": "number"
+                            },
+                            "CLP": {
+                                "type": "number"
+                            },
+                            "CNH": {
+                                "type": "number"
+                            },
+                            "CNY": {
+                                "type": "number"
+                            },
+                            "COP": {
+                                "type": "number"
+                            },
+                            "CRC": {
+                                "type": "number"
+                            },
+                            "CUC": {
+                                "type": "integer"
+                            },
+                            "CUP": {
+                                "type": "integer"
+                            },
+                            "CVE": {
+                                "type": "number"
+                            },
+                            "CZK": {
+                                "type": "number"
+                            },
+                            "DASH": {
+                                "type": "number"
+                            },
+                            "DJF": {
+                                "type": "number"
+                            },
+                            "DKK": {
+                                "type": "number"
+                            },
+                            "DOP": {
+                                "type": "number"
+                            },
+                            "DZD": {
+                                "type": "number"
+                            },
+                            "EGP": {
+                                "type": "number"
+                            },
+                            "EOS": {
+                                "type": "number"
+                            },
+                            "ETB": {
+                                "type": "number"
+                            },
+                            "ETH": {
+                                "type": "number"
+                            },
+                            "EUR": {
+                                "type": "number"
+                            },
+                            "FJD": {
+                                "type": "number"
+                            },
+                            "GBP": {
+                                "type": "number"
+                            },
+                            "GEL": {
+                                "type": "number"
+                            },
+                            "GHS": {
+                                "type": "number"
+                            },
+                            "GIP": {
+                                "type": "number"
+                            },
+                            "GMD": {
+                                "type": "number"
+                            },
+                            "GNF": {
+                                "type": "number"
+                            },
+                            "GTQ": {
+                                "type": "number"
+                            },
+                            "GYD": {
+                                "type": "number"
+                            },
+                            "HKD": {
+                                "type": "number"
+                            },
+                            "HNL": {
+                                "type": "number"
+                            },
+                            "HRK": {
+                                "type": "number"
+                            },
+                            "HTG": {
+                                "type": "number"
+                            },
+                            "HUF": {
+                                "type": "number"
+                            },
+                            "IDR": {
+                                "type": "number"
+                            },
+                            "ILS": {
+                                "type": "number"
+                            },
+                            "INR": {
+                                "type": "number"
+                            },
+                            "IQD": {
+                                "type": "number"
+                            },
+                            "IRR": {
+                                "type": "number"
+                            },
+                            "ISK": {
+                                "type": "number"
+                            },
+                            "JMD": {
+                                "type": "number"
+                            },
+                            "JOD": {
+                                "type": "number"
+                            },
+                            "JPY": {
+                                "type": "number"
+                            },
+                            "KES": {
+                                "type": "number"
+                            },
+                            "KGS": {
+                                "type": "number"
+                            },
+                            "KHR": {
+                                "type": "number"
+                            },
+                            "KMF": {
+                                "type": "number"
+                            },
+                            "KRW": {
+                                "type": "number"
+                            },
+                            "KWD": {
+                                "type": "number"
+                            },
+                            "KYD": {
+                                "type": "number"
+                            },
+                            "KZT": {
+                                "type": "number"
+                            },
+                            "LAK": {
+                                "type": "number"
+                            },
+                            "LBP": {
+                                "type": "number"
+                            },
+                            "LKR": {
+                                "type": "number"
+                            },
+                            "LRD": {
+                                "type": "number"
+                            },
+                            "LSL": {
+                                "type": "number"
+                            },
+                            "LTC": {
+                                "type": "number"
+                            },
+                            "LYD": {
+                                "type": "number"
+                            },
+                            "MAD": {
+                                "type": "number"
+                            },
+                            "MDL": {
+                                "type": "number"
+                            },
+                            "MKD": {
+                                "type": "number"
+                            },
+                            "MMK": {
+                                "type": "number"
+                            },
+                            "MOP": {
+                                "type": "number"
+                            },
+                            "MUR": {
+                                "type": "number"
+                            },
+                            "MVR": {
+                                "type": "number"
+                            },
+                            "MWK": {
+                                "type": "number"
+                            },
+                            "MXN": {
+                                "type": "number"
+                            },
+                            "MYR": {
+                                "type": "number"
+                            },
+                            "MZN": {
+                                "type": "number"
+                            },
+                            "NAD": {
+                                "type": "number"
+                            },
+                            "NGN": {
+                                "type": "number"
+                            },
+                            "NIO": {
+                                "type": "number"
+                            },
+                            "NOK": {
+                                "type": "number"
+                            },
+                            "NPR": {
+                                "type": "number"
+                            },
+                            "NZD": {
+                                "type": "number"
+                            },
+                            "OMR": {
+                                "type": "number"
+                            },
+                            "PAB": {
+                                "type": "number"
+                            },
+                            "PEN": {
+                                "type": "number"
+                            },
+                            "PGK": {
+                                "type": "number"
+                            },
+                            "PHP": {
+                                "type": "number"
+                            },
+                            "PKR": {
+                                "type": "number"
+                            },
+                            "PLN": {
+                                "type": "number"
+                            },
+                            "PYG": {
+                                "type": "number"
+                            },
+                            "QAR": {
+                                "type": "number"
+                            },
+                            "RON": {
+                                "type": "number"
+                            },
+                            "RSD": {
+                                "type": "number"
+                            },
+                            "RUB": {
+                                "type": "number"
+                            },
+                            "RWF": {
+                                "type": "number"
+                            },
+                            "SAR": {
+                                "type": "number"
+                            },
+                            "SBD": {
+                                "type": "number"
+                            },
+                            "SCR": {
+                                "type": "number"
+                            },
+                            "SDG": {
+                                "type": "number"
+                            },
+                            "SEK": {
+                                "type": "number"
+                            },
+                            "SGD": {
+                                "type": "number"
+                            },
+                            "SLL": {
+                                "type": "number"
+                            },
+                            "SOS": {
+                                "type": "number"
+                            },
+                            "SRD": {
+                                "type": "number"
+                            },
+                            "SVC": {
+                                "type": "number"
+                            },
+                            "SZL": {
+                                "type": "number"
+                            },
+                            "THB": {
+                                "type": "number"
+                            },
+                            "TJS": {
+                                "type": "number"
+                            },
+                            "TMT": {
+                                "type": "number"
+                            },
+                            "TND": {
+                                "type": "number"
+                            },
+                            "TOP": {
+                                "type": "number"
+                            },
+                            "TRY": {
+                                "type": "number"
+                            },
+                            "TTD": {
+                                "type": "number"
+                            },
+                            "TWD": {
+                                "type": "number"
+                            },
+                            "TZS": {
+                                "type": "number"
+                            },
+                            "UAH": {
+                                "type": "number"
+                            },
+                            "UGX": {
+                                "type": "number"
+                            },
+                            "USD": {
+                                "type": "integer"
+                            },
+                            "UYU": {
+                                "type": "number"
+                            },
+                            "UZS": {
+                                "type": "number"
+                            },
+                            "VND": {
+                                "type": "number"
+                            },
+                            "XAF": {
+                                "type": "number"
+                            },
+                            "XAG": {
+                                "type": "number"
+                            },
+                            "XAU": {
+                                "type": "number"
+                            },
+                            "XCD": {
+                                "type": "number"
+                            },
+                            "XLM": {
+                                "type": "number"
+                            },
+                            "XOF": {
+                                "type": "number"
+                            },
+                            "XRP": {
+                                "type": "number"
+                            },
+                            "YER": {
+                                "type": "number"
+                            },
+                            "ZAR": {
+                                "type": "number"
+                            },
+                            "ZMW": {
+                                "type": "number"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "updated": {
+                        "type": "integer"
+                    },
+                    "valid": {
+                        "type": "boolean"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        {
+            "name": "History",
+            "url": "https://currencyapi-net.p.rapidapi.com/history",
+            "description": "Display the currency conversions historical rates for a particular day",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "date",
+                    "type": "DATE (YYYY-MM-DD)",
+                    "description": "Display the single date you wish to get the historical data from. Eg 2010-12-25",
+                    "default": ""
+                },
+                {
+                    "name": "base",
+                    "type": "STRING",
+                    "description": "The currency code you wish to get the historical rates of. Eg, USD",
+                    "default": "USD"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "output",
+                    "type": "STRING",
+                    "description": "The output of the response. Either JSON or XML",
+                    "default": "JSON"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://currencyapi-net.p.rapidapi.com/history\"\nquerystring = {\"date\": \"\", \"output\": \"JSON\", \"base\": \"USD\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"currencyapi-net.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://currencyapi-net.p.rapidapi.com/history\"\nquerystring = {\"date\": \"\", \"output\": \"JSON\", \"base\": \"USD\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"currencyapi-net.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "valid": false,
+                "error": {
+                    "code": 416,
+                    "message": "Your subscription plan does not allow you to use this endpoint"
+                }
+            }
+        }
+    ],
+    "standardized_name": "currencyapi_net"
+}

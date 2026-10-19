@@ -1,0 +1,26 @@
+{
+"user_query":"Please fetch the riddle with ID 63bdef027183b71946b64ee6 and its answer. Also, fetch a random riddle based on the difficulty level and upvote it.",
+"domain":"Technology",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Fetch the riddle with the specified ID and its related answer.",
+        "domain": "technology",
+        "required_inputs": ["riddle_id"]
+    },
+    {
+        "id": 2,
+        "description": "Fetch a random riddle based on the specified difficulty level.",
+        "domain": "technology",
+        "required_inputs": ["difficulty_level"],
+        "dependency": "Step 2 requires Step 1 completion for context."
+    },
+    {
+        "id": 3,
+        "description": "Upvote the fetched random riddle.",
+        "domain": "technology",
+        "required_inputs": ["random_riddle_id"],
+        "dependency": "Step 3 requires Step 2 completion for the riddle ID."
+    }
+]
+}

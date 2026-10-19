@@ -1,0 +1,102 @@
+{
+    "product_id": "api_a6810eee-0359-419c-8c17-73148889c2ee",
+    "tool_description": "Find the NAICS code base on free  search or find all description of industry for a given NAICS code",
+    "home_url": "https://rapidapi.com/kaioho/api/industry-naics-search/",
+    "name": "Industry NAICS Search",
+    "title": "Industry NAICS Search",
+    "pricing": "FREEMIUM",
+    "tool_name": "Industry NAICS Search",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 261,
+        "avgSuccessRate": 100,
+        "popularityScore": 7.8,
+        "__typename": "Score"
+    },
+    "host": "industry-naics-search.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Filter and Query NAICS & Description",
+            "url": "https://industry-naics-search.p.rapidapi.com/industry/v1/naics",
+            "description": "This endpoint will allow you to search by freeform text, eg. Hotel and get all the list of NAICS code, hash, and description back.\nYou can also filter the search if you have an NAICS code and want to get the description and the hash of the industry.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "naics",
+                    "type": "NUMBER",
+                    "description": "This parameter take full 6 digit NAICS code only.\nOptional if q parameter is present.",
+                    "default": "721110"
+                },
+                {
+                    "name": "q",
+                    "type": "STRING",
+                    "description": "When freeform search without NAICS param, minimum 3 character to search.\nOptional if NAICS param is present.",
+                    "default": "Hotel"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://industry-naics-search.p.rapidapi.com/industry/v1/naics\"\nquerystring = {\"naics\": \"721110\", \"q\": \"Hotel\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"industry-naics-search.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://industry-naics-search.p.rapidapi.com/industry/v1/naics\"\nquerystring = {\"naics\": \"721110\", \"q\": \"Hotel\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"industry-naics-search.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "description": "Hotel management services (i.e., providing management and operating staff to run hotel)",
+                    "hash": "d4a4ebf8783fa203503684148c13dc32",
+                    "naics": "721110"
+                },
+                {
+                    "description": "Hotels (except casino hotels)",
+                    "hash": "946e2f5fdfde47cf93c1330afb015b57",
+                    "naics": "721110"
+                },
+                {
+                    "description": "Hotels (except casino hotels) with golf courses, tennis courts, and/or other health spa facilities (i.e., resorts)",
+                    "hash": "2e5f9f453bdb7b21c7f47f843bf17535",
+                    "naics": "721110"
+                },
+                {
+                    "description": "Hotels, membership",
+                    "hash": "5bd0890b423a62be44d63287af44a82a",
+                    "naics": "721110"
+                },
+                {
+                    "description": "Hotels, resort, without casinos",
+                    "hash": "e2dd0d9387518ccfea910d18eb5e9a8d",
+                    "naics": "721110"
+                },
+                {
+                    "description": "Hotels, seasonal, without casinos",
+                    "hash": "cde0de88e12ced86220943a6adc87a1f",
+                    "naics": "721110"
+                },
+                {
+                    "description": "Membership hotels",
+                    "hash": "b74bd7683014aa105bef656f6ab2e3c8",
+                    "naics": "721110"
+                },
+                {
+                    "description": "Motor hotels without casinos",
+                    "hash": "0502154e0f1f065362fed25dabcb8460",
+                    "naics": "721110"
+                },
+                {
+                    "description": "Resort hotels without casinos",
+                    "hash": "8bc56f7d89fff7218823d7542b1c105f",
+                    "naics": "721110"
+                },
+                {
+                    "description": "Seasonal hotels without casinos",
+                    "hash": "327ed285aedc8884e940d2acad8f0d2c",
+                    "naics": "721110"
+                },
+                {
+                    "description": "Summer resort hotels without casinos",
+                    "hash": "947eb360ec6ed78212a0b79d7110973e",
+                    "naics": "721110"
+                }
+            ],
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "industry_naics_search"
+}

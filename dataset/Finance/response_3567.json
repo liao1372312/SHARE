@@ -1,0 +1,19 @@
+{
+"user_query":"I'm a collector and I'm interested in attending upcoming auctions. Can you fetch me the auction details, including the sale numbers, lot numbers, item descriptions, auction start and end dates, and property addresses? It would also be helpful if you could provide me with the contact information of the sales contracting officer for each auction.",
+"domain":"Finance",
+"TaskList": [
+{
+"id": 1,
+"description": "Query upcoming auctions to retrieve auction details such as sale numbers, lot numbers, item descriptions, auction start and end dates, and property addresses.",
+"domain": "finance",
+"required_inputs": ["auction_type", "location", "date_range"]
+},
+{
+"id": 2,
+"description": "For each auction obtained in Subtask 1, fetch the contact information of the sales contracting officer.",
+"domain": "finance",
+"required_inputs": ["auction_id"],
+"dependencies": [1]
+}
+]
+}

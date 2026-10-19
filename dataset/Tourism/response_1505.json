@@ -1,0 +1,26 @@
+{
+"user_query":"I'm planning a family vacation to a national park. Can you provide me with the current weather data and moon information for the park? Additionally, I would like to know if any planets will be visible during our stay.",
+"domain":"tourism",
+"TaskList": [
+{
+"id": 1,
+"description": "Fetch the current weather data for the specified national park.",
+"domain": "tourism",
+"required_inputs": ["national_park_location"]
+},
+{
+"id": 2,
+"description": "Retrieve moon information (phase, rise/set times) for the specified dates in the national park.",
+"domain": "tourism",
+"required_inputs": ["national_park_location", "stay_dates"],
+"dependencies": [1]
+},
+{
+"id": 3,
+"description": "Check astronomical data to see which planets will be visible during the specified stay dates.",
+"domain": "tourism",
+"required_inputs": ["stay_dates", "national_park_location"],
+"dependencies": [1]
+}
+]
+}

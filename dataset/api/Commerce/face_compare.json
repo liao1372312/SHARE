@@ -1,0 +1,62 @@
+{
+    "product_id": "api_8aa52589-6d42-47f4-ae04-04487bbc990e",
+    "tool_description": "This API compares and finds similarity between 2 face images. This is used to authenticate a person and detect an impersonation scenario.",
+    "home_url": "https://rapidapi.com/idfy-idfy-default/api/face-compare1/",
+    "name": "Face Compare",
+    "title": "Face Compare",
+    "pricing": "FREEMIUM",
+    "tool_name": "Face Compare",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 131,
+        "avgSuccessRate": 97,
+        "popularityScore": 9.3,
+        "__typename": "Score"
+    },
+    "host": "face-compare1.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "GET Call",
+            "url": "https://face-compare1.p.rapidapi.com/v3/tasks",
+            "description": "Used to fetch api result using the request id received in responses.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "request_id",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "76d1c748-51ed-435b-bcd8-3d9c9d3eb68a"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://face-compare1.p.rapidapi.com/v3/tasks\"\nquerystring = {\"request_id\": \"76d1c748-51ed-435b-bcd8-3d9c9d3eb68a\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"face-compare1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://face-compare1.p.rapidapi.com/v3/tasks\"\nquerystring = {\"request_id\": \"76d1c748-51ed-435b-bcd8-3d9c9d3eb68a\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"face-compare1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "action": "compare",
+                    "completed_at": "2023-02-16T15:22:42+05:30",
+                    "created_at": "2023-02-16T15:22:39+05:30",
+                    "group_id": "123",
+                    "request_id": "76d1c748-51ed-435b-bcd8-3d9c9d3eb68a",
+                    "result": {
+                        "image_1": {
+                            "face_detected": true,
+                            "face_quality": "Good"
+                        },
+                        "image_2": {
+                            "face_detected": true,
+                            "face_quality": "Good"
+                        },
+                        "is_a_match": true,
+                        "match_score": 100,
+                        "review_recommended": false
+                    },
+                    "status": "completed",
+                    "task_id": "123",
+                    "type": "face"
+                }
+            ]
+        }
+    ],
+    "standardized_name": "face_compare"
+}

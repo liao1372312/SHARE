@@ -1,0 +1,87 @@
+{
+    "product_id": "api_d3ca9d8d-a294-4b2d-9a61-7562e6aa8c1b",
+    "tool_description": "All Zoho Creator Rest Methods",
+    "home_url": "https://rapidapi.com/aorborc-technologies-aorborc-technologies-default/api/zohocreator/",
+    "name": "ZohoCreator",
+    "title": "ZohoCreator",
+    "pricing": "FREE",
+    "tool_name": "ZohoCreator",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 1039,
+        "avgSuccessRate": 57,
+        "popularityScore": 6.6,
+        "__typename": "Score"
+    },
+    "host": "zohocreator.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "ViewRecords",
+            "url": "https://zohocreator.p.rapidapi.com/json/mrp/view/Contact_Details",
+            "description": "Replace https://zohocreator.p.rapidapi.com/ with https://creator.zoho.com/api/ if you're using native system\n\nGet Records from a Zoho View/Report",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "scope",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "creatorapi"
+                },
+                {
+                    "name": "authtoken",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "longTextStringFromAccounts"
+                },
+                {
+                    "name": "appLinkName",
+                    "type": "string",
+                    "description": "",
+                    "default": "mrp"
+                },
+                {
+                    "name": "zc_ownername",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "ownerName"
+                },
+                {
+                    "name": "viewLinkName",
+                    "type": "string",
+                    "description": "",
+                    "default": "Contact_Details"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "raw",
+                    "type": "STRING",
+                    "description": "",
+                    "default": true
+                },
+                {
+                    "name": "criteria",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "(Country == \"US\")"
+                },
+                {
+                    "name": "startindex",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "0"
+                },
+                {
+                    "name": "limit",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "100"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://zohocreator.p.rapidapi.com/json/mrp/view/Contact_Details\"\nquerystring = {\"scope\": \"creatorapi\", \"raw\": true, \"authtoken\": \"longTextStringFromAccounts\", \"zc_ownername\": \"ownerName\", \"criteria\": \"(Country == \\\"US\\\")\", \"startindex\": \"0\", \"limit\": \"100\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"zohocreator.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://zohocreator.p.rapidapi.com/json/{applinkname}/view/{viewlinkname}\"\nquerystring = {\"scope\": \"creatorapi\", \"raw\": true, \"authtoken\": \"longTextStringFromAccounts\", \"zc_ownername\": \"ownerName\", \"criteria\": \"(Country == \\\"US\\\")\", \"startindex\": \"0\", \"limit\": \"100\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"zohocreator.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        }
+    ],
+    "standardized_name": "zohocreator"
+}

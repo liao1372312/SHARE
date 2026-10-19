@@ -1,0 +1,134 @@
+{
+    "product_id": "api_27b406a3-45a6-477d-b6bf-16add2e46809",
+    "tool_description": "Detailed technical specs on over 1000 airplane models. See more info at https://api-ninjas.com/api/aircraft",
+    "home_url": "https://rapidapi.com/apininjas/api/aircraft-by-api-ninjas/",
+    "name": "Aircraft by API-Ninjas",
+    "title": "Aircraft by API-Ninjas",
+    "pricing": "FREEMIUM",
+    "tool_name": "Aircraft by API-Ninjas",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 508,
+        "avgSuccessRate": 96,
+        "popularityScore": 9.1,
+        "__typename": "Score"
+    },
+    "host": "aircraft-by-api-ninjas.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "/v1/aircraft",
+            "url": "https://aircraft-by-api-ninjas.p.rapidapi.com/v1/aircraft",
+            "description": "API Ninjas Aircraft API endpoint. Returns a list of aircrafts that match the given parameters. This API only supports airplanes - for helicopter specs please use our Helicopter API.\n\nAt least one of the following parameters (excluding the limit parameter) must be set.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "min_height",
+                    "type": "NUMBER",
+                    "description": "Minimum height of the aircraft in feet.",
+                    "default": ""
+                },
+                {
+                    "name": "min_wingspan",
+                    "type": "NUMBER",
+                    "description": "Minimum wingspan of the aircraft in feet.",
+                    "default": ""
+                },
+                {
+                    "name": "limit",
+                    "type": "NUMBER",
+                    "description": "How many results to return. Must be between 1 and 30. Default is 1.",
+                    "default": ""
+                },
+                {
+                    "name": "max_height",
+                    "type": "NUMBER",
+                    "description": "Maximum height of the aircraft in feet.",
+                    "default": ""
+                },
+                {
+                    "name": "max_length",
+                    "type": "NUMBER",
+                    "description": "Maximum length of the aircraft in feet.",
+                    "default": ""
+                },
+                {
+                    "name": "min_length",
+                    "type": "NUMBER",
+                    "description": "Minimum length of the aircraft in feet.",
+                    "default": ""
+                },
+                {
+                    "name": "max_range",
+                    "type": "NUMBER",
+                    "description": "Maximum range of the aircraft in nautical miles.",
+                    "default": ""
+                },
+                {
+                    "name": "min_range",
+                    "type": "NUMBER",
+                    "description": "Minimum range of the aircraft in nautical miles.",
+                    "default": ""
+                },
+                {
+                    "name": "max_speed",
+                    "type": "NUMBER",
+                    "description": "Maximum max. air speed in knots.",
+                    "default": ""
+                },
+                {
+                    "name": "max_wingspan",
+                    "type": "NUMBER",
+                    "description": "Maximum wingspan of the aircraft in feet.",
+                    "default": ""
+                },
+                {
+                    "name": "engine_type",
+                    "type": "STRING",
+                    "description": "Type of engine. Must be one of: piston, propjet, jet.",
+                    "default": ""
+                },
+                {
+                    "name": "min_speed",
+                    "type": "NUMBER",
+                    "description": "Minimum max. air speed in knots.",
+                    "default": ""
+                },
+                {
+                    "name": "model",
+                    "type": "STRING",
+                    "description": "Aircraft model name.",
+                    "default": "G550"
+                },
+                {
+                    "name": "manufacturer",
+                    "type": "STRING",
+                    "description": "Company that designed and built the aircraft.",
+                    "default": "Gulfstream"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://aircraft-by-api-ninjas.p.rapidapi.com/v1/aircraft\"\nquerystring = {\"min_height\": \"\", \"min_wingspan\": \"\", \"limit\": \"\", \"max_height\": \"\", \"max_length\": \"\", \"min_length\": \"\", \"max_range\": \"\", \"min_range\": \"\", \"max_speed\": \"\", \"max_wingspan\": \"\", \"engine_type\": \"\", \"min_speed\": \"\", \"model\": \"G550\", \"manufacturer\": \"Gulfstream\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"aircraft-by-api-ninjas.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://aircraft-by-api-ninjas.p.rapidapi.com/v1/aircraft\"\nquerystring = {\"min_height\": \"\", \"min_wingspan\": \"\", \"limit\": \"\", \"max_height\": \"\", \"max_length\": \"\", \"min_length\": \"\", \"max_range\": \"\", \"min_range\": \"\", \"max_speed\": \"\", \"max_wingspan\": \"\", \"engine_type\": \"\", \"min_speed\": \"\", \"model\": \"G550\", \"manufacturer\": \"Gulfstream\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"aircraft-by-api-ninjas.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "manufacturer": "Gulfstream Aerospace",
+                    "model": "G550",
+                    "engine_type": "Jet",
+                    "engine_thrust_lb_ft": "15385",
+                    "max_speed_knots": "590",
+                    "cruise_speed_knots": "566",
+                    "ceiling_ft": "51000",
+                    "takeoff_ground_run_ft": "5910",
+                    "landing_ground_roll_ft": "2770",
+                    "gross_weight_lbs": "91000",
+                    "empty_weight_lbs": "47900",
+                    "length_ft": "96.417",
+                    "height_ft": "25.833",
+                    "wing_span_ft": "93.5",
+                    "range_nautical_miles": "6750"
+                }
+            ]
+        }
+    ],
+    "standardized_name": "aircraft_by_api_ninjas"
+}

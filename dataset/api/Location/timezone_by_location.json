@@ -1,0 +1,91 @@
+{
+    "product_id": "api_fe634502-9a8b-4168-b508-559ce87c4e71",
+    "tool_description": "Convert any GPS Lat/Lon location into its timezone",
+    "home_url": "https://rapidapi.com/BertoldVdb/api/timezone-by-location/",
+    "name": "Timezone by Location",
+    "title": "Timezone by Location",
+    "pricing": "FREE",
+    "tool_name": "Timezone by Location",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 473,
+        "avgSuccessRate": 100,
+        "popularityScore": 9.6,
+        "__typename": "Score"
+    },
+    "host": "timezone-by-location.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Timezone",
+            "url": "https://timezone-by-location.p.rapidapi.com/timezone",
+            "description": "Convert a position into its timezone",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "lat",
+                    "type": "NUMBER",
+                    "description": "Latitude",
+                    "default": "51"
+                },
+                {
+                    "name": "lon",
+                    "type": "NUMBER",
+                    "description": "Longitude",
+                    "default": "5"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "c",
+                    "type": "NUMBER",
+                    "description": "Return compact JSON",
+                    "default": "1"
+                },
+                {
+                    "name": "s",
+                    "type": "NUMBER",
+                    "description": "Return simple answer (ignores points with multiple timezones)",
+                    "default": "0"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://timezone-by-location.p.rapidapi.com/timezone\"\nquerystring = {\"lat\": \"51\", \"lon\": \"5\", \"c\": \"1\", \"s\": \"0\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"timezone-by-location.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://timezone-by-location.p.rapidapi.com/timezone\"\nquerystring = {\"lat\": \"51\", \"lon\": \"5\", \"c\": \"1\", \"s\": \"0\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"timezone-by-location.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "Safezone": 0.3428043723106384,
+                "Zones": [
+                    {
+                        "CountryAlpha2": "BE",
+                        "CountryName": "Belgium",
+                        "Result": "In zone",
+                        "TimezoneId": "Europe/Brussels"
+                    }
+                ]
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "get": {
+                        "type": "string"
+                    },
+                    "parameters": {
+                        "type": "array"
+                    },
+                    "errors": {
+                        "type": "array"
+                    },
+                    "results": {
+                        "type": "integer"
+                    },
+                    "response": {
+                        "type": "array",
+                        "items": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "standardized_name": "timezone_by_location"
+}

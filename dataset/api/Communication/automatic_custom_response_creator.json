@@ -1,0 +1,52 @@
+{
+    "product_id": "api_6f6023b6-17fd-4655-9e1a-5f7ae7e0cfb3",
+    "tool_description": "send a customer review, you will receive a personalized response proposal automatically",
+    "home_url": "https://rapidapi.com/lespagnolrobin/api/automatic-custom-response-creator/",
+    "name": "Automatic-custom-response-creator",
+    "title": "Automatic-custom-response-creator",
+    "pricing": "FREEMIUM",
+    "tool_name": "Automatic-custom-response-creator",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 6868,
+        "avgSuccessRate": 100,
+        "popularityScore": 7.5,
+        "__typename": "Score"
+    },
+    "host": "automatic-custom-response-creator.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "get_response",
+            "url": "https://automatic-custom-response-creator.p.rapidapi.com/get_response",
+            "description": "There are 3 params necessary : \n\n- First - Add a review \"avis\" (ex. \"Merci pour votre accueil, c'\u00e9tait parfait\")\n- Then - Add a \"business_type\" (ex. \"Restaurant\")\n- Finaly - Add a \"business_brand\" (ex. \"Fuzi\")",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "business_type",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "Restaurant"
+                },
+                {
+                    "name": "business_brand",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "Fuzi"
+                },
+                {
+                    "name": "avis",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "C'\u00e9tait excellent"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://automatic-custom-response-creator.p.rapidapi.com/get_response\"\nquerystring = {\"business_type\": \"Restaurant\", \"business_brand\": \"Fuzi\", \"avis\": \"C'\u00e9tait excellent\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"automatic-custom-response-creator.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://automatic-custom-response-creator.p.rapidapi.com/get_response\"\nquerystring = {\"business_type\": \"Restaurant\", \"business_brand\": \"Fuzi\", \"avis\": \"C'\u00e9tait excellent\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"automatic-custom-response-creator.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "C'\u00e9tait excellent": "Bonjour et merci pour votre message, je suis ravie que vous ayez appr\u00e9ci\u00e9 votre repas chez nous et que vous ayez pass\u00e9 un excellent moment. Nous esp\u00e9rons vous revoir bient\u00f4t !"
+            }
+        }
+    ],
+    "standardized_name": "automatic_custom_response_creator"
+}

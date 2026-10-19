@@ -1,0 +1,86 @@
+{
+    "product_id": "api_f08df790-4fb6-406f-bf57-c23d692492a6",
+    "tool_description": "Get multiple or single Ukrainian words from a list of 150.000+ words.",
+    "home_url": "https://rapidapi.com/Dwanford/api/random-ukrainian-word/",
+    "name": "Random Ukrainian Word",
+    "title": "Random Ukrainian Word",
+    "pricing": "FREEMIUM",
+    "tool_name": "Random Ukrainian Word",
+    "score": {
+        "avgServiceLevel": 97,
+        "avgLatency": 799,
+        "avgSuccessRate": 94,
+        "popularityScore": 7.9,
+        "__typename": "Score"
+    },
+    "host": "random-ukrainian-word.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "getRandomWords",
+            "url": "https://random-ukrainian-word.p.rapidapi.com/words",
+            "description": "Get random Ukrainian words.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "length",
+                    "type": "NUMBER",
+                    "description": "Setting word exact length",
+                    "default": ""
+                },
+                {
+                    "name": "maxLength",
+                    "type": "NUMBER",
+                    "description": "Setting word maximum length",
+                    "default": "6"
+                },
+                {
+                    "name": "excludes",
+                    "type": "STRING",
+                    "description": "Setting the letters which word should not include",
+                    "default": "\u043a\u043b\u0438"
+                },
+                {
+                    "name": "minLength",
+                    "type": "NUMBER",
+                    "description": "Setting word minimum length",
+                    "default": "2"
+                },
+                {
+                    "name": "startsWith",
+                    "type": "STRING",
+                    "description": "Setting the letters with which the word should begin",
+                    "default": "\u0432\u043e"
+                },
+                {
+                    "name": "endsWith",
+                    "type": "STRING",
+                    "description": "Setting the letters with which the word should end",
+                    "default": "\u044f"
+                },
+                {
+                    "name": "amount",
+                    "type": "NUMBER",
+                    "description": "Setting amount of requested words",
+                    "default": "1"
+                },
+                {
+                    "name": "includes",
+                    "type": "STRING",
+                    "description": "Setting the letters which word should include",
+                    "default": "\u043e\u043b"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://random-ukrainian-word.p.rapidapi.com/words\"\nquerystring = {\"length\": \"\", \"maxLength\": \"6\", \"excludes\": \"\u043a\u043b\u0438\", \"minLength\": \"2\", \"startsWith\": \"\u0432\u043e\", \"endsWith\": \"\u044f\", \"amount\": \"1\", \"includes\": \"\u043e\u043b\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"random-ukrainian-word.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://random-ukrainian-word.p.rapidapi.com/words\"\nquerystring = {\"length\": \"\", \"maxLength\": \"6\", \"excludes\": \"\u043a\u043b\u0438\", \"minLength\": \"2\", \"startsWith\": \"\u0432\u043e\", \"endsWith\": \"\u044f\", \"amount\": \"1\", \"includes\": \"\u043e\u043b\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"random-ukrainian-word.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "word": "\u0432\u043e\u043b\u044f"
+                }
+            ],
+            "statuscode": 1,
+            "schema": ""
+        }
+    ],
+    "standardized_name": "random_ukrainian_word"
+}

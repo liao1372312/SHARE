@@ -1,0 +1,27 @@
+diff --git a/sphinx/directives/code.py b/sphinx/directives/code.py
+index dc44ed314..7b4e9add4 100644
+--- a/sphinx/directives/code.py
++++ b/sphinx/directives/code.py
+@@ -343,14 +343,20 @@ class LiteralIncludeReader:
+     def prepend_filter(self, lines: List[str], location: Tuple[str, int] = None) -> List[str]:
+         prepend = self.options.get('prepend')
+         if prepend:
+-            lines.insert(0, prepend + '\n')
++            # preserve leading whitespace of first line in lines for prepend
++            m = re.match(r'^(\s*)', lines[0])
++            indent = m.group(1) if m else ''
++            lines.insert(0, indent + prepend.lstrip() + '\n')
+ 
+         return lines
+ 
+     def append_filter(self, lines: List[str], location: Tuple[str, int] = None) -> List[str]:
+         append = self.options.get('append')
+         if append:
+-            lines.append(append + '\n')
++            # preserve leading whitespace of last line in lines for append
++            m = re.match(r'^(\s*)', lines[-1])
++            indent = m.group(1) if m else ''
++            lines.append(indent + append.lstrip() + '\n')
+ 
+         return lines
+ 

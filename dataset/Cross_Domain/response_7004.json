@@ -1,0 +1,36 @@
+{
+  "user_query": "I want to know more about the upcoming sports events, including Formula 1 race details, handball match schedule, and NBA shot chart data.",
+  "domain": "sports",
+  "TaskList": [
+    {
+      "id": 1,
+      "description": "查询编号为5的一级方程式赛车的比赛详情",
+      "domain": "sports",
+      "required_inputs": ["race_number"]
+    },
+    {
+      "id": 2,
+      "description": "获取11月30日的手球比赛时间表",
+      "domain": "sports",
+      "required_inputs": ["date"]
+    },
+    {
+      "id": 3,
+      "description": "获取2023年NBA赛季斯蒂芬·库里的投篮图表数据",
+      "domain": "sports",
+      "required_inputs": ["player_name", "season"]
+    }
+  ],
+  "dependencies": [
+    {
+      "from": 1,
+      "to": 2,
+      "type": "parallel"
+    },
+    {
+      "from": 1,
+      "to": 3,
+      "type": "parallel"
+    }
+  ]
+}

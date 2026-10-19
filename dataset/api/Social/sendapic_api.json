@@ -1,0 +1,60 @@
+{
+    "product_id": "api_9e18dc2e-0e2a-44fa-8ab5-8b44e57726fa",
+    "tool_description": "https://sendapic.xyz/\n\n\ud83d\udd10 Send confidential images securely and safely with an expiring link.\n\ud83d\udca3 Choose the duration of the expiry, and feel safe knowing it will be deleted after expiry.",
+    "home_url": "https://rapidapi.com/mythu.s2000/api/sendapic-api/",
+    "name": "SendAPic API",
+    "title": "SendAPic API",
+    "pricing": "FREE",
+    "tool_name": "SendAPic API",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 635,
+        "avgSuccessRate": 20,
+        "popularityScore": 1.8,
+        "__typename": "Score"
+    },
+    "host": "sendapic-api.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Get image",
+            "url": "https://sendapic-api.p.rapidapi.com/api/v1/files/639f7fda5ec4b33ef2e476b8",
+            "description": "Retrieve the image by ID.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "fileID",
+                    "type": "string",
+                    "description": "",
+                    "default": "639f7fda5ec4b33ef2e476b8"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://sendapic-api.p.rapidapi.com/api/v1/files/639f7fda5ec4b33ef2e476b8\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sendapic-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://sendapic-api.p.rapidapi.com/api/v1/files/{fileid}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sendapic-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "document": {}
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "document": {
+                        "type": "object",
+                        "properties": {
+                            "image": {
+                                "type": "string"
+                            },
+                            "endDateEpochMS": {
+                                "type": "integer"
+                            },
+                            "linkExpiryMS": {
+                                "type": "integer"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "standardized_name": "sendapic_api"
+}

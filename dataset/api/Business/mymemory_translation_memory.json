@@ -1,0 +1,237 @@
+{
+    "product_id": "53aa3158e4b0a9b1348d8a06",
+    "tool_description": "Get a better translation! MyMemory is the world's largest Translation Memory that contains billions of words translated by professional translators. MyMemory will give you ModernMT machine translation  if a human translation is not available.",
+    "home_url": "https://rapidapi.com/translated/api/mymemory-translation-memory/",
+    "name": "MyMemory - Translation Memory",
+    "title": "MyMemory - Translation Memory",
+    "pricing": "FREEMIUM",
+    "tool_name": "MyMemory - Translation Memory",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 618,
+        "avgSuccessRate": 100,
+        "popularityScore": 9.8,
+        "__typename": "Score"
+    },
+    "host": "translated-mymemory---translation-memory.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "search translations",
+            "url": "https://translated-mymemory---translation-memory.p.rapidapi.com/get",
+            "description": "This API gets a list of translation from the translation memory ranked by quality and similarity (what we call match). MyMemory will check if a sentence has been already translated in the private TM specified. If we don't find it in the private TM of the translator, we search it in the public TMs (shared among all the translators). Again, if we don't have this translation we ask MT providers to generate it.  In order to get the best from MyMemory, it is highly recommended to use different keys for each translators and also different keys for different topics (as a real Translation Memory).",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "langpair",
+                    "type": "STRING",
+                    "description": "The language pair. Two ISO-631 language codes, separated by |.\nMyMemory support over 80 languages but some combinations may contains no data. Nepali into Vietnamese?",
+                    "default": "en|it"
+                },
+                {
+                    "name": "q",
+                    "type": "STRING",
+                    "description": "the text you want to translate. Normally a sentence.",
+                    "default": "Hello World!"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "onlyprivate",
+                    "type": "STRING",
+                    "description": "If a key has been specified, only private matches will be returned. 0 (disabled: default) | 1 (enabled)",
+                    "default": "0"
+                },
+                {
+                    "name": "mt",
+                    "type": "STRING",
+                    "description": "Enables MT in results: 0 (disabled) | 1 (enabled: default)",
+                    "default": "1"
+                },
+                {
+                    "name": "de",
+                    "type": "STRING",
+                    "description": "A valid email (recommended for CAT tools and high volume usage)",
+                    "default": "a@b.c"
+                },
+                {
+                    "name": "key",
+                    "type": "STRING",
+                    "description": "Gives access to private memories and customized API limits",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://translated-mymemory---translation-memory.p.rapidapi.com/get\"\nquerystring = {\"onlyprivate\": \"0\", \"mt\": \"1\", \"de\": \"a@b.c\", \"key\": \"\", \"langpair\": \"en|it\", \"q\": \"Hello World!\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"translated-mymemory---translation-memory.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://translated-mymemory---translation-memory.p.rapidapi.com/get\"\nquerystring = {\"onlyprivate\": \"0\", \"mt\": \"1\", \"de\": \"a@b.c\", \"key\": \"\", \"langpair\": \"en|it\", \"q\": \"Hello World!\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"translated-mymemory---translation-memory.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "responseData": {
+                    "translatedText": "Ciao Mondo!",
+                    "match": 1
+                },
+                "quotaFinished": false,
+                "mtLangSupported": null,
+                "responseDetails": "",
+                "responseStatus": 200,
+                "responderId": null,
+                "exception_code": null,
+                "matches": [
+                    {
+                        "id": "721959630",
+                        "segment": "Hello World!",
+                        "translation": "Ciao Mondo!",
+                        "source": "en-GB",
+                        "target": "it-IT",
+                        "quality": 74,
+                        "reference": null,
+                        "usage-count": 2,
+                        "subject": "",
+                        "created-by": "MateCat",
+                        "last-updated-by": "MateCat",
+                        "create-date": "2023-06-05 12:25:11",
+                        "last-update-date": "2023-06-05 12:25:11",
+                        "match": 1
+                    }
+                ]
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "matches": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "create-date": {
+                                    "type": "string"
+                                },
+                                "created-by": {
+                                    "type": "string"
+                                },
+                                "id": {
+                                    "type": "string"
+                                },
+                                "last-update-date": {
+                                    "type": "string"
+                                },
+                                "last-updated-by": {
+                                    "type": "string"
+                                },
+                                "match": {
+                                    "type": "string"
+                                },
+                                "quality": {
+                                    "type": "string"
+                                },
+                                "reference": {
+                                    "type": "string"
+                                },
+                                "segment": {
+                                    "type": "string"
+                                },
+                                "subject": {
+                                    "type": "string"
+                                },
+                                "translation": {
+                                    "type": "string"
+                                },
+                                "usage-count": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "responseData": {
+                        "type": "object",
+                        "properties": {
+                            "translatedText": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "responseDetails": {
+                        "type": "string"
+                    },
+                    "responseStatus": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        {
+            "name": "create key",
+            "url": "https://translated-mymemory---translation-memory.p.rapidapi.com/createkey",
+            "description": "MyMemory provides a specific API to create a new private TM key. Such key can be then used in the API call to identify a private TM or to privately contribute to a TM. Every contribution that has been created with a private TM key will be only shown if the same private TM key is used in the GET call; no other users will see private contributions without the right private TM key.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://translated-mymemory---translation-memory.p.rapidapi.com/createkey\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"translated-mymemory---translation-memory.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://translated-mymemory---translation-memory.p.rapidapi.com/createkey\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"translated-mymemory---translation-memory.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "key": "c59dbf15889b5d6895e5",
+                "error": "",
+                "code": 200,
+                "id": "MyMemory_e0d793b8ba7399739c7c",
+                "pass": "dff020959a"
+            },
+            "statuscode": 1,
+            "schema": ""
+        },
+        {
+            "name": "set contribution",
+            "url": "https://translated-mymemory---translation-memory.p.rapidapi.com/set",
+            "description": "The SET api is used to save a contribution. You can either save a contribution privately with your private TM key or add it to the public collaborative TM.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "seg",
+                    "type": "STRING",
+                    "description": "The source segment",
+                    "default": "Hello World!"
+                },
+                {
+                    "name": "tra",
+                    "type": "STRING",
+                    "description": "The translation of the source segment",
+                    "default": "Ciao mondo!"
+                },
+                {
+                    "name": "langpair",
+                    "type": "STRING",
+                    "description": "Source and language pair, separated by the | symbol. Use ISO standard names or RFC3066",
+                    "default": "en|it"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "key",
+                    "type": "STRING",
+                    "description": "Gives access to private memories and customized API limits",
+                    "default": "ce1hG0w.8a8Xs"
+                },
+                {
+                    "name": "de",
+                    "type": "STRING",
+                    "description": "A valid email (recommended for CAT tools and high volume usage)",
+                    "default": "a@b.c"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://translated-mymemory---translation-memory.p.rapidapi.com/set\"\nquerystring = {\"seg\": \"Hello World!\", \"tra\": \"Ciao mondo!\", \"key\": \"ce1hG0w.8a8Xs\", \"de\": \"a@b.c\", \"langpair\": \"en|it\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"translated-mymemory---translation-memory.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://translated-mymemory---translation-memory.p.rapidapi.com/set\"\nquerystring = {\"seg\": \"Hello World!\", \"tra\": \"Ciao mondo!\", \"key\": \"ce1hG0w.8a8Xs\", \"de\": \"a@b.c\", \"langpair\": \"en|it\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"translated-mymemory---translation-memory.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "responseData": {
+                    "translatedText": "AUTHENTICATION FAILURE. DO NOT USE 'KEY' AND 'USER' IF YOU DON'T NEED TO MODIFY YOUR PRIVATE MEMORIES. TO CREATE A VALID ACCOUNT, PLEASE DO THE FOLLOWING: 1) REGISTER AS A TRANSLATOR HERE: HTTPS://TRANSLATED.NET/TOP/ ; 2) GET AN API KEY HERE: HTTPS://MYMEMORY.TRANSLATED.NET/DOC/KEYGEN.PHP"
+                },
+                "quotaFinished": null,
+                "mtLangSupported": null,
+                "responseDetails": "AUTHENTICATION FAILURE. DO NOT USE 'KEY' AND 'USER' IF YOU DON'T NEED TO MODIFY YOUR PRIVATE MEMORIES. TO CREATE A VALID ACCOUNT, PLEASE DO THE FOLLOWING: 1) REGISTER AS A TRANSLATOR HERE: HTTPS://TRANSLATED.NET/TOP/ ; 2) GET AN API KEY HERE: HTTPS://MYMEMORY.TRANSLATED.NET/DOC/KEYGEN.PHP",
+                "responseStatus": "403",
+                "responderId": null,
+                "exception_code": null,
+                "matches": ""
+            },
+            "statuscode": 1,
+            "schema": ""
+        }
+    ],
+    "standardized_name": "mymemory_translation_memory"
+}

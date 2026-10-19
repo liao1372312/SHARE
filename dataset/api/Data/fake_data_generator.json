@@ -1,0 +1,1204 @@
+{
+    "product_id": "api_fa653235-95b5-4804-a2ed-2df9f5e5cda4",
+    "tool_description": "With this API you can generate fake random data with different predefined layouts or define your own layout.",
+    "home_url": "https://rapidapi.com/wishing-well-lab-wishing-well-lab-default/api/fake-data-generator1/",
+    "name": "Fake Data Generator",
+    "title": "Fake Data Generator",
+    "pricing": "FREEMIUM",
+    "tool_name": "Fake Data Generator",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 703,
+        "avgSuccessRate": 100,
+        "popularityScore": 7.6,
+        "__typename": "Score"
+    },
+    "host": "fake-data-generator1.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "/random_address",
+            "url": "https://fake-data-generator1.p.rapidapi.com/address/random_address",
+            "description": "With this enpoints you can manage the generation of fake addresses and retrieve them by id.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "size",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "5"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://fake-data-generator1.p.rapidapi.com/address/random_address\"\nquerystring = {\"size\": \"5\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"fake-data-generator1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://fake-data-generator1.p.rapidapi.com/address/random_address\"\nquerystring = {\"size\": \"5\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"fake-data-generator1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "data": [
+                    {
+                        "buildingNumber": "297",
+                        "city": "Franklinland",
+                        "country": "Sao Tome and Principe",
+                        "id": 620,
+                        "postcode": "16807",
+                        "streetName": "40230 Patrick Knoll Apt. 140",
+                        "uid": "bd120fd9-f143-aa79-3966-02a198c95752"
+                    },
+                    {
+                        "buildingNumber": "73502",
+                        "city": "Williamsburgh",
+                        "country": "Netherlands",
+                        "id": 5343,
+                        "postcode": "37112",
+                        "streetName": "56925 Tiffany Canyon Apt. 791",
+                        "uid": "a13f5862-dc2f-984f-52c4-631b97f2b57f"
+                    },
+                    {
+                        "buildingNumber": "0774",
+                        "city": "South Bonnieside",
+                        "country": "Palau",
+                        "id": 5192,
+                        "postcode": "80128",
+                        "streetName": "95478 Ewing Islands Apt. 904",
+                        "uid": "cbb424e7-2d9f-e6cc-1b3e-7d92e14a570e"
+                    },
+                    {
+                        "buildingNumber": "6632",
+                        "city": "Ronaldmouth",
+                        "country": "Armenia",
+                        "id": 9405,
+                        "postcode": "71271",
+                        "streetName": "16434 Sean Parkway Suite 144",
+                        "uid": "9f51f99f-ab58-4a6d-26c6-fa2b0f07f82a"
+                    },
+                    {
+                        "buildingNumber": "437",
+                        "city": "Jessicaburgh",
+                        "country": "Vietnam",
+                        "id": 2230,
+                        "postcode": "55103",
+                        "streetName": "25595 Evans Plain Suite 180",
+                        "uid": "4d18e2e0-c5a4-3bc4-200e-aba6b51b85d9"
+                    }
+                ],
+                "info": {
+                    "version": "1.0.0"
+                }
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "/random_custom",
+            "url": "https://fake-data-generator1.p.rapidapi.com/custom/random_custom",
+            "description": "This endpoint generate a list of fake  data ustomizing the layout setting the number and type.\n\nYou can define fake data layout with de 'layout' param.\n\nThe structure of this param:\n\n```\n{'fields': \t{\n\t\t\t\t'date': {'type': 'DATE_AND_HOUR'},\n\t\t\t\t'name': {'type': 'NAME_FULL_NAME'},\n\t\t\t\t'purchase': {\n\t\t\t\t\t\t\t\t'type': 'COMPOUND', \n\t\t\t\t\t\t\t\t'fields': {\n\t\t\t\t\t\t\t\t\t\t\t'company': {'type': 'COMPANY_NAME'},\n\t\t\t\t\t\t\t\t\t\t\t'amount': {'type': 'CURRENCY_PRICE'}\n\t\t\t\t\t\t\t\t\t\t   }\n\t\t\t\t\t\t\t}\n\t\t\t}\n}\n```\n\nWith 'type': 'COMPOUND', you can add nodes, tha max depth is 3.\n\nIn regard to the diferents type of data, you can use this types:\n\n```\n'COUNTRY'\n'COUNTRY_CODE'\n'CITY'\n'STREET_ADDRESS'\n'BUILDING_NUMBER'\n'POSTAL_CODE'\n'COMPANY_NAME'\n'COMPANY_SUFFIX'\n'COMPANY_BUSINESS'\n'COMPANY_PHRASE'\n'CREDIT_CARD_EXPIRE'\n'CREDIT_CARD_NUMBER'\n'CREDIT_CARD_PROVIDER'\n'CREDIT_CARD_SECURITY_CODE'\n'CURRENCY_PRICE'\n'CURRENCY_CODE_NAME'\n'CURRENCY_CRYPTO_CODE_NAME'\n'NAME_PREFIX_NAME'\n'NAME_FIRST_NAME_MALE'\n'NAME_FIRST_NAME_FEMALE'\n'NAME_LASTNAME'\n'DATE'\n'DATE_AND_HOUR'\n'DATE_CENTURY'\n'DATE_THIS_DECADE'\n'DATE_THIS_MONTH'\n'INT'\n'PARAGRAPH'\n'PARAGRAPH_LOREMIPSUM'\n'SENTENCE'\n'SENTENCE_LOREMIPSUM'\n'BBAN'\n'IBAN'\n'SWIFT'\n'SWIFT11'\n'TEXT'\n'TEXT_LOREMIPSUM'\n'URL'\n'WORD'\n```",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "layout",
+                    "type": "OBJECT",
+                    "description": "",
+                    "default": "{'fields': {'credit_card_number': {'type': 'CREDIT_CARD_NUMBER'},'date': {'type': 'DATE_AND_HOUR'},'name': {'type': 'NAME_FULL_NAME'},'purchase': {'type': 'COMPOUND', 'fields': {'company': {'type': 'COMPANY_NAME'},'amount': {'type': 'CURRENCY_PRICE'}}}}}"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "size",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "5"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://fake-data-generator1.p.rapidapi.com/custom/random_custom\"\nquerystring = {\"layout\": \"{'fields': {'credit_card_number': {'type': 'CREDIT_CARD_NUMBER'},'date': {'type': 'DATE_AND_HOUR'},'name': {'type': 'NAME_FULL_NAME'},'purchase': {'type': 'COMPOUND', 'fields': {'company': {'type': 'COMPANY_NAME'},'amount': {'type': 'CURRENCY_PRICE'}}}}}\", \"size\": \"5\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"fake-data-generator1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://fake-data-generator1.p.rapidapi.com/custom/random_custom\"\nquerystring = {\"layout\": \"{'fields': {'credit_card_number': {'type': 'CREDIT_CARD_NUMBER'},'date': {'type': 'DATE_AND_HOUR'},'name': {'type': 'NAME_FULL_NAME'},'purchase': {'type': 'COMPOUND', 'fields': {'company': {'type': 'COMPANY_NAME'},'amount': {'type': 'CURRENCY_PRICE'}}}}}\", \"size\": \"5\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"fake-data-generator1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "data": [
+                    {
+                        "credit_card_number": "4852874691454",
+                        "date": "2022-08-12 02:25:57",
+                        "id": 6401,
+                        "name": "Stephen Riley",
+                        "purchase": {
+                            "amount": "$87,628.64",
+                            "company": "Gordon Inc"
+                        },
+                        "uid": "98ba0db1-cf00-5026-b228-d14171bd80f3"
+                    },
+                    {
+                        "credit_card_number": "4160738531229550",
+                        "date": "2023-06-09 00:26:10",
+                        "id": 3236,
+                        "name": "Mark Taylor",
+                        "purchase": {
+                            "amount": "$3,875.13",
+                            "company": "Love PLC"
+                        },
+                        "uid": "f1c135c8-73af-091c-46dc-093e62ffa3b2"
+                    },
+                    {
+                        "credit_card_number": "4660613781219746113",
+                        "date": "2022-09-10 19:03:53",
+                        "id": 3695,
+                        "name": "Douglas Howell",
+                        "purchase": {
+                            "amount": "$58,973.21",
+                            "company": "Norman-Stone"
+                        },
+                        "uid": "6e2c9302-3696-39b9-45fd-046a6f53ddae"
+                    },
+                    {
+                        "credit_card_number": "4997205752952178",
+                        "date": "2023-05-07 06:05:50",
+                        "id": 6676,
+                        "name": "Christine Russell",
+                        "purchase": {
+                            "amount": "$62.22",
+                            "company": "Davis-Preston"
+                        },
+                        "uid": "b3ead740-042b-9a28-b02d-6604b4a88b0d"
+                    },
+                    {
+                        "credit_card_number": "3594411958192572",
+                        "date": "2022-05-28 05:27:52",
+                        "id": 6016,
+                        "name": "Justin Martinez",
+                        "purchase": {
+                            "amount": "$7,538.97",
+                            "company": "Hickman-Barber"
+                        },
+                        "uid": "05f827b5-7cac-1aaf-6c41-263effb98cce"
+                    }
+                ],
+                "info": {
+                    "disclaimer": "This data is randomly generated. Results generated that turn out to be valid in real life are purely coincidental.",
+                    "version": "1.0.0"
+                }
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "/random_custom_by_id",
+            "url": "https://fake-data-generator1.p.rapidapi.com/custom/random_custom_by_id",
+            "description": "Retrieve  fake  data banks by id customizing the layout setting the number and type.\n\nYou can define fake data layout with de 'layout' param.\n\nThe structure of this param:\n\n```\n{'fields': \t{\n\t\t\t\t'date': {'type': 'DATE_AND_HOUR'},\n\t\t\t\t'name': {'type': 'NAME_FULL_NAME'},\n\t\t\t\t'purchase': {\n\t\t\t\t\t\t\t\t'type': 'COMPOUND', \n\t\t\t\t\t\t\t\t'fields': {\n\t\t\t\t\t\t\t\t\t\t\t'company': {'type': 'COMPANY_NAME'},\n\t\t\t\t\t\t\t\t\t\t\t'amount': {'type': 'CURRENCY_PRICE'}\n\t\t\t\t\t\t\t\t\t\t   }\n\t\t\t\t\t\t\t}\n\t\t\t}\n}\n```\n\nWith 'type': 'COMPOUND', you can add nodes, tha max depth is 3.\n\nIn regard to the diferents type of data, you can use this types:\n\n```\n'COUNTRY'\n'COUNTRY_CODE'\n'CITY'\n'STREET_ADDRESS'\n'BUILDING_NUMBER'\n'POSTAL_CODE'\n'COMPANY_NAME'\n'COMPANY_SUFFIX'\n'COMPANY_BUSINESS'\n'COMPANY_PHRASE'\n'CREDIT_CARD_EXPIRE'\n'CREDIT_CARD_NUMBER'\n'CREDIT_CARD_PROVIDER'\n'CREDIT_CARD_SECURITY_CODE'\n'CURRENCY_PRICE'\n'CURRENCY_CODE_NAME'\n'CURRENCY_CRYPTO_CODE_NAME'\n'NAME_PREFIX_NAME'\n'NAME_FIRST_NAME_MALE'\n'NAME_FIRST_NAME_FEMALE'\n'NAME_LASTNAME'\n'DATE'\n'DATE_AND_HOUR'\n'DATE_CENTURY'\n'DATE_THIS_DECADE'\n'DATE_THIS_MONTH'\n'INT'\n'PARAGRAPH'\n'PARAGRAPH_LOREMIPSUM'\n'SENTENCE'\n'SENTENCE_LOREMIPSUM'\n'BBAN'\n'IBAN'\n'SWIFT'\n'SWIFT11'\n'TEXT'\n'TEXT_LOREMIPSUM'\n'URL'\n'WORD'\n```",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "id",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "1"
+                },
+                {
+                    "name": "layout",
+                    "type": "OBJECT",
+                    "description": "",
+                    "default": "{'fields': {'credit_card_number': {'type': 'CREDIT_CARD_NUMBER'},'date': {'type': 'DATE_AND_HOUR'},'name': {'type': 'NAME_FULL_NAME'},'purchase': {'type': 'COMPOUND', 'fields': {'company': {'type': 'COMPANY_NAME'},'amount': {'type': 'CURRENCY_PRICE'}}}}}"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://fake-data-generator1.p.rapidapi.com/custom/random_custom_by_id\"\nquerystring = {\"id\": \"1\", \"layout\": \"{'fields': {'credit_card_number': {'type': 'CREDIT_CARD_NUMBER'},'date': {'type': 'DATE_AND_HOUR'},'name': {'type': 'NAME_FULL_NAME'},'purchase': {'type': 'COMPOUND', 'fields': {'company': {'type': 'COMPANY_NAME'},'amount': {'type': 'CURRENCY_PRICE'}}}}}\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"fake-data-generator1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://fake-data-generator1.p.rapidapi.com/custom/random_custom_by_id\"\nquerystring = {\"id\": \"1\", \"layout\": \"{'fields': {'credit_card_number': {'type': 'CREDIT_CARD_NUMBER'},'date': {'type': 'DATE_AND_HOUR'},'name': {'type': 'NAME_FULL_NAME'},'purchase': {'type': 'COMPOUND', 'fields': {'company': {'type': 'COMPANY_NAME'},'amount': {'type': 'CURRENCY_PRICE'}}}}}\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"fake-data-generator1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "data": [
+                    {
+                        "credit_card_number": "2251777631706699",
+                        "date": "2021-04-11 06:31:09",
+                        "id": 1,
+                        "name": "Deborah Pham",
+                        "purchase": {
+                            "amount": "$8.06",
+                            "company": "Landry, Valenzuela and Johnson"
+                        },
+                        "uid": "c831eda9-305c-26d8-8f76-f7d7733c0183"
+                    }
+                ],
+                "info": {
+                    "disclaimer": "This data is randomly generated. Results generated that turn out to be valid in real life are purely coincidental.",
+                    "version": "1.0.0"
+                }
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "/random_bank",
+            "url": "https://fake-data-generator1.p.rapidapi.com/bank/random_bank",
+            "description": "This endpoint generate a list of fake banks",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "size",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "5"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://fake-data-generator1.p.rapidapi.com/bank/random_bank\"\nquerystring = {\"size\": \"5\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"fake-data-generator1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://fake-data-generator1.p.rapidapi.com/bank/random_bank\"\nquerystring = {\"size\": \"5\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"fake-data-generator1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "data": [
+                    {
+                        "bban": "EZOB77138119448232",
+                        "iban": "GB70NQXS27819564342489",
+                        "id": 7199,
+                        "swift": "JHGLGB1HBOH",
+                        "swift11": "MVNSGB3MV0G",
+                        "uid": "b592297a-be9a-df06-9c28-7f85d0b87761"
+                    },
+                    {
+                        "bban": "ENAD70488583256751",
+                        "iban": "GB19MDIA55125906437277",
+                        "id": 5447,
+                        "swift": "EZROGBTO",
+                        "swift11": "VRTFGBZXJRZ",
+                        "uid": "d2a684ca-0a84-176a-a78b-29f262d75d55"
+                    },
+                    {
+                        "bban": "HMFD62624677890579",
+                        "iban": "GB71ROLR73604109601785",
+                        "id": 1493,
+                        "swift": "PQMEGBP1",
+                        "swift11": "HWXXGBB9V6L",
+                        "uid": "b597417a-e42f-c33b-f31e-bfa9afa2376d"
+                    },
+                    {
+                        "bban": "TLFR68864629611541",
+                        "iban": "GB57MDXT75393909732147",
+                        "id": 2270,
+                        "swift": "GJFPGB9F49I",
+                        "swift11": "LDEVGBDC1KY",
+                        "uid": "a9de6826-a12d-ac30-472e-d629fdbe1b68"
+                    },
+                    {
+                        "bban": "JCDQ87191725586837",
+                        "iban": "GB03EXVC44083144090088",
+                        "id": 4259,
+                        "swift": "PBDZGBWF",
+                        "swift11": "YAUMGBQHO2Y",
+                        "uid": "52296cbf-f0dd-fd1c-6c38-d6b3b00f1d56"
+                    }
+                ],
+                "info": {
+                    "disclaimer": "This data is randomly generated. Results generated that turn out to be valid in real life are purely coincidental.",
+                    "version": "1.0.0"
+                }
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "/random_company",
+            "url": "https://fake-data-generator1.p.rapidapi.com/company/random_company",
+            "description": "This endpoint generate a list of fake companies",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "size",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "5"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://fake-data-generator1.p.rapidapi.com/company/random_company\"\nquerystring = {\"size\": \"5\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"fake-data-generator1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://fake-data-generator1.p.rapidapi.com/company/random_company\"\nquerystring = {\"size\": \"5\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"fake-data-generator1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "data": [
+                    {
+                        "company_business": "revolutionize back-end metrics",
+                        "company_name": "Ortiz-Hicks",
+                        "company_phrase": "Operative mission-critical solution",
+                        "company_suffix": "Group",
+                        "id": 439,
+                        "uid": "766a653c-a5ba-2d3b-30e9-cdfd2330f03a"
+                    },
+                    {
+                        "company_business": "harness ubiquitous action-items",
+                        "company_name": "Williams PLC",
+                        "company_phrase": "Function-based modular emulation",
+                        "company_suffix": "PLC",
+                        "id": 6069,
+                        "uid": "d6847fb9-3b1a-8b64-ae32-9e103990ffb6"
+                    },
+                    {
+                        "company_business": "visualize leading-edge interfaces",
+                        "company_name": "Alvarado, Bennett and Brown",
+                        "company_phrase": "User-friendly stable initiative",
+                        "company_suffix": "Inc",
+                        "id": 1406,
+                        "uid": "690ed88f-8c09-35ad-e4fa-1601d3c02e65"
+                    },
+                    {
+                        "company_business": "morph efficient initiatives",
+                        "company_name": "Hill-Miller",
+                        "company_phrase": "Customer-focused neutral analyzer",
+                        "company_suffix": "LLC",
+                        "id": 7396,
+                        "uid": "188a54b7-8a2a-1e42-bab9-2c50d36debe4"
+                    },
+                    {
+                        "company_business": "enhance killer models",
+                        "company_name": "Perez, Dunlap and Burton",
+                        "company_phrase": "Streamlined bandwidth-monitored product",
+                        "company_suffix": "Group",
+                        "id": 589,
+                        "uid": "1ae8f75e-77c9-2638-d3f7-da114601e555"
+                    }
+                ],
+                "info": {
+                    "disclaimer": "This data is randomly generated. Results generated that turn out to be valid in real life are purely coincidental.",
+                    "version": "1.0.0"
+                }
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "/random_company_by_id",
+            "url": "https://fake-data-generator1.p.rapidapi.com/company/random_company_by_id",
+            "description": "Retrieve fake companies by id.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "id",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "1"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://fake-data-generator1.p.rapidapi.com/company/random_company_by_id\"\nquerystring = {\"id\": \"1\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"fake-data-generator1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://fake-data-generator1.p.rapidapi.com/company/random_company_by_id\"\nquerystring = {\"id\": \"1\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"fake-data-generator1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "data": [
+                    {
+                        "company_business": "syndicate enterprise e-tailers",
+                        "company_name": "Scott Group",
+                        "company_phrase": "Cross-platform mobile algorithm",
+                        "company_suffix": "Group",
+                        "id": 1,
+                        "uid": "c831eda9-305c-26d8-8f76-f7d7733c0183"
+                    }
+                ],
+                "info": {
+                    "disclaimer": "This data is randomly generated. Results generated that turn out to be valid in real life are purely coincidental.",
+                    "version": "1.0.0"
+                }
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "/random_credit_card",
+            "url": "https://fake-data-generator1.p.rapidapi.com/credit_card/random_credit_card",
+            "description": "This endpoint generate a list of fake credit cards",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "size",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "5"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://fake-data-generator1.p.rapidapi.com/credit_card/random_credit_card\"\nquerystring = {\"size\": \"5\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"fake-data-generator1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://fake-data-generator1.p.rapidapi.com/credit_card/random_credit_card\"\nquerystring = {\"size\": \"5\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"fake-data-generator1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "data": [
+                    {
+                        "credit_card_expire": "01/26",
+                        "credit_card_number": "4651002345466684",
+                        "credit_card_provider": "JCB 15 digit",
+                        "credit_card_security_code": "143",
+                        "id": 8620,
+                        "uid": "aeb20dac-a974-d3e2-a40e-d5fbfe69f2e9"
+                    },
+                    {
+                        "credit_card_expire": "12/26",
+                        "credit_card_number": "4932997315874",
+                        "credit_card_provider": "Mastercard",
+                        "credit_card_security_code": "502",
+                        "id": 3353,
+                        "uid": "f981919f-24ad-7971-71c9-a2957e2d9e47"
+                    },
+                    {
+                        "credit_card_expire": "03/32",
+                        "credit_card_number": "6599450249600116",
+                        "credit_card_provider": "Discover",
+                        "credit_card_security_code": "030",
+                        "id": 4815,
+                        "uid": "02fea192-4e6a-b41f-0e79-1cabeae20b01"
+                    },
+                    {
+                        "credit_card_expire": "12/31",
+                        "credit_card_number": "4557182366299",
+                        "credit_card_provider": "Mastercard",
+                        "credit_card_security_code": "738",
+                        "id": 5047,
+                        "uid": "91b3de00-1d3e-f9cf-23b6-e0acc835e245"
+                    },
+                    {
+                        "credit_card_expire": "03/26",
+                        "credit_card_number": "4107344826358",
+                        "credit_card_provider": "VISA 19 digit",
+                        "credit_card_security_code": "348",
+                        "id": 9159,
+                        "uid": "35d064ab-85dc-d27a-747d-e516d2586559"
+                    }
+                ],
+                "info": {
+                    "disclaimer": "This data is randomly generated. Results generated that turn out to be valid in real life are purely coincidental.",
+                    "version": "1.0.0"
+                }
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "/random_crypto",
+            "url": "https://fake-data-generator1.p.rapidapi.com/crypto/random_crypto",
+            "description": "This endpoint generate a list of fake crypto assets",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "size",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "5"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://fake-data-generator1.p.rapidapi.com/crypto/random_crypto\"\nquerystring = {\"size\": \"5\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"fake-data-generator1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://fake-data-generator1.p.rapidapi.com/crypto/random_crypto\"\nquerystring = {\"size\": \"5\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"fake-data-generator1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "data": [
+                    {
+                        "id": 6512,
+                        "name": "PotCoin",
+                        "price": "$90.19",
+                        "symbol": "POT",
+                        "uid": "54acfafb-943c-bc03-2fe5-c7188118ffe4"
+                    },
+                    {
+                        "id": 7766,
+                        "name": "Emercoin",
+                        "price": "$27,713.61",
+                        "symbol": "EMC",
+                        "uid": "cc59be75-e799-bed7-71ad-b3eabe77a549"
+                    },
+                    {
+                        "id": 4319,
+                        "name": "IOTA",
+                        "price": "$25,367.31",
+                        "symbol": "IOTA",
+                        "uid": "81a7f863-751e-56b9-9793-27bf74f9800f"
+                    },
+                    {
+                        "id": 9861,
+                        "name": "Bitcoin",
+                        "price": "$5.30",
+                        "symbol": "BTC",
+                        "uid": "9f4393d0-3fae-14bd-337a-06f22783d229"
+                    },
+                    {
+                        "id": 9695,
+                        "name": "Coinye",
+                        "price": "$930.48",
+                        "symbol": "KOI",
+                        "uid": "4f90cd73-74e0-287f-84b2-793ad0a930eb"
+                    }
+                ],
+                "info": {
+                    "disclaimer": "This data is randomly generated. Results generated that turn out to be valid in real life are purely coincidental.",
+                    "version": "1.0.0"
+                }
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "/random_crypto_by_id",
+            "url": "https://fake-data-generator1.p.rapidapi.com/crypto/random_crypto_by_id",
+            "description": "Retrieve fake crypto assets by id.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "id",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "1"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://fake-data-generator1.p.rapidapi.com/crypto/random_crypto_by_id\"\nquerystring = {\"id\": \"1\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"fake-data-generator1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://fake-data-generator1.p.rapidapi.com/crypto/random_crypto_by_id\"\nquerystring = {\"id\": \"1\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"fake-data-generator1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "data": [
+                    {
+                        "id": 1,
+                        "name": "Burstcoin",
+                        "price": "$717.77",
+                        "symbol": "BURST",
+                        "uid": "c831eda9-305c-26d8-8f76-f7d7733c0183"
+                    }
+                ],
+                "info": {
+                    "disclaimer": "This data is randomly generated. Results generated that turn out to be valid in real life are purely coincidental.",
+                    "version": "1.0.0"
+                }
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "/random_post",
+            "url": "https://fake-data-generator1.p.rapidapi.com/post/random_post",
+            "description": "This endpoint generate a list of fake posts",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "size",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "5"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://fake-data-generator1.p.rapidapi.com/post/random_post\"\nquerystring = {\"size\": \"5\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"fake-data-generator1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://fake-data-generator1.p.rapidapi.com/post/random_post\"\nquerystring = {\"size\": \"5\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"fake-data-generator1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "data": [
+                    {
+                        "author": "Stephanie Garrett",
+                        "id": 280,
+                        "publishedAt": "2022-03-19 07:12:54",
+                        "summary": "Prevent seven life process television thank power local.",
+                        "tags": [
+                            "quality",
+                            "center",
+                            "American",
+                            "avoid"
+                        ],
+                        "text": "Event fear music again outside believe. Recently cell increase store what sea. Former sign leg test significant.\nLeave where situation range accept debate stay. Maybe those camera trade before form list.\nTry life improve main throughout. Great lawyer beat race figure.\nWhom along glass show wonder begin town. Town than sort knowledge once.\nBehind sing heart serve listen send.\nFinal future treat note. Building before future official. Short perhaps operation several conference major.",
+                        "title": "Later friend serve adult public.",
+                        "uid": "5fb99aed-dc8e-f1a9-9cbe-94c61668e97a",
+                        "url": "https://curtis.info/"
+                    },
+                    {
+                        "author": "Nicholas Johnson",
+                        "id": 6302,
+                        "publishedAt": "2022-07-18 23:31:30",
+                        "summary": "Lawyer memory reason get. Blue smile best institution well. Serve assume radio us successful same loss.",
+                        "tags": [
+                            "door",
+                            "less",
+                            "toward",
+                            "kid"
+                        ],
+                        "text": "Sense anything ever. Chair continue analysis young door. On me adult key box firm great.\nResult cold energy admit close. Response difference soldier.\nMiss race debate three.\nOwner final analysis. Though account theory result stop fill.\nChallenge organization west sell health. Onto three raise trade.\nBetter choice trial summer lawyer green. But myself imagine policy employee begin safe. Choose human way. Would technology worker anything.\nExist product guess help. Able believe cultural itself.",
+                        "title": "Marriage everything concern catch between such spring.",
+                        "uid": "e76fd439-2204-d200-4f21-64d2491777c2",
+                        "url": "https://www.gibson.com/"
+                    },
+                    {
+                        "author": "Erin Fry",
+                        "id": 2437,
+                        "publishedAt": "2021-05-27 19:03:39",
+                        "summary": "Accept truth society. Kid open news beautiful.",
+                        "tags": [
+                            "gas",
+                            "weight",
+                            "top",
+                            "for"
+                        ],
+                        "text": "Game region within edge letter remember painting. Late commercial design environmental then author.\nPresent economic president sea. Catch people alone at.\nReflect live store despite hear consider two. Environmental whether black strategy occur show.\nType lose them care imagine southern war. Forget few thank.\nPrepare peace mouth choice drop start. Skin standard network power husband respond.\nRepresent court fly authority ability. Tough clear point hard bad east.",
+                        "title": "Town film fact food friend author.",
+                        "uid": "fbfdb029-a812-680e-e2b0-0d40bb439c4c",
+                        "url": "http://www.herrera-long.com/"
+                    },
+                    {
+                        "author": "Kevin Moore",
+                        "id": 2196,
+                        "publishedAt": "2022-10-08 20:46:02",
+                        "summary": "Race meeting water decision ground discuss. Officer require cover class relate sit.",
+                        "tags": [
+                            "perhaps",
+                            "around",
+                            "raise",
+                            "often"
+                        ],
+                        "text": "Tough current quality but task. Best option begin type.\nPretty region him walk difference. Program its eye special. Meeting yourself gas opportunity.\nRoad develop drop six really exist keep particular. Blue interview term.\nTalk available change doctor material mouth area more. West never best daughter turn account bit.\nMission girl success. Indeed born role eat food. Floor agency hotel far card act.\nOr high just media may sign per. Mention kind floor food bit. Law pick nothing.",
+                        "title": "Address water may attorney be.",
+                        "uid": "4af517fb-7abf-0e34-73e5-b5c9b7334ce3",
+                        "url": "http://www.morgan.com/"
+                    },
+                    {
+                        "author": "Melissa Gonzales",
+                        "id": 5585,
+                        "publishedAt": "2022-06-08 10:22:02",
+                        "summary": "Level what attack she. Show reason feeling mention sense. Space evidence scene voice rich wrong.",
+                        "tags": [
+                            "Mr",
+                            "throughout",
+                            "same",
+                            "available"
+                        ],
+                        "text": "Phone hot move relationship. Allow suggest man concern pay Mrs area.\nHair economy group able result.\nDinner account drug similar still class tax. Theory majority kid answer back own thus maybe. Spend citizen ok international drop account.\nDiscussion then consider almost represent necessary exactly.\nAlready produce school ability federal.\nDay capital color management artist open represent. Hospital huge future.",
+                        "title": "Tax management grow factor stage current though.",
+                        "uid": "d0ed38db-a57e-70ee-a2c8-7a0a0d61ab4d",
+                        "url": "http://warren.biz/"
+                    }
+                ],
+                "info": {
+                    "disclaimer": "This data is randomly generated. Results generated that turn out to be valid in real life are purely coincidental.",
+                    "version": "1.0.0"
+                }
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "/random_address_by_id",
+            "url": "https://fake-data-generator1.p.rapidapi.com/address/random_address_by_id",
+            "description": "Retrieve a fake address by id",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "id",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "1"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://fake-data-generator1.p.rapidapi.com/address/random_address_by_id\"\nquerystring = {\"id\": \"1\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"fake-data-generator1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://fake-data-generator1.p.rapidapi.com/address/random_address_by_id\"\nquerystring = {\"id\": \"1\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"fake-data-generator1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "data": [
+                    {
+                        "buildingNumber": "00806",
+                        "city": "West Davidmouth",
+                        "country": "Latvia",
+                        "id": 1,
+                        "postcode": "90479",
+                        "streetName": "17066 Heather Grove Apt. 915",
+                        "uid": "c831eda9-305c-26d8-8f76-f7d7733c0183"
+                    }
+                ],
+                "info": {
+                    "version": "1.0.0"
+                }
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "random_profiles",
+            "url": "https://fake-data-generator1.p.rapidapi.com/user/random_profiles",
+            "description": "This endpoint generate a list of fake user profiles",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "size",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "5"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://fake-data-generator1.p.rapidapi.com/user/random_profiles\"\nquerystring = {\"size\": \"5\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"fake-data-generator1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://fake-data-generator1.p.rapidapi.com/user/random_profiles\"\nquerystring = {\"size\": \"5\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"fake-data-generator1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "data": [
+                    {
+                        "avatar": "https://robohash.org/carolyn.martin?size=300x300&set=set5",
+                        "blood_group": "O+",
+                        "company": "Everett-Morgan",
+                        "date_of_birth": {
+                            "age": 47,
+                            "birthdate": "1975-08-03"
+                        },
+                        "gender": "female",
+                        "id": 1530,
+                        "job": "Geophysicist/field seismologist",
+                        "location": {
+                            "address": "144 Nicholas Row Suite 837",
+                            "city": "Mitchellborough",
+                            "coordinates": {
+                                "latitude": "-0.148577",
+                                "longitude": "35.148947"
+                            },
+                            "country": "AR",
+                            "postcode": "13518",
+                            "state": "WI"
+                        },
+                        "login": {
+                            "md5": "9b44fefce54aa98b809d731ced2d25b0",
+                            "password": "A%2vO4cQ",
+                            "sha1": "8d3086c194bdb3922f1a8078e90e6658d99fa0d6",
+                            "sha256": "034e9aa76ba5fd4a698fe65a42dad41b0e5a822bd97a088a803ea473e07e1c4b",
+                            "username": "carolyn.martin"
+                        },
+                        "mail": "carolyn.martin@email.com",
+                        "name": {
+                            "first_name": "Carolyn",
+                            "last_name": "Martin",
+                            "name": "Carolyn Martin",
+                            "prefix": "Mrs."
+                        },
+                        "phones": {
+                            "country_code": "+1 441",
+                            "msisd": "9168791899150",
+                            "phone_number": "001-843-356-6838x081"
+                        },
+                        "picture": {
+                            "large": "https://randomuser.me/api/portraits/women/49.jpg",
+                            "medium": "https://randomuser.me/api/portraits/med/women/49.jpg",
+                            "thumbnail": "https://randomuser.me/api/portraits/thumb/women/49.jpg"
+                        },
+                        "residence": "747 Woods Lights Suite 079\nSouth Maryfort, CO 46150",
+                        "sex": "F",
+                        "ssn": "183-84-0011",
+                        "uid": "6e8af0fc-c738-400c-b15e-11414a4bef18",
+                        "website": [
+                            "https://www.floyd.com/",
+                            "https://hill.com/",
+                            "http://www.watts-bailey.com/"
+                        ]
+                    },
+                    {
+                        "avatar": "https://robohash.org/catherine.hale?size=300x300&set=set0",
+                        "blood_group": "B+",
+                        "company": "White-Hoover",
+                        "date_of_birth": {
+                            "age": 8,
+                            "birthdate": "2014-12-08"
+                        },
+                        "gender": "male",
+                        "id": 5182,
+                        "job": "Horticultural therapist",
+                        "location": {
+                            "address": "83526 Conway Pass Apt. 698",
+                            "city": "Port Carolynmouth",
+                            "coordinates": {
+                                "latitude": "54.5039325",
+                                "longitude": "-173.217789"
+                            },
+                            "country": "MM",
+                            "postcode": "20060",
+                            "state": "OK"
+                        },
+                        "login": {
+                            "md5": "a53e91fdeb12c1ea839113559e410399",
+                            "password": "E!6BV$tn",
+                            "sha1": "e13e7ac3d594f36c23e316c5a5e1b5cdc5d3da76",
+                            "sha256": "a6549b3ced9041ead84ad66338d792aea3d94f40596e03b59f597c08283f676a",
+                            "username": "catherine.hale"
+                        },
+                        "mail": "catherine.hale@email.com",
+                        "name": {
+                            "first_name": "Catherine",
+                            "last_name": "Hale",
+                            "name": "Catherine Hale",
+                            "prefix": "Mrs."
+                        },
+                        "phones": {
+                            "country_code": "+976",
+                            "msisd": "8303145607828",
+                            "phone_number": "700-011-7648"
+                        },
+                        "picture": {
+                            "large": "https://randomuser.me/api/portraits/men/91.jpg",
+                            "medium": "https://randomuser.me/api/portraits/med/men/91.jpg",
+                            "thumbnail": "https://randomuser.me/api/portraits/thumb/men/91.jpg"
+                        },
+                        "residence": "53980 Christopher Ridges\nLatoyahaven, NV 28234",
+                        "sex": "M",
+                        "ssn": "898-92-4700",
+                        "uid": "2939ca21-40d0-f90c-0830-307d880dac8f",
+                        "website": [
+                            "http://adams-meyer.com/",
+                            "https://www.barnes.biz/"
+                        ]
+                    },
+                    {
+                        "avatar": "https://robohash.org/courtney.sanders?size=300x300&set=set0",
+                        "blood_group": "B-",
+                        "company": "Reed-Torres",
+                        "date_of_birth": {
+                            "age": 76,
+                            "birthdate": "1947-06-09"
+                        },
+                        "gender": "female",
+                        "id": 5930,
+                        "job": "Furniture conservator/restorer",
+                        "location": {
+                            "address": "7014 Case Courts",
+                            "city": "Allenview",
+                            "coordinates": {
+                                "latitude": "59.379791",
+                                "longitude": "-155.665223"
+                            },
+                            "country": "KP",
+                            "postcode": "63443",
+                            "state": "CA"
+                        },
+                        "login": {
+                            "md5": "435edea30c23f39d3d163eda61c2e774",
+                            "password": "%jf4MfWa",
+                            "sha1": "28bd2b8469fa55aac2796705f6d8abba7d5c0432",
+                            "sha256": "c938b9df24fa7106553ba2348431bbb9fc0925890f2ddf3023f9a74b73380461",
+                            "username": "courtney.sanders"
+                        },
+                        "mail": "courtney.sanders@email.com",
+                        "name": {
+                            "first_name": "Courtney",
+                            "last_name": "Sanders",
+                            "name": "Courtney Sanders",
+                            "prefix": "Mrs."
+                        },
+                        "phones": {
+                            "country_code": "+44 7839",
+                            "msisd": "3418493093194",
+                            "phone_number": "(056)893-5191"
+                        },
+                        "picture": {
+                            "large": "https://randomuser.me/api/portraits/women/22.jpg",
+                            "medium": "https://randomuser.me/api/portraits/med/women/22.jpg",
+                            "thumbnail": "https://randomuser.me/api/portraits/thumb/women/22.jpg"
+                        },
+                        "residence": "6790 Brown Fort\nWest Patrickfort, GA 18633",
+                        "sex": "F",
+                        "ssn": "589-97-3607",
+                        "uid": "92b25998-060c-5c97-9c1a-089d956e1f6a",
+                        "website": [
+                            "https://www.smith.com/",
+                            "https://www.lopez.net/",
+                            "https://www.woodward.com/",
+                            "http://www.shaw-lang.com/"
+                        ]
+                    },
+                    {
+                        "avatar": "https://robohash.org/kelly.fry?size=300x300&set=set1",
+                        "blood_group": "O+",
+                        "company": "Reed Group",
+                        "date_of_birth": {
+                            "age": 56,
+                            "birthdate": "1966-09-09"
+                        },
+                        "gender": "female",
+                        "id": 1529,
+                        "job": "Sports development officer",
+                        "location": {
+                            "address": "72006 Kimberly Heights Apt. 909",
+                            "city": "Natalieton",
+                            "coordinates": {
+                                "latitude": "41.130775",
+                                "longitude": "-133.122622"
+                            },
+                            "country": "AD",
+                            "postcode": "68945",
+                            "state": "PA"
+                        },
+                        "login": {
+                            "md5": "ecf93eefb54d2ae9d6cb0e955a169b37",
+                            "password": "V!0XrdUq",
+                            "sha1": "e358600eacc81764b77a187eaf76cd0355ea4516",
+                            "sha256": "6c8b46efe591bbeef640e6edd95caa633e4f87c22fef19e80834d5302b3dd1eb",
+                            "username": "kelly.fry"
+                        },
+                        "mail": "kelly.fry@email.com",
+                        "name": {
+                            "first_name": "Kelly",
+                            "last_name": "Fry",
+                            "name": "Kelly Fry",
+                            "prefix": "Dr."
+                        },
+                        "phones": {
+                            "country_code": "+503",
+                            "msisd": "3514805986404",
+                            "phone_number": "(885)469-1661x8890"
+                        },
+                        "picture": {
+                            "large": "https://randomuser.me/api/portraits/women/60.jpg",
+                            "medium": "https://randomuser.me/api/portraits/med/women/60.jpg",
+                            "thumbnail": "https://randomuser.me/api/portraits/thumb/women/60.jpg"
+                        },
+                        "residence": "4691 Peter Stravenue Suite 721\nRochaborough, MT 91902",
+                        "sex": "F",
+                        "ssn": "270-81-8203",
+                        "uid": "f3620208-ab8a-e85b-5293-c3ba32b23e92",
+                        "website": [
+                            "https://gordon-booth.info/",
+                            "http://www.nelson.com/",
+                            "https://bishop.com/",
+                            "https://martin-lee.info/"
+                        ]
+                    },
+                    {
+                        "avatar": "https://robohash.org/kelsey.newman?size=300x300&set=set4",
+                        "blood_group": "B-",
+                        "company": "Sanchez LLC",
+                        "date_of_birth": {
+                            "age": 10,
+                            "birthdate": "2013-06-12"
+                        },
+                        "gender": "male",
+                        "id": 348,
+                        "job": "Education officer, museum",
+                        "location": {
+                            "address": "796 Green Hollow",
+                            "city": "Markton",
+                            "coordinates": {
+                                "latitude": "-64.5798205",
+                                "longitude": "67.522131"
+                            },
+                            "country": "VC",
+                            "postcode": "08413",
+                            "state": "NV"
+                        },
+                        "login": {
+                            "md5": "b84f7bdee169e91c7684c52b322f195d",
+                            "password": "59@3QhdR",
+                            "sha1": "14a98b5cd2c3dd50b09370c77f9809d0b79132ad",
+                            "sha256": "e532a33caf04f073a6323b3c4b44e19e4398155bdff8aafe498ae5d850ff2915",
+                            "username": "kelsey.newman"
+                        },
+                        "mail": "kelsey.newman@email.com",
+                        "name": {
+                            "first_name": "Kelsey",
+                            "last_name": "Newman",
+                            "name": "Kelsey Newman",
+                            "prefix": "Dr."
+                        },
+                        "phones": {
+                            "country_code": "+251",
+                            "msisd": "0804885534706",
+                            "phone_number": "001-098-313-8993"
+                        },
+                        "picture": {
+                            "large": "https://randomuser.me/api/portraits/men/53.jpg",
+                            "medium": "https://randomuser.me/api/portraits/med/men/53.jpg",
+                            "thumbnail": "https://randomuser.me/api/portraits/thumb/men/53.jpg"
+                        },
+                        "residence": "PSC 0752, Box 5108\nAPO AP 59220",
+                        "sex": "M",
+                        "ssn": "092-72-3088",
+                        "uid": "5e9ebca1-1de2-25c3-3818-704e2123d332",
+                        "website": [
+                            "https://www.fitzgerald.org/",
+                            "http://www.schmitt.com/",
+                            "https://www.reyes-taylor.com/",
+                            "http://www.woods.net/"
+                        ]
+                    }
+                ],
+                "info": {
+                    "disclaimer": "This data is randomly generated. Results generated that turn out to be valid in real life are purely coincidental.",
+                    "version": "1.0.0"
+                }
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "random_profile_by_id",
+            "url": "https://fake-data-generator1.p.rapidapi.com/user/random_profile_by_id",
+            "description": "Retrieve fake profiles by id.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "id",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "1"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://fake-data-generator1.p.rapidapi.com/user/random_profile_by_id\"\nquerystring = {\"id\": \"1\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"fake-data-generator1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://fake-data-generator1.p.rapidapi.com/user/random_profile_by_id\"\nquerystring = {\"id\": \"1\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"fake-data-generator1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "data": [
+                    {
+                        "avatar": "https://robohash.org/patricia.ryan?size=300x300&set=set4",
+                        "blood_group": "A+",
+                        "company": "Wilson-Hodges",
+                        "date_of_birth": {
+                            "age": 85,
+                            "birthdate": "1938-05-06"
+                        },
+                        "gender": "female",
+                        "id": 1,
+                        "job": "Biomedical scientist",
+                        "location": {
+                            "address": "48244 Park Parks",
+                            "city": "West Kelly",
+                            "coordinates": {
+                                "latitude": "-84.007954",
+                                "longitude": "-166.338857"
+                            },
+                            "country": "KR",
+                            "postcode": "03598",
+                            "state": "DE"
+                        },
+                        "login": {
+                            "md5": "2f6bfed342ceef017ebc98ec7c53d858",
+                            "password": "(o3MaXqG",
+                            "sha1": "e2c7b7388770f745e6cea85985fecebbe29897bb",
+                            "sha256": "23b75c9822c0ca6db021538190279c8cc822721ee5a5be65e1cca54ad341ca0a",
+                            "username": "patricia.ryan"
+                        },
+                        "mail": "patricia.ryan@email.com",
+                        "name": {
+                            "first_name": "Patricia",
+                            "last_name": "Ryan",
+                            "name": "Patricia Ryan",
+                            "prefix": "Dr."
+                        },
+                        "phones": {
+                            "country_code": "+256",
+                            "msisd": "1840110704341",
+                            "phone_number": "565.088.9957x9032"
+                        },
+                        "picture": {
+                            "large": "https://randomuser.me/api/portraits/women/52.jpg",
+                            "medium": "https://randomuser.me/api/portraits/med/women/52.jpg",
+                            "thumbnail": "https://randomuser.me/api/portraits/thumb/women/52.jpg"
+                        },
+                        "residence": "0669 Heather Grove\nNew Sierra, MD 04510",
+                        "sex": "F",
+                        "ssn": "484-84-6220",
+                        "uid": "c831eda9-305c-26d8-8f76-f7d7733c0183",
+                        "website": [
+                            "http://johnson.info/",
+                            "http://rhodes.com/",
+                            "http://nielsen.com/",
+                            "http://mcpherson.net/"
+                        ]
+                    }
+                ],
+                "info": {
+                    "disclaimer": "This data is randomly generated. Results generated that turn out to be valid in real life are purely coincidental.",
+                    "version": "1.0.0"
+                }
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "/random_bank_by_id",
+            "url": "https://fake-data-generator1.p.rapidapi.com/bank/random_bank_by_id",
+            "description": "Retrieve fake banks by id.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "id",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "1"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://fake-data-generator1.p.rapidapi.com/bank/random_bank_by_id\"\nquerystring = {\"id\": \"1\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"fake-data-generator1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://fake-data-generator1.p.rapidapi.com/bank/random_bank_by_id\"\nquerystring = {\"id\": \"1\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"fake-data-generator1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "data": [
+                    {
+                        "bban": "ZYCI17776317066907",
+                        "iban": "GB37IXZH91500080636083",
+                        "id": 1,
+                        "swift": "PRHLGBOO3SB",
+                        "swift11": "NRUDGBLSHV6",
+                        "uid": "c831eda9-305c-26d8-8f76-f7d7733c0183"
+                    }
+                ],
+                "info": {
+                    "disclaimer": "This data is randomly generated. Results generated that turn out to be valid in real life are purely coincidental.",
+                    "version": "1.0.0"
+                }
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "/random_credit_card_by_id",
+            "url": "https://fake-data-generator1.p.rapidapi.com/credit_card/random_credit_card_by_id",
+            "description": "Retrieve fake credit cards by id.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "id",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "1"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://fake-data-generator1.p.rapidapi.com/credit_card/random_credit_card_by_id\"\nquerystring = {\"id\": \"1\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"fake-data-generator1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://fake-data-generator1.p.rapidapi.com/credit_card/random_credit_card_by_id\"\nquerystring = {\"id\": \"1\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"fake-data-generator1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "data": [
+                    {
+                        "credit_card_expire": "07/24",
+                        "credit_card_number": "4777631706690743917",
+                        "credit_card_provider": "American Express",
+                        "credit_card_security_code": "008",
+                        "id": 1,
+                        "uid": "c831eda9-305c-26d8-8f76-f7d7733c0183"
+                    }
+                ],
+                "info": {
+                    "disclaimer": "This data is randomly generated. Results generated that turn out to be valid in real life are purely coincidental.",
+                    "version": "1.0.0"
+                }
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "/random_post_by_id",
+            "url": "https://fake-data-generator1.p.rapidapi.com/post/random_post_by_id",
+            "description": "Retrieve fake post by id.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "id",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "1"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://fake-data-generator1.p.rapidapi.com/post/random_post_by_id\"\nquerystring = {\"id\": \"1\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"fake-data-generator1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://fake-data-generator1.p.rapidapi.com/post/random_post_by_id\"\nquerystring = {\"id\": \"1\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"fake-data-generator1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "data": [
+                    {
+                        "author": "Pamela Scott",
+                        "id": 1,
+                        "publishedAt": "2023-03-15 08:30:19",
+                        "summary": "Receive entire soon. War top air agent must voice high describe. Rise month shake voice need generation. Set weight unit indicate trouble.",
+                        "tags": [
+                            "month",
+                            "collection",
+                            "evening",
+                            "represent"
+                        ],
+                        "text": "Picture rich fast sea. View instead stop prove field onto think.\nOpen alone drug something increase common. Third simply scene beat professional blue clear. Have run light final summer pass.\nPositive collection dinner activity current turn. Discussion message weight official learn especially nature. Himself tax west. Speak million no international argue thank now.\nIncluding spend increase ability music skill former. Agreement director concern once technology sometimes someone staff.",
+                        "title": "Set line here decide maintain throw hope.",
+                        "uid": "c831eda9-305c-26d8-8f76-f7d7733c0183",
+                        "url": "https://www.lopez.com/"
+                    }
+                ],
+                "info": {
+                    "disclaimer": "This data is randomly generated. Results generated that turn out to be valid in real life are purely coincidental.",
+                    "version": "1.0.0"
+                }
+            },
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "fake_data_generator"
+}

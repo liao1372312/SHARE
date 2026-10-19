@@ -1,0 +1,513 @@
+{
+    "product_id": "api_785663e7-6996-4e78-8643-ac70c65380f7",
+    "tool_description": "Easily and quickly convert all types of measurement units using the API.",
+    "home_url": "https://rapidapi.com/zanekpavel-AAgJeudWKxt/api/measurement-units-converter/",
+    "name": "Measurement Units Converter",
+    "title": "Measurement Units Converter",
+    "pricing": "FREEMIUM",
+    "tool_name": "Measurement Units Converter",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 1077,
+        "avgSuccessRate": 90,
+        "popularityScore": 7.9,
+        "__typename": "Score"
+    },
+    "host": "measurement-units-converter.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Convert from one unit of measure to another",
+            "url": "https://measurement-units-converter.p.rapidapi.com/api/v1/market/conversions/convert",
+            "description": "Convert efficiently and quickly between more than 50 of the most used units with a simple and intuitive conversion tool. At the output, you will get an answer with the conversion of your measurement units.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "output_unit",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "g"
+                },
+                {
+                    "name": "input_unit",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "kg"
+                },
+                {
+                    "name": "value",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "10"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://measurement-units-converter.p.rapidapi.com/api/v1/market/conversions/convert\"\nquerystring = {\"output_unit\": \"g\", \"input_unit\": \"kg\", \"value\": \"10\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"measurement-units-converter.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://measurement-units-converter.p.rapidapi.com/api/v1/market/conversions/convert\"\nquerystring = {\"output_unit\": \"g\", \"input_unit\": \"kg\", \"value\": \"10\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"measurement-units-converter.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "input": {
+                    "value": "10",
+                    "unit": "kg"
+                },
+                "output": {
+                    "value": 10000,
+                    "unit": "g"
+                }
+            }
+        },
+        {
+            "name": "Measurements",
+            "url": "https://measurement-units-converter.p.rapidapi.com/api/v1/market/conversions/measurements",
+            "description": "GET array of all types of measurement. The array key is in the format {inputUnit-outputUnit} - you can later use these values \u200b\u200bwhen converting units of measurement.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://measurement-units-converter.p.rapidapi.com/api/v1/market/conversions/measurements\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"measurement-units-converter.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://measurement-units-converter.p.rapidapi.com/api/v1/market/conversions/measurements\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"measurement-units-converter.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "kg-g": {
+                    "value": 1000,
+                    "name": "kilograms to grams"
+                },
+                "g-kg": {
+                    "value": 0.001,
+                    "name": "grams to kilograms"
+                },
+                "lb-kg": {
+                    "value": 0.453592,
+                    "name": "pounds to kilograms"
+                },
+                "kg-lb": {
+                    "value": 2.20462,
+                    "name": "kilograms to pounds"
+                },
+                "oz-g": {
+                    "value": 28.3495,
+                    "name": "ounces to grams"
+                },
+                "g-oz": {
+                    "value": 0.035274,
+                    "name": "grams to ounces"
+                },
+                "km-m": {
+                    "value": 1000,
+                    "name": "kilometers to meters"
+                },
+                "m-km": {
+                    "value": 0.001,
+                    "name": "meters to kilometers"
+                },
+                "mi-km": {
+                    "value": 1.60934,
+                    "name": "miles to kilometers"
+                },
+                "km-mi": {
+                    "value": 0.621371,
+                    "name": "kilometers to miles"
+                },
+                "l-ml": {
+                    "value": 1000,
+                    "name": "liters to milliliters"
+                },
+                "ml-l": {
+                    "value": 0.001,
+                    "name": "milliliters to liters"
+                },
+                "gal-l": {
+                    "value": 3.78541,
+                    "name": "gallons to liters"
+                },
+                "l-gal": {
+                    "value": 0.264172,
+                    "name": "liters to gallons"
+                },
+                "ft-m": {
+                    "value": 0.3048,
+                    "name": "feet to meters"
+                },
+                "m-ft": {
+                    "value": 3.28084,
+                    "name": "meters to feet"
+                },
+                "in-cm": {
+                    "value": 2.54,
+                    "name": "inches to centimeters"
+                },
+                "cm-in": {
+                    "value": 0.393701,
+                    "name": "centimeters to inches"
+                },
+                "F-C": {
+                    "value": [
+                        -32,
+                        0.5556
+                    ],
+                    "name": "Fahrenheit to Celsius"
+                },
+                "C-F": {
+                    "value": [
+                        32,
+                        1.8
+                    ],
+                    "name": "Celsius to Fahrenheit"
+                },
+                "N-kgf": {
+                    "value": 0.10197,
+                    "name": "Newtons to kilogram-force"
+                },
+                "kgf-N": {
+                    "value": 9.80665,
+                    "name": "kilogram-force to Newtons"
+                },
+                "atm-Pa": {
+                    "value": 101325,
+                    "name": "Atmosphere to pascal"
+                },
+                "Pa-atm": {
+                    "value": 9.86923e-06,
+                    "name": "pascal to atmosphere"
+                },
+                "J-cal": {
+                    "value": 4.184,
+                    "name": "joules to calories"
+                },
+                "cal-J": {
+                    "value": 0.239006,
+                    "name": "calories to joules"
+                },
+                "J-kWh": {
+                    "value": 2.77778e-07,
+                    "name": "joules to kilowatt-hours"
+                },
+                "kWh-J": {
+                    "value": 3600000,
+                    "name": "kilowatt-hours to joules"
+                },
+                "mph-kmh": {
+                    "value": 1.60934,
+                    "name": "miles per hour to kilometers per hour"
+                },
+                "kmh-mph": {
+                    "value": 0.621371,
+                    "name": "kilometers per hour to miles per hour"
+                },
+                "kW-hp": {
+                    "value": 1.34102,
+                    "name": "kilowatts to horsepower"
+                },
+                "hp-kW": {
+                    "value": 0.7457,
+                    "name": "horsepower to kilowatts"
+                },
+                "N-lbf": {
+                    "value": 0.224809,
+                    "name": "Newtons to pound-force"
+                },
+                "lbf-N": {
+                    "value": 4.44822,
+                    "name": "pound-force to Newtons"
+                },
+                "W-hp": {
+                    "value": 0.001341,
+                    "name": "watts to horsepower"
+                },
+                "hp-W": {
+                    "value": 745.7,
+                    "name": "horsepower to watts"
+                },
+                "J-BTU": {
+                    "value": 0.000947817,
+                    "name": "joules to British thermal units"
+                },
+                "BTU-J": {
+                    "value": 1055.056,
+                    "name": "British thermal units to joules"
+                },
+                "J-Wh": {
+                    "value": 0.000277778,
+                    "name": "joules to watt-hours"
+                },
+                "Wh-J": {
+                    "value": 3600,
+                    "name": "watt-hours to joules"
+                },
+                "Pa-bar": {
+                    "value": 1e-05,
+                    "name": "pascal to bar"
+                },
+                "bar-Pa": {
+                    "value": 100000,
+                    "name": "bar to pascal"
+                },
+                "Pa-psi": {
+                    "value": 0.000145038,
+                    "name": "pascal to pound per square inch"
+                },
+                "psi-Pa": {
+                    "value": 6894.76,
+                    "name": "pound per square inch to pascal"
+                },
+                "kg-tonne": {
+                    "value": 0.001,
+                    "name": "kilograms to metric tonne"
+                },
+                "tonne-kg": {
+                    "value": 1000,
+                    "name": "metric tonne to kilograms"
+                },
+                "deg-rad": {
+                    "value": 0.0174533,
+                    "name": "degrees to radians"
+                },
+                "rad-deg": {
+                    "value": 57.2958,
+                    "name": "radians to degrees"
+                },
+                "m/s-ft/s": {
+                    "value": 3.28084,
+                    "name": "meters per second to feet per second"
+                },
+                "ft/s-m/s": {
+                    "value": 0.3048,
+                    "name": "feet per second to meters per second"
+                },
+                "m/s-mph": {
+                    "value": 2.23694,
+                    "name": "meters per second to miles per hour"
+                },
+                "mph-m/s": {
+                    "value": 0.44704,
+                    "name": "miles per hour to meters per second"
+                },
+                "m/s-km/h": {
+                    "value": 3.6,
+                    "name": "meters per second to kilometers per hour"
+                },
+                "km/h-m/s": {
+                    "value": 0.277778,
+                    "name": "kilometers per hour to meters per second"
+                },
+                "m-yd": {
+                    "value": 1.09361,
+                    "name": "meters to yards"
+                },
+                "yd-m": {
+                    "value": 0.9144,
+                    "name": "yards to meters"
+                },
+                "m-mi": {
+                    "value": 0.000621371,
+                    "name": "meters to miles"
+                },
+                "mi-m": {
+                    "value": 1609.34,
+                    "name": "miles to meters"
+                },
+                "m-nmi": {
+                    "value": 0.000539957,
+                    "name": "meters to nautical miles"
+                },
+                "nmi-m": {
+                    "value": 1852,
+                    "name": "nautical miles to meters"
+                },
+                "m-ang": {
+                    "value": 1e-10,
+                    "name": "meters to angustroms"
+                },
+                "ang-m": {
+                    "value": 10000000000,
+                    "name": "angstroms to meters"
+                },
+                "m-ly": {
+                    "value": 1.057e-16,
+                    "name": "meters to light years"
+                },
+                "ly-m": {
+                    "value": 9461000000000000,
+                    "name": "light years to meters"
+                },
+                "m-pc": {
+                    "value": 3.086e-16,
+                    "name": "meters to parsecs"
+                },
+                "pc-m": {
+                    "value": 32620000000000000,
+                    "name": "parsecs to meters"
+                },
+                "m-au": {
+                    "value": 6.685e-12,
+                    "name": "meters to astronomical units"
+                },
+                "au-m": {
+                    "value": 149600000000,
+                    "name": "astronomical units to meters"
+                },
+                "kPa-bar": {
+                    "value": 0.01,
+                    "name": "kilopascals to bar"
+                },
+                "bar-kPa": {
+                    "value": 100,
+                    "name": "bar to kilopascals"
+                },
+                "MPa-bar": {
+                    "value": 10,
+                    "name": "Mega pascals to bars"
+                },
+                "bar-MPa": {
+                    "value": 0.1,
+                    "name": "bars to Mega pascals"
+                },
+                "MJ-J": {
+                    "value": 1000000,
+                    "name": "Mega joules to joules"
+                },
+                "J-MJ": {
+                    "value": 1e-06,
+                    "name": "joules to Mega joules"
+                },
+                "kJ-J": {
+                    "value": 1000,
+                    "name": "kilojoules to joules"
+                },
+                "J-kJ": {
+                    "value": 0.001,
+                    "name": "joules to kilojoules"
+                },
+                "eV-J": {
+                    "value": 1.60218e-19,
+                    "name": "electronvolts to joules"
+                },
+                "J-eV": {
+                    "value": 6.241509e+18,
+                    "name": "joules to electronvolts"
+                },
+                "s-min": {
+                    "value": 0.0166667,
+                    "name": "seconds to minutes"
+                },
+                "min-s": {
+                    "value": 60,
+                    "name": "minutes to seconds"
+                },
+                "s-h": {
+                    "value": 0.000277778,
+                    "name": "seconds to hours"
+                },
+                "h-s": {
+                    "value": 3600,
+                    "name": "hours to seconds"
+                },
+                "s-d": {
+                    "value": 1.15741e-05,
+                    "name": "seconds to days"
+                },
+                "d-s": {
+                    "value": 86400,
+                    "name": "days to seconds"
+                },
+                "s-week": {
+                    "value": 1.65344e-06,
+                    "name": "seconds to weeks"
+                },
+                "week-s": {
+                    "value": 604800,
+                    "name": "weeks to seconds"
+                },
+                "year-d": {
+                    "value": 365,
+                    "name": "years to days"
+                },
+                "d-year": {
+                    "value": 0.00273973,
+                    "name": "days to years"
+                },
+                "year-s": {
+                    "value": 31557600,
+                    "name": "years to seconds"
+                },
+                "l-oz": {
+                    "value": 33.814,
+                    "name": "liters to ounces"
+                },
+                "oz-l": {
+                    "value": 0.029574,
+                    "name": "ounces to liters"
+                },
+                "lb-oz": {
+                    "value": 16,
+                    "name": "pounds to ounces"
+                },
+                "oz-lb": {
+                    "value": 0.0625,
+                    "name": "ounces to pounds"
+                },
+                "ft-in": {
+                    "value": 12,
+                    "name": "feet to inches"
+                },
+                "in-ft": {
+                    "value": 0.083333,
+                    "name": "inches to feet"
+                },
+                "tsp-ml": {
+                    "value": 4.92892,
+                    "name": "teaspoons to milliliters"
+                },
+                "ml-tsp": {
+                    "value": 0.202884,
+                    "name": "milliliters to teaspoons"
+                },
+                "tbsp-ml": {
+                    "value": 14.7868,
+                    "name": "tablespoons to milliliters"
+                },
+                "ml-tbsp": {
+                    "value": 0.067628,
+                    "name": "milliliters to tablespoons"
+                },
+                "cup-ml": {
+                    "value": 236.588,
+                    "name": "cups to milliliters"
+                },
+                "ml-cup": {
+                    "value": 0.00422675,
+                    "name": "milliliters to cups"
+                },
+                "floz-ml": {
+                    "value": 29.5735,
+                    "name": "fluid ounces to milliliters"
+                },
+                "ml-floz": {
+                    "value": 0.033814,
+                    "name": "milliliters to fluid ounces"
+                },
+                "pint-ml": {
+                    "value": 473.176,
+                    "name": "pints to milliliters"
+                },
+                "ml-pint": {
+                    "value": 0.00211338,
+                    "name": "milliliters to pints"
+                },
+                "quart-ml": {
+                    "value": 946.353,
+                    "name": "quarts to milliliters"
+                },
+                "ml-quart": {
+                    "value": 0.00105701,
+                    "name": "milliliters to quarts"
+                },
+                "gal-ml": {
+                    "value": 3785.41,
+                    "name": "gallons to milliliters"
+                },
+                "ml-gal": {
+                    "value": 0.000264172,
+                    "name": "milliliters to gallons"
+                }
+            }
+        }
+    ],
+    "standardized_name": "measurement_units_converter"
+}

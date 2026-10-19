@@ -1,0 +1,675 @@
+{
+    "product_id": "api_0d30e768-5c90-415f-a1ff-04c3a8bdae84",
+    "tool_description": "The Egypt Lookup API users to retrieve in realtime the latitude, longitude, and address of a location in Egypt. The API utilizes the OpenStreetMap and Project-OSRM to retrieve up-to-date location data.",
+    "home_url": "https://rapidapi.com/kidddevs/api/egypt-api/",
+    "name": "Egypt API",
+    "title": "Egypt API",
+    "pricing": "FREEMIUM",
+    "tool_name": "Egypt API",
+    "score": {
+        "avgServiceLevel": 98,
+        "avgLatency": 405,
+        "avgSuccessRate": 98,
+        "popularityScore": 8.8,
+        "__typename": "Score"
+    },
+    "host": "egypt-api.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Directions Between 2 Locations",
+            "url": "https://egypt-api.p.rapidapi.com/directions",
+            "description": "This endpoint returns information about the route between two locations in terms of distance, duration, and steps.\n\nBelow Example: **Directions from Alexandria to Cairo**",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "start_lat",
+                    "type": "NUMBER",
+                    "description": "Latitude of the starting point (required)",
+                    "default": "31.1991806"
+                },
+                {
+                    "name": "end_lon",
+                    "type": "NUMBER",
+                    "description": "Longitude of the ending point (required)",
+                    "default": "31.23788289124186"
+                },
+                {
+                    "name": "start_lon",
+                    "type": "NUMBER",
+                    "description": "Longitude of the starting point (required)",
+                    "default": "29.8951716"
+                },
+                {
+                    "name": "end_lat",
+                    "type": "NUMBER",
+                    "description": "Latitude of the ending point (required)",
+                    "default": "30.02313795"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "distance_unit",
+                    "type": "STRING",
+                    "description": "Unit of distance measurement, valid options are **km** (default), and **mi**.",
+                    "default": "km"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://egypt-api.p.rapidapi.com/directions\"\nquerystring = {\"distance_unit\": \"km\", \"start_lat\": \"31.1991806\", \"end_lon\": \"31.23788289124186\", \"start_lon\": \"29.8951716\", \"end_lat\": \"30.02313795\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"egypt-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://egypt-api.p.rapidapi.com/directions\"\nquerystring = {\"distance_unit\": \"km\", \"start_lat\": \"31.1991806\", \"end_lon\": \"31.23788289124186\", \"start_lon\": \"29.8951716\", \"end_lat\": \"30.02313795\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"egypt-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "distance": "223.98km",
+                "duration": "2h 29min",
+                "steps": [
+                    {
+                        "direction": "depart",
+                        "distance": "0.03km",
+                        "duration": "0min:6s",
+                        "instruction": "",
+                        "location": [
+                            29.895363,
+                            31.199134
+                        ]
+                    },
+                    {
+                        "direction": "turn",
+                        "distance": "0.02km",
+                        "duration": "0min:9s",
+                        "instruction": "",
+                        "location": [
+                            29.895456,
+                            31.19941
+                        ]
+                    },
+                    {
+                        "direction": "turn",
+                        "distance": "0.04km",
+                        "duration": "0min:6s",
+                        "instruction": "",
+                        "location": [
+                            29.895694,
+                            31.199356
+                        ]
+                    },
+                    {
+                        "direction": "turn",
+                        "distance": "0.47km",
+                        "duration": "0min:33s",
+                        "instruction": "",
+                        "location": [
+                            29.895768,
+                            31.199679
+                        ]
+                    },
+                    {
+                        "direction": "turn",
+                        "distance": "0.56km",
+                        "duration": "0min:36s",
+                        "instruction": "",
+                        "location": [
+                            29.900281,
+                            31.201045
+                        ]
+                    },
+                    {
+                        "direction": "fork",
+                        "distance": "0.34km",
+                        "duration": "0min:27s",
+                        "instruction": "",
+                        "location": [
+                            29.904256,
+                            31.197355
+                        ]
+                    },
+                    {
+                        "direction": "turn",
+                        "distance": "0.89km",
+                        "duration": "0min:57s",
+                        "instruction": "",
+                        "location": [
+                            29.906308,
+                            31.194934
+                        ]
+                    },
+                    {
+                        "direction": "on ramp",
+                        "distance": "0.28km",
+                        "duration": "0min:22s",
+                        "instruction": "",
+                        "location": [
+                            29.914674,
+                            31.19839
+                        ]
+                    },
+                    {
+                        "direction": "merge",
+                        "distance": "0.22km",
+                        "duration": "0min:8s",
+                        "instruction": "",
+                        "location": [
+                            29.916832,
+                            31.197965
+                        ]
+                    },
+                    {
+                        "direction": "new name",
+                        "distance": "2.22km",
+                        "duration": "1min:28s",
+                        "instruction": "",
+                        "location": [
+                            29.918262,
+                            31.196371
+                        ]
+                    },
+                    {
+                        "direction": "new name",
+                        "distance": "22.47km",
+                        "duration": "14min:36s",
+                        "instruction": "",
+                        "location": [
+                            29.928815,
+                            31.179649
+                        ]
+                    },
+                    {
+                        "direction": "fork",
+                        "distance": "0.77km",
+                        "duration": "0min:28s",
+                        "instruction": "",
+                        "location": [
+                            29.781982,
+                            31.03954
+                        ]
+                    },
+                    {
+                        "direction": "fork",
+                        "distance": "8.16km",
+                        "duration": "5min:6s",
+                        "instruction": "",
+                        "location": [
+                            29.784137,
+                            31.033014
+                        ]
+                    },
+                    {
+                        "direction": "continue",
+                        "distance": "164.29km",
+                        "duration": "1h 43min",
+                        "instruction": "",
+                        "location": [
+                            29.826127,
+                            30.970308
+                        ]
+                    },
+                    {
+                        "direction": "off ramp",
+                        "distance": "0.61km",
+                        "duration": "0min:49s",
+                        "instruction": "",
+                        "location": [
+                            31.053192,
+                            30.045493
+                        ]
+                    },
+                    {
+                        "direction": "merge",
+                        "distance": "16.08km",
+                        "duration": "13min:18s",
+                        "instruction": "",
+                        "location": [
+                            31.0506,
+                            30.04581
+                        ]
+                    },
+                    {
+                        "direction": "new name",
+                        "distance": "1.73km",
+                        "duration": "1min:13s",
+                        "instruction": "",
+                        "location": [
+                            31.211631,
+                            30.06163
+                        ]
+                    },
+                    {
+                        "direction": "off ramp",
+                        "distance": "0.26km",
+                        "duration": "0min:23s",
+                        "instruction": "",
+                        "location": [
+                            31.228032,
+                            30.0573
+                        ]
+                    },
+                    {
+                        "direction": "merge",
+                        "distance": "2.99km",
+                        "duration": "2min:38s",
+                        "instruction": "",
+                        "location": [
+                            31.22913,
+                            30.055203
+                        ]
+                    },
+                    {
+                        "direction": "turn",
+                        "distance": "0.30km",
+                        "duration": "0min:16s",
+                        "instruction": "",
+                        "location": [
+                            31.231014,
+                            30.029201
+                        ]
+                    },
+                    {
+                        "direction": "new name",
+                        "distance": "0.45km",
+                        "duration": "0min:24s",
+                        "instruction": "",
+                        "location": [
+                            31.234008,
+                            30.028789
+                        ]
+                    },
+                    {
+                        "direction": "new name",
+                        "distance": "0.11km",
+                        "duration": "0min:6s",
+                        "instruction": "",
+                        "location": [
+                            31.238226,
+                            30.027349
+                        ]
+                    },
+                    {
+                        "direction": "turn",
+                        "distance": "0.02km",
+                        "duration": "0min:3s",
+                        "instruction": "",
+                        "location": [
+                            31.239087,
+                            30.026667
+                        ]
+                    },
+                    {
+                        "direction": "continue",
+                        "distance": "0.01km",
+                        "duration": "0min:2s",
+                        "instruction": "",
+                        "location": [
+                            31.239036,
+                            30.026507
+                        ]
+                    },
+                    {
+                        "direction": "turn",
+                        "distance": "0.25km",
+                        "duration": "0min:40s",
+                        "instruction": "",
+                        "location": [
+                            31.239102,
+                            30.02641
+                        ]
+                    },
+                    {
+                        "direction": "turn",
+                        "distance": "0.10km",
+                        "duration": "0min:14s",
+                        "instruction": "",
+                        "location": [
+                            31.237779,
+                            30.024433
+                        ]
+                    },
+                    {
+                        "direction": "turn",
+                        "distance": "0.13km",
+                        "duration": "0min:19s",
+                        "instruction": "",
+                        "location": [
+                            31.238553,
+                            30.023816
+                        ]
+                    },
+                    {
+                        "direction": "turn",
+                        "distance": "0.09km",
+                        "duration": "0min:24s",
+                        "instruction": "",
+                        "location": [
+                            31.238704,
+                            30.022621
+                        ]
+                    },
+                    {
+                        "direction": "turn",
+                        "distance": "0.06km",
+                        "duration": "0min:15s",
+                        "instruction": "",
+                        "location": [
+                            31.237989,
+                            30.022236
+                        ]
+                    },
+                    {
+                        "direction": "arrive",
+                        "distance": "0.00km",
+                        "duration": "0min:0s",
+                        "instruction": "",
+                        "location": [
+                            31.238115,
+                            30.022788
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Reverse Geocode",
+            "url": "https://egypt-api.p.rapidapi.com/georev",
+            "description": "This endpoint allows you to perform reverse geocoding in Cameroon by providing query parameters for latitude and longitude. It returns the name of the city where the location is located.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "lon",
+                    "type": "STRING",
+                    "description": "The longitude of the location.",
+                    "default": "31.230981"
+                },
+                {
+                    "name": "lat",
+                    "type": "STRING",
+                    "description": "The latitude of the location.",
+                    "default": "30.0240626"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://egypt-api.p.rapidapi.com/georev\"\nquerystring = {\"lon\": \"31.230981\", \"lat\": \"30.0240626\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"egypt-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://egypt-api.p.rapidapi.com/georev\"\nquerystring = {\"lon\": \"31.230981\", \"lat\": \"30.0240626\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"egypt-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "amenity": "National Cancer Institute",
+                "boundingbox": [
+                    "30.0240126",
+                    "30.0241126",
+                    "31.230931",
+                    "31.231031"
+                ],
+                "category": "amenity",
+                "city": "\u0627\u0644\u0642\u0627\u0647\u0631\u0629",
+                "country": "\u0645\u0635\u0631",
+                "display_name": "National Cancer Institute, \u0634\u0627\u0631\u0639 \u0627\u0644\u0642\u0635\u0631 \u0627\u0644\u0639\u064a\u0646\u064a, \u0641\u0645\u00a0\u0627\u0644\u062e\u0644\u064a\u062c\u00a0\u0648\u062f\u064a\u0631\u00a0\u0627\u0644\u0646\u062d\u0627\u0633, \u0627\u0644\u0645\u0646\u064a\u0644, \u0627\u0644\u0642\u0627\u0647\u0631\u0629, 11241, \u0645\u0635\u0631",
+                "governorate": "\u0627\u0644\u0642\u0627\u0647\u0631\u0629",
+                "suburb": "\u0627\u0644\u0645\u0646\u064a\u0644"
+            }
+        },
+        {
+            "name": "Measure Distance",
+            "url": "https://egypt-api.p.rapidapi.com/distance",
+            "description": "This endpoint calculates the distance between two locations based on their latitude and longitude coordinates, while allowing the user to specify the unit of measurement.\n\nBelow Example: **Distance between Alexandria and Cairo**",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "lon2",
+                    "type": "NUMBER",
+                    "description": "Longitude of the second location (required)",
+                    "default": "31.23788289124186"
+                },
+                {
+                    "name": "lat1",
+                    "type": "NUMBER",
+                    "description": "Latitude of the first location (required)",
+                    "default": "31.1991806"
+                },
+                {
+                    "name": "lon1",
+                    "type": "NUMBER",
+                    "description": "Longitude of the first location (required)",
+                    "default": "29.8951716"
+                },
+                {
+                    "name": "lat2",
+                    "type": "NUMBER",
+                    "description": "Latitude of the second location (required)",
+                    "default": "30.02313795"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "unit",
+                    "type": "STRING",
+                    "description": "Unit of distance measurement, valid options are **km** (default), **mi**, **ft**, and **yd**.\n",
+                    "default": "km"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://egypt-api.p.rapidapi.com/distance\"\nquerystring = {\"lon2\": \"31.23788289124186\", \"lat1\": \"31.1991806\", \"unit\": \"km\", \"lon1\": \"29.8951716\", \"lat2\": \"30.02313795\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"egypt-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://egypt-api.p.rapidapi.com/distance\"\nquerystring = {\"lon2\": \"31.23788289124186\", \"lat1\": \"31.1991806\", \"unit\": \"km\", \"lon1\": \"29.8951716\", \"lat2\": \"30.02313795\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"egypt-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "distance": "223.98km",
+                "duration": "2h 29min",
+                "unit": "km"
+            }
+        },
+        {
+            "name": "Facilities Lookup",
+            "url": "https://egypt-api.p.rapidapi.com/facility",
+            "description": "This endpoint allows you to get facilities in Egypt like hospital, bank, college, etc. by providing optional query parameters for facility type, gov (governorate)  and city. It returns a list of facilities that match the query parameters.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "gov",
+                    "type": "STRING",
+                    "description": "The governorate where the facility is located",
+                    "default": "Cairo"
+                },
+                {
+                    "name": "type",
+                    "type": "STRING",
+                    "description": "The type of amenity facility to search for (default: **hospital**)\nOptions:\n**aerodrome, bar, cafe, fast_food, pub, restaurant, college, driving_school, school, university, bank, atm, pharmacy,** etc..        \n\n[More options->](https://wiki.openstreetmap.org/wiki/Map_features#Amenity)",
+                    "default": "hospital"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "city",
+                    "type": "STRING",
+                    "description": "The city where the facility is located",
+                    "default": "Cairo"
+                },
+                {
+                    "name": "limit",
+                    "type": "STRING",
+                    "description": "The number of facilities to query.",
+                    "default": "10"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://egypt-api.p.rapidapi.com/facility\"\nquerystring = {\"city\": \"Cairo\", \"gov\": \"Cairo\", \"type\": \"hospital\", \"limit\": \"10\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"egypt-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://egypt-api.p.rapidapi.com/facility\"\nquerystring = {\"city\": \"Cairo\", \"gov\": \"Cairo\", \"type\": \"hospital\", \"limit\": \"10\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"egypt-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "hospital": [
+                    {
+                        "ISO3166-2-lvl4": "EG-C",
+                        "address": "\u0634\u0627\u0631\u0639 \u0633\u0643\u0647 \u062d\u062f\u064a\u062f \u0627\u0644\u0645\u062d\u062c\u0631, \u0627\u0644\u0642\u0627\u0647\u0631\u0629, \u0645\u0635\u0631",
+                        "amenity": "\u0645\u0633\u062a\u0634\u0641\u0649 \u0633\u0631\u0637\u0627\u0646 \u0627\u0644\u0627\u0637\u0641\u0627\u0644",
+                        "country_code": "eg",
+                        "county": "",
+                        "display_name": "\u0645\u0633\u062a\u0634\u0641\u0649 \u0633\u0631\u0637\u0627\u0646 \u0627\u0644\u0627\u0637\u0641\u0627\u0644, \u0634\u0627\u0631\u0639 \u0633\u0643\u0647 \u062d\u062f\u064a\u062f \u0627\u0644\u0645\u062d\u062c\u0631, \u0632\u064a\u0646\u0647\u0645, \u0627\u0644\u0633\u064a\u062f\u0629 \u0632\u064a\u0646\u0628, \u0627\u0644\u0642\u0627\u0647\u0631\u0629, 11797, \u0645\u0635\u0631",
+                        "governorate": "\u0627\u0644\u0642\u0627\u0647\u0631\u0629",
+                        "latitude": "30.02313795",
+                        "longitude": "31.23788289124186",
+                        "postcode": "11797",
+                        "road": "\u0634\u0627\u0631\u0639 \u0633\u0643\u0647 \u062d\u062f\u064a\u062f \u0627\u0644\u0645\u062d\u062c\u0631",
+                        "suburb": "\u0627\u0644\u0633\u064a\u062f\u0629 \u0632\u064a\u0646\u0628",
+                        "village": "",
+                        "website": ""
+                    },
+                    {
+                        "ISO3166-2-lvl4": "EG-C",
+                        "address": "\u0634\u0627\u0631\u0639 \u0627\u0644\u0642\u0635\u0631 \u0627\u0644\u0639\u064a\u0646\u064a, \u0627\u0644\u0642\u0627\u0647\u0631\u0629, \u0645\u0635\u0631",
+                        "amenity": "National Cancer Institute",
+                        "country_code": "eg",
+                        "county": "",
+                        "display_name": "National Cancer Institute, \u0634\u0627\u0631\u0639 \u0627\u0644\u0642\u0635\u0631 \u0627\u0644\u0639\u064a\u0646\u064a, \u0641\u0645\u00a0\u0627\u0644\u062e\u0644\u064a\u062c\u00a0\u0648\u062f\u064a\u0631\u00a0\u0627\u0644\u0646\u062d\u0627\u0633, \u0627\u0644\u0645\u0646\u064a\u0644, \u0627\u0644\u0642\u0627\u0647\u0631\u0629, 11241, \u0645\u0635\u0631",
+                        "governorate": "\u0627\u0644\u0642\u0627\u0647\u0631\u0629",
+                        "latitude": "30.0240626",
+                        "longitude": "31.230981",
+                        "postcode": "11241",
+                        "road": "\u0634\u0627\u0631\u0639 \u0627\u0644\u0642\u0635\u0631 \u0627\u0644\u0639\u064a\u0646\u064a",
+                        "suburb": "\u0627\u0644\u0645\u0646\u064a\u0644",
+                        "village": "",
+                        "website": ""
+                    },
+                    {
+                        "ISO3166-2-lvl4": "EG-C",
+                        "address": "\u0634\u0627\u0631\u0639 \u0627\u062d\u0645\u062f \u0633\u0639\u064a\u062f, \u0627\u0644\u0642\u0627\u0647\u0631\u0629, \u0645\u0635\u0631",
+                        "amenity": "\u0645\u0633\u062a\u0634\u0641\u0649 \u0627\u0644\u0642\u0648\u0627\u062a \u0627\u0644\u062c\u0648\u064a\u0629",
+                        "country_code": "eg",
+                        "county": "",
+                        "display_name": "\u0645\u0633\u062a\u0634\u0641\u0649 \u0627\u0644\u0642\u0648\u0627\u062a \u0627\u0644\u062c\u0648\u064a\u0629, \u0634\u0627\u0631\u0639 \u0627\u062d\u0645\u062f \u0633\u0639\u064a\u062f, \u0627\u0644\u0639\u0628\u0627\u0633\u064a\u0647 \u0627\u0644\u0634\u0631\u0642\u064a\u0647, \u0627\u0644\u0648\u0627\u064a\u0644\u0649, \u0627\u0644\u0642\u0627\u0647\u0631\u0629, 11381, \u0645\u0635\u0631",
+                        "governorate": "\u0627\u0644\u0642\u0627\u0647\u0631\u0629",
+                        "latitude": "30.0624158",
+                        "longitude": "31.2738254",
+                        "postcode": "11381",
+                        "road": "\u0634\u0627\u0631\u0639 \u0627\u062d\u0645\u062f \u0633\u0639\u064a\u062f",
+                        "suburb": "\u0627\u0644\u0648\u0627\u064a\u0644\u0649",
+                        "village": "",
+                        "website": ""
+                    },
+                    {
+                        "ISO3166-2-lvl4": "EG-C",
+                        "address": "\u0634\u0627\u0631\u0639 \u0645\u062c\u0631\u064a \u0627\u0644\u0639\u064a\u0648\u0646, \u0627\u0644\u0642\u0627\u0647\u0631\u0629, \u0645\u0635\u0631",
+                        "amenity": "\u0645\u0633\u062a\u0634\u0641\u0649 \u0627\u0644\u0645\u0642\u0637\u0645",
+                        "country_code": "eg",
+                        "county": "",
+                        "display_name": "\u0645\u0633\u062a\u0634\u0641\u0649 \u0627\u0644\u0645\u0642\u0637\u0645, \u0634\u0627\u0631\u0639 \u0645\u062c\u0631\u064a \u0627\u0644\u0639\u064a\u0648\u0646, \u062d\u062f\u0627\u0626\u0642\u00a0\u0632\u064a\u0646\u0647\u0645, \u0639\u064a\u0646 \u0627\u0644\u0635\u064a\u0631\u0629, \u0627\u0644\u0642\u0627\u0647\u0631\u0629, 11654, \u0645\u0635\u0631",
+                        "governorate": "\u0627\u0644\u0642\u0627\u0647\u0631\u0629",
+                        "latitude": "30.0209068",
+                        "longitude": "31.2431749",
+                        "postcode": "11654",
+                        "road": "\u0634\u0627\u0631\u0639 \u0645\u062c\u0631\u064a \u0627\u0644\u0639\u064a\u0648\u0646",
+                        "suburb": "\u0639\u064a\u0646 \u0627\u0644\u0635\u064a\u0631\u0629",
+                        "village": "",
+                        "website": ""
+                    },
+                    {
+                        "ISO3166-2-lvl4": "EG-C",
+                        "address": "\u0634\u0627\u0631\u0639 \u0627\u0644\u0641\u0631\u062f\u0648\u0633, \u0627\u0644\u0642\u0627\u0647\u0631\u0629, \u0645\u0635\u0631",
+                        "amenity": "\u0645\u0633\u062a\u0634\u0641\u0649 \u0637\u0644\u0628\u0629 \u0627\u0644\u0628\u0624\u062b",
+                        "country_code": "eg",
+                        "county": "",
+                        "display_name": "\u0645\u0633\u062a\u0634\u0641\u0649 \u0637\u0644\u0628\u0629 \u0627\u0644\u0628\u0624\u062b, \u0634\u0627\u0631\u0639 \u0627\u0644\u0641\u0631\u062f\u0648\u0633, \u0627\u0644\u062c\u0646\u0632\u0648\u0631\u0649, \u0627\u0644\u0648\u0627\u064a\u0644\u0649, \u0627\u0644\u0642\u0627\u0647\u0631\u0629, 11381, \u0645\u0635\u0631",
+                        "governorate": "\u0627\u0644\u0642\u0627\u0647\u0631\u0629",
+                        "latitude": "30.0579734",
+                        "longitude": "31.2771374",
+                        "postcode": "11381",
+                        "road": "\u0634\u0627\u0631\u0639 \u0627\u0644\u0641\u0631\u062f\u0648\u0633",
+                        "suburb": "\u0627\u0644\u0648\u0627\u064a\u0644\u0649",
+                        "village": "",
+                        "website": ""
+                    },
+                    {
+                        "ISO3166-2-lvl4": "EG-C",
+                        "address": "\u0634\u0627\u0631\u0639 \u0627\u0644\u062a\u0631\u0639\u0647 \u0627\u0644\u0634\u0631\u0642\u064a, \u0627\u0644\u0642\u0627\u0647\u0631\u0629, \u0645\u0635\u0631",
+                        "amenity": "Nasr el Islam Hosiptal",
+                        "country_code": "eg",
+                        "county": "",
+                        "display_name": "Nasr el Islam Hosiptal, \u0634\u0627\u0631\u0639 \u0627\u0644\u062a\u0631\u0639\u0647 \u0627\u0644\u0634\u0631\u0642\u064a, \u0645\u0646\u064a\u0647\u00a0\u0627\u0644\u0633\u064a\u0631\u062c, \u0627\u0644\u0634\u0631\u0627\u0628\u064a\u0629, \u0627\u0644\u0642\u0627\u0647\u0631\u0629, 11656, \u0645\u0635\u0631",
+                        "governorate": "\u0627\u0644\u0642\u0627\u0647\u0631\u0629",
+                        "latitude": "30.088695",
+                        "longitude": "31.2538297",
+                        "postcode": "11656",
+                        "road": "\u0634\u0627\u0631\u0639 \u0627\u0644\u062a\u0631\u0639\u0647 \u0627\u0644\u0634\u0631\u0642\u064a",
+                        "suburb": "\u0627\u0644\u0634\u0631\u0627\u0628\u064a\u0629",
+                        "village": "",
+                        "website": ""
+                    },
+                    {
+                        "ISO3166-2-lvl4": "EG-C",
+                        "address": "\u0634\u0627\u0631\u0639 \u0627\u0644\u0628\u0631\u0627\u0645\u0648\u0646\u064a, \u0627\u0644\u0642\u0627\u0647\u0631\u0629, \u0645\u0635\u0631",
+                        "amenity": "\u0645\u0633\u0634\u062a\u0641\u0649 \u0627\u0644\u062c\u0645\u0647\u0648\u0631\u064a\u0629 \u0627\u0644\u062a\u0639\u0644\u064a\u0645\u0649",
+                        "country_code": "eg",
+                        "county": "",
+                        "display_name": "\u0645\u0633\u0634\u062a\u0641\u0649 \u0627\u0644\u062c\u0645\u0647\u0648\u0631\u064a\u0629 \u0627\u0644\u062a\u0639\u0644\u064a\u0645\u0649, 12, \u0634\u0627\u0631\u0639 \u0627\u0644\u0628\u0631\u0627\u0645\u0648\u0646\u064a, \u0627\u0644\u0633\u0642\u0627\u064a\u064a\u0646, \u0645\u064a\u062f\u0627\u0646 \u0628\u0627\u0628 \u0627\u0644\u062e\u0644\u0642, \u0627\u0644\u0642\u0627\u0647\u0631\u0629, 11613, \u0645\u0635\u0631",
+                        "governorate": "\u0627\u0644\u0642\u0627\u0647\u0631\u0629",
+                        "latitude": "30.0397384",
+                        "longitude": "31.2484692",
+                        "postcode": "11613",
+                        "road": "\u0634\u0627\u0631\u0639 \u0627\u0644\u0628\u0631\u0627\u0645\u0648\u0646\u064a",
+                        "suburb": "",
+                        "village": "",
+                        "website": ""
+                    },
+                    {
+                        "ISO3166-2-lvl4": "EG-C",
+                        "address": "\u0634\u0627\u0631\u0639 \u0639\u0628\u062f \u0627\u0644\u062e\u0627\u0644\u0642 \u062b\u0631\u0648\u062a, \u0627\u0644\u0642\u0627\u0647\u0631\u0629, \u0645\u0635\u0631",
+                        "amenity": "\u0645\u0633\u062a\u0634\u0641\u0649 \u0647\u064a\u0626\u0629 \u0627\u0644\u0646\u0642\u0644 \u0627\u0644\u0639\u0627\u0645",
+                        "country_code": "eg",
+                        "county": "",
+                        "display_name": "\u0645\u0633\u062a\u0634\u0641\u0649 \u0647\u064a\u0626\u0629 \u0627\u0644\u0646\u0642\u0644 \u0627\u0644\u0639\u0627\u0645, \u0634\u0627\u0631\u0639 \u0639\u0628\u062f \u0627\u0644\u062e\u0627\u0644\u0642 \u062b\u0631\u0648\u062a, \u0645\u0639\u0631\u0648\u0641, \u0628\u0627\u0628 \u0627\u0644\u0634\u0639\u0631\u064a\u0629, \u0627\u0644\u0642\u0627\u0647\u0631\u0629, 11956, \u0645\u0635\u0631",
+                        "governorate": "\u0627\u0644\u0642\u0627\u0647\u0631\u0629",
+                        "latitude": "30.051386",
+                        "longitude": "31.2383746",
+                        "postcode": "11956",
+                        "road": "\u0634\u0627\u0631\u0639 \u0639\u0628\u062f \u0627\u0644\u062e\u0627\u0644\u0642 \u062b\u0631\u0648\u062a",
+                        "suburb": "\u0628\u0627\u0628 \u0627\u0644\u0634\u0639\u0631\u064a\u0629",
+                        "village": "",
+                        "website": ""
+                    },
+                    {
+                        "ISO3166-2-lvl4": "EG-C",
+                        "address": "\u0634\u0627\u0631\u0639 \u0643\u0648\u0631\u0646\u064a\u0634 \u0627\u0644\u0646\u064a\u0644, \u0627\u0644\u0642\u0627\u0647\u0631\u0629, \u0645\u0635\u0631",
+                        "amenity": "\u062f\u0627\u0631 \u0627\u0644\u0633\u0644\u0627\u0645 \u0644\u0644\u0623\u0648\u0631\u0627\u0645 (\u0647\u0631\u0645\u0644)",
+                        "country_code": "eg",
+                        "county": "",
+                        "display_name": "\u062f\u0627\u0631 \u0627\u0644\u0633\u0644\u0627\u0645 \u0644\u0644\u0623\u0648\u0631\u0627\u0645 (\u0647\u0631\u0645\u0644), \u0634\u0627\u0631\u0639 \u0643\u0648\u0631\u0646\u064a\u0634 \u0627\u0644\u0646\u064a\u0644, \u0627\u0644\u0643\u0641\u0648\u0631\u00a0\u0648\u0633\u0627\u0639\u064a\u00a0\u0627\u0644\u0628\u062d\u0631, \u0645\u0635\u0631 \u0627\u0644\u0642\u062f\u064a\u0645\u0629, \u062e\u0631\u0637\u0629 \u0627\u0644\u0634\u064a\u062e \u0645\u0628\u0627\u0631\u0643, \u0627\u0644\u0642\u0627\u0647\u0631\u0629, 11553, \u0645\u0635\u0631",
+                        "governorate": "\u0627\u0644\u0642\u0627\u0647\u0631\u0629",
+                        "latitude": "30.0125466",
+                        "longitude": "31.2289619",
+                        "postcode": "11553",
+                        "road": "\u0634\u0627\u0631\u0639 \u0643\u0648\u0631\u0646\u064a\u0634 \u0627\u0644\u0646\u064a\u0644",
+                        "suburb": "\u0645\u0635\u0631 \u0627\u0644\u0642\u062f\u064a\u0645\u0629",
+                        "village": "\u062e\u0631\u0637\u0629 \u0627\u0644\u0634\u064a\u062e \u0645\u0628\u0627\u0631\u0643",
+                        "website": ""
+                    },
+                    {
+                        "ISO3166-2-lvl4": "EG-C",
+                        "address": "\u0634\u0627\u0631\u0639 \u0645\u0646\u064a\u0647 \u0627\u0644\u0633\u064a\u0631\u062c, \u0627\u0644\u0642\u0627\u0647\u0631\u0629, \u0645\u0635\u0631",
+                        "amenity": "\u0645\u0633\u062a\u0634\u0641\u0649 \u0627\u0644\u0635\u0641\u0648\u0629",
+                        "country_code": "eg",
+                        "county": "",
+                        "display_name": "\u0645\u0633\u062a\u0634\u0641\u0649 \u0627\u0644\u0635\u0641\u0648\u0629, 3, \u0634\u0627\u0631\u0639 \u0645\u0646\u064a\u0647 \u0627\u0644\u0633\u064a\u0631\u062c, \u0634\u0631\u064a\u0641, \u0627\u0644\u0642\u0627\u0647\u0631\u0629, 11637, \u0645\u0635\u0631",
+                        "governorate": "\u0627\u0644\u0642\u0627\u0647\u0631\u0629",
+                        "latitude": "30.0926606",
+                        "longitude": "31.2459649",
+                        "postcode": "11637",
+                        "road": "\u0634\u0627\u0631\u0639 \u0645\u0646\u064a\u0647 \u0627\u0644\u0633\u064a\u0631\u062c",
+                        "suburb": "",
+                        "village": "",
+                        "website": "http://www.alsafwahospital.net"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Geocode",
+            "url": "https://egypt-api.p.rapidapi.com/geofy",
+            "description": "This endpoint allows you to lookup locations in Egypt by providing an address query parameter. It returns the latitude, longitude and city name of the location.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "address",
+                    "type": "STRING",
+                    "description": "The name of the location to look up.",
+                    "default": "Giza"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://egypt-api.p.rapidapi.com/geofy\"\nquerystring = {\"address\": \"Giza\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"egypt-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://egypt-api.p.rapidapi.com/geofy\"\nquerystring = {\"address\": \"Giza\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"egypt-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "display_name": "\u0627\u0644\u062c\u064a\u0632\u0629, 12524, \u0645\u0635\u0631",
+                "latitude": "29.9870753",
+                "longitude": "31.2118063"
+            }
+        }
+    ],
+    "standardized_name": "egypt_api"
+}

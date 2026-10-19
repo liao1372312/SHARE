@@ -1,0 +1,32 @@
+{
+"user_query":"I would like to compare the exponential moving averages of multiple stocks. Fetch the 24-hour trading data for various markets to identify potential investment opportunities. Also, provide me with the balance sheet of NVIDIA Corporation to assess their financial performance.",
+"domain":"Finance",
+"TaskList": [
+{
+"id": 1,
+"description": "Fetch 24-hour trading data for multiple stocks across various markets to analyze the latest market trends.",
+"domain": "finance",
+"required_inputs": ["stock_symbols", "market_range"]
+},
+{
+"id": 2,
+"description": "Calculate the exponential moving averages (EMAs) for the fetched trading data of the selected stocks.",
+"domain": "finance",
+"required_inputs": ["trading_data", "time_periods"],
+"dependencies": [1]
+},
+{
+"id": 3,
+"description": "Fetch the balance sheet information of NVIDIA Corporation to review its financial performance.",
+"domain": "finance",
+"required_inputs": ["company_name"]
+},
+{
+"id": 4,
+"description": "Analyze the balance sheet data of NVIDIA Corporation in conjunction with the EMA analysis to identify investment opportunities.",
+"domain": "finance",
+"required_inputs": ["balance_sheet_data", "ema_data"],
+"dependencies": [2, 3]
+}
+]
+}

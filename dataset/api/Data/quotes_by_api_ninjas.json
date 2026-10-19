@@ -1,0 +1,50 @@
+{
+    "product_id": "api_c3ca2390-0bb9-4340-85ae-8b70fc40709a",
+    "tool_description": "Access over 50,000 quotes from famous people. See more info at https://api-ninjas.com/api/quotes.",
+    "home_url": "https://rapidapi.com/apininjas/api/quotes-by-api-ninjas/",
+    "name": "Quotes by API-Ninjas",
+    "title": "Quotes by API-Ninjas",
+    "pricing": "FREEMIUM",
+    "tool_name": "Quotes by API-Ninjas",
+    "score": {
+        "avgServiceLevel": 99,
+        "avgLatency": 461,
+        "avgSuccessRate": 99,
+        "popularityScore": 9.6,
+        "__typename": "Score"
+    },
+    "host": "quotes-by-api-ninjas.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "/v1/quotes",
+            "url": "https://quotes-by-api-ninjas.p.rapidapi.com/v1/quotes",
+            "description": "Returns one (or more) random quotes.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "limit",
+                    "type": "NUMBER",
+                    "description": "How many results to return. Must be between 1 and 10. Default is 1.",
+                    "default": ""
+                },
+                {
+                    "name": "category",
+                    "type": "STRING",
+                    "description": "category to limit results to. Possible values are:\n\nage\nalone\namazing\nanger\narchitecture\nart\nattitude\nbeauty\nbest\nbirthday\nbusiness\ncar\nchange\ncommunications\ncomputers\ncool\ncourage\ndad\ndating\ndeath\ndesign\ndreams\neducation\nenvironmental\nequality\nexperience\nfailure\nfaith\nfamily\nfamous\nfear\nfitness\nfood\nforgiveness\nfreedom\nfriendship\nfunny\nfuture\ngod\ngood\ngovernment\ngraduation\ngreat\nhappiness\nhealth\nhistory\nhome\nhope\nhumor\nimagination\ninspirational\nintelligence\njealousy\nknowledge\nleadership\nlearning\nlegal\nlife\nlove\nmarriage\nmedical\nmen\nmom\nmoney\nmorning\nmovies\nsuccess",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://quotes-by-api-ninjas.p.rapidapi.com/v1/quotes\"\nquerystring = {\"limit\": \"\", \"category\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"quotes-by-api-ninjas.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://quotes-by-api-ninjas.p.rapidapi.com/v1/quotes\"\nquerystring = {\"limit\": \"\", \"category\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"quotes-by-api-ninjas.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "quote": "Never stop learning knowledge doubles every fourteen months.",
+                    "author": "Anthony J. D'Angelo",
+                    "category": "learning"
+                }
+            ]
+        }
+    ],
+    "standardized_name": "quotes_by_api_ninjas"
+}

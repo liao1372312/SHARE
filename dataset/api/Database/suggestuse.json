@@ -1,0 +1,69 @@
+{
+    "product_id": "api_9191e78e-05eb-4d18-9b35-0e406178e165",
+    "tool_description": "This api provides access to information about alternatives to various applications, for computers, smartphones or online services.",
+    "home_url": "https://rapidapi.com/tsepelev/api/suggestuse/",
+    "name": "SuggestUse",
+    "title": "SuggestUse",
+    "pricing": "FREEMIUM",
+    "tool_name": "SuggestUse",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 791,
+        "avgSuccessRate": 80,
+        "popularityScore": 7.1,
+        "__typename": "Score"
+    },
+    "host": "suggestuse.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Detail info",
+            "url": "https://suggestuse.p.rapidapi.com/apps/get/dropbox",
+            "description": "Get detail info by application name",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "slug",
+                    "type": "string",
+                    "description": "",
+                    "default": "dropbox"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://suggestuse.p.rapidapi.com/apps/get/dropbox\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"suggestuse.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://suggestuse.p.rapidapi.com/apps/get/{slug}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"suggestuse.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "Search Application",
+            "url": "https://suggestuse.p.rapidapi.com/apps/search",
+            "description": "Search Application",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "query",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "dropbox"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "offset",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "0"
+                },
+                {
+                    "name": "limit",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "30"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://suggestuse.p.rapidapi.com/apps/search\"\nquerystring = {\"offset\": \"0\", \"limit\": \"30\", \"query\": \"dropbox\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"suggestuse.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://suggestuse.p.rapidapi.com/apps/search\"\nquerystring = {\"offset\": \"0\", \"limit\": \"30\", \"query\": \"dropbox\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"suggestuse.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        }
+    ],
+    "standardized_name": "suggestuse"
+}

@@ -1,0 +1,39 @@
+{
+"user_query":"I am organizing a company conference and need to send out invitations to our clients. Before sending the emails, I want to verify the email addresses to ensure they are valid. Additionally, I would like to include the company's heartbeat status in the email.",
+"domain":"Technology",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Gather and compile a list of client email addresses.",
+        "domain": "technology",
+        "required_inputs": ["client_list"]
+    },
+    {
+        "id": 2,
+        "description": "Verify the validity of the collected email addresses.",
+        "domain": "technology",
+        "required_inputs": ["email_list"],
+        "dependency": "Step 1 needs to be completed first."
+    },
+    {
+        "id": 3,
+        "description": "Check the company's heartbeat status.",
+        "domain": "technology",
+        "required_inputs": []
+    },
+    {
+        "id": 4,
+        "description": "Draft the invitation email including the verified email addresses and the company's heartbeat status.",
+        "domain": "technology",
+        "required_inputs": ["valid_email_list", "heartbeat_status"],
+        "dependency": "Step 2 and Step 3 need to be completed first."
+    },
+    {
+        "id": 5,
+        "description": "Send the invitation email to all verified email addresses.",
+        "domain": "technology",
+        "required_inputs": ["final_email_draft"],
+        "dependency": "Step 4 needs to be completed first."
+    }
+]
+}

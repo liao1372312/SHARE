@@ -1,0 +1,65 @@
+{
+    "product_id": "api_d4282d8b-4ab6-4be8-856a-3cb1d10695a4",
+    "tool_description": "API for retrieving places &amp; facilities data for given origin, distance and list of facility types.",
+    "home_url": "https://rapidapi.com/mateuszpoland6/api/places-in-radius/",
+    "name": "Places in radius",
+    "title": "Places in radius",
+    "pricing": "FREEMIUM",
+    "tool_name": "Places in radius",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 3164,
+        "avgSuccessRate": 100,
+        "popularityScore": 6.6,
+        "__typename": "Score"
+    },
+    "host": "places-in-radius.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "openapi_openapi_json_get",
+            "url": "https://places-in-radius.p.rapidapi.com/openapi.json",
+            "description": " ",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://places-in-radius.p.rapidapi.com/openapi.json\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"places-in-radius.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://places-in-radius.p.rapidapi.com/openapi.json\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"places-in-radius.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "places_in_radius_places_in_radius_get",
+            "url": "https://places-in-radius.p.rapidapi.com/places_in_radius",
+            "description": "This endpoint returns:\n-  all the facilities that meet specified category (grocery_store, gym, railway_station etc.)\n- are within specified radius from starting_point\n\nReturned data (please let us know, what additional data to provide to your plan):\n - unique place_id\n- location (lat,lng)\n- type\n- distance data (walking and driving, counting from origin)\n- business details : email (if provided), phone",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "location_types",
+                    "type": "STRING",
+                    "description": "List of location types",
+                    "default": "supermarket,restaurant"
+                },
+                {
+                    "name": "distance",
+                    "type": "NUMBER",
+                    "description": "Distance in meters",
+                    "default": "1000"
+                },
+                {
+                    "name": "starting_point",
+                    "type": "STRING",
+                    "description": "Starting point coordinates (latitude,longitude)",
+                    "default": "54.373639725729085,18.61484334290751"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://places-in-radius.p.rapidapi.com/places_in_radius\"\nquerystring = {\"location_types\": \"supermarket,restaurant\", \"distance\": \"1000\", \"starting_point\": \"54.373639725729085,18.61484334290751\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"places-in-radius.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://places-in-radius.p.rapidapi.com/places_in_radius\"\nquerystring = {\"location_types\": \"supermarket,restaurant\", \"distance\": \"1000\", \"starting_point\": \"54.373639725729085,18.61484334290751\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"places-in-radius.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 1,
+            "schema": ""
+        }
+    ],
+    "standardized_name": "places_in_radius"
+}

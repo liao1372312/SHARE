@@ -1,0 +1,33 @@
+{
+"user_query":"I want to compare trading data for different stocks including tickers, minimum values, and price differences.",
+"domain":"Finance",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Fetch the 24 hours tickers for Apple, Microsoft, and Amazon.",
+        "domain": "finance",
+        "required_inputs": ["Apple stock", "Microsoft stock", "Amazon stock"]
+    },
+    {
+        "id": 2,
+        "description": "Retrieve the lowest value over the past hour for Apple, Microsoft, and Amazon stocks.",
+        "domain": "finance",
+        "required_inputs": ["Apple stock", "Microsoft stock", "Amazon stock"],
+        "dependencies": [1]
+    },
+    {
+        "id": 3,
+        "description": "Fetch the opening and closing prices for Apple, Microsoft, and Amazon stocks.",
+        "domain": "finance",
+        "required_inputs": ["Apple stock", "Microsoft stock", "Amazon stock"],
+        "dependencies": [1]
+    },
+    {
+        "id": 4,
+        "description": "Calculate the differences between the opening and closing prices for each stock using the subtraction function.",
+        "domain": "finance",
+        "required_inputs": ["opening prices", "closing prices"],
+        "dependencies": [3]
+    }
+]
+}

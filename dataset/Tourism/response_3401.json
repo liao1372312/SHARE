@@ -1,0 +1,44 @@
+{
+"user_query":"I want to find affordable rental properties and commute times to tourist attractions in Los Angeles and San Francisco for a road trip.",
+"domain":"Tourism",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Search for affordable rental properties in Los Angeles, California.",
+        "domain": "tourism",
+        "required_inputs": ["Los Angeles", "affordable rental properties"]
+    },
+    {
+        "id": 2,
+        "description": "Search for affordable rental properties in San Francisco, California.",
+        "domain": "tourism",
+        "required_inputs": ["San Francisco", "affordable rental properties"]
+    },
+    {
+        "id": 3,
+        "description": "Retrieve popular tourist attractions in Los Angeles.",
+        "domain": "tourism",
+        "required_inputs": ["Los Angeles"]
+    },
+    {
+        "id": 4,
+        "description": "Retrieve popular tourist attractions in San Francisco.",
+        "domain": "tourism",
+        "required_inputs": ["San Francisco"]
+    },
+    {
+        "id": 5,
+        "description": "Calculate commute times from Los Angeles rental properties to tourist attractions.",
+        "domain": "tourism",
+        "required_inputs": ["Los Angeles rental properties", "Los Angeles tourist attractions"],
+        "dependency": ["1", "3"]
+    },
+    {
+        "id": 6,
+        "description": "Calculate commute times from San Francisco rental properties to tourist attractions.",
+        "domain": "tourism",
+        "required_inputs": ["San Francisco rental properties", "San Francisco tourist attractions"],
+        "dependency": ["2", "4"]
+    }
+]
+}

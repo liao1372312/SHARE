@@ -1,0 +1,32 @@
+{
+"user_query":"I am curious about historical events that took place on this day. Can you provide me with a detailed summary of a random historical event? Also, I would like to know the current health status of the Art Openings Italy API.",
+"domain":"Cross-Domain",
+"TaskList": [
+{
+"id": 1,
+"description": "Fetch historical events that occurred on the current date.",
+"domain": "historical events",
+"required_inputs": ["CURRENT_TIME"]
+},
+{
+"id": 2,
+"description": "Select a random event from the list of historical events fetched.",
+"domain": "historical events",
+"required_inputs": ["event_list"]  ,
+"dependency": "Step 1 needs the output from Step 1."
+},
+{
+"id": 3,
+"description": "Provide a detailed summary of the selected historical event.",
+"domain": "historical events",
+"required_inputs": ["selected_event"],
+"dependency": "Step 2 needs the output from Step 2."
+},
+{
+"id": 4,
+"description": "Check the current health status of the Art Openings Italy API.",
+"domain": "API health check",
+"required_inputs": []
+}
+]
+}

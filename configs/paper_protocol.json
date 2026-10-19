@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "protocol_id": "share-repair-grounded-paper-v1",
+  "status": "awaiting_updated_observed_artifacts",
+  "paper": "SHARE__Repair_Grounded.pdf",
+  "seeds": [17, 29, 43, 71, 101],
+  "state_dimension": 51,
+  "human_budget": 0.2,
+  "minimum_ai_support": 3,
+  "discount": 0.95,
+  "training": {
+    "hidden_sizes": [128, 64],
+    "epochs": 30,
+    "learning_rate": 0.001,
+    "batch_size": 64,
+    "replay_capacity": 50000,
+    "target_update": 200,
+    "human_dual_step": 0.005,
+    "training_stop_coefficient": 0.6,
+    "evaluation_stop_coefficient": 0.25,
+    "paired_replay": true,
+    "unsafe_constraint": false
+  },
+  "datasets": {
+    "development": {"episodes": 789, "states": 1733, "successful_human_branches": 1355, "splits": {"train": 542, "validation": 127, "test": 120}},
+    "primary": {"episodes": 250, "states": 832, "successful_human_branches": 708},
+    "mechanism": {"episodes": 150, "states": 500, "successful_human_branches": 440},
+    "retrospective": {"episodes": 400, "states": 1332, "successful_human_branches": 1153}
+  },
+  "reference_primary_metrics": {"repair_sr": 0.932, "hir": 0.2, "uar": 0.06878306878306878, "stopped_rate": 0.044},
+  "reference_values_are_not_new_results": true
+}

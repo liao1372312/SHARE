@@ -1,0 +1,40 @@
+{
+    "product_id": "api_1903e61b-d4f6-4aee-9d42-193243621023",
+    "tool_description": "Historical channel views and subscribers for YouTube channels.",
+    "home_url": "https://rapidapi.com/fama-official-fastytapi/api/historical-youtube-data/",
+    "name": "Historical YouTube Data",
+    "title": "Historical YouTube Data",
+    "pricing": "FREE",
+    "tool_name": "Historical YouTube Data",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 59,
+        "avgSuccessRate": 100,
+        "popularityScore": 6.4,
+        "__typename": "Score"
+    },
+    "host": "historical-youtube-data.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Historic views and subscribers",
+            "url": "https://historical-youtube-data.p.rapidapi.com/hytapi/channel",
+            "description": "Returns historic views and subscribers for a channel, along with basic details of the channel (name, handle, thumbnails, etc.).\n\n**Note:**\n `viewsHist`/ `subsHist` data format: \n`[[timestampInMilliSecondsA, valueA], [timestampInMilliSecondsB, valueB], ...]`.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "channelId",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "UCj1VqrHhDte54oLgPG4xpuQ"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://historical-youtube-data.p.rapidapi.com/hytapi/channel\"\nquerystring = {\"channelId\": \"UCj1VqrHhDte54oLgPG4xpuQ\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"historical-youtube-data.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://historical-youtube-data.p.rapidapi.com/hytapi/channel\"\nquerystring = {\"channelId\": \"UCj1VqrHhDte54oLgPG4xpuQ\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"historical-youtube-data.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "historical_youtube_data"
+}

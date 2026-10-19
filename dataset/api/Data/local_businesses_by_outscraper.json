@@ -1,0 +1,2666 @@
+{
+    "product_id": "api_26533133-c5c1-4014-938b-6e1d46c70d4c",
+    "tool_description": "Get Local Businesses' information with simple and reliable Maps Places API provided by Outscraper.",
+    "home_url": "https://rapidapi.com/outscraper-inc-outscraper-inc-default/api/local-businesses-by-outscraper/",
+    "name": "Local Businesses by Outscraper",
+    "title": "Local Businesses by Outscraper",
+    "pricing": "FREEMIUM",
+    "tool_name": "Local Businesses by Outscraper",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 11487,
+        "avgSuccessRate": 50,
+        "popularityScore": 6.9,
+        "__typename": "Score"
+    },
+    "host": "local-businesses-by-outscraper.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Search Places",
+            "url": "https://local-businesses-by-outscraper.p.rapidapi.com/maps/search-v2",
+            "description": "Returns places from Places Maps based on a given search query (or many queries).\n\nThe results from searches are the same as you would see by visiting a regular Maps site. However, in most cases, it's recommended to use locations inside queries (e.g., bars, NY, USA) as the IP addresses of Outscraper's servers might be located in different countries.\n\nThis endpoint is optimized for fast responses and can be used as a real-time API.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "query",
+                    "type": "STRING",
+                    "description": "The parameter defines the query you want to search. You can use anything that you would use on a regular Maps site. Additionally, you can use feature_id, place_id, or CID. The example of valid queries: `Real estate agency, Rome, Italy`, `The NoMad Restaurant, NY, USA`, `restaurants, Brooklyn 11203`, `0x886916e8bc273979:0x5141fcb11460b226,` `ChIJrZhup4lZwokRUr_5sLoFlDw`, etc.\n\nIt supports batching by sending arrays with up to 25 queries (e.g., `query=text1&query=text2&query=text3`). It allows multiple queries to be sent in one request and save on network latency time.\n\nYou might want to check out [the web application](https://app.outscraper.com/googleMaps) to play with locations and categories that we would suggest.\n",
+                    "default": "bars, NY, USA"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "fields",
+                    "type": "STRING",
+                    "description": "The parameter defines which fields you want to include with each item returned in the response. By default, it returns all fields. Use `&fields=query,name` to return only the specific ones.",
+                    "default": ""
+                },
+                {
+                    "name": "region",
+                    "type": "STRING",
+                    "description": "The parameter specifies the country to use.\n\nAvailable countries: `AF`, `AL`, `DZ`, `AS`, `AD`, `AO`, `AI`, `AG`, `AR`, `AM`, `AU`, `AT`, `AZ`, `BS`, `BH`, `BD`, `BY`, `BE`, `BZ`, `BJ`, `BT`, `BO`, `BA`, `BW`, `BR`, `VG`, `BN`, `BG`, `BF`, `BI`, `KH`, `CM`, `CA`, `CV`, `CF`, `TD`, `CL`, `CN`, `CO`, `CG`, `CD`, `CK`, `CR`, `CI`, `HR`, `CU`, `CY`, `CZ`, `DK`, `DJ`, `DM`, `DO`, `EC`, `EG`, `SV`, `EE`, `ET`, `FJ`, `FI`, `FR`, `GA`, `GM`, `GE`, `DE`, `GH`, `GI`, `GR`, `GL`, `GT`, `GG`, `GY`, `HT`, `HN`, `HK`, `HU`, `IS`, `IN`, `ID`, `IQ`, `IE`, `IM`, `IL`, `IT`, `JM`, `JP`, `JE`, `JO`, `KZ`, `KE`, `KI`, `KW`, `KG`, `LA`, `LV`, `LB`, `LS`, `LY`, `LI`, `LT`, `LU`, `MG`, `MW`, `MY`, `MV`, `ML`, `MT`, `MU`, `MX`, `FM`, `MD`, `MN`, `ME`, `MS`, `MA`, `MQ`, `MZ`, `MM`, `NA`, `NR`, `NP`, `NL`, `NZ`, `NI`, `NE`, `NG`, `NU`, `MK`, `NO`, `OM`, `PK`, `PS`, `PA`, `PG`, `PY`, `PE`, `PH`, `PN`, `PL`, `PT`, `PR`, `QA`, `RO`, `RU`, `RW`, `WS`, `SM`, `ST`, `SA`, `SN`, `RS`, `SC`, `SL`, `SG`, `SK`, `SI`, `SB`, `SO`, `ZA`, `KR`, `ES`, `LK`, `SH`, `VC`, `SR`, `SE`, `CH`, `TW`, `TJ`, `TZ`, `TH`, `TL`, `TG`, `TO`, `TT`, `TN`, `TR`, `TM`, `VI`, `UG`, `UA`, `AE`, `GB`, `US`, `UY`, `UZ`, `VU`, `VE`, `VN`, `ZM`, `ZW`.",
+                    "default": "US"
+                },
+                {
+                    "name": "language",
+                    "type": "STRING",
+                    "description": "The parameter specifies the language to use.\n\nAvailable languages: `en`, `de`, `es`, `es-419`, `fr`, `hr`, `it`, `nl`, `pl`, `pt-BR`, `pt-PT`, `vi`, `tr`, `ru`, `ar`, `th`, `ko`, `zh-CN`, `zh-TW`, `ja`, `ach`, `af`, `ak`, `ig`, `az`, `ban`, `ceb`, `xx-bork`, `bs`, `br`, `ca`, `cs`, `sn`, `co`, `cy`, `da`, `yo`, `et`, `xx-elmer`, `eo`, `eu`, `ee`, `tl`, `fil`, `fo`, `fy`, `gaa`, `ga`, `gd`, `gl`, `gn`, `xx-hacker`, `ht`, `ha`, `haw`, `bem`, `rn`, `id`, `ia`, `xh`, `zu`, `is`, `jw`, `rw`, `sw`, `tlh`, `kg`, `mfe`, `kri`, `la`, `lv`, `to`, `lt`, `ln`, `loz`, `lua`, `lg`, `hu`, `mg`, `mt`, `mi`, `ms`, `pcm`, `no`, `nso`, `ny`, `nn`, `uz`, `oc`, `om`, `xx-pirate`, `ro`, `rm`, `qu`, `nyn`, `crs`, `sq`, `sk`, `sl`, `so`, `st`, `sr-ME`, `sr-Latn`, `su`, `fi`, `sv`, `tn`, `tum`, `tk`, `tw`, `wo`, `el`, `be`, `bg`, `ky`, `kk`, `mk`, `mn`, `sr`, `tt`, `tg`, `uk`, `ka`, `hy`, `yi`, `iw`, `ug`, `ur`, `ps`, `sd`, `fa`, `ckb`, `ti`, `am`, `ne`, `mr`, `hi`, `bn`, `pa`, `gu`, `or`, `ta`, `te`, `kn`, `ml`, `si`, `lo`, `my`, `km`, `chr`.",
+                    "default": "en"
+                },
+                {
+                    "name": "skipPlaces",
+                    "type": "NUMBER",
+                    "description": "Skip first N places, where N should be multiple to 20 (e.g. 0, 20, 40). It's commonly used in pagination.",
+                    "default": "0"
+                },
+                {
+                    "name": "limit",
+                    "type": "NUMBER",
+                    "description": "The parameter specifies the limit of organizations to take from one query search.\n\nIf using more than 20 places per request each additional 20 places will be counted as one search.\n\nThere are no more than 500 places per one query search on Maps. For densely populated areas you might want to split your query into subqueries in order to get all the places inside. (e.g., `restaurants, Brooklyn 11211`, `restaurants, Brooklyn 11215`).",
+                    "default": "20"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://local-businesses-by-outscraper.p.rapidapi.com/maps/search-v2\"\nquerystring = {\"fields\": \"\", \"query\": \"bars, NY, USA\", \"region\": \"US\", \"language\": \"en\", \"skipPlaces\": \"0\", \"limit\": \"20\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"local-businesses-by-outscraper.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://local-businesses-by-outscraper.p.rapidapi.com/maps/search-v2\"\nquerystring = {\"fields\": \"\", \"query\": \"bars, NY, USA\", \"region\": \"US\", \"language\": \"en\", \"skipPlaces\": \"0\", \"limit\": \"20\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"local-businesses-by-outscraper.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "id": "a-d44ce04c-cb0c-48be-b916-6c66ea77ba13",
+                "status": "Success",
+                "data": [
+                    [
+                        {
+                            "query": "bars, NY, USA",
+                            "name": "Nassau Bar",
+                            "place_id": "ChIJudW_cBhawokRAKowhjWTbLU",
+                            "google_id": "0x89c25a1870bfd5b9:0xb56c93358630aa00",
+                            "full_address": "118 Nassau St, New York, NY 10038",
+                            "borough": "Manhattan",
+                            "street": "118 Nassau St",
+                            "postal_code": "10038",
+                            "area_service": false,
+                            "country_code": "US",
+                            "country": "United States of America",
+                            "city": "New York",
+                            "us_state": "New York",
+                            "state": "New York",
+                            "plus_code": null,
+                            "latitude": 40.710733,
+                            "longitude": -74.0068074,
+                            "time_zone": "America/New_York",
+                            "popular_times": null,
+                            "site": "http://instagram.com/nassaubarnyc",
+                            "phone": null,
+                            "type": "Bar",
+                            "logo": "https://lh5.googleusercontent.com/-MufqxKimCu0/AAAAAAAAAAI/AAAAAAAAAAA/JaEBcoYT74o/s44-p-k-no-ns-nd/photo.jpg",
+                            "description": "Snug, old-school watering hole with bikini-clad bartenders doling out cocktails.",
+                            "located_in": null,
+                            "located_google_id": null,
+                            "category": "bars",
+                            "subtypes": "Bar",
+                            "posts": null,
+                            "reviews_tags": null,
+                            "rating": 4.2,
+                            "reviews": 296,
+                            "photos_count": 60,
+                            "cid": "13072985676443593216",
+                            "reviews_link": null,
+                            "reviews_id": "-5373758397265958400",
+                            "photo": "https://lh5.googleusercontent.com/p/AF1QipP24EAxWlUpzRrMrCGC_A7zwfkt_A9NO1njB0EE=w800-h500-k-no",
+                            "street_view": "https://lh5.googleusercontent.com/p/AF1QipP24EAxWlUpzRrMrCGC_A7zwfkt_A9NO1njB0EE=w1600-h1000-k-no",
+                            "working_hours_old_format": "Sunday: 12-8\u202fPM | Monday: 11\u202fAM-4\u202fAM | Tuesday: 11\u202fAM-4\u202fAM | Wednesday: 11\u202fAM-4\u202fAM | Thursday: 11\u202fAM-4\u202fAM | Friday: 11\u202fAM-4\u202fAM | Saturday: 11\u202fAM-4\u202fAM",
+                            "working_hours": {
+                                "Sunday": "12-8\u202fPM",
+                                "Monday": "11\u202fAM-4\u202fAM",
+                                "Tuesday": "11\u202fAM-4\u202fAM",
+                                "Wednesday": "11\u202fAM-4\u202fAM",
+                                "Thursday": "11\u202fAM-4\u202fAM",
+                                "Friday": "11\u202fAM-4\u202fAM",
+                                "Saturday": "11\u202fAM-4\u202fAM"
+                            },
+                            "other_hours": null,
+                            "business_status": "OPERATIONAL",
+                            "about": {
+                                "Service options": {
+                                    "Dine-in": true,
+                                    "Delivery": false,
+                                    "Takeout": false
+                                },
+                                "Highlights": {
+                                    "Fast service": true,
+                                    "Sports": true
+                                },
+                                "Accessibility": {
+                                    "Wheelchair accessible entrance": true,
+                                    "Wheelchair accessible parking lot": false
+                                },
+                                "Offerings": {
+                                    "Alcohol": true,
+                                    "Beer": true,
+                                    "Cocktails": true,
+                                    "Food": true,
+                                    "Happy hour drinks": true,
+                                    "Hard liquor": true,
+                                    "Wine": true
+                                },
+                                "Dining options": {
+                                    "Outside food allowed": true
+                                },
+                                "Amenities": {
+                                    "Restroom": true
+                                },
+                                "Atmosphere": {
+                                    "Casual": true
+                                },
+                                "Crowd": {
+                                    "Groups": true
+                                },
+                                "Payments": {
+                                    "Credit cards": true,
+                                    "Debit cards": true,
+                                    "NFC mobile payments": true
+                                }
+                            },
+                            "range": "$",
+                            "reviews_per_score": {
+                                "1": 24,
+                                "2": 8,
+                                "3": 28,
+                                "4": 50,
+                                "5": 186
+                            },
+                            "reservation_links": null,
+                            "booking_appointment_link": null,
+                            "menu_link": null,
+                            "order_links": null,
+                            "owner_id": "103887088408086554779",
+                            "verified": true,
+                            "owner_title": "Nassau Bar",
+                            "owner_link": "https://www.google.com/maps/contrib/103887088408086554779",
+                            "location_link": "https://www.google.com/maps/place/Nassau+Bar/@40.710733,-74.0068074,14z/data=!4m8!1m2!2m1!1sNassau+Bar!3m4!1s0x89c25a1870bfd5b9:0xb56c93358630aa00!8m2!3d40.710733!4d-74.0068074"
+                        },
+                        {
+                            "query": "bars, NY, USA",
+                            "name": "Spring Lounge",
+                            "place_id": "ChIJV6QByYhZwokR_LRSbt9s0gU",
+                            "google_id": "0x89c25988c901a457:0x5d26cdf6e52b4fc",
+                            "full_address": "48 Spring St, New York, NY 10012",
+                            "borough": "Manhattan",
+                            "street": "48 Spring St",
+                            "postal_code": "10012",
+                            "area_service": false,
+                            "country_code": "US",
+                            "country": "United States of America",
+                            "city": "New York",
+                            "us_state": "New York",
+                            "state": "New York",
+                            "plus_code": null,
+                            "latitude": 40.721903999999995,
+                            "longitude": -73.99642399999999,
+                            "time_zone": "America/New_York",
+                            "popular_times": null,
+                            "site": "http://thespringlounge.com/",
+                            "phone": null,
+                            "type": "Bar",
+                            "logo": "https://lh5.googleusercontent.com/-sySmI1dxu4M/AAAAAAAAAAI/AAAAAAAAAAA/vIW0eX6ZxgE/s44-p-k-no-ns-nd/photo.jpg",
+                            "description": "Neighborhood dive bar since the 1920s draws patrons from 8AM on for basic drinks & weekend bagels.",
+                            "located_in": null,
+                            "located_google_id": null,
+                            "category": "bars",
+                            "subtypes": "Bar, Lounge, Restaurant",
+                            "posts": null,
+                            "reviews_tags": null,
+                            "rating": 4.5,
+                            "reviews": 925,
+                            "photos_count": 320,
+                            "cid": "419517422183298300",
+                            "reviews_link": null,
+                            "reviews_id": "419517422183298300",
+                            "photo": "https://lh5.googleusercontent.com/p/AF1QipOjAXE4bAt9wZQdTwNe4TSHzvjr02qb9YVSkII4=w800-h500-k-no",
+                            "street_view": "https://lh5.googleusercontent.com/p/AF1QipOjAXE4bAt9wZQdTwNe4TSHzvjr02qb9YVSkII4=w1600-h1000-k-no",
+                            "working_hours_old_format": "Sunday: 10\u202fAM-4\u202fAM | Monday: 8\u202fAM-4\u202fAM | Tuesday: 8\u202fAM-4\u202fAM | Wednesday: 8\u202fAM-4\u202fAM | Thursday: 8\u202fAM-4\u202fAM | Friday: 8\u202fAM-4\u202fAM | Saturday: 8\u202fAM-4\u202fAM",
+                            "working_hours": {
+                                "Sunday": "10\u202fAM-4\u202fAM",
+                                "Monday": "8\u202fAM-4\u202fAM",
+                                "Tuesday": "8\u202fAM-4\u202fAM",
+                                "Wednesday": "8\u202fAM-4\u202fAM",
+                                "Thursday": "8\u202fAM-4\u202fAM",
+                                "Friday": "8\u202fAM-4\u202fAM",
+                                "Saturday": "8\u202fAM-4\u202fAM"
+                            },
+                            "other_hours": null,
+                            "business_status": "OPERATIONAL",
+                            "about": {
+                                "Service options": {
+                                    "Dine-in": true,
+                                    "Delivery": false
+                                },
+                                "Highlights": {
+                                    "Fast service": true,
+                                    "Great beer selection": true,
+                                    "Great cocktails": true,
+                                    "Sports": true
+                                },
+                                "Accessibility": {
+                                    "Wheelchair accessible entrance": true,
+                                    "Wheelchair accessible parking lot": false
+                                },
+                                "Offerings": {
+                                    "Alcohol": true,
+                                    "Beer": true,
+                                    "Cocktails": true,
+                                    "Hard liquor": true,
+                                    "Wine": true
+                                },
+                                "Dining options": {
+                                    "Outside food allowed": true
+                                },
+                                "Amenities": {
+                                    "Restroom": true
+                                },
+                                "Atmosphere": {
+                                    "Casual": true,
+                                    "Cozy": true
+                                },
+                                "Crowd": {
+                                    "Groups": true
+                                },
+                                "Payments": {
+                                    "Credit cards": true,
+                                    "Debit cards": true,
+                                    "NFC mobile payments": true
+                                }
+                            },
+                            "range": "$",
+                            "reviews_per_score": {
+                                "1": 24,
+                                "2": 14,
+                                "3": 64,
+                                "4": 238,
+                                "5": 585
+                            },
+                            "reservation_links": null,
+                            "booking_appointment_link": null,
+                            "menu_link": null,
+                            "order_links": null,
+                            "owner_id": "108141801747180349553",
+                            "verified": true,
+                            "owner_title": "Spring Lounge",
+                            "owner_link": "https://www.google.com/maps/contrib/108141801747180349553",
+                            "location_link": "https://www.google.com/maps/place/Spring+Lounge/@40.721903999999995,-73.99642399999999,14z/data=!4m8!1m2!2m1!1sSpring+Lounge!3m4!1s0x89c25988c901a457:0x5d26cdf6e52b4fc!8m2!3d40.721903999999995!4d-73.99642399999999"
+                        },
+                        {
+                            "query": "bars, NY, USA",
+                            "name": "The Up & Up",
+                            "place_id": "ChIJN0f2iJFZwokRt53h0ISm3eE",
+                            "google_id": "0x89c2599188f64737:0xe1dda684d0e19db7",
+                            "full_address": "116 MacDougal St, New York, NY 10012",
+                            "borough": "Manhattan",
+                            "street": "116 MacDougal St",
+                            "postal_code": "10012",
+                            "area_service": false,
+                            "country_code": "US",
+                            "country": "United States of America",
+                            "city": "New York",
+                            "us_state": "New York",
+                            "state": "New York",
+                            "plus_code": null,
+                            "latitude": 40.729694099999996,
+                            "longitude": -74.0004701,
+                            "time_zone": "America/New_York",
+                            "popular_times": null,
+                            "site": "http://www.upandupnyc.com/",
+                            "phone": "+1 212-260-3000",
+                            "type": "Cocktail bar",
+                            "logo": "https://lh5.googleusercontent.com/-MkYaOvN-nr4/AAAAAAAAAAI/AAAAAAAAAAA/nazkMsZX7NY/s44-p-k-no-ns-nd/photo.jpg",
+                            "description": "Dimly lit cocktail lounge offering sophisticated drinks plus snacks in a space with banquettes.",
+                            "located_in": null,
+                            "located_google_id": null,
+                            "category": "bars",
+                            "subtypes": "Cocktail bar, Bar, Lounge",
+                            "posts": null,
+                            "reviews_tags": null,
+                            "rating": 4.5,
+                            "reviews": 820,
+                            "photos_count": 619,
+                            "cid": "16275347717757181367",
+                            "reviews_link": null,
+                            "reviews_id": "-2171396355952370249",
+                            "photo": "https://lh5.googleusercontent.com/p/AF1QipODx0dwBRCnjzZD2gQb8mCx5ZAWCaASi2261ZGo=w800-h500-k-no",
+                            "street_view": "https://lh5.googleusercontent.com/p/AF1QipODx0dwBRCnjzZD2gQb8mCx5ZAWCaASi2261ZGo=w1600-h1000-k-no",
+                            "working_hours_old_format": "Sunday: 4\u202fPM-1\u202fAM | Monday: 5\u202fPM-1\u202fAM | Tuesday: 5\u202fPM-1\u202fAM | Wednesday: 5\u202fPM-1\u202fAM | Thursday: 5\u202fPM-2\u202fAM | Friday: 5\u202fPM-2\u202fAM | Saturday: 4\u202fPM-2\u202fAM",
+                            "working_hours": {
+                                "Sunday": "4\u202fPM-1\u202fAM",
+                                "Monday": "5\u202fPM-1\u202fAM",
+                                "Tuesday": "5\u202fPM-1\u202fAM",
+                                "Wednesday": "5\u202fPM-1\u202fAM",
+                                "Thursday": "5\u202fPM-2\u202fAM",
+                                "Friday": "5\u202fPM-2\u202fAM",
+                                "Saturday": "4\u202fPM-2\u202fAM"
+                            },
+                            "other_hours": null,
+                            "business_status": "OPERATIONAL",
+                            "about": {
+                                "Service options": {
+                                    "Dine-in": true,
+                                    "Delivery": false,
+                                    "Takeout": false
+                                },
+                                "Highlights": {
+                                    "Fast service": true,
+                                    "Great cocktails": true
+                                },
+                                "Accessibility": {
+                                    "Wheelchair accessible entrance": false,
+                                    "Wheelchair accessible parking lot": false,
+                                    "Wheelchair accessible restroom": false,
+                                    "Wheelchair accessible seating": false
+                                },
+                                "Offerings": {
+                                    "Alcohol": true,
+                                    "Beer": true,
+                                    "Cocktails": true,
+                                    "Food": true,
+                                    "Food at bar": true,
+                                    "Hard liquor": true,
+                                    "Wine": true
+                                },
+                                "Dining options": {
+                                    "Seating": true
+                                },
+                                "Amenities": {
+                                    "Gender-neutral restroom": true,
+                                    "Restroom": true
+                                },
+                                "Atmosphere": {
+                                    "Cozy": true,
+                                    "Hip": true,
+                                    "Upscale": true
+                                },
+                                "Crowd": {
+                                    "LGBTQ+ friendly": true,
+                                    "Transgender safespace": true
+                                },
+                                "Planning": {
+                                    "Accepts reservations": true,
+                                    "Usually a wait": true
+                                },
+                                "Payments": {
+                                    "Credit cards": true,
+                                    "Debit cards": true,
+                                    "NFC mobile payments": true
+                                },
+                                "Other": {
+                                    "LGBTQ+ friendly": true
+                                }
+                            },
+                            "range": "$$$",
+                            "reviews_per_score": {
+                                "1": 24,
+                                "2": 11,
+                                "3": 43,
+                                "4": 157,
+                                "5": 585
+                            },
+                            "reservation_links": [
+                                "/url?q=http://www.upandupnyc.com/&sa=U&ved=0ahUKEwj-uInOl8n_AhWPQaQEHUf4CZAQ2ZABCGgoEQ&usg=AOvVaw3N9JfZ83l2fmmo_R4Y5D5f"
+                            ],
+                            "booking_appointment_link": "http://www.upandupnyc.com/",
+                            "menu_link": null,
+                            "order_links": [
+                                "http://www.upandupnyc.com/"
+                            ],
+                            "owner_id": "117109901717955968296",
+                            "verified": true,
+                            "owner_title": "The Up & Up",
+                            "owner_link": "https://www.google.com/maps/contrib/117109901717955968296",
+                            "location_link": "https://www.google.com/maps/place/The+Up+%26+Up/@40.729694099999996,-74.0004701,14z/data=!4m8!1m2!2m1!1sThe+Up+%26+Up!3m4!1s0x89c2599188f64737:0xe1dda684d0e19db7!8m2!3d40.729694099999996!4d-74.0004701"
+                        },
+                        {
+                            "query": "bars, NY, USA",
+                            "name": "Whiskey Tavern",
+                            "place_id": "ChIJPezLOSdawokROjWJSsqLdZg",
+                            "google_id": "0x89c25a2739cbec3d:0x98758bca4a89353a",
+                            "full_address": "79 Baxter St A, New York, NY 10013",
+                            "borough": "Manhattan",
+                            "street": "79 Baxter St A",
+                            "postal_code": "10013",
+                            "area_service": false,
+                            "country_code": "US",
+                            "country": "United States of America",
+                            "city": "New York",
+                            "us_state": "New York",
+                            "state": "New York",
+                            "plus_code": null,
+                            "latitude": 40.716477999999995,
+                            "longitude": -73.999749,
+                            "time_zone": "America/New_York",
+                            "popular_times": null,
+                            "site": "http://whiskeytavernnyc.com/",
+                            "phone": "+1 212-374-9119",
+                            "type": "Bar",
+                            "logo": "https://lh4.googleusercontent.com/--7X07ykz_o8/AAAAAAAAAAI/AAAAAAAAAAA/8zkfQPw-jus/s44-p-k-no-ns-nd/photo.jpg",
+                            "description": "Local saloon chasing whiskies with pickle juice & other drinks in a laid-back space.",
+                            "located_in": null,
+                            "located_google_id": null,
+                            "category": "bars",
+                            "subtypes": "Bar, Bar & grill, Restaurant, Sports bar",
+                            "posts": null,
+                            "reviews_tags": null,
+                            "rating": 4.6,
+                            "reviews": 1682,
+                            "photos_count": 825,
+                            "cid": "10985840566990353722",
+                            "reviews_link": null,
+                            "reviews_id": "-7460903506719197894",
+                            "photo": "https://lh5.googleusercontent.com/p/AF1QipP1_rxhvbdK8aUSxKIzhsiyfdgMTNRICOor7y1z=w800-h500-k-no",
+                            "street_view": "https://lh5.googleusercontent.com/p/AF1QipP1_rxhvbdK8aUSxKIzhsiyfdgMTNRICOor7y1z=w1600-h1000-k-no",
+                            "working_hours_old_format": "Sunday: 12\u202fPM-4\u202fAM | Monday: 12\u202fPM-2\u202fAM | Tuesday: 12\u202fPM-2\u202fAM | Wednesday: 12\u202fPM-2\u202fAM | Thursday: 12\u202fPM-2\u202fAM | Friday: 12\u202fPM-4\u202fAM | Saturday: 12\u202fPM-4\u202fAM",
+                            "working_hours": {
+                                "Sunday": "12\u202fPM-4\u202fAM",
+                                "Monday": "12\u202fPM-2\u202fAM",
+                                "Tuesday": "12\u202fPM-2\u202fAM",
+                                "Wednesday": "12\u202fPM-2\u202fAM",
+                                "Thursday": "12\u202fPM-2\u202fAM",
+                                "Friday": "12\u202fPM-4\u202fAM",
+                                "Saturday": "12\u202fPM-4\u202fAM"
+                            },
+                            "other_hours": [
+                                {
+                                    "happy_hours": {
+                                        "Sunday": "Closed",
+                                        "Monday": "4-7\u202fPM",
+                                        "Tuesday": "4-7\u202fPM",
+                                        "Wednesday": "4-7\u202fPM",
+                                        "Thursday": "4-7\u202fPM",
+                                        "Friday": "4-7\u202fPM",
+                                        "Saturday": "Closed"
+                                    }
+                                }
+                            ],
+                            "business_status": "OPERATIONAL",
+                            "about": {
+                                "Service options": {
+                                    "Delivery": true,
+                                    "Takeout": true,
+                                    "Dine-in": true
+                                },
+                                "Highlights": {
+                                    "Fast service": true,
+                                    "Great beer selection": true,
+                                    "Great cocktails": true,
+                                    "Sports": true
+                                },
+                                "Accessibility": {
+                                    "Wheelchair accessible restroom": true,
+                                    "Wheelchair accessible parking lot": false
+                                },
+                                "Offerings": {
+                                    "Alcohol": true,
+                                    "Beer": true,
+                                    "Cocktails": true,
+                                    "Food": true,
+                                    "Food at bar": true,
+                                    "Happy hour drinks": true,
+                                    "Happy hour food": true,
+                                    "Hard liquor": true,
+                                    "Wine": true
+                                },
+                                "Amenities": {
+                                    "Restroom": true
+                                },
+                                "Atmosphere": {
+                                    "Casual": true,
+                                    "Cozy": true,
+                                    "Hip": true
+                                },
+                                "Crowd": {
+                                    "Groups": true,
+                                    "Tourists": true
+                                },
+                                "Planning": {
+                                    "Accepts reservations": true
+                                },
+                                "Payments": {
+                                    "Credit cards": true,
+                                    "Debit cards": true,
+                                    "NFC mobile payments": true
+                                }
+                            },
+                            "range": "$",
+                            "reviews_per_score": {
+                                "1": 22,
+                                "2": 25,
+                                "3": 101,
+                                "4": 328,
+                                "5": 1206
+                            },
+                            "reservation_links": null,
+                            "booking_appointment_link": null,
+                            "menu_link": null,
+                            "order_links": null,
+                            "owner_id": "115178414591117177359",
+                            "verified": true,
+                            "owner_title": "Whiskey Tavern",
+                            "owner_link": "https://www.google.com/maps/contrib/115178414591117177359",
+                            "location_link": "https://www.google.com/maps/place/Whiskey+Tavern/@40.716477999999995,-73.999749,14z/data=!4m8!1m2!2m1!1sWhiskey+Tavern!3m4!1s0x89c25a2739cbec3d:0x98758bca4a89353a!8m2!3d40.716477999999995!4d-73.999749"
+                        },
+                        {
+                            "query": "bars, NY, USA",
+                            "name": "Walter's Bar",
+                            "place_id": "ChIJ_4J9M7BZwokRWbBbGRl-TGY",
+                            "google_id": "0x89c259b0337d82ff:0x664c7e19195bb059",
+                            "full_address": "389 8th Ave, New York, NY 10001",
+                            "borough": "Manhattan",
+                            "street": "389 8th Ave",
+                            "postal_code": "10001",
+                            "area_service": false,
+                            "country_code": "US",
+                            "country": "United States of America",
+                            "city": "New York",
+                            "us_state": "New York",
+                            "state": "New York",
+                            "plus_code": null,
+                            "latitude": 40.7493438,
+                            "longitude": -73.9958472,
+                            "time_zone": "America/New_York",
+                            "popular_times": null,
+                            "site": null,
+                            "phone": "+1 212-502-4023",
+                            "type": "Bar",
+                            "logo": "https://lh5.googleusercontent.com/-U7G2BtzOBhc/AAAAAAAAAAI/AAAAAAAAAAA/eBMeFf0xb4g/s44-p-k-no-ns-nd/photo.jpg",
+                            "description": "Small, low-key neighborhood joint with draft beer & bar snacks, plus darts, a pool table & jukebox.",
+                            "located_in": null,
+                            "located_google_id": null,
+                            "category": "bars",
+                            "subtypes": "Bar",
+                            "posts": null,
+                            "reviews_tags": null,
+                            "rating": 4.4,
+                            "reviews": 393,
+                            "photos_count": 103,
+                            "cid": "7371405336363380825",
+                            "reviews_link": null,
+                            "reviews_id": "7371405336363380825",
+                            "photo": "https://lh5.googleusercontent.com/p/AF1QipM0MT1oia4yEbwFDOilldDceXH6m9pmrHZmQzXS=w800-h500-k-no",
+                            "street_view": "https://lh5.googleusercontent.com/p/AF1QipM0MT1oia4yEbwFDOilldDceXH6m9pmrHZmQzXS=w1600-h1000-k-no",
+                            "working_hours_old_format": "Sunday: 12\u202fPM-4\u202fAM | Monday: 11\u202fAM-4\u202fAM | Tuesday: 11\u202fAM-4\u202fAM | Wednesday: 11\u202fAM-4\u202fAM | Thursday: 11\u202fAM-4\u202fAM | Friday: 11\u202fAM-4\u202fAM | Saturday: 11\u202fAM-4\u202fAM",
+                            "working_hours": {
+                                "Sunday": "12\u202fPM-4\u202fAM",
+                                "Monday": "11\u202fAM-4\u202fAM",
+                                "Tuesday": "11\u202fAM-4\u202fAM",
+                                "Wednesday": "11\u202fAM-4\u202fAM",
+                                "Thursday": "11\u202fAM-4\u202fAM",
+                                "Friday": "11\u202fAM-4\u202fAM",
+                                "Saturday": "11\u202fAM-4\u202fAM"
+                            },
+                            "other_hours": null,
+                            "business_status": "OPERATIONAL",
+                            "about": {
+                                "Service options": {
+                                    "Delivery": true,
+                                    "Takeout": true,
+                                    "Dine-in": true
+                                },
+                                "Highlights": {
+                                    "Bar games": true,
+                                    "Fast service": true,
+                                    "Great beer selection": true,
+                                    "Great cocktails": true,
+                                    "Karaoke": true,
+                                    "Sports": true
+                                },
+                                "Accessibility": {
+                                    "Wheelchair accessible entrance": true,
+                                    "Wheelchair accessible parking lot": false
+                                },
+                                "Offerings": {
+                                    "Alcohol": true,
+                                    "Beer": true,
+                                    "Cocktails": true,
+                                    "Food": true,
+                                    "Happy hour drinks": true,
+                                    "Hard liquor": true,
+                                    "Wine": true
+                                },
+                                "Dining options": {
+                                    "Outside food allowed": true
+                                },
+                                "Amenities": {
+                                    "Restroom": true
+                                },
+                                "Atmosphere": {
+                                    "Casual": true,
+                                    "Cozy": true
+                                },
+                                "Crowd": {
+                                    "Groups": true
+                                },
+                                "Payments": {
+                                    "Credit cards": true,
+                                    "Debit cards": true,
+                                    "NFC mobile payments": true
+                                }
+                            },
+                            "range": "$",
+                            "reviews_per_score": {
+                                "1": 18,
+                                "2": 8,
+                                "3": 29,
+                                "4": 76,
+                                "5": 262
+                            },
+                            "reservation_links": null,
+                            "booking_appointment_link": null,
+                            "menu_link": null,
+                            "order_links": null,
+                            "owner_id": "108572813536620869990",
+                            "verified": true,
+                            "owner_title": "Walter's Bar",
+                            "owner_link": "https://www.google.com/maps/contrib/108572813536620869990",
+                            "location_link": "https://www.google.com/maps/place/Walter%27s+Bar/@40.7493438,-73.9958472,14z/data=!4m8!1m2!2m1!1sWalter%27s+Bar!3m4!1s0x89c259b0337d82ff:0x664c7e19195bb059!8m2!3d40.7493438!4d-73.9958472"
+                        },
+                        {
+                            "query": "bars, NY, USA",
+                            "name": "Black Hound Bar & Lounge",
+                            "place_id": "ChIJU062dhBawokR0RWbIZkSW0Q",
+                            "google_id": "0x89c25a1076b64e53:0x445b1299219b15d1",
+                            "full_address": "301 South End Ave #1002, New York, NY 10280",
+                            "borough": "Manhattan",
+                            "street": "301 South End Ave #1002",
+                            "postal_code": "10280",
+                            "area_service": false,
+                            "country_code": "US",
+                            "country": "United States of America",
+                            "city": "New York",
+                            "us_state": "New York",
+                            "state": "New York",
+                            "plus_code": null,
+                            "latitude": 40.7103381,
+                            "longitude": -74.0165128,
+                            "time_zone": "America/New_York",
+                            "popular_times": null,
+                            "site": "https://blackhoundbar.com/",
+                            "phone": "+1 212-945-0562",
+                            "type": "Lounge",
+                            "logo": "https://lh4.googleusercontent.com/-E2EcVFWJ5cM/AAAAAAAAAAI/AAAAAAAAAAA/4v5WPh8n6IU/s44-p-k-no-ns-nd/photo.jpg",
+                            "description": "Intimate, contemporary speakeasy offering elevated bar bites, local brews & specialty cocktails.",
+                            "located_in": null,
+                            "located_google_id": null,
+                            "category": "bars",
+                            "subtypes": "Lounge, Bar, Restaurant",
+                            "posts": null,
+                            "reviews_tags": null,
+                            "rating": 4.3,
+                            "reviews": 138,
+                            "photos_count": 83,
+                            "cid": "4925551066362877393",
+                            "reviews_link": null,
+                            "reviews_id": "4925551066362877393",
+                            "photo": "https://lh5.googleusercontent.com/p/AF1QipNRRvGGCqdHoWRaDGU7gtJbXkyBv6mf2heRj0KP=w800-h500-k-no",
+                            "street_view": "https://lh5.googleusercontent.com/p/AF1QipNRRvGGCqdHoWRaDGU7gtJbXkyBv6mf2heRj0KP=w1600-h1000-k-no",
+                            "working_hours_old_format": "Sunday: Closed | Monday: Closed | Tuesday: 5-11\u202fPM | Wednesday: 5-11\u202fPM | Thursday: 5\u202fPM-12\u202fAM | Friday: 5\u202fPM-12\u202fAM | Saturday: 5\u202fPM-12\u202fAM",
+                            "working_hours": {
+                                "Sunday": "Closed",
+                                "Monday": "Closed",
+                                "Tuesday": "5-11\u202fPM",
+                                "Wednesday": "5-11\u202fPM",
+                                "Thursday": "5\u202fPM-12\u202fAM",
+                                "Friday": "5\u202fPM-12\u202fAM",
+                                "Saturday": "5\u202fPM-12\u202fAM"
+                            },
+                            "other_hours": null,
+                            "business_status": "OPERATIONAL",
+                            "about": {
+                                "Service options": {
+                                    "Dine-in": true,
+                                    "Delivery": false
+                                },
+                                "Highlights": {
+                                    "Fast service": true,
+                                    "Great beer selection": true,
+                                    "Great cocktails": true,
+                                    "Great wine list": true
+                                },
+                                "Accessibility": {
+                                    "Wheelchair accessible parking lot": false
+                                },
+                                "Offerings": {
+                                    "Alcohol": true,
+                                    "Beer": true,
+                                    "Cocktails": true,
+                                    "Food": true,
+                                    "Food at bar": true,
+                                    "Hard liquor": true,
+                                    "Wine": true
+                                },
+                                "Amenities": {
+                                    "Wi-Fi": true
+                                },
+                                "Atmosphere": {
+                                    "Casual": true,
+                                    "Cozy": true,
+                                    "Hip": true
+                                },
+                                "Crowd": {
+                                    "Groups": true
+                                },
+                                "Planning": {
+                                    "Accepts reservations": true
+                                },
+                                "Payments": {
+                                    "Credit cards": true,
+                                    "Debit cards": true,
+                                    "NFC mobile payments": true
+                                }
+                            },
+                            "range": "$$",
+                            "reviews_per_score": {
+                                "1": 8,
+                                "2": 3,
+                                "3": 9,
+                                "4": 37,
+                                "5": 81
+                            },
+                            "reservation_links": null,
+                            "booking_appointment_link": null,
+                            "menu_link": null,
+                            "order_links": null,
+                            "owner_id": "110776051310567048219",
+                            "verified": true,
+                            "owner_title": "Black Hound Bar & Lounge",
+                            "owner_link": "https://www.google.com/maps/contrib/110776051310567048219",
+                            "location_link": "https://www.google.com/maps/place/Black+Hound+Bar+%26+Lounge/@40.7103381,-74.0165128,14z/data=!4m8!1m2!2m1!1sBlack+Hound+Bar+%26+Lounge!3m4!1s0x89c25a1076b64e53:0x445b1299219b15d1!8m2!3d40.7103381!4d-74.0165128"
+                        },
+                        {
+                            "query": "bars, NY, USA",
+                            "name": "LB",
+                            "place_id": "ChIJjY7y6ZJZwokRXF5CA_X4l-I",
+                            "google_id": "0x89c25992e9f28e8d:0xe297f8f503425e5c",
+                            "full_address": "20 7th Ave S, New York, NY 10014",
+                            "borough": "Manhattan",
+                            "street": "20 7th Ave S",
+                            "postal_code": "10014",
+                            "area_service": false,
+                            "country_code": "US",
+                            "country": "United States of America",
+                            "city": "New York",
+                            "us_state": "New York",
+                            "state": "New York",
+                            "plus_code": null,
+                            "latitude": 40.730118,
+                            "longitude": -74.0050449,
+                            "time_zone": "America/New_York",
+                            "popular_times": null,
+                            "site": null,
+                            "phone": "+1 212-929-4360",
+                            "type": "Cocktail bar",
+                            "logo": "https://lh3.googleusercontent.com/-1VZ0cSHm5eI/AAAAAAAAAAI/AAAAAAAAAAA/Musm8XwgctQ/s44-p-k-no-ns-nd/photo.jpg",
+                            "description": "Underground den of mixology featuring a vast menu of handcrafted cocktails in a snug space.",
+                            "located_in": null,
+                            "located_google_id": null,
+                            "category": "bars",
+                            "subtypes": "Cocktail bar, Bar",
+                            "posts": null,
+                            "reviews_tags": null,
+                            "rating": 4.5,
+                            "reviews": 723,
+                            "photos_count": 210,
+                            "cid": "16327792705260379740",
+                            "reviews_link": null,
+                            "reviews_id": "-2118951368449171876",
+                            "photo": "https://lh5.googleusercontent.com/p/AF1QipP7-wbPAjmV0M5duiIxOw5iLcUgOnepNuHpLoWg=w800-h500-k-no",
+                            "street_view": "https://lh5.googleusercontent.com/p/AF1QipP7-wbPAjmV0M5duiIxOw5iLcUgOnepNuHpLoWg=w1600-h1000-k-no",
+                            "working_hours_old_format": "Sunday: 6\u202fPM-12\u202fAM | Monday: 6\u202fPM-1\u202fAM | Tuesday: 6\u202fPM-1\u202fAM | Wednesday: 6\u202fPM-1\u202fAM | Thursday: 6\u202fPM-2\u202fAM | Friday: 6\u202fPM-2\u202fAM | Saturday: 6\u202fPM-2\u202fAM",
+                            "working_hours": {
+                                "Sunday": "6\u202fPM-12\u202fAM",
+                                "Monday": "6\u202fPM-1\u202fAM",
+                                "Tuesday": "6\u202fPM-1\u202fAM",
+                                "Wednesday": "6\u202fPM-1\u202fAM",
+                                "Thursday": "6\u202fPM-2\u202fAM",
+                                "Friday": "6\u202fPM-2\u202fAM",
+                                "Saturday": "6\u202fPM-2\u202fAM"
+                            },
+                            "other_hours": [
+                                {
+                                    "access": {
+                                        "Sunday": "6\u202fPM-12\u202fAM",
+                                        "Monday": "6\u202fPM-1\u202fAM",
+                                        "Tuesday": "6\u202fPM-1\u202fAM",
+                                        "Wednesday": "6\u202fPM-1\u202fAM",
+                                        "Thursday": "6\u202fPM-2\u202fAM",
+                                        "Friday": "6\u202fPM-2\u202fAM",
+                                        "Saturday": "6\u202fPM-2\u202fAM"
+                                    }
+                                }
+                            ],
+                            "business_status": "OPERATIONAL",
+                            "about": {
+                                "Service options": {
+                                    "Takeout": true,
+                                    "Dine-in": true,
+                                    "Delivery": false
+                                },
+                                "Highlights": {
+                                    "Fast service": true,
+                                    "Great cocktails": true,
+                                    "Live music": true,
+                                    "Live performances": true
+                                },
+                                "Accessibility": {
+                                    "Wheelchair accessible seating": true,
+                                    "Wheelchair accessible entrance": false,
+                                    "Wheelchair accessible parking lot": false
+                                },
+                                "Offerings": {
+                                    "Alcohol": true,
+                                    "Beer": true,
+                                    "Cocktails": true,
+                                    "Food": true,
+                                    "Hard liquor": true,
+                                    "Wine": true
+                                },
+                                "Dining options": {
+                                    "Outside food allowed": true,
+                                    "Seating": true
+                                },
+                                "Amenities": {
+                                    "Gender-neutral restroom": true,
+                                    "Restroom": true
+                                },
+                                "Atmosphere": {
+                                    "Casual": true,
+                                    "Cozy": true,
+                                    "Hip": true,
+                                    "Upscale": true
+                                },
+                                "Crowd": {
+                                    "LGBTQ+ friendly": true,
+                                    "Transgender safespace": true
+                                },
+                                "Planning": {
+                                    "Usually a wait": true
+                                },
+                                "Payments": {
+                                    "Debit cards": true,
+                                    "Credit cards": true
+                                },
+                                "Other": {
+                                    "LGBTQ+ friendly": true
+                                }
+                            },
+                            "range": "$$$",
+                            "reviews_per_score": {
+                                "1": 17,
+                                "2": 16,
+                                "3": 44,
+                                "4": 171,
+                                "5": 475
+                            },
+                            "reservation_links": null,
+                            "booking_appointment_link": null,
+                            "menu_link": null,
+                            "order_links": null,
+                            "owner_id": "111342260806257660598",
+                            "verified": true,
+                            "owner_title": "LB",
+                            "owner_link": "https://www.google.com/maps/contrib/111342260806257660598",
+                            "location_link": "https://www.google.com/maps/place/LB/@40.730118,-74.0050449,14z/data=!4m8!1m2!2m1!1sLB!3m4!1s0x89c25992e9f28e8d:0xe297f8f503425e5c!8m2!3d40.730118!4d-74.0050449"
+                        },
+                        {
+                            "query": "bars, NY, USA",
+                            "name": "Billymark's West",
+                            "place_id": "ChIJtWIdBbFZwokRD4B2fXNQGvU",
+                            "google_id": "0x89c259b1051d62b5:0xf51a50737d76800f",
+                            "full_address": "332 9th Ave, New York, NY 10001",
+                            "borough": "Manhattan",
+                            "street": "332 9th Ave",
+                            "postal_code": "10001",
+                            "area_service": false,
+                            "country_code": "US",
+                            "country": "United States of America",
+                            "city": "New York",
+                            "us_state": "New York",
+                            "state": "New York",
+                            "plus_code": null,
+                            "latitude": 40.7502925,
+                            "longitude": -73.9983268,
+                            "time_zone": "America/New_York",
+                            "popular_times": null,
+                            "site": null,
+                            "phone": "+1 646-590-2999",
+                            "type": "Bar",
+                            "logo": null,
+                            "description": "Neighborhood bar with no-nonsense attitude featuring vintage photos & records on the wall.",
+                            "located_in": null,
+                            "located_google_id": null,
+                            "category": "bars",
+                            "subtypes": "Bar",
+                            "posts": null,
+                            "reviews_tags": null,
+                            "rating": 4,
+                            "reviews": 417,
+                            "photos_count": 222,
+                            "cid": "17661517345643200527",
+                            "reviews_link": null,
+                            "reviews_id": "-785226728066351089",
+                            "photo": "https://lh5.googleusercontent.com/p/AF1QipOM0VasuIcuEJYODaBs7vJIXgeSzf0lk2X6FANH=w800-h500-k-no",
+                            "street_view": "https://lh5.googleusercontent.com/p/AF1QipOM0VasuIcuEJYODaBs7vJIXgeSzf0lk2X6FANH=w1600-h1000-k-no",
+                            "working_hours_old_format": "Sunday: 8\u202fAM-4\u202fAM | Monday: 8\u202fAM-4\u202fAM | Tuesday: 8\u202fAM-4\u202fAM | Wednesday: 8\u202fAM-4\u202fAM | Thursday: 8\u202fAM-4\u202fAM | Friday: 8\u202fAM-4\u202fAM | Saturday: 8\u202fAM-4\u202fAM",
+                            "working_hours": {
+                                "Sunday": "8\u202fAM-4\u202fAM",
+                                "Monday": "8\u202fAM-4\u202fAM",
+                                "Tuesday": "8\u202fAM-4\u202fAM",
+                                "Wednesday": "8\u202fAM-4\u202fAM",
+                                "Thursday": "8\u202fAM-4\u202fAM",
+                                "Friday": "8\u202fAM-4\u202fAM",
+                                "Saturday": "8\u202fAM-4\u202fAM"
+                            },
+                            "other_hours": null,
+                            "business_status": "OPERATIONAL",
+                            "about": {
+                                "Service options": {
+                                    "Dine-in": true,
+                                    "Delivery": false,
+                                    "Takeout": false
+                                },
+                                "Highlights": {
+                                    "Bar games": true,
+                                    "Fast service": true
+                                },
+                                "Accessibility": {
+                                    "Wheelchair accessible entrance": true
+                                },
+                                "Offerings": {
+                                    "Alcohol": true,
+                                    "Beer": true,
+                                    "Cocktails": true,
+                                    "Food": true,
+                                    "Happy hour drinks": true,
+                                    "Hard liquor": true,
+                                    "Wine": true
+                                },
+                                "Dining options": {
+                                    "Outside food allowed": true
+                                },
+                                "Amenities": {
+                                    "Restroom": true
+                                },
+                                "Atmosphere": {
+                                    "Casual": true
+                                },
+                                "Crowd": {
+                                    "Groups": true,
+                                    "Tourists": true
+                                },
+                                "Payments": {
+                                    "Cash-only": true
+                                }
+                            },
+                            "range": "$",
+                            "reviews_per_score": {
+                                "1": 55,
+                                "2": 19,
+                                "3": 34,
+                                "4": 73,
+                                "5": 236
+                            },
+                            "reservation_links": null,
+                            "booking_appointment_link": null,
+                            "menu_link": null,
+                            "order_links": null,
+                            "owner_id": null,
+                            "verified": false,
+                            "owner_title": "Billymark's West",
+                            "owner_link": null,
+                            "location_link": "https://www.google.com/maps/place/Billymark%27s+West/@40.7502925,-73.9983268,14z/data=!4m8!1m2!2m1!1sBillymark%27s+West!3m4!1s0x89c259b1051d62b5:0xf51a50737d76800f!8m2!3d40.7502925!4d-73.9983268"
+                        },
+                        {
+                            "query": "bars, NY, USA",
+                            "name": "Plunge Rooftop Bar + Lounge",
+                            "place_id": "ChIJE02ojL9ZwokRpcj544JGqGw",
+                            "google_id": "0x89c259bf8ca84d13:0x6ca84682e3f9c8a5",
+                            "full_address": "18 9th Ave, New York, NY 10014",
+                            "borough": "Manhattan",
+                            "street": "18 9th Ave",
+                            "postal_code": "10014",
+                            "area_service": false,
+                            "country_code": "US",
+                            "country": "United States of America",
+                            "city": "New York",
+                            "us_state": "New York",
+                            "state": "New York",
+                            "plus_code": null,
+                            "latitude": 40.7399412,
+                            "longitude": -74.0058051,
+                            "time_zone": "America/New_York",
+                            "popular_times": null,
+                            "site": null,
+                            "phone": null,
+                            "type": "Cocktail bar",
+                            "logo": "https://lh6.googleusercontent.com/-BclbjDnF9d8/AAAAAAAAAAI/AAAAAAAAAAA/WKyfCVb7tsY/s44-p-k-no-ns-nd/photo.jpg",
+                            "description": "Stylish rooftop hotel bar with loungy seating, cocktails, DJ parties & skyline views.",
+                            "located_in": null,
+                            "located_google_id": null,
+                            "category": "bars",
+                            "subtypes": "Cocktail bar, Bar, Lounge",
+                            "posts": null,
+                            "reviews_tags": null,
+                            "rating": 4,
+                            "reviews": 321,
+                            "photos_count": 286,
+                            "cid": "7829585480168097957",
+                            "reviews_link": null,
+                            "reviews_id": "7829585480168097957",
+                            "photo": "https://lh5.googleusercontent.com/p/AF1QipNSvZFJmCxTnho4loF4WWjO1wv7TelsMCrLuHM=w800-h500-k-no",
+                            "street_view": "https://lh5.googleusercontent.com/p/AF1QipNSvZFJmCxTnho4loF4WWjO1wv7TelsMCrLuHM=w1600-h1000-k-no",
+                            "working_hours_old_format": "Sunday: 11\u202fAM-12\u202fAM | Monday: Closed | Tuesday: Closed | Wednesday: 11\u202fAM-12\u202fAM | Thursday: 11\u202fAM-12\u202fAM | Friday: 11\u202fAM-4\u202fAM | Saturday: 11\u202fAM-4\u202fAM",
+                            "working_hours": {
+                                "Sunday": "11\u202fAM-12\u202fAM",
+                                "Monday": "Closed",
+                                "Tuesday": "Closed",
+                                "Wednesday": "11\u202fAM-12\u202fAM",
+                                "Thursday": "11\u202fAM-12\u202fAM",
+                                "Friday": "11\u202fAM-4\u202fAM",
+                                "Saturday": "11\u202fAM-4\u202fAM"
+                            },
+                            "other_hours": [
+                                {
+                                    "happy_hours": {
+                                        "Sunday": "Closed",
+                                        "Monday": "5-7\u202fPM",
+                                        "Tuesday": "5-7\u202fPM",
+                                        "Wednesday": "5-7\u202fPM",
+                                        "Thursday": "5-7\u202fPM",
+                                        "Friday": "5-7\u202fPM",
+                                        "Saturday": "Closed"
+                                    }
+                                }
+                            ],
+                            "business_status": "OPERATIONAL",
+                            "about": {
+                                "Service options": {
+                                    "Outdoor seating": true,
+                                    "Dine-in": true,
+                                    "Delivery": false
+                                },
+                                "Highlights": {
+                                    "Fast service": true,
+                                    "Great beer selection": true,
+                                    "Great cocktails": true,
+                                    "Great wine list": true
+                                },
+                                "Accessibility": {
+                                    "Wheelchair accessible entrance": true,
+                                    "Wheelchair accessible restroom": true
+                                },
+                                "Offerings": {
+                                    "Alcohol": true,
+                                    "Beer": true,
+                                    "Cocktails": true,
+                                    "Dancing": true,
+                                    "Food": true,
+                                    "Food at bar": true,
+                                    "Hard liquor": true,
+                                    "Wine": true
+                                },
+                                "Dining options": {
+                                    "Seating": true
+                                },
+                                "Amenities": {
+                                    "Restroom": true
+                                },
+                                "Atmosphere": {
+                                    "Casual": true,
+                                    "Cozy": true,
+                                    "Hip": true,
+                                    "Upscale": true
+                                },
+                                "Crowd": {
+                                    "Groups": true,
+                                    "Tourists": true
+                                },
+                                "Planning": {
+                                    "Accepts reservations": true
+                                },
+                                "Payments": {
+                                    "Credit cards": true
+                                }
+                            },
+                            "range": "$$$",
+                            "reviews_per_score": {
+                                "1": 23,
+                                "2": 18,
+                                "3": 49,
+                                "4": 91,
+                                "5": 140
+                            },
+                            "reservation_links": null,
+                            "booking_appointment_link": null,
+                            "menu_link": null,
+                            "order_links": null,
+                            "owner_id": "107765986049890201456",
+                            "verified": true,
+                            "owner_title": "Plunge Rooftop Bar + Lounge",
+                            "owner_link": "https://www.google.com/maps/contrib/107765986049890201456",
+                            "location_link": "https://www.google.com/maps/place/Plunge+Rooftop+Bar+%2B+Lounge/@40.7399412,-74.0058051,14z/data=!4m8!1m2!2m1!1sPlunge+Rooftop+Bar+%2B+Lounge!3m4!1s0x89c259bf8ca84d13:0x6ca84682e3f9c8a5!8m2!3d40.7399412!4d-74.0058051"
+                        },
+                        {
+                            "query": "bars, NY, USA",
+                            "name": "Saint Tuesday",
+                            "place_id": "ChIJacUcvQZbwokRUS4kvIlIz4o",
+                            "google_id": "0x89c25b06bd1cc569:0x8acf4889bc242e51",
+                            "full_address": "24 Cortlandt Alley, New York, NY 10013",
+                            "borough": "Manhattan",
+                            "street": "24 Cortlandt Alley",
+                            "postal_code": "10013",
+                            "area_service": false,
+                            "country_code": "US",
+                            "country": "United States of America",
+                            "city": "New York",
+                            "us_state": "New York",
+                            "state": "New York",
+                            "plus_code": null,
+                            "latitude": 40.7181826,
+                            "longitude": -74.0020373,
+                            "time_zone": "America/New_York",
+                            "popular_times": null,
+                            "site": "http://sainttuesday.com/",
+                            "phone": null,
+                            "type": "Bar",
+                            "logo": null,
+                            "description": "Craft cocktails & diverse nightly live music in a subterranean, industrial-chic speakeasy.",
+                            "located_in": null,
+                            "located_google_id": null,
+                            "category": "bars",
+                            "subtypes": "Bar",
+                            "posts": null,
+                            "reviews_tags": null,
+                            "rating": 4.2,
+                            "reviews": 94,
+                            "photos_count": 60,
+                            "cid": "10002293053817368145",
+                            "reviews_link": null,
+                            "reviews_id": "-8444451019892183471",
+                            "photo": "https://lh5.googleusercontent.com/p/AF1QipPwnSDFvA8gP8i942lmIIlnv57sPwfhRuKu1nK5=w800-h500-k-no",
+                            "street_view": "https://lh5.googleusercontent.com/p/AF1QipPwnSDFvA8gP8i942lmIIlnv57sPwfhRuKu1nK5=w1600-h1000-k-no",
+                            "working_hours_old_format": "Sunday: 6\u202fPM-2\u202fAM | Monday: 6\u202fPM-2\u202fAM | Tuesday: 6\u202fPM-2\u202fAM | Wednesday: 6\u202fPM-2\u202fAM | Thursday: 6\u202fPM-2\u202fAM | Friday: 6\u202fPM-2\u202fAM | Saturday: 6\u202fPM-2\u202fAM",
+                            "working_hours": {
+                                "Sunday": "6\u202fPM-2\u202fAM",
+                                "Monday": "6\u202fPM-2\u202fAM",
+                                "Tuesday": "6\u202fPM-2\u202fAM",
+                                "Wednesday": "6\u202fPM-2\u202fAM",
+                                "Thursday": "6\u202fPM-2\u202fAM",
+                                "Friday": "6\u202fPM-2\u202fAM",
+                                "Saturday": "6\u202fPM-2\u202fAM"
+                            },
+                            "other_hours": null,
+                            "business_status": "OPERATIONAL",
+                            "about": {
+                                "Service options": {
+                                    "Dine-in": true,
+                                    "Delivery": false,
+                                    "Takeout": false
+                                },
+                                "Highlights": {
+                                    "Fast service": true,
+                                    "Great cocktails": true
+                                },
+                                "Accessibility": {
+                                    "Wheelchair accessible parking lot": false
+                                },
+                                "Offerings": {
+                                    "Alcohol": true,
+                                    "Beer": true,
+                                    "Cocktails": true,
+                                    "Food": true,
+                                    "Hard liquor": true,
+                                    "Wine": true
+                                },
+                                "Amenities": {
+                                    "Restroom": true
+                                },
+                                "Atmosphere": {
+                                    "Cozy": true,
+                                    "Hip": true
+                                },
+                                "Planning": {
+                                    "Accepts reservations": true
+                                },
+                                "Payments": {
+                                    "Credit cards": true
+                                }
+                            },
+                            "range": null,
+                            "reviews_per_score": {
+                                "1": 13,
+                                "2": 3,
+                                "3": 2,
+                                "4": 11,
+                                "5": 65
+                            },
+                            "reservation_links": [
+                                "/url?q=https://resy.com/cities/ny/saint-tuesday&sa=U&ved=0ahUKEwj-uInOl8n_AhWPQaQEHUf4CZAQ2ZABCPECKAs&usg=AOvVaw2aZasTW8bVmVkqYO9eoNH0",
+                                "https://www.google.com/maps/reserve/v/dine/c/dAkwGYypY4g?source=pa"
+                            ],
+                            "booking_appointment_link": "https://resy.com/cities/ny/saint-tuesday",
+                            "menu_link": null,
+                            "order_links": [
+                                "https://resy.com/cities/ny/saint-tuesday",
+                                "https://www.google.com/maps/reserve/v/dine/c/dAkwGYypY4g?source=pa"
+                            ],
+                            "owner_id": null,
+                            "verified": false,
+                            "owner_title": "Saint Tuesday",
+                            "owner_link": null,
+                            "location_link": "https://www.google.com/maps/place/Saint+Tuesday/@40.7181826,-74.0020373,14z/data=!4m8!1m2!2m1!1sSaint+Tuesday!3m4!1s0x89c25b06bd1cc569:0x8acf4889bc242e51!8m2!3d40.7181826!4d-74.0020373"
+                        },
+                        {
+                            "query": "bars, NY, USA",
+                            "name": "Brandy Library",
+                            "place_id": "ChIJk7o2RPVZwokRYnzP1CplFKk",
+                            "google_id": "0x89c259f54436ba93:0xa914652ad4cf7c62",
+                            "full_address": "25 N Moore St Frnt 1, New York, NY 10013",
+                            "borough": "Manhattan",
+                            "street": "25 N Moore St Frnt 1",
+                            "postal_code": "10013",
+                            "area_service": false,
+                            "country_code": "US",
+                            "country": "United States of America",
+                            "city": "New York",
+                            "us_state": "New York",
+                            "state": "New York",
+                            "plus_code": null,
+                            "latitude": 40.7199482,
+                            "longitude": -74.00710579999999,
+                            "time_zone": "America/New_York",
+                            "popular_times": null,
+                            "site": "http://www.brandylibrary.com/",
+                            "phone": "+1 212-226-5545",
+                            "type": "Bar",
+                            "logo": "https://lh3.googleusercontent.com/-XZzPnmMkdkQ/AAAAAAAAAAI/AAAAAAAAAAA/_Tl9qd4IgBg/s44-p-k-no-ns-nd/photo.jpg",
+                            "description": "Clubby, refined bar & lounge specializing in rare spirits with an eclectic menu of small plates.",
+                            "located_in": null,
+                            "located_google_id": null,
+                            "category": "bars",
+                            "subtypes": "Bar, Lounge",
+                            "posts": null,
+                            "reviews_tags": null,
+                            "rating": 4.6,
+                            "reviews": 859,
+                            "photos_count": 718,
+                            "cid": "12183474126577433698",
+                            "reviews_link": null,
+                            "reviews_id": "-6263269947132117918",
+                            "photo": "https://lh5.googleusercontent.com/p/AF1QipNLHVCE7pgH42gxhD4dN8i6pymGjGXaK-zrM2RT=w800-h500-k-no",
+                            "street_view": "https://lh5.googleusercontent.com/p/AF1QipNLHVCE7pgH42gxhD4dN8i6pymGjGXaK-zrM2RT=w1600-h1000-k-no",
+                            "working_hours_old_format": "Sunday: 4\u202fPM-12\u202fAM | Monday: 4\u202fPM-12\u202fAM | Tuesday: 4\u202fPM-12\u202fAM | Wednesday: 4\u202fPM-12\u202fAM | Thursday: 4\u202fPM-2\u202fAM | Friday: 4\u202fPM-2\u202fAM | Saturday: 4\u202fPM-2\u202fAM",
+                            "working_hours": {
+                                "Sunday": "4\u202fPM-12\u202fAM",
+                                "Monday": "4\u202fPM-12\u202fAM",
+                                "Tuesday": "4\u202fPM-12\u202fAM",
+                                "Wednesday": "4\u202fPM-12\u202fAM",
+                                "Thursday": "4\u202fPM-2\u202fAM",
+                                "Friday": "4\u202fPM-2\u202fAM",
+                                "Saturday": "4\u202fPM-2\u202fAM"
+                            },
+                            "other_hours": null,
+                            "business_status": "OPERATIONAL",
+                            "about": {
+                                "Service options": {
+                                    "Dine-in": true,
+                                    "Delivery": false,
+                                    "Takeout": false
+                                },
+                                "Highlights": {
+                                    "Fast service": true,
+                                    "Great cocktails": true,
+                                    "Great wine list": true
+                                },
+                                "Accessibility": {
+                                    "Wheelchair accessible elevator": true,
+                                    "Wheelchair accessible entrance": true,
+                                    "Wheelchair accessible restroom": true,
+                                    "Wheelchair accessible seating": true,
+                                    "Wheelchair accessible parking lot": false
+                                },
+                                "Offerings": {
+                                    "Alcohol": true,
+                                    "Beer": true,
+                                    "Cocktails": true,
+                                    "Food": true,
+                                    "Food at bar": true,
+                                    "Hard liquor": true,
+                                    "Wine": true
+                                },
+                                "Amenities": {
+                                    "Restroom": true
+                                },
+                                "Atmosphere": {
+                                    "Cozy": true,
+                                    "Hip": true,
+                                    "Upscale": true
+                                },
+                                "Crowd": {
+                                    "Groups": true,
+                                    "Tourists": true
+                                },
+                                "Planning": {
+                                    "Accepts reservations": true
+                                },
+                                "Payments": {
+                                    "Credit cards": true,
+                                    "Debit cards": true,
+                                    "NFC mobile payments": true
+                                }
+                            },
+                            "range": "$$$",
+                            "reviews_per_score": {
+                                "1": 26,
+                                "2": 11,
+                                "3": 41,
+                                "4": 140,
+                                "5": 641
+                            },
+                            "reservation_links": [
+                                "/url?q=https://www.exploretock.com/brandy-library-new-york/%3Futm_source%3Dsearch%26utm_medium%3Dplace-actions%26utm_content%3Dreservations&sa=U&ved=0ahUKEwj-uInOl8n_AhWPQaQEHUf4CZAQ2ZABCJ0DKA8&usg=AOvVaw1iLJQvpLSQ0Lw0AJIK_pvc",
+                                "https://www.google.com/maps/reserve/v/dine/c/L1rfvf8dTzU?source=pa"
+                            ],
+                            "booking_appointment_link": "https://www.exploretock.com/brandy-library-new-york/?utm_source=search&utm_medium=place-actions&utm_content=reservations",
+                            "menu_link": null,
+                            "order_links": [
+                                "https://www.exploretock.com/brandy-library-new-york/?utm_source=search&utm_medium=place-actions&utm_content=reservations",
+                                "https://www.google.com/maps/reserve/v/dine/c/L1rfvf8dTzU?source=pa"
+                            ],
+                            "owner_id": "101464731984169337944",
+                            "verified": true,
+                            "owner_title": "Brandy Library",
+                            "owner_link": "https://www.google.com/maps/contrib/101464731984169337944",
+                            "location_link": "https://www.google.com/maps/place/Brandy+Library/@40.7199482,-74.00710579999999,14z/data=!4m8!1m2!2m1!1sBrandy+Library!3m4!1s0x89c259f54436ba93:0xa914652ad4cf7c62!8m2!3d40.7199482!4d-74.00710579999999"
+                        },
+                        {
+                            "query": "bars, NY, USA",
+                            "name": "Art Bar",
+                            "place_id": "ChIJcUtKK75ZwokR4n1SDLiQPoc",
+                            "google_id": "0x89c259be2b4a4b71:0x873e90b80c527de2",
+                            "full_address": "52 8th Ave, New York, NY 10014",
+                            "borough": "Manhattan",
+                            "street": "52 8th Ave",
+                            "postal_code": "10014",
+                            "area_service": false,
+                            "country_code": "US",
+                            "country": "United States of America",
+                            "city": "New York",
+                            "us_state": "New York",
+                            "state": "New York",
+                            "plus_code": null,
+                            "latitude": 40.7384694,
+                            "longitude": -74.0034972,
+                            "time_zone": "America/New_York",
+                            "popular_times": null,
+                            "site": null,
+                            "phone": "+1 212-727-0244",
+                            "type": "Bar",
+                            "logo": "https://lh6.googleusercontent.com/-8TH3XamYiHU/AAAAAAAAAAI/AAAAAAAAAAA/8IiPJQ-3dTc/s44-p-k-no-ns-nd/photo.jpg",
+                            "description": "Village mainstay with comfortable, dimly lit back room offers cocktails & bar food.",
+                            "located_in": null,
+                            "located_google_id": null,
+                            "category": "bars",
+                            "subtypes": "Bar, Bar & grill, Lounge, Restaurant",
+                            "posts": null,
+                            "reviews_tags": null,
+                            "rating": 4.4,
+                            "reviews": 1176,
+                            "photos_count": 207,
+                            "cid": "9745385763831447010",
+                            "reviews_link": null,
+                            "reviews_id": "-8701358309878104606",
+                            "photo": "https://lh5.googleusercontent.com/p/AF1QipMwfz4xoLNBCGQ8RrlC_dIHjFTY9K_c69PiLGvB=w800-h500-k-no",
+                            "street_view": "https://lh5.googleusercontent.com/p/AF1QipMwfz4xoLNBCGQ8RrlC_dIHjFTY9K_c69PiLGvB=w1600-h1000-k-no",
+                            "working_hours_old_format": "Sunday: 4\u202fPM-4\u202fAM | Monday: 4\u202fPM-4\u202fAM | Tuesday: 4\u202fPM-4\u202fAM | Wednesday: 4\u202fPM-4\u202fAM | Thursday: 4\u202fPM-4\u202fAM | Friday: 4\u202fPM-4\u202fAM | Saturday: 4\u202fPM-4\u202fAM",
+                            "working_hours": {
+                                "Sunday": "4\u202fPM-4\u202fAM",
+                                "Monday": "4\u202fPM-4\u202fAM",
+                                "Tuesday": "4\u202fPM-4\u202fAM",
+                                "Wednesday": "4\u202fPM-4\u202fAM",
+                                "Thursday": "4\u202fPM-4\u202fAM",
+                                "Friday": "4\u202fPM-4\u202fAM",
+                                "Saturday": "4\u202fPM-4\u202fAM"
+                            },
+                            "other_hours": [
+                                {
+                                    "happy_hours": {
+                                        "Sunday": "4-7\u202fPM",
+                                        "Monday": "4-7\u202fPM",
+                                        "Tuesday": "4-7\u202fPM",
+                                        "Wednesday": "4-7\u202fPM",
+                                        "Thursday": "4-7\u202fPM",
+                                        "Friday": "4-7\u202fPM",
+                                        "Saturday": "4-7\u202fPM"
+                                    }
+                                },
+                                {
+                                    "kitchen": {
+                                        "Sunday": "4\u202fPM-2\u202fAM",
+                                        "Monday": "4\u202fPM-2\u202fAM",
+                                        "Tuesday": "4\u202fPM-2\u202fAM",
+                                        "Wednesday": "4\u202fPM-2\u202fAM",
+                                        "Thursday": "4\u202fPM-2\u202fAM",
+                                        "Friday": "4\u202fPM-3\u202fAM",
+                                        "Saturday": "4\u202fPM-3\u202fAM"
+                                    }
+                                }
+                            ],
+                            "business_status": "OPERATIONAL",
+                            "about": {
+                                "Service options": {
+                                    "Curbside pickup": true,
+                                    "Delivery": true,
+                                    "Takeout": true,
+                                    "Dine-in": true
+                                },
+                                "Highlights": {
+                                    "Fast service": true,
+                                    "Great beer selection": true,
+                                    "Great cocktails": true
+                                },
+                                "Accessibility": {
+                                    "Wheelchair accessible entrance": true,
+                                    "Wheelchair accessible restroom": true,
+                                    "Wheelchair accessible seating": true,
+                                    "Wheelchair accessible parking lot": false
+                                },
+                                "Offerings": {
+                                    "Alcohol": true,
+                                    "Beer": true,
+                                    "Cocktails": true,
+                                    "Food": true,
+                                    "Food at bar": true,
+                                    "Happy hour drinks": true,
+                                    "Happy hour food": true,
+                                    "Hard liquor": true,
+                                    "Wine": true
+                                },
+                                "Dining options": {
+                                    "Seating": true
+                                },
+                                "Amenities": {
+                                    "Restroom": true,
+                                    "Wi-Fi": true
+                                },
+                                "Atmosphere": {
+                                    "Casual": true,
+                                    "Cozy": true,
+                                    "Hip": true
+                                },
+                                "Crowd": {
+                                    "Groups": true,
+                                    "LGBTQ+ friendly": true,
+                                    "Tourists": true,
+                                    "Transgender safespace": true
+                                },
+                                "Payments": {
+                                    "Credit cards": true,
+                                    "Debit cards": true,
+                                    "NFC mobile payments": true
+                                },
+                                "Other": {
+                                    "LGBTQ+ friendly": true
+                                }
+                            },
+                            "range": "$",
+                            "reviews_per_score": {
+                                "1": 39,
+                                "2": 15,
+                                "3": 118,
+                                "4": 299,
+                                "5": 705
+                            },
+                            "reservation_links": null,
+                            "booking_appointment_link": null,
+                            "menu_link": null,
+                            "order_links": null,
+                            "owner_id": "106815464020298491220",
+                            "verified": true,
+                            "owner_title": "Art Bar",
+                            "owner_link": "https://www.google.com/maps/contrib/106815464020298491220",
+                            "location_link": "https://www.google.com/maps/place/Art+Bar/@40.7384694,-74.0034972,14z/data=!4m8!1m2!2m1!1sArt+Bar!3m4!1s0x89c259be2b4a4b71:0x873e90b80c527de2!8m2!3d40.7384694!4d-74.0034972"
+                        },
+                        {
+                            "query": "bars, NY, USA",
+                            "name": "The Half Pint / Ernie's Bar",
+                            "place_id": "ChIJ3xC4upFZwokR3KRRvP6Yz60",
+                            "google_id": "0x89c25991bab810df:0xadcf98febc51a4dc",
+                            "full_address": "76 W 3rd St, New York, NY 10012",
+                            "borough": "Manhattan",
+                            "street": "76 W 3rd St",
+                            "postal_code": "10012",
+                            "area_service": false,
+                            "country_code": "US",
+                            "country": "United States of America",
+                            "city": "New York",
+                            "us_state": "New York",
+                            "state": "New York",
+                            "plus_code": null,
+                            "latitude": 40.7295121,
+                            "longitude": -73.9985343,
+                            "time_zone": "America/New_York",
+                            "popular_times": null,
+                            "site": "https://thehalfpint.com/",
+                            "phone": "+1 212-260-1088",
+                            "type": "Bar",
+                            "logo": "https://lh4.googleusercontent.com/-_TAjg4GwjSs/AAAAAAAAAAI/AAAAAAAAAAA/zQiy9roy81o/s44-p-k-no-ns-nd/photo.jpg",
+                            "description": "A collegiate crowd bellies up to the antique pine bar to drink from a vast beer list & eat pub grub.",
+                            "located_in": null,
+                            "located_google_id": null,
+                            "category": "bars",
+                            "subtypes": "Bar",
+                            "posts": null,
+                            "reviews_tags": null,
+                            "rating": 4.2,
+                            "reviews": 744,
+                            "photos_count": 449,
+                            "cid": "12524397308589221084",
+                            "reviews_link": null,
+                            "reviews_id": "-5922346765120330532",
+                            "photo": "https://lh5.googleusercontent.com/p/AF1QipN_C0YLYvhhcSqjWS0WcWSROlW_wNPXoK-3qBrg=w800-h500-k-no",
+                            "street_view": "https://lh5.googleusercontent.com/p/AF1QipN_C0YLYvhhcSqjWS0WcWSROlW_wNPXoK-3qBrg=w1600-h1000-k-no",
+                            "working_hours_old_format": "Sunday: 11\u202fAM-2\u202fAM | Monday: 12\u202fPM-2\u202fAM | Tuesday: 12\u202fPM-2\u202fAM | Wednesday: 12\u202fPM-2\u202fAM | Thursday: 12\u202fPM-2\u202fAM | Friday: 11\u202fAM-4\u202fAM | Saturday: 11\u202fAM-4\u202fAM",
+                            "working_hours": {
+                                "Sunday": "11\u202fAM-2\u202fAM",
+                                "Monday": "12\u202fPM-2\u202fAM",
+                                "Tuesday": "12\u202fPM-2\u202fAM",
+                                "Wednesday": "12\u202fPM-2\u202fAM",
+                                "Thursday": "12\u202fPM-2\u202fAM",
+                                "Friday": "11\u202fAM-4\u202fAM",
+                                "Saturday": "11\u202fAM-4\u202fAM"
+                            },
+                            "other_hours": [
+                                {
+                                    "happy_hours": {
+                                        "Sunday": "Closed",
+                                        "Monday": "12-6\u202fPM",
+                                        "Tuesday": "12-6\u202fPM",
+                                        "Wednesday": "12-6\u202fPM",
+                                        "Thursday": "12-6\u202fPM",
+                                        "Friday": "12-6\u202fPM",
+                                        "Saturday": "Closed"
+                                    }
+                                },
+                                {
+                                    "kitchen": {
+                                        "Sunday": "11\u202fAM-12\u202fAM",
+                                        "Monday": "12\u202fPM-12\u202fAM",
+                                        "Tuesday": "12\u202fPM-12\u202fAM",
+                                        "Wednesday": "12\u202fPM-12\u202fAM",
+                                        "Thursday": "12\u202fPM-12\u202fAM",
+                                        "Friday": "12\u202fPM-12\u202fAM",
+                                        "Saturday": "11\u202fAM-12\u202fAM"
+                                    }
+                                }
+                            ],
+                            "business_status": "OPERATIONAL",
+                            "about": {
+                                "From the business": {
+                                    "Identifies as women-owned": true
+                                },
+                                "Service options": {
+                                    "Outdoor seating": true,
+                                    "Curbside pickup": true,
+                                    "Delivery": true,
+                                    "Takeout": true,
+                                    "Dine-in": true
+                                },
+                                "Highlights": {
+                                    "Fast service": true,
+                                    "Great beer selection": true,
+                                    "Great cocktails": true,
+                                    "Sports": true,
+                                    "Trivia night": true
+                                },
+                                "Accessibility": {
+                                    "Wheelchair accessible entrance": true,
+                                    "Wheelchair accessible restroom": true,
+                                    "Wheelchair accessible seating": true,
+                                    "Wheelchair accessible parking lot": false
+                                },
+                                "Offerings": {
+                                    "Alcohol": true,
+                                    "Beer": true,
+                                    "Cocktails": true,
+                                    "Food": true,
+                                    "Food at bar": true,
+                                    "Happy hour drinks": true,
+                                    "Happy hour food": true,
+                                    "Hard liquor": true,
+                                    "Wine": true
+                                },
+                                "Dining options": {
+                                    "Seating": true
+                                },
+                                "Amenities": {
+                                    "Dogs allowed": true,
+                                    "Gender-neutral restroom": true,
+                                    "Restroom": true,
+                                    "Wi-Fi": true
+                                },
+                                "Atmosphere": {
+                                    "Casual": true,
+                                    "Cozy": true,
+                                    "Hip": true
+                                },
+                                "Crowd": {
+                                    "Groups": true,
+                                    "LGBTQ+ friendly": true,
+                                    "Tourists": true,
+                                    "Transgender safespace": true
+                                },
+                                "Planning": {
+                                    "Reservations required": true,
+                                    "Accepts reservations": true
+                                },
+                                "Payments": {
+                                    "Credit cards": true,
+                                    "Debit cards": true,
+                                    "NFC mobile payments": true
+                                },
+                                "Other": {
+                                    "LGBTQ+ friendly": true,
+                                    "Identifies as women-owned": true
+                                }
+                            },
+                            "range": "$$",
+                            "reviews_per_score": {
+                                "1": 20,
+                                "2": 19,
+                                "3": 85,
+                                "4": 255,
+                                "5": 365
+                            },
+                            "reservation_links": [
+                                "/url?q=https://thehalfpint.com/new-york-greenwich-village-the-half-pint-parties&sa=U&ved=0ahUKEwj-uInOl8n_AhWPQaQEHUf4CZAQ2ZABCPUDKBM&usg=AOvVaw1iycSRcxMsDSrpEK7KYAJZ",
+                                "/url?q=https://resy.com/cities/ny/the-half-pint-ernies&sa=U&ved=0ahUKEwj-uInOl8n_AhWPQaQEHUf4CZAQ2ZABCPYDKBQ&usg=AOvVaw1UXeoh84xu8qfsx2Sb75KU",
+                                "https://www.google.com/maps/reserve/v/dine/c/QSt2o_RDQb0?source=pa"
+                            ],
+                            "booking_appointment_link": "https://thehalfpint.com/new-york-greenwich-village-the-half-pint-parties",
+                            "menu_link": null,
+                            "order_links": [
+                                "https://thehalfpint.com/new-york-greenwich-village-the-half-pint-parties",
+                                "https://resy.com/cities/ny/the-half-pint-ernies",
+                                "https://www.google.com/maps/reserve/v/dine/c/QSt2o_RDQb0?source=pa"
+                            ],
+                            "owner_id": "109668401741846841185",
+                            "verified": true,
+                            "owner_title": "The Half Pint / Ernie's Bar",
+                            "owner_link": "https://www.google.com/maps/contrib/109668401741846841185",
+                            "location_link": "https://www.google.com/maps/place/The+Half+Pint+%2F+Ernie%27s+Bar/@40.7295121,-73.9985343,14z/data=!4m8!1m2!2m1!1sThe+Half+Pint+%2F+Ernie%27s+Bar!3m4!1s0x89c25991bab810df:0xadcf98febc51a4dc!8m2!3d40.7295121!4d-73.9985343"
+                        },
+                        {
+                            "query": "bars, NY, USA",
+                            "name": "Blind Tiger",
+                            "place_id": "ChIJWW4LoZNZwokRFOD1017tTZc",
+                            "google_id": "0x89c25993a10b6e59:0x974ded5ed3f5e014",
+                            "full_address": "281 Bleecker St, New York, NY 10014",
+                            "borough": "Manhattan",
+                            "street": "281 Bleecker St",
+                            "postal_code": "10014",
+                            "area_service": false,
+                            "country_code": "US",
+                            "country": "United States of America",
+                            "city": "New York",
+                            "us_state": "New York",
+                            "state": "New York",
+                            "plus_code": null,
+                            "latitude": 40.7318858,
+                            "longitude": -74.0032253,
+                            "time_zone": "America/New_York",
+                            "popular_times": null,
+                            "site": "http://www.blindtigeralehouse.com/",
+                            "phone": "+1 212-462-4682",
+                            "type": "Bar",
+                            "logo": "https://lh3.googleusercontent.com/-NR7cCu8qglQ/AAAAAAAAAAI/AAAAAAAAAAA/oqSxZRJpYFc/s44-p-k-no-ns-nd/photo.jpg",
+                            "description": "A large selection of microbrews differentiates this popular longtime watering hole.",
+                            "located_in": null,
+                            "located_google_id": null,
+                            "category": "bars",
+                            "subtypes": "Bar",
+                            "posts": null,
+                            "reviews_tags": null,
+                            "rating": 4.6,
+                            "reviews": 1837,
+                            "photos_count": 896,
+                            "cid": "10902631264472653844",
+                            "reviews_link": null,
+                            "reviews_id": "-7544112809236897772",
+                            "photo": "https://lh5.googleusercontent.com/p/AF1QipOjcknQP-Tl2doX15uc0o75HEe9GEkz8j029ANB=w800-h500-k-no",
+                            "street_view": "https://lh5.googleusercontent.com/p/AF1QipOjcknQP-Tl2doX15uc0o75HEe9GEkz8j029ANB=w1600-h1000-k-no",
+                            "working_hours_old_format": "Sunday: 11:30\u202fAM-4\u202fAM | Monday: 11:30\u202fAM-4\u202fAM | Tuesday: 11:30\u202fAM-4\u202fAM | Wednesday: 11:30\u202fAM-4\u202fAM | Thursday: 11:30\u202fAM-4\u202fAM | Friday: 11:30\u202fAM-4\u202fAM | Saturday: 11:30\u202fAM-4\u202fAM",
+                            "working_hours": {
+                                "Sunday": "11:30\u202fAM-4\u202fAM",
+                                "Monday": "11:30\u202fAM-4\u202fAM",
+                                "Tuesday": "11:30\u202fAM-4\u202fAM",
+                                "Wednesday": "11:30\u202fAM-4\u202fAM",
+                                "Thursday": "11:30\u202fAM-4\u202fAM",
+                                "Friday": "11:30\u202fAM-4\u202fAM",
+                                "Saturday": "11:30\u202fAM-4\u202fAM"
+                            },
+                            "other_hours": null,
+                            "business_status": "OPERATIONAL",
+                            "about": {
+                                "Service options": {
+                                    "Takeout": true,
+                                    "Dine-in": true,
+                                    "Delivery": false
+                                },
+                                "Highlights": {
+                                    "Fast service": true
+                                },
+                                "Accessibility": {
+                                    "Wheelchair accessible entrance": true,
+                                    "Assistive hearing loop": false,
+                                    "Wheelchair accessible parking lot": false,
+                                    "Wheelchair accessible restroom": false,
+                                    "Wheelchair accessible seating": false
+                                },
+                                "Offerings": {
+                                    "Beer": true,
+                                    "Food": true,
+                                    "Food at bar": true,
+                                    "Wine": true
+                                },
+                                "Amenities": {
+                                    "Gender-neutral restroom": true,
+                                    "Restroom": true,
+                                    "Wi-Fi": true
+                                },
+                                "Atmosphere": {
+                                    "Casual": true,
+                                    "Cozy": true,
+                                    "Hip": true
+                                },
+                                "Crowd": {
+                                    "Groups": true,
+                                    "Tourists": true
+                                },
+                                "Payments": {
+                                    "Credit cards": true,
+                                    "Debit cards": true,
+                                    "NFC mobile payments": true
+                                }
+                            },
+                            "range": "$$",
+                            "reviews_per_score": {
+                                "1": 29,
+                                "2": 17,
+                                "3": 94,
+                                "4": 451,
+                                "5": 1246
+                            },
+                            "reservation_links": null,
+                            "booking_appointment_link": null,
+                            "menu_link": null,
+                            "order_links": null,
+                            "owner_id": "113208065613372434788",
+                            "verified": true,
+                            "owner_title": "Blind Tiger",
+                            "owner_link": "https://www.google.com/maps/contrib/113208065613372434788",
+                            "location_link": "https://www.google.com/maps/place/Blind+Tiger/@40.7318858,-74.0032253,14z/data=!4m8!1m2!2m1!1sBlind+Tiger!3m4!1s0x89c25993a10b6e59:0x974ded5ed3f5e014!8m2!3d40.7318858!4d-74.0032253"
+                        },
+                        {
+                            "query": "bars, NY, USA",
+                            "name": "Brass Monkey",
+                            "place_id": "ChIJKTdxRMBZwokRX1rAQPLPzlE",
+                            "google_id": "0x89c259c044713729:0x51cecff240c05a5f",
+                            "full_address": "55 Little W 12th St, New York, NY 10014",
+                            "borough": "Manhattan",
+                            "street": "55 Little W 12th St",
+                            "postal_code": "10014",
+                            "area_service": false,
+                            "country_code": "US",
+                            "country": "United States of America",
+                            "city": "New York",
+                            "us_state": "New York",
+                            "state": "New York",
+                            "plus_code": null,
+                            "latitude": 40.7407627,
+                            "longitude": -74.00848309999999,
+                            "time_zone": "America/New_York",
+                            "popular_times": null,
+                            "site": "http://www.brassmonkeynyc.com/",
+                            "phone": "+1 917-765-6746",
+                            "type": "Bar",
+                            "logo": "https://lh5.googleusercontent.com/-sUFHlEQrtXk/AAAAAAAAAAI/AAAAAAAAAAA/G8YJI14eYY0/s44-p-k-no-ns-nd/photo.jpg",
+                            "description": "Unpretentious Meatpacking District pub with an extensive beer selection & a roof deck.",
+                            "located_in": null,
+                            "located_google_id": null,
+                            "category": "bars",
+                            "subtypes": "Bar",
+                            "posts": null,
+                            "reviews_tags": null,
+                            "rating": 4.1,
+                            "reviews": 1815,
+                            "photos_count": 814,
+                            "cid": "5894877601649941087",
+                            "reviews_link": null,
+                            "reviews_id": "5894877601649941087",
+                            "photo": "https://lh5.googleusercontent.com/p/AF1QipNkybS7lDfARuaH5Q693gSx7iB1eaWX51eSVhj_=w800-h500-k-no",
+                            "street_view": "https://lh5.googleusercontent.com/p/AF1QipNkybS7lDfARuaH5Q693gSx7iB1eaWX51eSVhj_=w1600-h1000-k-no",
+                            "working_hours_old_format": "Sunday: 1\u202fPM-12\u202fAM | Monday: 1\u202fPM-12\u202fAM | Tuesday: 12\u202fPM-12\u202fAM | Wednesday: 12\u202fPM-2\u202fAM | Thursday: 12\u202fPM-2\u202fAM | Friday: 12\u202fPM-3\u202fAM | Saturday: 12\u202fPM-3\u202fAM",
+                            "working_hours": {
+                                "Sunday": "1\u202fPM-12\u202fAM",
+                                "Monday": "1\u202fPM-12\u202fAM",
+                                "Tuesday": "12\u202fPM-12\u202fAM",
+                                "Wednesday": "12\u202fPM-2\u202fAM",
+                                "Thursday": "12\u202fPM-2\u202fAM",
+                                "Friday": "12\u202fPM-3\u202fAM",
+                                "Saturday": "12\u202fPM-3\u202fAM"
+                            },
+                            "other_hours": null,
+                            "business_status": "OPERATIONAL",
+                            "about": {
+                                "From the business": {
+                                    "Identifies as women-owned": true
+                                },
+                                "Service options": {
+                                    "Outdoor seating": true,
+                                    "Dine-in": true,
+                                    "Delivery": false,
+                                    "Takeout": false
+                                },
+                                "Highlights": {
+                                    "Fast service": true,
+                                    "Great bar food": true,
+                                    "Great beer selection": true,
+                                    "Great cocktails": true,
+                                    "Rooftop seating": true,
+                                    "Sports": true
+                                },
+                                "Accessibility": {
+                                    "Wheelchair accessible entrance": true,
+                                    "Wheelchair accessible restroom": true,
+                                    "Wheelchair accessible seating": true,
+                                    "Wheelchair accessible parking lot": false
+                                },
+                                "Offerings": {
+                                    "Alcohol": true,
+                                    "Beer": true,
+                                    "Cocktails": true,
+                                    "Food": true,
+                                    "Food at bar": true,
+                                    "Happy hour drinks": true,
+                                    "Hard liquor": true,
+                                    "Wine": true
+                                },
+                                "Dining options": {
+                                    "Seating": true
+                                },
+                                "Amenities": {
+                                    "Restroom": true
+                                },
+                                "Atmosphere": {
+                                    "Casual": true,
+                                    "Hip": true
+                                },
+                                "Crowd": {
+                                    "Groups": true,
+                                    "Tourists": true
+                                },
+                                "Payments": {
+                                    "Credit cards": true,
+                                    "Debit cards": true,
+                                    "NFC mobile payments": true
+                                },
+                                "Other": {
+                                    "Identifies as women-owned": true
+                                }
+                            },
+                            "range": "$$",
+                            "reviews_per_score": {
+                                "1": 110,
+                                "2": 39,
+                                "3": 222,
+                                "4": 629,
+                                "5": 815
+                            },
+                            "reservation_links": null,
+                            "booking_appointment_link": null,
+                            "menu_link": null,
+                            "order_links": null,
+                            "owner_id": "115389989093723739794",
+                            "verified": true,
+                            "owner_title": "Brass Monkey",
+                            "owner_link": "https://www.google.com/maps/contrib/115389989093723739794",
+                            "location_link": "https://www.google.com/maps/place/Brass+Monkey/@40.7407627,-74.00848309999999,14z/data=!4m8!1m2!2m1!1sBrass+Monkey!3m4!1s0x89c259c044713729:0x51cecff240c05a5f!8m2!3d40.7407627!4d-74.00848309999999"
+                        },
+                        {
+                            "query": "bars, NY, USA",
+                            "name": "Weather Up",
+                            "place_id": "ChIJE1A7ph9awokReG2OZSuar5o",
+                            "google_id": "0x89c25a1fa63b5013:0x9aaf9a2b658e6d78",
+                            "full_address": "159 Duane St, New York, NY 10013",
+                            "borough": "Manhattan",
+                            "street": "159 Duane St",
+                            "postal_code": "10013",
+                            "area_service": false,
+                            "country_code": "US",
+                            "country": "United States of America",
+                            "city": "New York",
+                            "us_state": "New York",
+                            "state": "New York",
+                            "plus_code": null,
+                            "latitude": 40.716869599999995,
+                            "longitude": -74.0087183,
+                            "time_zone": "America/New_York",
+                            "popular_times": null,
+                            "site": "http://www.weatherupnyc.com/",
+                            "phone": null,
+                            "type": "Cocktail bar",
+                            "logo": "https://lh5.googleusercontent.com/-86N7ZIPXSK8/AAAAAAAAAAI/AAAAAAAAAAA/CDmmIYpMU6M/s44-p-k-no-ns-nd/photo.jpg",
+                            "description": "Slick, Prohibition-style watering hole with craft cocktails & sophisticated bar snacks.",
+                            "located_in": null,
+                            "located_google_id": null,
+                            "category": "bars",
+                            "subtypes": "Cocktail bar, Event venue",
+                            "posts": null,
+                            "reviews_tags": null,
+                            "rating": 4.2,
+                            "reviews": 253,
+                            "photos_count": 110,
+                            "cid": "11146297113943371128",
+                            "reviews_link": null,
+                            "reviews_id": "-7300446959766180488",
+                            "photo": "https://lh5.googleusercontent.com/p/AF1QipNiLrU5BVf509oLUaezCY9d25pcTfkAQn04o6cu=w800-h500-k-no",
+                            "street_view": "https://lh5.googleusercontent.com/p/AF1QipNiLrU5BVf509oLUaezCY9d25pcTfkAQn04o6cu=w1600-h1000-k-no",
+                            "working_hours_old_format": "Sunday: Closed | Monday: 5-11\u202fPM | Tuesday: 5\u202fPM-12\u202fAM | Wednesday: 5\u202fPM-12\u202fAM | Thursday: 5\u202fPM-1\u202fAM | Friday: 5\u202fPM-2\u202fAM | Saturday: 5\u202fPM-2\u202fAM",
+                            "working_hours": {
+                                "Sunday": "Closed",
+                                "Monday": "5-11\u202fPM",
+                                "Tuesday": "5\u202fPM-12\u202fAM",
+                                "Wednesday": "5\u202fPM-12\u202fAM",
+                                "Thursday": "5\u202fPM-1\u202fAM",
+                                "Friday": "5\u202fPM-2\u202fAM",
+                                "Saturday": "5\u202fPM-2\u202fAM"
+                            },
+                            "other_hours": null,
+                            "business_status": "OPERATIONAL",
+                            "about": {
+                                "Service options": {
+                                    "Outdoor seating": true,
+                                    "Delivery": true,
+                                    "Takeout": true,
+                                    "Dine-in": true
+                                },
+                                "Highlights": {
+                                    "Fast service": true
+                                },
+                                "Accessibility": {
+                                    "Wheelchair accessible parking lot": false
+                                },
+                                "Offerings": {
+                                    "Alcohol": true,
+                                    "Beer": true,
+                                    "Cocktails": true,
+                                    "Happy hour drinks": true,
+                                    "Hard liquor": true,
+                                    "Wine": true
+                                },
+                                "Dining options": {
+                                    "Seating": true
+                                },
+                                "Amenities": {
+                                    "Restroom": true
+                                },
+                                "Atmosphere": {
+                                    "Casual": true,
+                                    "Cozy": true,
+                                    "Hip": true,
+                                    "Upscale": true
+                                },
+                                "Crowd": {
+                                    "Groups": true
+                                },
+                                "Planning": {
+                                    "Accepts reservations": true
+                                },
+                                "Payments": {
+                                    "Credit cards": true,
+                                    "NFC mobile payments": true
+                                }
+                            },
+                            "range": "$$$",
+                            "reviews_per_score": {
+                                "1": 15,
+                                "2": 3,
+                                "3": 26,
+                                "4": 77,
+                                "5": 132
+                            },
+                            "reservation_links": null,
+                            "booking_appointment_link": null,
+                            "menu_link": null,
+                            "order_links": null,
+                            "owner_id": "102596056602367575091",
+                            "verified": true,
+                            "owner_title": "Weather Up",
+                            "owner_link": "https://www.google.com/maps/contrib/102596056602367575091",
+                            "location_link": "https://www.google.com/maps/place/Weather+Up/@40.716869599999995,-74.0087183,14z/data=!4m8!1m2!2m1!1sWeather+Up!3m4!1s0x89c25a1fa63b5013:0x9aaf9a2b658e6d78!8m2!3d40.716869599999995!4d-74.0087183"
+                        },
+                        {
+                            "query": "bars, NY, USA",
+                            "name": "Off the Wagon",
+                            "place_id": "ChIJjz4VKJJZwokROQSktDtYo9k",
+                            "google_id": "0x89c2599228153e8f:0xd9a3583bb4a40439",
+                            "full_address": "109 MacDougal St, New York, NY 10012",
+                            "borough": "Manhattan",
+                            "street": "109 MacDougal St",
+                            "postal_code": "10012",
+                            "area_service": false,
+                            "country_code": "US",
+                            "country": "United States of America",
+                            "city": "New York",
+                            "us_state": "New York",
+                            "state": "New York",
+                            "plus_code": null,
+                            "latitude": 40.729923899999996,
+                            "longitude": -74.0007935,
+                            "time_zone": "America/New_York",
+                            "popular_times": null,
+                            "site": "https://www.offthewagonnyc.com/",
+                            "phone": "+1 212-533-4487",
+                            "type": "Sports bar",
+                            "logo": "https://lh6.googleusercontent.com/-dd-yf3r7Ciw/AAAAAAAAAAI/AAAAAAAAAAA/MLhNcmO1J7k/s44-p-k-no-ns-nd/photo.jpg",
+                            "description": "Beers & bar snacks are offered along with sports on 17 screens at this collegiate watering hole.",
+                            "located_in": null,
+                            "located_google_id": null,
+                            "category": "bars",
+                            "subtypes": "Sports bar, Bar, Bar & grill, Event venue",
+                            "posts": null,
+                            "reviews_tags": null,
+                            "rating": 4.2,
+                            "reviews": 1569,
+                            "photos_count": 605,
+                            "cid": "15682475340891161657",
+                            "reviews_link": null,
+                            "reviews_id": "-2764268732818389959",
+                            "photo": "https://lh5.googleusercontent.com/p/AF1QipM4qWeyaJBfSwbwOsNT9BQM-oelFjhdfYb63jgy=w800-h500-k-no",
+                            "street_view": "https://lh5.googleusercontent.com/p/AF1QipM4qWeyaJBfSwbwOsNT9BQM-oelFjhdfYb63jgy=w1600-h1000-k-no",
+                            "working_hours_old_format": "Sunday: 12\u202fPM-4\u202fAM | Monday: 12\u202fPM-4\u202fAM | Tuesday: 12\u202fPM-4\u202fAM | Wednesday: 12\u202fPM-4\u202fAM | Thursday: 12\u202fPM-4\u202fAM | Friday: 12\u202fPM-4\u202fAM | Saturday: 12\u202fPM-4\u202fAM",
+                            "working_hours": {
+                                "Sunday": "12\u202fPM-4\u202fAM",
+                                "Monday": "12\u202fPM-4\u202fAM",
+                                "Tuesday": "12\u202fPM-4\u202fAM",
+                                "Wednesday": "12\u202fPM-4\u202fAM",
+                                "Thursday": "12\u202fPM-4\u202fAM",
+                                "Friday": "12\u202fPM-4\u202fAM",
+                                "Saturday": "12\u202fPM-4\u202fAM"
+                            },
+                            "other_hours": [
+                                {
+                                    "happy_hours": {
+                                        "Sunday": "12-7\u202fPM",
+                                        "Monday": "12-7\u202fPM",
+                                        "Tuesday": "12-7\u202fPM",
+                                        "Wednesday": "12-7\u202fPM",
+                                        "Thursday": "12-7\u202fPM",
+                                        "Friday": "12-7\u202fPM",
+                                        "Saturday": "12-7\u202fPM"
+                                    }
+                                }
+                            ],
+                            "business_status": "OPERATIONAL",
+                            "about": {
+                                "Service options": {
+                                    "Takeout": true,
+                                    "Dine-in": true,
+                                    "Delivery": false
+                                },
+                                "Highlights": {
+                                    "Bar games": true,
+                                    "Fast service": true,
+                                    "Great beer selection": true,
+                                    "Great cocktails": true,
+                                    "Sports": true
+                                },
+                                "Accessibility": {
+                                    "Wheelchair accessible parking lot": false
+                                },
+                                "Offerings": {
+                                    "Alcohol": true,
+                                    "Beer": true,
+                                    "Cocktails": true,
+                                    "Dancing": true,
+                                    "Food": true,
+                                    "Food at bar": true,
+                                    "Happy hour drinks": true,
+                                    "Happy hour food": true,
+                                    "Hard liquor": true,
+                                    "Wine": true
+                                },
+                                "Dining options": {
+                                    "Seating": true
+                                },
+                                "Amenities": {
+                                    "Restroom": true
+                                },
+                                "Atmosphere": {
+                                    "Casual": true,
+                                    "Hip": true
+                                },
+                                "Crowd": {
+                                    "Groups": true,
+                                    "Tourists": true
+                                },
+                                "Planning": {
+                                    "Accepts reservations": true
+                                },
+                                "Payments": {
+                                    "Credit cards": true,
+                                    "Debit cards": true
+                                }
+                            },
+                            "range": "$$",
+                            "reviews_per_score": {
+                                "1": 82,
+                                "2": 45,
+                                "3": 169,
+                                "4": 447,
+                                "5": 826
+                            },
+                            "reservation_links": null,
+                            "booking_appointment_link": null,
+                            "menu_link": null,
+                            "order_links": null,
+                            "owner_id": "118161012787247882087",
+                            "verified": true,
+                            "owner_title": "Off the Wagon",
+                            "owner_link": "https://www.google.com/maps/contrib/118161012787247882087",
+                            "location_link": "https://www.google.com/maps/place/Off+the+Wagon/@40.729923899999996,-74.0007935,14z/data=!4m8!1m2!2m1!1sOff+the+Wagon!3m4!1s0x89c2599228153e8f:0xd9a3583bb4a40439!8m2!3d40.729923899999996!4d-74.0007935"
+                        },
+                        {
+                            "query": "bars, NY, USA",
+                            "name": "The Copper Still Chelsea",
+                            "place_id": "ChIJn5II_-JZwokRik2w2DuChmw",
+                            "google_id": "0x89c259e2ff08929f:0x6c86823bd8b04d8a",
+                            "full_address": "206 7th Ave, New York, NY 10011",
+                            "borough": "Manhattan",
+                            "street": "206 7th Ave",
+                            "postal_code": "10011",
+                            "area_service": false,
+                            "country_code": "US",
+                            "country": "United States of America",
+                            "city": "New York",
+                            "us_state": "New York",
+                            "state": "New York",
+                            "plus_code": null,
+                            "latitude": 40.743395,
+                            "longitude": -73.99640099999999,
+                            "time_zone": "America/New_York",
+                            "popular_times": null,
+                            "site": "http://www.thecopperstillnyc.com/%23homegoAtYg8byTLhGPtLPuP7S4Gw4-2065185063%26key%3DYAMMID-1637708374888%26link%3Dhttps://thecopperstill7thave.dine.online",
+                            "phone": "+1 646-596-8975",
+                            "type": "Bar",
+                            "logo": "https://lh3.googleusercontent.com/-Kr1dTTx0L-U/AAAAAAAAAAI/AAAAAAAAAAA/noYc3xnXMSM/s44-p-k-no-ns-nd/photo.jpg",
+                            "description": null,
+                            "located_in": null,
+                            "located_google_id": null,
+                            "category": "bars",
+                            "subtypes": "Bar, Cocktail bar, Restaurant",
+                            "posts": null,
+                            "reviews_tags": null,
+                            "rating": 4.4,
+                            "reviews": 322,
+                            "photos_count": 734,
+                            "cid": "7820080996525559178",
+                            "reviews_link": null,
+                            "reviews_id": "7820080996525559178",
+                            "photo": "https://lh5.googleusercontent.com/p/AF1QipO6z5KvRScWSKtaBClWNeweiQg1i_8hUeUhfjoI=w800-h500-k-no",
+                            "street_view": "https://lh5.googleusercontent.com/p/AF1QipO6z5KvRScWSKtaBClWNeweiQg1i_8hUeUhfjoI=w1600-h1000-k-no",
+                            "working_hours_old_format": "Sunday: 10\u202fAM-12\u202fAM | Monday: 12\u202fPM-1\u202fAM | Tuesday: 12\u202fPM-1\u202fAM | Wednesday: 12\u202fPM-1\u202fAM | Thursday: 12\u202fPM-2\u202fAM | Friday: 12\u202fPM-2\u202fAM | Saturday: 10\u202fAM-2\u202fAM",
+                            "working_hours": {
+                                "Sunday": "10\u202fAM-12\u202fAM",
+                                "Monday": "12\u202fPM-1\u202fAM",
+                                "Tuesday": "12\u202fPM-1\u202fAM",
+                                "Wednesday": "12\u202fPM-1\u202fAM",
+                                "Thursday": "12\u202fPM-2\u202fAM",
+                                "Friday": "12\u202fPM-2\u202fAM",
+                                "Saturday": "10\u202fAM-2\u202fAM"
+                            },
+                            "other_hours": [
+                                {
+                                    "happy_hours": {
+                                        "Sunday": "Closed",
+                                        "Monday": "11\u202fAM-6\u202fPM",
+                                        "Tuesday": "11\u202fAM-6\u202fPM",
+                                        "Wednesday": "11\u202fAM-6\u202fPM",
+                                        "Thursday": "11\u202fAM-6\u202fPM",
+                                        "Friday": "11\u202fAM-6\u202fPM",
+                                        "Saturday": "Closed"
+                                    }
+                                }
+                            ],
+                            "business_status": "OPERATIONAL",
+                            "about": {
+                                "Service options": {
+                                    "Outdoor seating": true,
+                                    "Delivery": true,
+                                    "Takeout": true,
+                                    "Dine-in": true
+                                },
+                                "Highlights": {
+                                    "Fast service": true,
+                                    "Great beer selection": true,
+                                    "Great cocktails": true,
+                                    "Sports": true
+                                },
+                                "Accessibility": {
+                                    "Wheelchair accessible entrance": true,
+                                    "Wheelchair accessible restroom": true,
+                                    "Wheelchair accessible seating": true,
+                                    "Wheelchair accessible parking lot": false
+                                },
+                                "Offerings": {
+                                    "Alcohol": true,
+                                    "Beer": true,
+                                    "Cocktails": true,
+                                    "Food": true,
+                                    "Food at bar": true,
+                                    "Happy hour drinks": true,
+                                    "Happy hour food": true,
+                                    "Hard liquor": true,
+                                    "Wine": true
+                                },
+                                "Dining options": {
+                                    "Seating": true
+                                },
+                                "Amenities": {
+                                    "Dogs allowed": true,
+                                    "Gender-neutral restroom": true,
+                                    "Restroom": true,
+                                    "Wi-Fi": true
+                                },
+                                "Atmosphere": {
+                                    "Casual": true,
+                                    "Hip": true
+                                },
+                                "Crowd": {
+                                    "Groups": true,
+                                    "LGBTQ+ friendly": true,
+                                    "Transgender safespace": true
+                                },
+                                "Planning": {
+                                    "Accepts reservations": true
+                                },
+                                "Payments": {
+                                    "Credit cards": true,
+                                    "Debit cards": true,
+                                    "NFC mobile payments": true
+                                },
+                                "Other": {
+                                    "LGBTQ+ friendly": true
+                                }
+                            },
+                            "range": null,
+                            "reviews_per_score": {
+                                "1": 15,
+                                "2": 6,
+                                "3": 23,
+                                "4": 81,
+                                "5": 197
+                            },
+                            "reservation_links": [
+                                "/url?q=http://www.thecopperstillnyc.com/food-chelsea/&sa=U&ved=0ahUKEwj-uInOl8n_AhWPQaQEHUf4CZAQ2ZABCL4FKBE&usg=AOvVaw0mgWEBjaNU1ipkHtwvf9uD",
+                                "/url?q=https://resy.com/cities/ny/the-copper-still-chelsea&sa=U&ved=0ahUKEwj-uInOl8n_AhWPQaQEHUf4CZAQ2ZABCL8FKBI&usg=AOvVaw3bG6XEAEL46CuZ6TVmlei1",
+                                "https://www.google.com/maps/reserve/v/dine/c/-cVY1BEOdJY?source=pa"
+                            ],
+                            "booking_appointment_link": "http://www.thecopperstillnyc.com/food-chelsea/",
+                            "menu_link": null,
+                            "order_links": [
+                                "http://www.thecopperstillnyc.com/food-chelsea/",
+                                "https://resy.com/cities/ny/the-copper-still-chelsea",
+                                "https://www.google.com/maps/reserve/v/dine/c/-cVY1BEOdJY?source=pa"
+                            ],
+                            "owner_id": "104230243757703080415",
+                            "verified": true,
+                            "owner_title": "The Copper Still Chelsea",
+                            "owner_link": "https://www.google.com/maps/contrib/104230243757703080415",
+                            "location_link": "https://www.google.com/maps/place/The+Copper+Still+Chelsea/@40.743395,-73.99640099999999,14z/data=!4m8!1m2!2m1!1sThe+Copper+Still+Chelsea!3m4!1s0x89c259e2ff08929f:0x6c86823bd8b04d8a!8m2!3d40.743395!4d-73.99640099999999"
+                        },
+                        {
+                            "query": "bars, NY, USA",
+                            "name": "The Crosby Bar",
+                            "place_id": "ChIJpYIgKY9ZwokRG4V7_MMagCo",
+                            "google_id": "0x89c2598f292082a5:0x2a801ac3fc7b851b",
+                            "full_address": "79 Crosby St, New York, NY 10012",
+                            "borough": "Manhattan",
+                            "street": "79 Crosby St",
+                            "postal_code": "10012",
+                            "area_service": false,
+                            "country_code": "US",
+                            "country": "United States of America",
+                            "city": "New York",
+                            "us_state": "New York",
+                            "state": "New York",
+                            "plus_code": null,
+                            "latitude": 40.723055599999995,
+                            "longitude": -73.9973799,
+                            "time_zone": "America/New_York",
+                            "popular_times": null,
+                            "site": "http://www.crosbystreethotel.com/",
+                            "phone": "+1 212-226-6400",
+                            "type": "Bar",
+                            "logo": "https://lh6.googleusercontent.com/-gz9OPvkMcrI/AAAAAAAAAAI/AAAAAAAAAAA/W3xvHahJZo4/s44-p-k-no-ns-nd/photo.jpg",
+                            "description": "Chic, colorful lounge inside the Crosby Hotel offering global eats, afternoon tea & cocktails.",
+                            "located_in": null,
+                            "located_google_id": null,
+                            "category": "bars",
+                            "subtypes": "Bar, Eclectic restaurant, Restaurant",
+                            "posts": null,
+                            "reviews_tags": null,
+                            "rating": 4.5,
+                            "reviews": 245,
+                            "photos_count": 265,
+                            "cid": "3062477175668835611",
+                            "reviews_link": null,
+                            "reviews_id": "3062477175668835611",
+                            "photo": "https://lh5.googleusercontent.com/p/AF1QipOfYJjNosPUAHHvSSJMeQ3cKOCJFfHFNLmz0MXE=w800-h500-k-no",
+                            "street_view": "https://lh5.googleusercontent.com/p/AF1QipOfYJjNosPUAHHvSSJMeQ3cKOCJFfHFNLmz0MXE=w1600-h1000-k-no",
+                            "working_hours_old_format": "Sunday: 8\u202fAM-11:30\u202fPM | Monday: 8\u202fAM-11:30\u202fPM | Tuesday: 8\u202fAM-11:30\u202fPM | Wednesday: 8\u202fAM-11:30\u202fPM | Thursday: 8\u202fAM-11:30\u202fPM | Friday: 8\u202fAM-11:30\u202fPM | Saturday: 8\u202fAM-11:30\u202fPM",
+                            "working_hours": {
+                                "Sunday": "8\u202fAM-11:30\u202fPM",
+                                "Monday": "8\u202fAM-11:30\u202fPM",
+                                "Tuesday": "8\u202fAM-11:30\u202fPM",
+                                "Wednesday": "8\u202fAM-11:30\u202fPM",
+                                "Thursday": "8\u202fAM-11:30\u202fPM",
+                                "Friday": "8\u202fAM-11:30\u202fPM",
+                                "Saturday": "8\u202fAM-11:30\u202fPM"
+                            },
+                            "other_hours": null,
+                            "business_status": "OPERATIONAL",
+                            "about": {
+                                "Service options": {
+                                    "Outdoor seating": true,
+                                    "Dine-in": true,
+                                    "Delivery": false
+                                },
+                                "Highlights": {
+                                    "Great cocktails": true,
+                                    "Great wine list": true
+                                },
+                                "Accessibility": {
+                                    "Wheelchair accessible entrance": true,
+                                    "Wheelchair accessible restroom": true
+                                },
+                                "Offerings": {
+                                    "Alcohol": true,
+                                    "Beer": true,
+                                    "Cocktails": true,
+                                    "Food": true,
+                                    "Food at bar": true,
+                                    "Hard liquor": true,
+                                    "Wine": true
+                                },
+                                "Dining options": {
+                                    "Seating": true
+                                },
+                                "Amenities": {
+                                    "Restroom": true
+                                },
+                                "Atmosphere": {
+                                    "Cozy": true,
+                                    "Hip": true,
+                                    "Upscale": true
+                                },
+                                "Crowd": {
+                                    "Groups": true,
+                                    "Tourists": true
+                                },
+                                "Planning": {
+                                    "Accepts reservations": true
+                                },
+                                "Payments": {
+                                    "Credit cards": true,
+                                    "Debit cards": true
+                                }
+                            },
+                            "range": "$$$",
+                            "reviews_per_score": {
+                                "1": 13,
+                                "2": 5,
+                                "3": 9,
+                                "4": 40,
+                                "5": 178
+                            },
+                            "reservation_links": [
+                                "/url?q=https://www.opentable.com/restaurant/profile/96922%3Fref%3D1068&sa=U&ved=0ahUKEwj-uInOl8n_AhWPQaQEHUf4CZAQ2ZABCOwFKA8&usg=AOvVaw2WZACMQ1LFtnOjuQ8k_QYr",
+                                "https://www.google.com/maps/reserve/v/dine/c/umMiJeWg0Aw?source=pa"
+                            ],
+                            "booking_appointment_link": "https://www.opentable.com/restaurant/profile/96922?ref=1068",
+                            "menu_link": null,
+                            "order_links": [
+                                "https://www.opentable.com/restaurant/profile/96922?ref=1068",
+                                "https://www.google.com/maps/reserve/v/dine/c/umMiJeWg0Aw?source=pa"
+                            ],
+                            "owner_id": "107292187985581814062",
+                            "verified": true,
+                            "owner_title": "The Crosby Bar",
+                            "owner_link": "https://www.google.com/maps/contrib/107292187985581814062",
+                            "location_link": "https://www.google.com/maps/place/The+Crosby+Bar/@40.723055599999995,-73.9973799,14z/data=!4m8!1m2!2m1!1sThe+Crosby+Bar!3m4!1s0x89c2598f292082a5:0x2a801ac3fc7b851b!8m2!3d40.723055599999995!4d-73.9973799"
+                        },
+                        {
+                            "query": "bars, NY, USA",
+                            "name": "Crown Alley",
+                            "place_id": "ChIJzea1Mv9ZwokRRlvADDTSu4k",
+                            "google_id": "0x89c259ff32b5e6cd:0x89bbd2340cc05b46",
+                            "full_address": "263 W 19th St, New York, NY 10011",
+                            "borough": "Manhattan",
+                            "street": "263 W 19th St",
+                            "postal_code": "10011",
+                            "area_service": false,
+                            "country_code": "US",
+                            "country": "United States of America",
+                            "city": "New York",
+                            "us_state": "New York",
+                            "state": "New York",
+                            "plus_code": null,
+                            "latitude": 40.7428234,
+                            "longitude": -73.99979139999999,
+                            "time_zone": "America/New_York",
+                            "popular_times": null,
+                            "site": "https://www.crownalleynyc.com/",
+                            "phone": null,
+                            "type": "Bar",
+                            "logo": "https://lh4.googleusercontent.com/-7elKgR_NnMA/AAAAAAAAAAI/AAAAAAAAAAA/yLA7orWW-sY/s44-p-k-no-ns-nd/photo.jpg",
+                            "description": "Narrow, easygoing bar for cocktails, beers & happy hours, along with sandwiches, salads & sides.",
+                            "located_in": null,
+                            "located_google_id": null,
+                            "category": "bars",
+                            "subtypes": "Bar",
+                            "posts": null,
+                            "reviews_tags": null,
+                            "rating": 4.7,
+                            "reviews": 140,
+                            "photos_count": 126,
+                            "cid": "9924757324835085126",
+                            "reviews_link": null,
+                            "reviews_id": "-8521986748874466490",
+                            "photo": "https://lh5.googleusercontent.com/p/AF1QipP-M1PDHipGp0pCJ1sRQZu_zhZpey50_97TXTMO=w800-h500-k-no",
+                            "street_view": "https://lh5.googleusercontent.com/p/AF1QipP-M1PDHipGp0pCJ1sRQZu_zhZpey50_97TXTMO=w1600-h1000-k-no",
+                            "working_hours_old_format": "Sunday: 2\u202fPM-12\u202fAM | Monday: 3\u202fPM-1\u202fAM | Tuesday: 3\u202fPM-1\u202fAM | Wednesday: 3\u202fPM-1\u202fAM | Thursday: 3\u202fPM-2\u202fAM | Friday: 3\u202fPM-2\u202fAM | Saturday: 2\u202fPM-2\u202fAM",
+                            "working_hours": {
+                                "Sunday": "2\u202fPM-12\u202fAM",
+                                "Monday": "3\u202fPM-1\u202fAM",
+                                "Tuesday": "3\u202fPM-1\u202fAM",
+                                "Wednesday": "3\u202fPM-1\u202fAM",
+                                "Thursday": "3\u202fPM-2\u202fAM",
+                                "Friday": "3\u202fPM-2\u202fAM",
+                                "Saturday": "2\u202fPM-2\u202fAM"
+                            },
+                            "other_hours": null,
+                            "business_status": "OPERATIONAL",
+                            "about": {
+                                "Service options": {
+                                    "Outdoor seating": true,
+                                    "Dine-in": true,
+                                    "Delivery": false
+                                },
+                                "Highlights": {
+                                    "Fast service": true,
+                                    "Great beer selection": true,
+                                    "Great cocktails": true
+                                },
+                                "Accessibility": {
+                                    "Wheelchair accessible entrance": true,
+                                    "Wheelchair accessible parking lot": false
+                                },
+                                "Offerings": {
+                                    "Alcohol": true,
+                                    "Beer": true,
+                                    "Cocktails": true,
+                                    "Food": true,
+                                    "Food at bar": true,
+                                    "Happy hour drinks": true,
+                                    "Hard liquor": true,
+                                    "Wine": true
+                                },
+                                "Dining options": {
+                                    "Seating": true
+                                },
+                                "Amenities": {
+                                    "Restroom": true
+                                },
+                                "Atmosphere": {
+                                    "Casual": true,
+                                    "Cozy": true,
+                                    "Hip": true
+                                },
+                                "Crowd": {
+                                    "Groups": true
+                                },
+                                "Planning": {
+                                    "Accepts reservations": true
+                                },
+                                "Payments": {
+                                    "Credit cards": true
+                                }
+                            },
+                            "range": null,
+                            "reviews_per_score": {
+                                "1": 4,
+                                "2": 1,
+                                "3": 4,
+                                "4": 18,
+                                "5": 113
+                            },
+                            "reservation_links": null,
+                            "booking_appointment_link": null,
+                            "menu_link": null,
+                            "order_links": null,
+                            "owner_id": "117586482930599718853",
+                            "verified": true,
+                            "owner_title": "Crown Alley",
+                            "owner_link": "https://www.google.com/maps/contrib/117586482930599718853",
+                            "location_link": "https://www.google.com/maps/place/Crown+Alley/@40.7428234,-73.99979139999999,14z/data=!4m8!1m2!2m1!1sCrown+Alley!3m4!1s0x89c259ff32b5e6cd:0x89bbd2340cc05b46!8m2!3d40.7428234!4d-73.99979139999999"
+                        }
+                    ]
+                ]
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Get Places Reviews",
+            "url": "https://local-businesses-by-outscraper.p.rapidapi.com/maps/reviews-v3",
+            "description": "Returns Places Maps reviews from places when using search queries (e.g., `restaurants, Manhattan, NY, USA`) or from a single place when using IDs or names (e.g., `NoMad Restaurant, NY, USA`, `0x886916e8bc273979:0x5141fcb11460b226`, `ChIJrZhup4lZwokRUr_5sLoFlDw`). In addition to the reviews, it returns places information.\n\nIn case no reviews were found by your search criteria, your search request will consume the usage of one request.\n\nThis endpoint is optimized for fast responses and can be used as a real-time API. Set the `reviewsLimit` parameter to 10 to achieve the maximum response speed.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "query",
+                    "type": "STRING",
+                    "description": "The parameter defines the query you want to search. You can use anything that you would use on a regular Maps site. Additionally, you can use `feature_id`, `place_id`, or `CID`. The example of valid queries: `Real estate agency, Rome, Italy`, `The NoMad Restaurant, NY, USA`, `restaurants, Brooklyn 11203`, `0x886916e8bc273979:0x5141fcb11460b226`, `ChIJrZhup4lZwokRUr_5sLoFlDw`, etc.\n\nIt supports batching by sending arrays with up to 25 queries (e.g., `query=text1&query=text2&query=text3`). It allows multiple queries to be sent in one request and save on network latency time.\n",
+                    "default": "The NoMad Restaurant, NY, USA"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "language",
+                    "type": "STRING",
+                    "description": "The parameter specifies the language to use.\n\nAvailable languages: `en`, `de`, `es`, `es-419`, `fr`, `hr`, `it`, `nl`, `pl`, `pt-BR`, `pt-PT`, `vi`, `tr`, `ru`, `ar`, `th`, `ko`, `zh-CN`, `zh-TW`, `ja`, `ach`, `af`, `ak`, `ig`, `az`, `ban`, `ceb`, `xx-bork`, `bs`, `br`, `ca`, `cs`, `sn`, `co`, `cy`, `da`, `yo`, `et`, `xx-elmer`, `eo`, `eu`, `ee`, `tl`, `fil`, `fo`, `fy`, `gaa`, `ga`, `gd`, `gl`, `gn`, `xx-hacker`, `ht`, `ha`, `haw`, `bem`, `rn`, `id`, `ia`, `xh`, `zu`, `is`, `jw`, `rw`, `sw`, `tlh`, `kg`, `mfe`, `kri`, `la`, `lv`, `to`, `lt`, `ln`, `loz`, `lua`, `lg`, `hu`, `mg`, `mt`, `mi`, `ms`, `pcm`, `no`, `nso`, `ny`, `nn`, `uz`, `oc`, `om`, `xx-pirate`, `ro`, `rm`, `qu`, `nyn`, `crs`, `sq`, `sk`, `sl`, `so`, `st`, `sr-ME`, `sr-Latn`, `su`, `fi`, `sv`, `tn`, `tum`, `tk`, `tw`, `wo`, `el`, `be`, `bg`, `ky`, `kk`, `mk`, `mn`, `sr`, `tt`, `tg`, `uk`, `ka`, `hy`, `yi`, `iw`, `ug`, `ur`, `ps`, `sd`, `fa`, `ckb`, `ti`, `am`, `ne`, `mr`, `hi`, `bn`, `pa`, `gu`, `or`, `ta`, `te`, `kn`, `ml`, `si`, `lo`, `my`, `km`, `chr`.",
+                    "default": "en"
+                },
+                {
+                    "name": "fields",
+                    "type": "STRING",
+                    "description": "The parameter defines which fields you want to include with each item returned in the response. By default, it returns all fields. Use `&fields=query,name` to return only the specific ones.",
+                    "default": ""
+                },
+                {
+                    "name": "limit",
+                    "type": "NUMBER",
+                    "description": "The parameter specifies the limit of places to take from one query search.",
+                    "default": "1"
+                },
+                {
+                    "name": "reviewsQuery",
+                    "type": "STRING",
+                    "description": "The parameter specifies the query to search among the reviews (e.g. `wow`, `amazing`, `horrible place`).",
+                    "default": "amazing"
+                },
+                {
+                    "name": "reviewsLimit",
+                    "type": "NUMBER",
+                    "description": "The parameter specifies the limit of reviews to get from one place (0 - unlimited).\n\nIf using more than 20 reviews per request each additional 10 reviews will be counted as one search.",
+                    "default": "10"
+                },
+                {
+                    "name": "cutoffRating",
+                    "type": "NUMBER",
+                    "description": "The parameter specifies the maximum for `lowest_rating` sorting or the minimum for `highest_rating` sorting rating for reviews.\n\nUsing the cutoffRating requires sorting to be set to `lowest_rating` or `highest_rating.`\n",
+                    "default": ""
+                },
+                {
+                    "name": "sort",
+                    "type": "STRING",
+                    "description": "The parameter specifies one of the sorting types: `most_relevant`, `newest`, `highest_rating`, `lowest_rating`.\n",
+                    "default": "most_relevant"
+                },
+                {
+                    "name": "ignoreEmpty",
+                    "type": "BOOLEAN",
+                    "description": "The parameter specifies whether to ignore reviews without text or not.",
+                    "default": ""
+                },
+                {
+                    "name": "region",
+                    "type": "STRING",
+                    "description": "The parameter specifies the country to use.\n\nAvailable countries: `AF`, `AL`, `DZ`, `AS`, `AD`, `AO`, `AI`, `AG`, `AR`, `AM`, `AU`, `AT`, `AZ`, `BS`, `BH`, `BD`, `BY`, `BE`, `BZ`, `BJ`, `BT`, `BO`, `BA`, `BW`, `BR`, `VG`, `BN`, `BG`, `BF`, `BI`, `KH`, `CM`, `CA`, `CV`, `CF`, `TD`, `CL`, `CN`, `CO`, `CG`, `CD`, `CK`, `CR`, `CI`, `HR`, `CU`, `CY`, `CZ`, `DK`, `DJ`, `DM`, `DO`, `EC`, `EG`, `SV`, `EE`, `ET`, `FJ`, `FI`, `FR`, `GA`, `GM`, `GE`, `DE`, `GH`, `GI`, `GR`, `GL`, `GT`, `GG`, `GY`, `HT`, `HN`, `HK`, `HU`, `IS`, `IN`, `ID`, `IQ`, `IE`, `IM`, `IL`, `IT`, `JM`, `JP`, `JE`, `JO`, `KZ`, `KE`, `KI`, `KW`, `KG`, `LA`, `LV`, `LB`, `LS`, `LY`, `LI`, `LT`, `LU`, `MG`, `MW`, `MY`, `MV`, `ML`, `MT`, `MU`, `MX`, `FM`, `MD`, `MN`, `ME`, `MS`, `MA`, `MQ`, `MZ`, `MM`, `NA`, `NR`, `NP`, `NL`, `NZ`, `NI`, `NE`, `NG`, `NU`, `MK`, `NO`, `OM`, `PK`, `PS`, `PA`, `PG`, `PY`, `PE`, `PH`, `PN`, `PL`, `PT`, `PR`, `QA`, `RO`, `RU`, `RW`, `WS`, `SM`, `ST`, `SA`, `SN`, `RS`, `SC`, `SL`, `SG`, `SK`, `SI`, `SB`, `SO`, `ZA`, `KR`, `ES`, `LK`, `SH`, `VC`, `SR`, `SE`, `CH`, `TW`, `TJ`, `TZ`, `TH`, `TL`, `TG`, `TO`, `TT`, `TN`, `TR`, `TM`, `VI`, `UG`, `UA`, `AE`, `GB`, `US`, `UY`, `UZ`, `VU`, `VE`, `VN`, `ZM`, `ZW`.",
+                    "default": "US"
+                },
+                {
+                    "name": "start",
+                    "type": "NUMBER",
+                    "description": "The parameter specifies the start timestamp value for reviews. The current timestamp is used when the value is not provided.\n\nUsing the start parameter overwrites the `sort` parameter to `newest`. Therefore, the latest reviews will be at the beginning.\n",
+                    "default": ""
+                },
+                {
+                    "name": "cutoff",
+                    "type": "STRING",
+                    "description": "The parameter specifies the oldest timestamp value for reviews.\n\nUsing the cutoff parameter overwrites the `sort` parameter to `newest`. Therefore, the latest reviews will be at the beginning.",
+                    "default": ""
+                },
+                {
+                    "name": "skip",
+                    "type": "NUMBER",
+                    "description": "The parameter specifies the number of items to skip. It's commonly used in pagination.",
+                    "default": "0"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://local-businesses-by-outscraper.p.rapidapi.com/maps/reviews-v3\"\nquerystring = {\"language\": \"en\", \"fields\": \"\", \"limit\": \"1\", \"reviewsQuery\": \"amazing\", \"reviewsLimit\": \"10\", \"cutoffRating\": \"\", \"query\": \"The NoMad Restaurant, NY, USA\", \"sort\": \"most_relevant\", \"ignoreEmpty\": \"\", \"region\": \"US\", \"start\": \"\", \"cutoff\": \"\", \"skip\": \"0\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"local-businesses-by-outscraper.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://local-businesses-by-outscraper.p.rapidapi.com/maps/reviews-v3\"\nquerystring = {\"language\": \"en\", \"fields\": \"\", \"limit\": \"1\", \"reviewsQuery\": \"amazing\", \"reviewsLimit\": \"10\", \"cutoffRating\": \"\", \"query\": \"The NoMad Restaurant, NY, USA\", \"sort\": \"most_relevant\", \"ignoreEmpty\": \"\", \"region\": \"US\", \"start\": \"\", \"cutoff\": \"\", \"skip\": \"0\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"local-businesses-by-outscraper.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "error": true,
+                "errorMessage": "422 Unprocessable Entity: The request was well-formed but was unable to be followed due to semantic errors.ignoreEmpty: Not a valid boolean. start: Not a valid integer. cutoffRating: Not a valid integer. cutoff: Not a valid integer."
+            },
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "local_businesses_by_outscraper"
+}

@@ -1,0 +1,73 @@
+{
+    "product_id": "api_fd90b043-ea65-4f32-8a3e-051315c171ac",
+    "tool_description": "Get OAuth/OpenID Connect authentication information. OpenID Connect\u8a8d\u8a3c\u60c5\u5831\u53d6\u5f97\u30b5\u30fc\u30d3\u30b9\u3092\u63d0\u4f9b\u3044\u307e\u3059\u3002",
+    "home_url": "https://rapidapi.com/AcroChannel/api/acrosuite-oauther/",
+    "name": "AcroSuite OAuther",
+    "title": "AcroSuite OAuther",
+    "pricing": "FREE",
+    "tool_name": "AcroSuite OAuther",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 904,
+        "avgSuccessRate": 100,
+        "popularityScore": 5.4,
+        "__typename": "Score"
+    },
+    "host": "acrosuite-oauther.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "OpenID Connecter",
+            "url": "https://acrosuite-oauther.p.rapidapi.com/v0_1/CstService/tools/oauth/oidclist",
+            "description": "OAuth/OpenID Connect(OIDC) authentication information from the third-party providers(**Google/LINE/YahooJP/Azure**) will be available. \nAfter calling the API, you will get an OIDC list without **oAuthCode** or OIDC authentication information with **oAuthCode**.\nWhen you get an OIDC list, you may choose an **OAuthURL** to call it, then you will get OIDC authentication information.\nAnd it is not necessary to input redirectHost/redirectPort parameter here.\nPlease refer to the sample[**OIDC Authentication**] in the following demo page.\nhttps://mars.restgate.net/intro/en/suite_en.html#oauther\n\n\u30b5\u30fc\u30c9\u30d1\u30c6\u30a3\u30d7\u30ed\u30d0\u30a4\u30c0\u30fc(**Google/LINE/YahooJP/Azure**)\u304b\u3089OAuth **OpenID Connect(OIDC)**\u8a8d\u8a3c\u60c5\u5831\u3092\u53d6\u5f97\u3057\u307e\u3059\u3002\n\u3053\u306eAPI\u3092\u547c\u3073\u51fa\u3057\u305f\u3089\u3001OIDC\u4e00\u89a7(**oAuthCode**\u4ed8\u304d\u306a\u3057\u306e\u5834\u5408)\u53c8\u306f\u8a8d\u8a3c\u60c5\u5831(**oAuthCode**\u4ed8\u304d\u306e\u5834\u5408)\u304c\u623b\u3089\u308c\u307e\u3059\u3002\nOIDC\u4e00\u89a7\u304c\u623b\u3055\u308c\u305f\u5834\u5408\u306f\u3001\u7d9a\u3044\u3066**OAuthURL**\u3092\u9078\u3093\u3067\u547c\u3073\u51fa\u3059\u3068\u3001\u8a72\u5f53\u3059\u308b\u8a8d\u8a3c\u60c5\u5831\u3092\u53d6\u5f97\u3067\u304d\u307e\u3059\u3002\n\u307e\u305f\u3053\u3053\u3067\u306f\u3001redirectHost/redirectPort\u306e\u30d1\u30e9\u30e1\u30fc\u30bf\u3092\u7121\u8996\u3057\u3066\u304f\u3060\u3055\u3044\u3002\n\u5b9f\u969b\u306e\u6319\u52d5\u306f\u3001\u4e0b\u8a18\u306e\u30c7\u30e2\u30da\u30fc\u30b8\u306b\u547c\u3073\u51fa\u3057\u30b5\u30f3\u30d7\u30eb[**OIDC\u8a8d\u8a3c**]\u3092\u3054\u53c2\u8003\u304f\u3060\u3055\u3044\u3002\nhttps://mars.restgate.net/intro/jp/suite_jp.html#oauther\n<hr>\nThe following external document is for directly calling AcroSuite original APIs. Some Auth parameters may be neglected here.\nhttps://mars.acrochannel.com:8443/AcroSuite/v0_1/CstService/apiInfo/doc?appId=10006&language=2&withTitle=true&apiCode=02301016\n\n\u4e0b\u8a18\u306e\u5916\u90e8\u30c9\u30ad\u30e5\u30e1\u30f3\u30c8\u306f\u3001AcroSuite\u30aa\u30ea\u30b8\u30ca\u30ebAPI\u306b\u5bfe\u3059\u308b\u8cc7\u6599\u3067\u3042\u308a\u3001\u3053\u3053\u3067\u306f\u4e00\u90e8\u306e\u8a8d\u8a3c\u30d1\u30e9\u30e1\u30fc\u30bf\u3092\u7701\u7565\u3057\u307e\u3059\u3002\nhttps://mars.acrochannel.com:8443/AcroSuite/v0_1/CstService/apiInfo/doc?appId=10006&language=1&withTitle=true&apiCode=02301016",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "oAuthCode",
+                    "type": "STRING",
+                    "description": "OIDCProviderCode(GoogleOIDC/LineOIDC/YahooJPOIDC)",
+                    "default": ""
+                },
+                {
+                    "name": "redirectHost",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "redirectPort",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://acrosuite-oauther.p.rapidapi.com/v0_1/CstService/tools/oauth/oidclist\"\nquerystring = {\"oAuthCode\": \"\", \"redirectHost\": \"\", \"redirectPort\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"acrosuite-oauther.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://acrosuite-oauther.p.rapidapi.com/v0_1/CstService/tools/oauth/oidclist\"\nquerystring = {\"oAuthCode\": \"\", \"redirectHost\": \"\", \"redirectPort\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"acrosuite-oauther.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "OAuthList": [
+                    {
+                        "OAuthCode": "GoogleOIDC",
+                        "OAuthURL": "https://accounts.google.com/o/oauth2/v2/auth?response_type=code&scope=openid+email+profile&client_id=403729811213-itqhnf8po9aue1lslk5kovgjrrsa2l50.apps.googleusercontent.com&redirect_uri=https://mars.restgate.net:8443/AcroSuite/v0_1/CstService/tools/oauth/callback&state=CErJfn9AJptB1AYsaW8hyP6GZeG4YfqxT4D9q7imDN05b%2FWhYEvJ%2Bh%2FU3XcWWjeomakKlmeFSAnOvxaZNyltivTHmZ1RFl8a4rOJx60Mn%2BCh57a2VTP7b3oz1pHBxOkAm6LeTQw807wmSU%2FQFX%2BtB9peDXXdFU26qLozDRGvAzODDkEOuua4xtyuT1bSQRLb1XOFTA%3D%3D&nonce=3DHrpBrfCngg1fpt",
+                        "LoginInfo": "aW8hyP6GZeG4YfqxT4D9q7imDN05b%2FWhYEvJ%2Bh%2FU3XcWWjeomakKlmeFSAnOvxaZNyltivTHmZ1RFl8a4rOJx60Mn%2BCh57a2VTP7b3oz1pHBxOkAm6LeTQw807wmSU%2FQFX%2BtB9peDXXdFU26qLozDRGvAzODDkEOuua4xtyuT1bSQRLb1XOFTA%3D%3D"
+                    },
+                    {
+                        "OAuthCode": "LineOIDC",
+                        "OAuthURL": "https://access.line.me/oauth2/v2.1/authorize?response_type=code&scope=openid+email+profile&client_id=1653721243&redirect_uri=https://mars.restgate.net:8443/AcroSuite/v0_1/CstService/tools/oauth/callback&state=EoLOle0vemtfoDPgn4BpClaAbo97WY0hV1hVefhBvcxB%2BjMb05Uwor73gjj3RedRPriNxzULSgo78%2Fx3%2B83LmaLkEF9fsFMj4rislDM09momHYMwN5HUns9CcyIkPSZYkVwfPDww0LGliBUy6sU7K2mQfp1pzd1CCZhnLzzR9kRMkh0hsp7Dt6kGuyiRMFx%2F3RDMGw%3D%3D&nonce=UimKRzDZ8k4fqYdg",
+                        "LoginInfo": "n4BpClaAbo97WY0hV1hVefhBvcxB%2BjMb05Uwor73gjj3RedRPriNxzULSgo78%2Fx3%2B83LmaLkEF9fsFMj4rislDM09momHYMwN5HUns9CcyIkPSZYkVwfPDww0LGliBUy6sU7K2mQfp1pzd1CCZhnLzzR9kRMkh0hsp7Dt6kGuyiRMFx%2F3RDMGw%3D%3D"
+                    },
+                    {
+                        "OAuthCode": "YahooJPOIDC",
+                        "OAuthURL": "https://auth.login.yahoo.co.jp/yconnect/v2/authorization?response_type=code&scope=openid+email+profile&client_id=dj00aiZpPUJYa1M2M2tQTktqTiZzPWNvbnN1bWVyc2VjcmV0Jng9YmM-&redirect_uri=https://mars.restgate.net:8443/AcroSuite/v0_1/CstService/tools/oauth/callback&state=WtKoHquZps0UzMuSmbsaQDDGk9UyoM5MsOjyqyTjU40E1ZAB2cd%2Bawn6vRtY2LAxdA7%2FNMFOd9Z2PDuuKfy3ufqbiFGJv4MdLOuawFAVmQuRBL69swoIJm9o7XnIBneTPz5PRnsfQw1wEiLEe%2FFQ7PCKzs1nrTWjhXL8ziUdgGjn4w8zyd9FFC0SERgDetpEU7ksqA%3D%3D&nonce=oBaiQnWbmE1nW9sS",
+                        "LoginInfo": "mbsaQDDGk9UyoM5MsOjyqyTjU40E1ZAB2cd%2Bawn6vRtY2LAxdA7%2FNMFOd9Z2PDuuKfy3ufqbiFGJv4MdLOuawFAVmQuRBL69swoIJm9o7XnIBneTPz5PRnsfQw1wEiLEe%2FFQ7PCKzs1nrTWjhXL8ziUdgGjn4w8zyd9FFC0SERgDetpEU7ksqA%3D%3D"
+                    },
+                    {
+                        "OAuthCode": "AzureComOIDC",
+                        "OAuthURL": "https://login.microsoftonline.com/common/oauth2/v2.0/authorize?response_type=code&scope=openid+email+profile&client_id=90640b56-738c-430d-b78a-c5aaddf32b6f&redirect_uri=https://mars.restgate.net:8443/AcroSuite/v0_1/CstService/tools/oauth/callback&state=fJpbpzjEbXVySpguXcpoyExlwDzQMapRJTmU8jJCEWFrQV1hB%2F7pFNfTWDabn965jv1%2BkRyAF2k%2FLKXQB5bLHkpqJ0LszLzyXoB2CTXZ55UH8KoG6i%2FMrf2yqNmCsMpDQxbgS7%2Fw5Ldsr40Zw37JKTKAV1c1AJLPzQcZR4%2B4MyNZRrHgMAj7oqAmN2CntArYmfgdeQ%3D%3D&nonce=ydIG34uECcdudLcG",
+                        "LoginInfo": "XcpoyExlwDzQMapRJTmU8jJCEWFrQV1hB%2F7pFNfTWDabn965jv1%2BkRyAF2k%2FLKXQB5bLHkpqJ0LszLzyXoB2CTXZ55UH8KoG6i%2FMrf2yqNmCsMpDQxbgS7%2Fw5Ldsr40Zw37JKTKAV1c1AJLPzQcZR4%2B4MyNZRrHgMAj7oqAmN2CntArYmfgdeQ%3D%3D"
+                    }
+                ]
+            }
+        }
+    ],
+    "standardized_name": "acrosuite_oauther"
+}

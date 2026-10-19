@@ -1,0 +1,1077 @@
+{
+    "product_id": "api_6cffb669-6d46-4a86-89cd-40e31ceb6a94",
+    "tool_description": "F1",
+    "home_url": "https://rapidapi.com/myorgalex-empty-team/api/formula-1-fixed/",
+    "name": "Formula 1 - fixed",
+    "title": "Formula 1 - fixed",
+    "pricing": "FREE",
+    "tool_name": "Formula 1 - fixed",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 1438,
+        "avgSuccessRate": 45,
+        "popularityScore": 8.1,
+        "__typename": "Score"
+    },
+    "host": "formula-1-fixed.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Listoffinishingstatusforaspecificseason",
+            "url": "https://formula-1-fixed.p.rapidapi.com/api/f1/year/status",
+            "description": "To fetch the list of finishing status of a specific season(year).\n",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "year",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "year"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://formula-1-fixed.p.rapidapi.com/api/f1/year/status\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"formula-1-fixed.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://formula-1-fixed.p.rapidapi.com/api/f1/{year}/status\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"formula-1-fixed.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Driverstandingsafterarace",
+            "url": "https://formula-1-fixed.p.rapidapi.com/api/f1/year/round/driverStandings",
+            "description": "To fetch the driver standings after a specific race(round) in a season(year), use this endpoint.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "year",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "year"
+                },
+                {
+                    "name": "round",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "round"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://formula-1-fixed.p.rapidapi.com/api/f1/year/round/driverStandings\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"formula-1-fixed.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://formula-1-fixed.p.rapidapi.com/api/f1/{year}/{round}/driverStandings\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"formula-1-fixed.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Listofalldrivers",
+            "url": "https://formula-1-fixed.p.rapidapi.com/api/f1/drivers",
+            "description": "To obtain a list of all drivers.\n\nDriver lists can be refined by adding one or more of the following criteria:\n\n/circuits/<circuitId>\n/constructors/<constructorId>\n/drivers/<driverId>\n/grid/<position>\n/results/<position>\n/fastest/<rank>\n/status/<statusId>\n\nFor example, to list all drivers who have driven for a specific constructor at a particular circuit:\n\nhttp://ergast.com/api/f1/constructors/mclaren/circuits/monza/drivers\n\nAlternatively, to list the drivers who have achieved a particular final position in the championship:\n\nhttp://ergast.com/api/f1/driverStandings/1/drivers\n\nDrivers who participated in the 2014 season onwards have a permanent driver number.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "q",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": 123
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://formula-1-fixed.p.rapidapi.com/api/f1/drivers\"\nquerystring = {\"q\": 123}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"formula-1-fixed.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://formula-1-fixed.p.rapidapi.com/api/f1/drivers\"\nquerystring = {\"q\": 123}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"formula-1-fixed.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "CircuitInformation",
+            "url": "https://formula-1-fixed.p.rapidapi.com/api/f1/circuits/circuitid",
+            "description": "Each constructor listed in the response is identified by a unique circuitId which is used to identify the constructor throughout the API. To obtain information about a particular circuit append the circuitId (name of the circuit)\n\nThis endpoint is to obtain the information of a particular circuit based on the circuitId (circuit name)",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "circuitid",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "circuitid"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://formula-1-fixed.p.rapidapi.com/api/f1/circuits/circuitid\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"formula-1-fixed.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://formula-1-fixed.p.rapidapi.com/api/f1/circuits/{circuitid}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"formula-1-fixed.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Listofalldriverswithinaraceinayear",
+            "url": "https://formula-1-fixed.p.rapidapi.com/api/f1/year/round/drivers",
+            "description": "This endpoint is to obtain a list of all drivers in a particular race(round) of a season(year)",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "round",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "round"
+                },
+                {
+                    "name": "year",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "year"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://formula-1-fixed.p.rapidapi.com/api/f1/year/round/drivers\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"formula-1-fixed.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://formula-1-fixed.p.rapidapi.com/api/f1/{year}/{round}/drivers\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"formula-1-fixed.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Listofalldriverswithinayear",
+            "url": "https://formula-1-fixed.p.rapidapi.com/api/f1/year/drivers",
+            "description": "This endpoint is to obtain a list of all drivers in a particular season (year)",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "year",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "year"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://formula-1-fixed.p.rapidapi.com/api/f1/year/drivers\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"formula-1-fixed.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://formula-1-fixed.p.rapidapi.com/api/f1/{year}/drivers\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"formula-1-fixed.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Listofallcircuits",
+            "url": "https://formula-1-fixed.p.rapidapi.com/api/f1/circuits.json",
+            "description": "This endpoint is to obtain a list of all constructors.\n\n\nCircuit lists can be refined by adding one or more of the following criteria:\n\n/constructors/<constructorId>\n/drivers/<driverId>\n/grid/<position>\n/results/<position>\n/fastest/<rank>\n/status/<statusId>\n\nFor example, to list all circuits at which a specific driver has driven for a particular constructor:\n\nhttp://ergast.com/api/f1/drivers/alonso/constructors/mclaren/circuits",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://formula-1-fixed.p.rapidapi.com/api/f1/circuits.json\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"formula-1-fixed.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://formula-1-fixed.p.rapidapi.com/api/f1/circuits.json\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"formula-1-fixed.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "MRData": {
+                    "xmlns": "http://ergast.com/mrd/1.5",
+                    "series": "f1",
+                    "url": "http://ergast.com/api/f1/circuits.json",
+                    "limit": "30",
+                    "offset": "0",
+                    "total": "77",
+                    "CircuitTable": {
+                        "Circuits": [
+                            {
+                                "circuitId": "adelaide",
+                                "url": "http://en.wikipedia.org/wiki/Adelaide_Street_Circuit",
+                                "circuitName": "Adelaide Street Circuit",
+                                "Location": {
+                                    "lat": "-34.9272",
+                                    "long": "138.617",
+                                    "locality": "Adelaide",
+                                    "country": "Australia"
+                                }
+                            },
+                            {
+                                "circuitId": "ain-diab",
+                                "url": "http://en.wikipedia.org/wiki/Ain-Diab_Circuit",
+                                "circuitName": "Ain Diab",
+                                "Location": {
+                                    "lat": "33.5786",
+                                    "long": "-7.6875",
+                                    "locality": "Casablanca",
+                                    "country": "Morocco"
+                                }
+                            },
+                            {
+                                "circuitId": "aintree",
+                                "url": "http://en.wikipedia.org/wiki/Aintree_Motor_Racing_Circuit",
+                                "circuitName": "Aintree",
+                                "Location": {
+                                    "lat": "53.4769",
+                                    "long": "-2.94056",
+                                    "locality": "Liverpool",
+                                    "country": "UK"
+                                }
+                            },
+                            {
+                                "circuitId": "albert_park",
+                                "url": "http://en.wikipedia.org/wiki/Melbourne_Grand_Prix_Circuit",
+                                "circuitName": "Albert Park Grand Prix Circuit",
+                                "Location": {
+                                    "lat": "-37.8497",
+                                    "long": "144.968",
+                                    "locality": "Melbourne",
+                                    "country": "Australia"
+                                }
+                            },
+                            {
+                                "circuitId": "americas",
+                                "url": "http://en.wikipedia.org/wiki/Circuit_of_the_Americas",
+                                "circuitName": "Circuit of the Americas",
+                                "Location": {
+                                    "lat": "30.1328",
+                                    "long": "-97.6411",
+                                    "locality": "Austin",
+                                    "country": "USA"
+                                }
+                            },
+                            {
+                                "circuitId": "anderstorp",
+                                "url": "http://en.wikipedia.org/wiki/Scandinavian_Raceway",
+                                "circuitName": "Scandinavian Raceway",
+                                "Location": {
+                                    "lat": "57.2653",
+                                    "long": "13.6042",
+                                    "locality": "Anderstorp",
+                                    "country": "Sweden"
+                                }
+                            },
+                            {
+                                "circuitId": "avus",
+                                "url": "http://en.wikipedia.org/wiki/AVUS",
+                                "circuitName": "AVUS",
+                                "Location": {
+                                    "lat": "52.4806",
+                                    "long": "13.2514",
+                                    "locality": "Berlin",
+                                    "country": "Germany"
+                                }
+                            },
+                            {
+                                "circuitId": "bahrain",
+                                "url": "http://en.wikipedia.org/wiki/Bahrain_International_Circuit",
+                                "circuitName": "Bahrain International Circuit",
+                                "Location": {
+                                    "lat": "26.0325",
+                                    "long": "50.5106",
+                                    "locality": "Sakhir",
+                                    "country": "Bahrain"
+                                }
+                            },
+                            {
+                                "circuitId": "baku",
+                                "url": "http://en.wikipedia.org/wiki/Baku_City_Circuit",
+                                "circuitName": "Baku City Circuit",
+                                "Location": {
+                                    "lat": "40.3725",
+                                    "long": "49.8533",
+                                    "locality": "Baku",
+                                    "country": "Azerbaijan"
+                                }
+                            },
+                            {
+                                "circuitId": "boavista",
+                                "url": "http://en.wikipedia.org/wiki/Circuito_da_Boavista",
+                                "circuitName": "Circuito da Boavista",
+                                "Location": {
+                                    "lat": "41.1705",
+                                    "long": "-8.67325",
+                                    "locality": "Oporto",
+                                    "country": "Portugal"
+                                }
+                            },
+                            {
+                                "circuitId": "brands_hatch",
+                                "url": "http://en.wikipedia.org/wiki/Brands_Hatch",
+                                "circuitName": "Brands Hatch",
+                                "Location": {
+                                    "lat": "51.3569",
+                                    "long": "0.263056",
+                                    "locality": "Kent",
+                                    "country": "UK"
+                                }
+                            },
+                            {
+                                "circuitId": "bremgarten",
+                                "url": "http://en.wikipedia.org/wiki/Circuit_Bremgarten",
+                                "circuitName": "Circuit Bremgarten",
+                                "Location": {
+                                    "lat": "46.9589",
+                                    "long": "7.40194",
+                                    "locality": "Bern",
+                                    "country": "Switzerland"
+                                }
+                            },
+                            {
+                                "circuitId": "buddh",
+                                "url": "http://en.wikipedia.org/wiki/Buddh_International_Circuit",
+                                "circuitName": "Buddh International Circuit",
+                                "Location": {
+                                    "lat": "28.3487",
+                                    "long": "77.5331",
+                                    "locality": "Uttar Pradesh",
+                                    "country": "India"
+                                }
+                            },
+                            {
+                                "circuitId": "catalunya",
+                                "url": "http://en.wikipedia.org/wiki/Circuit_de_Barcelona-Catalunya",
+                                "circuitName": "Circuit de Barcelona-Catalunya",
+                                "Location": {
+                                    "lat": "41.57",
+                                    "long": "2.26111",
+                                    "locality": "Montmel\u00f3",
+                                    "country": "Spain"
+                                }
+                            },
+                            {
+                                "circuitId": "charade",
+                                "url": "http://en.wikipedia.org/wiki/Charade_Circuit",
+                                "circuitName": "Charade Circuit",
+                                "Location": {
+                                    "lat": "45.7472",
+                                    "long": "3.03889",
+                                    "locality": "Clermont-Ferrand",
+                                    "country": "France"
+                                }
+                            },
+                            {
+                                "circuitId": "dallas",
+                                "url": "http://en.wikipedia.org/wiki/Fair_Park",
+                                "circuitName": "Fair Park",
+                                "Location": {
+                                    "lat": "32.7774",
+                                    "long": "-96.7587",
+                                    "locality": "Dallas",
+                                    "country": "USA"
+                                }
+                            },
+                            {
+                                "circuitId": "detroit",
+                                "url": "http://en.wikipedia.org/wiki/Detroit_street_circuit",
+                                "circuitName": "Detroit Street Circuit",
+                                "Location": {
+                                    "lat": "42.3298",
+                                    "long": "-83.0401",
+                                    "locality": "Detroit",
+                                    "country": "USA"
+                                }
+                            },
+                            {
+                                "circuitId": "dijon",
+                                "url": "http://en.wikipedia.org/wiki/Dijon-Prenois",
+                                "circuitName": "Dijon-Prenois",
+                                "Location": {
+                                    "lat": "47.3625",
+                                    "long": "4.89913",
+                                    "locality": "Dijon",
+                                    "country": "France"
+                                }
+                            },
+                            {
+                                "circuitId": "donington",
+                                "url": "http://en.wikipedia.org/wiki/Donington_Park",
+                                "circuitName": "Donington Park",
+                                "Location": {
+                                    "lat": "52.8306",
+                                    "long": "-1.37528",
+                                    "locality": "Castle Donington",
+                                    "country": "UK"
+                                }
+                            },
+                            {
+                                "circuitId": "essarts",
+                                "url": "http://en.wikipedia.org/wiki/Rouen-Les-Essarts",
+                                "circuitName": "Rouen-Les-Essarts",
+                                "Location": {
+                                    "lat": "49.3306",
+                                    "long": "1.00458",
+                                    "locality": "Rouen",
+                                    "country": "France"
+                                }
+                            },
+                            {
+                                "circuitId": "estoril",
+                                "url": "http://en.wikipedia.org/wiki/Aut%C3%B3dromo_do_Estoril",
+                                "circuitName": "Aut\u00f3dromo do Estoril",
+                                "Location": {
+                                    "lat": "38.7506",
+                                    "long": "-9.39417",
+                                    "locality": "Estoril",
+                                    "country": "Portugal"
+                                }
+                            },
+                            {
+                                "circuitId": "fuji",
+                                "url": "http://en.wikipedia.org/wiki/Fuji_Speedway",
+                                "circuitName": "Fuji Speedway",
+                                "Location": {
+                                    "lat": "35.3717",
+                                    "long": "138.927",
+                                    "locality": "Oyama",
+                                    "country": "Japan"
+                                }
+                            },
+                            {
+                                "circuitId": "galvez",
+                                "url": "http://en.wikipedia.org/wiki/Aut%C3%B3dromo_Oscar_Alfredo_G%C3%A1lvez",
+                                "circuitName": "Aut\u00f3dromo Juan y Oscar G\u00e1lvez",
+                                "Location": {
+                                    "lat": "-34.6943",
+                                    "long": "-58.4593",
+                                    "locality": "Buenos Aires",
+                                    "country": "Argentina"
+                                }
+                            },
+                            {
+                                "circuitId": "george",
+                                "url": "http://en.wikipedia.org/wiki/Prince_George_Circuit",
+                                "circuitName": "Prince George Circuit",
+                                "Location": {
+                                    "lat": "-33.0486",
+                                    "long": "27.8736",
+                                    "locality": "Eastern Cape Province",
+                                    "country": "South Africa"
+                                }
+                            },
+                            {
+                                "circuitId": "hockenheimring",
+                                "url": "http://en.wikipedia.org/wiki/Hockenheimring",
+                                "circuitName": "Hockenheimring",
+                                "Location": {
+                                    "lat": "49.3278",
+                                    "long": "8.56583",
+                                    "locality": "Hockenheim",
+                                    "country": "Germany"
+                                }
+                            },
+                            {
+                                "circuitId": "hungaroring",
+                                "url": "http://en.wikipedia.org/wiki/Hungaroring",
+                                "circuitName": "Hungaroring",
+                                "Location": {
+                                    "lat": "47.5789",
+                                    "long": "19.2486",
+                                    "locality": "Budapest",
+                                    "country": "Hungary"
+                                }
+                            },
+                            {
+                                "circuitId": "imola",
+                                "url": "http://en.wikipedia.org/wiki/Autodromo_Enzo_e_Dino_Ferrari",
+                                "circuitName": "Autodromo Enzo e Dino Ferrari",
+                                "Location": {
+                                    "lat": "44.3439",
+                                    "long": "11.7167",
+                                    "locality": "Imola",
+                                    "country": "Italy"
+                                }
+                            },
+                            {
+                                "circuitId": "indianapolis",
+                                "url": "http://en.wikipedia.org/wiki/Indianapolis_Motor_Speedway",
+                                "circuitName": "Indianapolis Motor Speedway",
+                                "Location": {
+                                    "lat": "39.795",
+                                    "long": "-86.2347",
+                                    "locality": "Indianapolis",
+                                    "country": "USA"
+                                }
+                            },
+                            {
+                                "circuitId": "interlagos",
+                                "url": "http://en.wikipedia.org/wiki/Aut%C3%B3dromo_Jos%C3%A9_Carlos_Pace",
+                                "circuitName": "Aut\u00f3dromo Jos\u00e9 Carlos Pace",
+                                "Location": {
+                                    "lat": "-23.7036",
+                                    "long": "-46.6997",
+                                    "locality": "S\u00e3o Paulo",
+                                    "country": "Brazil"
+                                }
+                            },
+                            {
+                                "circuitId": "istanbul",
+                                "url": "http://en.wikipedia.org/wiki/Istanbul_Park",
+                                "circuitName": "Istanbul Park",
+                                "Location": {
+                                    "lat": "40.9517",
+                                    "long": "29.405",
+                                    "locality": "Istanbul",
+                                    "country": "Turkey"
+                                }
+                            }
+                        ]
+                    }
+                }
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "DriverInformation",
+            "url": "https://formula-1-fixed.p.rapidapi.com/api/f1/drivers/driverid",
+            "description": "Each driver listed in the response is identified by a unique driverId which is used to identify the driver throughout the API. To obtain information about a particular driver append the driverId\n\nThis endpoint is to obtain the information of a particular driver based on the driverid (driver name)",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "driverid",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "driverid"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://formula-1-fixed.p.rapidapi.com/api/f1/drivers/driverid\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"formula-1-fixed.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://formula-1-fixed.p.rapidapi.com/api/f1/drivers/{driverid}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"formula-1-fixed.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Listofallcircuitswithinayear",
+            "url": "https://formula-1-fixed.p.rapidapi.com/api/f1/year/circuits",
+            "description": " ",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "year",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "year"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://formula-1-fixed.p.rapidapi.com/api/f1/year/circuits\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"formula-1-fixed.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://formula-1-fixed.p.rapidapi.com/api/f1/{year}/circuits\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"formula-1-fixed.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Listofallcircuitswithinaraceinayear",
+            "url": "https://formula-1-fixed.p.rapidapi.com/api/f1/year/round/circuits",
+            "description": " ",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "round",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "round"
+                },
+                {
+                    "name": "year",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "year"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://formula-1-fixed.p.rapidapi.com/api/f1/year/round/circuits\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"formula-1-fixed.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://formula-1-fixed.p.rapidapi.com/api/f1/{year}/{round}/circuits\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"formula-1-fixed.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Listofallconstructors",
+            "url": "https://formula-1-fixed.p.rapidapi.com/api/f1/constructors",
+            "description": "This endpoint is to obtain a list of all constructors.\n\nConstructor lists can be refined by adding one or more of the following criteria:\n\n/circuits/<circuitId>\n/constructors/<constructorId>\n/drivers/<driverId>\n/grid/<position>\n/results/<position>\n/fastest/<rank>\n/status/<statusId>\n\nFor example, to list all constructors a specific driver has driven for at a particular circuit:\n\nhttp://ergast.com/api/f1/drivers/alonso/circuits/monza/constructors\n\nAlternatively, to list all the constructors who have achieved a particular final position in the championship:\n\nhttp://ergast.com/api/f1/constructorStandings/1/constructors",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://formula-1-fixed.p.rapidapi.com/api/f1/constructors\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"formula-1-fixed.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://formula-1-fixed.p.rapidapi.com/api/f1/constructors\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"formula-1-fixed.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "SeasonsList",
+            "url": "https://formula-1-fixed.p.rapidapi.com/api/f1/seasons",
+            "description": "This endpoint gives the seasons currently supported by the API.\n\n\nSeason lists can be refined by adding one or more of the following criteria:\n\n/circuits/<circuitId>\n/constructors/<constructorId>\n/drivers/<driverId>\n/grid/<position>\n/results/<position>\n/fastest/<rank>\n/status/<statusId>\n\nFor example, to list all seasons where a specific driver has driven for a particular constructor:\n\nhttp://ergast.com/api/f1/drivers/alonso/constructors/renault/seasons\n\nAlternatively, to list the seasons where a specific driver or constructor has achieved a particular final position in the championship:\n\nhttp://ergast.com/api/f1/drivers/alonso/driverStandings/1/seasons\nhttp://ergast.com/api/f1/constructors/renault/constructorStandings/1/seasons",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://formula-1-fixed.p.rapidapi.com/api/f1/seasons\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"formula-1-fixed.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://formula-1-fixed.p.rapidapi.com/api/f1/seasons\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"formula-1-fixed.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Informationforaspecificpitstop",
+            "url": "https://formula-1-fixed.p.rapidapi.com/api/f1/year/round/pitstops/pitstopnumber",
+            "description": "This endpoint requires the season(year), race(round) and pit stop number(pitstopnumber) to be specified.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "year",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "year"
+                },
+                {
+                    "name": "pitstopnumber",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "pitstopnumber"
+                },
+                {
+                    "name": "round",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "round"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://formula-1-fixed.p.rapidapi.com/api/f1/year/round/pitstops/pitstopnumber\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"formula-1-fixed.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://formula-1-fixed.p.rapidapi.com/api/f1/{year}/{round}/pitstops/{pitstopnumber}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"formula-1-fixed.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Allwinnersofdrivers'championships",
+            "url": "https://formula-1-fixed.p.rapidapi.com/api/f1/driverStandings/1",
+            "description": "To fetch all the winners information of drivers.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://formula-1-fixed.p.rapidapi.com/api/f1/driverStandings/1\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"formula-1-fixed.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://formula-1-fixed.p.rapidapi.com/api/f1/driverStandings/1\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"formula-1-fixed.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Seasonenddriverstandings",
+            "url": "https://formula-1-fixed.p.rapidapi.com/api/f1/year/driverStandings",
+            "description": "Driver Standings at the end of the season(year).",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "year",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "year"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://formula-1-fixed.p.rapidapi.com/api/f1/year/driverStandings\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"formula-1-fixed.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://formula-1-fixed.p.rapidapi.com/api/f1/{year}/driverStandings\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"formula-1-fixed.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Listofallfinishingstatuscodes",
+            "url": "https://formula-1-fixed.p.rapidapi.com/api/f1/status",
+            "description": "Every driver has a finishing status like 'finished', disqualified', 'accident', '+1 lap', '+2 lap', etc. This endpoint will give the list of all such statuses. Example request and response attached",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://formula-1-fixed.p.rapidapi.com/api/f1/status\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"formula-1-fixed.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://formula-1-fixed.p.rapidapi.com/api/f1/status\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"formula-1-fixed.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Infoaboutaspecificrace",
+            "url": "https://formula-1-fixed.p.rapidapi.com/api/f1/year/round",
+            "description": "To obtain the schedule of races for a specific race(round) in a season(year), use this endpoint.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "year",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "year"
+                },
+                {
+                    "name": "round",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "round"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://formula-1-fixed.p.rapidapi.com/api/f1/year/round\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"formula-1-fixed.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://formula-1-fixed.p.rapidapi.com/api/f1/{year}/{round}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"formula-1-fixed.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Listoffinishingstatusforaspecificroundinaseason",
+            "url": "https://formula-1-fixed.p.rapidapi.com/api/f1/year/round/status",
+            "description": "To fetch the list of finishing status of a specific race(round) in a season(year).",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "round",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "round"
+                },
+                {
+                    "name": "year",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "year"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://formula-1-fixed.p.rapidapi.com/api/f1/year/round/status\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"formula-1-fixed.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://formula-1-fixed.p.rapidapi.com/api/f1/{year}/{round}/status\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"formula-1-fixed.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Mostrecentraceresult",
+            "url": "https://formula-1-fixed.p.rapidapi.com/api/f1/current/last/results",
+            "description": "Results from the most recent race can be obtained using this endpoint.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://formula-1-fixed.p.rapidapi.com/api/f1/current/last/results\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"formula-1-fixed.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://formula-1-fixed.p.rapidapi.com/api/f1/current/last/results\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"formula-1-fixed.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Scheduleofracesforaseason",
+            "url": "https://formula-1-fixed.p.rapidapi.com/api/f1/year",
+            "description": "To obtain the schedule of races for a specific season use this endpoint required season (year).",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "year",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "year"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://formula-1-fixed.p.rapidapi.com/api/f1/year\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"formula-1-fixed.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://formula-1-fixed.p.rapidapi.com/api/f1/{year}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"formula-1-fixed.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Listofallconstructorswithinayear",
+            "url": "https://formula-1-fixed.p.rapidapi.com/api/f1/year/constructors",
+            "description": "This endpoint is to obtain a list of all constructors in a particular season (year)",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "year",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "year"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://formula-1-fixed.p.rapidapi.com/api/f1/year/constructors\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"formula-1-fixed.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://formula-1-fixed.p.rapidapi.com/api/f1/{year}/constructors\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"formula-1-fixed.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "ConstructorInformation",
+            "url": "https://formula-1-fixed.p.rapidapi.com/api/f1/constructors/constructorid",
+            "description": "Each constructor listed in the response is identified by a unique constructorId which is used to identify the constructor throughout the API. To obtain information about a particular constructor append the constructorId (name of the constructor)\n\nThis endpoint is to obtain the information of a particular constructor based on the constructorId (constructor name)",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "constructorid",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "constructorid"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://formula-1-fixed.p.rapidapi.com/api/f1/constructors/constructorid\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"formula-1-fixed.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://formula-1-fixed.p.rapidapi.com/api/f1/constructors/{constructorid}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"formula-1-fixed.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Constructorstandingsbyspecifyingtheconstructor",
+            "url": "https://formula-1-fixed.p.rapidapi.com/api/f1/constructors/constructorid/constructorStandings",
+            "description": "Constructor standings by giving in the constructorid(name of the constructor).",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "constructorid",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "constructorid"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://formula-1-fixed.p.rapidapi.com/api/f1/constructors/constructorid/constructorStandings\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"formula-1-fixed.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://formula-1-fixed.p.rapidapi.com/api/f1/constructors/{constructorid}/constructorStandings\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"formula-1-fixed.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Currentdrivers'standing",
+            "url": "https://formula-1-fixed.p.rapidapi.com/api/f1/current/driverStandings",
+            "description": "Current driver standings can always be obtained using this endpoint.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://formula-1-fixed.p.rapidapi.com/api/f1/current/driverStandings\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"formula-1-fixed.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://formula-1-fixed.p.rapidapi.com/api/f1/current/driverStandings\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"formula-1-fixed.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Pitstopdataforarace",
+            "url": "https://formula-1-fixed.p.rapidapi.com/api/f1/year/round/pitstops",
+            "description": "This endpoint requires the season(year) and race(round) to be specified.\n",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "year",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "year"
+                },
+                {
+                    "name": "round",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "round"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://formula-1-fixed.p.rapidapi.com/api/f1/year/round/pitstops\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"formula-1-fixed.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://formula-1-fixed.p.rapidapi.com/api/f1/{year}/{round}/pitstops\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"formula-1-fixed.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Listofallconstructorswithinaraceinayear",
+            "url": "https://formula-1-fixed.p.rapidapi.com/api/f1/year/round/constructors",
+            "description": "This endpoint is to obtain a list of all constructors in a particular race(round) of a season(year)",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "year",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "year"
+                },
+                {
+                    "name": "round",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "round"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://formula-1-fixed.p.rapidapi.com/api/f1/year/round/constructors\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"formula-1-fixed.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://formula-1-fixed.p.rapidapi.com/api/f1/{year}/{round}/constructors\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"formula-1-fixed.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Seasonendconstructorstanding",
+            "url": "https://formula-1-fixed.p.rapidapi.com/api/f1/year/constructorStandings",
+            "description": "Constructor Standings at the end of the season(year).",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "year",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "year"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://formula-1-fixed.p.rapidapi.com/api/f1/year/constructorStandings\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"formula-1-fixed.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://formula-1-fixed.p.rapidapi.com/api/f1/{year}/constructorStandings\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"formula-1-fixed.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Constructorstandingsafterarace",
+            "url": "https://formula-1-fixed.p.rapidapi.com/api/f1/year/round/constructorStandings",
+            "description": "To list the constructor standings after a specific race (round) in a season(year), use this endpoint.\n\n",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "year",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "year"
+                },
+                {
+                    "name": "round",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "round"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://formula-1-fixed.p.rapidapi.com/api/f1/year/round/constructorStandings\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"formula-1-fixed.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://formula-1-fixed.p.rapidapi.com/api/f1/{year}/{round}/constructorStandings\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"formula-1-fixed.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "RaceResult",
+            "url": "https://formula-1-fixed.p.rapidapi.com/api/f1/year/round/results",
+            "description": "This endpoint gives the result for a specific race (round) in a season(year).\n\n\nIf the results for the specified race are not yet available the RaceTable element in the response will be empty.\n\n",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "round",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "round"
+                },
+                {
+                    "name": "year",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "year"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://formula-1-fixed.p.rapidapi.com/api/f1/year/round/results\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"formula-1-fixed.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://formula-1-fixed.p.rapidapi.com/api/f1/{year}/{round}/results\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"formula-1-fixed.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Scheduleofthecurrentseason",
+            "url": "https://formula-1-fixed.p.rapidapi.com/api/f1/current",
+            "description": "To obtain the schedule of races for the current season, use this endpoint.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://formula-1-fixed.p.rapidapi.com/api/f1/current\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"formula-1-fixed.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://formula-1-fixed.p.rapidapi.com/api/f1/current\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"formula-1-fixed.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "QualifyingResults",
+            "url": "https://formula-1-fixed.p.rapidapi.com/api/f1/year/round/qualifying",
+            "description": " ",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "year",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "year"
+                },
+                {
+                    "name": "round",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "round"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://formula-1-fixed.p.rapidapi.com/api/f1/year/round/qualifying\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"formula-1-fixed.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://formula-1-fixed.p.rapidapi.com/api/f1/{year}/{round}/qualifying\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"formula-1-fixed.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Laptime",
+            "url": "https://formula-1-fixed.p.rapidapi.com/api/f1/year/round/laps/lapnumber",
+            "description": "This endpoint requires the season(year), race(round) and lap number(lapnumber) to be specified.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "lapnumber",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "lapnumber"
+                },
+                {
+                    "name": "round",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "round"
+                },
+                {
+                    "name": "year",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "year"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://formula-1-fixed.p.rapidapi.com/api/f1/year/round/laps/lapnumber\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"formula-1-fixed.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://formula-1-fixed.p.rapidapi.com/api/f1/{year}/{round}/laps/{lapnumber}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"formula-1-fixed.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Currentconstructor'sstanding",
+            "url": "https://formula-1-fixed.p.rapidapi.com/api/f1/current/constructorStandings",
+            "description": "Current constructor standings can always be obtained using this endpoint.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://formula-1-fixed.p.rapidapi.com/api/f1/current/constructorStandings\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"formula-1-fixed.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://formula-1-fixed.p.rapidapi.com/api/f1/current/constructorStandings\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"formula-1-fixed.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Driverstandingsbyspecifyingthedriver",
+            "url": "https://formula-1-fixed.p.rapidapi.com/api/f1/drivers/driverid/driverStandings",
+            "description": "Driver standings by giving in the driverid(name of the driver).",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "driverid",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "driverid"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://formula-1-fixed.p.rapidapi.com/api/f1/drivers/driverid/driverStandings\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"formula-1-fixed.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://formula-1-fixed.p.rapidapi.com/api/f1/drivers/{driverid}/driverStandings\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"formula-1-fixed.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Allwinnersofconstructors'championships",
+            "url": "https://formula-1-fixed.p.rapidapi.com/api/f1/constructorStandings/1",
+            "description": "To fetch all the winners information of constructors.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://formula-1-fixed.p.rapidapi.com/api/f1/constructorStandings/1\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"formula-1-fixed.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://formula-1-fixed.p.rapidapi.com/api/f1/constructorStandings/1\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"formula-1-fixed.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "formula_1_fixed"
+}

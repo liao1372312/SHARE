@@ -1,0 +1,449 @@
+{
+    "product_id": "api_a42eee98-136a-4cc8-833c-01da85598a9e",
+    "tool_description": "Official spacHero  SPAC API  with live rankings, SPAC target names, merger meetings, warrant redemption deadlines, price targets, SEC filings, investor presentations and more.",
+    "home_url": "https://rapidapi.com/spachero/api/spachero-spac-database/",
+    "name": "spacHero - SPAC Database",
+    "title": "spacHero - SPAC Database",
+    "pricing": "FREEMIUM",
+    "tool_name": "spacHero - SPAC Database",
+    "score": {
+        "avgServiceLevel": 81,
+        "avgLatency": 338,
+        "avgSuccessRate": 81,
+        "popularityScore": 7.9,
+        "__typename": "Score"
+    },
+    "host": "spachero-spac-database.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "SPAC Top-10 Rankings",
+            "url": "https://spachero-spac-database.p.rapidapi.com/top10/",
+            "description": "Returns Top-10 gainers, losers and volume leaders for a given period and equity type (i.e., common, unit, warrants). \n\nAccepts three query parameters:\n\n**period: **daily, weekly, monthly\n**type:** common, unit, warrant\n**sortby:** gainers, losers, volume",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "sortby",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "gainers"
+                },
+                {
+                    "name": "period",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "daily"
+                },
+                {
+                    "name": "type",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "common"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://spachero-spac-database.p.rapidapi.com/top10/\"\nquerystring = {\"sortby\": \"gainers\", \"period\": \"daily\", \"type\": \"common\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"spachero-spac-database.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://spachero-spac-database.p.rapidapi.com/top10/\"\nquerystring = {\"sortby\": \"gainers\", \"period\": \"daily\", \"type\": \"common\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"spachero-spac-database.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "Gainers": [
+                    {
+                        "Commons_Symbol": "BYTS",
+                        "Commons_Daily_Change_Percent": "5.02",
+                        "Commons_Price": "11.50",
+                        "Commons_Volume": "3439"
+                    },
+                    {
+                        "Commons_Symbol": "ERES",
+                        "Commons_Daily_Change_Percent": "3.87",
+                        "Commons_Price": "10.88",
+                        "Commons_Volume": "25437"
+                    },
+                    {
+                        "Commons_Symbol": "OSW",
+                        "Commons_Daily_Change_Percent": "1.89",
+                        "Commons_Price": "11.58",
+                        "Commons_Volume": "477801"
+                    },
+                    {
+                        "Commons_Symbol": "PCCT",
+                        "Commons_Daily_Change_Percent": "1.84",
+                        "Commons_Price": "11.06",
+                        "Commons_Volume": "300"
+                    },
+                    {
+                        "Commons_Symbol": "PBAX",
+                        "Commons_Daily_Change_Percent": "1.76",
+                        "Commons_Price": "11.00",
+                        "Commons_Volume": "10051"
+                    },
+                    {
+                        "Commons_Symbol": "KACL",
+                        "Commons_Daily_Change_Percent": "1.76",
+                        "Commons_Price": "11.00",
+                        "Commons_Volume": "3305"
+                    },
+                    {
+                        "Commons_Symbol": "JWSM",
+                        "Commons_Daily_Change_Percent": "1.71",
+                        "Commons_Price": "10.73",
+                        "Commons_Volume": "592"
+                    },
+                    {
+                        "Commons_Symbol": "IPVF",
+                        "Commons_Daily_Change_Percent": "1.71",
+                        "Commons_Price": "10.83",
+                        "Commons_Volume": "356"
+                    },
+                    {
+                        "Commons_Symbol": "SDAC",
+                        "Commons_Daily_Change_Percent": "1.07",
+                        "Commons_Price": "10.42",
+                        "Commons_Volume": "100"
+                    },
+                    {
+                        "Commons_Symbol": "THCP",
+                        "Commons_Daily_Change_Percent": "0.78",
+                        "Commons_Price": "10.32",
+                        "Commons_Volume": "191658"
+                    }
+                ]
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "SPAC Summary",
+            "url": "https://spachero-spac-database.p.rapidapi.com/summary/GGPI",
+            "description": "Retrieve SPAC summary including important dates, status and target names.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "symbol",
+                    "type": "string",
+                    "description": "",
+                    "default": "GGPI"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://spachero-spac-database.p.rapidapi.com/summary/GGPI\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"spachero-spac-database.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://spachero-spac-database.p.rapidapi.com/summary/{symbol}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"spachero-spac-database.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Latest SPAC Deals, IPOs, Closings",
+            "url": "https://spachero-spac-database.p.rapidapi.com/news/latest/",
+            "description": "Returns a list of latest SPAC events, such as deals, ipos, closings, rumors.\n\n**Available options are: ** ipo, closings, deals, rumor",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "event",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "deals"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://spachero-spac-database.p.rapidapi.com/news/latest/\"\nquerystring = {\"event\": \"deals\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"spachero-spac-database.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://spachero-spac-database.p.rapidapi.com/news/latest/\"\nquerystring = {\"event\": \"deals\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"spachero-spac-database.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "Name": "Inflection Point Acquisition Corp.",
+                    "Ticker": "IPAX",
+                    "Underwriters": "citigroup global markets inc.;",
+                    "Country": "NY",
+                    "Unit_Split": "Each unit has an offering price of $10.00 and consists of one Class\u00a0A ordinary share and one-third of one redeemable warrant",
+                    "Status": "Found Target",
+                    "IPO_Date": "2021-09-22",
+                    "Definitive_Agreement_Date": "2022-09-16",
+                    "Closing_Date": null,
+                    "Target_Name": "Intuitive Machines",
+                    "Investor_Presentation": null,
+                    "Trust_Size": "30000000.0",
+                    "Target_Details": "Intuitive Machines",
+                    "Initial_S1_Date": "2021-03-05",
+                    "Registration_Date": "2021-02-17",
+                    "Merger_Meeting_Date": null
+                },
+                {
+                    "Name": "TPB Acquisition Corp I",
+                    "Ticker": "TPBA",
+                    "Underwriters": "barclays capital inc.;code advisors llc;",
+                    "Country": "CA",
+                    "Unit_Split": "Each unit has an offering price of\u2009 $10.00 and consists of one Class\u00a0A ordinary share and one-third of one redeemable warrant",
+                    "Status": "Found Target",
+                    "IPO_Date": "2021-08-11",
+                    "Definitive_Agreement_Date": "2022-09-15",
+                    "Closing_Date": null,
+                    "Target_Name": "Lavoro",
+                    "Investor_Presentation": null,
+                    "Trust_Size": "25000000.0",
+                    "Target_Details": "Lavoro",
+                    "Initial_S1_Date": "2021-02-19",
+                    "Registration_Date": "2021-02-19",
+                    "Merger_Meeting_Date": null
+                },
+                {
+                    "Name": "Maxpro Capital Acquisition Corp.",
+                    "Ticker": "JMAC",
+                    "Underwriters": "ef hutton, division of benchmark investments, llc (formerly known as kingswood capital markets, division of benchmark investments, llc);",
+                    "Country": "Taiwan, Province of China",
+                    "Unit_Split": "Each unit has an offering price of $10.00 and consists of one share of our Class A common stock and one-half of one redeemable warrant\nas described in more detail in this prospectus",
+                    "Status": "Found Target",
+                    "IPO_Date": "2021-10-04",
+                    "Definitive_Agreement_Date": "2022-09-14",
+                    "Closing_Date": null,
+                    "Target_Name": "Apollomics",
+                    "Investor_Presentation": null,
+                    "Trust_Size": "10000000.0",
+                    "Target_Details": "Apollomics",
+                    "Initial_S1_Date": "2021-07-22",
+                    "Registration_Date": "2021-07-22",
+                    "Merger_Meeting_Date": null
+                },
+                {
+                    "Name": "DiamondHead Holdings Corp.",
+                    "Ticker": "DHHC",
+                    "Underwriters": "goldman sachs\u00a0& co. llc;",
+                    "Country": "NY",
+                    "Unit_Split": "Each unit has an offering price of $10.00 and consists of one share of our Class\u00a0A common stock and one-fourth of one redeemable warrant",
+                    "Status": "Found Target",
+                    "IPO_Date": "2021-01-25",
+                    "Definitive_Agreement_Date": "2022-09-12",
+                    "Closing_Date": null,
+                    "Target_Name": "Great Southern Homes",
+                    "Investor_Presentation": null,
+                    "Trust_Size": "30000000.0",
+                    "Target_Details": "Great Southern Homes",
+                    "Initial_S1_Date": "2021-01-08",
+                    "Registration_Date": "2020-11-05",
+                    "Merger_Meeting_Date": null
+                },
+                {
+                    "Name": "Fintech Ecosystem Development Corp.",
+                    "Ticker": "FEXD",
+                    "Underwriters": "kingswood capital markets, division of benchmark investments, inc.;-1;",
+                    "Country": "PA",
+                    "Unit_Split": "Each unit has an offering price of $10.00 and consists of (i)\u00a0one share of our\nClass\u00a0A common stock, (ii)\u00a0one right and (iii)\u00a0one-half of one redeemable warrant",
+                    "Status": "Found Target",
+                    "IPO_Date": "2021-10-18",
+                    "Definitive_Agreement_Date": "2022-09-12",
+                    "Closing_Date": null,
+                    "Target_Name": "Rana Financial",
+                    "Investor_Presentation": null,
+                    "Trust_Size": "10000000.0",
+                    "Target_Details": "Rana Financial",
+                    "Initial_S1_Date": "2021-05-07",
+                    "Registration_Date": "2021-05-07",
+                    "Merger_Meeting_Date": null
+                }
+            ],
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "SPAC Calendar",
+            "url": "https://spachero-spac-database.p.rapidapi.com/calendar/",
+            "description": "Get important SPAC dates such as merger meetings dates, warrant redemption deadlines, definitive agreement dates, unit split (estimate), SPAC deadline (estimate).\n\nAvailable options: merger, split, deadline, redemption",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "type",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "redemption"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://spachero-spac-database.p.rapidapi.com/calendar/\"\nquerystring = {\"type\": \"redemption\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"spachero-spac-database.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://spachero-spac-database.p.rapidapi.com/calendar/\"\nquerystring = {\"type\": \"redemption\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"spachero-spac-database.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": [],
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "SPAC SEC Filings",
+            "url": "https://spachero-spac-database.p.rapidapi.com/secfilings/latest/",
+            "description": "Get latest SPAC SEC filings, filter by SPAC symbol.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "symbol",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "ITAC"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://spachero-spac-database.p.rapidapi.com/secfilings/latest/\"\nquerystring = {\"symbol\": \"ITAC\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"spachero-spac-database.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://spachero-spac-database.p.rapidapi.com/secfilings/latest/\"\nquerystring = {\"symbol\": \"ITAC\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"spachero-spac-database.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "ticker": "ITAC",
+                    "form_type": "15-15D",
+                    "form_description": "CERTIFICATION AND NOTICE OF TERMINATION OF REGISTRATION",
+                    "filing_date": "2021-11-08T00:00:00Z",
+                    "document_link": "<strong><a href=\"https://www.sec.gov/Archives/edgar/data/1816696/000121390021057129/ea0150051-1515d_industrial.htm\" target=_blank>https://www.sec.gov/Archives/edgar/data/1816696/000121390021057129/ea0150051-1515d_industrial.htm</a></strong>"
+                },
+                {
+                    "ticker": "ITAC",
+                    "form_type": "8-K",
+                    "form_description": "CURRENT REPORT",
+                    "filing_date": "2021-10-13T00:00:00Z",
+                    "document_link": "<strong><a href=\"https://www.sec.gov/Archives/edgar/data/1816696/000121390021052666/ea148791-8k_industrail.htm\" target=_blank>https://www.sec.gov/Archives/edgar/data/1816696/000121390021052666/ea148791-8k_industrail.htm</a></strong>"
+                },
+                {
+                    "ticker": "ITAC",
+                    "form_type": "4",
+                    "form_description": "nan",
+                    "filing_date": "2021-10-12T00:00:00Z",
+                    "document_link": "<strong><a href=\"https://www.sec.gov/Archives/edgar/data/1816696/000121390021052524/xslF345X03/ownership.xml\" target=_blank>https://www.sec.gov/Archives/edgar/data/1816696/000121390021052524/xslF345X03/ownership.xml</a></strong>"
+                },
+                {
+                    "ticker": "ITAC",
+                    "form_type": "425",
+                    "form_description": "CURRENT REPORT",
+                    "filing_date": "2021-10-07T00:00:00Z",
+                    "document_link": "<strong><a href=\"https://www.sec.gov/Archives/edgar/data/1816696/000121390021051851/ea148566-8k_industrial.htm\" target=_blank>https://www.sec.gov/Archives/edgar/data/1816696/000121390021051851/ea148566-8k_industrial.htm</a></strong>"
+                },
+                {
+                    "ticker": "ITAC",
+                    "form_type": "25-NSE",
+                    "form_description": "nan",
+                    "filing_date": "2021-10-07T00:00:00Z",
+                    "document_link": "<strong><a href=\"https://www.sec.gov/Archives/edgar/data/1816696/000135445721001140/xslF25X02/primary_doc.xml\" target=_blank>https://www.sec.gov/Archives/edgar/data/1816696/000135445721001140/xslF25X02/primary_doc.xml</a></strong>"
+                },
+                {
+                    "ticker": "ITAC",
+                    "form_type": "8-K",
+                    "form_description": "CURRENT REPORT",
+                    "filing_date": "2021-10-07T00:00:00Z",
+                    "document_link": "<strong><a href=\"https://www.sec.gov/Archives/edgar/data/1816696/000121390021051849/ea148566-8k_industrial.htm\" target=_blank>https://www.sec.gov/Archives/edgar/data/1816696/000121390021051849/ea148566-8k_industrial.htm</a></strong>"
+                },
+                {
+                    "ticker": "ITAC",
+                    "form_type": "DEFM14A",
+                    "form_description": "PROXY STATEMENT/PROSPECTUS",
+                    "filing_date": "2021-09-17T00:00:00Z",
+                    "document_link": "<strong><a href=\"https://www.sec.gov/Archives/edgar/data/1816696/000121390021048646/defm14a0921_industrialtech.htm\" target=_blank>https://www.sec.gov/Archives/edgar/data/1816696/000121390021048646/defm14a0921_industrialtech.htm</a></strong>"
+                },
+                {
+                    "ticker": "ITAC",
+                    "form_type": "425",
+                    "form_description": "CURRENT REPORT",
+                    "filing_date": "2021-09-16T00:00:00Z",
+                    "document_link": "<strong><a href=\"https://www.sec.gov/Archives/edgar/data/1816696/000121390021048285/ea147398-8k_industrial.htm\" target=_blank>https://www.sec.gov/Archives/edgar/data/1816696/000121390021048285/ea147398-8k_industrial.htm</a></strong>"
+                },
+                {
+                    "ticker": "ITAC",
+                    "form_type": "8-K",
+                    "form_description": "CURRENT REPORT",
+                    "filing_date": "2021-09-16T00:00:00Z",
+                    "document_link": "<strong><a href=\"https://www.sec.gov/Archives/edgar/data/1816696/000121390021048283/ea147398-8k_industrial.htm\" target=_blank>https://www.sec.gov/Archives/edgar/data/1816696/000121390021048283/ea147398-8k_industrial.htm</a></strong>"
+                },
+                {
+                    "ticker": "ITAC",
+                    "form_type": "PRER14A",
+                    "form_description": "nan",
+                    "filing_date": "2021-09-13T00:00:00Z",
+                    "document_link": "<strong><a href=\"https://www.sec.gov/Archives/edgar/data/1816696/000121390021047576/prer14a_industrialtech.htm\" target=_blank>https://www.sec.gov/Archives/edgar/data/1816696/000121390021047576/prer14a_industrialtech.htm</a></strong>"
+                },
+                {
+                    "ticker": "ITAC",
+                    "form_type": "425",
+                    "form_description": "CURRENT REPORT",
+                    "filing_date": "2021-09-10T00:00:00Z",
+                    "document_link": "<strong><a href=\"https://www.sec.gov/Archives/edgar/data/1816696/000121390021047392/ea147191-8k_industrial.htm\" target=_blank>https://www.sec.gov/Archives/edgar/data/1816696/000121390021047392/ea147191-8k_industrial.htm</a></strong>"
+                },
+                {
+                    "ticker": "ITAC",
+                    "form_type": "8-K",
+                    "form_description": "CURRENT REPORT",
+                    "filing_date": "2021-09-10T00:00:00Z",
+                    "document_link": "<strong><a href=\"https://www.sec.gov/Archives/edgar/data/1816696/000121390021047387/ea147191-8k_industrial.htm\" target=_blank>https://www.sec.gov/Archives/edgar/data/1816696/000121390021047387/ea147191-8k_industrial.htm</a></strong>"
+                },
+                {
+                    "ticker": "ITAC",
+                    "form_type": "PREM14A",
+                    "form_description": "PROXY STATEMENT",
+                    "filing_date": "2021-08-18T00:00:00Z",
+                    "document_link": "<strong><a href=\"https://www.sec.gov/Archives/edgar/data/1816696/000121390021043660/prem14a0821_industrialtech.htm\" target=_blank>https://www.sec.gov/Archives/edgar/data/1816696/000121390021043660/prem14a0821_industrialtech.htm</a></strong>"
+                },
+                {
+                    "ticker": "ITAC",
+                    "form_type": "10-Q",
+                    "form_description": "QUARTERLY REPORT",
+                    "filing_date": "2021-08-16T00:00:00Z",
+                    "document_link": "<strong><a href=\"https://www.sec.gov/Archives/edgar/data/1816696/000121390021043128/f10q0621_industrialtech.htm\" target=_blank>https://www.sec.gov/Archives/edgar/data/1816696/000121390021043128/f10q0621_industrialtech.htm</a></strong>"
+                },
+                {
+                    "ticker": "ITAC",
+                    "form_type": "8-K",
+                    "form_description": "CURRENT REPORT",
+                    "filing_date": "2021-08-11T00:00:00Z",
+                    "document_link": "<strong><a href=\"https://www.sec.gov/Archives/edgar/data/1816696/000121390021041665/ea145605-8k_industrialtech.htm\" target=_blank>https://www.sec.gov/Archives/edgar/data/1816696/000121390021041665/ea145605-8k_industrialtech.htm</a></strong>"
+                },
+                {
+                    "ticker": "ITAC",
+                    "form_type": "425",
+                    "form_description": "CURRENT REPORT",
+                    "filing_date": "2021-08-11T00:00:00Z",
+                    "document_link": "<strong><a href=\"https://www.sec.gov/Archives/edgar/data/1816696/000121390021041671/ea145605-8k_industrialtech.htm\" target=_blank>https://www.sec.gov/Archives/edgar/data/1816696/000121390021041671/ea145605-8k_industrialtech.htm</a></strong>"
+                },
+                {
+                    "ticker": "ITAC",
+                    "form_type": "425",
+                    "form_description": "CURRENT REPORT",
+                    "filing_date": "2021-06-30T00:00:00Z",
+                    "document_link": "<strong><a href=\"https://www.sec.gov/Archives/edgar/data/1816696/000121390021034894/ea143523-8k_industrialtech.htm\" target=_blank>https://www.sec.gov/Archives/edgar/data/1816696/000121390021034894/ea143523-8k_industrialtech.htm</a></strong>"
+                },
+                {
+                    "ticker": "ITAC",
+                    "form_type": "8-K",
+                    "form_description": "CURRENT REPORT",
+                    "filing_date": "2021-06-30T00:00:00Z",
+                    "document_link": "<strong><a href=\"https://www.sec.gov/Archives/edgar/data/1816696/000121390021034893/ea143523-8k_industrialtech.htm\" target=_blank>https://www.sec.gov/Archives/edgar/data/1816696/000121390021034893/ea143523-8k_industrialtech.htm</a></strong>"
+                },
+                {
+                    "ticker": "ITAC",
+                    "form_type": "10-Q",
+                    "form_description": "QUARTERLY REPORT",
+                    "filing_date": "2021-06-04T00:00:00Z",
+                    "document_link": "<strong><a href=\"https://www.sec.gov/Archives/edgar/data/1816696/000121390021030852/f10q0321_industrialtech.htm\" target=_blank>https://www.sec.gov/Archives/edgar/data/1816696/000121390021030852/f10q0321_industrialtech.htm</a></strong>"
+                },
+                {
+                    "ticker": "ITAC",
+                    "form_type": "425",
+                    "form_description": "CURRENT REPORT",
+                    "filing_date": "2021-06-04T00:00:00Z",
+                    "document_link": "<strong><a href=\"https://www.sec.gov/Archives/edgar/data/1816696/000121390021031019/ea142253-8k_industrialtech.htm\" target=_blank>https://www.sec.gov/Archives/edgar/data/1816696/000121390021031019/ea142253-8k_industrialtech.htm</a></strong>"
+                }
+            ],
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "SPAC Price Targets",
+            "url": "https://spachero-spac-database.p.rapidapi.com/pricetargets/latest/",
+            "description": "Get latest SPAC price targets from analysts, filter by SPAC symbol.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "symbol",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "SOFI"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://spachero-spac-database.p.rapidapi.com/pricetargets/latest/\"\nquerystring = {\"symbol\": \"SOFI\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"spachero-spac-database.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://spachero-spac-database.p.rapidapi.com/pricetargets/latest/\"\nquerystring = {\"symbol\": \"SOFI\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"spachero-spac-database.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per hour for your plan, BASIC, by the API provider"
+            },
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "spachero_spac_database"
+}

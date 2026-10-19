@@ -1,0 +1,1297 @@
+{
+    "product_id": "api_70815f34-5e21-41e0-81d6-a115b987d383",
+    "tool_description": "The Metals Prices Rates API provides real-time and historical metal prices and exchange rates for gold, silver, platinum, and other metals. It allows developers to access and integrate the data into their own applications and systems. The API can be used for financial and commodity market analysis, currency conversion, and more.",
+    "home_url": "https://rapidapi.com/zyla-labs-zyla-labs-default/api/metals-prices-rates-api/",
+    "name": "Metals Prices Rates API",
+    "title": "Metals Prices Rates API",
+    "pricing": "FREEMIUM",
+    "tool_name": "Metals Prices Rates API",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 659,
+        "avgSuccessRate": 86,
+        "popularityScore": 8.9,
+        "__typename": "Score"
+    },
+    "host": "metals-prices-rates-api.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Carat",
+            "url": "https://metals-prices-rates-api.p.rapidapi.com/carat",
+            "description": "Using the API karat endpoint, you will be able to retrieve latest information about gold rates per karat.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://metals-prices-rates-api.p.rapidapi.com/carat\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"metals-prices-rates-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://metals-prices-rates-api.p.rapidapi.com/carat\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"metals-prices-rates-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "success": true,
+                "timestamp": 1686932242,
+                "base": "USD",
+                "rates": {
+                    "Carat 24K": 12.572,
+                    "Carat 23K": 12.049,
+                    "Carat 22K": 11.525,
+                    "Carat 21K": 11.001,
+                    "Carat 18K": 9.429,
+                    "Carat 16K": 8.382,
+                    "Carat 14K": 7.334,
+                    "Carat 12K": 6.286,
+                    "Carat 10K": 5.238,
+                    "Carat 9K": 4.715,
+                    "Carat 8K": 4.191,
+                    "Carat 6K": 3.143
+                },
+                "unit": "per Carat"
+            }
+        },
+        {
+            "name": "Open/High/Low/Close (OHLC) Price",
+            "url": "https://metals-prices-rates-api.p.rapidapi.com/timeseries/2022-01-20",
+            "description": "Allows you to query the API to get the open, high, low, and close price.\nThis endpoint has a limitation of one symbol per request.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "base",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "USD"
+                },
+                {
+                    "name": "symbols",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "XAU"
+                },
+                {
+                    "name": "DATE",
+                    "type": "string",
+                    "description": "",
+                    "default": "2022-01-20"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://metals-prices-rates-api.p.rapidapi.com/timeseries/2022-01-20\"\nquerystring = {\"base\": \"USD\", \"symbols\": \"XAU\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"metals-prices-rates-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://metals-prices-rates-api.p.rapidapi.com/timeseries/{date}\"\nquerystring = {\"base\": \"USD\", \"symbols\": \"XAU\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"metals-prices-rates-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "Time-Series",
+            "url": "https://metals-prices-rates-api.p.rapidapi.com/timeseries",
+            "description": "Timeseries endpoint lets you query the API for daily historical rates between two dates of your choice.\nThis endpoint has a limitation of 365 days and only one symbol per request.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "base",
+                    "type": "STRING",
+                    "description": "Enter the three-letter currency code or metal code of your preferred base currency.",
+                    "default": "USD"
+                },
+                {
+                    "name": "symbols",
+                    "type": "STRING",
+                    "description": "Enter the three-letter currency code or metal code of your preferred base currency.",
+                    "default": "XAU"
+                },
+                {
+                    "name": "end_date",
+                    "type": "STRING",
+                    "description": "The end date of your preferred timeframe. YYYY-MM-DD",
+                    "default": "2023-01-10"
+                },
+                {
+                    "name": "start_date",
+                    "type": "STRING",
+                    "description": "The start date of your preferred timeframe. YYYY-MM-DD",
+                    "default": "2022-12-20"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://metals-prices-rates-api.p.rapidapi.com/timeseries\"\nquerystring = {\"base\": \"USD\", \"symbols\": \"XAU\", \"end_date\": \"2023-01-10\", \"start_date\": \"2022-12-20\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"metals-prices-rates-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://metals-prices-rates-api.p.rapidapi.com/timeseries\"\nquerystring = {\"base\": \"USD\", \"symbols\": \"XAU\", \"end_date\": \"2023-01-10\", \"start_date\": \"2022-12-20\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"metals-prices-rates-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "success": true,
+                "timeseries": true,
+                "start_date": "2022-12-20",
+                "end_date": "2023-01-10",
+                "base": "USD",
+                "rates": {
+                    "2022-12-20": {
+                        "USD": 1,
+                        "XAU": 0.00055948633874576
+                    },
+                    "2022-12-21": {
+                        "USD": 1,
+                        "XAU": 0.00055019594328591
+                    },
+                    "2022-12-22": {
+                        "USD": 1,
+                        "XAU": 0.00055101825858531
+                    },
+                    "2022-12-24": {
+                        "USD": 1,
+                        "XAU": 0.00055604385783279
+                    },
+                    "2022-12-25": {
+                        "USD": 1,
+                        "XAU": 0.00055604385783279
+                    },
+                    "2022-12-26": {
+                        "USD": 1,
+                        "XAU": 0.00055603891092045
+                    },
+                    "2022-12-27": {
+                        "USD": 1,
+                        "XAU": 0.00055504555651608
+                    },
+                    "2022-12-28": {
+                        "USD": 1,
+                        "XAU": 0.00055170361213425
+                    },
+                    "2022-12-29": {
+                        "USD": 1,
+                        "XAU": 0.00055388685999732
+                    },
+                    "2022-12-30": {
+                        "USD": 1,
+                        "XAU": 0.00055096832604543
+                    },
+                    "2022-12-31": {
+                        "USD": 1,
+                        "XAU": 0.00054814844636594
+                    },
+                    "2023-01-01": {
+                        "USD": 1,
+                        "XAU": 0.00054814844636594
+                    },
+                    "2023-01-02": {
+                        "USD": 1,
+                        "XAU": 0.0005482001315146
+                    },
+                    "2023-01-03": {
+                        "USD": 1,
+                        "XAU": 0.00054682711880021
+                    },
+                    "2023-01-04": {
+                        "USD": 1,
+                        "XAU": 0.00054440428213848
+                    },
+                    "2023-01-05": {
+                        "USD": 1,
+                        "XAU": 0.00053906561996862
+                    },
+                    "2023-01-06": {
+                        "USD": 1,
+                        "XAU": 0.00054555523635295
+                    },
+                    "2023-01-07": {
+                        "USD": 1,
+                        "XAU": 0.00053593785132032
+                    },
+                    "2023-01-08": {
+                        "USD": 1,
+                        "XAU": 0.00053593785132032
+                    },
+                    "2023-01-09": {
+                        "USD": 1,
+                        "XAU": 0.00053498650638361
+                    },
+                    "2023-01-10": {
+                        "USD": 1,
+                        "XAU": 0.00053457160030719
+                    }
+                }
+            }
+        },
+        {
+            "name": "Supported Symbols",
+            "url": "https://metals-prices-rates-api.p.rapidapi.com/symbols",
+            "description": "The API comes with a constantly updated endpoint returning all available symbols.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://metals-prices-rates-api.p.rapidapi.com/symbols\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"metals-prices-rates-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://metals-prices-rates-api.p.rapidapi.com/symbols\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"metals-prices-rates-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "ADA": {
+                    "id": "ADA",
+                    "name": "Cardano"
+                },
+                "AED": {
+                    "id": "AED",
+                    "name": "United Arab Emirates Dirham"
+                },
+                "AFN": {
+                    "id": "AFN",
+                    "name": "Afghan Afghani"
+                },
+                "ALL": {
+                    "id": "ALL",
+                    "name": "Albanian Lek"
+                },
+                "ALU": {
+                    "id": "ALU",
+                    "name": "Aluminum",
+                    "unit": "per ounce"
+                },
+                "AMD": {
+                    "id": "AMD",
+                    "name": "Armenian Dram"
+                },
+                "ANG": {
+                    "id": "ANG",
+                    "name": "Netherlands Antillean Gulden"
+                },
+                "ANTIMONY": {
+                    "id": "ANTIMONY",
+                    "name": "Antimony",
+                    "unit": "per ounce"
+                },
+                "AOA": {
+                    "id": "AOA",
+                    "name": "Angolan Kwanza"
+                },
+                "ARS": {
+                    "id": "ARS",
+                    "name": "Argentine Peso"
+                },
+                "AUD": {
+                    "id": "AUD",
+                    "name": "Australian Dollar"
+                },
+                "AWG": {
+                    "id": "AWG",
+                    "name": "Aruban Florin"
+                },
+                "AZN": {
+                    "id": "AZN",
+                    "name": "Azerbaijani Manat"
+                },
+                "BAM": {
+                    "id": "BAM",
+                    "name": "Bosnia and Herzegovina Convertible Mark"
+                },
+                "BBD": {
+                    "id": "BBD",
+                    "name": "Barbadian Dollar"
+                },
+                "BCH": {
+                    "id": "BCH",
+                    "name": "Bitcoin Cash"
+                },
+                "BDT": {
+                    "id": "BDT",
+                    "name": "Bangladeshi Taka"
+                },
+                "BGN": {
+                    "id": "BGN",
+                    "name": "Bulgarian Lev"
+                },
+                "BHD": {
+                    "id": "BHD",
+                    "name": "Bahraini Dinar"
+                },
+                "BIF": {
+                    "id": "BIF",
+                    "name": "Burundian Franc"
+                },
+                "BITUMEN": {
+                    "id": "BITUMEN",
+                    "name": "Bitumen",
+                    "unit": "per ounce"
+                },
+                "BMD": {
+                    "id": "BMD",
+                    "name": "Bermudian Dollar"
+                },
+                "BND": {
+                    "id": "BND",
+                    "name": "Brunei Dollar"
+                },
+                "BOB": {
+                    "id": "BOB",
+                    "name": "Bolivian Boliviano"
+                },
+                "BRASS": {
+                    "id": "BRASS",
+                    "name": "Brass",
+                    "unit": "per troy ounce"
+                },
+                "BRL": {
+                    "id": "BRL",
+                    "name": "Brazilian Real"
+                },
+                "BRONZE": {
+                    "id": "BRONZE",
+                    "name": "Bronze",
+                    "unit": "per troy ounce"
+                },
+                "BSD": {
+                    "id": "BSD",
+                    "name": "Bahamian Dollar"
+                },
+                "BTC": {
+                    "id": "BTC",
+                    "name": "Bitcoin"
+                },
+                "BTN": {
+                    "id": "BTN",
+                    "name": "Bhutanese Ngultrum"
+                },
+                "BWP": {
+                    "id": "BWP",
+                    "name": "Botswana Pula"
+                },
+                "BYN": {
+                    "id": "BYN",
+                    "name": "Belarusian Ruble"
+                },
+                "BYR": {
+                    "id": "BYR",
+                    "name": "Belarusian Ruble"
+                },
+                "BZD": {
+                    "id": "BZD",
+                    "name": "Belize Dollar"
+                },
+                "CAD": {
+                    "id": "CAD",
+                    "name": "Canadian Dollar"
+                },
+                "CDF": {
+                    "id": "CDF",
+                    "name": "Congolese Franc"
+                },
+                "CHF": {
+                    "id": "CHF",
+                    "name": "Swiss Franc"
+                },
+                "CLF": {
+                    "id": "CLF",
+                    "name": "Unidad de Fomento"
+                },
+                "CLP": {
+                    "id": "CLP",
+                    "name": "Chilean Peso"
+                },
+                "CNH": {
+                    "id": "CNH",
+                    "name": "Chinese Renminbi Yuan Offshore"
+                },
+                "CNY": {
+                    "id": "CNY",
+                    "name": "Chinese Renminbi Yuan"
+                },
+                "COP": {
+                    "id": "COP",
+                    "name": "Colombian Peso"
+                },
+                "CRC": {
+                    "id": "CRC",
+                    "name": "Costa Rican Col\u00f3n"
+                },
+                "CUC": {
+                    "id": "CUC",
+                    "name": "Cuban Convertible Peso"
+                },
+                "CVE": {
+                    "id": "CVE",
+                    "name": "Cape Verdean Escudo"
+                },
+                "CZK": {
+                    "id": "CZK",
+                    "name": "Czech Koruna"
+                },
+                "DJF": {
+                    "id": "DJF",
+                    "name": "Djiboutian Franc"
+                },
+                "DKK": {
+                    "id": "DKK",
+                    "name": "Danish Krone"
+                },
+                "DOP": {
+                    "id": "DOP",
+                    "name": "Dominican Peso"
+                },
+                "DZD": {
+                    "id": "DZD",
+                    "name": "Algerian Dinar"
+                },
+                "EEK": {
+                    "id": "EEK",
+                    "name": "Estonian Kroon"
+                },
+                "EGP": {
+                    "id": "EGP",
+                    "name": "Egyptian Pound"
+                },
+                "ERN": {
+                    "id": "ERN",
+                    "name": "Eritrean Nakfa"
+                },
+                "ETB": {
+                    "id": "ETB",
+                    "name": "Ethiopian Birr"
+                },
+                "ETH": {
+                    "id": "ETH",
+                    "name": "Ethereum"
+                },
+                "EUR": {
+                    "id": "EUR",
+                    "name": "Euro"
+                },
+                "FJD": {
+                    "id": "FJD",
+                    "name": "Fijian Dollar"
+                },
+                "FKP": {
+                    "id": "FKP",
+                    "name": "Falkland Pound"
+                },
+                "GALLIUM": {
+                    "id": "GALLIUM",
+                    "name": "Gallium",
+                    "unit": "per ounce"
+                },
+                "GBP": {
+                    "id": "GBP",
+                    "name": "British Pound"
+                },
+                "GEL": {
+                    "id": "GEL",
+                    "name": "Georgian Lari"
+                },
+                "GGP": {
+                    "id": "GGP",
+                    "name": "Guernsey Pound"
+                },
+                "GHS": {
+                    "id": "GHS",
+                    "name": "Ghanaian Cedi"
+                },
+                "GIP": {
+                    "id": "GIP",
+                    "name": "Gibraltar Pound"
+                },
+                "GMD": {
+                    "id": "GMD",
+                    "name": "Gambian Dalasi"
+                },
+                "GNF": {
+                    "id": "GNF",
+                    "name": "Guinean Franc"
+                },
+                "GTQ": {
+                    "id": "GTQ",
+                    "name": "Guatemalan Quetzal"
+                },
+                "GYD": {
+                    "id": "GYD",
+                    "name": "Guyanese Dollar"
+                },
+                "HKD": {
+                    "id": "HKD",
+                    "name": "Hong Kong Dollar"
+                },
+                "HNL": {
+                    "id": "HNL",
+                    "name": "Honduran Lempira"
+                },
+                "HRK": {
+                    "id": "HRK",
+                    "name": "Croatian Kuna"
+                },
+                "HTG": {
+                    "id": "HTG",
+                    "name": "Haitian Gourde"
+                },
+                "HUF": {
+                    "id": "HUF",
+                    "name": "Hungarian Forint"
+                },
+                "IDR": {
+                    "id": "IDR",
+                    "name": "Indonesian Rupiah"
+                },
+                "ILS": {
+                    "id": "ILS",
+                    "name": "Israeli New Sheqel"
+                },
+                "IMP": {
+                    "id": "IMP",
+                    "name": "Isle of Man Pound"
+                },
+                "INDIUM": {
+                    "id": "INDIUM",
+                    "name": "Indium",
+                    "unit": "per troy ounce"
+                },
+                "INR": {
+                    "id": "INR",
+                    "name": "Indian Rupee"
+                },
+                "IQD": {
+                    "id": "IQD",
+                    "name": "Iraqi Dinar"
+                },
+                "IRD": {
+                    "id": "IRD",
+                    "name": "Iridium (Troy Ounce)",
+                    "unit": "per ounce"
+                },
+                "IRON": {
+                    "id": "IRON",
+                    "name": "Iron Ore",
+                    "unit": "per ounce"
+                },
+                "ISK": {
+                    "id": "ISK",
+                    "name": "Icelandic Kr\u00f3na"
+                },
+                "JEP": {
+                    "id": "JEP",
+                    "name": "Jersey Pound"
+                },
+                "JMD": {
+                    "id": "JMD",
+                    "name": "Jamaican Dollar"
+                },
+                "JOD": {
+                    "id": "JOD",
+                    "name": "Jordanian Dinar"
+                },
+                "JPY": {
+                    "id": "JPY",
+                    "name": "Japanese Yen"
+                },
+                "KES": {
+                    "id": "KES",
+                    "name": "Kenyan Shilling"
+                },
+                "KGS": {
+                    "id": "KGS",
+                    "name": "Kyrgyzstani Som"
+                },
+                "KHR": {
+                    "id": "KHR",
+                    "name": "Cambodian Riel"
+                },
+                "KMF": {
+                    "id": "KMF",
+                    "name": "Comorian Franc"
+                },
+                "KRW": {
+                    "id": "KRW",
+                    "name": "South Korean Won"
+                },
+                "KWD": {
+                    "id": "KWD",
+                    "name": "Kuwaiti Dinar"
+                },
+                "KYD": {
+                    "id": "KYD",
+                    "name": "Cayman Islands Dollar"
+                },
+                "KZT": {
+                    "id": "KZT",
+                    "name": "Kazakhstani Tenge"
+                },
+                "LAK": {
+                    "id": "LAK",
+                    "name": "Lao Kip"
+                },
+                "LBP": {
+                    "id": "LBP",
+                    "name": "Lebanese Pound"
+                },
+                "LBXAG": {
+                    "id": "LBXAG",
+                    "name": "LBMA Silver"
+                },
+                "LBXAUAM": {
+                    "id": "LBXAUAM",
+                    "name": "LBMA Gold Am"
+                },
+                "LBXAUPM": {
+                    "id": "LBXAUPM",
+                    "name": "LBMA Gold Pm"
+                },
+                "LBXPDAM": {
+                    "id": "LBXPDAM",
+                    "name": "LBMA Palladium Am"
+                },
+                "LBXPDPM": {
+                    "id": "LBXPDPM",
+                    "name": "LBMA Palladium Pm"
+                },
+                "LBXPTAM": {
+                    "id": "LBXPTAM",
+                    "name": "LBMA Platinum Am"
+                },
+                "LBXPTPM": {
+                    "id": "LBXPTPM",
+                    "name": "LBMA Platinum Pm"
+                },
+                "LCO": {
+                    "id": "LCO",
+                    "name": "Cobalt (Troy Ounce)",
+                    "unit": "per troy ounce"
+                },
+                "LEAD": {
+                    "id": "LEAD",
+                    "name": "Lead",
+                    "unit": "per ounce"
+                },
+                "LINK": {
+                    "id": "LINK",
+                    "name": "Chainlink"
+                },
+                "LITHIUM": {
+                    "id": "LITHIUM",
+                    "name": "Lithium",
+                    "unit": "per troy ounce"
+                },
+                "LKR": {
+                    "id": "LKR",
+                    "name": "Sri Lankan Rupee"
+                },
+                "LME-ALU": {
+                    "id": "LME-ALU",
+                    "name": "LME Aluminium"
+                },
+                "LME-LEAD": {
+                    "id": "LME-LEAD",
+                    "name": "LME Lead"
+                },
+                "LME-NI": {
+                    "id": "LME-NI",
+                    "name": "LME Nickel"
+                },
+                "LME-TIN": {
+                    "id": "LME-TIN",
+                    "name": "LME Tin"
+                },
+                "LME-XCU": {
+                    "id": "LME-XCU",
+                    "name": "LME Copper"
+                },
+                "LME-ZNC": {
+                    "id": "LME-ZNC",
+                    "name": "LME Zinc"
+                },
+                "LRD": {
+                    "id": "LRD",
+                    "name": "Liberian Dollar"
+                },
+                "LSL": {
+                    "id": "LSL",
+                    "name": "Lesotho Loti"
+                },
+                "LTC": {
+                    "id": "LTC",
+                    "name": "Litecoin"
+                },
+                "LTL": {
+                    "id": "LTL",
+                    "name": "Lithuanian Litas"
+                },
+                "LVL": {
+                    "id": "LVL",
+                    "name": "Latvian Lats"
+                },
+                "LYD": {
+                    "id": "LYD",
+                    "name": "Libyan Dinar"
+                },
+                "MAD": {
+                    "id": "MAD",
+                    "name": "Moroccan Dirham"
+                },
+                "MDL": {
+                    "id": "MDL",
+                    "name": "Moldovan Leu"
+                },
+                "MG": {
+                    "id": "MG",
+                    "name": "Magnesium",
+                    "unit": "per troy ounce"
+                },
+                "MGA": {
+                    "id": "MGA",
+                    "name": "Malagasy Ariary"
+                },
+                "MKD": {
+                    "id": "MKD",
+                    "name": "Macedonian Denar"
+                },
+                "MMK": {
+                    "id": "MMK",
+                    "name": "Myanmar Kyat"
+                },
+                "MN": {
+                    "id": "MN",
+                    "name": "Manganese",
+                    "unit": "per ounce"
+                },
+                "MNT": {
+                    "id": "MNT",
+                    "name": "Mongolian T\u00f6gr\u00f6g"
+                },
+                "MO": {
+                    "id": "MO",
+                    "name": "Molybdenum",
+                    "unit": "per troy ounce"
+                },
+                "MOP": {
+                    "id": "MOP",
+                    "name": "Macanese Pataca"
+                },
+                "MRO": {
+                    "id": "MRO",
+                    "name": "Mauritanian Ouguiya"
+                },
+                "MTL": {
+                    "id": "MTL",
+                    "name": "Maltese Lira"
+                },
+                "MUR": {
+                    "id": "MUR",
+                    "name": "Mauritian Rupee"
+                },
+                "MVR": {
+                    "id": "MVR",
+                    "name": "Maldivian Rufiyaa"
+                },
+                "MWK": {
+                    "id": "MWK",
+                    "name": "Malawian Kwacha"
+                },
+                "MXN": {
+                    "id": "MXN",
+                    "name": "Mexican Peso"
+                },
+                "MYR": {
+                    "id": "MYR",
+                    "name": "Malaysian Ringgit"
+                },
+                "MZN": {
+                    "id": "MZN",
+                    "name": "Mozambican Metical"
+                },
+                "NAD": {
+                    "id": "NAD",
+                    "name": "Namibian Dollar"
+                },
+                "ND": {
+                    "id": "ND",
+                    "name": "Neodymium",
+                    "unit": "per ounce"
+                },
+                "NGN": {
+                    "id": "NGN",
+                    "name": "Nigerian Naira"
+                },
+                "NI": {
+                    "id": "NI",
+                    "name": "Nickel",
+                    "unit": "per ounce"
+                },
+                "NIO": {
+                    "id": "NIO",
+                    "name": "Nicaraguan C\u00f3rdoba"
+                },
+                "NOK": {
+                    "id": "NOK",
+                    "name": "Norwegian Krone"
+                },
+                "NPR": {
+                    "id": "NPR",
+                    "name": "Nepalese Rupee"
+                },
+                "NZD": {
+                    "id": "NZD",
+                    "name": "New Zealand Dollar"
+                },
+                "OMR": {
+                    "id": "OMR",
+                    "name": "Omani Rial"
+                },
+                "OSMIUM": {
+                    "id": "OSMIUM",
+                    "name": "Osmium",
+                    "unit": "per troy ounce"
+                },
+                "PAB": {
+                    "id": "PAB",
+                    "name": "Panamanian Balboa"
+                },
+                "PEN": {
+                    "id": "PEN",
+                    "name": "Peruvian Sol"
+                },
+                "PGK": {
+                    "id": "PGK",
+                    "name": "Papua New Guinean Kina"
+                },
+                "PHP": {
+                    "id": "PHP",
+                    "name": "Philippine Peso"
+                },
+                "PKR": {
+                    "id": "PKR",
+                    "name": "Pakistani Rupee"
+                },
+                "PLN": {
+                    "id": "PLN",
+                    "name": "Polish Z\u0142oty"
+                },
+                "PYG": {
+                    "id": "PYG",
+                    "name": "Paraguayan Guaran\u00ed"
+                },
+                "QAR": {
+                    "id": "QAR",
+                    "name": "Qatari Riyal"
+                },
+                "RHENIUM": {
+                    "id": "RHENIUM",
+                    "name": "Rhenium",
+                    "unit": "per troy ounce"
+                },
+                "RON": {
+                    "id": "RON",
+                    "name": "Romanian Leu"
+                },
+                "RSD": {
+                    "id": "RSD",
+                    "name": "Serbian Dinar"
+                },
+                "RUB": {
+                    "id": "RUB",
+                    "name": "Russian Ruble"
+                },
+                "RUTH": {
+                    "id": "RUTH",
+                    "name": "Ruthenium",
+                    "unit": "per ounce"
+                },
+                "RWF": {
+                    "id": "RWF",
+                    "name": "Rwandan Franc"
+                },
+                "SAR": {
+                    "id": "SAR",
+                    "name": "Saudi Riyal"
+                },
+                "SBD": {
+                    "id": "SBD",
+                    "name": "Solomon Islands Dollar"
+                },
+                "SCR": {
+                    "id": "SCR",
+                    "name": "Seychellois Rupee"
+                },
+                "SEK": {
+                    "id": "SEK",
+                    "name": "Swedish Krona"
+                },
+                "SGD": {
+                    "id": "SGD",
+                    "name": "Singapore Dollar"
+                },
+                "SHP": {
+                    "id": "SHP",
+                    "name": "Saint Helenian Pound"
+                },
+                "SLL": {
+                    "id": "SLL",
+                    "name": "Sierra Leonean Leone"
+                },
+                "SOS": {
+                    "id": "SOS",
+                    "name": "Somali Shilling"
+                },
+                "SRD": {
+                    "id": "SRD",
+                    "name": "Surinamese Dollar"
+                },
+                "SSP": {
+                    "id": "SSP",
+                    "name": "South Sudanese Pound"
+                },
+                "STD": {
+                    "id": "STD",
+                    "name": "S\u00e3o Tom\u00e9 and Pr\u00edncipe Dobra"
+                },
+                "STEEL-HR": {
+                    "id": "STEEL-HR",
+                    "name": "LME Steel HRC FOB China"
+                },
+                "STEEL-RE": {
+                    "id": "STEEL-RE",
+                    "name": "LME Steel Rebar FOB Turkey"
+                },
+                "STEEL-SC": {
+                    "id": "STEEL-SC",
+                    "name": "LME Steel Scrap CFR Turkey"
+                },
+                "SVC": {
+                    "id": "SVC",
+                    "name": "Salvadoran Col\u00f3n"
+                },
+                "SZL": {
+                    "id": "SZL",
+                    "name": "Swazi Lilangeni"
+                },
+                "TE": {
+                    "id": "TE",
+                    "name": "Tellurium",
+                    "unit": "per ounce"
+                },
+                "THB": {
+                    "id": "THB",
+                    "name": "Thai Baht"
+                },
+                "TIN": {
+                    "id": "TIN",
+                    "name": "Tin",
+                    "unit": "per ounce"
+                },
+                "TITANIUM": {
+                    "id": "TITANIUM",
+                    "name": "Titanium",
+                    "unit": "per ounce"
+                },
+                "TJS": {
+                    "id": "TJS",
+                    "name": "Tajikistani Somoni"
+                },
+                "TMT": {
+                    "id": "TMT",
+                    "name": "Turkmenistani Manat"
+                },
+                "TND": {
+                    "id": "TND",
+                    "name": "Tunisian Dinar"
+                },
+                "TOP": {
+                    "id": "TOP",
+                    "name": "Tongan Pa\u02bbanga"
+                },
+                "TRY": {
+                    "id": "TRY",
+                    "name": "Turkish Lira"
+                },
+                "TTD": {
+                    "id": "TTD",
+                    "name": "Trinidad and Tobago Dollar"
+                },
+                "TUNGSTEN": {
+                    "id": "TUNGSTEN",
+                    "name": "Tungsten",
+                    "unit": "per troy ounce"
+                },
+                "TWD": {
+                    "id": "TWD",
+                    "name": "New Taiwan Dollar"
+                },
+                "TZS": {
+                    "id": "TZS",
+                    "name": "Tanzanian Shilling"
+                },
+                "UAH": {
+                    "id": "UAH",
+                    "name": "Ukrainian Hryvnia"
+                },
+                "UGX": {
+                    "id": "UGX",
+                    "name": "Ugandan Shilling"
+                },
+                "UNI": {
+                    "id": "UNI",
+                    "name": "Uniswap"
+                },
+                "URANIUM": {
+                    "id": "URANIUM",
+                    "name": "Uranium",
+                    "unit": "per pound"
+                },
+                "USD": {
+                    "id": "USD",
+                    "name": "United States Dollar"
+                },
+                "UYU": {
+                    "id": "UYU",
+                    "name": "Uruguayan Peso"
+                },
+                "UZS": {
+                    "id": "UZS",
+                    "name": "Uzbekistan Som"
+                },
+                "VEF": {
+                    "id": "VEF",
+                    "name": "Venezuelan Bol\u00edvar"
+                },
+                "VES": {
+                    "id": "VES",
+                    "name": "Venezuelan Bol\u00edvar Soberano"
+                },
+                "VND": {
+                    "id": "VND",
+                    "name": "Vietnamese \u0110\u1ed3ng"
+                },
+                "VUV": {
+                    "id": "VUV",
+                    "name": "Vanuatu Vatu"
+                },
+                "WST": {
+                    "id": "WST",
+                    "name": "Samoan Tala"
+                },
+                "XAF": {
+                    "id": "XAF",
+                    "name": "Central African Cfa Franc"
+                },
+                "XAG": {
+                    "id": "XAG",
+                    "name": "Silver (Troy Ounce)",
+                    "unit": "per ounce"
+                },
+                "XAG-AHME": {
+                    "id": "XAG-AHME",
+                    "name": "Ahmedabad Silver"
+                },
+                "XAG-BANG": {
+                    "id": "XAG-BANG",
+                    "name": "Bangalore Silver"
+                },
+                "XAG-CHEN": {
+                    "id": "XAG-CHEN",
+                    "name": "Chennai Silver"
+                },
+                "XAG-COIM": {
+                    "id": "XAG-COIM",
+                    "name": "Coimbatore Silver"
+                },
+                "XAG-DELH": {
+                    "id": "XAG-DELH",
+                    "name": "Delhi Silver"
+                },
+                "XAG-HYDE": {
+                    "id": "XAG-HYDE",
+                    "name": "Hyderabad Silver"
+                },
+                "XAG-KOCH": {
+                    "id": "XAG-KOCH",
+                    "name": "Kochi Silver"
+                },
+                "XAG-KOLK": {
+                    "id": "XAG-KOLK",
+                    "name": "Kolkata Silver"
+                },
+                "XAG-MUMB": {
+                    "id": "XAG-MUMB",
+                    "name": "Mumbai Silver"
+                },
+                "XAG-SURA": {
+                    "id": "XAG-SURA",
+                    "name": "Surat Silver"
+                },
+                "XAU": {
+                    "id": "XAU",
+                    "name": "Gold (Troy Ounce)",
+                    "unit": "per ounce"
+                },
+                "XAU-AHME": {
+                    "id": "XAU-AHME",
+                    "name": "Ahmedabad Gold"
+                },
+                "XAU-BANG": {
+                    "id": "XAU-BANG",
+                    "name": "Bangalore Gold"
+                },
+                "XAU-CHEN": {
+                    "id": "XAU-CHEN",
+                    "name": "Chennai Gold"
+                },
+                "XAU-COIM": {
+                    "id": "XAU-COIM",
+                    "name": "Coimbatore Gold"
+                },
+                "XAU-DELH": {
+                    "id": "XAU-DELH",
+                    "name": "Delhi Gold"
+                },
+                "XAU-HYDE": {
+                    "id": "XAU-HYDE",
+                    "name": "Hyderabad Gold"
+                },
+                "XAU-KOCH": {
+                    "id": "XAU-KOCH",
+                    "name": "Kochi Gold"
+                },
+                "XAU-KOLK": {
+                    "id": "XAU-KOLK",
+                    "name": "Kolkata Gold"
+                },
+                "XAU-MUMB": {
+                    "id": "XAU-MUMB",
+                    "name": "Mumbai Gold"
+                },
+                "XAU-SURA": {
+                    "id": "XAU-SURA",
+                    "name": "Surat Gold"
+                },
+                "XCD": {
+                    "id": "XCD",
+                    "name": "East Caribbean Dollar"
+                },
+                "XCU": {
+                    "id": "XCU",
+                    "name": "Copper",
+                    "unit": "per ounce"
+                },
+                "XDR": {
+                    "id": "XDR",
+                    "name": "Special Drawing Rights"
+                },
+                "XLM": {
+                    "id": "XLM",
+                    "name": "Stellar"
+                },
+                "XOF": {
+                    "id": "XOF",
+                    "name": "West African Cfa Franc"
+                },
+                "XPD": {
+                    "id": "XPD",
+                    "name": "Palladium (Troy Ounce)",
+                    "unit": "per ounce"
+                },
+                "XPF": {
+                    "id": "XPF",
+                    "name": "Cfp Franc"
+                },
+                "XPT": {
+                    "id": "XPT",
+                    "name": "Platinum (Troy Ounce)",
+                    "unit": "per ounce"
+                },
+                "XRH": {
+                    "id": "XRH",
+                    "name": "Rhodium (Troy Ounce)",
+                    "unit": "per ounce"
+                },
+                "XRP": {
+                    "id": "XRP",
+                    "name": "Ripple"
+                },
+                "XRP2": {
+                    "id": "XRP2",
+                    "name": "Ripple"
+                },
+                "YER": {
+                    "id": "YER",
+                    "name": "Yemeni Rial"
+                },
+                "ZAR": {
+                    "id": "ZAR",
+                    "name": "South African Rand"
+                },
+                "ZMK": {
+                    "id": "ZMK",
+                    "name": "Zambian Kwacha"
+                },
+                "ZMW": {
+                    "id": "ZMW",
+                    "name": "Zambian Kwacha"
+                },
+                "ZNC": {
+                    "id": "ZNC",
+                    "name": "Zinc",
+                    "unit": "per troy ounce"
+                },
+                "ZWL": {
+                    "id": "ZWL",
+                    "name": "Zimbabwean Dollar"
+                }
+            }
+        },
+        {
+            "name": "Historical Rates",
+            "url": "https://metals-prices-rates-api.p.rapidapi.com/2022-01-20",
+            "description": "Historical rates are available for most symbols all the way back to the year of 2019. You can query the API for historical rates by appending a date (format YYYY-MM-DD) to the base URL.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "date",
+                    "type": "string",
+                    "description": "",
+                    "default": "2022-01-20"
+                },
+                {
+                    "name": "symbols",
+                    "type": "STRING",
+                    "description": "Enter a list of comma-separated currency codes or metal codes to limit output codes.",
+                    "default": "XAU"
+                },
+                {
+                    "name": "base",
+                    "type": "STRING",
+                    "description": "Enter the three-letter currency code or metal code of your preferred base currency.",
+                    "default": "USD"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://metals-prices-rates-api.p.rapidapi.com/2022-01-20\"\nquerystring = {\"symbols\": \"XAU\", \"base\": \"USD\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"metals-prices-rates-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://metals-prices-rates-api.p.rapidapi.com/{date}\"\nquerystring = {\"symbols\": \"XAU\", \"base\": \"USD\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"metals-prices-rates-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "success": true,
+                "historical": true,
+                "date": "2022-01-20",
+                "base": "USD",
+                "rates": {
+                    "USD": 1,
+                    "XAU": 0.00054448416
+                }
+            }
+        },
+        {
+            "name": "Latest Rates",
+            "url": "https://metals-prices-rates-api.p.rapidapi.com/latest",
+            "description": "The latest API endpoint will return real-time exchange rate data updated every 60 seconds.\n\nNote: All the responses retrieved in USD needs to be converted. \n\nEx: 1/value = USD PRICE.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "symbols",
+                    "type": "STRING",
+                    "description": "Enter a list of comma-separated currency codes or metal codes to limit output codes.",
+                    "default": "XAU"
+                },
+                {
+                    "name": "base",
+                    "type": "STRING",
+                    "description": "Enter the three-letter currency code or metal code of your preferred base currency.",
+                    "default": "USD"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://metals-prices-rates-api.p.rapidapi.com/latest\"\nquerystring = {\"symbols\": \"XAU\", \"base\": \"USD\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"metals-prices-rates-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://metals-prices-rates-api.p.rapidapi.com/latest\"\nquerystring = {\"symbols\": \"XAU\", \"base\": \"USD\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"metals-prices-rates-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "success": true,
+                "timestamp": 1686932160,
+                "date": "2023-06-16",
+                "base": "USD",
+                "rates": {
+                    "USD": 1,
+                    "XAU": 0.00051200655368389,
+                    "USDXAU": 1953.099999999989
+                }
+            }
+        }
+    ],
+    "standardized_name": "metals_prices_rates_api"
+}

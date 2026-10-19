@@ -1,0 +1,26 @@
+diff --git a/pylint/checkers/similar.py b/pylint/checkers/similar.py
+index c65b1c893..d96f834b0 100644
+--- a/pylint/checkers/similar.py
++++ b/pylint/checkers/similar.py
+@@ -38,7 +38,9 @@ The common hashes between both linesets are then looked for. If there are matche
+ with the corresponding couples (start line number/end line number) in both files.
+ This association is then postprocessed to handle the case of successive matches. For example if the minimum common lines setting is set to four, then
+ the hashes are computed with four lines. If one of match indices couple (12, 34) is the successor of another one (11, 33) then it means that there are
+-in fact five lines wich are common.
++
++Setting min_similarity_lines to 0 disables the duplicate code check.
++"""in fact five lines wich are common.
+ Once postprocessed the values of association table are the result looked for, i.e start and end lines numbers of common lines in both files.
+ """
+ import copy
+@@ -802,6 +804,10 @@ class SimilarChecker(BaseChecker, Similar, MapReduceMixin):
+         BaseChecker.set_option(self, optname, value, action, optdict)
+         if optname == "min-similarity-lines":
+             self.min_lines = self.config.min_similarity_lines
++            if self.min_lines == 0:
++                self.enabled = False
++            else:
++                self.enabled = True
+         elif optname == "ignore-comments":
+             self.ignore_comments = self.config.ignore_comments
+         elif optname == "ignore-docstrings":

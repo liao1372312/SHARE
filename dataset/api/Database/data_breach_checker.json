@@ -1,0 +1,98 @@
+{
+    "product_id": "api_67a1bee0-55f1-4599-a851-e25894405749",
+    "tool_description": "The Data Breach Checker API allows users to check if their data has been compromised in any known data breaches. By simply entering an email address, the API searches through a vast database of known data breaches using the reputable \"Have I Been Pwned\" backend. The API is easy to integrate into existing applications, making it an essential tool for companies and individuals seeking to enhance their cybersecurity posture. ",
+    "home_url": "https://rapidapi.com/vaibhavchandra2007/api/data-breach-checker/",
+    "name": "Data Breach Checker",
+    "title": "Data Breach Checker",
+    "pricing": "FREEMIUM",
+    "tool_name": "Data Breach Checker",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 2387,
+        "avgSuccessRate": 100,
+        "popularityScore": 8.9,
+        "__typename": "Score"
+    },
+    "host": "data-breach-checker.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Data Breach Checker Endpoint",
+            "url": "https://data-breach-checker.p.rapidapi.com/api/breach",
+            "description": "The Data Breach Checker API provides a simple endpoint for users to check if their email has been compromised in any known data breaches.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "email",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "example@xyz.com"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://data-breach-checker.p.rapidapi.com/api/breach\"\nquerystring = {\"email\": \"example@xyz.com\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"data-breach-checker.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://data-breach-checker.p.rapidapi.com/api/breach\"\nquerystring = {\"email\": \"example@xyz.com\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"data-breach-checker.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "data": [
+                    {
+                        "AddedDate": "2019-11-22T20:13:04Z",
+                        "BreachDate": "2019-10-16",
+                        "DataClasses": [
+                            "Email addresses",
+                            "Employers",
+                            "Geographic locations",
+                            "Job titles",
+                            "Names",
+                            "Phone numbers",
+                            "Social media profiles"
+                        ],
+                        "Description": "In October 2019, <a href=\"https://www.troyhunt.com/data-enrichment-people-data-labs-and-another-622m-email-addresses\" target=\"_blank\" rel=\"noopener\">security researchers Vinny Troia and Bob Diachenko identified an unprotected Elasticsearch server holding 1.2 billion records of personal data</a>. The exposed data included an index indicating it was sourced from data enrichment company People Data Labs (PDL) and contained 622 million unique email addresses. The server was not owned by PDL and it's believed a customer failed to properly secure the database. Exposed information included email addresses, phone numbers, social media profiles and job history data.",
+                        "Domain": "",
+                        "IsFabricated": false,
+                        "IsMalware": false,
+                        "IsRetired": false,
+                        "IsSensitive": false,
+                        "IsSpamList": false,
+                        "IsVerified": true,
+                        "LogoPath": "https://haveibeenpwned.com/Content/Images/PwnedLogos/List.png",
+                        "ModifiedDate": "2019-11-22T20:13:04Z",
+                        "Name": "PDL",
+                        "PwnCount": 622161052,
+                        "Title": "Data Enrichment Exposure From PDL Customer"
+                    },
+                    {
+                        "AddedDate": "2019-03-09T19:29:54Z",
+                        "BreachDate": "2019-02-25",
+                        "DataClasses": [
+                            "Dates of birth",
+                            "Email addresses",
+                            "Employers",
+                            "Genders",
+                            "Geographic locations",
+                            "IP addresses",
+                            "Job titles",
+                            "Names",
+                            "Phone numbers",
+                            "Physical addresses"
+                        ],
+                        "Description": "In February 2019, the email address validation service <a href=\"https://securitydiscovery.com/800-million-emails-leaked-online-by-email-verification-service\" target=\"_blank\" rel=\"noopener\">verifications.io suffered a data breach</a>. Discovered by <a href=\"https://twitter.com/mayhemdayone\" target=\"_blank\" rel=\"noopener\">Bob Diachenko</a> and <a href=\"https://twitter.com/vinnytroia\" target=\"_blank\" rel=\"noopener\">Vinny Troia</a>, the breach was due to the data being stored in a MongoDB instance left publicly facing without a password and resulted in 763 million unique email addresses being exposed. Many records within the data also included additional personal attributes such as names, phone numbers, IP addresses, dates of birth and genders. No passwords were included in the data. The Verifications.io website went offline during the disclosure process, although <a href=\"https://web.archive.org/web/20190227230352/https://verifications.io/\" target=\"_blank\" rel=\"noopener\">an archived copy remains viewable</a>.",
+                        "Domain": "verifications.io",
+                        "IsFabricated": false,
+                        "IsMalware": false,
+                        "IsRetired": false,
+                        "IsSensitive": false,
+                        "IsSpamList": false,
+                        "IsVerified": true,
+                        "LogoPath": "https://haveibeenpwned.com/Content/Images/PwnedLogos/VerificationsIO.png",
+                        "ModifiedDate": "2019-03-09T20:49:51Z",
+                        "Name": "VerificationsIO",
+                        "PwnCount": 763117241,
+                        "Title": "Verifications.io"
+                    }
+                ],
+                "message": "Success.",
+                "status": true
+            }
+        }
+    ],
+    "standardized_name": "data_breach_checker"
+}

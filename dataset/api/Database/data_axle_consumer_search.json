@@ -1,0 +1,725 @@
+{
+    "product_id": "api_2eaf43ef-3d4e-4b54-81fd-cd581ce1149f",
+    "tool_description": "Find relevant listings in the database",
+    "home_url": "https://rapidapi.com/data-axle-data-axle-default/api/data-axle-consumer-search/",
+    "name": "Data Axle Consumer Search",
+    "title": "Data Axle Consumer Search",
+    "pricing": "FREEMIUM",
+    "tool_name": "Data Axle Consumer Search",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 572,
+        "avgSuccessRate": 50,
+        "popularityScore": 7.5,
+        "__typename": "Score"
+    },
+    "host": "data-axle-consumer-search.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Consumer Name Search",
+            "url": "https://data-axle-consumer-search.p.rapidapi.com/v1/people/search",
+            "description": "Find relevant People in the Data Axle database",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "limit",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "20"
+                },
+                {
+                    "name": "packages",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "standard_v2"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "query",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "Jon Smith"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://data-axle-consumer-search.p.rapidapi.com/v1/people/search\"\nquerystring = {\"query\": \"Jon Smith\", \"limit\": \"20\", \"packages\": \"standard_v2\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"data-axle-consumer-search.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://data-axle-consumer-search.p.rapidapi.com/v1/people/search\"\nquerystring = {\"query\": \"Jon Smith\", \"limit\": \"20\", \"packages\": \"standard_v2\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"data-axle-consumer-search.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "count": 1337,
+                "documents": [
+                    {
+                        "person_id": "803232971199",
+                        "first_name": "Smith",
+                        "last_name": "Jon",
+                        "gender": "M",
+                        "family_id": "001841947625",
+                        "estimated_married": "married",
+                        "multi_family": false,
+                        "location_family_count": [
+                            1,
+                            1
+                        ],
+                        "location_unit_count": [
+                            1,
+                            1
+                        ],
+                        "street": "108 Secor Woods Ln",
+                        "city": "Perrysburg",
+                        "state": "OH",
+                        "postal_code": "43551-2748",
+                        "geocoordinate": {
+                            "lat": 41.573851,
+                            "lon": -83.604485
+                        },
+                        "geocode_method": "parcel",
+                        "cbsa_code": "45780",
+                        "cbsa_level": "metro",
+                        "csa_code": "534",
+                        "census_block_group": "3",
+                        "census_tract": "020401",
+                        "fips_code": "39173",
+                        "congressional_district": "09"
+                    },
+                    {
+                        "person_id": "605010088469",
+                        "first_name": "Jenny",
+                        "last_name": "And Jon Smith",
+                        "gender": "F",
+                        "family_id": "702698951777",
+                        "estimated_married": "single",
+                        "multi_family": false,
+                        "location_family_count": [
+                            1,
+                            1
+                        ],
+                        "location_unit_count": [
+                            1,
+                            1
+                        ],
+                        "street": "732 S Spring St",
+                        "city": "Geneseo",
+                        "state": "IL",
+                        "postal_code": "61254-1748",
+                        "geocoordinate": {
+                            "lat": 41.444121,
+                            "lon": -90.151961
+                        },
+                        "geocode_method": "parcel",
+                        "cbsa_code": "19340",
+                        "cbsa_level": "metro",
+                        "csa_code": "209",
+                        "census_block_group": "3",
+                        "census_tract": "030302",
+                        "fips_code": "17073",
+                        "congressional_district": "16"
+                    },
+                    {
+                        "person_id": "803682235865",
+                        "first_name": "Jon",
+                        "last_name": "Smith",
+                        "gender": "M",
+                        "family_id": "502046474979",
+                        "estimated_married": "married",
+                        "multi_family": false,
+                        "location_family_count": [
+                            1,
+                            1
+                        ],
+                        "location_unit_count": [
+                            1,
+                            1
+                        ],
+                        "street": "53 Hecker Ave",
+                        "city": "Darien",
+                        "state": "CT",
+                        "postal_code": "06820-5308",
+                        "geocoordinate": {
+                            "lat": 41.069655,
+                            "lon": -73.482325
+                        },
+                        "geocode_method": "parcel",
+                        "cbsa_code": "14860",
+                        "cbsa_level": "metro",
+                        "csa_code": "408",
+                        "census_block_group": "1",
+                        "census_tract": "030400",
+                        "fips_code": "09001",
+                        "congressional_district": "04"
+                    },
+                    {
+                        "person_id": "001145090508",
+                        "first_name": "Jon",
+                        "middle_initial": "D",
+                        "last_name": "Smith",
+                        "gender": "M",
+                        "family_id": "200616610089",
+                        "estimated_married": "married",
+                        "multi_family": false,
+                        "location_family_count": [
+                            1,
+                            1
+                        ],
+                        "location_unit_count": [
+                            1,
+                            1
+                        ],
+                        "street": "424 Darling Rd",
+                        "city": "Salem",
+                        "state": "CT",
+                        "postal_code": "06420-3914",
+                        "geocoordinate": {
+                            "lat": 41.444626,
+                            "lon": -72.301293
+                        },
+                        "geocode_method": "parcel",
+                        "cbsa_code": "35980",
+                        "cbsa_level": "metro",
+                        "csa_code": "278",
+                        "census_block_group": "3",
+                        "census_tract": "715100",
+                        "fips_code": "09011",
+                        "congressional_district": "02"
+                    },
+                    {
+                        "person_id": "802653013167",
+                        "first_name": "Jon",
+                        "middle_initial": "P",
+                        "last_name": "Smith",
+                        "gender": "M",
+                        "family_id": "601808049853",
+                        "estimated_married": "married",
+                        "multi_family": false,
+                        "location_family_count": [
+                            1,
+                            1
+                        ],
+                        "location_unit_count": [
+                            1,
+                            1
+                        ],
+                        "street": "2011 SW Sandstone Ct",
+                        "city": "Blue Springs",
+                        "state": "MO",
+                        "postal_code": "64014-3979",
+                        "geocoordinate": {
+                            "lat": 38.99701,
+                            "lon": -94.27174
+                        },
+                        "geocode_method": "parcel",
+                        "cbsa_code": "28140",
+                        "cbsa_level": "metro",
+                        "csa_code": "312",
+                        "census_block_group": "2",
+                        "census_tract": "014121",
+                        "fips_code": "29095",
+                        "congressional_district": "04"
+                    },
+                    {
+                        "person_id": "401174094556",
+                        "first_name": "Jon",
+                        "middle_initial": "D",
+                        "last_name": "Smith",
+                        "gender": "M",
+                        "family_id": "500633631175",
+                        "multi_family": false,
+                        "location_family_count": [
+                            1,
+                            1
+                        ],
+                        "location_unit_count": [
+                            1,
+                            1
+                        ],
+                        "street": "16026 Doty Rd",
+                        "city": "New Haven",
+                        "state": "IN",
+                        "postal_code": "46774-9739",
+                        "geocoordinate": {
+                            "lat": 41.142821,
+                            "lon": -84.938307
+                        },
+                        "geocode_method": "parcel",
+                        "time_zone": "EST",
+                        "cbsa_code": "23060",
+                        "cbsa_level": "metro",
+                        "csa_code": "258",
+                        "census_block_group": "2",
+                        "census_tract": "010900",
+                        "fips_code": "18003",
+                        "congressional_district": "03"
+                    },
+                    {
+                        "person_id": "703227107235",
+                        "first_name": "Jon",
+                        "last_name": "Smith",
+                        "gender": "M",
+                        "family_id": "701840129781",
+                        "estimated_married": "married",
+                        "multi_family": false,
+                        "location_family_count": [
+                            1,
+                            1
+                        ],
+                        "location_unit_count": [
+                            1,
+                            1
+                        ],
+                        "street": "120 Toas St",
+                        "city": "Shelton",
+                        "state": "CT",
+                        "postal_code": "06484-5529",
+                        "geocoordinate": {
+                            "lat": 41.302027,
+                            "lon": -73.086263
+                        },
+                        "geocode_method": "parcel",
+                        "cbsa_code": "14860",
+                        "cbsa_level": "metro",
+                        "csa_code": "408",
+                        "census_block_group": "2",
+                        "census_tract": "110201",
+                        "fips_code": "09001",
+                        "congressional_district": "03"
+                    },
+                    {
+                        "person_id": "601806856890",
+                        "first_name": "Jon",
+                        "middle_initial": "M",
+                        "last_name": "Smith",
+                        "gender": "M",
+                        "family_id": "000385649304",
+                        "multi_family": false,
+                        "location_family_count": [
+                            1,
+                            1
+                        ],
+                        "location_unit_count": [
+                            1,
+                            1
+                        ],
+                        "street": "10915 Shadowport Ct",
+                        "city": "Stockton",
+                        "state": "CA",
+                        "postal_code": "95219-7006",
+                        "geocoordinate": {
+                            "lat": 38.0076,
+                            "lon": -121.3658
+                        },
+                        "geocode_method": "zip",
+                        "cbsa_code": "44700",
+                        "cbsa_level": "metro",
+                        "csa_code": "488",
+                        "census_block_group": "1",
+                        "census_tract": "003108",
+                        "fips_code": "06077",
+                        "congressional_district": "09"
+                    },
+                    {
+                        "person_id": "800067998571",
+                        "first_name": "Jon",
+                        "middle_initial": "L",
+                        "last_name": "Smith",
+                        "gender": "M",
+                        "family_id": "300036311459",
+                        "estimated_married": "married",
+                        "multi_family": false,
+                        "location_family_count": [
+                            1,
+                            1
+                        ],
+                        "location_unit_count": [
+                            1,
+                            1
+                        ],
+                        "street": "4052 Smith Berry Rd NE",
+                        "city": "Glennville",
+                        "state": "GA",
+                        "postal_code": "30427-8947",
+                        "geocoordinate": {
+                            "lat": 31.876036,
+                            "lon": -81.86098
+                        },
+                        "geocode_method": "parcel",
+                        "time_zone": "EST",
+                        "cbsa_code": "25980",
+                        "cbsa_level": "metro",
+                        "csa_code": "496",
+                        "census_block_group": "3",
+                        "census_tract": "970101",
+                        "fips_code": "13183",
+                        "congressional_district": "01"
+                    },
+                    {
+                        "person_id": "203232596303",
+                        "first_name": "Jon",
+                        "last_name": "Smith",
+                        "gender": "M",
+                        "family_id": "801504417369",
+                        "estimated_married": "single",
+                        "multi_family": false,
+                        "location_family_count": [
+                            1,
+                            1
+                        ],
+                        "location_unit_count": [
+                            1,
+                            1
+                        ],
+                        "street": "1320 Scholar St",
+                        "city": "Louisville",
+                        "state": "KY",
+                        "postal_code": "40213-2116",
+                        "geocoordinate": {
+                            "lat": 38.185641,
+                            "lon": -85.714593
+                        },
+                        "geocode_method": "parcel",
+                        "cbsa_code": "31140",
+                        "cbsa_level": "metro",
+                        "csa_code": "350",
+                        "census_block_group": "1",
+                        "census_tract": "011403",
+                        "fips_code": "21111",
+                        "congressional_district": "03"
+                    },
+                    {
+                        "person_id": "000191206465",
+                        "first_name": "Jon",
+                        "middle_initial": "C",
+                        "last_name": "Smith",
+                        "gender": "M",
+                        "family_id": "100101093886",
+                        "multi_family": false,
+                        "location_family_count": [
+                            1,
+                            1
+                        ],
+                        "location_unit_count": [
+                            1,
+                            1
+                        ],
+                        "street": "17 Boyd Pond Rd",
+                        "city": "Russell",
+                        "state": "NY",
+                        "postal_code": "13684-3119",
+                        "geocoordinate": {
+                            "lat": 44.390203,
+                            "lon": -75.116039
+                        },
+                        "geocode_method": "parcel",
+                        "time_zone": "EST",
+                        "cbsa_code": "36300",
+                        "cbsa_level": "micro",
+                        "census_block_group": "3",
+                        "census_tract": "492600",
+                        "fips_code": "36089",
+                        "congressional_district": "21"
+                    },
+                    {
+                        "person_id": "602555378493",
+                        "first_name": "Jon",
+                        "middle_initial": "A",
+                        "last_name": "Smith",
+                        "gender": "M",
+                        "family_id": "601425120441",
+                        "estimated_married": "single",
+                        "multi_family": false,
+                        "location_family_count": [
+                            1,
+                            1
+                        ],
+                        "location_unit_count": [
+                            1,
+                            1
+                        ],
+                        "street": "19218 Hidden Valley Rd",
+                        "city": "Hidden Valley Lake",
+                        "state": "CA",
+                        "postal_code": "95467-8049",
+                        "geocoordinate": {
+                            "lat": 38.798617,
+                            "lon": -122.553469
+                        },
+                        "geocode_method": "parcel",
+                        "cbsa_code": "17340",
+                        "cbsa_level": "micro",
+                        "census_block_group": "1",
+                        "census_tract": "001301",
+                        "fips_code": "06033",
+                        "congressional_district": "04"
+                    },
+                    {
+                        "person_id": "004091215639",
+                        "first_name": "Jon",
+                        "last_name": "Smith",
+                        "gender": "M",
+                        "family_id": "602245984263",
+                        "estimated_married": "married",
+                        "multi_family": false,
+                        "location_family_count": [
+                            1,
+                            1
+                        ],
+                        "location_unit_count": [
+                            1,
+                            1
+                        ],
+                        "street": "7600 Augustine Way",
+                        "city": "Gaithersburg",
+                        "state": "MD",
+                        "postal_code": "20879-4587",
+                        "geocoordinate": {
+                            "lat": 39.19197,
+                            "lon": -77.155452
+                        },
+                        "geocode_method": "parcel",
+                        "time_zone": "EST",
+                        "cbsa_code": "47900",
+                        "cbsa_level": "metro",
+                        "csa_code": "548",
+                        "census_block_group": "3",
+                        "census_tract": "700104",
+                        "fips_code": "24031",
+                        "congressional_district": "08"
+                    },
+                    {
+                        "person_id": "300186781733",
+                        "first_name": "Jon",
+                        "middle_initial": "H",
+                        "last_name": "Smith",
+                        "gender": "M",
+                        "family_id": "500098845996",
+                        "estimated_married": "married",
+                        "multi_family": false,
+                        "location_family_count": [
+                            1,
+                            1
+                        ],
+                        "location_unit_count": [
+                            1,
+                            1
+                        ],
+                        "street": "81 Dutch Rd",
+                        "city": "Central Square",
+                        "state": "NY",
+                        "postal_code": "13036-2385",
+                        "geocoordinate": {
+                            "lat": 43.316336,
+                            "lon": -76.081492
+                        },
+                        "geocode_method": "parcel",
+                        "time_zone": "EST",
+                        "cbsa_code": "45060",
+                        "cbsa_level": "metro",
+                        "csa_code": "532",
+                        "census_block_group": "2",
+                        "census_tract": "020705",
+                        "fips_code": "36075",
+                        "congressional_district": "24"
+                    },
+                    {
+                        "person_id": "702617069143",
+                        "first_name": "Jon",
+                        "last_name": "Smith",
+                        "gender": "M",
+                        "family_id": "201463302437",
+                        "estimated_married": "married",
+                        "multi_family": false,
+                        "location_family_count": [
+                            1,
+                            1
+                        ],
+                        "location_unit_count": [
+                            1,
+                            1
+                        ],
+                        "street": "159 Gardenia Way",
+                        "city": "East Palo Alto",
+                        "state": "CA",
+                        "postal_code": "94303-2605",
+                        "geocoordinate": {
+                            "lat": 37.458429,
+                            "lon": -122.127493
+                        },
+                        "geocode_method": "parcel",
+                        "cbsa_code": "41860",
+                        "cbsa_level": "metro",
+                        "csa_code": "488",
+                        "census_block_group": "2",
+                        "census_tract": "611902",
+                        "fips_code": "06081",
+                        "congressional_district": "15"
+                    },
+                    {
+                        "person_id": "803934416423",
+                        "first_name": "Jon",
+                        "last_name": "Smith",
+                        "gender": "M",
+                        "family_id": "201504079837",
+                        "estimated_married": "married",
+                        "multi_family": false,
+                        "location_family_count": [
+                            1,
+                            1
+                        ],
+                        "location_unit_count": [
+                            1,
+                            1
+                        ],
+                        "street": "235 Foxford Dr",
+                        "city": "Cary",
+                        "state": "IL",
+                        "postal_code": "60013-1173",
+                        "geocoordinate": {
+                            "lat": 42.230558,
+                            "lon": -88.233109
+                        },
+                        "geocode_method": "parcel",
+                        "cbsa_code": "16980",
+                        "cbsa_level": "metro",
+                        "csa_code": "176",
+                        "census_block_group": "4",
+                        "census_tract": "871305",
+                        "fips_code": "17111",
+                        "congressional_district": "09"
+                    },
+                    {
+                        "person_id": "704423059943",
+                        "first_name": "Jon",
+                        "last_name": "Smith",
+                        "gender": "M",
+                        "family_id": "802406972951",
+                        "estimated_married": "single",
+                        "multi_family": true,
+                        "location_family_count": [
+                            20,
+                            29
+                        ],
+                        "location_unit_count": [
+                            40,
+                            49
+                        ],
+                        "street": "3575 W Barstow Ave",
+                        "suite_description": "Apt",
+                        "suite": "140",
+                        "city": "Fresno",
+                        "state": "CA",
+                        "postal_code": "93711-6679",
+                        "geocoordinate": {
+                            "lat": 36.81488,
+                            "lon": -119.85805
+                        },
+                        "geocode_method": "parcel",
+                        "cbsa_code": "23420",
+                        "cbsa_level": "metro",
+                        "csa_code": "260",
+                        "census_block_group": "2",
+                        "census_tract": "004212",
+                        "fips_code": "06019",
+                        "congressional_district": "21"
+                    },
+                    {
+                        "person_id": "802387981721",
+                        "first_name": "Jon",
+                        "middle_initial": "R",
+                        "last_name": "Smith",
+                        "gender": "M",
+                        "family_id": "300046816953",
+                        "multi_family": false,
+                        "location_family_count": [
+                            1,
+                            1
+                        ],
+                        "location_unit_count": [
+                            1,
+                            1
+                        ],
+                        "street": "11725 Sheffield Dr",
+                        "city": "Florissant",
+                        "state": "MO",
+                        "postal_code": "63033-8032",
+                        "geocoordinate": {
+                            "lat": 38.792019,
+                            "lon": -90.23911
+                        },
+                        "geocode_method": "parcel",
+                        "time_zone": "CST",
+                        "cbsa_code": "41180",
+                        "cbsa_level": "metro",
+                        "csa_code": "476",
+                        "census_block_group": "1",
+                        "census_tract": "210806",
+                        "fips_code": "29189",
+                        "congressional_district": "01"
+                    },
+                    {
+                        "person_id": "903226823945",
+                        "first_name": "Jon",
+                        "last_name": "Smith",
+                        "gender": "M",
+                        "family_id": "401503137059",
+                        "multi_family": false,
+                        "location_family_count": [
+                            1,
+                            1
+                        ],
+                        "location_unit_count": [
+                            1,
+                            1
+                        ],
+                        "street": "1825 Deering St",
+                        "city": "Garden City",
+                        "state": "MI",
+                        "postal_code": "48135-3051",
+                        "geocoordinate": {
+                            "lat": 42.323805,
+                            "lon": -83.316664
+                        },
+                        "geocode_method": "parcel",
+                        "cbsa_code": "19820",
+                        "cbsa_level": "metro",
+                        "csa_code": "220",
+                        "census_block_group": "2",
+                        "census_tract": "569800",
+                        "fips_code": "26163",
+                        "congressional_district": "12"
+                    },
+                    {
+                        "person_id": "503860398815",
+                        "first_name": "Jon",
+                        "last_name": "Smith",
+                        "gender": "M",
+                        "family_id": "300232641983",
+                        "multi_family": false,
+                        "location_family_count": [
+                            1,
+                            1
+                        ],
+                        "location_unit_count": [
+                            1,
+                            1
+                        ],
+                        "street": "2908 Coles Rdg",
+                        "city": "Portsmouth",
+                        "state": "OH",
+                        "postal_code": "45662-2645",
+                        "geocoordinate": {
+                            "lat": 38.757164,
+                            "lon": -82.977478
+                        },
+                        "geocode_method": "parcel",
+                        "time_zone": "EST",
+                        "cbsa_code": "39020",
+                        "cbsa_level": "micro",
+                        "csa_code": "170",
+                        "census_block_group": "2",
+                        "census_tract": "003300",
+                        "fips_code": "39145",
+                        "congressional_district": "02"
+                    }
+                ]
+            }
+        }
+    ],
+    "standardized_name": "data_axle_consumer_search"
+}

@@ -1,0 +1,72 @@
+{
+    "product_id": "api_fdb644ac-a714-4588-b907-aaf8ec664847",
+    "tool_description": "Enter your city and zip code below to find the combined sales tax rate for a location. If you\u2019d like to calculate sales tax with product exemptions, sourcing logic, and shipping taxability, use our sales tax API.",
+    "home_url": "https://rapidapi.com/JustMobi/api/sales-tax-calculator2/",
+    "name": "Sales Tax Calculator",
+    "title": "Sales Tax Calculator",
+    "pricing": "FREEMIUM",
+    "tool_name": "Sales Tax Calculator",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 920,
+        "avgSuccessRate": 83,
+        "popularityScore": 6.8,
+        "__typename": "Score"
+    },
+    "host": "sales-tax-calculator2.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Supported Countries",
+            "url": "https://sales-tax-calculator2.p.rapidapi.com/countries",
+            "description": "Returns a list of supported countries.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://sales-tax-calculator2.p.rapidapi.com/countries\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sales-tax-calculator2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://sales-tax-calculator2.p.rapidapi.com/countries\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sales-tax-calculator2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Calculate",
+            "url": "https://sales-tax-calculator2.p.rapidapi.com/tax",
+            "description": "Retrieves tax rates applicable to a specific address. This endpoint accepts address inputs to deliver up-to-date, relevant local tax rates instantly.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "country",
+                    "type": "STRING",
+                    "description": "Set to one of the countrie codes listed in Supported Countries.",
+                    "default": "US"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "city",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "Meridian"
+                },
+                {
+                    "name": "zip",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "83646"
+                },
+                {
+                    "name": "street",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "936 Storey Ave"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://sales-tax-calculator2.p.rapidapi.com/tax\"\nquerystring = {\"country\": \"US\", \"city\": \"Meridian\", \"zip\": \"83646\", \"street\": \"936 Storey Ave\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sales-tax-calculator2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://sales-tax-calculator2.p.rapidapi.com/tax\"\nquerystring = {\"country\": \"US\", \"city\": \"Meridian\", \"zip\": \"83646\", \"street\": \"936 Storey Ave\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sales-tax-calculator2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "sales_tax_calculator"
+}

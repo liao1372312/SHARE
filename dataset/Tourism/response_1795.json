@@ -1,0 +1,31 @@
+{
+"user_query":"I'm planning a road trip with my family and need to find the geocode for multiple stops.",
+"domain":"Tourism",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Get geocode for the address '111 Main Street, San Francisco'.",
+        "domain": "tourism",
+        "required_inputs": ["address"]
+    },
+    {
+        "id": 2,
+        "description": "Get geocode for the address '222 Elm Street, Los Angeles'.",
+        "domain": "tourism",
+        "required_inputs": ["address"]
+    },
+    {
+        "id": 3,
+        "description": "Get geocode for the address '333 Oak Avenue, Chicago'.",
+        "domain": "tourism",
+        "required_inputs": ["address"]
+    },
+    {
+        "id": 4,
+        "description": "Perform geolookup for the geocodes obtained in steps 1, 2, and 3.",
+        "domain": "tourism",
+        "required_inputs": ["geocode_1", "geocode_2", "geocode_3"],
+        "dependencies": [1, 2, 3]
+    }
+]
+}

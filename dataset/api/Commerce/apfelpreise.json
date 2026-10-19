@@ -1,0 +1,48 @@
+{
+    "product_id": "api_e44d69bb-30d5-4112-a621-7efae97b1a55",
+    "tool_description": "market data for used apple products",
+    "home_url": "https://rapidapi.com/johannes.hinkov/api/apfelpreise/",
+    "name": "Apfelpreise",
+    "title": "Apfelpreise",
+    "pricing": "FREE",
+    "tool_name": "Apfelpreise",
+    "score": {
+        "avgServiceLevel": 0,
+        "avgLatency": 10,
+        "avgSuccessRate": 0,
+        "popularityScore": 0,
+        "__typename": "Score"
+    },
+    "host": "apfelpreise.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "price",
+            "url": "https://apfelpreise.p.rapidapi.com/price/TVdQNzJEL0E=",
+            "description": "Get latest average price for manufacturer number",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "manufacturerNumBase64Encoded",
+                    "type": "string",
+                    "description": "A manufacturer number of an apple product, base64 encoded, e.g for a Apple MacBook Pro 13\\\\\\\" 2020 with manufacturer number MWP72D/A -> TVdQNzJEL0E=",
+                    "default": "TVdQNzJEL0E="
+                },
+                {
+                    "name": "condition",
+                    "type": "ENUM",
+                    "description": "ENUM, valid values are: USED, NEW, DEFECT, REFURBISHED\n\nNote: Until now in v1, only values USED and REFURBISHED are allowed and give the same results (no distringuish between USED or REFURBISHED, so use any of the two.\nIn a future release, the other values will be also supported.",
+                    "default": ""
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://apfelpreise.p.rapidapi.com/price/TVdQNzJEL0E=\"\nquerystring = {\"condition\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"apfelpreise.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://apfelpreise.p.rapidapi.com/price/{manufacturernumbase64encoded}\"\nquerystring = {\"condition\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"apfelpreise.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "Error in validating the request  is not valid value from parameter options"
+            },
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "apfelpreise"
+}

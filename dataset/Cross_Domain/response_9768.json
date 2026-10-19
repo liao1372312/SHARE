@@ -1,0 +1,28 @@
+{
+  "user_query": "I want to suggest popular movies from different genres (comedy, horror, romance) available on streaming platforms (Netflix, Prime Video, Hulu), and provide details about their plots and main cast members.",
+  "domain": "entertainment",
+  "TaskList": [
+    {
+      "id": 1,
+      "description": "查询各个流媒体平台上不同类型的热门电影列表（喜剧、恐怖、浪漫）",
+      "domain": "entertainment",
+      "required_inputs": ["streaming_platforms", "genres"]
+    },
+    {
+      "id": 2,
+      "description": "筛选出每个类型的代表性电影",
+      "domain": "entertainment",
+      "required_inputs": ["movies_list"]
+    },
+    {
+      "id": 3,
+      "description": "获取每部电影的剧情简介和主要演员信息",
+      "domain": "entertainment",
+      "required_inputs": ["movie_title"]
+    }
+  ],
+  "dependencies": [
+    {"from": 1, "to": 2},
+    {"from": 2, "to": 3}
+  ]
+}

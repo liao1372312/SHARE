@@ -1,0 +1,17 @@
+diff --git a/xarray/core/weighted.py b/xarray/core/weighted.py
+index 996d2e4c..d613f85c 100644
+--- a/xarray/core/weighted.py
++++ b/xarray/core/weighted.py
+@@ -142,7 +142,11 @@ class Weighted:
+         # we need to mask data values that are nan; else the weights are wrong
+         mask = da.notnull()
+ 
+-        sum_of_weights = self._reduce(mask, self.weights, dim=dim, skipna=False)
++        # boolean weights should be treated as numeric weights (0/1), not as
++        # logical values in dot products
++        weights = self.weights.astype(float) if self.weights.dtype.kind == "b" else self.weights
++
++        sum_of_weights = self._reduce(mask, weights, dim=dim, skipna=False)
+ 
+         # 0-weights are not valid
+         valid_weights = sum_of_weights != 0.0

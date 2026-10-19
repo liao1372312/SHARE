@@ -1,0 +1,167 @@
+{
+    "product_id": "api_fa714760-70bf-4a9e-a36a-7a9685f128f5",
+    "tool_description": "NOWPayments is a non-custodial cryptocurrency payment processing platform. Accept payments in a wide range of cryptos and get them instantly converted into a coin of your choice and sent to your wallet. Keeping it simple \u2013 no excess. NOWPayments' API allows you to integrate crypto payments in 50+ assets into any service.",
+    "home_url": "https://rapidapi.com/pauline.l/api/nowpayments/",
+    "name": "NOWPayments",
+    "title": "NOWPayments",
+    "pricing": "FREE",
+    "tool_name": "NOWPayments",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 502,
+        "avgSuccessRate": 80,
+        "popularityScore": 9.3,
+        "__typename": "Score"
+    },
+    "host": "nowpayments.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "7.Getlistofpayments",
+            "url": "https://nowpayments.p.rapidapi.com/v1/payment/",
+            "description": "Returns the entire list of all transactions, created with certain API key.\nThe list of optional parameters:\n- limit - number of records in one page. (possible values: from 1 to 500)\n- page - the page number you want to get (possible values: from 0 to **page count - 1**)\n- sortBy - sort the received list by a paramenter. Set to **created_at** by default (possible values: payment_id, payment_status, pay_address, price_amount, price_currency, pay_amount, actually_paid, pay_currency, order_id, order_description, purchase_id, outcome_amount, outcome_currency)\n- orderBy - display the list in ascending or descending order. Set to **asc** by default (possible values: asc, desc)\n- dateFrom - select the displayed period start date (date format: YYYY-MM-DD or yy-MM-ddTHH:mm:ss.SSSZ).\n- dateTo - select the displayed period end date (date format: YYYY-MM-DD or yy-MM-ddTHH:mm:ss.SSSZ).",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "dateFrom",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "2020-01-01"
+                },
+                {
+                    "name": "page",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "limit",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": 10
+                },
+                {
+                    "name": "sortBy",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "created_at"
+                },
+                {
+                    "name": "orderBy",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "asc"
+                },
+                {
+                    "name": "dateTo",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "2021-01-01"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://nowpayments.p.rapidapi.com/v1/payment/\"\nquerystring = {\"dateFrom\": \"2020-01-01\", \"page\": \"\", \"limit\": 10, \"sortBy\": \"created_at\", \"orderBy\": \"asc\", \"dateTo\": \"2021-01-01\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"nowpayments.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://nowpayments.p.rapidapi.com/v1/payment/\"\nquerystring = {\"dateFrom\": \"2020-01-01\", \"page\": \"\", \"limit\": 10, \"sortBy\": \"created_at\", \"orderBy\": \"asc\", \"dateTo\": \"2021-01-01\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"nowpayments.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "1.GetAPIstatus",
+            "url": "https://nowpayments.p.rapidapi.com/v1/status",
+            "description": "This is a method to get information about the current state of the API. If everything is OK, you will receive an \"OK\" message. Otherwise, you'll see some error.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://nowpayments.p.rapidapi.com/v1/status\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"nowpayments.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://nowpayments.p.rapidapi.com/v1/status\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"nowpayments.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "2.Getavailablecurrencies",
+            "url": "https://nowpayments.p.rapidapi.com/v1/currencies",
+            "description": "This is a method for obtaining information about the cryptocurrencies available for payments. This depends on the cryptocurrency you choose for your particular store.\nOptional parameters:\n- fixed_rate(optional) - boolean, can be **true** or **false**. Returns avaliable currencies with minimum and maximum amount of the exchange.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://nowpayments.p.rapidapi.com/v1/currencies\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"nowpayments.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://nowpayments.p.rapidapi.com/v1/currencies\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"nowpayments.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "3.Getestimatedprice",
+            "url": "https://nowpayments.p.rapidapi.com/v1/estimate",
+            "description": "This is a method for calculating the approximate price in cryptocurrency for a given value in Fiat currency. You will need to provide the initial cost in the Fiat currency (amount, currency_from) and the necessary cryptocurrency (currency_to)\nCurrently following fiat currencies are available: usd, eur, nzd, brl, gbp.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "currency_to",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "btc"
+                },
+                {
+                    "name": "currency_from",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "usd"
+                },
+                {
+                    "name": "amount",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": 3999.5
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://nowpayments.p.rapidapi.com/v1/estimate\"\nquerystring = {\"currency_to\": \"btc\", \"currency_from\": \"usd\", \"amount\": 3999.5}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"nowpayments.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://nowpayments.p.rapidapi.com/v1/estimate\"\nquerystring = {\"currency_to\": \"btc\", \"currency_from\": \"usd\", \"amount\": 3999.5}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"nowpayments.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "6.Gettheminimumpaymentamount",
+            "url": "https://nowpayments.p.rapidapi.com/v1/min-amount",
+            "description": "Get the minimum payment amount for a specific pair.\n\nYou can provide both currencies in the pair or just currency_from, and we will calculate the minimum payment amount for currency_from and currency which you have specified as the outcome in the Store Settings.\n\nIn the case of several outcome wallets we will calculate the minimum amount in the same way we route your payment to a specific wallet.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "currency_from",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "eth"
+                },
+                {
+                    "name": "currency_to",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "trx"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://nowpayments.p.rapidapi.com/v1/min-amount\"\nquerystring = {\"currency_from\": \"eth\", \"currency_to\": \"trx\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"nowpayments.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://nowpayments.p.rapidapi.com/v1/min-amount\"\nquerystring = {\"currency_from\": \"eth\", \"currency_to\": \"trx\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"nowpayments.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "5.Getpaymentstatus",
+            "url": "https://nowpayments.p.rapidapi.com/v1/payment/<your_payment_id>",
+            "description": "Get the actual information about the payment. You need to provide the ID of the payment in the request.\n\nNOTE! You should make the get payment status request with the same API key that you used in the create payment request.\nHere is the list of avalable statuses:\n- waiting - waiting for the customer to send the payment. The initial status of each payment.\n- confirming - the transaction is being processed on the blockchain. Appears when NOWPayments detect the funds from the user on the blockchain.\n- confirmed -  the process is confirmed by the blockchain. Customer\u2019s funds have accumulated enough confirmations.\n- sending - the funds are being sent to your personal wallet. We are in the process of sending the funds to you.\n- partially_paid -  it shows that the customer sent the less than the actual price. Appears when the funds have arrived in your wallet.\n- finished - the funds have reached your personal address and the payment is finished.\n- failed -  the payment wasn't completed due to the error of some kind.\n- refunded -  the funds were refunded back to the user.\n- expired - the user didn't send the funds to the specified address in the 24 hour time window.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://nowpayments.p.rapidapi.com/v1/payment/<your_payment_id>\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"nowpayments.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://nowpayments.p.rapidapi.com/v1/payment/<your_payment_id>\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"nowpayments.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "nowpayments"
+}

@@ -1,0 +1,38 @@
+{
+"user_query":"I want to retrieve data on the demographics of US states in the South and West regions, including their population, area, and major cities, as well as the main article and metadata about the US states.",
+"domain":"Technology",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Retrieve population, area, and major cities data for states in the South region.",
+        "domain": "technology",
+        "required_inputs": ["region='South'"]
+    },
+    {
+        "id": 2,
+        "description": "Retrieve population, area, and major cities data for states in the West region.",
+        "domain": "technology",
+        "required_inputs": ["region='West'"]
+    },
+    {
+        "id": 3,
+        "description": "Compile and analyze the data retrieved from the South and West regions.",
+        "domain": "technology",
+        "required_inputs": ["data from task 1", "data from task 2"],
+        "dependencies": [1, 2]
+    },
+    {
+        "id": 4,
+        "description": "Retrieve the main article and metadata about the US states from a credible source.",
+        "domain": "technology",
+        "required_inputs": ["source='credible'"]
+    },
+    {
+        "id": 5,
+        "description": "Combine the compiled demographic data with the main article and metadata.",
+        "domain": "technology",
+        "required_inputs": ["data from task 3", "data from task 4"],
+        "dependencies": [3, 4]
+    }
+]
+}

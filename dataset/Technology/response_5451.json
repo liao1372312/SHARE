@@ -1,0 +1,26 @@
+{
+"user_query":"I want to perform a DNS lookup on a suspicious domain and check if it's blocked by the Great Firewall of China.",
+"domain":"Technology",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Perform a DNS lookup on the suspicious domain to gather information such as IP address and associated records.",
+        "domain": "technology",
+        "required_inputs": ["domain_name"]
+    },
+    {
+        "id": 2,
+        "description": "Check the DNS lookup result to determine if the domain is hosted in China.",
+        "domain": "technology",
+        "required_inputs": ["dns_lookup_result"],
+        "dependencies": [1]
+    },
+    {
+        "id": 3,
+        "description": "Query the Great Firewall API to check if the domain is blocked in China based on the previous results.",
+        "domain": "technology",
+        "required_inputs": ["domain_name"],
+        "dependencies": [2]
+    }
+]
+}

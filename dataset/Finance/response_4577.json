@@ -1,0 +1,34 @@
+{
+"user_query":"I want to prepare a presentation on the history of cryptocurrencies.",
+"domain":"Finance",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Gather historical rates of Bitcoin for the past year.",
+        "domain": "finance",
+        "required_inputs": ["cryptocurrency_name", "time_period"]
+    },
+    {
+        "id": 2,
+        "description": "Gather historical rates of Ethereum for the past year.",
+        "domain": "finance",
+        "required_inputs": ["cryptocurrency_name", "time_period"]
+    },
+    {
+        "id": 3,
+        "description": "Compile a list of reliable sources for cryptocurrency research.",
+        "domain": "finance",
+        "required_inputs": ["topic"]
+    },
+    {
+        "id": 4,
+        "description": "Synthesize the collected data into a coherent presentation format.",
+        "domain": "technology",
+        "required_inputs": ["historical_data_bitcoin", "historical_data_ethereum", "sources"]
+    }
+],
+"dependencies": {
+    "step2": "step1",
+    "step4": ["step1", "step2", "step3"]
+}
+}

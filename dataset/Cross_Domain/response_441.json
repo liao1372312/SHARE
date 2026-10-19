@@ -1,0 +1,34 @@
+{
+"user_query":"I'm organizing a company event and need to send out emails to our international clients.",
+"domain":"Cross-Domain",
+"TaskList": [
+{
+"id": 1,
+"description": "Translate the event details from English to French.",
+"domain": "Cross-Domain",
+"required_inputs": ["event_details_in_english"]
+},
+{
+"id": 2,
+"description": "Check the translated email content for any offensive language.",
+"domain": "Cross-Domain",
+"required_inputs": ["translated_event_details"]
+},
+{
+"id": 3,
+"description": "Extract phone numbers from the RSVP responses to update the contact database.",
+"domain": "Cross-Domain",
+"required_inputs": ["rsvp_responses"]
+},
+{
+"id": 4,
+"description": "Send out emails with translated content to international clients.",
+"domain": "Cross-Domain",
+"required_inputs": ["final_email_content", "client_email_addresses"]
+}
+],
+"dependencies": {
+  "2": [1],
+  "4": [2, 3]
+}
+}

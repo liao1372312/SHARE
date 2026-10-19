@@ -1,0 +1,285 @@
+{
+    "product_id": "api_4c920f6c-7727-4c6c-9892-5fe4acc6bee1",
+    "tool_description": "Daily Football Prediction & Betting Tips with AI powered analysis and probability statistics. High efficiency, average bookie odds, profit-loss calculation, value betting.  Limitted Time: Ultra Plan is only $2.99/mo\n",
+    "home_url": "https://rapidapi.com/casedoweb-sXAtnI-JXY/api/today-football-prediction/",
+    "name": "Today Football Prediction",
+    "title": "Today Football Prediction",
+    "pricing": "FREEMIUM",
+    "tool_name": "Today Football Prediction",
+    "score": {
+        "avgServiceLevel": 97,
+        "avgLatency": 1504,
+        "avgSuccessRate": 93,
+        "popularityScore": 9.1,
+        "__typename": "Score"
+    },
+    "host": "today-football-prediction.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "VIP Prediction Scores",
+            "url": "https://today-football-prediction.p.rapidapi.com/predictions/scores",
+            "description": "This **VIP** endpoint returns match score predictions with average goal stats. Same query strings and pagination functionality is supported with **/predictions/list**\n\n* Use **/predictions/list** endpoint  to get  market bet predictions.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "page",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "1"
+                },
+                {
+                    "name": "date",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "2022-08-13"
+                },
+                {
+                    "name": "league",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "1"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://today-football-prediction.p.rapidapi.com/predictions/scores\"\nquerystring = {\"page\": \"1\", \"date\": \"2022-08-13\", \"league\": \"1\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"today-football-prediction.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://today-football-prediction.p.rapidapi.com/predictions/scores\"\nquerystring = {\"page\": \"1\", \"date\": \"2022-08-13\", \"league\": \"1\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"today-football-prediction.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "This endpoint is disabled for your subscription"
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Daily Predictions",
+            "url": "https://today-football-prediction.p.rapidapi.com/predictions/list",
+            "description": "Returns **Daily Football Predictions** with pagination support. \nSearch/filter can be used by **date**, **league**, **market-type**.\n\n* Use **predictions/{matchId}/details** endpoint to see more information about any particular match prediction.\n* Use **predictions/scores** endpoint to get score prediction and average goals.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "league",
+                    "type": "STRING",
+                    "description": "Example: 1",
+                    "default": ""
+                },
+                {
+                    "name": "page",
+                    "type": "STRING",
+                    "description": "Example: 1",
+                    "default": "1"
+                },
+                {
+                    "name": "market",
+                    "type": "STRING",
+                    "description": "Example: 1X2, OU25, bts\n",
+                    "default": ""
+                },
+                {
+                    "name": "date",
+                    "type": "STRING",
+                    "description": "Example: 2022-08-13",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://today-football-prediction.p.rapidapi.com/predictions/list\"\nquerystring = {\"league\": \"\", \"page\": \"1\", \"market\": \"\", \"date\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"today-football-prediction.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://today-football-prediction.p.rapidapi.com/predictions/list\"\nquerystring = {\"league\": \"\", \"page\": \"1\", \"market\": \"\", \"date\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"today-football-prediction.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "error": "Invalid market type. Input:  can be one of [1X2,OU25,bts]"
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "VIP Featured Predictions",
+            "url": "https://today-football-prediction.p.rapidapi.com/predictions/featured",
+            "description": "Returns **Daily  Featured Prediction** results which have higher probability and better odds than others. More efficient selections.\n\nCompare its performance from **stats/performance** endpoint.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://today-football-prediction.p.rapidapi.com/predictions/featured\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"today-football-prediction.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://today-football-prediction.p.rapidapi.com/predictions/featured\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"today-football-prediction.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "This endpoint is disabled for your subscription"
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Prediction Details",
+            "url": "https://today-football-prediction.p.rapidapi.com/predictions/62fb54c82c9a2e8d643c7965/details",
+            "description": "Shows all details about the match, its prediction and the prediction results.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "match_id",
+                    "type": "string",
+                    "description": "",
+                    "default": "62fb54c82c9a2e8d643c7965"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://today-football-prediction.p.rapidapi.com/predictions/62fb54c82c9a2e8d643c7965/details\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"today-football-prediction.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://today-football-prediction.p.rapidapi.com/predictions/{match_id}/details\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"today-football-prediction.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "match": {
+                    "id": "62fb54c82c9a2e8d643c7965",
+                    "home_team": "Aston Villa",
+                    "away_team": "Everton",
+                    "date": "2022-08-13",
+                    "date_time": "2022-08-13T11:30:00.000Z",
+                    "league": "1",
+                    "predictions": {
+                        "1X2": {
+                            "prediction": "1",
+                            "probabilities": {
+                                "1": 47,
+                                "2": 20,
+                                "X": 33
+                            }
+                        },
+                        "OU25": {
+                            "prediction": "O",
+                            "probabilities": {
+                                "U": 40,
+                                "O": 60
+                            }
+                        },
+                        "bts": {
+                            "prediction": "YES",
+                            "probabilities": {
+                                "YES": 64,
+                                "NO": 36
+                            }
+                        }
+                    },
+                    "odds": {
+                        "1X2": {
+                            "1": 1.8,
+                            "2": 4.5,
+                            "X": 3.5
+                        },
+                        "OU25": {
+                            "U": 1.8,
+                            "O": 2
+                        },
+                        "bts": {
+                            "YES": 1.8,
+                            "NO": 1.95
+                        }
+                    },
+                    "is_finished": true,
+                    "result_score": "2 - 1",
+                    "prediction_results": {
+                        "1X2": {
+                            "prediction": "1",
+                            "result": "1",
+                            "status": true,
+                            "probability": 47,
+                            "odd": 1.8,
+                            "profitLoss": 0.8
+                        },
+                        "OU25": {
+                            "prediction": "O",
+                            "result": "O",
+                            "status": true,
+                            "probability": 60,
+                            "odd": 2,
+                            "profitLoss": 1
+                        },
+                        "bts": {
+                            "prediction": "YES",
+                            "result": "YES",
+                            "status": true,
+                            "probability": 64,
+                            "odd": 1.8,
+                            "profitLoss": 0.8
+                        }
+                    }
+                }
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Stats - Performance",
+            "url": "https://today-football-prediction.p.rapidapi.com/stats/performance",
+            "description": "Returns statistics of AI prediction module with selected odds, prediction probabilities and profit-loss calculation. \n\n**Profit-Loss**: calculated by considering only single bet is played from 1 unit amount. If the bet is won, gets prediction odd as positive number else -1.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "date",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "2022-08-13"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://today-football-prediction.p.rapidapi.com/stats/performance\"\nquerystring = {\"date\": \"2022-08-13\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"today-football-prediction.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://today-football-prediction.p.rapidapi.com/stats/performance\"\nquerystring = {\"date\": \"2022-08-13\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"today-football-prediction.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "date": "2022-08-13",
+                "featured": {
+                    "classic": {
+                        "profit_loss": 6.94,
+                        "winning_percentage": 58.33,
+                        "count": 24,
+                        "count_won": 14,
+                        "count_lost": 10,
+                        "avg_prob": 48.63,
+                        "avg_odd": 2.28
+                    },
+                    "ou25": {
+                        "profit_loss": 2.63,
+                        "winning_percentage": 66.67,
+                        "count": 24,
+                        "count_won": 16,
+                        "count_lost": 8,
+                        "avg_prob": 58.83,
+                        "avg_odd": 1.72
+                    },
+                    "both": {
+                        "profit_loss": 6.27,
+                        "winning_percentage": 70.83,
+                        "count": 24,
+                        "count_won": 17,
+                        "count_lost": 7,
+                        "avg_prob": 62.88,
+                        "avg_odd": 1.85
+                    }
+                },
+                "all": {
+                    "classic": {
+                        "profit_loss": -71.56,
+                        "winning_percentage": 44.31,
+                        "count": 817,
+                        "count_won": 362,
+                        "count_lost": 455,
+                        "avg_prob": 47.3,
+                        "avg_odd": 2.46
+                    },
+                    "ou25": {
+                        "profit_loss": -44.11,
+                        "winning_percentage": 54.35,
+                        "count": 817,
+                        "count_won": 444,
+                        "count_lost": 373,
+                        "avg_prob": 63.37,
+                        "avg_odd": 1.79
+                    },
+                    "both": {
+                        "profit_loss": -41.6,
+                        "winning_percentage": 49.94,
+                        "count": 817,
+                        "count_won": 408,
+                        "count_lost": 409,
+                        "avg_prob": 62.3,
+                        "avg_odd": 1.84
+                    }
+                }
+            },
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "today_football_prediction"
+}

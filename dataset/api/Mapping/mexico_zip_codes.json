@@ -1,0 +1,138 @@
+{
+    "product_id": "api_b66344b3-29f4-4688-a5b5-9da93f69fabb",
+    "tool_description": "",
+    "home_url": "https://rapidapi.com/acrogenesis-llc-api/api/mexico-zip-codes/",
+    "name": "Mexico ZIP Codes",
+    "title": "Mexico ZIP Codes",
+    "pricing": "FREEMIUM",
+    "tool_name": "Mexico ZIP Codes",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 87,
+        "avgSuccessRate": 100,
+        "popularityScore": 9.5,
+        "__typename": "Score"
+    },
+    "host": "mexico-zip-codes.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Search zip codes",
+            "url": "https://mexico-zip-codes.p.rapidapi.com/buscar/",
+            "description": "Search for valid zip codes with starting digits",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "codigo_postal",
+                    "type": "STRING",
+                    "description": "Part of a zip code",
+                    "default": "646"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://mexico-zip-codes.p.rapidapi.com/buscar/\"\nquerystring = {\"codigo_postal\": \"646\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"mexico-zip-codes.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://mexico-zip-codes.p.rapidapi.com/buscar/\"\nquerystring = {\"codigo_postal\": \"646\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"mexico-zip-codes.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "codigos_postales": [
+                    "64600",
+                    "64610",
+                    "64618",
+                    "64619",
+                    "64620",
+                    "64623",
+                    "64630",
+                    "64632",
+                    "64633",
+                    "64634",
+                    "64635",
+                    "64636",
+                    "64637",
+                    "64638",
+                    "64639",
+                    "64640",
+                    "64649",
+                    "64650",
+                    "64659",
+                    "64660"
+                ]
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "get": {
+                        "type": "string"
+                    },
+                    "parameters": {
+                        "type": "array"
+                    },
+                    "errors": {
+                        "type": "array"
+                    },
+                    "results": {
+                        "type": "integer"
+                    },
+                    "response": {
+                        "type": "array",
+                        "items": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Zip Code Information",
+            "url": "https://mexico-zip-codes.p.rapidapi.com/codigo_postal/64630",
+            "description": "Retrieves the information of a particular zip code",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "zip_code",
+                    "type": "STRING",
+                    "description": "A zip code",
+                    "default": "64630"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://mexico-zip-codes.p.rapidapi.com/codigo_postal/64630\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"mexico-zip-codes.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://mexico-zip-codes.p.rapidapi.com/codigo_postal/{zip_code}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"mexico-zip-codes.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "codigo_postal": "64630",
+                "municipio": "Monterrey",
+                "estado": "Nuevo Le\u00f3n",
+                "colonias": [
+                    "San Jemo",
+                    "Colinas de San Jer\u00f3nimo",
+                    "Rinc\u00f3n de San Jemo",
+                    "Villas de San Jer\u00f3nimo",
+                    "La Escondida"
+                ]
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "get": {
+                        "type": "string"
+                    },
+                    "parameters": {
+                        "type": "array"
+                    },
+                    "errors": {
+                        "type": "array"
+                    },
+                    "results": {
+                        "type": "integer"
+                    },
+                    "response": {
+                        "type": "array",
+                        "items": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "standardized_name": "mexico_zip_codes"
+}

@@ -1,0 +1,32 @@
+{
+"user_query":"I'm organizing a charity event with an NBA theme. Can you help me find a list of NBA games that were held during previous charity events? It would be great if you could provide me with the team details of the home and away teams playing in those games. Additionally, I'd love to know the love percentage between two random NBA players to add some inspiration to our event.",
+"domain":"Technology",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Query the database for NBA games that were held during previous charity events.",
+        "domain": "technology",
+        "required_inputs": ["event_type", "event_date_range"]
+    },
+    {
+        "id": 2,
+        "description": "Retrieve team details for the home and away teams from the list of charity NBA games.",
+        "domain": "technology",
+        "required_inputs": ["game_id"],
+        "dependency": "Step 2 requires results from Step 1."
+    },
+    {
+        "id": 3,
+        "description": "Select two random NBA players to calculate their love percentage.",
+        "domain": "technology",
+        "required_inputs": ["player_id1", "player_id2"]
+    },
+    {
+        "id": 4,
+        "description": "Calculate the love percentage between the two selected NBA players.",
+        "domain": "technology",
+        "required_inputs": ["player_id1", "player_id2"],
+        "dependency": "Step 4 requires results from Step 3."
+    }
+]
+}

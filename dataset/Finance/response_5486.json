@@ -1,0 +1,25 @@
+{
+"user_query":"I'm looking to buy a new house and I need to calculate the monthly payments. Can you help me with that? I have a down payment of $50,000, a loan term of 30 years, an interest rate of 4%, and the purchase price of $500,000. Also, I'm interested in the 10 year historical daily prices of Apple stock.",
+"domain":"Finance",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Calculate the loan amount by subtracting the down payment from the purchase price.",
+        "domain": "finance",
+        "required_inputs": ["purchase_price", "down_payment"]
+    },
+    {
+        "id": 2,
+        "description": "Calculate the monthly mortgage payment using the loan amount, interest rate, and loan term.",
+        "domain": "finance",
+        "required_inputs": ["loan_amount", "interest_rate", "loan_term"],
+        "dependencies": [1]
+    },
+    {
+        "id": 3,
+        "description": "Retrieve the 10-year historical daily prices of Apple stock.",
+        "domain": "finance",
+        "required_inputs": ["stock_symbol", "time_period"]
+    }
+]
+}

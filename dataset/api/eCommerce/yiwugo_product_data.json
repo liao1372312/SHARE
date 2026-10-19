@@ -1,0 +1,167 @@
+{
+    "product_id": "api_e7c6f70b-62c6-4a37-aaf2-82c90a7a0612",
+    "tool_description": "Get the yiwugo.com(\u4e49\u4e4c\u8d2d) products'  information",
+    "home_url": "https://rapidapi.com/solo-xwz/api/yiwugo-product-data/",
+    "name": "yiwugo product data",
+    "title": "yiwugo product data",
+    "pricing": "FREEMIUM",
+    "tool_name": "yiwugo product data",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 936,
+        "avgSuccessRate": 85,
+        "popularityScore": 7.9,
+        "__typename": "Score"
+    },
+    "host": "yiwugo-product-data.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "search products",
+            "url": "https://yiwugo-product-data.p.rapidapi.com/api/sc/yiwugo/search/product",
+            "description": "search products\nThe source of the data can be controlled through the 'lan' field (en: English website, cn: Chinese website)",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "keyword",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "lan",
+                    "type": "ENUM",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "page",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "1"
+                },
+                {
+                    "name": "pageSize",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "10"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://yiwugo-product-data.p.rapidapi.com/api/sc/yiwugo/search/product\"\nquerystring = {\"lan\": \"\", \"page\": \"1\", \"keyword\": \"\", \"pageSize\": \"10\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"yiwugo-product-data.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://yiwugo-product-data.p.rapidapi.com/api/sc/yiwugo/search/product\"\nquerystring = {\"lan\": \"\", \"page\": \"1\", \"keyword\": \"\", \"pageSize\": \"10\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"yiwugo-product-data.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You are not subscribed to this API."
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "search shops",
+            "url": "https://yiwugo-product-data.p.rapidapi.com/api/sc/yiwugo/search/shop",
+            "description": "search shops by keyword.\nThe source of the data can be controlled through the 'lan' field (en: English website, cn: Chinese website)",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "keyword",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "lan",
+                    "type": "ENUM",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "page",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "1"
+                },
+                {
+                    "name": "pageSize",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "10"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://yiwugo-product-data.p.rapidapi.com/api/sc/yiwugo/search/shop\"\nquerystring = {\"lan\": \"\", \"page\": \"1\", \"keyword\": \"\", \"pageSize\": \"10\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"yiwugo-product-data.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://yiwugo-product-data.p.rapidapi.com/api/sc/yiwugo/search/shop\"\nquerystring = {\"lan\": \"\", \"page\": \"1\", \"keyword\": \"\", \"pageSize\": \"10\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"yiwugo-product-data.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "code": 422,
+                "msg": "unexpected value; permitted: 'cn', 'en'",
+                "detail": [
+                    {
+                        "loc": [
+                            "query",
+                            "lan"
+                        ],
+                        "msg": "unexpected value; permitted: 'cn', 'en'",
+                        "type": "value_error.const",
+                        "ctx": {
+                            "given": "",
+                            "permitted": [
+                                "cn",
+                                "en"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "get product detail",
+            "url": "https://yiwugo-product-data.p.rapidapi.com/api/sc/yiwugo/item_detail",
+            "description": "get product detail by item_id,\nThe source of the data can be controlled through the 'lan' field (en: English website, cn: Chinese website)",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "item_id",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "930783722"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "lan",
+                    "type": "ENUM",
+                    "description": "",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://yiwugo-product-data.p.rapidapi.com/api/sc/yiwugo/item_detail\"\nquerystring = {\"lan\": \"\", \"item_id\": \"930783722\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"yiwugo-product-data.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://yiwugo-product-data.p.rapidapi.com/api/sc/yiwugo/item_detail\"\nquerystring = {\"lan\": \"\", \"item_id\": \"930783722\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"yiwugo-product-data.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "code": 422,
+                "msg": "unexpected value; permitted: 'cn', 'en'",
+                "detail": [
+                    {
+                        "loc": [
+                            "query",
+                            "lan"
+                        ],
+                        "msg": "unexpected value; permitted: 'cn', 'en'",
+                        "type": "value_error.const",
+                        "ctx": {
+                            "given": "",
+                            "permitted": [
+                                "cn",
+                                "en"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "yiwugo_product_data"
+}

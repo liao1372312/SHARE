@@ -1,0 +1,137 @@
+{
+    "product_id": "api_2170ba45-17a5-42dd-a8ea-7d0dd2587761",
+    "tool_description": "Extract labels from image using (google vision label detection) ",
+    "home_url": "https://rapidapi.com/mkrtchyankaro-A_M729L_lrj/api/label-detection/",
+    "name": "Label Detection",
+    "title": "Label Detection",
+    "pricing": "FREEMIUM",
+    "tool_name": "Label Detection",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 380,
+        "avgSuccessRate": 100,
+        "popularityScore": 8.3,
+        "__typename": "Score"
+    },
+    "host": "label-detection.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "GET Label Detection",
+            "url": "https://label-detection.p.rapidapi.com/label-detection",
+            "description": "the **important** thing is that you should use **image** as a query name\nExample (url?**image**=\u201cimage_url\u201d)",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "image",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "https://m.media-amazon.com/images/I/71k6XnjuwkL._AC_SL1500_.jpg"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://label-detection.p.rapidapi.com/label-detection\"\nquerystring = {\"image\": \"https://m.media-amazon.com/images/I/71k6XnjuwkL._AC_SL1500_.jpg\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"label-detection.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://label-detection.p.rapidapi.com/label-detection\"\nquerystring = {\"image\": \"https://m.media-amazon.com/images/I/71k6XnjuwkL._AC_SL1500_.jpg\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"label-detection.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "labels": [
+                    {
+                        "text": "Tire",
+                        "score": 0.9788352251052856,
+                        "locale": ""
+                    },
+                    {
+                        "text": "Wheel",
+                        "score": 0.9750273823738098,
+                        "locale": ""
+                    },
+                    {
+                        "text": "Land vehicle",
+                        "score": 0.9640672206878662,
+                        "locale": ""
+                    },
+                    {
+                        "text": "Car",
+                        "score": 0.9598584175109863,
+                        "locale": ""
+                    },
+                    {
+                        "text": "Vehicle",
+                        "score": 0.9566956758499146,
+                        "locale": ""
+                    },
+                    {
+                        "text": "Automotive lighting",
+                        "score": 0.9277289509773254,
+                        "locale": ""
+                    },
+                    {
+                        "text": "Hood",
+                        "score": 0.9182772040367126,
+                        "locale": ""
+                    },
+                    {
+                        "text": "Grille",
+                        "score": 0.908598005771637,
+                        "locale": ""
+                    },
+                    {
+                        "text": "Automotive design",
+                        "score": 0.9064827561378479,
+                        "locale": ""
+                    },
+                    {
+                        "text": "Motor vehicle",
+                        "score": 0.9057731628417969,
+                        "locale": ""
+                    }
+                ],
+                "success": true,
+                "dimensions": {
+                    "height": 859,
+                    "width": 1500,
+                    "type": "jpg"
+                }
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "labels": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "text": {
+                                    "type": "string"
+                                },
+                                "score": {
+                                    "type": "number"
+                                },
+                                "locale": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "success": {
+                        "type": "boolean"
+                    },
+                    "dimensions": {
+                        "type": "object",
+                        "properties": {
+                            "height": {
+                                "type": "integer"
+                            },
+                            "width": {
+                                "type": "integer"
+                            },
+                            "type": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "standardized_name": "label_detection"
+}

@@ -1,0 +1,239 @@
+{
+    "product_id": "api_1401413a-3036-4dce-9955-7a4d00faf9e9",
+    "tool_description": "Provides Access to the statistical strength of all 8 major currencies, across 28 Forex pairs and on 4 different time frames.",
+    "home_url": "https://rapidapi.com/Lukas247/api/currency-quake/",
+    "name": "Currency Quake",
+    "title": "Currency Quake",
+    "pricing": "FREEMIUM",
+    "tool_name": "Currency Quake",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 587,
+        "avgSuccessRate": 96,
+        "popularityScore": 8.9,
+        "__typename": "Score"
+    },
+    "host": "currency-quake.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Market Status",
+            "url": "https://currency-quake.p.rapidapi.com/market-status/",
+            "description": "Is the market open?",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://currency-quake.p.rapidapi.com/market-status/\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"currency-quake.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://currency-quake.p.rapidapi.com/market-status/\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"currency-quake.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "market_is_open": true
+            }
+        },
+        {
+            "name": "Pair Strength",
+            "url": "https://currency-quake.p.rapidapi.com/pairs/h1/",
+            "description": "Exposes the underlying calculations that are performed on each pair to get a currency\u2019s combined strength.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "timeframe",
+                    "type": "STRING",
+                    "description": "Timeframe (h1, h4, d1 or w1)",
+                    "default": "h1"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://currency-quake.p.rapidapi.com/pairs/h1/\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"currency-quake.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://currency-quake.p.rapidapi.com/pairs/{timeframe}/\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"currency-quake.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "pair": "audcad",
+                    "change": 0.0771
+                },
+                {
+                    "pair": "audchf",
+                    "change": 0.0302
+                },
+                {
+                    "pair": "audjpy",
+                    "change": 0.0106
+                },
+                {
+                    "pair": "audnzd",
+                    "change": -0.0197
+                },
+                {
+                    "pair": "audusd",
+                    "change": 0.0349
+                },
+                {
+                    "pair": "cadchf",
+                    "change": -0.0456
+                },
+                {
+                    "pair": "cadjpy",
+                    "change": -0.0484
+                },
+                {
+                    "pair": "chfjpy",
+                    "change": 0.002
+                },
+                {
+                    "pair": "euraud",
+                    "change": -0.0298
+                },
+                {
+                    "pair": "eurcad",
+                    "change": 0.0394
+                },
+                {
+                    "pair": "eurchf",
+                    "change": -0.0146
+                },
+                {
+                    "pair": "eurgbp",
+                    "change": -0.0058
+                },
+                {
+                    "pair": "eurjpy",
+                    "change": -0.0164
+                },
+                {
+                    "pair": "eurnzd",
+                    "change": -0.0613
+                },
+                {
+                    "pair": "eurusd",
+                    "change": -0.0057
+                },
+                {
+                    "pair": "gbpaud",
+                    "change": -0.0344
+                },
+                {
+                    "pair": "gbpcad",
+                    "change": 0.0345
+                },
+                {
+                    "pair": "gbpchf",
+                    "change": -0.0125
+                },
+                {
+                    "pair": "gbpjpy",
+                    "change": -0.0109
+                },
+                {
+                    "pair": "gbpnzd",
+                    "change": -0.0558
+                },
+                {
+                    "pair": "gbpusd",
+                    "change": -0.0042
+                },
+                {
+                    "pair": "nzdcad",
+                    "change": 0.0901
+                },
+                {
+                    "pair": "nzdchf",
+                    "change": 0.0275
+                },
+                {
+                    "pair": "nzdjpy",
+                    "change": 0.0615
+                },
+                {
+                    "pair": "nzdusd",
+                    "change": 0.0578
+                },
+                {
+                    "pair": "usdcad",
+                    "change": 0.053
+                },
+                {
+                    "pair": "usdchf",
+                    "change": -0.0033
+                },
+                {
+                    "pair": "usdjpy",
+                    "change": -0.0155
+                }
+            ],
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "get": {
+                        "type": "string"
+                    },
+                    "parameters": {
+                        "type": "array"
+                    },
+                    "errors": {
+                        "type": "array"
+                    },
+                    "results": {
+                        "type": "integer"
+                    },
+                    "response": {
+                        "type": "array",
+                        "items": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Symbol Strength",
+            "url": "https://currency-quake.p.rapidapi.com/symbols/h1/",
+            "description": "Exposes the combined strength of 8 individual currencies using calculations applied to 28 Forex pairs.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "timeframe",
+                    "type": "STRING",
+                    "description": "Timeframe (h1, h4, d1 or w1)",
+                    "default": "h1"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://currency-quake.p.rapidapi.com/symbols/h1/\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"currency-quake.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://currency-quake.p.rapidapi.com/symbols/{timeframe}/\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"currency-quake.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "symbol": "usd",
+                    "change": -0.0486
+                },
+                {
+                    "symbol": "eur",
+                    "change": -0.0942
+                },
+                {
+                    "symbol": "gbp",
+                    "change": -0.0775
+                },
+                {
+                    "symbol": "nzd",
+                    "change": 0.3737
+                },
+                {
+                    "symbol": "cad",
+                    "change": -0.3881
+                },
+                {
+                    "symbol": "aud",
+                    "change": 0.1973
+                },
+                {
+                    "symbol": "chf",
+                    "change": 0.0203
+                },
+                {
+                    "symbol": "jpy",
+                    "change": 0.0171
+                }
+            ]
+        }
+    ],
+    "standardized_name": "currency_quake"
+}

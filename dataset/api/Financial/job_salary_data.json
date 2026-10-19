@@ -1,0 +1,136 @@
+{
+    "product_id": "api_07ccc820-bafc-4228-86db-4f00742f034f",
+    "tool_description": "Extremely Fast and Simple API to get Job Salary/Pay Estimations from all major publishers - Payscale, Glassdoor, Salary.com, ZipRecruiter and many others, all in a single API.",
+    "home_url": "https://rapidapi.com/letscrape-6bRBa3QguO5/api/job-salary-data/",
+    "name": "Job Salary Data",
+    "title": "Job Salary Data",
+    "pricing": "FREEMIUM",
+    "tool_name": "Job Salary Data",
+    "score": {
+        "avgServiceLevel": 99,
+        "avgLatency": 210,
+        "avgSuccessRate": 99,
+        "popularityScore": 9.6,
+        "__typename": "Score"
+    },
+    "host": "job-salary-data.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Job Salary",
+            "url": "https://job-salary-data.p.rapidapi.com/job-salary",
+            "description": "Get estimated job salaries/pay by job title and location.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "job_title",
+                    "type": "STRING",
+                    "description": "Job title for which to get salary estimation",
+                    "default": "nodejs developer"
+                },
+                {
+                    "name": "location",
+                    "type": "STRING",
+                    "description": "Free-text location/area in which to get salary estimation",
+                    "default": "new york, usa"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "radius",
+                    "type": "STRING",
+                    "description": "Search radius in km (measured from *location*).\nDefault: `200`.",
+                    "default": "200"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://job-salary-data.p.rapidapi.com/job-salary\"\nquerystring = {\"job_title\": \"nodejs developer\", \"radius\": \"200\", \"location\": \"new york, usa\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"job-salary-data.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://job-salary-data.p.rapidapi.com/job-salary\"\nquerystring = {\"job_title\": \"nodejs developer\", \"radius\": \"200\", \"location\": \"new york, usa\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"job-salary-data.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "status": "OK",
+                "request_id": "497ba220-6d3e-49f7-a240-c82cfdc26149",
+                "data": [
+                    {
+                        "location": "New York, NY",
+                        "job_title": "Junior Node Js Developer",
+                        "publisher_name": "ZipRecruiter",
+                        "publisher_link": "https://www.ziprecruiter.com/Salaries/Junior-Node-JS-Developer-Salary--in-New-York",
+                        "min_salary": 84181,
+                        "max_salary": 176563,
+                        "median_salary": 116923,
+                        "salary_period": "YEAR",
+                        "salary_currency": "USD"
+                    },
+                    {
+                        "location": "New York, NY",
+                        "job_title": "Node.js Developer",
+                        "publisher_name": "Salary.com",
+                        "publisher_link": "https://www.salary.com/research/company/linkup-studio/node-js-developer-salary?cjid=19425587",
+                        "min_salary": 95432.63775962,
+                        "max_salary": 122433.0993306,
+                        "median_salary": 111203.23262967,
+                        "salary_period": "YEAR",
+                        "salary_currency": "USD"
+                    },
+                    {
+                        "location": "Brooklyn, NY",
+                        "job_title": "Full Stack Developer",
+                        "publisher_name": "Indeed",
+                        "publisher_link": "https://www.indeed.com/cmp/Motion-Recruitment-2/salaries/Full-Stack-Developer/Brooklyn-NY",
+                        "min_salary": 70000,
+                        "max_salary": 211000,
+                        "median_salary": 139160.69,
+                        "salary_period": "YEAR",
+                        "salary_currency": "USD"
+                    }
+                ]
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "type": "string"
+                    },
+                    "request_id": {
+                        "type": "string"
+                    },
+                    "data": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "location": {
+                                    "type": "string"
+                                },
+                                "job_title": {
+                                    "type": "string"
+                                },
+                                "publisher_name": {
+                                    "type": "string"
+                                },
+                                "publisher_link": {
+                                    "type": "string"
+                                },
+                                "min_salary": {
+                                    "type": "integer"
+                                },
+                                "max_salary": {
+                                    "type": "integer"
+                                },
+                                "median_pay": {
+                                    "type": "integer"
+                                },
+                                "salary_period": {
+                                    "type": "string"
+                                },
+                                "salary_currency": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "standardized_name": "job_salary_data"
+}

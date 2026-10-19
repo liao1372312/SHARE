@@ -1,0 +1,65 @@
+{
+    "product_id": "api_029c5ffc-f274-4ae9-beda-522667353bfb",
+    "tool_description": "Free Reverse Geocoding service - Get a full customizable text address from latitude and longitude pairs.",
+    "home_url": "https://rapidapi.com/castelli0giovanni-VdUSmLXuCR3/api/feroeg-reverse-geocoding/",
+    "name": "Feroeg - Reverse Geocoding",
+    "title": "Feroeg - Reverse Geocoding",
+    "pricing": "FREE",
+    "tool_name": "Feroeg - Reverse Geocoding",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 237,
+        "avgSuccessRate": 100,
+        "popularityScore": 9.5,
+        "__typename": "Score"
+    },
+    "host": "feroeg-reverse-geocoding.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "ReverseGeocode",
+            "url": "https://feroeg-reverse-geocoding.p.rapidapi.com/address",
+            "description": "Return a text address from a latitude/longitude location",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "lat",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "40.787542"
+                },
+                {
+                    "name": "lon",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "-73.955968"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "format",
+                    "type": "STRING",
+                    "description": "This is an advanced feature to get a custom formatted text.\nPlease read the available documentation at www.feroeg.com/api.html",
+                    "default": "'[SN[, ] - [23456789ab[, ]'"
+                },
+                {
+                    "name": "mode",
+                    "type": "STRING",
+                    "description": "\nThe response is not in JSON, but as a single text string.\nNOTE:  at the moment mode=text is the only option available. If omitted the response will be in JSON",
+                    "default": "text"
+                },
+                {
+                    "name": "lang",
+                    "type": "STRING",
+                    "description": "This is the preferred language output. Use two char nation codes, as described in ISO 3166-1 alpha-2 specification",
+                    "default": "en"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://feroeg-reverse-geocoding.p.rapidapi.com/address\"\nquerystring = {\"format\": \"'[SN[, ] - [23456789ab[, ]'\", \"mode\": \"text\", \"lat\": \"40.787542\", \"lon\": \"-73.955968\", \"lang\": \"en\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"feroeg-reverse-geocoding.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://feroeg-reverse-geocoding.p.rapidapi.com/address\"\nquerystring = {\"format\": \"'[SN[, ] - [23456789ab[, ]'\", \"mode\": \"text\", \"lat\": \"40.787542\", \"lon\": \"-73.955968\", \"lang\": \"en\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"feroeg-reverse-geocoding.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "feroeg_reverse_geocoding"
+}

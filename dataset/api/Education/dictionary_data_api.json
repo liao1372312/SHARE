@@ -1,0 +1,70 @@
+{
+    "product_id": "api_5f730676-31d8-4d69-affa-142693a29f79",
+    "tool_description": "A concise linguistic resource delivering pronunciation, definition, part of speech, and example usage for words via a single GET endpoint. Enrich your applications with accurate language insights.",
+    "home_url": "https://rapidapi.com/effeyerulez/api/dictionary-data-api/",
+    "name": "Dictionary Data API",
+    "title": "Dictionary Data API",
+    "pricing": "FREEMIUM",
+    "tool_name": "Dictionary Data API",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 563,
+        "avgSuccessRate": 36,
+        "popularityScore": 9.4,
+        "__typename": "Score"
+    },
+    "host": "dictionary-data-api.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "GetDefinition",
+            "url": "https://dictionary-data-api.p.rapidapi.com/definition/dance",
+            "description": "This is used to retrieve definition, pronunciation and example usages of any word",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "word",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "dance"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://dictionary-data-api.p.rapidapi.com/definition/dance\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"dictionary-data-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://dictionary-data-api.p.rapidapi.com/definition/{word}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"dictionary-data-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "word": "dance",
+                "meaning": []
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "word": {
+                        "type": "string"
+                    },
+                    "pronunciation": {
+                        "type": "string"
+                    },
+                    "meaning": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "tag": {
+                                    "type": "string"
+                                },
+                                "values": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "standardized_name": "dictionary_data_api"
+}

@@ -1,0 +1,33 @@
+{
+"user_query":"I want to find YouTube influencers based on recent user search queries.",
+"domain":"Technology",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Fetch the most recent searches made by other users on YouTube.",
+        "domain": "technology",
+        "required_inputs": ["search_platform", "time_range"]
+    },
+    {
+        "id": 2,
+        "description": "Extract the search queries along with their respective date and time from the fetched search data.",
+        "domain": "technology",
+        "required_inputs": ["recent_search_data"],
+        "dependencies": [1]
+    },
+    {
+        "id": 3,
+        "description": "Using the extracted search queries, find influencers who match the clients' target audience.",
+        "domain": "technology",
+        "required_inputs": ["search_queries", "target_audience_parameters"],
+        "dependencies": [2]
+    },
+    {
+        "id": 4,
+        "description": "Provide the channel titles, subscriber count, and country of the identified influencers.",
+        "domain": "technology",
+        "required_inputs": ["influencers_data"],
+        "dependencies": [3]
+    }
+]
+}

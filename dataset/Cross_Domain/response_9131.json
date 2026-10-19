@@ -1,0 +1,41 @@
+{
+  "user_query": "I want to brighten up my day with humor by fetching a Chuck Norris joke, a meme, and a funny pet GIF.",
+  "domain": "entertainment",
+  "TaskList": [
+    {
+      "id": 1,
+      "description": "Fetch a random Chuck Norris joke from the Humor-Jokes-and-Memes API.",
+      "domain": "entertainment",
+      "required_inputs": ["type: joke", "category: Chuck Norris"]
+    },
+    {
+      "id": 2,
+      "description": "Fetch a random meme from the Humor-Jokes-and-Memes API.",
+      "domain": "entertainment",
+      "required_inputs": ["type: meme"]
+    },
+    {
+      "id": 3,
+      "description": "Generate a Pet Pet meme GIF using a funny image from the internet.",
+      "domain": "entertainment",
+      "required_inputs": ["image_url", "meme_text"]
+    }
+  ],
+  "dependencies": [
+    {
+      "from": 1,
+      "to": 2,
+      "relation": "independent"
+    },
+    {
+      "from": 1,
+      "to": 3,
+      "relation": "independent"
+    },
+    {
+      "from": 2,
+      "to": 3,
+      "relation": "independent"
+    }
+  ]
+}

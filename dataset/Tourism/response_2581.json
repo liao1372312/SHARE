@@ -1,0 +1,26 @@
+{
+"user_query":"I'm planning a road trip with my friends and we need to find the best places to visit. Can you suggest some popular travel destinations and recommend nearby hotels? Also, fetch the details of any data breaches associated with our email addresses.",
+"domain":"tourism",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Gather a list of popular travel destinations based on user preferences.",
+        "domain": "tourism",
+        "required_inputs": ["travel_preferences", "group_size"]
+    },
+    {
+        "id": 2,
+        "description": "Find nearby hotels for the selected travel destinations.",
+        "domain": "tourism",
+        "required_inputs": ["destination", "travel_dates"],
+        "dependencies": [1]  , 
+    	"step_description": "Step 2 requires the selected destination from Step 1."
+    },
+    {
+        "id": 3,
+        "description": "Fetch data breach details for the provided email addresses.",
+        "domain": "technology",
+        "required_inputs": ["email_addresses"]
+    }
+]
+}

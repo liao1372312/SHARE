@@ -1,0 +1,50 @@
+{
+    "product_id": "api_726fdb1f-90db-4589-9dcf-b5b899909cc5",
+    "tool_description": "Look up domain registry information using WHOIS protocol for any domain. See more info at https://api-ninjas.com/api/whois.",
+    "home_url": "https://rapidapi.com/apininjas/api/whois-by-api-ninjas/",
+    "name": "Whois by API-Ninjas",
+    "title": "Whois by API-Ninjas",
+    "pricing": "FREEMIUM",
+    "tool_name": "Whois by API-Ninjas",
+    "score": {
+        "avgServiceLevel": 72,
+        "avgLatency": 1230,
+        "avgSuccessRate": 72,
+        "popularityScore": 9.7,
+        "__typename": "Score"
+    },
+    "host": "whois-by-api-ninjas.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "/v1/whois",
+            "url": "https://whois-by-api-ninjas.p.rapidapi.com/v1/whois",
+            "description": "API Ninjas Whois API endpoint. Returns domain registration details (e.g. registrar, contact information, expiration date, name servers) about a particular domain name.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "domain",
+                    "type": "STRING",
+                    "description": "valid domain to check.",
+                    "default": "example.com"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://whois-by-api-ninjas.p.rapidapi.com/v1/whois\"\nquerystring = {\"domain\": \"example.com\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"whois-by-api-ninjas.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://whois-by-api-ninjas.p.rapidapi.com/v1/whois\"\nquerystring = {\"domain\": \"example.com\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"whois-by-api-ninjas.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "domain_name": "example.com",
+                "registrar": "reserved-internet assigned numbers authority",
+                "whois_server": "whois.iana.org",
+                "updated_date": 1683904415,
+                "creation_date": 808372800,
+                "expiration_date": 1691899200,
+                "name_servers": [
+                    "a.iana-servers.net",
+                    "b.iana-servers.net"
+                ],
+                "dnssec": "signeddelegation"
+            }
+        }
+    ],
+    "standardized_name": "whois_by_api_ninjas"
+}

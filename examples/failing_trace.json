@@ -1,0 +1,8 @@
+[
+  {"id":"q1","agent":"system","type":"request","output":"Find weather for Beijing and summarize it","status":"success","time":1},
+  {"id":"p1","agent":"planner","type":"plan","output":"Get current weather","meta":{"depends_on":["q1"]},"status":"success","time":2},
+  {"id":"s1","agent":"service_provider","type":"service_selection","output":"WeatherAPI.current","meta":{"depends_on":["p1"]},"status":"success","time":3},
+  {"id":"b1","agent":"executor","type":"parameter_binding","output":{"city":null},"meta":{"depends_on":["s1"],"missing_required":["city"]},"status":"failed","time":4},
+  {"id":"e1","agent":"executor","type":"api_invocation","output":{"error":"missing city"},"meta":{"depends_on":["b1"],"error":"missing city"},"status":"failed","time":5},
+  {"id":"c1","agent":"summarizer","type":"claim","output":"The Beijing weather is sunny.","meta":{"depends_on":["e1"],"unsupported":true},"status":"success","time":6}
+]

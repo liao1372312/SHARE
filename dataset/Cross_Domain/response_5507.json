@@ -1,0 +1,28 @@
+{
+  "user_query": "Find the favorite artists of the user with the ID '123' on SongMeanings. Fetch the radio details for the artist with the ID '456' on Deezer. Provide the download link for the song with the track URL 'https://soundcloud.com/user-977421934/the-phoenix' on Soundcloud.",
+  "domain": "entertainment",
+  "TaskList": [
+    {
+      "id": 1,
+      "description": "Retrieve the list of favorite artists for the user with ID '123' on SongMeanings.",
+      "domain": "music",
+      "required_inputs": ["user_id"]
+    },
+    {
+      "id": 2,
+      "description": "Fetch radio details for the artist with ID '456' on Deezer.",
+      "domain": "music",
+      "required_inputs": ["artist_id"]
+    },
+    {
+      "id": 3,
+      "description": "Provide the download link for the song from the given Soundcloud URL.",
+      "domain": "entertainment",
+      "required_inputs": ["song_url"]
+    }
+  ],
+  "dependencies": [
+    {"from": 1, "to": 2, "note": "Step 2 may require information from Step 1, such as artist details."},
+    {"from": 2, "to": 3, "note": "Step 3 is independent but completes the overall task."}
+  ]
+}

@@ -1,0 +1,195 @@
+{
+    "product_id": "api_7e0c14c1-26f6-4e51-9b18-861655a85840",
+    "tool_description": "An intuitive endpoint to query the EPA Superfunds list. Query epaId, epaIdLink, frsLink, name, address, city, state, zipcode, county, federalFacilityStatus, nplStatus, lat, lng.",
+    "home_url": "https://rapidapi.com/homeluten-homeluten-default/api/epa-superfunds/",
+    "name": "EPA Superfunds",
+    "title": "EPA Superfunds",
+    "pricing": "FREEMIUM",
+    "tool_name": "EPA Superfunds",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 366,
+        "avgSuccessRate": 100,
+        "popularityScore": 8,
+        "__typename": "Score"
+    },
+    "host": "epa-superfunds.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Superfund Search",
+            "url": "https://epa-superfunds.p.rapidapi.com/superfund",
+            "description": "Search Superfunds by {lat, lng, radius}",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "radius",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "2"
+                },
+                {
+                    "name": "lat",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "37.391935"
+                },
+                {
+                    "name": "lng",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "-122.079515"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://epa-superfunds.p.rapidapi.com/superfund\"\nquerystring = {\"radius\": \"2\", \"lat\": \"37.391935\", \"lng\": \"-122.079515\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"epa-superfunds.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://epa-superfunds.p.rapidapi.com/superfund\"\nquerystring = {\"radius\": \"2\", \"lat\": \"37.391935\", \"lng\": \"-122.079515\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"epa-superfunds.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "Results": {
+                    "FRSFacility": [
+                        {
+                            "RegistryId": "CAD061620217",
+                            "FacilityName": "INTEL CORP. (MOUNTAIN VIEW PLANT)",
+                            "LocationAddress": "365 E MIDDLEFIELD RD",
+                            "CityName": "MOUNTAIN VIEW",
+                            "CountyName": "SANTA CLARA",
+                            "StateAbbr": "CA",
+                            "ZipCode": "94040",
+                            "Latitude83": 37.3962,
+                            "Longitude83": -122.0566
+                        },
+                        {
+                            "RegistryId": "CAD982463812",
+                            "FacilityName": "MEW STUDY AREA",
+                            "LocationAddress": "Middlefield, Ellis, Whisman &amp; Vicinity",
+                            "CityName": "MOUNTAIN VIEW",
+                            "CountyName": "SANTA CLARA",
+                            "StateAbbr": "CA",
+                            "ZipCode": "94043",
+                            "Latitude83": 37.395,
+                            "Longitude83": -122.046667
+                        },
+                        {
+                            "RegistryId": "CAD009138488",
+                            "FacilityName": "SPECTRA-PHYSICS, INC.",
+                            "LocationAddress": "1250 W MIDDLEFIELD RD",
+                            "CityName": "MOUNTAIN VIEW",
+                            "CountyName": "SANTA CLARA",
+                            "StateAbbr": "CA",
+                            "ZipCode": "94042",
+                            "Latitude83": 37.40805,
+                            "Longitude83": -122.0786
+                        },
+                        {
+                            "RegistryId": "CAD009111444",
+                            "FacilityName": "TELEDYNE SEMICONDUCTOR",
+                            "LocationAddress": "1300 TERRA BELLA AVE",
+                            "CityName": "MOUNTAIN VIEW",
+                            "CountyName": "SANTA CLARA",
+                            "StateAbbr": "CA",
+                            "ZipCode": "94043",
+                            "Latitude83": 37.4108,
+                            "Longitude83": -122.0797
+                        },
+                        {
+                            "RegistryId": "CAD009205097",
+                            "FacilityName": "RAYTHEON CORP.",
+                            "LocationAddress": "350 ELLIS ST",
+                            "CityName": "MOUNTAIN VIEW",
+                            "CountyName": "SANTA CLARA",
+                            "StateAbbr": "CA",
+                            "ZipCode": "94043",
+                            "Latitude83": 37.3975,
+                            "Longitude83": -122.0533
+                        },
+                        {
+                            "RegistryId": "CAD095989778",
+                            "FacilityName": "FAIRCHILD SEMICONDUCTOR CORP. (MOUNTAIN VIEW PLANT)",
+                            "LocationAddress": "369, 515 N Whisman, 313 Fairchild &amp; 401 National",
+                            "CityName": "MOUNTAIN VIEW",
+                            "CountyName": "SANTA CLARA",
+                            "StateAbbr": "CA",
+                            "ZipCode": "94042",
+                            "Latitude83": 37.4012,
+                            "Longitude83": -122.0542
+                        },
+                        {
+                            "RegistryId": "CAD980883268",
+                            "FacilityName": "NEC",
+                            "LocationAddress": "501 ELLIS ST",
+                            "CityName": "MOUNTAIN VIEW",
+                            "CountyName": "SANTA CLARA",
+                            "StateAbbr": "CA",
+                            "ZipCode": "94043",
+                            "Latitude83": 37.399722,
+                            "Longitude83": -122.050833
+                        },
+                        {
+                            "RegistryId": "CAD009212838",
+                            "FacilityName": "CTS PRINTEX, INC.",
+                            "LocationAddress": "PLYMOUTH &amp; COLONY STS",
+                            "CityName": "MOUNTAIN VIEW",
+                            "CountyName": "SANTA CLARA",
+                            "StateAbbr": "CA",
+                            "ZipCode": "94043",
+                            "Latitude83": 37.4165,
+                            "Longitude83": -122.0872
+                        }
+                    ]
+                }
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "Results": {
+                        "type": "object",
+                        "properties": {
+                            "FRSFacility": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "RegistryId": {
+                                            "type": "string"
+                                        },
+                                        "FacilityName": {
+                                            "type": "string"
+                                        },
+                                        "LocationAddress": {
+                                            "type": "string"
+                                        },
+                                        "SupplementalLocation": {
+                                            "type": "null"
+                                        },
+                                        "CityName": {
+                                            "type": "string"
+                                        },
+                                        "CountyName": {
+                                            "type": "string"
+                                        },
+                                        "StateAbbr": {
+                                            "type": "string"
+                                        },
+                                        "ZipCode": {
+                                            "type": "string"
+                                        },
+                                        "FIPSCode": {
+                                            "type": "string"
+                                        },
+                                        "Latitude83": {
+                                            "type": "string"
+                                        },
+                                        "Longitude83": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "standardized_name": "epa_superfunds"
+}

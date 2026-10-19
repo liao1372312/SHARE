@@ -1,0 +1,44 @@
+{
+    "product_id": "api_078b30c9-08b0-4adb-a7ce-ea7ee5e4ebdb",
+    "tool_description": "Gender API. Create personalised experiences by inferring gender from a name.",
+    "home_url": "https://rapidapi.com/stephennancekivell/api/person-app/",
+    "name": "Person App",
+    "title": "Person App",
+    "pricing": "FREEMIUM",
+    "tool_name": "Person App",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 84,
+        "avgSuccessRate": 100,
+        "popularityScore": 8.6,
+        "__typename": "Score"
+    },
+    "host": "person-app.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Gender from Name",
+            "url": "https://person-app.p.rapidapi.com/v1/name",
+            "description": "Given someones name infer their gender",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "name",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "Kate"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://person-app.p.rapidapi.com/v1/name\"\nquerystring = {\"name\": \"Kate\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"person-app.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://person-app.p.rapidapi.com/v1/name\"\nquerystring = {\"name\": \"Kate\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"person-app.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "name": "Kate",
+                "gender": "female",
+                "genderPercentage": 0.988
+            },
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "person_app"
+}

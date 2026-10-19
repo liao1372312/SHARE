@@ -1,0 +1,26 @@
+{
+"user_query":"I'm planning a road trip with my friends and we need a good playlist. Search for tracks related to travel and adventure on Soundcloud and suggest some songs. Also, provide me with the lyrics of one of the recommended songs using SongMeanings.",
+"domain":"Cross-Domain",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Search for tracks related to travel and adventure on Soundcloud.",
+        "domain": "music",
+        "required_inputs": ["keywords"]
+    },
+    {
+        "id": 2,
+        "description": "Suggest some songs based on the tracks retrieved from Soundcloud.",
+        "domain": "music",
+        "required_inputs": ["tracks_data"],
+        "dependencies": [1]
+    },
+    {
+        "id": 3,
+        "description": "Fetch the lyrics of one of the recommended songs using SongMeanings.",
+        "domain": "music",
+        "required_inputs": ["song_title", "artist_name"],
+        "dependencies": [2]
+    }
+]
+}

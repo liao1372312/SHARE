@@ -1,0 +1,97 @@
+{
+    "product_id": "api_c35a6298-ca5f-4460-913b-24608151cec0",
+    "tool_description": "Get key statistics for thousands of stars discovered in the known universe. See more info at https://api-ninjas.com/api/stars.",
+    "home_url": "https://rapidapi.com/apininjas/api/stars-by-api-ninjas/",
+    "name": "Stars by API-Ninjas",
+    "title": "Stars by API-Ninjas",
+    "pricing": "FREEMIUM",
+    "tool_name": "Stars by API-Ninjas",
+    "score": {
+        "avgServiceLevel": 99,
+        "avgLatency": 579,
+        "avgSuccessRate": 93,
+        "popularityScore": 9.3,
+        "__typename": "Score"
+    },
+    "host": "stars-by-api-ninjas.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "/v1/stars",
+            "url": "https://stars-by-api-ninjas.p.rapidapi.com/v1/stars",
+            "description": "Get a list of stars matching specified parameters. Returns at most 30 results. To access more than 30 results, use the offset parameter to offset results in multiple API calls.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "min_distance_light_year",
+                    "type": "NUMBER",
+                    "description": "minimum distance the star is from Earth in light years.",
+                    "default": ""
+                },
+                {
+                    "name": "min_apparent_magnitude",
+                    "type": "NUMBER",
+                    "description": "minimum apparent magnitude brightness of the star.",
+                    "default": ""
+                },
+                {
+                    "name": "constellation",
+                    "type": "NUMBER",
+                    "description": "the constellation the star belongs to.",
+                    "default": ""
+                },
+                {
+                    "name": "max_apparent_magnitude",
+                    "type": "NUMBER",
+                    "description": "maximum apparent magnitude brightness of the star.",
+                    "default": ""
+                },
+                {
+                    "name": "offset",
+                    "type": "NUMBER",
+                    "description": "number of results to offset for pagination.",
+                    "default": ""
+                },
+                {
+                    "name": "name",
+                    "type": "STRING",
+                    "description": "the name of the star. Note that many of the star names contain greek characters.",
+                    "default": "vega"
+                },
+                {
+                    "name": "max_absolute_magnitude",
+                    "type": "NUMBER",
+                    "description": "maximum absolute magnitude brightness of the star.",
+                    "default": ""
+                },
+                {
+                    "name": "min_absolute_magnitude",
+                    "type": "NUMBER",
+                    "description": "minimum absolute magnitude brightness of the star.",
+                    "default": ""
+                },
+                {
+                    "name": "max_distance_light_year",
+                    "type": "NUMBER",
+                    "description": "maximum distance the star is from Earth in light years.",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://stars-by-api-ninjas.p.rapidapi.com/v1/stars\"\nquerystring = {\"min_distance_light_year\": \"\", \"min_apparent_magnitude\": \"\", \"constellation\": \"\", \"max_apparent_magnitude\": \"\", \"offset\": \"\", \"name\": \"vega\", \"max_absolute_magnitude\": \"\", \"min_absolute_magnitude\": \"\", \"max_distance_light_year\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"stars-by-api-ninjas.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://stars-by-api-ninjas.p.rapidapi.com/v1/stars\"\nquerystring = {\"min_distance_light_year\": \"\", \"min_apparent_magnitude\": \"\", \"constellation\": \"\", \"max_apparent_magnitude\": \"\", \"offset\": \"\", \"name\": \"vega\", \"max_absolute_magnitude\": \"\", \"min_absolute_magnitude\": \"\", \"max_distance_light_year\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"stars-by-api-ninjas.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "name": "Vega",
+                    "constellation": "Lyra",
+                    "right_ascension": "18h 36m 56.19s",
+                    "declination": "+38\u00b0\u00a046\u2032\u00a058.8\u2033",
+                    "apparent_magnitude": "0.03",
+                    "absolute_magnitude": "0.58",
+                    "distance_light_year": "25",
+                    "spectral_class": "A0Vvar"
+                }
+            ]
+        }
+    ],
+    "standardized_name": "stars_by_api_ninjas"
+}

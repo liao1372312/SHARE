@@ -1,0 +1,64 @@
+{
+    "product_id": "api_8319aa1f-628c-4715-831a-1c7f24b7362a",
+    "tool_description": "Abuse IP Check is a project dedicated to helping combat the spread of hackers, spammers, and abusive activity on the internet.\n\nOur mission is to help make Web safer by providing a central blacklist for webmasters, system administrators, and other interested parties to report and find IP addresses that have been associated with malicious activity online.\n\nYou can report an IP address associated with malicious activity, or check to see if an IP address has been reported, by using the search bo...",
+    "home_url": "https://rapidapi.com/standingapi-standingapi-default/api/abuse-ip-check/",
+    "name": "Abuse IP Check",
+    "title": "Abuse IP Check",
+    "pricing": "FREEMIUM",
+    "tool_name": "Abuse IP Check",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 2679,
+        "avgSuccessRate": 100,
+        "popularityScore": 8.8,
+        "__typename": "Score"
+    },
+    "host": "abuse-ip-check.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "CHECK Endpoint",
+            "url": "https://abuse-ip-check.p.rapidapi.com/api/v2/check",
+            "description": "The check endpoint accepts a single IP address (v4 or v6). Optionally you may set the maxAgeInDays parameter to only return reports within the last x amount of days.\n\nThe desired data is stored in the data property. Here you can inspect details regarding the IP address queried, such as version, country of origin, usage type, ISP, and domain name. And of course, there is the valuable abusive reports.\n\nGeolocation, usage type, ISP, and domain name are sourced from the IP2Location\u2122 IP Address Geolocation Database. If you're looking for a performant IP database for geolocation, then use their product directly.\n\nThe isWhitelisted property reflects whether the IP is spotted in any of our whitelists. Our whitelists give the benefit of the doubt to many IPs, so it generally should not be used as a basis for action. The abuseConfidenceScore is a better basis for action, because it is nonbinary and allows for nuance. The isWhitelisted property may be null if a whitelist lookup was not performed.\n\nThe usageType is a string that describes the general usage of this address. Possible values are:\n\nCommercial\nOrganization\nGovernment\nMilitary\nUniversity/College/School\nLibrary\nContent Delivery Network\nFixed Line ISP\nMobile ISP\nData Center/Web Hosting/Transit\nSearch Engine Spider\nReserved\nThe maxAgeInDays parameter determines how far back in time we go to fetch reports. In this example, we ask for reports no older than 90 days. The default is 30.\n\nThe totalReports property is a sum of the reports within maxAgeInDays.\n\nReports are included in this response because the verbose flag was added. Omitting the verbose flag will exclude reports and the country name field. If you want to keep your response payloads light, this is recommended. The reports array is limited to 10,000 elements. Only reports within the timeframe of maxAgeInDays are considered.\n\nThe IP address should be url-encoded, because IPv6 addresses use colons, which are reserved characters in URIs.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "ipAddress",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "118.25.6.39"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "maxAgeInDays",
+                    "type": "STRING",
+                    "description": "default : 30\nmin : 1\nmax : 365",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://abuse-ip-check.p.rapidapi.com/api/v2/check\"\nquerystring = {\"ipAddress\": \"118.25.6.39\", \"maxAgeInDays\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"abuse-ip-check.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://abuse-ip-check.p.rapidapi.com/api/v2/check\"\nquerystring = {\"ipAddress\": \"118.25.6.39\", \"maxAgeInDays\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"abuse-ip-check.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "data": {
+                    "ipAddress": "118.25.6.39",
+                    "isPublic": true,
+                    "ipVersion": 4,
+                    "isWhitelisted": false,
+                    "abuseConfidenceScore": 0,
+                    "countryCode": "CN",
+                    "usageType": "Data Center/Web Hosting/Transit",
+                    "isp": "Tencent Cloud Computing (Beijing) Co. Ltd",
+                    "domain": "tencent.com",
+                    "hostnames": [],
+                    "isTor": false,
+                    "totalReports": 0,
+                    "numDistinctUsers": 0,
+                    "lastReportedAt": "2023-03-07T05:46:10+00:00"
+                }
+            },
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "abuse_ip_check"
+}

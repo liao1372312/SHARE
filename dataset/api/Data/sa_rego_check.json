@@ -1,0 +1,58 @@
+{
+    "product_id": "api_185ce7ec-52f5-4c77-9de0-30a3bdcf1f7d",
+    "tool_description": "returns the registration details of your South Australia-registered vehicle or boat.\nInformation returned from this check includes:\nMake\nPrimary Colour\nExpiry Date\u00a0\nbody or hull type\ncompulsory third-party (CTP) insurer (vehicles only)\nheavy vehicle details (gross vehicle, combination, or trailer mass).",
+    "home_url": "https://rapidapi.com/n1gh7cyb3r/api/sa-rego-check/",
+    "name": "SA Rego Check",
+    "title": "SA Rego Check",
+    "pricing": "FREE",
+    "tool_name": "SA Rego Check",
+    "score": null,
+    "host": "sa-rego-check.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Registration Check",
+            "url": "https://sa-rego-check.p.rapidapi.com/check",
+            "description": "Information returned from this check includes:\n\nMake\nPrimary Colour\nExpiry Date\u00a0\nbody or hull type\ncompulsory third-party (CTP) insurer (vehicles only)\nheavy vehicle details (gross vehicle, combination, or trailer mass).",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "rego",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "CC831Y"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://sa-rego-check.p.rapidapi.com/check\"\nquerystring = {\"rego\": \"CC831Y\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sa-rego-check.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://sa-rego-check.p.rapidapi.com/check\"\nquerystring = {\"rego\": \"CC831Y\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sa-rego-check.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {
+                "apiVersion": "1",
+                "msgs": {
+                    "plate": "CC831Y",
+                    "plateType": "PREMIUM",
+                    "make": "HOLDEN",
+                    "bodyType": "SEDAN",
+                    "primaryColour": "WHITE",
+                    "expiryDate": "21/12/2022",
+                    "conditionalDetails": [],
+                    "registeredConfiguration": [],
+                    "registeredGvmGcm": [],
+                    "manufacturerGvmGcm": [],
+                    "vehicleConditions": [],
+                    "premiumClass": "51 - CARS (SEDAN, STN WAGON, ETC)",
+                    "ctpInsurer": "NRMA",
+                    "inspectionDueDate": [],
+                    "inspectionExpired": "YES",
+                    "inspectionType": [],
+                    "maskedVin": "**************6324",
+                    "incidentInd": "NO",
+                    "pendingSuspensionInd": "NO",
+                    "vehicleHash": "7Jcms0oKM0XL7s55yFFfHQDpsubi9CwK4pUu87lrLeY="
+                }
+            }
+        }
+    ],
+    "standardized_name": "sa_rego_check"
+}

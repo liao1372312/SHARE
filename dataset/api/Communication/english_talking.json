@@ -1,0 +1,142 @@
+{
+    "product_id": "api_778a6afd-1325-4111-8177-0561cd2edf00",
+    "tool_description": "This API aims to provide users with the possibility of conducting dialogues in English where the conversations and answers are registered and evaluated by the users themselves.\n\ud83d\udc7d",
+    "home_url": "https://rapidapi.com/maatheusb96/api/english-talking2/",
+    "name": "English Talking",
+    "title": "English Talking",
+    "pricing": "FREE",
+    "tool_name": "English Talking",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 7,
+        "avgSuccessRate": 100,
+        "popularityScore": 8.7,
+        "__typename": "Score"
+    },
+    "host": "english-talking2.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Get an answer",
+            "url": "https://english-talking2.p.rapidapi.com/v1/dialog",
+            "description": "Get an answer",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "status",
+                    "type": "STRING",
+                    "description": "approved or analyzing",
+                    "default": "approved"
+                },
+                {
+                    "name": "answer",
+                    "type": "STRING",
+                    "description": "Response to the initial speech of the dialogue",
+                    "default": "Hi, how are you?"
+                },
+                {
+                    "name": "_id",
+                    "type": "STRING",
+                    "description": "Unique dialog identifier (automatically generated)\n\n",
+                    "default": "5ec47b3d8958430d6a6d5898"
+                },
+                {
+                    "name": "speech",
+                    "type": "STRING",
+                    "description": "Speak in which the usuairio wants to get an answer",
+                    "default": "Hi"
+                },
+                {
+                    "name": "user",
+                    "type": "STRING",
+                    "description": "User who created the dialogue",
+                    "default": "5ec479048958430d6a6d5895"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://english-talking2.p.rapidapi.com/v1/dialog\"\nquerystring = {\"status\": \"approved\", \"answer\": \"Hi, how are you?\", \"_id\": \"5ec47b3d8958430d6a6d5898\", \"speech\": \"Hi\", \"user\": \"5ec479048958430d6a6d5895\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"english-talking2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://english-talking2.p.rapidapi.com/v1/dialog\"\nquerystring = {\"status\": \"approved\", \"answer\": \"Hi, how are you?\", \"_id\": \"5ec47b3d8958430d6a6d5898\", \"speech\": \"Hi\", \"user\": \"5ec479048958430d6a6d5895\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"english-talking2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "data": [
+                    {
+                        "status": "approved",
+                        "approvals": [
+                            "5ec479048958430d6a6d5895"
+                        ],
+                        "disapprovals": [],
+                        "_id": "5ec47b3d8958430d6a6d5898",
+                        "speech": "Hi",
+                        "answer": "Hi, how are you?",
+                        "user": "5ec479048958430d6a6d5895",
+                        "createdAt": "2020-05-20T00:35:09.530Z",
+                        "updatedAt": "2020-05-20T00:41:28.188Z",
+                        "__v": 1,
+                        "approval_rate": 100
+                    }
+                ],
+                "entity": "dialog",
+                "code": "success-get/dialog",
+                "status": 200
+            },
+            "statuscode": 200,
+            "schema": {
+                "properties": {
+                    "code": {
+                        "type": "string"
+                    },
+                    "data": {
+                        "items": {
+                            "properties": {
+                                "__v": {
+                                    "type": "integer"
+                                },
+                                "_id": {
+                                    "type": "string"
+                                },
+                                "answer": {
+                                    "type": "string"
+                                },
+                                "approval_rate": {
+                                    "type": "integer"
+                                },
+                                "approvals": {
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "type": "array"
+                                },
+                                "createdAt": {
+                                    "type": "string"
+                                },
+                                "disapprovals": {
+                                    "type": "array"
+                                },
+                                "speech": {
+                                    "type": "string"
+                                },
+                                "status": {
+                                    "type": "string"
+                                },
+                                "updatedAt": {
+                                    "type": "string"
+                                },
+                                "user": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "type": "array"
+                    },
+                    "entity": {
+                        "type": "string"
+                    },
+                    "status": {
+                        "type": "integer"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    ],
+    "standardized_name": "english_talking"
+}

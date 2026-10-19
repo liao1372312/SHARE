@@ -1,0 +1,31 @@
+{
+  "user_query": "I'm looking for exercises that can be done during my lunch break at the office. Can you suggest quick and effective exercises that target the upper body and require minimal equipment? Additionally, provide me with the current air quality index and temperature in my city to decide whether to exercise indoors or outdoors.",
+  "domain": "healthcare",
+  "TaskList": [
+    {
+      "id": 1,
+      "description": "Identify quick, effective upper body exercises that require minimal equipment suitable for office lunch breaks.",
+      "domain": "healthcare",
+      "required_inputs": ["exercise preferences", "equipment availability"]
+    },
+    {
+      "id": 2,
+      "description": "Retrieve current air quality index for the user's city.",
+      "domain": "medical",
+      "required_inputs": ["city location"]
+    },
+    {
+      "id": 3,
+      "description": "Retrieve current temperature in the user's city.",
+      "domain": "medical",
+      "required_inputs": ["city location"]
+    }
+  ],
+  "dependencies": [
+    {
+      "from": 2,
+      "to": 3,
+      "description": "Temperature retrieval depends on the air quality data to help decide outdoor activity suitability."
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "kind": "share_swebench_ai_patch_generation_artifact",
+  "instance_id": "astropy__astropy-14309",
+  "branch": "ai",
+  "generated_at": "2026-08-19T23:45:13.895108+00:00",
+  "started_at": "2026-08-19T23:45:02.461144+00:00",
+  "profile": "primary",
+  "model": "gpt-5.4-mini",
+  "api_root_sha256": "8350a46cba5dae5daf04685d754664810f0dc8753cbaa51d27b359cdf06a5c37",
+  "image": "swebench/sweb.eval.x86_64.astropy_1776_astropy-14309:latest",
+  "image_id": "sha256:ff1ebfee93f088e4c838ac29e3ac2c86016a061ac62b8824ccfb89b5653fd61e",
+  "base_commit": "cdb66059a2feb44ee49021874605ba90801f9986",
+  "container_network": "none",
+  "gold_patch_withheld": true,
+  "test_patch_withheld": true,
+  "turns_used": 3,
+  "final_summary": "Fixed the `IndexError` in `astropy/io/fits/connect.py` by guarding the fallback `args[0]` access in `is_fits`. It now returns `False` when no positional args are provided, which restores `identify_format(\"write\", Table, \"bububu.ecsv\", None, [], {})` to correctly yield `['ascii.ecsv']` instead of crashing.",
+  "generation_error": null,
+  "patch_empty": false,
+  "files": {
+    "model_patch": {
+      "path": "model.patch",
+      "sha256": "3c1906c5d98e4bf480a33da6b7ff61195c231158cbb78a3c0303fa25616d1bcf"
+    },
+    "prediction": {
+      "path": "prediction.jsonl",
+      "sha256": "b73a4e9e84ddd30703e2139e61b35caaa600492534cf114502f022007f231978"
+    },
+    "transcript": {
+      "path": "transcript.jsonl",
+      "sha256": "483e70575e93f10c6ff29634a6311eb61ffddaa5dd04c5ac7bade60c39105cf0"
+    }
+  },
+  "evidence_status": "generated_ai_patch_awaiting_swebench_execution"
+}

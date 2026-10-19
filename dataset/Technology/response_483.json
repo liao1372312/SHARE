@@ -1,0 +1,26 @@
+{
+"user_query":"I'm interested in a specific make and model of a car. Can you provide me with the available models for that make? It would be helpful if the results include the possible trims for each model. Additionally, I would like to know the available years for a specific make and model combination.",
+"domain":"Technology",
+"TaskList": [
+{
+"id": 1,
+"description": "Get a list of available models for the specified car make.",
+"domain": "technology",
+"required_inputs": ["car_make"]
+},
+{
+"id": 2,
+"description": "Fetch available trims for each model retrieved in step 1.",
+"domain": "technology",
+"required_inputs": ["models_list"],
+"dependencies": [1]
+},
+{
+"id": 3,
+"description": "Retrieve the available years for the specified make and model.",
+"domain": "technology",
+"required_inputs": ["car_make", "car_model"],
+"dependencies": [1]
+}
+]
+}

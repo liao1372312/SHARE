@@ -1,0 +1,55 @@
+{
+    "product_id": "api_5afd80a5-8e9e-4ef0-8f6d-5f3cbe1f881c",
+    "tool_description": "Extract structure from text data (who, what, where..) automatically using AI.",
+    "home_url": "https://rapidapi.com/WRT/api/walnut-entity/",
+    "name": "Walnut Entity",
+    "title": "Walnut Entity",
+    "pricing": "FREEMIUM",
+    "tool_name": "Walnut Entity",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 706,
+        "avgSuccessRate": 100,
+        "popularityScore": 7.6,
+        "__typename": "Score"
+    },
+    "host": "walnut-entity.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "wrt_transformer",
+            "url": "https://walnut-entity.p.rapidapi.com/wrt_transformer",
+            "description": "Get the text input and returns the entities identified.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "payload",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "I am Richard from New York and I work at Microsoft."
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://walnut-entity.p.rapidapi.com/wrt_transformer\"\nquerystring = {\"payload\": \"I am Richard from New York and I work at Microsoft.\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"walnut-entity.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://walnut-entity.p.rapidapi.com/wrt_transformer\"\nquerystring = {\"payload\": \"I am Richard from New York and I work at Microsoft.\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"walnut-entity.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "result": [
+                    {
+                        "entity": "who",
+                        "word": "Richard"
+                    },
+                    {
+                        "entity": "where",
+                        "word": "New York"
+                    },
+                    {
+                        "entity": "org",
+                        "word": "Microsoft"
+                    }
+                ]
+            },
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "walnut_entity"
+}

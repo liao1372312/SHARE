@@ -1,0 +1,33 @@
+{
+"user_query":"I'm organizing a workshop and need to validate the email addresses of the participants. Please verify their email addresses and provide their general account information. Additionally, check the SMTP details for their email addresses.",
+"domain":"Technology",
+"TaskList": [
+{
+"id": 1,
+"description": "Collect a list of email addresses of the workshop participants.",
+"domain": "technology",
+"required_inputs": ["participant_list"]
+},
+{
+"id": 2,
+"description": "Validate the collected email addresses to ensure they are in the correct format and exist.",
+"domain": "technology",
+"required_inputs": ["email_list"],
+"dependencies": [1]
+},
+{
+"id": 3,
+"description": "Retrieve general account information for the validated email addresses.",
+"domain": "technology",
+"required_inputs": ["valid_email_list"],
+"dependencies": [2]
+},
+{
+"id": 4,
+"description": "Check SMTP details for each validated email address to ensure they can be reached.",
+"domain": "technology",
+"required_inputs": ["valid_email_list"],
+"dependencies": [2]
+}
+]
+}

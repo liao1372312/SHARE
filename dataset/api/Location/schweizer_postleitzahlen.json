@@ -1,0 +1,62 @@
+{
+    "product_id": "api_6408742e-c688-4479-988d-e0750bb77e72",
+    "tool_description": "API to get political towns from a ZIP-code (Postleitzahl)\nA ZIP-code can belong to multiple towns.\nThe data is updated daily.",
+    "home_url": "https://rapidapi.com/simonganti/api/schweizer-postleitzahlen/",
+    "name": "Schweizer Postleitzahlen",
+    "title": "Schweizer Postleitzahlen",
+    "pricing": "FREEMIUM",
+    "tool_name": "Schweizer Postleitzahlen",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 1243,
+        "avgSuccessRate": 100,
+        "popularityScore": 6.9,
+        "__typename": "Score"
+    },
+    "host": "schweizer-postleitzahlen.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "getZIP",
+            "url": "https://schweizer-postleitzahlen.p.rapidapi.com/zip/3052",
+            "description": "get town information from ZIP-code (Postleitzahl)",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "zip",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "3052"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://schweizer-postleitzahlen.p.rapidapi.com/zip/3052\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"schweizer-postleitzahlen.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://schweizer-postleitzahlen.p.rapidapi.com/zip/{zip}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"schweizer-postleitzahlen.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "status": {
+                    "count": 2,
+                    "distinct": 0,
+                    "status": "ok"
+                },
+                "data": [
+                    {
+                        "zip": 3052,
+                        "bfs": 361,
+                        "town": "Zollikofen",
+                        "canton": "BE",
+                        "zip-share": 83.19,
+                        "locale": "de"
+                    },
+                    {
+                        "zip": 3052,
+                        "bfs": 546,
+                        "town": "M\u00fcnchenbuchsee",
+                        "canton": "BE",
+                        "zip-share": 16.81,
+                        "locale": "de"
+                    }
+                ]
+            }
+        }
+    ],
+    "standardized_name": "schweizer_postleitzahlen"
+}

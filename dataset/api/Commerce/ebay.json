@@ -1,0 +1,2059 @@
+{
+    "product_id": "api_b04d269d-c7dd-4b84-8e17-6fba24d64d3d",
+    "tool_description": "Get Products from Ebay (Unofficial)",
+    "home_url": "https://rapidapi.com/felixeschmittfes/api/ebay32/",
+    "name": "Ebay",
+    "title": "Ebay",
+    "pricing": "FREEMIUM",
+    "tool_name": "Ebay",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 2378,
+        "avgSuccessRate": 100,
+        "popularityScore": 9.4,
+        "__typename": "Score"
+    },
+    "host": "ebay32.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Product Details",
+            "url": "https://ebay32.p.rapidapi.com/product/195499451557",
+            "description": "Get the product details for a given product id and a specific country.\nDefault country is `United States`.\nSpecify country with country name or country code.\n\nAllowed countries:\nDefault: `us`\n- Germany (de)\n- France (fr)\n- Australia (au)\n- Austria (at)\n- Canada (ca)\n- Hong Kong (hk)\n- Ireland (ie)\n- Italy (it)\n- Malaysia (my)\n- Netherlands (nl)\n- Singapore (sg)\n- Switzerland (ch)\n- United Kingdom (uk)",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "product_id",
+                    "type": "NUMBER",
+                    "description": "ID of the product. Can be obtained from the url of the product or by using the `/search` endpoint.",
+                    "default": "195499451557"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "country",
+                    "type": "STRING",
+                    "description": "Valid country to return offers for.\nValid values are in description of this endpoint.\nDefault: `united states`.",
+                    "default": "germany"
+                },
+                {
+                    "name": "country_code",
+                    "type": "STRING",
+                    "description": "Country code of the valid country to return offers for.\nValid values are in description of this endpoint.\nDefault: `us`.",
+                    "default": "de"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://ebay32.p.rapidapi.com/product/195499451557\"\nquerystring = {\"country\": \"germany\", \"country_code\": \"de\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ebay32.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ebay32.p.rapidapi.com/product/{product_id}\"\nquerystring = {\"country\": \"germany\", \"country_code\": \"de\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ebay32.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "seller": {
+                    "url": "https://www.ebay.de/usr/okluge?_trksid=p2047675.m3561.l2559",
+                    "user_name": "okluge",
+                    "rating_amount": "1392889"
+                },
+                "images": [
+                    "https://i.ebayimg.com/images/g/p~sAAOSwyeRkiDm7/s-l500.jpg",
+                    "https://i.ebayimg.com/images/g/-4cAAOSwG0hkiDm7/s-l1600.jpg",
+                    "https://i.ebayimg.com/images/g/yAsAAOSwYkVkiDm7/s-l1600.jpg",
+                    "https://i.ebayimg.com/images/g/RtEAAOSwOX5kiDm7/s-l1600.jpg",
+                    "https://i.ebayimg.com/images/g/p14AAOSwvC1kiDm7/s-l1600.jpg"
+                ],
+                "bidding": {
+                    "remaining_time": null,
+                    "bid_amount": null
+                },
+                "instant_buy": true,
+                "payment_methods": [
+                    "PayPal",
+                    "Visa",
+                    "MasterCard",
+                    "American Express",
+                    "Sofort",
+                    "Apple Pay"
+                ],
+                "quantity": 1,
+                "title": "ASUS VA279HAE 68,58cm 27 Zoll Eye-Care-Monitor Full HD HDMI VGA 60Hz 6ms HDCP",
+                "return_policy": "Keine R\u00fcckgabe",
+                "logistics_cost": null,
+                "why2buy": {},
+                "condition": "Neu",
+                "location": "Dresden, Deutschland",
+                "price": {
+                    "value": 128.58,
+                    "currency": "EUR"
+                }
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "seller": {
+                        "type": "object",
+                        "properties": {
+                            "url": {
+                                "type": "string"
+                            },
+                            "user_name": {
+                                "type": "string"
+                            },
+                            "rating_amount": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "images": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "bidding": {
+                        "type": "object",
+                        "properties": {
+                            "remaining_time": {
+                                "type": "null"
+                            },
+                            "bid_amount": {
+                                "type": "null"
+                            }
+                        }
+                    },
+                    "instant_buy": {
+                        "type": "boolean"
+                    },
+                    "payment_methods": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "quantity": {
+                        "type": "integer"
+                    },
+                    "title": {
+                        "type": "string"
+                    },
+                    "return_policy": {
+                        "type": "string"
+                    },
+                    "logistics_cost": {
+                        "type": "null"
+                    },
+                    "why2buy": {
+                        "type": "object"
+                    },
+                    "condition": {
+                        "type": "string"
+                    },
+                    "location": {
+                        "type": "string"
+                    },
+                    "price": {
+                        "type": "object",
+                        "properties": {
+                            "value": {
+                                "type": "integer"
+                            },
+                            "currency": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Search Products",
+            "url": "https://ebay32.p.rapidapi.com/search/iphone",
+            "description": "Search for products on Ebay in specific country.\nReturns the `last_page` that can be scraped for the specific `search_query`.\nDefault country is `United States`.\nSpecify country with country name or country code.\n\nAllowed countries:\nDefault: `us`\n- Germany (de)\n- France (fr)\n- Australia (au)\n- Austria (at)\n- Canada (ca)\n- Hong Kong (hk)\n- Ireland (ie)\n- Italy (it)\n- Malaysia (my)\n- Netherlands (nl)\n- Singapore (sg)\n- Switzerland (ch)\n- United Kingdom (uk)",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "search_query",
+                    "type": "string",
+                    "description": "Search Query used in Ebay search",
+                    "default": "iphone"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "country",
+                    "type": "STRING",
+                    "description": "Valid country to return offers for.\nValid values are in description of this endpoint.\nDefault: `united states`.",
+                    "default": "germany"
+                },
+                {
+                    "name": "page",
+                    "type": "NUMBER",
+                    "description": "Results page to return.\nDefault: `1`.",
+                    "default": "1"
+                },
+                {
+                    "name": "country_code",
+                    "type": "STRING",
+                    "description": "Country code of the valid country to return offers for.\nValid values are in description of this endpoint.\nDefault: `us`.",
+                    "default": "de"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://ebay32.p.rapidapi.com/search/iphone\"\nquerystring = {\"country\": \"germany\", \"page\": \"1\", \"country_code\": \"de\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ebay32.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ebay32.p.rapidapi.com/search/{search_query}\"\nquerystring = {\"country\": \"germany\", \"page\": \"1\", \"country_code\": \"de\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ebay32.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "products": [
+                    {
+                        "seller": null,
+                        "thumbnail": "https://ir.ebaystatic.com/rs/v/fxxj3ttftm5ltcqnto1o4baovyl.png",
+                        "bidding": {
+                            "bid_amount": null,
+                            "end_time": null,
+                            "remaining_time": null
+                        },
+                        "instant_buy": false,
+                        "condition": "Brand New",
+                        "title": "F#f_0",
+                        "logistics_cost": null,
+                        "url": "https://ebay.com/itm/123456",
+                        "product_id": 123456,
+                        "location": null,
+                        "price": {
+                            "value": 2000,
+                            "currency": "$"
+                        }
+                    },
+                    {
+                        "seller": {
+                            "rating_amount": 801,
+                            "user_name": "murcon1966",
+                            "rating": 100
+                        },
+                        "thumbnail": "https://i.ebayimg.com/thumbs/images/g/3mwAAOSwEm9kiLBm/s-l300.jpg",
+                        "bidding": {
+                            "bid_amount": 0,
+                            "end_time": "(Di, 11:16)",
+                            "remaining_time": {
+                                "days": 4,
+                                "hours": 8
+                            }
+                        },
+                        "instant_buy": false,
+                        "condition": "Used",
+                        "title": "F#f_0",
+                        "logistics_cost": {
+                            "value": 5.49,
+                            "currency": "EUR"
+                        },
+                        "url": "https://www.ebay.de/itm/256108800252",
+                        "product_id": 256108800252,
+                        "location": null,
+                        "price": {
+                            "value": 1,
+                            "currency": "EUR"
+                        }
+                    },
+                    {
+                        "seller": {
+                            "rating_amount": 1310,
+                            "user_name": "bernfried2004",
+                            "rating": 98.5
+                        },
+                        "thumbnail": "https://i.ebayimg.com/thumbs/images/g/AKYAAOSwh2pkh12g/s-l300.jpg",
+                        "bidding": {
+                            "bid_amount": 0,
+                            "end_time": "(Mo, 11:27)",
+                            "remaining_time": {
+                                "days": 3,
+                                "hours": 8
+                            }
+                        },
+                        "instant_buy": false,
+                        "condition": "Used",
+                        "title": "F#f_0",
+                        "logistics_cost": {
+                            "value": 5.49,
+                            "currency": "EUR"
+                        },
+                        "url": "https://www.ebay.de/itm/295755433838",
+                        "product_id": 295755433838,
+                        "location": null,
+                        "price": {
+                            "value": 1,
+                            "currency": "EUR"
+                        }
+                    },
+                    {
+                        "seller": {
+                            "rating_amount": 351,
+                            "user_name": "peter.krenz",
+                            "rating": 100
+                        },
+                        "thumbnail": "https://i.ebayimg.com/thumbs/images/g/gf4AAOSw3zhkiFAu/s-l300.jpg",
+                        "bidding": {
+                            "bid_amount": 0,
+                            "end_time": "(Di, 04:17)",
+                            "remaining_time": {
+                                "days": 4,
+                                "hours": 1
+                            }
+                        },
+                        "instant_buy": false,
+                        "condition": "Used",
+                        "title": "F#f_0",
+                        "logistics_cost": {
+                            "value": 5.49,
+                            "currency": "EUR"
+                        },
+                        "url": "https://www.ebay.de/itm/195819187502",
+                        "product_id": 195819187502,
+                        "location": null,
+                        "price": {
+                            "value": 1,
+                            "currency": "EUR"
+                        }
+                    },
+                    {
+                        "seller": {
+                            "rating_amount": 2,
+                            "user_name": "pischu_2",
+                            "rating": 100
+                        },
+                        "thumbnail": "https://i.ebayimg.com/thumbs/images/g/JqsAAOSwtc1kiYL1/s-l300.jpg",
+                        "bidding": {
+                            "bid_amount": 0,
+                            "end_time": "(Mi, 02:11)",
+                            "remaining_time": {
+                                "days": 4,
+                                "hours": 23
+                            }
+                        },
+                        "instant_buy": false,
+                        "condition": "Used",
+                        "title": "F#f_0",
+                        "logistics_cost": {
+                            "value": 5.49,
+                            "currency": "EUR"
+                        },
+                        "url": "https://www.ebay.de/itm/155608045711",
+                        "product_id": 155608045711,
+                        "location": null,
+                        "price": {
+                            "value": 1,
+                            "currency": "EUR"
+                        }
+                    },
+                    {
+                        "seller": {
+                            "rating_amount": 126,
+                            "user_name": "schlummedar",
+                            "rating": 100
+                        },
+                        "thumbnail": "https://i.ebayimg.com/thumbs/images/g/Lq4AAOSw6wVkisk-/s-l300.jpg",
+                        "bidding": {
+                            "bid_amount": 0,
+                            "end_time": "(Do, 11:30)",
+                            "remaining_time": {
+                                "days": 6,
+                                "hours": 8
+                            }
+                        },
+                        "instant_buy": false,
+                        "condition": "Used",
+                        "title": "F#f_0",
+                        "logistics_cost": {
+                            "value": 5.49,
+                            "currency": "EUR"
+                        },
+                        "url": "https://www.ebay.de/itm/275904453577",
+                        "product_id": 275904453577,
+                        "location": null,
+                        "price": {
+                            "value": 1,
+                            "currency": "EUR"
+                        }
+                    },
+                    {
+                        "seller": {
+                            "rating_amount": 0,
+                            "user_name": "leobtt_25",
+                            "rating": 0
+                        },
+                        "thumbnail": "https://i.ebayimg.com/thumbs/images/g/pMMAAOSw3WBkizwQ/s-l300.jpg",
+                        "bidding": {
+                            "bid_amount": 0,
+                            "end_time": "(Do, 09:35)",
+                            "remaining_time": {
+                                "days": 6,
+                                "hours": 6
+                            }
+                        },
+                        "instant_buy": false,
+                        "condition": "Used",
+                        "title": "F#f_0",
+                        "logistics_cost": {
+                            "value": 5.49,
+                            "currency": "EUR"
+                        },
+                        "url": "https://www.ebay.de/itm/125977548339",
+                        "product_id": 125977548339,
+                        "location": null,
+                        "price": {
+                            "value": 1,
+                            "currency": "EUR"
+                        }
+                    },
+                    {
+                        "seller": {
+                            "rating_amount": 0,
+                            "user_name": "v6ndw_49",
+                            "rating": 0
+                        },
+                        "thumbnail": "https://i.ebayimg.com/thumbs/images/g/oW0AAOSwOtVkiuc4/s-l300.jpg",
+                        "bidding": {
+                            "bid_amount": 0,
+                            "end_time": "(25/06, 03:44)",
+                            "remaining_time": null
+                        },
+                        "instant_buy": false,
+                        "condition": "Used",
+                        "title": "F#f_0",
+                        "logistics_cost": {
+                            "value": 5.49,
+                            "currency": "EUR"
+                        },
+                        "url": "https://www.ebay.de/itm/334912739564",
+                        "product_id": 334912739564,
+                        "location": null,
+                        "price": {
+                            "value": 1,
+                            "currency": "EUR"
+                        }
+                    },
+                    {
+                        "seller": {
+                            "rating_amount": 532,
+                            "user_name": "donaugirl63",
+                            "rating": 100
+                        },
+                        "thumbnail": "https://i.ebayimg.com/thumbs/images/g/f7UAAOSwmWNkh0CP/s-l300.jpg",
+                        "bidding": {
+                            "bid_amount": 0,
+                            "end_time": "(Mo, 08:58)",
+                            "remaining_time": {
+                                "days": 3,
+                                "hours": 6
+                            }
+                        },
+                        "instant_buy": false,
+                        "condition": "Used",
+                        "title": "F#f_0",
+                        "logistics_cost": {
+                            "value": 5.49,
+                            "currency": "EUR"
+                        },
+                        "url": "https://www.ebay.de/itm/195817729717",
+                        "product_id": 195817729717,
+                        "location": null,
+                        "price": {
+                            "value": 1,
+                            "currency": "EUR"
+                        }
+                    },
+                    {
+                        "seller": {
+                            "rating_amount": 147,
+                            "user_name": "pesag67",
+                            "rating": 100
+                        },
+                        "thumbnail": "https://i.ebayimg.com/thumbs/images/g/P7wAAOSw1e5kh5jv/s-l300.jpg",
+                        "bidding": {
+                            "bid_amount": 0,
+                            "end_time": "(Mo, 15:46)",
+                            "remaining_time": {
+                                "days": 3,
+                                "hours": 12
+                            }
+                        },
+                        "instant_buy": false,
+                        "condition": "Used",
+                        "title": "F#f_0",
+                        "logistics_cost": {
+                            "value": 5.49,
+                            "currency": "EUR"
+                        },
+                        "url": "https://www.ebay.de/itm/115831322194",
+                        "product_id": 115831322194,
+                        "location": null,
+                        "price": {
+                            "value": 1,
+                            "currency": "EUR"
+                        }
+                    },
+                    {
+                        "seller": {
+                            "rating_amount": 223,
+                            "user_name": "christian_zeller",
+                            "rating": 100
+                        },
+                        "thumbnail": "https://i.ebayimg.com/thumbs/images/g/X6oAAOSwpDdkiKWF/s-l300.jpg",
+                        "bidding": {
+                            "bid_amount": 0,
+                            "end_time": "(Di, 10:22)",
+                            "remaining_time": {
+                                "days": 4,
+                                "hours": 7
+                            }
+                        },
+                        "instant_buy": false,
+                        "condition": "Used",
+                        "title": "F#f_0",
+                        "logistics_cost": {
+                            "value": 5.49,
+                            "currency": "EUR"
+                        },
+                        "url": "https://www.ebay.de/itm/225616643432",
+                        "product_id": 225616643432,
+                        "location": null,
+                        "price": {
+                            "value": 1,
+                            "currency": "EUR"
+                        }
+                    },
+                    {
+                        "seller": {
+                            "rating_amount": 242,
+                            "user_name": "michi2016",
+                            "rating": 98
+                        },
+                        "thumbnail": "https://i.ebayimg.com/thumbs/images/g/A1gAAOSwkKBki0rO/s-l300.jpg",
+                        "bidding": {
+                            "bid_amount": 0,
+                            "end_time": "(So, 10:33)",
+                            "remaining_time": {
+                                "days": 2,
+                                "hours": 7
+                            }
+                        },
+                        "instant_buy": false,
+                        "condition": "Used",
+                        "title": "F#f_0",
+                        "logistics_cost": {
+                            "value": 5.49,
+                            "currency": "EUR"
+                        },
+                        "url": "https://www.ebay.de/itm/275905066966",
+                        "product_id": 275905066966,
+                        "location": null,
+                        "price": {
+                            "value": 1,
+                            "currency": "EUR"
+                        }
+                    },
+                    {
+                        "seller": {
+                            "rating_amount": 121,
+                            "user_name": "clemensm5991",
+                            "rating": 100
+                        },
+                        "thumbnail": "https://i.ebayimg.com/thumbs/images/g/YJwAAOSwO9pkhZQQ/s-l300.jpg",
+                        "bidding": {
+                            "bid_amount": 0,
+                            "end_time": "(So, 11:30)",
+                            "remaining_time": {
+                                "days": 2,
+                                "hours": 8
+                            }
+                        },
+                        "instant_buy": false,
+                        "condition": "Used",
+                        "title": "F#f_0",
+                        "logistics_cost": {
+                            "value": 5.49,
+                            "currency": "EUR"
+                        },
+                        "url": "https://www.ebay.de/itm/145132072136",
+                        "product_id": 145132072136,
+                        "location": null,
+                        "price": {
+                            "value": 1,
+                            "currency": "EUR"
+                        }
+                    },
+                    {
+                        "seller": {
+                            "rating_amount": 1293,
+                            "user_name": "0flash77",
+                            "rating": 100
+                        },
+                        "thumbnail": "https://i.ebayimg.com/thumbs/images/g/AuEAAOSwuQVki154/s-l300.jpg",
+                        "bidding": {
+                            "bid_amount": 0,
+                            "end_time": "(Do, 12:10)",
+                            "remaining_time": {
+                                "days": 6,
+                                "hours": 9
+                            }
+                        },
+                        "instant_buy": false,
+                        "condition": "Used",
+                        "title": "F#f_0",
+                        "logistics_cost": {
+                            "value": 5.49,
+                            "currency": "EUR"
+                        },
+                        "url": "https://www.ebay.de/itm/325695406153",
+                        "product_id": 325695406153,
+                        "location": null,
+                        "price": {
+                            "value": 1,
+                            "currency": "EUR"
+                        }
+                    },
+                    {
+                        "seller": {
+                            "rating_amount": 142,
+                            "user_name": "orionfog83",
+                            "rating": 100
+                        },
+                        "thumbnail": "https://i.ebayimg.com/thumbs/images/g/vRQAAOSw4BhkixvE/s-l300.jpg",
+                        "bidding": {
+                            "bid_amount": 0,
+                            "end_time": "(25/06, 10:53)",
+                            "remaining_time": {
+                                "days": 9,
+                                "hours": 8
+                            }
+                        },
+                        "instant_buy": false,
+                        "condition": "New (Other)",
+                        "title": "F#f_0",
+                        "logistics_cost": {
+                            "value": 5.49,
+                            "currency": "EUR"
+                        },
+                        "url": "https://www.ebay.de/itm/195823969183",
+                        "product_id": 195823969183,
+                        "location": null,
+                        "price": {
+                            "value": 1,
+                            "currency": "EUR"
+                        }
+                    },
+                    {
+                        "seller": {
+                            "rating_amount": 652,
+                            "user_name": "doreen1211",
+                            "rating": 100
+                        },
+                        "thumbnail": "https://i.ebayimg.com/thumbs/images/g/RCkAAOSwVttkidnW/s-l300.jpg",
+                        "bidding": {
+                            "bid_amount": 0,
+                            "end_time": "(25/06, 11:15)",
+                            "remaining_time": {
+                                "days": 9,
+                                "hours": 8
+                            }
+                        },
+                        "instant_buy": false,
+                        "condition": "Used",
+                        "title": "F#f_0",
+                        "logistics_cost": {
+                            "value": 5.5,
+                            "currency": "EUR"
+                        },
+                        "url": "https://www.ebay.de/itm/235049902788",
+                        "product_id": 235049902788,
+                        "location": null,
+                        "price": {
+                            "value": 1,
+                            "currency": "EUR"
+                        }
+                    },
+                    {
+                        "seller": {
+                            "rating_amount": 843,
+                            "user_name": "bastl1881",
+                            "rating": 100
+                        },
+                        "thumbnail": "https://i.ebayimg.com/thumbs/images/g/EcUAAOSwIZBkieEI/s-l300.jpg",
+                        "bidding": {
+                            "bid_amount": 0,
+                            "end_time": "(Mi, 08:48)",
+                            "remaining_time": {
+                                "days": 5,
+                                "hours": 5
+                            }
+                        },
+                        "instant_buy": false,
+                        "condition": "Used",
+                        "title": "F#f_0",
+                        "logistics_cost": {
+                            "value": 5.49,
+                            "currency": "EUR"
+                        },
+                        "url": "https://www.ebay.de/itm/204367404493",
+                        "product_id": 204367404493,
+                        "location": null,
+                        "price": {
+                            "value": 1,
+                            "currency": "EUR"
+                        }
+                    },
+                    {
+                        "seller": {
+                            "rating_amount": 109,
+                            "user_name": "aiartstore",
+                            "rating": 100
+                        },
+                        "thumbnail": "https://i.ebayimg.com/thumbs/images/g/MQQAAOSwmxFkiqYc/s-l300.jpg",
+                        "bidding": {
+                            "bid_amount": 0,
+                            "end_time": "(Do, 10:30)",
+                            "remaining_time": {
+                                "days": 6,
+                                "hours": 7
+                            }
+                        },
+                        "instant_buy": false,
+                        "condition": "Used",
+                        "title": "F#f_0",
+                        "logistics_cost": {
+                            "value": 5.49,
+                            "currency": "EUR"
+                        },
+                        "url": "https://www.ebay.de/itm/115833326742",
+                        "product_id": 115833326742,
+                        "location": null,
+                        "price": {
+                            "value": 1,
+                            "currency": "EUR"
+                        }
+                    },
+                    {
+                        "seller": {
+                            "rating_amount": 48,
+                            "user_name": "denrem-21",
+                            "rating": 100
+                        },
+                        "thumbnail": "https://i.ebayimg.com/thumbs/images/g/jN4AAOSwc49ki2M8/s-l300.jpg",
+                        "bidding": {
+                            "bid_amount": 0,
+                            "end_time": "(Do, 12:37)",
+                            "remaining_time": {
+                                "days": 6,
+                                "hours": 9
+                            }
+                        },
+                        "instant_buy": false,
+                        "condition": "Used",
+                        "title": "F#f_0",
+                        "logistics_cost": {
+                            "value": 5.49,
+                            "currency": "EUR"
+                        },
+                        "url": "https://www.ebay.de/itm/185942957910",
+                        "product_id": 185942957910,
+                        "location": null,
+                        "price": {
+                            "value": 1,
+                            "currency": "EUR"
+                        }
+                    },
+                    {
+                        "seller": {
+                            "rating_amount": 378,
+                            "user_name": "waschlappe",
+                            "rating": 0
+                        },
+                        "thumbnail": "https://i.ebayimg.com/thumbs/images/g/rOcAAOSwxbhkjA88/s-l300.jpg",
+                        "bidding": {
+                            "bid_amount": 0,
+                            "end_time": "(Fr, 00:30)",
+                            "remaining_time": {
+                                "days": 6,
+                                "hours": 21
+                            }
+                        },
+                        "instant_buy": false,
+                        "condition": "Used",
+                        "title": "F#f_0",
+                        "logistics_cost": {
+                            "value": 5.49,
+                            "currency": "EUR"
+                        },
+                        "url": "https://www.ebay.de/itm/266300267113",
+                        "product_id": 266300267113,
+                        "location": null,
+                        "price": {
+                            "value": 1,
+                            "currency": "EUR"
+                        }
+                    },
+                    {
+                        "seller": {
+                            "rating_amount": 426,
+                            "user_name": "tiieee",
+                            "rating": 93.8
+                        },
+                        "thumbnail": "https://i.ebayimg.com/thumbs/images/g/J3gAAOSwmsFkiroJ/s-l300.jpg",
+                        "bidding": {
+                            "bid_amount": 0,
+                            "end_time": "(25/06, 00:16)",
+                            "remaining_time": {
+                                "days": 8,
+                                "hours": 21
+                            }
+                        },
+                        "instant_buy": false,
+                        "condition": "Used",
+                        "title": "F#f_0",
+                        "logistics_cost": {
+                            "value": 6.99,
+                            "currency": "EUR"
+                        },
+                        "url": "https://www.ebay.de/itm/235050771760",
+                        "product_id": 235050771760,
+                        "location": null,
+                        "price": {
+                            "value": 1,
+                            "currency": "EUR"
+                        }
+                    },
+                    {
+                        "seller": {
+                            "rating_amount": 5,
+                            "user_name": "mbbaur",
+                            "rating": 0
+                        },
+                        "thumbnail": "https://i.ebayimg.com/thumbs/images/g/qf8AAOSwjdNkivfz/s-l300.jpg",
+                        "bidding": {
+                            "bid_amount": 0,
+                            "end_time": "(25/06, 04:43)",
+                            "remaining_time": {
+                                "days": 9,
+                                "hours": 1
+                            }
+                        },
+                        "instant_buy": false,
+                        "condition": "Used",
+                        "title": "F#f_0",
+                        "logistics_cost": {
+                            "value": 5.49,
+                            "currency": "EUR"
+                        },
+                        "url": "https://www.ebay.de/itm/334912827232",
+                        "product_id": 334912827232,
+                        "location": null,
+                        "price": {
+                            "value": 1,
+                            "currency": "EUR"
+                        }
+                    },
+                    {
+                        "seller": {
+                            "rating_amount": 822,
+                            "user_name": "pk-biene",
+                            "rating": 100
+                        },
+                        "thumbnail": "https://i.ebayimg.com/thumbs/images/g/HiEAAOSwO9pkiyV7/s-l300.jpg",
+                        "bidding": {
+                            "bid_amount": 0,
+                            "end_time": "(25/06, 07:57)",
+                            "remaining_time": {
+                                "days": 9,
+                                "hours": 5
+                            }
+                        },
+                        "instant_buy": false,
+                        "condition": "Used",
+                        "title": "F#f_0",
+                        "logistics_cost": {
+                            "value": 5.49,
+                            "currency": "EUR"
+                        },
+                        "url": "https://www.ebay.de/itm/195823753826",
+                        "product_id": 195823753826,
+                        "location": null,
+                        "price": {
+                            "value": 1,
+                            "currency": "EUR"
+                        }
+                    },
+                    {
+                        "seller": {
+                            "rating_amount": 822,
+                            "user_name": "pk-biene",
+                            "rating": 100
+                        },
+                        "thumbnail": "https://i.ebayimg.com/thumbs/images/g/uv4AAOSw9ttkiyeg/s-l300.jpg",
+                        "bidding": {
+                            "bid_amount": 0,
+                            "end_time": "(25/06, 08:04)",
+                            "remaining_time": {
+                                "days": 9,
+                                "hours": 5
+                            }
+                        },
+                        "instant_buy": false,
+                        "condition": "Used",
+                        "title": "F#f_0",
+                        "logistics_cost": {
+                            "value": 5.49,
+                            "currency": "EUR"
+                        },
+                        "url": "https://www.ebay.de/itm/195823758216",
+                        "product_id": 195823758216,
+                        "location": null,
+                        "price": {
+                            "value": 1,
+                            "currency": "EUR"
+                        }
+                    },
+                    {
+                        "seller": {
+                            "rating_amount": 558,
+                            "user_name": "hausnm",
+                            "rating": 100
+                        },
+                        "thumbnail": "https://i.ebayimg.com/thumbs/images/g/09IAAOSwie1kfOjr/s-l300.jpg",
+                        "bidding": {
+                            "bid_amount": 0,
+                            "end_time": "(25/06, 08:31)",
+                            "remaining_time": {
+                                "days": 9,
+                                "hours": 5
+                            }
+                        },
+                        "instant_buy": false,
+                        "condition": "Used",
+                        "title": "F#f_0",
+                        "logistics_cost": {
+                            "value": 5.49,
+                            "currency": "EUR"
+                        },
+                        "url": "https://www.ebay.de/itm/256110798246",
+                        "product_id": 256110798246,
+                        "location": null,
+                        "price": {
+                            "value": 1,
+                            "currency": "EUR"
+                        }
+                    },
+                    {
+                        "seller": {
+                            "rating_amount": 566,
+                            "user_name": "ingo128ohs",
+                            "rating": 100
+                        },
+                        "thumbnail": "https://i.ebayimg.com/thumbs/images/g/oIEAAOSwvVpkizgC/s-l300.jpg",
+                        "bidding": {
+                            "bid_amount": 0,
+                            "end_time": "(25/06, 09:12)",
+                            "remaining_time": {
+                                "days": 9,
+                                "hours": 6
+                            }
+                        },
+                        "instant_buy": false,
+                        "condition": "Used",
+                        "title": "F#f_0",
+                        "logistics_cost": {
+                            "value": 5.49,
+                            "currency": "EUR"
+                        },
+                        "url": "https://www.ebay.de/itm/275904965615",
+                        "product_id": 275904965615,
+                        "location": null,
+                        "price": {
+                            "value": 1,
+                            "currency": "EUR"
+                        }
+                    },
+                    {
+                        "seller": {
+                            "rating_amount": 524,
+                            "user_name": "desengelssonnenschein",
+                            "rating": 98.5
+                        },
+                        "thumbnail": "https://i.ebayimg.com/thumbs/images/g/UcAAAOSwZElki18w/s-l300.jpg",
+                        "bidding": {
+                            "bid_amount": 0,
+                            "end_time": "(25/06, 12:11)",
+                            "remaining_time": {
+                                "days": 9,
+                                "hours": 9
+                            }
+                        },
+                        "instant_buy": false,
+                        "condition": "Used",
+                        "title": "F#f_0",
+                        "logistics_cost": {
+                            "value": 5.49,
+                            "currency": "EUR"
+                        },
+                        "url": "https://www.ebay.de/itm/204368572558",
+                        "product_id": 204368572558,
+                        "location": null,
+                        "price": {
+                            "value": 1,
+                            "currency": "EUR"
+                        }
+                    },
+                    {
+                        "seller": {
+                            "rating_amount": 1865,
+                            "user_name": "blechklopfer_1972",
+                            "rating": 90
+                        },
+                        "thumbnail": "https://i.ebayimg.com/thumbs/images/g/I98AAOSwj9hkizpG/s-l300.jpg",
+                        "bidding": {
+                            "bid_amount": 0,
+                            "end_time": "(Do, 09:29)",
+                            "remaining_time": {
+                                "days": 6,
+                                "hours": 6
+                            }
+                        },
+                        "instant_buy": false,
+                        "condition": "Used",
+                        "title": "F#f_0",
+                        "logistics_cost": {
+                            "value": 6.49,
+                            "currency": "EUR"
+                        },
+                        "url": "https://www.ebay.de/itm/225619564886",
+                        "product_id": 225619564886,
+                        "location": null,
+                        "price": {
+                            "value": 1,
+                            "currency": "EUR"
+                        }
+                    },
+                    {
+                        "seller": {
+                            "rating_amount": 543,
+                            "user_name": "jr200769",
+                            "rating": 100
+                        },
+                        "thumbnail": "https://i.ebayimg.com/thumbs/images/g/NBAAAOSwPgFkiwS8/s-l300.jpg",
+                        "bidding": {
+                            "bid_amount": 0,
+                            "end_time": "(Do, 10:30)",
+                            "remaining_time": {
+                                "days": 6,
+                                "hours": 7
+                            }
+                        },
+                        "instant_buy": false,
+                        "condition": "Used",
+                        "title": "F#f_0",
+                        "logistics_cost": {
+                            "value": 5.49,
+                            "currency": "EUR"
+                        },
+                        "url": "https://www.ebay.de/itm/115833584876",
+                        "product_id": 115833584876,
+                        "location": null,
+                        "price": {
+                            "value": 1,
+                            "currency": "EUR"
+                        }
+                    },
+                    {
+                        "seller": {
+                            "rating_amount": 1047,
+                            "user_name": "cruiseflorian",
+                            "rating": 100
+                        },
+                        "thumbnail": "https://i.ebayimg.com/thumbs/images/g/Cf0AAOSwD2VkiydI/s-l300.jpg",
+                        "bidding": {
+                            "bid_amount": 0,
+                            "end_time": "(Di, 12:18)",
+                            "remaining_time": {
+                                "days": 4,
+                                "hours": 9
+                            }
+                        },
+                        "instant_buy": false,
+                        "condition": "Used",
+                        "title": "F#f_0",
+                        "logistics_cost": {
+                            "value": 6.99,
+                            "currency": "EUR"
+                        },
+                        "url": "https://www.ebay.de/itm/145139349250",
+                        "product_id": 145139349250,
+                        "location": null,
+                        "price": {
+                            "value": 1,
+                            "currency": "EUR"
+                        }
+                    },
+                    {
+                        "seller": {
+                            "rating_amount": 1,
+                            "user_name": "jeroll_7206",
+                            "rating": 100
+                        },
+                        "thumbnail": "https://i.ebayimg.com/thumbs/images/g/ujUAAOSwh3lkisS6/s-l300.jpg",
+                        "bidding": {
+                            "bid_amount": 0,
+                            "end_time": "(So, 02:36)",
+                            "remaining_time": {
+                                "days": 1,
+                                "hours": 23
+                            }
+                        },
+                        "instant_buy": false,
+                        "condition": "Used",
+                        "title": "F#f_0",
+                        "logistics_cost": {
+                            "value": 5.49,
+                            "currency": "EUR"
+                        },
+                        "url": "https://www.ebay.de/itm/385684617429",
+                        "product_id": 385684617429,
+                        "location": null,
+                        "price": {
+                            "value": 1,
+                            "currency": "EUR"
+                        }
+                    },
+                    {
+                        "seller": {
+                            "rating_amount": 177,
+                            "user_name": "sratss_colt",
+                            "rating": 100
+                        },
+                        "thumbnail": "https://i.ebayimg.com/thumbs/images/g/O9YAAOSwCGRki1Zt/s-l300.jpg",
+                        "bidding": {
+                            "bid_amount": 0,
+                            "end_time": "(So, 11:24)",
+                            "remaining_time": {
+                                "days": 2,
+                                "hours": 8
+                            }
+                        },
+                        "instant_buy": false,
+                        "condition": "Used",
+                        "title": "F#f_0",
+                        "logistics_cost": {
+                            "value": 5.49,
+                            "currency": "EUR"
+                        },
+                        "url": "https://www.ebay.de/itm/204368544804",
+                        "product_id": 204368544804,
+                        "location": null,
+                        "price": {
+                            "value": 1,
+                            "currency": "EUR"
+                        }
+                    },
+                    {
+                        "seller": {
+                            "rating_amount": 0,
+                            "user_name": "jeha189",
+                            "rating": 0
+                        },
+                        "thumbnail": "https://i.ebayimg.com/thumbs/images/g/YOgAAOSwNjNki1ox/s-l300.jpg",
+                        "bidding": {
+                            "bid_amount": 0,
+                            "end_time": "(So, 11:41)",
+                            "remaining_time": {
+                                "days": 2,
+                                "hours": 8
+                            }
+                        },
+                        "instant_buy": false,
+                        "condition": "Used",
+                        "title": "F#f_0",
+                        "logistics_cost": {
+                            "value": 5.49,
+                            "currency": "EUR"
+                        },
+                        "url": "https://www.ebay.de/itm/285332833668",
+                        "product_id": 285332833668,
+                        "location": null,
+                        "price": {
+                            "value": 1,
+                            "currency": "EUR"
+                        }
+                    },
+                    {
+                        "seller": {
+                            "rating_amount": 177,
+                            "user_name": "sratss_colt",
+                            "rating": 100
+                        },
+                        "thumbnail": "https://i.ebayimg.com/thumbs/images/g/7DYAAOSw4rhki1h9/s-l300.jpg",
+                        "bidding": {
+                            "bid_amount": 0,
+                            "end_time": "(So, 11:45)",
+                            "remaining_time": {
+                                "days": 2,
+                                "hours": 8
+                            }
+                        },
+                        "instant_buy": false,
+                        "condition": "Used",
+                        "title": "F#f_0",
+                        "logistics_cost": {
+                            "value": 5.49,
+                            "currency": "EUR"
+                        },
+                        "url": "https://www.ebay.de/itm/204368555963",
+                        "product_id": 204368555963,
+                        "location": null,
+                        "price": {
+                            "value": 1,
+                            "currency": "EUR"
+                        }
+                    },
+                    {
+                        "seller": {
+                            "rating_amount": 172,
+                            "user_name": "zuckerwelt1",
+                            "rating": 100
+                        },
+                        "thumbnail": "https://i.ebayimg.com/thumbs/images/g/oVUAAOSwtnpki2E1/s-l300.jpg",
+                        "bidding": {
+                            "bid_amount": 0,
+                            "end_time": "(So, 12:12)",
+                            "remaining_time": {
+                                "days": 2,
+                                "hours": 9
+                            }
+                        },
+                        "instant_buy": false,
+                        "condition": "Used",
+                        "title": "F#f_0",
+                        "logistics_cost": {
+                            "value": 6.95,
+                            "currency": "EUR"
+                        },
+                        "url": "https://www.ebay.de/itm/225619765258",
+                        "product_id": 225619765258,
+                        "location": null,
+                        "price": {
+                            "value": 1,
+                            "currency": "EUR"
+                        }
+                    },
+                    {
+                        "seller": {
+                            "rating_amount": 1024,
+                            "user_name": "christian.noack",
+                            "rating": 96.8
+                        },
+                        "thumbnail": "https://i.ebayimg.com/thumbs/images/g/xgMAAOSw4rhkitwD/s-l300.jpg",
+                        "bidding": {
+                            "bid_amount": 0,
+                            "end_time": "(Di, 02:40)",
+                            "remaining_time": {
+                                "days": 3,
+                                "hours": 23
+                            }
+                        },
+                        "instant_buy": false,
+                        "condition": "Used",
+                        "title": "F#f_0",
+                        "logistics_cost": {
+                            "value": 6.5,
+                            "currency": "EUR"
+                        },
+                        "url": "https://www.ebay.de/itm/304982981682",
+                        "product_id": 304982981682,
+                        "location": null,
+                        "price": {
+                            "value": 1,
+                            "currency": "EUR"
+                        }
+                    },
+                    {
+                        "seller": {
+                            "rating_amount": 130,
+                            "user_name": "alebiege0",
+                            "rating": 100
+                        },
+                        "thumbnail": "https://i.ebayimg.com/thumbs/images/g/mjUAAOSwi15khXQ-/s-l300.jpg",
+                        "bidding": {
+                            "bid_amount": 0,
+                            "end_time": "(Mi, 00:14)",
+                            "remaining_time": {
+                                "days": 4,
+                                "hours": 21
+                            }
+                        },
+                        "instant_buy": false,
+                        "condition": "Used",
+                        "title": "F#f_0",
+                        "logistics_cost": {
+                            "value": 7,
+                            "currency": "EUR"
+                        },
+                        "url": "https://www.ebay.de/itm/145131864358",
+                        "product_id": 145131864358,
+                        "location": null,
+                        "price": {
+                            "value": 1,
+                            "currency": "EUR"
+                        }
+                    },
+                    {
+                        "seller": {
+                            "rating_amount": 1300,
+                            "user_name": "pokos2001",
+                            "rating": 100
+                        },
+                        "thumbnail": "https://i.ebayimg.com/thumbs/images/g/R90AAOSwIM1ki~jI/s-l300.jpg",
+                        "bidding": {
+                            "bid_amount": 0,
+                            "end_time": "(Do, 22:55)",
+                            "remaining_time": {
+                                "days": 6,
+                                "hours": 20
+                            }
+                        },
+                        "instant_buy": false,
+                        "condition": "Used",
+                        "title": "F#f_0",
+                        "logistics_cost": {
+                            "value": 5.5,
+                            "currency": "EUR"
+                        },
+                        "url": "https://www.ebay.de/itm/175774038272",
+                        "product_id": 175774038272,
+                        "location": null,
+                        "price": {
+                            "value": 1,
+                            "currency": "EUR"
+                        }
+                    },
+                    {
+                        "seller": {
+                            "rating_amount": 1829,
+                            "user_name": "bt-punisher",
+                            "rating": 100
+                        },
+                        "thumbnail": "https://i.ebayimg.com/thumbs/images/g/XKcAAOSwL29kgxHI/s-l300.jpg",
+                        "bidding": {
+                            "bid_amount": 0,
+                            "end_time": "(25/06, 08:30)",
+                            "remaining_time": {
+                                "days": 9,
+                                "hours": 5
+                            }
+                        },
+                        "instant_buy": false,
+                        "condition": "Used",
+                        "title": "F#f_0",
+                        "logistics_cost": {
+                            "value": 5.49,
+                            "currency": "EUR"
+                        },
+                        "url": "https://www.ebay.de/itm/374746311901",
+                        "product_id": 374746311901,
+                        "location": null,
+                        "price": {
+                            "value": 1,
+                            "currency": "EUR"
+                        }
+                    },
+                    {
+                        "seller": {
+                            "rating_amount": 1557,
+                            "user_name": "lasse-linow",
+                            "rating": 100
+                        },
+                        "thumbnail": "https://i.ebayimg.com/thumbs/images/g/7u0AAOSwckRki1Vs/s-l300.jpg",
+                        "bidding": {
+                            "bid_amount": 0,
+                            "end_time": "(Do, 11:18)",
+                            "remaining_time": {
+                                "days": 6,
+                                "hours": 8
+                            }
+                        },
+                        "instant_buy": false,
+                        "condition": "Used",
+                        "title": "F#f_0",
+                        "logistics_cost": {
+                            "value": 5.49,
+                            "currency": "EUR"
+                        },
+                        "url": "https://www.ebay.de/itm/185942876293",
+                        "product_id": 185942876293,
+                        "location": null,
+                        "price": {
+                            "value": 1,
+                            "currency": "EUR"
+                        }
+                    },
+                    {
+                        "seller": {
+                            "rating_amount": 496,
+                            "user_name": "paulawelli11",
+                            "rating": 100
+                        },
+                        "thumbnail": "https://i.ebayimg.com/thumbs/images/g/Z5wAAOSwnRFkiMW2/s-l300.jpg",
+                        "bidding": {
+                            "bid_amount": 0,
+                            "end_time": "(Di, 12:43)",
+                            "remaining_time": {
+                                "days": 4,
+                                "hours": 9
+                            }
+                        },
+                        "instant_buy": false,
+                        "condition": "Used",
+                        "title": "F#f_0",
+                        "logistics_cost": {
+                            "value": 5.49,
+                            "currency": "EUR"
+                        },
+                        "url": "https://www.ebay.de/itm/325692699112",
+                        "product_id": 325692699112,
+                        "location": null,
+                        "price": {
+                            "value": 1,
+                            "currency": "EUR"
+                        }
+                    },
+                    {
+                        "seller": {
+                            "rating_amount": 13,
+                            "user_name": "tjuen_45",
+                            "rating": 80
+                        },
+                        "thumbnail": "https://i.ebayimg.com/thumbs/images/g/nWIAAOSwlPlkhg5z/s-l300.jpg",
+                        "bidding": {
+                            "bid_amount": 0,
+                            "end_time": "(So, 11:17)",
+                            "remaining_time": {
+                                "days": 2,
+                                "hours": 8
+                            }
+                        },
+                        "instant_buy": false,
+                        "condition": "Used",
+                        "title": "F#f_0",
+                        "logistics_cost": {
+                            "value": 5.49,
+                            "currency": "EUR"
+                        },
+                        "url": "https://www.ebay.de/itm/304977879183",
+                        "product_id": 304977879183,
+                        "location": null,
+                        "price": {
+                            "value": 1,
+                            "currency": "EUR"
+                        }
+                    },
+                    {
+                        "seller": {
+                            "rating_amount": 203134,
+                            "user_name": "www.pcline24",
+                            "rating": 99.4
+                        },
+                        "thumbnail": "https://i.ebayimg.com/thumbs/images/g/CVIAAOSwf8ZkeNRU/s-l300.jpg",
+                        "bidding": {
+                            "bid_amount": 0,
+                            "end_time": "(Do, 10:23)",
+                            "remaining_time": {
+                                "days": 6,
+                                "hours": 7
+                            }
+                        },
+                        "instant_buy": false,
+                        "condition": "Used",
+                        "title": "F#f_0",
+                        "logistics_cost": null,
+                        "url": "https://www.ebay.de/itm/295761291703",
+                        "product_id": 295761291703,
+                        "location": null,
+                        "price": {
+                            "value": 1,
+                            "currency": "EUR"
+                        }
+                    },
+                    {
+                        "seller": {
+                            "rating_amount": 77,
+                            "user_name": "yipman77",
+                            "rating": 0
+                        },
+                        "thumbnail": "https://i.ebayimg.com/thumbs/images/g/LUYAAOSwCTtkeLFA/s-l300.jpg",
+                        "bidding": {
+                            "bid_amount": 0,
+                            "end_time": "(Di, 08:53)",
+                            "remaining_time": {
+                                "days": 4,
+                                "hours": 6
+                            }
+                        },
+                        "instant_buy": false,
+                        "condition": "Used",
+                        "title": "F#f_0",
+                        "logistics_cost": {
+                            "value": 5.49,
+                            "currency": "EUR"
+                        },
+                        "url": "https://www.ebay.de/itm/195823828172",
+                        "product_id": 195823828172,
+                        "location": null,
+                        "price": {
+                            "value": 1,
+                            "currency": "EUR"
+                        }
+                    },
+                    {
+                        "seller": {
+                            "rating_amount": 6856,
+                            "user_name": "atelva-media",
+                            "rating": 100
+                        },
+                        "thumbnail": "https://i.ebayimg.com/thumbs/images/g/lzEAAOSwvtdkibRW/s-l300.jpg",
+                        "bidding": {
+                            "bid_amount": 0,
+                            "end_time": "(25/06, 10:00)",
+                            "remaining_time": {
+                                "days": 9,
+                                "hours": 7
+                            }
+                        },
+                        "instant_buy": false,
+                        "condition": "Used",
+                        "title": "F#f_0",
+                        "logistics_cost": {
+                            "value": 7.49,
+                            "currency": "EUR"
+                        },
+                        "url": "https://www.ebay.de/itm/374755710016",
+                        "product_id": 374755710016,
+                        "location": null,
+                        "price": {
+                            "value": 1,
+                            "currency": "EUR"
+                        }
+                    },
+                    {
+                        "seller": {
+                            "rating_amount": 557,
+                            "user_name": "danielk000",
+                            "rating": 100
+                        },
+                        "thumbnail": "https://i.ebayimg.com/thumbs/images/g/dbYAAOSwtG1khiyL/s-l300.jpg",
+                        "bidding": {
+                            "bid_amount": 0,
+                            "end_time": "(So, 13:37)",
+                            "remaining_time": {
+                                "days": 2,
+                                "hours": 10
+                            }
+                        },
+                        "instant_buy": false,
+                        "condition": "Used",
+                        "title": "F#f_0",
+                        "logistics_cost": {
+                            "value": 5.49,
+                            "currency": "EUR"
+                        },
+                        "url": "https://www.ebay.de/itm/155603597977",
+                        "product_id": 155603597977,
+                        "location": null,
+                        "price": {
+                            "value": 1,
+                            "currency": "EUR"
+                        }
+                    },
+                    {
+                        "seller": {
+                            "rating_amount": 1844,
+                            "user_name": "der_ritter_vom_nie",
+                            "rating": 100
+                        },
+                        "thumbnail": "https://i.ebayimg.com/thumbs/images/g/G7IAAOSwH91kjCBs/s-l300.jpg",
+                        "bidding": {
+                            "bid_amount": 0,
+                            "end_time": "(Fr, 01:46)",
+                            "remaining_time": {
+                                "days": 6,
+                                "hours": 22
+                            }
+                        },
+                        "instant_buy": false,
+                        "condition": "Used",
+                        "title": "F#f_0",
+                        "logistics_cost": {
+                            "value": 4.79,
+                            "currency": "EUR"
+                        },
+                        "url": "https://www.ebay.de/itm/115834187854",
+                        "product_id": 115834187854,
+                        "location": null,
+                        "price": {
+                            "value": 1,
+                            "currency": "EUR"
+                        }
+                    },
+                    {
+                        "seller": {
+                            "rating_amount": 6856,
+                            "user_name": "atelva-media",
+                            "rating": 100
+                        },
+                        "thumbnail": "https://i.ebayimg.com/thumbs/images/g/xiUAAOSwZKJkibvs/s-l300.jpg",
+                        "bidding": {
+                            "bid_amount": 0,
+                            "end_time": "(25/06, 10:00)",
+                            "remaining_time": {
+                                "days": 9,
+                                "hours": 7
+                            }
+                        },
+                        "instant_buy": false,
+                        "condition": "Used",
+                        "title": "F#f_0",
+                        "logistics_cost": {
+                            "value": 7.49,
+                            "currency": "EUR"
+                        },
+                        "url": "https://www.ebay.de/itm/374755755268",
+                        "product_id": 374755755268,
+                        "location": null,
+                        "price": {
+                            "value": 1,
+                            "currency": "EUR"
+                        }
+                    },
+                    {
+                        "seller": {
+                            "rating_amount": 63,
+                            "user_name": "andisaikin",
+                            "rating": 100
+                        },
+                        "thumbnail": "https://i.ebayimg.com/thumbs/images/g/o5wAAOSwEt9kgJRG/s-l300.jpg",
+                        "bidding": {
+                            "bid_amount": 0,
+                            "end_time": "(Do, 11:09)",
+                            "remaining_time": {
+                                "days": 6,
+                                "hours": 8
+                            }
+                        },
+                        "instant_buy": false,
+                        "condition": "Used",
+                        "title": "F#f_0",
+                        "logistics_cost": {
+                            "value": 4.95,
+                            "currency": "EUR"
+                        },
+                        "url": "https://www.ebay.de/itm/266299626531",
+                        "product_id": 266299626531,
+                        "location": null,
+                        "price": {
+                            "value": 1,
+                            "currency": "EUR"
+                        }
+                    },
+                    {
+                        "seller": {
+                            "rating_amount": 506,
+                            "user_name": "hahbenjamin",
+                            "rating": 95
+                        },
+                        "thumbnail": "https://i.ebayimg.com/thumbs/images/g/UkcAAOSwUJtkDKDt/s-l300.jpg",
+                        "bidding": {
+                            "bid_amount": 0,
+                            "end_time": "(So, 11:07)",
+                            "remaining_time": {
+                                "days": 2,
+                                "hours": 8
+                            }
+                        },
+                        "instant_buy": false,
+                        "condition": "Used",
+                        "title": "F#f_0",
+                        "logistics_cost": {
+                            "value": 6.99,
+                            "currency": "EUR"
+                        },
+                        "url": "https://www.ebay.de/itm/334907936089",
+                        "product_id": 334907936089,
+                        "location": null,
+                        "price": {
+                            "value": 1,
+                            "currency": "EUR"
+                        }
+                    },
+                    {
+                        "seller": {
+                            "rating_amount": 125,
+                            "user_name": "blauthorty",
+                            "rating": 100
+                        },
+                        "thumbnail": "https://i.ebayimg.com/thumbs/images/g/0oMAAOSwpPdkiDT8/s-l300.jpg",
+                        "bidding": {
+                            "bid_amount": 0,
+                            "end_time": "(Fr, 02:25)",
+                            "remaining_time": {
+                                "days": 6,
+                                "hours": 23
+                            }
+                        },
+                        "instant_buy": false,
+                        "condition": "Used",
+                        "title": "F#f_0",
+                        "logistics_cost": {
+                            "value": 5.49,
+                            "currency": "EUR"
+                        },
+                        "url": "https://www.ebay.de/itm/295756630265",
+                        "product_id": 295756630265,
+                        "location": null,
+                        "price": {
+                            "value": 1,
+                            "currency": "EUR"
+                        }
+                    },
+                    {
+                        "seller": {
+                            "rating_amount": 1471,
+                            "user_name": "rosa2002rot",
+                            "rating": 100
+                        },
+                        "thumbnail": "https://i.ebayimg.com/thumbs/images/g/lFIAAOSwhtNkiHDO/s-l300.jpg",
+                        "bidding": {
+                            "bid_amount": 0,
+                            "end_time": "(Di, 06:40)",
+                            "remaining_time": {
+                                "days": 4,
+                                "hours": 3
+                            }
+                        },
+                        "instant_buy": false,
+                        "condition": "Used",
+                        "title": "F#f_0",
+                        "logistics_cost": {
+                            "value": 5.49,
+                            "currency": "EUR"
+                        },
+                        "url": "https://www.ebay.de/itm/394677485708",
+                        "product_id": 394677485708,
+                        "location": null,
+                        "price": {
+                            "value": 1,
+                            "currency": "EUR"
+                        }
+                    },
+                    {
+                        "seller": {
+                            "rating_amount": 37429,
+                            "user_name": "super-martin-bros",
+                            "rating": 99.9
+                        },
+                        "thumbnail": "https://i.ebayimg.com/thumbs/images/g/nMUAAOSwMJJkYbuk/s-l300.jpg",
+                        "bidding": {
+                            "bid_amount": 0,
+                            "end_time": "(25/06, 12:37)",
+                            "remaining_time": {
+                                "days": 9,
+                                "hours": 9
+                            }
+                        },
+                        "instant_buy": false,
+                        "condition": "Used",
+                        "title": "F#f_0",
+                        "logistics_cost": {
+                            "value": 2.99,
+                            "currency": "EUR"
+                        },
+                        "url": "https://www.ebay.de/itm/394625702960",
+                        "product_id": 394625702960,
+                        "location": null,
+                        "price": {
+                            "value": 1,
+                            "currency": "EUR"
+                        }
+                    },
+                    {
+                        "seller": {
+                            "rating_amount": 532,
+                            "user_name": "donaugirl63",
+                            "rating": 100
+                        },
+                        "thumbnail": "https://i.ebayimg.com/thumbs/images/g/fsEAAOSw6t1khzyR/s-l300.jpg",
+                        "bidding": {
+                            "bid_amount": 0,
+                            "end_time": "(Mo, 08:49)",
+                            "remaining_time": {
+                                "days": 3,
+                                "hours": 5
+                            }
+                        },
+                        "instant_buy": false,
+                        "condition": "Used",
+                        "title": "F#f_0",
+                        "logistics_cost": {
+                            "value": 5.49,
+                            "currency": "EUR"
+                        },
+                        "url": "https://www.ebay.de/itm/195817720275",
+                        "product_id": 195817720275,
+                        "location": null,
+                        "price": {
+                            "value": 1,
+                            "currency": "EUR"
+                        }
+                    },
+                    {
+                        "seller": {
+                            "rating_amount": 0,
+                            "user_name": "ahism_92",
+                            "rating": 0
+                        },
+                        "thumbnail": "https://i.ebayimg.com/thumbs/images/g/3TcAAOSw9Y1khi5x/s-l300.jpg",
+                        "bidding": {
+                            "bid_amount": 0,
+                            "end_time": "(So, 13:40)",
+                            "remaining_time": {
+                                "days": 2,
+                                "hours": 10
+                            }
+                        },
+                        "instant_buy": false,
+                        "condition": "Used",
+                        "title": "F#f_0",
+                        "logistics_cost": {
+                            "value": 2,
+                            "currency": "EUR"
+                        },
+                        "url": "https://www.ebay.de/itm/145132814855",
+                        "product_id": 145132814855,
+                        "location": null,
+                        "price": {
+                            "value": 1,
+                            "currency": "EUR"
+                        }
+                    },
+                    {
+                        "seller": {
+                            "rating_amount": 1460,
+                            "user_name": "daniel361974",
+                            "rating": 100
+                        },
+                        "thumbnail": "https://i.ebayimg.com/thumbs/images/g/3z4AAOSwhelkfdY8/s-l300.jpg",
+                        "bidding": {
+                            "bid_amount": 0,
+                            "end_time": "(So, 11:02)",
+                            "remaining_time": {
+                                "days": 2,
+                                "hours": 8
+                            }
+                        },
+                        "instant_buy": false,
+                        "condition": "Used",
+                        "title": "F#f_0",
+                        "logistics_cost": {
+                            "value": 5.49,
+                            "currency": "EUR"
+                        },
+                        "url": "https://www.ebay.de/itm/185928271030",
+                        "product_id": 185928271030,
+                        "location": null,
+                        "price": {
+                            "value": 1,
+                            "currency": "EUR"
+                        }
+                    },
+                    {
+                        "seller": {
+                            "rating_amount": 2213,
+                            "user_name": "xoscarx",
+                            "rating": 100
+                        },
+                        "thumbnail": "https://i.ebayimg.com/thumbs/images/g/sSAAAOSwG0hki1wM/s-l300.jpg",
+                        "bidding": {
+                            "bid_amount": 0,
+                            "end_time": "(Do, 11:47)",
+                            "remaining_time": {
+                                "days": 6,
+                                "hours": 8
+                            }
+                        },
+                        "instant_buy": false,
+                        "condition": "Used",
+                        "title": "F#f_0",
+                        "logistics_cost": {
+                            "value": 2.25,
+                            "currency": "EUR"
+                        },
+                        "url": "https://www.ebay.de/itm/175773528933",
+                        "product_id": 175773528933,
+                        "location": null,
+                        "price": {
+                            "value": 1,
+                            "currency": "EUR"
+                        }
+                    },
+                    {
+                        "seller": {
+                            "rating_amount": 330,
+                            "user_name": "frank127",
+                            "rating": 100
+                        },
+                        "thumbnail": "https://i.ebayimg.com/thumbs/images/g/vJgAAOSwtc1khidO/s-l300.jpg",
+                        "bidding": {
+                            "bid_amount": 0,
+                            "end_time": "(So, 13:04)",
+                            "remaining_time": {
+                                "days": 2,
+                                "hours": 10
+                            }
+                        },
+                        "instant_buy": false,
+                        "condition": "Used",
+                        "title": "F#f_0",
+                        "logistics_cost": {
+                            "value": 5.49,
+                            "currency": "EUR"
+                        },
+                        "url": "https://www.ebay.de/itm/334908018143",
+                        "product_id": 334908018143,
+                        "location": null,
+                        "price": {
+                            "value": 1,
+                            "currency": "EUR"
+                        }
+                    },
+                    {
+                        "seller": {
+                            "rating_amount": 19,
+                            "user_name": "michellheuc-0",
+                            "rating": 81.3
+                        },
+                        "thumbnail": "https://i.ebayimg.com/thumbs/images/g/J4oAAOSwiZ1khc2w/s-l300.jpg",
+                        "bidding": {
+                            "bid_amount": 0,
+                            "end_time": "(So, 06:36)",
+                            "remaining_time": {
+                                "days": 2,
+                                "hours": 3
+                            }
+                        },
+                        "instant_buy": false,
+                        "condition": "Used",
+                        "title": "F#f_0",
+                        "logistics_cost": {
+                            "value": 5.49,
+                            "currency": "EUR"
+                        },
+                        "url": "https://www.ebay.de/itm/404329016050",
+                        "product_id": 404329016050,
+                        "location": null,
+                        "price": {
+                            "value": 1,
+                            "currency": "EUR"
+                        }
+                    },
+                    {
+                        "seller": {
+                            "rating_amount": 1693,
+                            "user_name": "nils_karlsson-pyssling",
+                            "rating": 100
+                        },
+                        "thumbnail": "https://i.ebayimg.com/thumbs/images/g/290AAOSwjoRkhewF/s-l300.jpg",
+                        "bidding": {
+                            "bid_amount": 0,
+                            "end_time": "(So, 08:48)",
+                            "remaining_time": {
+                                "days": 2,
+                                "hours": 5
+                            }
+                        },
+                        "instant_buy": false,
+                        "condition": "Used",
+                        "title": "F#f_0",
+                        "logistics_cost": {
+                            "value": 5.49,
+                            "currency": "EUR"
+                        },
+                        "url": "https://www.ebay.de/itm/266294367017",
+                        "product_id": 266294367017,
+                        "location": null,
+                        "price": {
+                            "value": 1,
+                            "currency": "EUR"
+                        }
+                    },
+                    {
+                        "seller": {
+                            "rating_amount": 651,
+                            "user_name": "privat-sven",
+                            "rating": 100
+                        },
+                        "thumbnail": "https://i.ebayimg.com/thumbs/images/g/n2IAAOSwSdhkh4CP/s-l300.jpg",
+                        "bidding": {
+                            "bid_amount": 0,
+                            "end_time": "(Mo, 13:32)",
+                            "remaining_time": {
+                                "days": 3,
+                                "hours": 10
+                            }
+                        },
+                        "instant_buy": false,
+                        "condition": "Used",
+                        "title": "F#f_0",
+                        "logistics_cost": {
+                            "value": 5.49,
+                            "currency": "EUR"
+                        },
+                        "url": "https://www.ebay.de/itm/225615529872",
+                        "product_id": 225615529872,
+                        "location": null,
+                        "price": {
+                            "value": 1,
+                            "currency": "EUR"
+                        }
+                    }
+                ],
+                "last_page": 10,
+                "search": {
+                    "search_query": "iphone",
+                    "country_url": "www.ebay.de",
+                    "page": 1
+                },
+                "products_amount": 61
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "products": {
+                        "type": "array",
+                        "items": {
+                            "type": "object"
+                        }
+                    },
+                    "last_page": {
+                        "type": "integer"
+                    },
+                    "search": {
+                        "type": "object",
+                        "properties": {
+                            "search_query": {
+                                "type": "string"
+                            },
+                            "country_url": {
+                                "type": "string"
+                            },
+                            "page": {
+                                "type": "integer"
+                            }
+                        }
+                    },
+                    "products_amount": {
+                        "type": "integer"
+                    }
+                }
+            }
+        }
+    ],
+    "standardized_name": "ebay"
+}

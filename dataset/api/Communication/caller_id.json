@@ -1,0 +1,86 @@
+{
+    "product_id": "api_ae2e9f92-d4e5-4981-9c10-bd001319203c",
+    "tool_description": "Retrieve personal data (including Name, Gender, Job, Company Name, Email, Telco carrier name, etc) with mobile number",
+    "home_url": "https://rapidapi.com/williamchew85/api/caller-id4/",
+    "name": "caller-id",
+    "title": "caller-id",
+    "pricing": "FREEMIUM",
+    "tool_name": "caller-id",
+    "score": {
+        "avgServiceLevel": 61,
+        "avgLatency": 4648,
+        "avgSuccessRate": 61,
+        "popularityScore": 8.7,
+        "__typename": "Score"
+    },
+    "host": "caller-id4.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "search-mobile",
+            "url": "https://caller-id4.p.rapidapi.com/search-mobile",
+            "description": "Retrieve personal details with mobile number",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "type",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "4"
+                },
+                {
+                    "name": "encoding",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "json"
+                },
+                {
+                    "name": "q",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "88888888"
+                },
+                {
+                    "name": "countryCode",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "SG"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://caller-id4.p.rapidapi.com/search-mobile\"\nquerystring = {\"type\": \"4\", \"encoding\": \"json\", \"q\": \"88888888\", \"countryCode\": \"SG\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"caller-id4.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://caller-id4.p.rapidapi.com/search-mobile\"\nquerystring = {\"type\": \"4\", \"encoding\": \"json\", \"q\": \"88888888\", \"countryCode\": \"SG\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"caller-id4.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "data": [
+                    {
+                        "access": "PUBLIC",
+                        "enhanced": true,
+                        "phones": [
+                            {
+                                "e164Format": "+6588888888",
+                                "numberType": "MOBILE",
+                                "nationalFormat": "8888 8888",
+                                "dialingCode": 65,
+                                "countryCode": "SG",
+                                "carrier": "",
+                                "type": "openPhone"
+                            }
+                        ],
+                        "addresses": [
+                            {
+                                "countryCode": "SG",
+                                "timeZone": "+08:00",
+                                "type": "address"
+                            }
+                        ],
+                        "internetAddresses": [],
+                        "tags": [],
+                        "ns": 100
+                    }
+                ]
+            },
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "caller_id"
+}

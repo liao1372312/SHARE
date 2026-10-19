@@ -1,0 +1,235 @@
+{
+    "product_id": "api_f447dd36-2d8b-43d8-8226-43360b907d38",
+    "tool_description": "Integrate this API with your website's address form to quickly and accurately auto-fill UK postal addresses or find locations of addresses. This API contains a database of almost 1.7 million UK postcodes, along with address and location information.\n\nFor a simple demo, visit https://tomwimmenhove.com/ukpostcode/",
+    "home_url": "https://rapidapi.com/tomwimmenhove/api/uk-postcode/",
+    "name": "UK Postcode",
+    "title": "UK Postcode",
+    "pricing": "FREEMIUM",
+    "tool_name": "UK Postcode",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 508,
+        "avgSuccessRate": 99,
+        "popularityScore": 8.8,
+        "__typename": "Score"
+    },
+    "host": "uk-postcode.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "/search",
+            "url": "https://uk-postcode.p.rapidapi.com/search",
+            "description": "Find an street or post code using one of more key words",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "q",
+                    "type": "STRING",
+                    "description": "The query string",
+                    "default": "Downing Street London"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "limit",
+                    "type": "NUMBER",
+                    "description": "The maximum number of results of the query (May be artificially limited)",
+                    "default": "10"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://uk-postcode.p.rapidapi.com/search\"\nquerystring = {\"q\": \"Downing Street London\", \"limit\": \"10\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"uk-postcode.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://uk-postcode.p.rapidapi.com/search\"\nquerystring = {\"q\": \"Downing Street London\", \"limit\": \"10\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"uk-postcode.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "success": true,
+                "results": [
+                    {
+                        "postCode": "SW1A 2AA",
+                        "postCodeTrimmed": "SW1A2AA",
+                        "streetName": "Downing Street",
+                        "longitude": -0.127695,
+                        "latitude": 51.50354,
+                        "plusCode": "9C3XGV3C+CW",
+                        "region": "Greater London",
+                        "locality": "London",
+                        "area": "England",
+                        "numUPRNs": 2
+                    },
+                    {
+                        "postCode": "SW1A 2AB",
+                        "postCodeTrimmed": "SW1A2AB",
+                        "streetName": "Downing Street",
+                        "longitude": -0.127874,
+                        "latitude": 51.503399,
+                        "plusCode": "9C3XGV3C+9V",
+                        "region": "Greater London",
+                        "locality": "London",
+                        "area": "England",
+                        "numUPRNs": 1
+                    },
+                    {
+                        "postCode": "SW1A 2AD",
+                        "postCodeTrimmed": "SW1A2AD",
+                        "streetName": "Downing Street",
+                        "longitude": -0.128105,
+                        "latitude": 51.503384,
+                        "plusCode": "9C3XGV3C+9Q",
+                        "region": "Greater London",
+                        "locality": "London",
+                        "area": "England",
+                        "numUPRNs": 2
+                    },
+                    {
+                        "postCode": "SW1A 2AG",
+                        "postCodeTrimmed": "SW1A2AG",
+                        "streetName": "Downing Street",
+                        "longitude": -0.126639,
+                        "latitude": 51.503649,
+                        "plusCode": "9C3XGV3F+F8",
+                        "region": "Greater London",
+                        "locality": "London",
+                        "area": "England",
+                        "numUPRNs": 3
+                    },
+                    {
+                        "postCode": "SW1A 2AL",
+                        "postCodeTrimmed": "SW1A2AL",
+                        "streetName": "Downing Street",
+                        "longitude": -0.126639,
+                        "latitude": 51.503649,
+                        "plusCode": "9C3XGV3F+F8",
+                        "region": "Greater London",
+                        "locality": "London",
+                        "area": "England",
+                        "numUPRNs": 1
+                    }
+                ]
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean"
+                    },
+                    "results": {
+                        "type": [
+                            "array",
+                            "null"
+                        ],
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "postCode": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ],
+                                    "description": "The fully formatted post code (I.E. \"SW1A 2AA\")"
+                                },
+                                "postCodeTrimmed": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ],
+                                    "description": "The post code without any spaces (I.E. \"SW1A2AA\")"
+                                },
+                                "streetName": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ],
+                                    "description": "The full street name at this post code (I.E. \"Downing Street\")"
+                                },
+                                "longitude": {
+                                    "type": "number",
+                                    "description": "The longitude of the post code (I.E. -0.127695)",
+                                    "format": "double",
+                                    "minimum": -1.7976931348623157e+308,
+                                    "maximum": 1.7976931348623157e+308
+                                },
+                                "latitude": {
+                                    "type": "number",
+                                    "description": "The latitude of the post code (I.E. 51.50354)",
+                                    "format": "double",
+                                    "minimum": -1.7976931348623157e+308,
+                                    "maximum": 1.7976931348623157e+308
+                                },
+                                "plusCode": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ],
+                                    "description": "The plus code of the post code (I.E. \"9C3XGV3C+CW\")"
+                                },
+                                "region": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ],
+                                    "description": "The region where the post code is located (I.E. Greater London)"
+                                },
+                                "locality": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ],
+                                    "description": "The locality where the post code is located (E.I. London)"
+                                },
+                                "area": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ],
+                                    "description": "The area where the post code is located (I.E. England)"
+                                },
+                                "numUPRNs": {
+                                    "type": "integer",
+                                    "description": "The number of unique property reference numbers for the post code (I.E. 2)",
+                                    "format": "int32",
+                                    "minimum": -2147483648,
+                                    "maximum": 2147483647
+                                }
+                            },
+                            "additionalProperties": false
+                        }
+                    }
+                },
+                "additionalProperties": false
+            }
+        },
+        {
+            "name": "/getpostcode",
+            "url": "https://uk-postcode.p.rapidapi.com/getpostcode",
+            "description": "Find an exact match for a given post code.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "postcode",
+                    "type": "STRING",
+                    "description": "An exact match for the post code to be queried",
+                    "default": "SW1A2AA"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://uk-postcode.p.rapidapi.com/getpostcode\"\nquerystring = {\"postcode\": \"SW1A2AA\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"uk-postcode.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://uk-postcode.p.rapidapi.com/getpostcode\"\nquerystring = {\"postcode\": \"SW1A2AA\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"uk-postcode.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "success": true,
+                "result": {
+                    "postCode": "SW1A 2AA",
+                    "postCodeTrimmed": "SW1A2AA",
+                    "streetName": "Downing Street",
+                    "longitude": -0.127695,
+                    "latitude": 51.50354,
+                    "plusCode": "9C3XGV3C+CW",
+                    "region": "Greater London",
+                    "locality": "London",
+                    "area": "England",
+                    "numUPRNs": 2
+                }
+            },
+            "statuscode": 1,
+            "schema": ""
+        }
+    ],
+    "standardized_name": "uk_postcode"
+}

@@ -1,0 +1,28 @@
+{
+"user_query":"I want to translate 'Hello, how are you?' into French and provide a download URL for the audio file, as well as a list of available voices for the translation.",
+"domain":"Technology",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Translate the text 'Hello, how are you?' into French.",
+        "domain": "technology",
+        "required_inputs": ["text to translate", "target language"]
+    },
+    {
+        "id": 2,
+        "description": "Retrieve a list of available voices for the translation.",
+        "domain": "technology",
+        "required_inputs": ["language"]
+    },
+    {
+        "id": 3,
+        "description": "Generate an audio file for the translated text and provide a download URL.",
+        "domain": "technology",
+        "required_inputs": ["translated text", "selected voice"]
+    }
+],
+"dependencies": {
+    "step2": ["step1"],
+    "step3": ["step1", "step2"]
+}
+}

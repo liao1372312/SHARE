@@ -1,0 +1,58 @@
+{
+    "product_id": "api_b7ef552b-5255-4277-80e6-d46a073bfc64",
+    "tool_description": "Get the latest Currency rates for 100+ currencies. Updated every 60 Minutes.",
+    "home_url": "https://rapidapi.com/DevNikhil/api/currency-exchange-fx/",
+    "name": "Currency Exchange Fx",
+    "title": "Currency Exchange Fx",
+    "pricing": "FREEMIUM",
+    "tool_name": "Currency Exchange Fx",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 973,
+        "avgSuccessRate": 100,
+        "popularityScore": 6.7,
+        "__typename": "Score"
+    },
+    "host": "currency-exchange-fx.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Converter",
+            "url": "https://currency-exchange-fx.p.rapidapi.com/convert",
+            "description": "This endpoint will return the converted amount in a specified currency.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "from_currency",
+                    "type": "STRING",
+                    "description": "The currency symbol from which the amount needs to be converted",
+                    "default": "EUR"
+                },
+                {
+                    "name": "to_currency",
+                    "type": "STRING",
+                    "description": "The Currency symbol in which the amount needs to be converted",
+                    "default": "USD"
+                },
+                {
+                    "name": "from_value",
+                    "type": "STRING",
+                    "description": "The Amount to be converted in base currency",
+                    "default": "1.00"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://currency-exchange-fx.p.rapidapi.com/convert\"\nquerystring = {\"from_currency\": \"EUR\", \"to_currency\": \"USD\", \"from_value\": \"1.00\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"currency-exchange-fx.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://currency-exchange-fx.p.rapidapi.com/convert\"\nquerystring = {\"from_currency\": \"EUR\", \"to_currency\": \"USD\", \"from_value\": \"1.00\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"currency-exchange-fx.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "code": "NotFound",
+                "title": "Not Found",
+                "message": "The page you are trying to access does not exist.",
+                "type": "NA",
+                "instance": "RequestId/f9b49e5799219de53b3ca992215206f9"
+            },
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "currency_exchange_fx"
+}

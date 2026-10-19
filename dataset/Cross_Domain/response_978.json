@@ -1,0 +1,25 @@
+{
+"user_query":"I'm planning a trip to Mumbai and I need information about the token balances in the faucet. Additionally, I would like to gather details about the top fashion houses in Mumbai to explore their collections.",
+"domain":"Cross-Domain",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Gather token balances from the specified faucet service.",
+        "domain": "finance",
+        "required_inputs": ["faucet_address"]
+    },
+    {
+        "id": 2,
+        "description": "Search for the top fashion houses in Mumbai, including their names, locations, and collections.",
+        "domain": "tourism",
+        "required_inputs": []
+    },
+    {
+        "id": 3,
+        "description": "Compile and format the information from the token balance query and fashion houses for user presentation.",
+        "domain": "Cross-Domain",
+        "required_inputs": ["token_balance_info", "fashion_houses_info"],
+        "dependencies": [1, 2]
+    }
+]
+}

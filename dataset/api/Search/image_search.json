@@ -1,0 +1,98 @@
+{
+    "product_id": "api_6ee5c12c-3842-47ef-a3cf-a67ec8d1305a",
+    "tool_description": "The Image Search API is a tool that allows developers to integrate image search functionality into their applications or websites.",
+    "home_url": "https://rapidapi.com/Glavier/api/image-search19/",
+    "name": "Image Search",
+    "title": "Image Search",
+    "pricing": "FREEMIUM",
+    "tool_name": "Image Search",
+    "score": {
+        "avgServiceLevel": 96,
+        "avgLatency": 1221,
+        "avgSuccessRate": 95,
+        "popularityScore": 8.3,
+        "__typename": "Score"
+    },
+    "host": "image-search19.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "v2 / Image Search",
+            "url": "https://image-search19.p.rapidapi.com/v2/",
+            "description": "v2 / Image Search",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "q",
+                    "type": "STRING",
+                    "description": "Search Query",
+                    "default": ""
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "suggestion_query",
+                    "type": "STRING",
+                    "description": "Suggestion Query Token",
+                    "default": ""
+                },
+                {
+                    "name": "hl",
+                    "type": "STRING",
+                    "description": "Language",
+                    "default": "en"
+                },
+                {
+                    "name": "cursor",
+                    "type": "STRING",
+                    "description": "Cursor Token",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://image-search19.p.rapidapi.com/v2/\"\nquerystring = {\"suggestion_query\": \"\", \"hl\": \"en\", \"cursor\": \"\", \"q\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"image-search19.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://image-search19.p.rapidapi.com/v2/\"\nquerystring = {\"suggestion_query\": \"\", \"hl\": \"en\", \"cursor\": \"\", \"q\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"image-search19.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "request": {
+                    "hl": "en",
+                    "query": "",
+                    "suggestion_query": "",
+                    "cursor": ""
+                },
+                "response": {
+                    "next_cursor": null,
+                    "suggestions": [],
+                    "images": null
+                }
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "v1 / Image Search",
+            "url": "https://image-search19.p.rapidapi.com/v1/",
+            "description": "v1 / Image Search",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "q",
+                    "type": "STRING",
+                    "description": "Search Query",
+                    "default": ""
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "limit",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "100"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://image-search19.p.rapidapi.com/v1/\"\nquerystring = {\"q\": \"\", \"limit\": \"100\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"image-search19.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://image-search19.p.rapidapi.com/v1/\"\nquerystring = {\"q\": \"\", \"limit\": \"100\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"image-search19.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "image_search"
+}

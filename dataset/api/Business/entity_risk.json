@@ -1,0 +1,205 @@
+{
+    "product_id": "api_5981d215-67d8-4e58-8603-b9448b0b1e42",
+    "tool_description": "The Entity Risk API accesses our risk intelligence data.",
+    "home_url": "https://rapidapi.com/sigma-ratings-sigma-ratings-default/api/entity-risk/",
+    "name": "Entity Risk",
+    "title": "Entity Risk",
+    "pricing": "FREE",
+    "tool_name": "Entity Risk",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 664,
+        "avgSuccessRate": 86,
+        "popularityScore": 8.8,
+        "__typename": "Score"
+    },
+    "host": "entity-risk.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Audit",
+            "url": "https://entity-risk.p.rapidapi.com/v1/audit/e723887d-4e3b-42ee-820c-339602aaa72c",
+            "description": "This endpoint retrieves individual audit records. An audit record represents the request and response that was submitted using Sigma's API and it is used for traceability.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "id",
+                    "type": "string",
+                    "description": "",
+                    "default": "e723887d-4e3b-42ee-820c-339602aaa72c"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://entity-risk.p.rapidapi.com/v1/audit/e723887d-4e3b-42ee-820c-339602aaa72c\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"entity-risk.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://entity-risk.p.rapidapi.com/v1/audit/{id}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"entity-risk.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "code": 404,
+                "error": "{\"message\":\"entry: e723887d-4e3b-42ee-820c-339602aaa72c not found\"}\n"
+            }
+        },
+        {
+            "name": "Indicator Categories",
+            "url": "https://entity-risk.p.rapidapi.com/v1/indicators",
+            "description": "List the available Sigma indicator categories to filter by.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://entity-risk.p.rapidapi.com/v1/indicators\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"entity-risk.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://entity-risk.p.rapidapi.com/v1/indicators\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"entity-risk.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "collection": [
+                    "Enforcement Action",
+                    "Registration Status",
+                    "Address",
+                    "Adverse Media",
+                    "Know Your Customer",
+                    "Jurisdiction",
+                    "Leadership",
+                    "Line of Business",
+                    "PEP",
+                    "Association",
+                    "Sanctions",
+                    "State Owned Entity",
+                    "Transparency",
+                    "Restricted Entity"
+                ]
+            }
+        },
+        {
+            "name": "Sources",
+            "url": "https://entity-risk.p.rapidapi.com/v1/sources",
+            "description": "Lists the available Sigma Sources to search on. Sigma Sources are specific integrations which Sigma has constructed to impose structure to its various datasets. Use the name field as value to filter sources on.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://entity-risk.p.rapidapi.com/v1/sources\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"entity-risk.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://entity-risk.p.rapidapi.com/v1/sources\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"entity-risk.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "Aggregate Sources": [
+                    {
+                        "description": "Acuris People",
+                        "name": "acuris_people"
+                    },
+                    {
+                        "description": "Acuris Business",
+                        "name": "acuris_business"
+                    },
+                    {
+                        "description": "Sayari (Corp. Registry)",
+                        "name": "sayari"
+                    },
+                    {
+                        "description": "Open Corporates",
+                        "name": "opencorporates"
+                    }
+                ],
+                "Primary Sources": [
+                    {
+                        "description": "Companies House UK",
+                        "name": "companieshouse_internal"
+                    },
+                    {
+                        "description": "Department Of Commerce Consolidated screening-legacy List",
+                        "name": "csl_entities"
+                    },
+                    {
+                        "description": "Banks EU Directory",
+                        "name": "bankseu"
+                    },
+                    {
+                        "description": "FATCA GIINs",
+                        "name": "giin"
+                    },
+                    {
+                        "description": "FCA Enforcements",
+                        "name": "fca_enforcements"
+                    },
+                    {
+                        "description": "FCA Financial Services Register",
+                        "name": "fsr"
+                    },
+                    {
+                        "description": "FCPA Enforcement Actions",
+                        "name": "fcpa_enforcements"
+                    },
+                    {
+                        "description": "FINRA Broker Check",
+                        "name": "finra"
+                    },
+                    {
+                        "description": "GLEIF",
+                        "name": "lei"
+                    },
+                    {
+                        "description": "ICIJ Leaks",
+                        "name": "icij_leaks"
+                    },
+                    {
+                        "description": "Monetary Authority of Singapore Enforcements",
+                        "name": "mas_enforcements"
+                    },
+                    {
+                        "description": "Nigerian Stock Exchange",
+                        "name": "nse"
+                    },
+                    {
+                        "description": "OFAC People",
+                        "name": "ofac_people"
+                    },
+                    {
+                        "description": "OFAC Specially Designated Nationals List",
+                        "name": "ofac_sdn_list"
+                    },
+                    {
+                        "description": "SEC Form ADV Data",
+                        "name": "adv"
+                    },
+                    {
+                        "description": "Securities & Futures Commission (Hong Kong)",
+                        "name": "sfc_enforcements"
+                    }
+                ],
+                "Sigma Proprietary": [
+                    {
+                        "description": "Sigma Risk Events",
+                        "name": "iris"
+                    },
+                    {
+                        "description": "Sigma News",
+                        "name": "sigma_news"
+                    },
+                    {
+                        "description": "Sigma Intel",
+                        "name": "sentinel_companies"
+                    },
+                    {
+                        "description": "Sigma Firmographic",
+                        "name": "sigma_firmographic"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Account Status",
+            "url": "https://entity-risk.p.rapidapi.com/v1/account_status",
+            "description": "Check the status of this account (api key)",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://entity-risk.p.rapidapi.com/v1/account_status\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"entity-risk.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://entity-risk.p.rapidapi.com/v1/account_status\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"entity-risk.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "active": true,
+                "created": "2021-12-22T16:48:15.507311Z",
+                "currentRequests": 5,
+                "description": "Rapid API - demo/free",
+                "expires": null,
+                "msg": "ok",
+                "permissions": {},
+                "refresh_period": "daily",
+                "request_limit": 100,
+                "token": "2cb511b0ab68ec9a76a971505cce861ac0a08ca47a0e06a029afe6bc9b1f821a"
+            }
+        }
+    ],
+    "standardized_name": "entity_risk"
+}

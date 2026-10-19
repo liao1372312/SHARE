@@ -1,0 +1,32 @@
+{
+"user_query":"I'm organizing a health and wellness event for my company and I need to provide nutritional analysis for the food we'll be serving. Can you analyze the ingredients of our menu and provide the quantity, measure, and health labels for each item? Additionally, I'm interested in email marketing services to promote the event. Could you provide me with information on Lake B2B's email marketing services?",
+"domain":"Cross-Domain",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Analyze the ingredients of the menu provided for nutritional analysis, focusing on quantity, measurement, and health labels.",
+        "domain": "healthcare",
+        "required_inputs": ["menu_items", "ingredient_list"]
+    },
+    {
+        "id": 2,
+        "description": "Collect and compile the nutritional analysis results from step 1 for reporting.",
+        "domain": "healthcare",
+        "required_inputs": ["nutritional_analysis_results"],
+        "dependencies": [1]
+    },
+    {
+        "id": 3,
+        "description": "Gather information about Lake B2B's email marketing services, including features and pricing.",
+        "domain": "finance",
+        "required_inputs": ["service_name"]
+    },
+    {
+        "id": 4,
+        "description": "Prepare an email marketing strategy for promoting the health and wellness event using the information from step 3.",
+        "domain": "finance",
+        "required_inputs": ["email_marketing_info", "event_details"],
+        "dependencies": [3]
+    }
+]
+}

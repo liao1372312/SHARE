@@ -1,0 +1,1657 @@
+{
+    "product_id": "api_7575048a-9cee-422f-b0e4-7b44d9460e55",
+    "tool_description": "Broadage Football API can deliver any type of data for a football match, tournament or team; including livescores, play-by-play, boxscore, match statistics and many more. Our Football Coverage includes the biggest football tournaments from all around the world with in-depth coverage, giving you the opportunity to present the best sports data to users located anywhere.<br>This is a limited version in RapidApi. <a href=\"https://www.broadage.com/signup/api/free?utm_source=rapidapi&utm_medium=click&utm_campaign=football_api\" target=\u201d_blank\u201d>Please, click here to start your Free Trial and try the endpoints with live data now!</a>",
+    "home_url": "https://rapidapi.com/BroadageSports/api/football-data1/",
+    "name": "Football Data",
+    "title": "Football Data",
+    "pricing": "FREE",
+    "tool_name": "Football Data",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 35,
+        "avgSuccessRate": 99,
+        "popularityScore": 9.3,
+        "__typename": "Score"
+    },
+    "host": "football-data1.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Daily Match List-Live",
+            "url": "https://football-data1.p.rapidapi.com/match/list/live",
+            "description": "Daily match list including live matches.\n\n**The data will return for only -+7 days period, so endpoint can be tested with date range of today - 7 days.**",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "date",
+                    "type": "STRING",
+                    "description": "The date of the matches. The format is {dd/mm/yyyy}. Match list data can be retrieved for only \u00b1 7 days.",
+                    "default": "06/10/2020"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://football-data1.p.rapidapi.com/match/list/live\"\nquerystring = {\"date\": \"06/10/2020\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"football-data1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://football-data1.p.rapidapi.com/match/list/live\"\nquerystring = {\"date\": \"06/10/2020\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"football-data1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "homeTeam": {
+                        "score": {
+                            "quarter1": 7,
+                            "current": 7
+                        },
+                        "name": "Green Bay Packers",
+                        "shortName": "GB",
+                        "mediumName": "Packers",
+                        "id": 19
+                    },
+                    "awayTeam": {
+                        "score": {
+                            "quarter1": 0,
+                            "current": 0
+                        },
+                        "name": "Atlanta Falcons",
+                        "shortName": "ATL",
+                        "mediumName": "Falcons",
+                        "id": 24
+                    },
+                    "status": {
+                        "name": "1st Period",
+                        "shortName": "1P",
+                        "id": 12
+                    },
+                    "date": "06/10/2020 00:50:00",
+                    "id": 20560,
+                    "tournament": {
+                        "name": "National Football League",
+                        "shortName": "NFL",
+                        "id": 1
+                    },
+                    "stage": {
+                        "name": "Regular Season",
+                        "shortName": "NS",
+                        "id": 843
+                    },
+                    "round": {
+                        "name": "Round 4",
+                        "shortName": "R4",
+                        "id": 4
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Match Game Leaders",
+            "url": "https://football-data1.p.rapidapi.com/match/gameleaders",
+            "description": "Live passing, rushing and receiving stats leaders of the game.\n\n**The data will return for only -+7 days period, so endpoint can be tested with match that its date is in today +- 7 days. You can choose suitable match from Football Match List or Fixture endpoints.**",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "matchId",
+                    "type": "NUMBER",
+                    "description": "The id of the match.",
+                    "default": "21587"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://football-data1.p.rapidapi.com/match/gameleaders\"\nquerystring = {\"matchId\": \"21587\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"football-data1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://football-data1.p.rapidapi.com/match/gameleaders\"\nquerystring = {\"matchId\": \"21587\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"football-data1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "homeTeam": {
+                    "passing": {
+                        "player": {
+                            "country": {
+                                "name": "United States of America",
+                                "shortName": "USA",
+                                "id": 18
+                            },
+                            "position": {
+                                "positionTypeId": 1,
+                                "name": "QuarterBack",
+                                "shortName": "QB",
+                                "id": 4
+                            },
+                            "knownName": "Aaron Rodgers",
+                            "name": "Aaron",
+                            "middleName": "Charles",
+                            "shirtNumber": "12",
+                            "lastName": "Rodgers",
+                            "id": 64
+                        },
+                        "statistics": {
+                            "attemptedPass": 48,
+                            "completedPass": 33,
+                            "interceptedPass": 1,
+                            "passingNetYards": 346,
+                            "passingTD": 3
+                        }
+                    },
+                    "rushing": {
+                        "player": {
+                            "country": {
+                                "name": "United States of America",
+                                "shortName": "USA",
+                                "id": 18
+                            },
+                            "position": {
+                                "positionTypeId": 1,
+                                "name": "RunningBack",
+                                "shortName": "RB",
+                                "id": 5
+                            },
+                            "knownName": "Aaron Jones",
+                            "name": "Aaron",
+                            "middleName": "",
+                            "shirtNumber": "33",
+                            "lastName": "Jones",
+                            "id": 2270
+                        },
+                        "statistics": {
+                            "totalRushingPlays": 6,
+                            "rushingNetYards": 27
+                        }
+                    },
+                    "receiving": {
+                        "player": {
+                            "country": {
+                                "name": "United States of America",
+                                "shortName": "USA",
+                                "id": 18
+                            },
+                            "position": {
+                                "positionTypeId": 1,
+                                "name": "WideReceiver",
+                                "shortName": "WR",
+                                "id": 6
+                            },
+                            "knownName": "Marquez Valdes-Scantling",
+                            "name": "Marquez",
+                            "middleName": "",
+                            "shirtNumber": "83",
+                            "lastName": "Valdes-Scantling",
+                            "id": 2719
+                        },
+                        "statistics": {
+                            "reception": 4,
+                            "receptionTD": 1,
+                            "totalReceivingYards": 115
+                        }
+                    },
+                    "name": "Green Bay Packers",
+                    "shortName": "GB",
+                    "mediumName": "Packers",
+                    "id": 19
+                },
+                "awayTeam": {
+                    "passing": {
+                        "player": {
+                            "country": {
+                                "name": "United States of America",
+                                "shortName": "USA",
+                                "id": 18
+                            },
+                            "position": {
+                                "positionTypeId": 1,
+                                "name": "QuarterBack",
+                                "shortName": "QB",
+                                "id": 4
+                            },
+                            "knownName": "Tom Brady",
+                            "name": "Thomas",
+                            "middleName": " Edward Patrick",
+                            "shirtNumber": "12",
+                            "lastName": "Brady",
+                            "id": 5
+                        },
+                        "statistics": {
+                            "attemptedPass": 36,
+                            "completedPass": 20,
+                            "interceptedPass": 3,
+                            "passingNetYards": 280,
+                            "passingTD": 3
+                        }
+                    },
+                    "rushing": {
+                        "player": {
+                            "country": {
+                                "name": "United States of America",
+                                "shortName": "USA",
+                                "id": 18
+                            },
+                            "position": {
+                                "positionTypeId": 1,
+                                "name": "RunningBack",
+                                "shortName": "RB",
+                                "id": 5
+                            },
+                            "knownName": "Leonard Fournette",
+                            "name": "Leonard",
+                            "middleName": "",
+                            "shirtNumber": "28",
+                            "lastName": "Fournette III",
+                            "id": 2233
+                        },
+                        "statistics": {
+                            "totalRushingPlays": 12,
+                            "rushingNetYards": 55,
+                            "rushingTDs": 1.0
+                        }
+                    },
+                    "receiving": {
+                        "player": {
+                            "country": {
+                                "name": "United States of America",
+                                "shortName": "USA",
+                                "id": 18
+                            },
+                            "position": {
+                                "positionTypeId": 1,
+                                "name": "WideReceiver",
+                                "shortName": "WR",
+                                "id": 6
+                            },
+                            "knownName": "Chris Godwin",
+                            "name": "Rod",
+                            "middleName": "Christopher",
+                            "shirtNumber": "14",
+                            "lastName": "Godwin Jr.",
+                            "id": 2446
+                        },
+                        "statistics": {
+                            "reception": 5,
+                            "totalReceivingYards": 110
+                        }
+                    },
+                    "name": "Tampa Bay Buccaneers",
+                    "shortName": "TB",
+                    "mediumName": "Buccaneers",
+                    "id": 28
+                },
+                "date": "24/01/2021 20:05:00",
+                "id": 21587,
+                "tournament": {
+                    "name": "National Football League",
+                    "shortName": "NFL",
+                    "id": 1
+                },
+                "stage": {
+                    "name": "NFC Championship",
+                    "shortName": "NCF",
+                    "id": 851
+                },
+                "round": {
+                    "name": "Single Game",
+                    "shortName": "SG",
+                    "id": 209
+                }
+            }
+        },
+        {
+            "name": "Tournament Fixture",
+            "url": "https://football-data1.p.rapidapi.com/tournament/fixture",
+            "description": "Full match list with quarter, half time and final scores.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "tournamentId",
+                    "type": "NUMBER",
+                    "description": "The id of the tournament.",
+                    "default": "9"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://football-data1.p.rapidapi.com/tournament/fixture\"\nquerystring = {\"tournamentId\": \"9\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"football-data1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://football-data1.p.rapidapi.com/tournament/fixture\"\nquerystring = {\"tournamentId\": \"9\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"football-data1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "homeTeam": {
+                        "score": {
+                            "quarter1": 0,
+                            "quarter2": 17,
+                            "halfTime": 17,
+                            "quarter3": 7,
+                            "quarter4": 10,
+                            "regular": 34,
+                            "current": 34
+                        },
+                        "name": "Kansas City Chiefs",
+                        "shortName": "KC",
+                        "mediumName": "Chiefs",
+                        "id": 23
+                    },
+                    "awayTeam": {
+                        "score": {
+                            "quarter1": 7,
+                            "quarter2": 0,
+                            "halfTime": 7,
+                            "quarter3": 0,
+                            "quarter4": 13,
+                            "regular": 20,
+                            "current": 20
+                        },
+                        "name": "Houston Texans",
+                        "shortName": "HOU",
+                        "mediumName": "Texans",
+                        "id": 15
+                    },
+                    "status": {
+                        "name": "Full Time",
+                        "shortName": "FT",
+                        "id": 5
+                    },
+                    "date": "11/09/2020 00:20:00",
+                    "id": 20497,
+                    "stage": {
+                        "name": "Regular Season",
+                        "shortName": "NS",
+                        "id": 843
+                    },
+                    "round": {
+                        "name": "Round 1",
+                        "shortName": "R1",
+                        "id": 1
+                    }
+                },
+                {
+                    "homeTeam": {
+                        "score": {
+                            "quarter1": 3,
+                            "quarter2": 9,
+                            "halfTime": 12,
+                            "quarter3": 0,
+                            "quarter4": 13,
+                            "regular": 25,
+                            "current": 25
+                        },
+                        "name": "Atlanta Falcons",
+                        "shortName": "ATL",
+                        "mediumName": "Falcons",
+                        "id": 24
+                    },
+                    "awayTeam": {
+                        "score": {
+                            "quarter1": 14,
+                            "quarter2": 0,
+                            "halfTime": 14,
+                            "quarter3": 14,
+                            "quarter4": 10,
+                            "regular": 38,
+                            "current": 38
+                        },
+                        "name": "Seattle Seahawks",
+                        "shortName": "SEA",
+                        "mediumName": "Seahawks",
+                        "id": 33
+                    },
+                    "status": {
+                        "name": "Full Time",
+                        "shortName": "FT",
+                        "id": 5
+                    },
+                    "date": "13/09/2020 17:00:00",
+                    "id": 20498,
+                    "stage": {
+                        "name": "Regular Season",
+                        "shortName": "NS",
+                        "id": 843
+                    },
+                    "round": {
+                        "name": "Round 1",
+                        "shortName": "R1",
+                        "id": 1
+                    }
+                },
+                {
+                    "homeTeam": {
+                        "score": {
+                            "quarter1": 10,
+                            "quarter2": 14,
+                            "halfTime": 24,
+                            "quarter3": 7,
+                            "quarter4": 7,
+                            "regular": 38,
+                            "current": 38
+                        },
+                        "name": "Baltimore Ravens",
+                        "shortName": "BAL",
+                        "mediumName": "Ravens",
+                        "id": 9
+                    },
+                    "awayTeam": {
+                        "score": {
+                            "quarter1": 6,
+                            "quarter2": 0,
+                            "halfTime": 6,
+                            "quarter3": 0,
+                            "quarter4": 0,
+                            "regular": 6,
+                            "current": 6
+                        },
+                        "name": "Cleveland Browns",
+                        "shortName": "CLE",
+                        "mediumName": "Browns",
+                        "id": 12
+                    },
+                    "status": {
+                        "name": "Full Time",
+                        "shortName": "FT",
+                        "id": 5
+                    },
+                    "date": "13/09/2020 17:00:00",
+                    "id": 20499,
+                    "stage": {
+                        "name": "Regular Season",
+                        "shortName": "NS",
+                        "id": 843
+                    },
+                    "round": {
+                        "name": "Round 1",
+                        "shortName": "R1",
+                        "id": 1
+                    }
+                },
+                {
+                    "homeTeam": {
+                        "score": {
+                            "quarter1": 14,
+                            "quarter2": 7,
+                            "halfTime": 21,
+                            "quarter3": 0,
+                            "quarter4": 6,
+                            "regular": 27,
+                            "current": 27
+                        },
+                        "name": "Buffalo Bills",
+                        "shortName": "BUF",
+                        "mediumName": "Bills",
+                        "id": 2
+                    },
+                    "awayTeam": {
+                        "score": {
+                            "quarter1": 0,
+                            "quarter2": 3,
+                            "halfTime": 3,
+                            "quarter3": 7,
+                            "quarter4": 7,
+                            "regular": 17,
+                            "current": 17
+                        },
+                        "name": "New York Jets",
+                        "shortName": "NYJ",
+                        "mediumName": "Jets",
+                        "id": 6
+                    },
+                    "status": {
+                        "name": "Full Time",
+                        "shortName": "FT",
+                        "id": 5
+                    },
+                    "date": "13/09/2020 17:00:00",
+                    "id": 20500,
+                    "stage": {
+                        "name": "Regular Season",
+                        "shortName": "NS",
+                        "id": 843
+                    },
+                    "round": {
+                        "name": "Round 1",
+                        "shortName": "R1",
+                        "id": 1
+                    }
+                },
+                {
+                    "homeTeam": {
+                        "score": {
+                            "quarter1": 9,
+                            "quarter2": 6,
+                            "halfTime": 15,
+                            "quarter3": 0,
+                            "quarter4": 15,
+                            "regular": 30,
+                            "current": 30
+                        },
+                        "name": "Carolina Panthers",
+                        "shortName": "CAR",
+                        "mediumName": "Panthers",
+                        "id": 25
+                    },
+                    "awayTeam": {
+                        "score": {
+                            "quarter1": 7,
+                            "quarter2": 10,
+                            "halfTime": 17,
+                            "quarter3": 10,
+                            "quarter4": 7,
+                            "regular": 34,
+                            "current": 34
+                        },
+                        "name": "Las Vegas Raiders",
+                        "shortName": "LV",
+                        "mediumName": "Raiders",
+                        "id": 27
+                    },
+                    "status": {
+                        "name": "Full Time",
+                        "shortName": "FT",
+                        "id": 5
+                    },
+                    "date": "13/09/2020 17:00:00",
+                    "id": 20501,
+                    "stage": {
+                        "name": "Regular Season",
+                        "shortName": "NS",
+                        "id": 843
+                    },
+                    "round": {
+                        "name": "Round 1",
+                        "shortName": "R1",
+                        "id": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Daily Match List-Scheduled",
+            "url": "https://football-data1.p.rapidapi.com/match/list/scheduled",
+            "description": "Daily match list including scheduled matches.\n\nThe data will return for only -+7 days period, so endpoint can be tested with date range of today - 7 days.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "date",
+                    "type": "STRING",
+                    "description": "The date of the matches. The format is {dd/mm/yyyy}. Match list data can be retrieved for only \u00b1 7 days.",
+                    "default": "07/02/2021"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://football-data1.p.rapidapi.com/match/list/scheduled\"\nquerystring = {\"date\": \"07/02/2021\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"football-data1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://football-data1.p.rapidapi.com/match/list/scheduled\"\nquerystring = {\"date\": \"07/02/2021\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"football-data1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "homeTeam": {
+                        "name": "Tampa Bay Buccaneers",
+                        "shortName": "TB",
+                        "mediumName": "Buccaneers",
+                        "id": 28
+                    },
+                    "awayTeam": {
+                        "name": "Kansas City Chiefs",
+                        "shortName": "KC",
+                        "mediumName": "Chiefs",
+                        "id": 23
+                    },
+                    "status": {
+                        "name": "Scheduled",
+                        "shortName": "SCH",
+                        "id": 1
+                    },
+                    "date": "07/02/2021 23:30:00",
+                    "id": 21589,
+                    "tournament": {
+                        "name": "National Football League",
+                        "shortName": "NFL",
+                        "id": 1
+                    },
+                    "stage": {
+                        "name": "Super Bowl",
+                        "shortName": "SB",
+                        "id": 852
+                    },
+                    "round": {
+                        "name": "Single Game",
+                        "shortName": "SG",
+                        "id": 209
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Match Boxscore",
+            "url": "https://football-data1.p.rapidapi.com/match/boxscore",
+            "description": "Live, detailed team and player statistics.\n\n**The data will return for only -+7 days period, so endpoint can be tested with match that its date is in today +- 7 days. You can choose suitable match from Football Match List or Fixture endpoints.**\n\nP.S.\nFull data is available at Boxscore endpoint but can not shown in mock  response.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "matchId",
+                    "type": "NUMBER",
+                    "description": "The id of the match.",
+                    "default": ""
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://football-data1.p.rapidapi.com/match/boxscore\"\nquerystring = {\"matchId\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"football-data1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://football-data1.p.rapidapi.com/match/boxscore\"\nquerystring = {\"matchId\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"football-data1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "<?xml version=\"1.0\"?>\n<Data>\n    <Match id=\"20544\" date=\"29/09/2020 00:15:00\">\n        <Tournament id=\"1\" name=\"National Football League\" shortName=\"NFL\" />\n        <Stage id=\"843\" name=\"Regular Season\" shortName=\"NS\" />\n        <Round id=\"3\" name=\"Round 3\" shortName=\"R3\" />\n        <HomeTeam id=\"9\" name=\"Baltimore Ravens\" shortName=\"BAL\" mediumName=\"Ravens\">\n            <Boxscore>\n                <PlayerStatistics>\n                    <Player id=\"2687\" knownName=\"Lamar Jackson\" name=\"Lamar\" middleName=\"Demeatrice\" lastName=\"Jackson Jr.\" shirtNumber=\"8\">\n                        <Country id=\"18\" name=\"United States of America\" shortName=\"USA\" />\n                        <Position id=\"4\" name=\"QuarterBack\" shortName=\"QB\" positionTypeId=\"1\" />\n                    </Player>\n                    <Statistics>\n                        <Passing attemptedPass=\"28\" completedPass=\"15\" interceptedPass=\"0\" passingTD=\"1\" sackedCount=\"4\" sackedYards=\"27\" passingNetYards=\"70\" averageGainPerPass=\"0\" />\n                        <Rushing totalRushingPlays=\"9\" rushingNetYards=\"83\" averageGainPerRush=\"9.2\" rushingTDs=\"0\" longestRushingYards=\"30\" />\n                        <Fumbles fumbleNumbers=\"2\" fumbleLost=\"1\" fumbleRecovery=\"0\" totalFumbleRecoveryYards=\"0\" fumbleRecoveryTD=\"0\" />\n                    </Statistics>\n                </PlayerStatistics>\n                <PlayerStatistics>\n                    <Player id=\"3728\" knownName=\"J. K. Dobbins\" name=\"J'Kaylin\" middleName=\"\" lastName=\"Dobbins\" shirtNumber=\"27\">\n                        <Country id=\"18\" name=\"United States of America\" shortName=\"USA\" />\n                        <Position id=\"5\" name=\"RunningBack\" shortName=\"RB\" positionTypeId=\"1\" />\n                    </Player>\n                    <Statistics>\n                        <Rushing totalRushingPlays=\"1\" rushingNetYards=\"6\" averageGainPerRush=\"6\" rushingTDs=\"0\" longestRushingYards=\"6\" />\n                        <Receiving passTarget=\"4\" reception=\"4\" receptionTD=\"0\" totalReceivingYards=\"38\" averageReceivingYards=\"9.5\" longestReceivingYards=\"19\" />\n                    </Statistics>\n                </PlayerStatistics>\n                <PlayerStatistics>\n                    <Player id=\"3004\" knownName=\"Gus Edwards\" name=\"Gus\" middleName=\"\" lastName=\"Edwards\" shirtNumber=\"35\">\n                        <Country id=\"18\" name=\"United States of America\" shortName=\"USA\" />\n                        <Position id=\"5\" name=\"RunningBack\" shortName=\"RB\" positionTypeId=\"1\" />\n                    </Player>\n                    <Statistics>\n                        <Rushing totalRushingPlays=\"4\" rushingNetYards=\"39\" averageGainPerRush=\"9.8\" rushingTDs=\"0\" longestRushingYards=\"24\" />\n                    </Statistics>\n                </PlayerStatistics>\n                <PlayerStatistics>\n                    <Player id=\"681\" knownName=\"Mark Ingram Jr.\" name=\"Mark \" middleName=\"Ingram \" lastName=\" Jr.\" shirtNumber=\"21\">\n                        <Country id=\"18\" name=\"United States of America\" shortName=\"USA\" />\n                        <Position id=\"5\" name=\"RunningBack\" shortName=\"RB\" positionTypeId=\"1\" />\n                    </Player>\n                    <Statistics>\n                        <Rushing totalRushingPlays=\"7\" rushingNetYards=\"30\" averageGainPerRush=\"4.3\" rushingTDs=\"0\" longestRushingYards=\"11\" />\n                        <Receiving passTarget=\"1\" reception=\"0\" receptionTD=\"0\" totalReceivingYards=\"0\" averageReceivingYards=\"0\" longestReceivingYards=\"0\" />\n                    </Statistics>\n                </PlayerStatistics>\n                <PlayerStatistics>\n                    <Player id=\"450\" knownName=\"Nick Boyle\" name=\"Nick\" middleName=\"\" lastName=\"Boyle\" shirtNumber=\"86\">\n                        <Country id=\"18\" name=\"United States of America\" shortName=\"USA\" />\n                        <Position id=\"7\" name=\"TightEnd\" shortName=\"TE\" positionTypeId=\"1\" />\n                    </Player>\n                    <Statistics>\n                        <Receiving passTarget=\"1\" reception=\"1\" receptionTD=\"1\" totalReceivingYards=\"5\" averageReceivingYards=\"5\" longestReceivingYards=\"5\" />\n                    </Statistics>\n                </PlayerStatistics>\n                <PlayerStatistics>\n                    <Player id=\"703\" knownName=\"Willie Snead IV\" name=\"Willie \" middleName=\"Lee\" lastName=\"Snead \" shirtNumber=\"83\">\n                        <Country id=\"18\" name=\"United States of America\" shortName=\"USA\" />\n                        <Position id=\"6\" name=\"WideReceiver\" shortName=\"WR\" positionTypeId=\"1\" />\n                    </Player>\n                    <Statistics>\n                        <Receiving passTarget=\"2\" reception=\"2\" receptionTD=\"0\" totalReceivingYards=\"4\" averageReceivingYards=\"2\" longestReceivingYards=\"4\" />\n                    </Statistics>\n                </PlayerStatistics>\n                <PlayerStatistics>\n                    <Player id=\"3191\" knownName=\"Miles Boykin\" name=\"Miles\" middleName=\"\" lastName=\"Boykin\" shirtNumber=\"80\">\n                        <Country id=\"18\" name=\"United States of America\" shortName=\"USA\" />\n                        <Position id=\"6\" name=\"WideReceiver\" shortName=\"WR\" positionTypeId=\"1\" />\n                    </Player>\n                    <Statistics>\n                        <Receiving passTarget=\"2\" reception=\"1\" receptionTD=\"0\" totalReceivingYards=\"8\" averageReceivingYards=\"8\" longestReceivingYards=\"8\" />\n                    </Statistics>\n                </PlayerStatistics>\n\n            </Boxscore>\n        </HomeTeam>\n        <AwayTeam id=\"23\" name=\"Kansas City Chiefs\" shortName=\"KC\" mediumName=\"Chiefs\">\n            <Boxscore>\n                <PlayerStatistics>\n                    <Player id=\"2264\" knownName=\"Patrick Mahomes II\" name=\"Patrick\" middleName=\"Lavon\" lastName=\"Mahomes II\" shirtNumber=\"15\">\n                        <Country id=\"18\" name=\"United States of America\" shortName=\"USA\" />\n                        <Position id=\"4\" name=\"QuarterBack\" shortName=\"QB\" positionTypeId=\"1\" />\n                    </Player>\n                    <Statistics>\n                        <Passing attemptedPass=\"42\" completedPass=\"31\" interceptedPass=\"0\" passingTD=\"4\" sackedCount=\"0\" sackedYards=\"0\" passingNetYards=\"385\" averageGainPerPass=\"0\" />\n                        <Rushing totalRushingPlays=\"4\" rushingNetYards=\"26\" averageGainPerRush=\"6.5\" rushingTDs=\"1\" longestRushingYards=\"12\" />\n                    </Statistics>\n                </PlayerStatistics>\n            </Boxscore>\n        </AwayTeam>\n    </Match>\n</Data>"
+        },
+        {
+            "name": "Daily Match List-All",
+            "url": "https://football-data1.p.rapidapi.com/match/list",
+            "description": "Daily match list including scheduled, live and finished matches.\n\n**The data will return for only -+7 days period, so endpoint can be tested with date range of today - 7 days.**",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "date",
+                    "type": "STRING",
+                    "description": "Date of the match. The format is {dd/MM/yyyy}. Match list data can be retrieved for only \u00b1 7 days.",
+                    "default": "06/10/2020"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://football-data1.p.rapidapi.com/match/list\"\nquerystring = {\"date\": \"06/10/2020\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"football-data1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://football-data1.p.rapidapi.com/match/list\"\nquerystring = {\"date\": \"06/10/2020\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"football-data1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "homeTeam": {
+                        "score": {
+                            "quarter1": 7,
+                            "quarter2": 13,
+                            "halfTime": 20,
+                            "quarter3": 7,
+                            "quarter4": 3,
+                            "regular": 30,
+                            "current": 30
+                        },
+                        "name": "Green Bay Packers",
+                        "shortName": "GB",
+                        "mediumName": "Packers",
+                        "id": 19
+                    },
+                    "awayTeam": {
+                        "score": {
+                            "quarter1": 0,
+                            "quarter2": 3,
+                            "halfTime": 3,
+                            "quarter3": 6,
+                            "quarter4": 7,
+                            "regular": 16,
+                            "current": 16
+                        },
+                        "name": "Atlanta Falcons",
+                        "shortName": "ATL",
+                        "mediumName": "Falcons",
+                        "id": 24
+                    },
+                    "status": {
+                        "name": "Full Time",
+                        "shortName": "FT",
+                        "id": 5
+                    },
+                    "date": "06/10/2020 00:50:00",
+                    "id": 20560,
+                    "tournament": {
+                        "name": "National Football League",
+                        "shortName": "NFL",
+                        "id": 1
+                    },
+                    "stage": {
+                        "name": "Regular Season",
+                        "shortName": "NS",
+                        "id": 843
+                    },
+                    "round": {
+                        "name": "Round 4",
+                        "shortName": "R4",
+                        "id": 4
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Tournament Info",
+            "url": "https://football-data1.p.rapidapi.com/tournament/info",
+            "description": "Current season, stage structure(divisions,conferences etc.), country and many more information about a tournament.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "tournamentId",
+                    "type": "NUMBER",
+                    "description": "The id of the tournament.",
+                    "default": "9"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://football-data1.p.rapidapi.com/tournament/info\"\nquerystring = {\"tournamentId\": \"9\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"football-data1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://football-data1.p.rapidapi.com/tournament/info\"\nquerystring = {\"tournamentId\": \"9\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"football-data1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "season": {
+                    "name": "2020",
+                    "shortName": "20",
+                    "id": 136
+                },
+                "country": {
+                    "name": "United States of America",
+                    "shortName": "USA",
+                    "id": 18
+                },
+                "participantType": {
+                    "name": "Club",
+                    "id": 1
+                },
+                "stages": [
+                    {
+                        "rounds": [
+                            {
+                                "name": "Round 1",
+                                "shortName": "R1",
+                                "id": 1
+                            },
+                            {
+                                "name": "Round 2",
+                                "shortName": "R2",
+                                "id": 2
+                            },
+                            {
+                                "name": "Round 3",
+                                "shortName": "R3",
+                                "id": 3
+                            },
+                            {
+                                "name": "Round 4",
+                                "shortName": "R4",
+                                "id": 4
+                            },
+                            {
+                                "name": "Round 5",
+                                "shortName": "R5",
+                                "id": 5
+                            },
+                            {
+                                "name": "Round 6",
+                                "shortName": "R6",
+                                "id": 6
+                            },
+                            {
+                                "name": "Round 7",
+                                "shortName": "R7",
+                                "id": 7
+                            },
+                            {
+                                "name": "Round 8",
+                                "shortName": "R8",
+                                "id": 8
+                            },
+                            {
+                                "name": "Round 9",
+                                "shortName": "R9",
+                                "id": 9
+                            },
+                            {
+                                "name": "Round 10",
+                                "shortName": "R10",
+                                "id": 10
+                            },
+                            {
+                                "name": "Round 11",
+                                "shortName": "R11",
+                                "id": 11
+                            },
+                            {
+                                "name": "Round 12",
+                                "shortName": "R12",
+                                "id": 12
+                            },
+                            {
+                                "name": "Round 13",
+                                "shortName": "R13",
+                                "id": 13
+                            },
+                            {
+                                "name": "Round 14",
+                                "shortName": "R14",
+                                "id": 14
+                            },
+                            {
+                                "name": "Round 15",
+                                "shortName": "R15",
+                                "id": 15
+                            },
+                            {
+                                "name": "Round 16",
+                                "shortName": "R16",
+                                "id": 16
+                            },
+                            {
+                                "name": "Round 17",
+                                "shortName": "R17",
+                                "active": true,
+                                "id": 17
+                            }
+                        ],
+                        "name": "Regular Season",
+                        "shortName": "NS",
+                        "id": 843
+                    },
+                    {
+                        "stages": [
+                            {
+                                "rounds": [
+                                    {
+                                        "name": "Single Game",
+                                        "shortName": "SG",
+                                        "active": true,
+                                        "id": 209
+                                    }
+                                ],
+                                "name": "Wildcard Round",
+                                "shortName": "WC",
+                                "roundless": true,
+                                "id": 845
+                            },
+                            {
+                                "stages": [
+                                    {
+                                        "rounds": [
+                                            {
+                                                "name": "Single Game",
+                                                "shortName": "SG",
+                                                "active": true,
+                                                "id": 209
+                                            }
+                                        ],
+                                        "name": "AFC Divisional Play-Offs",
+                                        "shortName": "ACPO",
+                                        "roundless": true,
+                                        "id": 847
+                                    },
+                                    {
+                                        "rounds": [
+                                            {
+                                                "name": "Single Game",
+                                                "shortName": "SG",
+                                                "active": true,
+                                                "id": 209
+                                            }
+                                        ],
+                                        "name": "NFC Divisional Play-Offs",
+                                        "shortName": "NCPO",
+                                        "roundless": true,
+                                        "id": 848
+                                    }
+                                ],
+                                "name": "Divisional Play-offs",
+                                "shortName": "CPO",
+                                "id": 846
+                            },
+                            {
+                                "stages": [
+                                    {
+                                        "rounds": [
+                                            {
+                                                "name": "Single Game",
+                                                "shortName": "SG",
+                                                "active": true,
+                                                "id": 209
+                                            }
+                                        ],
+                                        "name": "AFC Championship",
+                                        "shortName": "ACF",
+                                        "roundless": true,
+                                        "id": 850
+                                    },
+                                    {
+                                        "rounds": [
+                                            {
+                                                "name": "Single Game",
+                                                "shortName": "SG",
+                                                "active": true,
+                                                "id": 209
+                                            }
+                                        ],
+                                        "name": "NFC Championship",
+                                        "shortName": "NCF",
+                                        "roundless": true,
+                                        "id": 851
+                                    }
+                                ],
+                                "name": "Conference Finals",
+                                "shortName": "CF",
+                                "id": 849
+                            },
+                            {
+                                "rounds": [
+                                    {
+                                        "name": "Single Game",
+                                        "shortName": "SG",
+                                        "active": true,
+                                        "id": 209
+                                    }
+                                ],
+                                "name": "Super Bowl",
+                                "shortName": "SB",
+                                "active": true,
+                                "roundless": true,
+                                "id": 852
+                            }
+                        ],
+                        "name": "Playoffs",
+                        "shortName": "PO",
+                        "id": 844
+                    }
+                ],
+                "name": "National Football League",
+                "shortName": "NFL",
+                "globalName": "",
+                "localName": "",
+                "id": 1
+            }
+        },
+        {
+            "name": "Tournament Standings",
+            "url": "https://football-data1.p.rapidapi.com/tournament/standings",
+            "description": "Team Rankings for a specific competition.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "tournamentId",
+                    "type": "NUMBER",
+                    "description": "The id of the tournament.",
+                    "default": "9"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://football-data1.p.rapidapi.com/tournament/standings\"\nquerystring = {\"tournamentId\": \"9\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"football-data1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://football-data1.p.rapidapi.com/tournament/standings\"\nquerystring = {\"tournamentId\": \"9\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"football-data1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": null
+        },
+        {
+            "name": "Daily Match List-Results",
+            "url": "https://football-data1.p.rapidapi.com/match/list/results",
+            "description": "Daily match list including finished matches.\n\n**The data will return for only -+7 days period, so endpoint can be tested with date range of today - 7 days.**",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "date",
+                    "type": "STRING",
+                    "description": "The date of matches. The format is {dd/mm/yyyy}. Match list data can be retrieved for only \u00b1 7 days.",
+                    "default": "24/01/2021"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://football-data1.p.rapidapi.com/match/list/results\"\nquerystring = {\"date\": \"24/01/2021\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"football-data1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://football-data1.p.rapidapi.com/match/list/results\"\nquerystring = {\"date\": \"24/01/2021\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"football-data1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "homeTeam": {
+                        "score": {
+                            "quarter1": 0,
+                            "quarter2": 10,
+                            "halfTime": 10,
+                            "quarter3": 13,
+                            "quarter4": 3,
+                            "regular": 26,
+                            "current": 26
+                        },
+                        "name": "Green Bay Packers",
+                        "shortName": "GB",
+                        "mediumName": "Packers",
+                        "id": 19
+                    },
+                    "awayTeam": {
+                        "score": {
+                            "quarter1": 7,
+                            "quarter2": 14,
+                            "halfTime": 21,
+                            "quarter3": 7,
+                            "quarter4": 3,
+                            "regular": 31,
+                            "current": 31
+                        },
+                        "name": "Tampa Bay Buccaneers",
+                        "shortName": "TB",
+                        "mediumName": "Buccaneers",
+                        "id": 28
+                    },
+                    "status": {
+                        "name": "Full Time",
+                        "shortName": "FT",
+                        "id": 5
+                    },
+                    "date": "24/01/2021 20:05:00",
+                    "id": 21587,
+                    "tournament": {
+                        "name": "National Football League",
+                        "shortName": "NFL",
+                        "id": 1
+                    },
+                    "stage": {
+                        "name": "NFC Championship",
+                        "shortName": "NCF",
+                        "id": 851
+                    },
+                    "round": {
+                        "name": "Single Game",
+                        "shortName": "SG",
+                        "id": 209
+                    }
+                },
+                {
+                    "homeTeam": {
+                        "score": {
+                            "quarter1": 0,
+                            "quarter2": 21,
+                            "halfTime": 21,
+                            "quarter3": 10,
+                            "quarter4": 7,
+                            "regular": 38,
+                            "current": 38
+                        },
+                        "name": "Kansas City Chiefs",
+                        "shortName": "KC",
+                        "mediumName": "Chiefs",
+                        "id": 23
+                    },
+                    "awayTeam": {
+                        "score": {
+                            "quarter1": 9,
+                            "quarter2": 3,
+                            "halfTime": 12,
+                            "quarter3": 3,
+                            "quarter4": 9,
+                            "regular": 24,
+                            "current": 24
+                        },
+                        "name": "Buffalo Bills",
+                        "shortName": "BUF",
+                        "mediumName": "Bills",
+                        "id": 2
+                    },
+                    "status": {
+                        "name": "Full Time",
+                        "shortName": "FT",
+                        "id": 5
+                    },
+                    "date": "24/01/2021 23:40:00",
+                    "id": 21588,
+                    "tournament": {
+                        "name": "National Football League",
+                        "shortName": "NFL",
+                        "id": 1
+                    },
+                    "stage": {
+                        "name": "AFC Championship",
+                        "shortName": "ACF",
+                        "id": 850
+                    },
+                    "round": {
+                        "name": "Single Game",
+                        "shortName": "SG",
+                        "id": 209
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Tournament List",
+            "url": "https://football-data1.p.rapidapi.com/tournament/list",
+            "description": "List of tournaments in your data coverage.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://football-data1.p.rapidapi.com/tournament/list\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"football-data1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://football-data1.p.rapidapi.com/tournament/list\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"football-data1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "country": {
+                        "name": "United States of America",
+                        "shortName": "USA",
+                        "id": 18
+                    },
+                    "participantType": {
+                        "name": "Club",
+                        "id": 1
+                    },
+                    "name": "National Football League",
+                    "shortName": "NFL",
+                    "globalName": "",
+                    "localName": "",
+                    "id": 1
+                },
+                {
+                    "country": {
+                        "name": "United States of America",
+                        "shortName": "USA",
+                        "id": 18
+                    },
+                    "participantType": {
+                        "name": "Club",
+                        "id": 1
+                    },
+                    "name": "NCAA Division I FBS",
+                    "shortName": "NCAA",
+                    "globalName": "",
+                    "localName": "",
+                    "id": 6
+                }
+            ]
+        },
+        {
+            "name": "Match Team Statistics",
+            "url": "https://football-data1.p.rapidapi.com/match/statistics/team",
+            "description": "Provides the team statistics of the match.\n\n**The data will return for only -+7 days period, so endpoint can be tested with match that its date is in today +- 7 days. You can choose suitable match from Football Match List or Fixture endpoints.**",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "matchId",
+                    "type": "NUMBER",
+                    "description": "The id of the match.",
+                    "default": "21587"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://football-data1.p.rapidapi.com/match/statistics/team\"\nquerystring = {\"matchId\": \"21587\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"football-data1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://football-data1.p.rapidapi.com/match/statistics/team\"\nquerystring = {\"matchId\": \"21587\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"football-data1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "homeTeam": {
+                    "statistics": {
+                        "totalFirstDowns": 23,
+                        "rushingFirstDowns": 3,
+                        "passingFirstDowns": 19,
+                        "penaltyFirstDowns": 1,
+                        "thirdDownSucceed": 8,
+                        "thirdDownAttempt": 14,
+                        "thirdDownEfficiency": 0.571,
+                        "fourthDownEfficiency": 0.0,
+                        "totalNetYards": 381,
+                        "totalOffensivePlays": 65,
+                        "averageGainPerPlay": 5.9,
+                        "rushingNetYards": 67,
+                        "totalRushingPlays": 16,
+                        "averageGainPerRush": 4.2,
+                        "passingNetYards": 314,
+                        "sackedCount": 5,
+                        "completedPasses": 33,
+                        "attemptedPasses": 48,
+                        "interceptedPasses": 1,
+                        "averageGainPerPass": 6.5,
+                        "penaltyNumbers": 4,
+                        "penaltyYards": 30,
+                        "turnovers": 2,
+                        "fumbleNumbers": 2,
+                        "fumblesLost": 1,
+                        "fumbleYards": 0,
+                        "passingTDs": 3,
+                        "score": 26,
+                        "extraPointsMade": 2,
+                        "extraPointsAttempted": 2,
+                        "twoPointExtraPointsAttempted": 1,
+                        "fieldGoalsMade": 2,
+                        "fieldGoalsAttempted": 2,
+                        "possessionMinute": 34,
+                        "possessionSecond": 37
+                    },
+                    "name": "Green Bay Packers",
+                    "shortName": "GB",
+                    "mediumName": "Packers",
+                    "id": 19
+                },
+                "awayTeam": {
+                    "statistics": {
+                        "totalFirstDowns": 19,
+                        "rushingFirstDowns": 4,
+                        "passingFirstDowns": 12,
+                        "penaltyFirstDowns": 3,
+                        "thirdDownSucceed": 9,
+                        "thirdDownAttempt": 13,
+                        "thirdDownEfficiency": 0.692,
+                        "fourthDownAttempt": 1,
+                        "fourthDownEfficiency": 0.0,
+                        "totalNetYards": 351,
+                        "totalOffensivePlays": 61,
+                        "averageGainPerPlay": 5.8,
+                        "rushingNetYards": 76,
+                        "totalRushingPlays": 24,
+                        "averageGainPerRush": 3.2,
+                        "passingNetYards": 275,
+                        "sackedCount": 1,
+                        "completedPasses": 20,
+                        "attemptedPasses": 36,
+                        "interceptedPasses": 3,
+                        "averageGainPerPass": 7.6,
+                        "penaltyNumbers": 2,
+                        "penaltyYards": 8,
+                        "turnovers": 3,
+                        "rushingTDs": 1,
+                        "passingTDs": 3,
+                        "score": 31,
+                        "extraPointsMade": 4,
+                        "extraPointsAttempted": 4,
+                        "fieldGoalsMade": 1,
+                        "fieldGoalsAttempted": 1,
+                        "possessionMinute": 25,
+                        "possessionSecond": 23
+                    },
+                    "name": "Tampa Bay Buccaneers",
+                    "shortName": "TB",
+                    "mediumName": "Buccaneers",
+                    "id": 28
+                },
+                "date": "24/01/2021 20:05:00",
+                "id": 21587,
+                "tournament": {
+                    "name": "National Football League",
+                    "shortName": "NFL",
+                    "id": 1
+                },
+                "stage": {
+                    "name": "NFC Championship",
+                    "shortName": "NCF",
+                    "id": 851
+                },
+                "round": {
+                    "name": "Single Game",
+                    "shortName": "SG",
+                    "id": 209
+                }
+            }
+        },
+        {
+            "name": "Tournament Teams",
+            "url": "https://football-data1.p.rapidapi.com/tournament/teams",
+            "description": "List of teams participating in a specific tournament.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "tournamentId",
+                    "type": "NUMBER",
+                    "description": "The id of the tournament.",
+                    "default": "1"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://football-data1.p.rapidapi.com/tournament/teams\"\nquerystring = {\"tournamentId\": \"1\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"football-data1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://football-data1.p.rapidapi.com/tournament/teams\"\nquerystring = {\"tournamentId\": \"1\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"football-data1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "isNational": false,
+                    "country": {
+                        "name": "United States of America",
+                        "shortName": "USA",
+                        "id": 18
+                    },
+                    "name": "Arizona Cardinals",
+                    "shortName": "ARI",
+                    "mediumName": "Cardinals",
+                    "id": 30
+                },
+                {
+                    "isNational": false,
+                    "country": {
+                        "name": "United States of America",
+                        "shortName": "USA",
+                        "id": 18
+                    },
+                    "name": "Atlanta Falcons",
+                    "shortName": "ATL",
+                    "mediumName": "Falcons",
+                    "id": 24
+                },
+                {
+                    "isNational": false,
+                    "country": {
+                        "name": "United States of America",
+                        "shortName": "USA",
+                        "id": 18
+                    },
+                    "name": "Baltimore Ravens",
+                    "shortName": "BAL",
+                    "mediumName": "Ravens",
+                    "id": 9
+                },
+                {
+                    "isNational": false,
+                    "country": {
+                        "name": "United States of America",
+                        "shortName": "USA",
+                        "id": 18
+                    },
+                    "name": "Buffalo Bills",
+                    "shortName": "BUF",
+                    "mediumName": "Bills",
+                    "id": 2
+                },
+                {
+                    "isNational": false,
+                    "country": {
+                        "name": "United States of America",
+                        "shortName": "USA",
+                        "id": 18
+                    },
+                    "name": "Carolina Panthers",
+                    "shortName": "CAR",
+                    "mediumName": "Panthers",
+                    "id": 25
+                },
+                {
+                    "isNational": false,
+                    "country": {
+                        "name": "United States of America",
+                        "shortName": "USA",
+                        "id": 18
+                    },
+                    "name": "Chicago Bears",
+                    "shortName": "CHI",
+                    "mediumName": "Bears",
+                    "id": 14
+                },
+                {
+                    "isNational": false,
+                    "country": {
+                        "name": "United States of America",
+                        "shortName": "USA",
+                        "id": 18
+                    },
+                    "name": "Cincinnati Bengals",
+                    "shortName": "CIN",
+                    "mediumName": "Bengals",
+                    "id": 10
+                },
+                {
+                    "isNational": false,
+                    "country": {
+                        "name": "United States of America",
+                        "shortName": "USA",
+                        "id": 18
+                    },
+                    "name": "Cleveland Browns",
+                    "shortName": "CLE",
+                    "mediumName": "Browns",
+                    "id": 12
+                },
+                {
+                    "isNational": false,
+                    "country": {
+                        "name": "United States of America",
+                        "shortName": "USA",
+                        "id": 18
+                    },
+                    "name": "Dallas Cowboys",
+                    "shortName": "DAL",
+                    "mediumName": "Cowboys",
+                    "id": 4
+                },
+                {
+                    "isNational": false,
+                    "country": {
+                        "name": "United States of America",
+                        "shortName": "USA",
+                        "id": 18
+                    },
+                    "name": "Denver Broncos",
+                    "shortName": "DEN",
+                    "mediumName": "Broncos",
+                    "id": 22
+                },
+                {
+                    "isNational": false,
+                    "country": {
+                        "name": "United States of America",
+                        "shortName": "USA",
+                        "id": 18
+                    },
+                    "name": "Detroit Lions",
+                    "shortName": "DET",
+                    "mediumName": "Lions",
+                    "id": 18
+                },
+                {
+                    "isNational": false,
+                    "country": {
+                        "name": "United States of America",
+                        "shortName": "USA",
+                        "id": 18
+                    },
+                    "name": "Green Bay Packers",
+                    "shortName": "GB",
+                    "mediumName": "Packers",
+                    "id": 19
+                },
+                {
+                    "isNational": false,
+                    "country": {
+                        "name": "United States of America",
+                        "shortName": "USA",
+                        "id": 18
+                    },
+                    "name": "Houston Texans",
+                    "shortName": "HOU",
+                    "mediumName": "Texans",
+                    "id": 15
+                }
+            ]
+        },
+        {
+            "name": "Match Play by Play",
+            "url": "https://football-data1.p.rapidapi.com/match/playbyplay",
+            "description": "Provides all match drives and plays during the match with their detailed informations.\n\n**The data will return for only -+7 days period, so endpoint can be tested with match that its date is in today +- 7 days. You can choose suitable match from Football Match List or Fixture endpoints.**",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "matchId",
+                    "type": "NUMBER",
+                    "description": "The id of the match.",
+                    "default": "18656"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://football-data1.p.rapidapi.com/match/playbyplay\"\nquerystring = {\"matchId\": \"18656\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"football-data1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://football-data1.p.rapidapi.com/match/playbyplay\"\nquerystring = {\"matchId\": \"18656\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"football-data1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "date": "03/02/2019 23:30:00",
+                "id": 18656,
+                "homeTeam": {
+                    "name": "Los Angeles Rams",
+                    "shortName": "LAR",
+                    "mediumName": "Rams",
+                    "id": 31
+                },
+                "awayTeam": {
+                    "name": "New England Patriots",
+                    "shortName": "NE",
+                    "mediumName": "Patriots",
+                    "id": 5
+                },
+                "drives": [
+                    {
+                        "id": 19228,
+                        "period": 15,
+                        "startTime": "01:12",
+                        "playCount": 6,
+                        "yardsGained": 55,
+                        "totalFirstDowns": 2,
+                        "duration": "1:07",
+                        "team": {
+                            "name": "Los Angeles Rams",
+                            "shortName": "LAR",
+                            "id": 31
+                        },
+                        "plays": [
+                            {
+                                "quarter": 4,
+                                "time": "01:12",
+                                "down": 0,
+                                "yardsToGo": 0,
+                                "startYardTeamShortName": "NE",
+                                "startYardLine": 35,
+                                "commentaryText": "Stephen Gostkowski kicks 65 yards from NE 35 to end zone, Touchback."
+                            },
+                            {
+                                "quarter": 4,
+                                "time": "01:12",
+                                "down": 1,
+                                "yardsToGo": 10,
+                                "startYardTeamShortName": "LAR",
+                                "startYardLine": 25,
+                                "commentaryText": "(01:12) PENALTY on Rob Havenstein (LAR), 10 yards, enforced at LAR 25."
+                            },
+                            {
+                                "quarter": 4,
+                                "time": "01:06",
+                                "down": 1,
+                                "yardsToGo": 20,
+                                "startYardTeamShortName": "LAR",
+                                "startYardLine": 15,
+                                "commentaryText": "(01:06) Jared Goff pass to Robert Woods to LAR 25 for 10 yards (J. C. Jackson; Jonathan Jones)."
+                            },
+                            {
+                                "quarter": 4,
+                                "time": "00:45",
+                                "down": 2,
+                                "yardsToGo": 10,
+                                "startYardTeamShortName": "LAR",
+                                "startYardLine": 25,
+                                "commentaryText": "(00:45) Jared Goff pass to Brandin Cooks to LAR 49 for 24 yards (Jonathan Jones)."
+                            },
+                            {
+                                "quarter": 4,
+                                "time": "00:25",
+                                "down": 1,
+                                "yardsToGo": 10,
+                                "startYardTeamShortName": "LAR",
+                                "startYardLine": 49,
+                                "commentaryText": "(00:25) Jared Goff pass incomplete to Josh Reynolds."
+                            },
+                            {
+                                "quarter": 4,
+                                "time": "00:21",
+                                "down": 2,
+                                "yardsToGo": 10,
+                                "startYardTeamShortName": "LAR",
+                                "startYardLine": 49,
+                                "commentaryText": "(00:21) Jared Goff pass to Brandin Cooks to NE 30 for 21 yards (Jonathan Jones)."
+                            },
+                            {
+                                "quarter": 4,
+                                "time": "00:09",
+                                "down": 1,
+                                "yardsToGo": 10,
+                                "startYardTeamShortName": "NE",
+                                "startYardLine": 30,
+                                "commentaryText": "(00:09) Jared Goff pass incomplete."
+                            },
+                            {
+                                "quarter": 4,
+                                "time": "00:08",
+                                "down": 2,
+                                "yardsToGo": 10,
+                                "startYardTeamShortName": "NE",
+                                "startYardLine": 30,
+                                "commentaryText": "(00:08) Greg Zuerlein 48 yards field goal is No Good."
+                            }
+                        ]
+                    },
+                    {
+                        "id": 19229,
+                        "period": 15,
+                        "startTime": "00:05",
+                        "playCount": 1,
+                        "yardsGained": -1,
+                        "totalFirstDowns": 0,
+                        "duration": "0:05",
+                        "team": {
+                            "name": "New England Patriots",
+                            "shortName": "NE",
+                            "id": 5
+                        },
+                        "plays": [
+                            {
+                                "quarter": 4,
+                                "time": "00:05",
+                                "down": 1,
+                                "yardsToGo": 10,
+                                "startYardTeamShortName": "NE",
+                                "startYardLine": 38,
+                                "commentaryText": "(00:05) Tom Brady rush to NE 37 for -1 yards."
+                            },
+                            {
+                                "quarter": 4,
+                                "isStatusPlayGame": true
+                            }
+                        ]
+                    }
+                ],
+                "tournament": {
+                    "name": "National Football League",
+                    "shortName": "NFL",
+                    "id": 1
+                },
+                "stage": {
+                    "name": "Super Bowl",
+                    "shortName": "SB",
+                    "id": 726
+                },
+                "round": {
+                    "name": "Single Game",
+                    "shortName": "SG",
+                    "id": 209
+                }
+            }
+        },
+        {
+            "name": "Match Key Statistics",
+            "url": "https://football-data1.p.rapidapi.com/match/statistics/key",
+            "description": "Live key match statistics for both team of the match.\n\n**The data will return for only -+7 days period, so endpoint can be tested with match that its date is in today +- 7 days. You can choose suitable match from Football Match List or Fixture endpoints.**",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "matchId",
+                    "type": "NUMBER",
+                    "description": "The id of the match.",
+                    "default": "21587"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://football-data1.p.rapidapi.com/match/statistics/key\"\nquerystring = {\"matchId\": \"21587\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"football-data1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://football-data1.p.rapidapi.com/match/statistics/key\"\nquerystring = {\"matchId\": \"21587\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"football-data1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "homeTeam": {
+                    "keyStatistics": {
+                        "totalNetYards": 381,
+                        "possessionMinute": 34,
+                        "possessionSecond": 37,
+                        "totalFirstDowns": 23,
+                        "passingNetYards": 314,
+                        "rushingNetYards": 67,
+                        "turnovers": 2,
+                        "penaltyNumbers": 4
+                    },
+                    "name": "Green Bay Packers",
+                    "shortName": "GB",
+                    "mediumName": "Packers",
+                    "id": 19
+                },
+                "awayTeam": {
+                    "keyStatistics": {
+                        "totalNetYards": 351,
+                        "possessionMinute": 25,
+                        "possessionSecond": 23,
+                        "totalFirstDowns": 19,
+                        "passingNetYards": 275,
+                        "rushingNetYards": 76,
+                        "turnovers": 3,
+                        "penaltyNumbers": 2
+                    },
+                    "name": "Tampa Bay Buccaneers",
+                    "shortName": "TB",
+                    "mediumName": "Buccaneers",
+                    "id": 28
+                },
+                "date": "24/01/2021 20:05:00",
+                "id": 21587,
+                "tournament": {
+                    "name": "National Football League",
+                    "shortName": "NFL",
+                    "id": 1
+                },
+                "stage": {
+                    "name": "NFC Championship",
+                    "shortName": "NCF",
+                    "id": 851
+                },
+                "round": {
+                    "name": "Single Game",
+                    "shortName": "SG",
+                    "id": 209
+                }
+            }
+        }
+    ],
+    "standardized_name": "football_data"
+}

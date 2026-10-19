@@ -1,0 +1,52 @@
+{
+"user_query":"I want to surprise my partner with a romantic weekend getaway. Find me a luxurious hotel in a scenic location with breathtaking views. Additionally, provide me with a list of nearby activities and attractions to make our trip extra special.",
+"domain":"Tourism",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Search for luxurious hotels in scenic locations with breathtaking views.",
+        "domain": "travel",
+        "required_inputs": ["location", "check-in date", "check-out date", "budget"]
+    },
+    {
+        "id": 2,
+        "description": "Retrieve detailed information about the selected hotel, including amenities and reviews.",
+        "domain": "travel",
+        "required_inputs": ["hotel_id"],
+        "dependency": {
+            "step": 2,
+            "depends_on": [1]
+        }
+    },
+    {
+        "id": 3,
+        "description": "Find nearby activities and attractions based on the selected hotel location.",
+        "domain": "travel",
+        "required_inputs": ["hotel_location"],
+        "dependency": {
+            "step": 3,
+            "depends_on": [1]
+        }
+    },
+    {
+        "id": 4,
+        "description": "Compile a list of recommended restaurants and experiences in the area.",
+        "domain": "travel",
+        "required_inputs": ["hotel_location"],
+        "dependency": {
+            "step": 4,
+            "depends_on": [3]
+        }
+    },
+    {
+        "id": 5,
+        "description": "Create a complete itinerary for the romantic weekend getaway, including hotel, activities, and dining.",
+        "domain": "travel",
+        "required_inputs": ["hotel_details", "activities", "restaurants"],
+        "dependency": {
+            "step": 5,
+            "depends_on": [2, 3, 4]
+        }
+    }
+]
+}

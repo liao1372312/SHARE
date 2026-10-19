@@ -1,0 +1,278 @@
+{
+    "product_id": "api_14928c87-15ef-4a70-91af-832e99037272",
+    "tool_description": "Forward & Reverse Geocoding based on googleMap api data. Find geocoordinates (latitude and longitude) for an address or use reverse geocoding to define positions for asset tracking and more.",
+    "home_url": "https://rapidapi.com/aduady123/api/forward-reverse-geocoding-by-googlemap-api/",
+    "name": " Forward & Reverse Geocoding by googleMap api",
+    "title": " Forward & Reverse Geocoding by googleMap api",
+    "pricing": "FREEMIUM",
+    "tool_name": " Forward & Reverse Geocoding by googleMap api",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 16394,
+        "avgSuccessRate": 100,
+        "popularityScore": 8.1,
+        "__typename": "Score"
+    },
+    "host": "forward-reverse-geocoding-by-googlemap-api.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "reverse",
+            "url": "https://forward-reverse-geocoding-by-googlemap-api.p.rapidapi.com/api/revert",
+            "description": " ",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "lon",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": -87.6244212
+                },
+                {
+                    "name": "lat",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": 41.8755616
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://forward-reverse-geocoding-by-googlemap-api.p.rapidapi.com/api/revert\"\nquerystring = {\"lon\": -87.6244212, \"lat\": 41.8755616}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"forward-reverse-geocoding-by-googlemap-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://forward-reverse-geocoding-by-googlemap-api.p.rapidapi.com/api/revert\"\nquerystring = {\"lon\": -87.6244212, \"lat\": 41.8755616}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"forward-reverse-geocoding-by-googlemap-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "success": true,
+                "code": 200,
+                "data": {
+                    "address": "520 S Michigan Ave, Chicago, IL 60605, Hoa K\u1ef3",
+                    "province": "60605"
+                }
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "get": {
+                        "type": "string"
+                    },
+                    "parameters": {
+                        "type": "array"
+                    },
+                    "errors": {
+                        "type": "array"
+                    },
+                    "results": {
+                        "type": "integer"
+                    },
+                    "response": {
+                        "type": "array",
+                        "items": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "forward",
+            "url": "https://forward-reverse-geocoding-by-googlemap-api.p.rapidapi.com/api/search",
+            "description": " ",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "query",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "Chicago"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://forward-reverse-geocoding-by-googlemap-api.p.rapidapi.com/api/search\"\nquerystring = {\"query\": \"Chicago\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"forward-reverse-geocoding-by-googlemap-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://forward-reverse-geocoding-by-googlemap-api.p.rapidapi.com/api/search\"\nquerystring = {\"query\": \"Chicago\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"forward-reverse-geocoding-by-googlemap-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "success": true,
+                "code": 200,
+                "data": [
+                    {
+                        "boundingbox": [
+                            "41.644531",
+                            "42.0230396",
+                            "-87.940101",
+                            "-87.5240812"
+                        ],
+                        "lat": "41.8755616",
+                        "lon": "-87.6244212",
+                        "display_name": "Chicago, Cook County, Illinois, United States",
+                        "place_rank": 16,
+                        "category": "boundary",
+                        "type": "administrative",
+                        "importance": 0.8615295727100248,
+                        "icon": "https://nominatim.openstreetmap.org/ui/mapicons/poi_boundary_administrative.p.20.png"
+                    },
+                    {
+                        "boundingbox": [
+                            "42.1422982",
+                            "42.1455099",
+                            "-87.7992098",
+                            "-87.7971537"
+                        ],
+                        "lat": "42.1455099",
+                        "lon": "-87.7992098",
+                        "display_name": "Chicago, North Shore & Milwaukee, Elmwood Avenue, Northbrook, Northfield Township, Cook County, Illinois, 60082, United States",
+                        "place_rank": 30,
+                        "category": "railway",
+                        "type": "abandoned",
+                        "importance": 0.4343522234962407
+                    },
+                    {
+                        "boundingbox": [
+                            "42.1459209",
+                            "42.1475949",
+                            "-87.8006125",
+                            "-87.7995211"
+                        ],
+                        "lat": "42.1472393",
+                        "lon": "-87.8003803",
+                        "display_name": "Chicago, North Shore & Milwaukee, Edens Spur, Williamsburg Square, Northfield Township, Cook County, Illinois, 60082, United States",
+                        "place_rank": 30,
+                        "category": "railway",
+                        "type": "abandoned",
+                        "importance": 0.4343522234962407
+                    },
+                    {
+                        "boundingbox": [
+                            "42.1455099",
+                            "42.1459209",
+                            "-87.7995211",
+                            "-87.7992098"
+                        ],
+                        "lat": "42.1459209",
+                        "lon": "-87.7995211",
+                        "display_name": "Chicago, North Shore & Milwaukee, Edens Spur, Lee Acres, Northbrook, Northfield Township, Cook County, Illinois, 60082, United States",
+                        "place_rank": 30,
+                        "category": "railway",
+                        "type": "abandoned",
+                        "importance": 0.4343522234962407
+                    },
+                    {
+                        "boundingbox": [
+                            "41.8914706",
+                            "41.9014706",
+                            "-87.6407194",
+                            "-87.6307194"
+                        ],
+                        "lat": "41.8964706",
+                        "lon": "-87.6357194",
+                        "display_name": "Chicago, 300, West Chicago Avenue, Near North Side, Chicago, Cook County, Illinois, 60654, United States",
+                        "place_rank": 30,
+                        "category": "railway",
+                        "type": "station",
+                        "importance": 0.4060833436228193,
+                        "icon": "https://nominatim.openstreetmap.org/ui/mapicons/transport_train_station2.p.20.png"
+                    },
+                    {
+                        "boundingbox": [
+                            "41.8916529",
+                            "41.9016529",
+                            "-87.6331533",
+                            "-87.6231533"
+                        ],
+                        "lat": "41.8966529",
+                        "lon": "-87.6281533",
+                        "display_name": "Chicago, 800, North State Street, Magnificent Mile, Near North Side, Chicago, Cook County, Illinois, 60654, United States",
+                        "place_rank": 30,
+                        "category": "railway",
+                        "type": "station",
+                        "importance": 0.3985709817044999,
+                        "icon": "https://nominatim.openstreetmap.org/ui/mapicons/transport_train_station2.p.20.png"
+                    },
+                    {
+                        "boundingbox": [
+                            "41.8911978",
+                            "41.9011978",
+                            "-87.6603579",
+                            "-87.6503579"
+                        ],
+                        "lat": "41.8961978",
+                        "lon": "-87.6553579",
+                        "display_name": "Chicago, 800, North Milwaukee Avenue, West Town, Chicago, Cook County, Illinois, 60642, United States",
+                        "place_rank": 30,
+                        "category": "railway",
+                        "type": "station",
+                        "importance": 0.3968347429646153,
+                        "icon": "https://nominatim.openstreetmap.org/ui/mapicons/transport_train_station2.p.20.png"
+                    },
+                    {
+                        "boundingbox": [
+                            "-33.73745",
+                            "-33.69745",
+                            "18.9763167",
+                            "19.0163167"
+                        ],
+                        "lat": "-33.71745",
+                        "lon": "18.9963167",
+                        "display_name": "Chicago, Drakenstein Ward 24, Paarl, Drakenstein Local Municipality, Cape Winelands District Municipality, Western Cape, 7646, South Africa",
+                        "place_rank": 19,
+                        "category": "place",
+                        "type": "suburb",
+                        "importance": 0.385,
+                        "icon": "https://nominatim.openstreetmap.org/ui/mapicons/poi_place_village.p.20.png"
+                    },
+                    {
+                        "boundingbox": [
+                            "-18.9735788",
+                            "-18.9335788",
+                            "29.7753081",
+                            "29.8153081"
+                        ],
+                        "lat": "-18.9535788",
+                        "lon": "29.7953081",
+                        "display_name": "Chicago, Kwekwe, Midlands, Zimbabwe",
+                        "place_rank": 19,
+                        "category": "place",
+                        "type": "suburb",
+                        "importance": 0.385,
+                        "icon": "https://nominatim.openstreetmap.org/ui/mapicons/poi_place_village.p.20.png"
+                    },
+                    {
+                        "boundingbox": [
+                            "41.6534151",
+                            "41.6535644",
+                            "-91.5341831",
+                            "-91.5336817"
+                        ],
+                        "lat": "41.6534745",
+                        "lon": "-91.53393237502479",
+                        "display_name": "Chicago, Rock Island and Pacific Railroad Passenger Station, Wright Street, Iowa City, Johnson County, Iowa, 52240, United States",
+                        "place_rank": 30,
+                        "category": "historic",
+                        "type": "building",
+                        "importance": 0.38453211150644173
+                    }
+                ]
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "get": {
+                        "type": "string"
+                    },
+                    "parameters": {
+                        "type": "array"
+                    },
+                    "errors": {
+                        "type": "array"
+                    },
+                    "results": {
+                        "type": "integer"
+                    },
+                    "response": {
+                        "type": "array",
+                        "items": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "standardized_name": "forward_reverse_geocoding_by_googlemap_api"
+}

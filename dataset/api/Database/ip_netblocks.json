@@ -1,0 +1,73 @@
+{
+    "product_id": "api_ee5c318f-2d65-4d85-94cd-212574442694",
+    "tool_description": "IP Netblocks API gives you extensive information about IP ranges and IP address owners.",
+    "home_url": "https://rapidapi.com/whoisapi/api/ip-netblocks/",
+    "name": "IP Netblocks",
+    "title": "IP Netblocks",
+    "pricing": "FREE",
+    "tool_name": "IP Netblocks",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 761,
+        "avgSuccessRate": 42,
+        "popularityScore": 7.9,
+        "__typename": "Score"
+    },
+    "host": "ip-netblocks.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "IP Netblock v2",
+            "url": "https://ip-netblocks.p.rapidapi.com/api/v2",
+            "description": "Get exhaustive information on IP Range (v2)",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "asn",
+                    "type": "STRING",
+                    "description": "Get ranges by ASN (Autonomous System Number).",
+                    "default": ""
+                },
+                {
+                    "name": "limit",
+                    "type": "STRING",
+                    "description": "Max count of returned records. Acceptable values: 1 - 1000. Default: 100",
+                    "default": ""
+                },
+                {
+                    "name": "org",
+                    "type": "STRING",
+                    "description": "Find IP Netblocks which have the specified search terms in their Netblock (netname, description, remarks), or Organisation (org.org, org.name, org.email, org.address) fields",
+                    "default": ""
+                },
+                {
+                    "name": "outputFormat",
+                    "type": "STRING",
+                    "description": "Response output format. Acceptable values: XML or JSON. Defaults to JSON.",
+                    "default": ""
+                },
+                {
+                    "name": "mask",
+                    "type": "STRING",
+                    "description": "Get ranges by CIDR. Acceptable values: 0 - 128 (0 - 32 for IPv4). Default: 128",
+                    "default": ""
+                },
+                {
+                    "name": "ip",
+                    "type": "STRING",
+                    "description": "Get ranges by IPv4/IPv6 address or by CIDR depending on input",
+                    "default": "8.8.8.8"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://ip-netblocks.p.rapidapi.com/api/v2\"\nquerystring = {\"asn\": \"\", \"limit\": \"\", \"org\": \"\", \"outputFormat\": \"\", \"mask\": \"\", \"ip\": \"8.8.8.8\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ip-netblocks.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ip-netblocks.p.rapidapi.com/api/v2\"\nquerystring = {\"asn\": \"\", \"limit\": \"\", \"org\": \"\", \"outputFormat\": \"\", \"mask\": \"\", \"ip\": \"8.8.8.8\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ip-netblocks.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "code": 403,
+                "messages": "Access restricted. Check credits balance or enter the correct API key."
+            },
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "ip_netblocks"
+}

@@ -1,0 +1,33 @@
+{
+"user_query":"I want to send an email to my family member. Can you search for their email address using the partial match 'family' and provide me with the domain name? Additionally, retrieve the organization name associated with the domain 'family.com'.",
+"domain":"Technology",
+"TaskList": [
+{
+"id": 1,
+"description": "Search for the email address using the partial match 'family' and retrieve the complete email address.",
+"domain": "technology",
+"required_inputs": ["partial_match"]
+},
+{
+"id": 2,
+"description": "Retrieve the domain name associated with the found email address from Step 1.",
+"domain": "technology",
+"required_inputs": ["email_address"],
+"dependencies": [1]
+},
+{
+"id": 3,
+"description": "Look up the organization name associated with the domain 'family.com'.",
+"domain": "technology",
+"required_inputs": ["domain_name"],
+"dependencies": [2]
+},
+{
+"id": 4,
+"description": "Send an email to the retrieved email address.",
+"domain": "technology",
+"required_inputs": ["email_address", "message"],
+"dependencies": [1]
+}
+]
+}

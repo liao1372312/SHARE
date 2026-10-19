@@ -1,0 +1,114 @@
+{
+    "product_id": "api_93a21892-8e35-448a-ba97-bcacd5a390f5",
+    "tool_description": "Check Cell Coverage by zip code for all US networks",
+    "home_url": "https://rapidapi.com/dataskunks-dataskunks-default/api/us-cell-coverage-by-zip-code/",
+    "name": "US Cell Coverage by Zip Code",
+    "title": "US Cell Coverage by Zip Code",
+    "pricing": "FREEMIUM",
+    "tool_name": "US Cell Coverage by Zip Code",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 25,
+        "avgSuccessRate": 100,
+        "popularityScore": 8.8,
+        "__typename": "Score"
+    },
+    "host": "us-cell-coverage-by-zip-code.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Get Coverage",
+            "url": "https://us-cell-coverage-by-zip-code.p.rapidapi.com/",
+            "description": "Get cell coverage for AT&T, T-Mobile, U.S. Cellular and Verizon by zip code",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "postcode",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "92101"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://us-cell-coverage-by-zip-code.p.rapidapi.com/\"\nquerystring = {\"postcode\": \"92101\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"us-cell-coverage-by-zip-code.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://us-cell-coverage-by-zip-code.p.rapidapi.com/\"\nquerystring = {\"postcode\": \"92101\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"us-cell-coverage-by-zip-code.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "request": {
+                    "postcode": "92101"
+                },
+                "result": {
+                    "Att": {
+                        "5G": {
+                            "label": "5g",
+                            "quality": 1
+                        },
+                        "4G": {
+                            "label": "4g",
+                            "quality": 1
+                        },
+                        "3G": {
+                            "label": "3g",
+                            "quality": 1
+                        },
+                        "2G": {
+                            "label": "2g",
+                            "quality": 1
+                        }
+                    },
+                    "UsCellular": {
+                        "5G": {
+                            "label": "",
+                            "quality": 0
+                        },
+                        "4G": {
+                            "label": "4g_roaming",
+                            "quality": 0.5
+                        },
+                        "3G": {
+                            "label": "3g_roaming",
+                            "quality": 0.5
+                        },
+                        "2G": {
+                            "label": "2g",
+                            "quality": 1
+                        }
+                    },
+                    "Tmobile": {
+                        "5G": {
+                            "label": "5g",
+                            "quality": 1
+                        },
+                        "4G": {
+                            "label": "4g",
+                            "quality": 1
+                        },
+                        "3G": {
+                            "label": "3g",
+                            "quality": 1
+                        },
+                        "2G": {
+                            "label": "2g",
+                            "quality": 1
+                        }
+                    },
+                    "Verizon": {
+                        "4G": {
+                            "label": "verizon_4g",
+                            "quality": 1
+                        },
+                        "3G": {
+                            "label": "verizon_3g",
+                            "quality": 1
+                        },
+                        "2G": {
+                            "label": "verizon_1g",
+                            "quality": 1
+                        }
+                    }
+                }
+            },
+            "statuscode": 1,
+            "schema": ""
+        }
+    ],
+    "standardized_name": "us_cell_coverage_by_zip_code"
+}

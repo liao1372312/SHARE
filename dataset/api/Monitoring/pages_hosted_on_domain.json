@@ -1,0 +1,72 @@
+{
+    "product_id": "api_8b3cb3fb-65fd-4516-ba97-0fe5d95f8568",
+    "tool_description": "Find web pages hosted on a domain, including historic pages. ",
+    "home_url": "https://rapidapi.com/infiniteloop/api/pages-hosted-on-domain/",
+    "name": "Pages hosted on domain",
+    "title": "Pages hosted on domain",
+    "pricing": "FREEMIUM",
+    "tool_name": "Pages hosted on domain",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 1426,
+        "avgSuccessRate": 50,
+        "popularityScore": 5.9,
+        "__typename": "Score"
+    },
+    "host": "pages-hosted-on-domain.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "searchDomain",
+            "url": "https://pages-hosted-on-domain.p.rapidapi.com/web/timemap/json",
+            "description": " ",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "matchType",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "prefix"
+                },
+                {
+                    "name": "collapse",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "urlkey"
+                },
+                {
+                    "name": "url",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "httpsimage.com"
+                },
+                {
+                    "name": "fl",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "timestamp:4,original,urlkey"
+                },
+                {
+                    "name": "limit",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "100000"
+                },
+                {
+                    "name": "filter",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "statuscode:200"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://pages-hosted-on-domain.p.rapidapi.com/web/timemap/json\"\nquerystring = {\"matchType\": \"prefix\", \"collapse\": \"urlkey\", \"url\": \"httpsimage.com\", \"fl\": \"timestamp:4,original,urlkey\", \"limit\": \"100000\", \"filter\": \"statuscode:200\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"pages-hosted-on-domain.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://pages-hosted-on-domain.p.rapidapi.com/web/timemap/json\"\nquerystring = {\"matchType\": \"prefix\", \"collapse\": \"urlkey\", \"url\": \"httpsimage.com\", \"fl\": \"timestamp:4,original,urlkey\", \"limit\": \"100000\", \"filter\": \"statuscode:200\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"pages-hosted-on-domain.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {
+                "type": "object"
+            }
+        }
+    ],
+    "standardized_name": "pages_hosted_on_domain"
+}

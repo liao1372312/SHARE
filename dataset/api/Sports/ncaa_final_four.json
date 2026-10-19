@@ -1,0 +1,845 @@
+{
+    "product_id": "api_9e115a47-6d77-450e-aae2-0ff89633ec98",
+    "tool_description": "Historical data for every NCAA Men's Final Four.  Get champions, coaches, records, seeds, final four teams and more in JSON format.",
+    "home_url": "https://rapidapi.com/aptitudeapps/api/ncaa-final-four/",
+    "name": "NCAA Final Four",
+    "title": "NCAA Final Four",
+    "pricing": "FREEMIUM",
+    "tool_name": "NCAA Final Four",
+    "score": {
+        "avgServiceLevel": 99,
+        "avgLatency": 549,
+        "avgSuccessRate": 99,
+        "popularityScore": 8.6,
+        "__typename": "Score"
+    },
+    "host": "ncaa-final-four.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Champion",
+            "url": "https://ncaa-final-four.p.rapidapi.com/champion/1983",
+            "description": "Get championship team data for the given year.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "identifier",
+                    "type": "string",
+                    "description": "",
+                    "default": "1983"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://ncaa-final-four.p.rapidapi.com/champion/1983\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ncaa-final-four.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ncaa-final-four.p.rapidapi.com/champion/{identifier}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ncaa-final-four.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "year": "1983",
+                "season": "1982-1983",
+                "champion": "NC State",
+                "nickname": "Wolfpack",
+                "coach": "Jim Valvano",
+                "record": "26-10",
+                "championship_score": "54-52",
+                "seed": "6"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "year": {
+                        "type": "string"
+                    },
+                    "season": {
+                        "type": "string"
+                    },
+                    "champion": {
+                        "type": "string"
+                    },
+                    "nickname": {
+                        "type": "string"
+                    },
+                    "coach": {
+                        "type": "string"
+                    },
+                    "record": {
+                        "type": "string"
+                    },
+                    "championship_score": {
+                        "type": "string"
+                    },
+                    "seed": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        {
+            "name": "Most Outstanding Player",
+            "url": "https://ncaa-final-four.p.rapidapi.com/mop/1961",
+            "description": "Get the tournament Most Outstanding Player for the given year.  '*' indicates player was not on the championship team.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "identifier",
+                    "type": "string",
+                    "description": "",
+                    "default": "1961"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://ncaa-final-four.p.rapidapi.com/mop/1961\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ncaa-final-four.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ncaa-final-four.p.rapidapi.com/mop/{identifier}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ncaa-final-four.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "year": "1961",
+                "season": "1960-1961",
+                "mop": "Jerry Lucas, Ohio State*"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "year": {
+                        "type": "string"
+                    },
+                    "season": {
+                        "type": "string"
+                    },
+                    "mop": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        {
+            "name": "Seeds",
+            "url": "https://ncaa-final-four.p.rapidapi.com/seeds/2011",
+            "description": "Get the number 1 seeds for the given year (only available from 1979 onwards).",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "identifier",
+                    "type": "string",
+                    "description": "",
+                    "default": "2011"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://ncaa-final-four.p.rapidapi.com/seeds/2011\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ncaa-final-four.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ncaa-final-four.p.rapidapi.com/seeds/{identifier}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ncaa-final-four.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "year": "2011",
+                "season": "2010-2011",
+                "number_one_seeds": "Ohio State, Kansas, Pittsburgh, Duke"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "year": {
+                        "type": "string"
+                    },
+                    "season": {
+                        "type": "string"
+                    },
+                    "number_one_seeds": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        {
+            "name": "List of nicknames",
+            "url": "https://ncaa-final-four.p.rapidapi.com/list/nicknames",
+            "description": "Get a list of every Final Four team nickname sorted alphabetically.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://ncaa-final-four.p.rapidapi.com/list/nicknames\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ncaa-final-four.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ncaa-final-four.p.rapidapi.com/list/nicknames\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ncaa-final-four.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "This endpoint is disabled for your subscription"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "nicknames": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Team appearances",
+            "url": "https://ncaa-final-four.p.rapidapi.com/appearances/teams",
+            "description": "Get a list of every team and the years they appeared in the Final Four.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://ncaa-final-four.p.rapidapi.com/appearances/teams\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ncaa-final-four.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ncaa-final-four.p.rapidapi.com/appearances/teams\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ncaa-final-four.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "This endpoint is disabled for your subscription"
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Team championships by  count",
+            "url": "https://ncaa-final-four.p.rapidapi.com/counts/team-championships",
+            "description": "Get a list of teams ranked by total number of championships.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://ncaa-final-four.p.rapidapi.com/counts/team-championships\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ncaa-final-four.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ncaa-final-four.p.rapidapi.com/counts/team-championships\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ncaa-final-four.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "This endpoint is disabled for your subscription"
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Coach appearances",
+            "url": "https://ncaa-final-four.p.rapidapi.com/appearances/coaches",
+            "description": "Get a list of every coach along with the team and year of each Final Four appearance.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://ncaa-final-four.p.rapidapi.com/appearances/coaches\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ncaa-final-four.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ncaa-final-four.p.rapidapi.com/appearances/coaches\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ncaa-final-four.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "This endpoint is disabled for your subscription"
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Team appearances by count",
+            "url": "https://ncaa-final-four.p.rapidapi.com/counts/team-totals",
+            "description": "Get a list of team appearances in the Final Four ranked by count.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://ncaa-final-four.p.rapidapi.com/counts/team-totals\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ncaa-final-four.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ncaa-final-four.p.rapidapi.com/counts/team-totals\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ncaa-final-four.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "This endpoint is disabled for your subscription"
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Coach championships by count",
+            "url": "https://ncaa-final-four.p.rapidapi.com/counts/coach-championships",
+            "description": "Get a list of coaches ranked by total number of championships.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://ncaa-final-four.p.rapidapi.com/counts/coach-championships\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ncaa-final-four.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ncaa-final-four.p.rapidapi.com/counts/coach-championships\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ncaa-final-four.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "This endpoint is disabled for your subscription"
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Coach appearances by count",
+            "url": "https://ncaa-final-four.p.rapidapi.com/counts/coach-totals",
+            "description": "Get a list of coach appearances in the Final Four ranked by count.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://ncaa-final-four.p.rapidapi.com/counts/coach-totals\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ncaa-final-four.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ncaa-final-four.p.rapidapi.com/counts/coach-totals\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ncaa-final-four.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "This endpoint is disabled for your subscription"
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Detail",
+            "url": "https://ncaa-final-four.p.rapidapi.com/detail/1999",
+            "description": "Get the full Final Four data set for the given year.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "identifier",
+                    "type": "string",
+                    "description": "",
+                    "default": "1999"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://ncaa-final-four.p.rapidapi.com/detail/1999\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ncaa-final-four.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ncaa-final-four.p.rapidapi.com/detail/{identifier}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ncaa-final-four.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "year": "1999",
+                "season": "1998-1999",
+                "champion": "UConn",
+                "champion_nickname": "Huskies",
+                "champion_coach": "Jim Calhoun",
+                "champion_record": "34-2",
+                "championship_score": "77-74",
+                "runner_up": "Duke",
+                "runner_up_nickname": "Blue Devils",
+                "runner_up_coach": "Mike Krzyzewski",
+                "semifinalist_1": "Michigan State",
+                "semifinalist_1_nickname": "Spartans",
+                "semifinalist_1_coach": "Tom Izzo",
+                "semifinalist_2": "Ohio State",
+                "semifinalist_2_nickname": "Buckeyes",
+                "semifinalist_2_coach": "Jim O'Brien",
+                "mop": "Richard Hamilton, UConn",
+                "location": "St. Petersburg, FL",
+                "venue": "Tropicana Field"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "year": {
+                        "type": "string"
+                    },
+                    "season": {
+                        "type": "string"
+                    },
+                    "champion": {
+                        "type": "string"
+                    },
+                    "champion_nickname": {
+                        "type": "string"
+                    },
+                    "champion_coach": {
+                        "type": "string"
+                    },
+                    "champion_record": {
+                        "type": "string"
+                    },
+                    "championship_score": {
+                        "type": "string"
+                    },
+                    "runner_up": {
+                        "type": "string"
+                    },
+                    "runner_up_nickname": {
+                        "type": "string"
+                    },
+                    "runner_up_coach": {
+                        "type": "string"
+                    },
+                    "semifinalist_1": {
+                        "type": "string"
+                    },
+                    "semifinalist_1_nickname": {
+                        "type": "string"
+                    },
+                    "semifinalist_1_coach": {
+                        "type": "string"
+                    },
+                    "semifinalist_2": {
+                        "type": "string"
+                    },
+                    "semifinalist_2_nickname": {
+                        "type": "string"
+                    },
+                    "semifinalist_2_coach": {
+                        "type": "string"
+                    },
+                    "mop": {
+                        "type": "string"
+                    },
+                    "location": {
+                        "type": "string"
+                    },
+                    "venue": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        {
+            "name": "List of schools",
+            "url": "https://ncaa-final-four.p.rapidapi.com/list/schools",
+            "description": "Get a list of every Final Four school sorted alphabetically.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://ncaa-final-four.p.rapidapi.com/list/schools\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ncaa-final-four.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ncaa-final-four.p.rapidapi.com/list/schools\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ncaa-final-four.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "This endpoint is disabled for your subscription"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "schools": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "List of teams",
+            "url": "https://ncaa-final-four.p.rapidapi.com/list/teams",
+            "description": "Get a list of every Final Four team sorted alphabetically.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://ncaa-final-four.p.rapidapi.com/list/teams\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ncaa-final-four.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ncaa-final-four.p.rapidapi.com/list/teams\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ncaa-final-four.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "This endpoint is disabled for your subscription"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "teams": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "List of locations",
+            "url": "https://ncaa-final-four.p.rapidapi.com/list/locations",
+            "description": "Get a list of every Final Four location sorted alphabetically.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://ncaa-final-four.p.rapidapi.com/list/locations\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ncaa-final-four.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ncaa-final-four.p.rapidapi.com/list/locations\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ncaa-final-four.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "This endpoint is disabled for your subscription"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "locations": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "List of venues",
+            "url": "https://ncaa-final-four.p.rapidapi.com/list/venues",
+            "description": "Get a list of every Final Four venue sorted alphabetically.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://ncaa-final-four.p.rapidapi.com/list/venues\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ncaa-final-four.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ncaa-final-four.p.rapidapi.com/list/venues\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ncaa-final-four.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "This endpoint is disabled for your subscription"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "venues": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "List of MOPs",
+            "url": "https://ncaa-final-four.p.rapidapi.com/list/mops",
+            "description": "Get a list of every Final Four Most Outstanding Player sorted alphabetically.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://ncaa-final-four.p.rapidapi.com/list/mops\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ncaa-final-four.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ncaa-final-four.p.rapidapi.com/list/mops\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ncaa-final-four.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "This endpoint is disabled for your subscription"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "mops": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "List of coaches",
+            "url": "https://ncaa-final-four.p.rapidapi.com/list/coaches",
+            "description": "Get a list of every Final Four coach sorted alphabetically.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://ncaa-final-four.p.rapidapi.com/list/coaches\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ncaa-final-four.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ncaa-final-four.p.rapidapi.com/list/coaches\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ncaa-final-four.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "This endpoint is disabled for your subscription"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "coaches": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "List of champions",
+            "url": "https://ncaa-final-four.p.rapidapi.com/list/champions",
+            "description": "Get a list of every National Champion sorted alphabetically.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://ncaa-final-four.p.rapidapi.com/list/champions\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ncaa-final-four.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ncaa-final-four.p.rapidapi.com/list/champions\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ncaa-final-four.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "This endpoint is disabled for your subscription"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "champions": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Runner-up",
+            "url": "https://ncaa-final-four.p.rapidapi.com/runner-up/1959",
+            "description": "Get runner-up team data for the given year.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "identifier",
+                    "type": "string",
+                    "description": "",
+                    "default": "1959"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://ncaa-final-four.p.rapidapi.com/runner-up/1959\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ncaa-final-four.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ncaa-final-four.p.rapidapi.com/runner-up/{identifier}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ncaa-final-four.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "year": "1959",
+                "season": "1958-1959",
+                "runner_up": "West Virginia",
+                "nickname": "Mountaineers",
+                "coach": "Fred Schaus",
+                "championship_score": "71-70"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "year": {
+                        "type": "string"
+                    },
+                    "season": {
+                        "type": "string"
+                    },
+                    "runner_up": {
+                        "type": "string"
+                    },
+                    "nickname": {
+                        "type": "string"
+                    },
+                    "coach": {
+                        "type": "string"
+                    },
+                    "championship_score": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        {
+            "name": "Schools",
+            "url": "https://ncaa-final-four.p.rapidapi.com/school-count/1959",
+            "description": "Get number of schools in tournament for the given year.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "identifier",
+                    "type": "string",
+                    "description": "",
+                    "default": "1959"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://ncaa-final-four.p.rapidapi.com/school-count/1959\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ncaa-final-four.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ncaa-final-four.p.rapidapi.com/school-count/{identifier}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ncaa-final-four.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "year": "1959",
+                "season": "1958-1959",
+                "schools": "23"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "year": {
+                        "type": "string"
+                    },
+                    "season": {
+                        "type": "string"
+                    },
+                    "schools": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        {
+            "name": "Summary",
+            "url": "https://ncaa-final-four.p.rapidapi.com/summary/1980",
+            "description": "Get the basic Final Four data set for the given year.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "identifier",
+                    "type": "string",
+                    "description": "",
+                    "default": "1980"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://ncaa-final-four.p.rapidapi.com/summary/1980\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ncaa-final-four.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ncaa-final-four.p.rapidapi.com/summary/{identifier}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ncaa-final-four.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "year": "1980",
+                "season": "1979-1980",
+                "champion": "Louisville",
+                "final_four": "Louisville, UCLA, Purdue, Iowa",
+                "mop": "Darrell Griffith, Louisville",
+                "number_one_seeds": "Syracuse, LSU, Kentucky, DePaul"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "year": {
+                        "type": "string"
+                    },
+                    "season": {
+                        "type": "string"
+                    },
+                    "champion": {
+                        "type": "string"
+                    },
+                    "final_four": {
+                        "type": "string"
+                    },
+                    "mop": {
+                        "type": "string"
+                    },
+                    "number_one_seeds": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        {
+            "name": "Location",
+            "url": "https://ncaa-final-four.p.rapidapi.com/location/1952",
+            "description": "Get the Final Four city and venue for the given year.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "identifier",
+                    "type": "string",
+                    "description": "",
+                    "default": "1952"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://ncaa-final-four.p.rapidapi.com/location/1952\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ncaa-final-four.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ncaa-final-four.p.rapidapi.com/location/{identifier}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ncaa-final-four.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "year": "1952",
+                "season": "1951-1952",
+                "location": "Seattle, WA",
+                "venue": "Hec Edmunson Pavilion"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "year": {
+                        "type": "string"
+                    },
+                    "season": {
+                        "type": "string"
+                    },
+                    "location": {
+                        "type": "string"
+                    },
+                    "venue": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        {
+            "name": "Fourth Place",
+            "url": "https://ncaa-final-four.p.rapidapi.com/fourth/1962",
+            "description": "Get fourth place team data (only available between 1946 and 1981) for the given year.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "identifier",
+                    "type": "string",
+                    "description": "",
+                    "default": "1962"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://ncaa-final-four.p.rapidapi.com/fourth/1962\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ncaa-final-four.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ncaa-final-four.p.rapidapi.com/fourth/{identifier}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ncaa-final-four.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "year": "1962",
+                "season": "1961-1962",
+                "fourth_place": "UCLA",
+                "nickname": "Bruins",
+                "coach": "John Wooden"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "year": {
+                        "type": "string"
+                    },
+                    "season": {
+                        "type": "string"
+                    },
+                    "fourth_place": {
+                        "type": "string"
+                    },
+                    "nickname": {
+                        "type": "string"
+                    },
+                    "coach": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        {
+            "name": "Third Place",
+            "url": "https://ncaa-final-four.p.rapidapi.com/third/1970",
+            "description": "Get third place data (only available between 1946 and 1981) for the given year.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "identifier",
+                    "type": "string",
+                    "description": "",
+                    "default": "1970"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://ncaa-final-four.p.rapidapi.com/third/1970\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ncaa-final-four.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ncaa-final-four.p.rapidapi.com/third/{identifier}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ncaa-final-four.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "year": "1970",
+                "season": "1969-1970",
+                "third_place": "New Mexico State",
+                "nickname": "Aggies",
+                "coach": "Lou Henson"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "year": {
+                        "type": "string"
+                    },
+                    "season": {
+                        "type": "string"
+                    },
+                    "third_place": {
+                        "type": "string"
+                    },
+                    "nickname": {
+                        "type": "string"
+                    },
+                    "coach": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        {
+            "name": "Final Four",
+            "url": "https://ncaa-final-four.p.rapidapi.com/final-four/1966",
+            "description": "Get the Final Four teams for the given year.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "identifier",
+                    "type": "string",
+                    "description": "",
+                    "default": "1966"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://ncaa-final-four.p.rapidapi.com/final-four/1966\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ncaa-final-four.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ncaa-final-four.p.rapidapi.com/final-four/{identifier}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ncaa-final-four.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "year": "1966",
+                "season": "1965-1966",
+                "final_four": "UTEP, Kentucky, Duke, Utah"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "year": {
+                        "type": "string"
+                    },
+                    "season": {
+                        "type": "string"
+                    },
+                    "final_four": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    ],
+    "standardized_name": "ncaa_final_four"
+}

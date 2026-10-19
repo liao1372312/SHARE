@@ -1,0 +1,32 @@
+{
+"user_query":"I'm hosting a charity event and I need to send promotional SMS to spread the word. Check my D7 Verify account balance and get the details of the last OTP I generated. Also, provide me with the categories available in the demo project catalog to choose suitable gifts for the attendees.",
+"domain":"Technology",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Check the account balance in D7 Verify.",
+        "domain": "technology",
+        "required_inputs": ["account_credentials"]
+    },
+    {
+        "id": 2,
+        "description": "Retrieve the details of the last generated OTP from D7 Verify.",
+        "domain": "technology",
+        "required_inputs": ["account_credentials"],
+        "dependencies": [1]
+    },
+    {
+        "id": 3,
+        "description": "Fetch the categories available in the demo project catalog for gift selection.",
+        "domain": "technology",
+        "required_inputs": []
+    },
+    {
+        "id": 4,
+        "description": "Send promotional SMS to spread the word about the charity event.",
+        "domain": "technology",
+        "required_inputs": ["recipient_list", "message_content"],
+        "dependencies": [1, 2, 3]
+    }
+ ]
+}

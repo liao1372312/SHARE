@@ -1,0 +1,57 @@
+{
+    "product_id": "api_d44881c6-58c7-4444-a9aa-a170a668e51b",
+    "tool_description": "Check whether a phone number is valid and get its metadata. See more info at https://api-ninjas.com/api/validatephone.",
+    "home_url": "https://rapidapi.com/apininjas/api/validate-phone-by-api-ninjas/",
+    "name": "Validate Phone by API-Ninjas",
+    "title": "Validate Phone by API-Ninjas",
+    "pricing": "FREEMIUM",
+    "tool_name": "Validate Phone by API-Ninjas",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 3131,
+        "avgSuccessRate": 99,
+        "popularityScore": 9.5,
+        "__typename": "Score"
+    },
+    "host": "validate-phone-by-api-ninjas.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "/v1/validatephone",
+            "url": "https://validate-phone-by-api-ninjas.p.rapidapi.com/v1/validatephone",
+            "description": "API Ninjas Validate Phone API endpoint. Returns metadata (including whether it is valid) for a given phone number.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "number",
+                    "type": "STRING",
+                    "description": "phone number to check. If country is not set, the 3-digit country code prefix needs to be included.",
+                    "default": "+12065550100"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "country",
+                    "type": "STRING",
+                    "description": "2-letter ISO-3166 country code the phone number belongs to.",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://validate-phone-by-api-ninjas.p.rapidapi.com/v1/validatephone\"\nquerystring = {\"number\": \"+12065550100\", \"country\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"validate-phone-by-api-ninjas.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://validate-phone-by-api-ninjas.p.rapidapi.com/v1/validatephone\"\nquerystring = {\"number\": \"+12065550100\", \"country\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"validate-phone-by-api-ninjas.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "is_valid": true,
+                "is_formatted_properly": true,
+                "country": "United States",
+                "location": "Washington State",
+                "timezones": [
+                    "America/Los_Angeles"
+                ],
+                "format_national": "(206) 555-0100",
+                "format_international": "+1 206-555-0100",
+                "format_e164": "+12065550100",
+                "country_code": 1
+            }
+        }
+    ],
+    "standardized_name": "validate_phone_by_api_ninjas"
+}

@@ -1,0 +1,39 @@
+{
+"user_query":"I want to surprise my family with personalized horoscope readings based on their zodiac signs and recommend a music radio station.",
+"domain":"Cross-Domain",
+"TaskList": [
+{
+"id": 1,
+"description": "Collect the zodiac signs of each family member.",
+"domain": "Cross-Domain",
+"required_inputs": ["family_member_names"]
+},
+{
+"id": 2,
+"description": "Query horoscope information for the upcoming month based on the collected zodiac signs.",
+"domain": "Cross-Domain",
+"required_inputs": ["zodiac_signs"],
+"dependencies": [1]
+},
+{
+"id": 3,
+"description": "Compile personalized horoscope readings for each family member.",
+"domain": "Cross-Domain",
+"required_inputs": ["horoscope_data"],
+"dependencies": [2]
+},
+{
+"id": 4,
+"description": "Identify the favorite music genres of each family member.",
+"domain": "Cross-Domain",
+"required_inputs": ["family_member_names"]
+},
+{
+"id": 5,
+"description": "Recommend a radio station that plays a mix of the identified favorite music genres.",
+"domain": "Cross-Domain",
+"required_inputs": ["favorite_music_genres"],
+"dependencies": [4]
+}
+]
+}

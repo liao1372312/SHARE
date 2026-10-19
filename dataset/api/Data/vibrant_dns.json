@@ -1,0 +1,62 @@
+{
+    "product_id": "api_8f81a6de-87ff-4627-bac3-358b1ea8a89b",
+    "tool_description": "Get DNS record information",
+    "home_url": "https://rapidapi.com/vibrant-api-vibrant-api-default/api/vibrant-dns/",
+    "name": "Vibrant DNS",
+    "title": "Vibrant DNS",
+    "pricing": "FREE",
+    "tool_name": "Vibrant DNS",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 2519,
+        "avgSuccessRate": 100,
+        "popularityScore": 8.8,
+        "__typename": "Score"
+    },
+    "host": "vibrant-dns.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Get DNS Records",
+            "url": "https://vibrant-dns.p.rapidapi.com/dns/get",
+            "description": "Get a domains DNS records",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "domain",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "rapidapi.com"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "record_type",
+                    "type": "STRING",
+                    "description": "Can be a comma seperated string with any of the following options:\na\nns\nmx\ntxt\ncname\n\nTo request multiple record types sample:\na,mx,cname",
+                    "default": "a,mx"
+                },
+                {
+                    "name": "response_type_seperator",
+                    "type": "STRING",
+                    "description": "When response_type is set to target, you can set the response_type_seperator here. Default is \\\\\\\\\\\\\\\\n (newline) but you can do comma or pipe delimited if you want.",
+                    "default": ","
+                },
+                {
+                    "name": "response_type",
+                    "type": "STRING",
+                    "description": "If response_type = target, will respond with either ip, txt or target of the requested dns record type. Useful when used in conjunction with response_type_seperator",
+                    "default": "target"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://vibrant-dns.p.rapidapi.com/dns/get\"\nquerystring = {\"record_type\": \"a,mx\", \"response_type_seperator\": \",\", \"response_type\": \"target\", \"domain\": \"rapidapi.com\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"vibrant-dns.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://vibrant-dns.p.rapidapi.com/dns/get\"\nquerystring = {\"record_type\": \"a,mx\", \"response_type_seperator\": \",\", \"response_type\": \"target\", \"domain\": \"rapidapi.com\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"vibrant-dns.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "a": "172.66.41.24,172.66.42.232",
+                "mx": "alt3.aspmx.l.google.com,aspmx.l.google.com,alt4.aspmx.l.google.com,alt2.aspmx.l.google.com,alt1.aspmx.l.google.com"
+            },
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "vibrant_dns"
+}

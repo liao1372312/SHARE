@@ -1,0 +1,42 @@
+{
+  "user_query":"I'm planning a road trip with my friends to explore the music scene in different cities. Can you provide me with the top artists and hot 100 songs for each city? Additionally, recommend some popular songs of the summer. Oh, and don't forget to give me the track information for my favorite songs.",
+  "domain":"entertainment",
+  "TaskList": [
+    {
+      "id": 1,
+      "description": "Identify the list of cities involved in the trip.",
+      "domain": "entertainment",
+      "required_inputs": ["list_of_cities"]
+    },
+    {
+      "id": 2,
+      "description": "Query the top artists for each city.",
+      "domain": "entertainment",
+      "required_inputs": ["city"]
+    },
+    {
+      "id": 3,
+      "description": "Retrieve the Hot 100 songs for each city.",
+      "domain": "entertainment",
+      "required_inputs": ["city"]
+    },
+    {
+      "id": 4,
+      "description": "Get recommendations for popular songs of the summer.",
+      "domain": "entertainment",
+      "required_inputs": []
+    },
+    {
+      "id": 5,
+      "description": "Fetch track information for your favorite songs.",
+      "domain": "entertainment",
+      "required_inputs": ["list_of_favorite_songs"]
+    }
+  ],
+  "dependencies": [
+    {"from": 1, "to": 2},
+    {"from": 1, "to": 3},
+    {"from": 2, "to": 3},
+    {"from": 4, "to": 5}
+  ]
+}

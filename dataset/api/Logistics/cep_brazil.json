@@ -1,0 +1,45 @@
+{
+    "product_id": "api_6e0bacde-2677-48e2-97c0-c22f201daa32",
+    "tool_description": "API gratuita que retorna os dados Correios atrav\u00e9s de CEP",
+    "home_url": "https://rapidapi.com/apis4all-apis4all-default/api/cep-brazil/",
+    "name": "CEP Brazil",
+    "title": "CEP Brazil",
+    "pricing": "FREE",
+    "tool_name": "CEP Brazil",
+    "score": {
+        "avgServiceLevel": 83,
+        "avgLatency": 80132,
+        "avgSuccessRate": 67,
+        "popularityScore": 8.1,
+        "__typename": "Score"
+    },
+    "host": "cep-brazil.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Retorna Dados do Endere\u00e7o atrav\u00e9s do CEP",
+            "url": "https://cep-brazil.p.rapidapi.com/correio/consulta/cep/75094080",
+            "description": "Retorna dados endere\u00e7o",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "cepNumber",
+                    "type": "string",
+                    "description": "",
+                    "default": "75094080"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://cep-brazil.p.rapidapi.com/correio/consulta/cep/75094080\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"cep-brazil.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://cep-brazil.p.rapidapi.com/correio/consulta/cep/{cepnumber}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"cep-brazil.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "bairro": "An\u00e1polis City",
+                "cep": "75094080",
+                "cidade": "An\u00e1polis",
+                "complemento2": "",
+                "end": "Avenida N-003",
+                "uf": "GO"
+            }
+        }
+    ],
+    "standardized_name": "cep_brazil"
+}

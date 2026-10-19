@@ -1,0 +1,36 @@
+{
+"user_query":"I want to create a playlist for my road trip to California. Can you give me the top songs in Hungary and Austria for the past week? Additionally, provide me with the details of the albums these songs belong to.",
+"domain":"Cross-Domain",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Retrieve the top songs from Hungary for the past week.",
+        "domain": "music",
+        "required_inputs": ["country=Hungary", "time_frame=past_week"]
+    },
+    {
+        "id": 2,
+        "description": "Retrieve the top songs from Austria for the past week.",
+        "domain": "music",
+        "required_inputs": ["country=Austria", "time_frame=past_week"]
+    },
+    {
+        "id": 3,
+        "description": "Fetch the details of the albums for the top songs in Hungary.",
+        "domain": "music",
+        "required_inputs": ["song_ids=from_step_1"]
+    },
+    {
+        "id": 4,
+        "description": "Fetch the details of the albums for the top songs in Austria.",
+        "domain": "music",
+        "required_inputs": ["song_ids=from_step_2"]
+    },
+    {
+        "id": 5,
+        "description": "Compile the playlist with top songs and their album details for Hungary and Austria.",
+        "domain": "music",
+        "required_inputs": ["songs_info=from_steps_1_and_3", "songs_info=from_steps_2_and_4"]
+    }
+]
+}

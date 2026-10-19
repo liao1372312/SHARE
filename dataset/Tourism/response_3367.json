@@ -1,0 +1,45 @@
+{
+"user_query":"I want to get geocodes for multiple addresses.",
+"domain":"tourism",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Get the geocode for the address '987 Maple Road, Seattle'.",
+        "domain": "tourism",
+        "required_inputs": ["address"]
+    },
+    {
+        "id": 2,
+        "description": "Get the geocode for the address '654 Cedar Lane, Boston'.",
+        "domain": "tourism",
+        "required_inputs": ["address"]
+    },
+    {
+        "id": 3,
+        "description": "Get the geocode for the address '321 Elm Street, Miami'.",
+        "domain": "tourism",
+        "required_inputs": ["address"]
+    },
+    {
+        "id": 4,
+        "description": "Perform a geolookup for the geocode obtained from '987 Maple Road, Seattle'.",
+        "domain": "tourism",
+        "required_inputs": ["geocode"],
+        "dependencies": [1]
+    },
+    {
+        "id": 5,
+        "description": "Perform a geolookup for the geocode obtained from '654 Cedar Lane, Boston'.",
+        "domain": "tourism",
+        "required_inputs": ["geocode"],
+        "dependencies": [2]
+    },
+    {
+        "id": 6,
+        "description": "Perform a geolookup for the geocode obtained from '321 Elm Street, Miami'.",
+        "domain": "tourism",
+        "required_inputs": ["geocode"],
+        "dependencies": [3]
+    }
+]
+}

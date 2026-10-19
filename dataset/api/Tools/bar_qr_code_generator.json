@@ -1,0 +1,53 @@
+{
+    "product_id": "api_5daaca05-b319-4443-bab7-0f7c86607e38",
+    "tool_description": "Generate barcodes and QR codes.",
+    "home_url": "https://rapidapi.com/wynk182-svWIc_g9LHP/api/bar-qr-code-generator/",
+    "name": "Bar QR Code Generator",
+    "title": "Bar QR Code Generator",
+    "pricing": "FREEMIUM",
+    "tool_name": "Bar QR Code Generator",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 7127,
+        "avgSuccessRate": 80,
+        "popularityScore": 6.8,
+        "__typename": "Score"
+    },
+    "host": "bar-qr-code-generator.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "download",
+            "url": "https://bar-qr-code-generator.p.rapidapi.com/encoded/api/download",
+            "description": "Generate and download a single barcode.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "type",
+                    "type": "STRING",
+                    "description": "The type of barcode can be one of qr_code, code_128a, code_128b, code_128c, code_25, code_25_interleaved, code_25_iata, code_39, code_93, gs1_128, ean_13, bookland, ean_8, upc_supplemental, codabar",
+                    "default": "qr_code"
+                },
+                {
+                    "name": "data",
+                    "type": "STRING",
+                    "description": "The data to be encoded",
+                    "default": "https://www.wynk182.com"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "size",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "5"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://bar-qr-code-generator.p.rapidapi.com/encoded/api/download\"\nquerystring = {\"type\": \"qr_code\", \"size\": \"5\", \"data\": \"https://www.wynk182.com\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"bar-qr-code-generator.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://bar-qr-code-generator.p.rapidapi.com/encoded/api/download\"\nquerystring = {\"type\": \"qr_code\", \"size\": \"5\", \"data\": \"https://www.wynk182.com\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"bar-qr-code-generator.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "bar_qr_code_generator"
+}

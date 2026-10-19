@@ -1,0 +1,62 @@
+{
+    "product_id": "api_9efb5e6b-8e3e-4587-9d93-bbae58848297",
+    "tool_description": "Determine products and organization of products into their respective categories. Predict product price base on name of product or product title.",
+    "home_url": "https://rapidapi.com/webglyapi-ecommerce/api/product-categorization/",
+    "name": "Product Categorization",
+    "title": "Product Categorization",
+    "pricing": "FREEMIUM",
+    "tool_name": "Product Categorization",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 504,
+        "avgSuccessRate": 100,
+        "popularityScore": 9.2,
+        "__typename": "Score"
+    },
+    "host": "product-categorization.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Product Categorization",
+            "url": "https://product-categorization.p.rapidapi.com/products/v1/categorized",
+            "description": "Return category of product base on the product title.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "title",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "Abstract Egghead Plus Size Female Mannequin - Matte White Item "
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "price",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "200"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://product-categorization.p.rapidapi.com/products/v1/categorized\"\nquerystring = {\"price\": \"200\", \"title\": \"Abstract Egghead Plus Size Female Mannequin - Matte White Item \"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"product-categorization.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://product-categorization.p.rapidapi.com/products/v1/categorized\"\nquerystring = {\"price\": \"200\", \"title\": \"Abstract Egghead Plus Size Female Mannequin - Matte White Item \"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"product-categorization.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You are not subscribed to this API."
+            },
+            "statuscode": 200,
+            "schema": {
+                "properties": {
+                    "category_id": {
+                        "type": "integer"
+                    },
+                    "category_name": {
+                        "type": "string"
+                    },
+                    "status": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    ],
+    "standardized_name": "product_categorization"
+}

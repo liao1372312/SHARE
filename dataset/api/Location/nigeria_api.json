@@ -1,0 +1,875 @@
+{
+    "product_id": "api_deea7e91-b86e-4e1c-bafa-008560204d68",
+    "tool_description": "Welcome to the Nigeria API! This API provides endpoints to lookup locations, find facilities and perform geospatial operations such as distance calculation and directions between two locations in Nigeria.",
+    "home_url": "https://rapidapi.com/kidddevs/api/nigeria-api/",
+    "name": "Nigeria API",
+    "title": "Nigeria API",
+    "pricing": "FREEMIUM",
+    "tool_name": "Nigeria API",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 538,
+        "avgSuccessRate": 100,
+        "popularityScore": 8.3,
+        "__typename": "Score"
+    },
+    "host": "nigeria-api.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Directions Between 2 Locations",
+            "url": "https://nigeria-api.p.rapidapi.com/directions",
+            "description": "This endpoint returns information about the route between two locations in terms of distance, duration, and steps.\n\nBelow Example: **Directions from Kaduna to Maiduguri**",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "end_lat",
+                    "type": "NUMBER",
+                    "description": "Latitude of the ending point (required)",
+                    "default": "11.846"
+                },
+                {
+                    "name": "start_lat",
+                    "type": "NUMBER",
+                    "description": "Latitude of the starting point (required)",
+                    "default": "10.516"
+                },
+                {
+                    "name": "start_lon",
+                    "type": "NUMBER",
+                    "description": "Longitude of the starting point (required)",
+                    "default": "7.433"
+                },
+                {
+                    "name": "end_lon",
+                    "type": "NUMBER",
+                    "description": "Longitude of the ending point (required)",
+                    "default": "13.160"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "distance_unit",
+                    "type": "STRING",
+                    "description": "Unit of distance measurement, valid options are **km** (default), and **mi**.",
+                    "default": "km"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://nigeria-api.p.rapidapi.com/directions\"\nquerystring = {\"distance_unit\": \"km\", \"end_lat\": \"11.846\", \"start_lat\": \"10.516\", \"start_lon\": \"7.433\", \"end_lon\": \"13.160\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"nigeria-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://nigeria-api.p.rapidapi.com/directions\"\nquerystring = {\"distance_unit\": \"km\", \"end_lat\": \"11.846\", \"start_lat\": \"10.516\", \"start_lon\": \"7.433\", \"end_lon\": \"13.160\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"nigeria-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "distance": "800.51km",
+                "duration": "9h 34min",
+                "steps": [
+                    {
+                        "direction": "depart",
+                        "distance": "0.28km",
+                        "duration": "0min:41s",
+                        "instruction": "",
+                        "location": [
+                            7.432996,
+                            10.516054
+                        ]
+                    },
+                    {
+                        "direction": "end of road",
+                        "distance": "0.68km",
+                        "duration": "0min:37s",
+                        "instruction": "",
+                        "location": [
+                            7.430487,
+                            10.515869
+                        ]
+                    },
+                    {
+                        "direction": "rotary",
+                        "distance": "0.03km",
+                        "duration": "0min:1s",
+                        "instruction": "",
+                        "location": [
+                            7.430062,
+                            10.522007
+                        ]
+                    },
+                    {
+                        "direction": "exit rotary",
+                        "distance": "0.89km",
+                        "duration": "0min:48s",
+                        "instruction": "",
+                        "location": [
+                            7.430037,
+                            10.522281
+                        ]
+                    },
+                    {
+                        "direction": "roundabout",
+                        "distance": "0.05km",
+                        "duration": "0min:2s",
+                        "instruction": "",
+                        "location": [
+                            7.429529,
+                            10.530264
+                        ]
+                    },
+                    {
+                        "direction": "exit roundabout",
+                        "distance": "0.64km",
+                        "duration": "0min:35s",
+                        "instruction": "",
+                        "location": [
+                            7.429534,
+                            10.530643
+                        ]
+                    },
+                    {
+                        "direction": "roundabout",
+                        "distance": "0.04km",
+                        "duration": "0min:2s",
+                        "instruction": "",
+                        "location": [
+                            7.429095,
+                            10.536369
+                        ]
+                    },
+                    {
+                        "direction": "exit roundabout",
+                        "distance": "1.08km",
+                        "duration": "1min:0s",
+                        "instruction": "",
+                        "location": [
+                            7.429091,
+                            10.536672
+                        ]
+                    },
+                    {
+                        "direction": "roundabout",
+                        "distance": "0.04km",
+                        "duration": "0min:2s",
+                        "instruction": "",
+                        "location": [
+                            7.43552,
+                            10.543064
+                        ]
+                    },
+                    {
+                        "direction": "exit roundabout",
+                        "distance": "4.78km",
+                        "duration": "4min:24s",
+                        "instruction": "",
+                        "location": [
+                            7.435861,
+                            10.543115
+                        ]
+                    },
+                    {
+                        "direction": "turn",
+                        "distance": "0.35km",
+                        "duration": "0min:16s",
+                        "instruction": "",
+                        "location": [
+                            7.445494,
+                            10.581251
+                        ]
+                    },
+                    {
+                        "direction": "turn",
+                        "distance": "0.08km",
+                        "duration": "0min:3s",
+                        "instruction": "",
+                        "location": [
+                            7.446702,
+                            10.584172
+                        ]
+                    },
+                    {
+                        "direction": "merge",
+                        "distance": "0.04km",
+                        "duration": "0min:2s",
+                        "instruction": "",
+                        "location": [
+                            7.446861,
+                            10.584845
+                        ]
+                    },
+                    {
+                        "direction": "fork",
+                        "distance": "0.26km",
+                        "duration": "0min:11s",
+                        "instruction": "",
+                        "location": [
+                            7.446996,
+                            10.585179
+                        ]
+                    },
+                    {
+                        "direction": "fork",
+                        "distance": "206.57km",
+                        "duration": "2h 25min",
+                        "instruction": "",
+                        "location": [
+                            7.447722,
+                            10.587354
+                        ]
+                    },
+                    {
+                        "direction": "turn",
+                        "distance": "12.84km",
+                        "duration": "14min:1s",
+                        "instruction": "",
+                        "location": [
+                            8.540483,
+                            11.883179
+                        ]
+                    },
+                    {
+                        "direction": "end of road",
+                        "distance": "244.49km",
+                        "duration": "2h 52min",
+                        "instruction": "",
+                        "location": [
+                            8.649625,
+                            11.912888
+                        ]
+                    },
+                    {
+                        "direction": "continue",
+                        "distance": "14.72km",
+                        "duration": "10min:26s",
+                        "instruction": "",
+                        "location": [
+                            10.456073,
+                            11.31476
+                        ]
+                    },
+                    {
+                        "direction": "turn",
+                        "distance": "0.10km",
+                        "duration": "0min:15s",
+                        "instruction": "",
+                        "location": [
+                            10.558442,
+                            11.244313
+                        ]
+                    },
+                    {
+                        "direction": "turn",
+                        "distance": "0.15km",
+                        "duration": "0min:24s",
+                        "instruction": "",
+                        "location": [
+                            10.558683,
+                            11.245065
+                        ]
+                    },
+                    {
+                        "direction": "end of road",
+                        "distance": "75.35km",
+                        "duration": "53min:11s",
+                        "instruction": "",
+                        "location": [
+                            10.559815,
+                            11.244642
+                        ]
+                    },
+                    {
+                        "direction": "roundabout",
+                        "distance": "0.02km",
+                        "duration": "0min:0s",
+                        "instruction": "",
+                        "location": [
+                            11.047028,
+                            11.671983
+                        ]
+                    },
+                    {
+                        "direction": "exit roundabout",
+                        "distance": "1.00km",
+                        "duration": "0min:42s",
+                        "instruction": "",
+                        "location": [
+                            11.047148,
+                            11.672086
+                        ]
+                    },
+                    {
+                        "direction": "new name",
+                        "distance": "3.89km",
+                        "duration": "2min:44s",
+                        "instruction": "",
+                        "location": [
+                            11.056273,
+                            11.671752
+                        ]
+                    },
+                    {
+                        "direction": "roundabout",
+                        "distance": "0.06km",
+                        "duration": "0min:6s",
+                        "instruction": "",
+                        "location": [
+                            11.091336,
+                            11.673894
+                        ]
+                    },
+                    {
+                        "direction": "exit roundabout",
+                        "distance": "0.70km",
+                        "duration": "0min:29s",
+                        "instruction": "",
+                        "location": [
+                            11.091761,
+                            11.674106
+                        ]
+                    },
+                    {
+                        "direction": "new name",
+                        "distance": "5.43km",
+                        "duration": "3min:50s",
+                        "instruction": "",
+                        "location": [
+                            11.09772,
+                            11.676556
+                        ]
+                    },
+                    {
+                        "direction": "roundabout",
+                        "distance": "0.04km",
+                        "duration": "0min:2s",
+                        "instruction": "",
+                        "location": [
+                            11.140414,
+                            11.695151
+                        ]
+                    },
+                    {
+                        "direction": "exit roundabout",
+                        "distance": "89.32km",
+                        "duration": "1h 3min",
+                        "instruction": "",
+                        "location": [
+                            11.140763,
+                            11.69533
+                        ]
+                    },
+                    {
+                        "direction": "roundabout",
+                        "distance": "0.04km",
+                        "duration": "0min:1s",
+                        "instruction": "",
+                        "location": [
+                            11.94437,
+                            11.737719
+                        ]
+                    },
+                    {
+                        "direction": "exit roundabout",
+                        "distance": "2.04km",
+                        "duration": "1min:26s",
+                        "instruction": "",
+                        "location": [
+                            11.944668,
+                            11.737723
+                        ]
+                    },
+                    {
+                        "direction": "roundabout",
+                        "distance": "0.08km",
+                        "duration": "0min:3s",
+                        "instruction": "",
+                        "location": [
+                            11.96237,
+                            11.742868
+                        ]
+                    },
+                    {
+                        "direction": "exit roundabout",
+                        "distance": "3.22km",
+                        "duration": "2min:16s",
+                        "instruction": "",
+                        "location": [
+                            11.962908,
+                            11.7432
+                        ]
+                    },
+                    {
+                        "direction": "roundabout",
+                        "distance": "0.04km",
+                        "duration": "0min:1s",
+                        "instruction": "",
+                        "location": [
+                            11.992294,
+                            11.742908
+                        ]
+                    },
+                    {
+                        "direction": "exit roundabout",
+                        "distance": "122.16km",
+                        "duration": "1h 26min",
+                        "instruction": "",
+                        "location": [
+                            11.992603,
+                            11.742891
+                        ]
+                    },
+                    {
+                        "direction": "roundabout",
+                        "distance": "0.02km",
+                        "duration": "0min:0s",
+                        "instruction": "",
+                        "location": [
+                            13.084142,
+                            11.836315
+                        ]
+                    },
+                    {
+                        "direction": "exit roundabout",
+                        "distance": "1.33km",
+                        "duration": "0min:57s",
+                        "instruction": "",
+                        "location": [
+                            13.084293,
+                            11.836258
+                        ]
+                    },
+                    {
+                        "direction": "roundabout",
+                        "distance": "0.03km",
+                        "duration": "0min:1s",
+                        "instruction": "",
+                        "location": [
+                            13.096356,
+                            11.834596
+                        ]
+                    },
+                    {
+                        "direction": "exit roundabout",
+                        "distance": "4.82km",
+                        "duration": "3min:24s",
+                        "instruction": "",
+                        "location": [
+                            13.09656,
+                            11.834576
+                        ]
+                    },
+                    {
+                        "direction": "roundabout",
+                        "distance": "0.12km",
+                        "duration": "0min:4s",
+                        "instruction": "",
+                        "location": [
+                            13.140341,
+                            11.836246
+                        ]
+                    },
+                    {
+                        "direction": "exit roundabout",
+                        "distance": "0.90km",
+                        "duration": "0min:38s",
+                        "instruction": "",
+                        "location": [
+                            13.14109,
+                            11.83676
+                        ]
+                    },
+                    {
+                        "direction": "roundabout",
+                        "distance": "0.01km",
+                        "duration": "0min:0s",
+                        "instruction": "",
+                        "location": [
+                            13.146234,
+                            11.842334
+                        ]
+                    },
+                    {
+                        "direction": "exit roundabout",
+                        "distance": "0.28km",
+                        "duration": "0min:18s",
+                        "instruction": "",
+                        "location": [
+                            13.146298,
+                            11.842443
+                        ]
+                    },
+                    {
+                        "direction": "roundabout",
+                        "distance": "0.03km",
+                        "duration": "0min:2s",
+                        "instruction": "",
+                        "location": [
+                            13.148705,
+                            11.843406
+                        ]
+                    },
+                    {
+                        "direction": "exit roundabout",
+                        "distance": "0.91km",
+                        "duration": "0min:59s",
+                        "instruction": "",
+                        "location": [
+                            13.148949,
+                            11.843477
+                        ]
+                    },
+                    {
+                        "direction": "roundabout",
+                        "distance": "0.04km",
+                        "duration": "0min:3s",
+                        "instruction": "",
+                        "location": [
+                            13.156653,
+                            11.846661
+                        ]
+                    },
+                    {
+                        "direction": "exit roundabout",
+                        "distance": "0.23km",
+                        "duration": "0min:35s",
+                        "instruction": "",
+                        "location": [
+                            13.156869,
+                            11.846799
+                        ]
+                    },
+                    {
+                        "direction": "turn",
+                        "distance": "0.16km",
+                        "duration": "0min:27s",
+                        "instruction": "",
+                        "location": [
+                            13.158825,
+                            11.847463
+                        ]
+                    },
+                    {
+                        "direction": "turn",
+                        "distance": "0.10km",
+                        "duration": "0min:14s",
+                        "instruction": "",
+                        "location": [
+                            13.159082,
+                            11.845998
+                        ]
+                    },
+                    {
+                        "direction": "arrive",
+                        "distance": "0.00km",
+                        "duration": "0min:0s",
+                        "instruction": "",
+                        "location": [
+                            13.159998,
+                            11.845975
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Measure Distance",
+            "url": "https://nigeria-api.p.rapidapi.com/distance",
+            "description": "This endpoint calculates the distance between two locations based on their latitude and longitude coordinates, while allowing the user to specify the unit of measurement.\n\nBelow Example: **Distance between Lagos and Abuja**",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "lat1",
+                    "type": "NUMBER",
+                    "description": "Latitude of the first location (required)",
+                    "default": "6.465422"
+                },
+                {
+                    "name": "lon1",
+                    "type": "NUMBER",
+                    "description": "Longitude of the first location (required)",
+                    "default": "3.406448"
+                },
+                {
+                    "name": "lon2",
+                    "type": "NUMBER",
+                    "description": "Longitude of the second location (required)",
+                    "default": "8.6753"
+                },
+                {
+                    "name": "lat2",
+                    "type": "NUMBER",
+                    "description": "Latitude of the second location (required)",
+                    "default": "9.0820"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "unit",
+                    "type": "STRING",
+                    "description": "Unit of distance measurement, valid options are **km** (default), **mi**, **ft**, and **yd**.\n",
+                    "default": "km"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://nigeria-api.p.rapidapi.com/distance\"\nquerystring = {\"lat1\": \"6.465422\", \"lon1\": \"3.406448\", \"lon2\": \"8.6753\", \"lat2\": \"9.0820\", \"unit\": \"km\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"nigeria-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://nigeria-api.p.rapidapi.com/distance\"\nquerystring = {\"lat1\": \"6.465422\", \"lon1\": \"3.406448\", \"lon2\": \"8.6753\", \"lat2\": \"9.0820\", \"unit\": \"km\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"nigeria-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "distance": "916.07km",
+                "duration": "10h 59min",
+                "unit": "km"
+            }
+        },
+        {
+            "name": "Reverse Geocode",
+            "url": "https://nigeria-api.p.rapidapi.com/georev",
+            "description": "This endpoint allows you to perform reverse geocoding in Nigeria by providing query parameters for latitude and longitude. It returns the name of the city where the location is located.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "lat",
+                    "type": "STRING",
+                    "description": "The latitude of the location.",
+                    "default": "6.4549718"
+                },
+                {
+                    "name": "lon",
+                    "type": "STRING",
+                    "description": "The longitude of the location.",
+                    "default": "3.4365418"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://nigeria-api.p.rapidapi.com/georev\"\nquerystring = {\"lat\": \"6.4549718\", \"lon\": \"3.4365418\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"nigeria-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://nigeria-api.p.rapidapi.com/georev\"\nquerystring = {\"lat\": \"6.4549718\", \"lon\": \"3.4365418\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"nigeria-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "amenity": "Da Vinci Bar & Restaurant",
+                "boundingbox": [
+                    "6.4549218",
+                    "6.4550218",
+                    "3.4364918",
+                    "3.4365918"
+                ],
+                "category": "amenity",
+                "city": "",
+                "country": "Nigeria",
+                "display_name": "Da Vinci Bar & Restaurant, 30, Lugard Avenue, Ikoyi, Falomo, Eti Osa, Lagos, 101233, Nigeria",
+                "state": "Lagos",
+                "suburb": "Ikoyi"
+            }
+        },
+        {
+            "name": "Facilities Lookup",
+            "url": "https://nigeria-api.p.rapidapi.com/facility",
+            "description": "This endpoint allows you to get facilities in Nigeria like hospital, bank, college, etc. by providing optional query parameters for facility type, state and city. It returns a list of facilities that match the query parameters.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "state",
+                    "type": "STRING",
+                    "description": "The state where the facility is located",
+                    "default": "Lagos"
+                },
+                {
+                    "name": "type",
+                    "type": "STRING",
+                    "description": "The type of amenity facility to search for (default: **hospital**)\nOptions:\n**aerodrome, bar, cafe, fast_food, pub, restaurant, college, driving_school, school, university, bank, atm, pharmacy,** etc..        \n\n[More options->](https://wiki.openstreetmap.org/wiki/Map_features#Amenity)",
+                    "default": "hospital"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "limit",
+                    "type": "STRING",
+                    "description": "The number of facilities to query.",
+                    "default": "10"
+                },
+                {
+                    "name": "city",
+                    "type": "STRING",
+                    "description": "The city where the facility is located",
+                    "default": "Lagos"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://nigeria-api.p.rapidapi.com/facility\"\nquerystring = {\"limit\": \"10\", \"city\": \"Lagos\", \"state\": \"Lagos\", \"type\": \"hospital\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"nigeria-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://nigeria-api.p.rapidapi.com/facility\"\nquerystring = {\"limit\": \"10\", \"city\": \"Lagos\", \"state\": \"Lagos\", \"type\": \"hospital\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"nigeria-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "hospital": [
+                    {
+                        "ISO3166-2-lvl4": "NG-LA",
+                        "address": "Old Marina Street, Lagos, Nigeria",
+                        "amenity": "General Hospital Lagos",
+                        "country_code": "ng",
+                        "county": "Lagos Island",
+                        "display_name": "General Hospital Lagos, Old Marina Street, Lagos, Lagos Island, Lagos, 101001, Nigeria",
+                        "latitude": "6.447528950000001",
+                        "longitude": "3.3965319628819444",
+                        "postcode": "101001",
+                        "road": "Old Marina Street",
+                        "state": "Lagos",
+                        "suburb": "",
+                        "village": "",
+                        "website": "http://www.ghlagos.org.ng"
+                    },
+                    {
+                        "ISO3166-2-lvl4": "NG-LA",
+                        "address": "Hospital Road, Lagos, Nigeria",
+                        "amenity": "St Nicholas Hospital",
+                        "country_code": "ng",
+                        "county": "Lagos Island",
+                        "display_name": "St Nicholas Hospital, Hospital Road, Lagos, Lagos Island, Lagos, 100242, Nigeria",
+                        "latitude": "6.4492553",
+                        "longitude": "3.397659761433296",
+                        "postcode": "100242",
+                        "road": "Hospital Road",
+                        "state": "Lagos",
+                        "suburb": "",
+                        "village": "",
+                        "website": ""
+                    },
+                    {
+                        "ISO3166-2-lvl4": "NG-LA",
+                        "address": "Idowu Martins Street, , Nigeria",
+                        "amenity": "Reddington Hospital",
+                        "country_code": "ng",
+                        "county": "Eti Osa",
+                        "display_name": "Reddington Hospital, Idowu Martins Street, Victoria Island, Eti Osa, Lagos, 500001, Nigeria",
+                        "latitude": "6.433014099999999",
+                        "longitude": "3.4204163591119014",
+                        "postcode": "500001",
+                        "road": "Idowu Martins Street",
+                        "state": "Lagos",
+                        "suburb": "Victoria Island",
+                        "village": "",
+                        "website": ""
+                    },
+                    {
+                        "ISO3166-2-lvl4": "NG-LA",
+                        "address": "Massey Street, Lagos, Nigeria",
+                        "amenity": "Massey Street Children Hospital",
+                        "country_code": "ng",
+                        "county": "Lagos Island",
+                        "display_name": "Massey Street Children Hospital, Massey Street, Lagos, Lagos Island, Lagos, 100242, Nigeria",
+                        "latitude": "6.455071500000001",
+                        "longitude": "3.3922412195805975",
+                        "postcode": "100242",
+                        "road": "Massey Street",
+                        "state": "Lagos",
+                        "suburb": "",
+                        "village": "",
+                        "website": ""
+                    },
+                    {
+                        "ISO3166-2-lvl4": "NG-LA",
+                        "address": "Hospital Road, Lagos, Nigeria",
+                        "amenity": "Lagos Island Maternity Hospital",
+                        "country_code": "ng",
+                        "county": "Lagos Island",
+                        "display_name": "Lagos Island Maternity Hospital, Hospital Road, Lagos, Lagos Island, Lagos, 100242, Nigeria",
+                        "latitude": "6.448661599999999",
+                        "longitude": "3.3973778421052643",
+                        "postcode": "100242",
+                        "road": "Hospital Road",
+                        "state": "Lagos",
+                        "suburb": "",
+                        "village": "",
+                        "website": ""
+                    },
+                    {
+                        "ISO3166-2-lvl4": "NG-LA",
+                        "address": "Bourdillon Road, , Nigeria",
+                        "amenity": "Nigerian Police Hospital - Falomo",
+                        "country_code": "ng",
+                        "county": "Eti Osa",
+                        "display_name": "Nigerian Police Hospital - Falomo, Bourdillon Road, Ikoyi, Falomo, Eti Osa, Lagos, 101241, Nigeria",
+                        "latitude": "6.44282555",
+                        "longitude": "3.4290254695848095",
+                        "postcode": "101241",
+                        "road": "Bourdillon Road",
+                        "state": "Lagos",
+                        "suburb": "Ikoyi",
+                        "village": "Falomo",
+                        "website": ""
+                    },
+                    {
+                        "ISO3166-2-lvl4": "NG-LA",
+                        "address": "Bourdillon Road, , Nigeria",
+                        "amenity": "Gold Cross Hospital - Bourdillon",
+                        "country_code": "ng",
+                        "county": "Eti Osa",
+                        "display_name": "Gold Cross Hospital - Bourdillon, 17B, Bourdillon Road, Ikoyi, Falomo, Eti Osa, Lagos, 101233, Nigeria",
+                        "latitude": "6.445890350000001",
+                        "longitude": "3.4373865957377916",
+                        "postcode": "101233",
+                        "road": "Bourdillon Road",
+                        "state": "Lagos",
+                        "suburb": "Ikoyi",
+                        "village": "Falomo",
+                        "website": ""
+                    },
+                    {
+                        "ISO3166-2-lvl4": "NG-LA",
+                        "address": "Clinic Road Lagos Mainland, , Nigeria",
+                        "amenity": "Ayeitoro PHC",
+                        "country_code": "ng",
+                        "county": "Lagos Mainland",
+                        "display_name": "Ayeitoro PHC, Clinic Road Lagos Mainland, Ebute-Metta, Lagos Mainland, Lagos, 101212, Nigeria",
+                        "latitude": "6.4928386499999995",
+                        "longitude": "3.3874370976511625",
+                        "postcode": "101212",
+                        "road": "Clinic Road Lagos Mainland",
+                        "state": "Lagos",
+                        "suburb": "",
+                        "village": "Ebute-Metta",
+                        "website": ""
+                    },
+                    {
+                        "ISO3166-2-lvl4": "NG-LA",
+                        "address": "Oju Olobun Close, , Nigeria",
+                        "amenity": "Glen Eagles Hospital",
+                        "country_code": "ng",
+                        "county": "Eti Osa",
+                        "display_name": "Glen Eagles Hospital, 7, Oju Olobun Close, Victoria Island, Eko Atlantic, Eti Osa, Lagos, 500001, Nigeria",
+                        "latitude": "6.427765000000001",
+                        "longitude": "3.4151632999999997",
+                        "postcode": "500001",
+                        "road": "Oju Olobun Close",
+                        "state": "Lagos",
+                        "suburb": "Victoria Island",
+                        "village": "Eko Atlantic",
+                        "website": ""
+                    },
+                    {
+                        "ISO3166-2-lvl4": "NG-LA",
+                        "address": "King George V Road, Lagos, Nigeria",
+                        "amenity": "Onikan Health Centre",
+                        "country_code": "ng",
+                        "county": "Lagos Island",
+                        "display_name": "Onikan Health Centre, King George V Road, Lagos, Lagos Island, Lagos, 100242, Nigeria",
+                        "latitude": "6.444652250000001",
+                        "longitude": "3.4054623269665187",
+                        "postcode": "100242",
+                        "road": "King George V Road",
+                        "state": "Lagos",
+                        "suburb": "",
+                        "village": "",
+                        "website": ""
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Geocode",
+            "url": "https://nigeria-api.p.rapidapi.com/geofy",
+            "description": "This endpoint allows you to lookup locations in Nigeria by providing an address query parameter. It returns the latitude, longitude and city name of the location.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "address",
+                    "type": "STRING",
+                    "description": "Name of address.",
+                    "default": "Ikeja"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://nigeria-api.p.rapidapi.com/geofy\"\nquerystring = {\"address\": \"Ikeja\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"nigeria-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://nigeria-api.p.rapidapi.com/geofy\"\nquerystring = {\"address\": \"Ikeja\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"nigeria-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "display_name": "Ikeja, Lagos, Nigeria",
+                "latitude": "6.5960605",
+                "longitude": "3.340787"
+            }
+        }
+    ],
+    "standardized_name": "nigeria_api"
+}

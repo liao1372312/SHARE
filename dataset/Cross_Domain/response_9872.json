@@ -1,0 +1,47 @@
+{
+  "user_query": "I want to stay updated on the latest NBA news, fetch games, statistics, news articles of the Los Angeles Clippers, and get a playlist of motivational songs from Deezer.",
+  "domain": "sports/entertainment",
+  "TaskList": [
+    {
+      "id": 1,
+      "description": "Fetch the latest NBA game schedules and results for the Los Angeles Clippers.",
+      "domain": "sports",
+      "required_inputs": ["team_name"]
+    },
+    {
+      "id": 2,
+      "description": "Retrieve current player statistics for the Los Angeles Clippers.",
+      "domain": "sports",
+      "required_inputs": ["team_name"]
+    },
+    {
+      "id": 3,
+      "description": "Get recent news articles related to the Los Angeles Clippers.",
+      "domain": "news",
+      "required_inputs": ["team_name"]
+    },
+    {
+      "id": 4,
+      "description": "Search for motivational songs playlist on Deezer.",
+      "domain": "entertainment/music",
+      "required_inputs": ["playlist_type"]
+    }
+  ],
+  "dependencies": [
+    {
+      "from": 1,
+      "to": 2,
+      "description": "Player statistics depend on the team information fetched in step 1."
+    },
+    {
+      "from": 1,
+      "to": 3,
+      "description": "News articles are related to the team and can be fetched after retrieving team info."
+    },
+    {
+      "from": 4,
+      "to": null,
+      "description": "Playlist retrieval is independent and can be executed in parallel."
+    }
+  ]
+}

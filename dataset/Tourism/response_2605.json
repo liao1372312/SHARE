@@ -1,0 +1,45 @@
+{
+"user_query":"I am planning a trip to Paris next month and I want to gather information about the top attractions and their descriptions. Additionally, I would like to classify the reviews and ratings of these attractions to make an informed decision. Could you please fetch the metadata and classifications for attractions like the Eiffel Tower, Louvre Museum, and Notre-Dame Cathedral?",
+"domain":"tourism",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Fetch metadata for the Eiffel Tower including its description and visitor information.",
+        "domain": "tourism",
+        "required_inputs": ["attraction_name"]
+    },
+    {
+        "id": 2,
+        "description": "Fetch metadata for the Louvre Museum including its description and visitor information.",
+        "domain": "tourism",
+        "required_inputs": ["attraction_name"]
+    },
+    {
+        "id": 3,
+        "description": "Fetch metadata for Notre-Dame Cathedral including its description and visitor information.",
+        "domain": "tourism",
+        "required_inputs": ["attraction_name"]
+    },
+    {
+        "id": 4,
+        "description": "Collect and classify reviews and ratings for the Eiffel Tower based on user feedback and ratings collected from various sources.",
+        "domain": "tourism",
+        "required_inputs": ["attraction_name"],
+        "dependencies": [1]
+    },
+    {
+        "id": 5,
+        "description": "Collect and classify reviews and ratings for the Louvre Museum based on user feedback and ratings collected from various sources.",
+        "domain": "tourism",
+        "required_inputs": ["attraction_name"],
+        "dependencies": [2]
+    },
+    {
+        "id": 6,
+        "description": "Collect and classify reviews and ratings for Notre-Dame Cathedral based on user feedback and ratings collected from various sources.",
+        "domain": "tourism",
+        "required_inputs": ["attraction_name"],
+        "dependencies": [3]
+    }
+]
+}

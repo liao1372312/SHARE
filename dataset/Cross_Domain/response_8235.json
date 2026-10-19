@@ -1,0 +1,42 @@
+{
+  "user_query": "I want to plan a surprise anniversary party for my parents, calculate their love percentage, get a Chuck Norris joke, find a specific NBA player, and list all available NBA teams for the current season.",
+  "domain": "entertainment",
+  "TaskList": [
+    {
+      "id": 1,
+      "description": "Calculate the love percentage between the user's parents based on their information.",
+      "domain": "medical",
+      "required_inputs": ["parents' personal information"]
+    },
+    {
+      "id": 2,
+      "description": "Retrieve a random Chuck Norris joke for entertainment.",
+      "domain": "entertainment",
+      "required_inputs": []
+    },
+    {
+      "id": 3,
+      "description": "Find detailed information about a specific NBA player.",
+      "domain": "sports",
+      "required_inputs": ["player name"]
+    },
+    {
+      "id": 4,
+      "description": "List all the available NBA teams for the current season.",
+      "domain": "sports",
+      "required_inputs": []
+    }
+  ],
+  "dependencies": [
+    {
+      "from": 1,
+      "to": 2,
+      "description": "Love percentage calculation and Chuck Norris joke are independent but both entertainment-related."
+    },
+    {
+      "from": 3,
+      "to": 4,
+      "description": "Listing NBA teams may require current season data, which can be fetched after identifying the player or independently."
+    }
+  ]
+}

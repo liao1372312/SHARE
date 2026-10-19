@@ -1,0 +1,28 @@
+{
+"user_query":"I'm organizing a company conference in Las Vegas. Can you suggest some nearby conference venues and hotels for our event? Also, provide me with a map tile with English labels for the city. And could you help me find the best route from the airport to the conference center?",
+"domain":"tourism",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Gather a list of conference venues and hotels in Las Vegas suitable for the event.",
+        "domain": "tourism",
+        "required_inputs": ["event type", "number of participants", "date of event"]
+    },
+    {
+        "id": 2,
+        "description": "Create a map tile of Las Vegas with English labels.",
+        "domain": "tourism",
+        "required_inputs": ["city name", "language"]
+    },
+    {
+        "id": 3,
+        "description": "Determine the best route from the nearest airport to the chosen conference center.",
+        "domain": "tourism",
+        "required_inputs": ["airport name", "conference center address"]
+    }
+],
+"dependencies": [
+    {"step": 2, "depends_on": 1},
+    {"step": 3, "depends_on": 1}
+]
+}

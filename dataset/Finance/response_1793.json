@@ -1,0 +1,26 @@
+{
+"user_query":"I want to know the CO2 offset compensation details for my friend. Can you retrieve the compensation information linked to their account? I need to know the compensation ID, organization, CO2 equivalent, and the details of any gold standard credit and planted trees associated with it.",
+"domain":"Finance",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Retrieve the account information associated with the friend's CO2 offset compensation.",
+        "domain": "finance",
+        "required_inputs": ["friend_account_identifier"]
+    },
+    {
+        "id": 2,
+        "description": "Query the CO2 offset compensation details linked to the retrieved account.",
+        "domain": "finance",
+        "required_inputs": ["account_info"],
+        "dependencies": [1]
+    },
+    {
+        "id": 3,
+        "description": "Extract specific details such as compensation ID, organization name, CO2 equivalent, associated gold standard credits, and planted trees from the compensation details.",
+        "domain": "finance",
+        "required_inputs": ["compensation_details"],
+        "dependencies": [2]
+    }
+]
+}

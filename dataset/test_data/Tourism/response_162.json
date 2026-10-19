@@ -1,0 +1,33 @@
+{
+"user_query":"I'm a travel blogger and I'm looking for unique Airbnb experiences to write about. Can you provide me with a list of hosts who speak multiple languages? I want to see their properties, the languages they speak, and the amenities they offer.",
+"domain":"Tourism",
+"TaskList": [
+  {
+    "id": 1,
+    "description": "Query the Airbnb database for hosts who speak multiple languages.",
+    "domain": "travel",
+    "required_inputs": ["location", "languages"]
+  },
+  {
+    "id": 2,
+    "description": "Retrieve the listings of the hosts identified in the first step, including property details.",
+    "domain": "travel",
+    "required_inputs": ["host_ids"]  ,
+    "dependencies": [1]
+  },
+  {
+    "id": 3,
+    "description": "Extract information about the amenities offered in each property listing.",
+    "domain": "travel",
+    "required_inputs": ["property_ids"],
+    "dependencies": [2]
+  },
+  {
+    "id": 4,
+    "description": "Compile the final report containing the hosts, their languages, property details, and amenities.",
+    "domain": "travel",
+    "required_inputs": ["hosts_info", "properties_info", "amenities_info"],
+    "dependencies": [1, 2, 3]
+  }
+]
+}

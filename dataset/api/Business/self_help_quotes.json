@@ -1,0 +1,271 @@
+{
+    "product_id": "api_d9656f81-39ba-446e-93fc-426fa06b62ae",
+    "tool_description": "Hand-picked quotes from the best self-help books around. Get a random quote every day, filter by tags, books, and more...",
+    "home_url": "https://rapidapi.com/kazamos/api/self-help-quotes/",
+    "name": "Self-help Quotes",
+    "title": "Self-help Quotes",
+    "pricing": "FREEMIUM",
+    "tool_name": "Self-help Quotes",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 1030,
+        "avgSuccessRate": 94,
+        "popularityScore": 8.2,
+        "__typename": "Score"
+    },
+    "host": "self-help-quotes.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Get a random quote from a specific book",
+            "url": "https://self-help-quotes.p.rapidapi.com/random/book/quiet",
+            "description": "Get a random self-help quote from a specific book by passing the book_id",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "book_id",
+                    "type": "string",
+                    "description": "",
+                    "default": "quiet"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://self-help-quotes.p.rapidapi.com/random/book/quiet\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"self-help-quotes.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://self-help-quotes.p.rapidapi.com/random/book/{book_id}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"self-help-quotes.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "quote_id": "QgRNTWv",
+                "quote_content": "Introverts are much better at making a plan, staying with a plan, being very disciplined.",
+                "quote_categories": [
+                    "introvert",
+                    "productivity",
+                    "planning",
+                    "discipline"
+                ],
+                "book": {
+                    "book_id": "quiet",
+                    "title": "Quiet",
+                    "author": "Susan Cain",
+                    "tags": [
+                        "introverts"
+                    ],
+                    "purchase_link": "https://amzn.to/3kEjcXe"
+                }
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Get a random quote tagged by a specific tag",
+            "url": "https://self-help-quotes.p.rapidapi.com/random/tag/money",
+            "description": "Get a random quote tagged by a specific tag",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "tag",
+                    "type": "string",
+                    "description": "",
+                    "default": "money"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://self-help-quotes.p.rapidapi.com/random/tag/money\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"self-help-quotes.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://self-help-quotes.p.rapidapi.com/random/tag/{tag}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"self-help-quotes.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "quote_id": "hMFhvcmbNfMiAmH",
+                "quote_content": "The problem is, after paying their expenses, most people don\u2019t have any money left to do save/invest. The reason is because they consider saving, tithing, and investing as a last priority.",
+                "quote_categories": [
+                    "money",
+                    "investment",
+                    "saving"
+                ],
+                "book": {
+                    "book_id": "rich-dad-increase-your-financial-iq",
+                    "title": "Rich Dad's Increase Your Financial IQ: Get Smarter with Your Money",
+                    "author": "Robert T. Kiyosaki",
+                    "tags": [
+                        "money",
+                        "investment",
+                        "risk"
+                    ],
+                    "purchase_link": "https://amzn.to/3Qn6ojI"
+                }
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Get all available tags for self-help quotes",
+            "url": "https://self-help-quotes.p.rapidapi.com/tags",
+            "description": "List all available tags for the hand-picked self-help quotes",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://self-help-quotes.p.rapidapi.com/tags\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"self-help-quotes.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://self-help-quotes.p.rapidapi.com/tags\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"self-help-quotes.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per second for your plan, BASIC, by the API provider"
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Get all available self-help books",
+            "url": "https://self-help-quotes.p.rapidapi.com/books",
+            "description": "Get a list of all available books in addition to the total count of quotes available from that book",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://self-help-quotes.p.rapidapi.com/books\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"self-help-quotes.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://self-help-quotes.p.rapidapi.com/books\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"self-help-quotes.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "book_id": "psychology-of-money",
+                    "title": "The Psychology of Money: Timeless Lessons on Wealth, Greed, and Happiness",
+                    "author": "Morgan Housel",
+                    "tags": [
+                        "money",
+                        "investment"
+                    ],
+                    "purchase_link": "https://amzn.to/3X8Hfv7",
+                    "quotes_count": 80
+                },
+                {
+                    "book_id": "4hr-work-week",
+                    "title": "The 4-Hour Workweek: Escape 9-5, Live Anywhere, and Join the New Rich",
+                    "author": "Timothy (Tim) Ferriss",
+                    "tags": [
+                        "money",
+                        "investment",
+                        "lifestyle"
+                    ],
+                    "purchase_link": "https://amzn.to/3vIAlBb",
+                    "quotes_count": 68
+                },
+                {
+                    "book_id": "rich-dad-increase-your-financial-iq",
+                    "title": "Rich Dad's Increase Your Financial IQ: Get Smarter with Your Money",
+                    "author": "Robert T. Kiyosaki",
+                    "tags": [
+                        "money",
+                        "investment",
+                        "risk"
+                    ],
+                    "purchase_link": "https://amzn.to/3Qn6ojI",
+                    "quotes_count": 57
+                },
+                {
+                    "book_id": "the-road-less-traveled",
+                    "title": "The Road Less Traveled",
+                    "author": "M. Scott Peck",
+                    "tags": [
+                        "life",
+                        "lifestyle",
+                        "discipline"
+                    ],
+                    "purchase_link": "https://amzn.to/3HZVwpr",
+                    "quotes_count": 34
+                },
+                {
+                    "book_id": "too-soon-old-too-late-smart",
+                    "title": "Too Soon Old, Too Late Smart: Thirty True Things You Need to Know Now",
+                    "author": "Gordon Livingston",
+                    "tags": [
+                        "truth",
+                        "lifestyle",
+                        "discipline",
+                        "happiness"
+                    ],
+                    "purchase_link": "https://amzn.to/3HE7bIW",
+                    "quotes_count": 26
+                },
+                {
+                    "book_id": "ikigai",
+                    "title": "Ikigai: The Japanese Secret to a Long and Happy Life",
+                    "author": "H\u00e9ctor Garc\u00eda and Francesc Miralles",
+                    "tags": [
+                        "life",
+                        "health"
+                    ],
+                    "purchase_link": "https://amzn.to/3D92K7E",
+                    "quotes_count": 21
+                },
+                {
+                    "book_id": "the-biggest-bluff",
+                    "title": "The Biggest Bluff: How I Learned to Pay Attention, Master Myself, and Win",
+                    "author": "Maria Konnikova",
+                    "tags": [
+                        "bets",
+                        "productivity",
+                        "statistics"
+                    ],
+                    "purchase_link": "https://amzn.to/3ZUD6xh",
+                    "quotes_count": 16
+                },
+                {
+                    "book_id": "quiet",
+                    "title": "Quiet",
+                    "author": "Susan Cain",
+                    "tags": [
+                        "introverts"
+                    ],
+                    "purchase_link": "https://amzn.to/3kEjcXe",
+                    "quotes_count": 14
+                },
+                {
+                    "book_id": "tools-of-titans",
+                    "title": "Tools of Titans",
+                    "author": "Timothy (Tim) Ferriss",
+                    "tags": [
+                        "money",
+                        "productivity",
+                        "habits",
+                        "lifestyle"
+                    ],
+                    "purchase_link": "https://amzn.to/3XU2zVw",
+                    "quotes_count": 12
+                },
+                {
+                    "book_id": "turning-pro",
+                    "title": "Turning Pro: Tap Your Inner Power and Create Your Life's Work",
+                    "author": "Steven Pressfield",
+                    "tags": [
+                        "time",
+                        "productivity"
+                    ],
+                    "purchase_link": "https://amzn.to/3XvARyB",
+                    "quotes_count": 10
+                },
+                {
+                    "book_id": "power-of-full-engagement",
+                    "title": "The Power of Full Engagement: Managing Energy, Not Time, Is the Key to High Performance and Personal Renewal",
+                    "author": "Jim Loehr and Tony Schwartz",
+                    "tags": [
+                        "time",
+                        "productivity",
+                        "time-management",
+                        "energy-management"
+                    ],
+                    "purchase_link": "https://amzn.to/3Hs7LKU",
+                    "quotes_count": 8
+                }
+            ],
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Get a random self-help quote",
+            "url": "https://self-help-quotes.p.rapidapi.com/random",
+            "description": "Get a random hand-picked self-help quote in addition to its tags and the book it was taken from",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://self-help-quotes.p.rapidapi.com/random\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"self-help-quotes.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://self-help-quotes.p.rapidapi.com/random\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"self-help-quotes.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per second for your plan, BASIC, by the API provider"
+            },
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "self_help_quotes"
+}

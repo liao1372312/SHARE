@@ -1,0 +1,114 @@
+{
+    "product_id": "api_c7dd78af-a868-45c4-bbf6-900bd9785826",
+    "tool_description": "Portuguese postcode lookup",
+    "home_url": "https://rapidapi.com/johnny-dev-johnny-dev-default/api/pt-postcodes/",
+    "name": "PT Postcodes",
+    "title": "PT Postcodes",
+    "pricing": "FREEMIUM",
+    "tool_name": "PT Postcodes",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 8,
+        "avgSuccessRate": 100,
+        "popularityScore": 7.9,
+        "__typename": "Score"
+    },
+    "host": "pt-postcodes.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Get addresses by postcode",
+            "url": "https://pt-postcodes.p.rapidapi.com/pt/address/3750/016",
+            "description": "Get the list of addresses/street by specifying the postcode",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "cp4",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "3750"
+                },
+                {
+                    "name": "cp3",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "016"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://pt-postcodes.p.rapidapi.com/pt/address/3750/016\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"pt-postcodes.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://pt-postcodes.p.rapidapi.com/pt/address/{cp4}/{cp3}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"pt-postcodes.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "id": "632893112d01b72c1c989c4e",
+                    "district": "Aveiro",
+                    "council": "\u00c1gueda",
+                    "locality": "Guistolinha",
+                    "cp4": "3750",
+                    "cp3": "016",
+                    "postalName": "AGAD\u00c3O"
+                }
+            ],
+            "statuscode": 200,
+            "schema": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "artId": {
+                            "type": "string"
+                        },
+                        "artLocal": {
+                            "type": "string"
+                        },
+                        "artName": {
+                            "type": "string"
+                        },
+                        "artTitle": {
+                            "type": "string"
+                        },
+                        "artType": {
+                            "type": "string"
+                        },
+                        "client": {
+                            "type": "string"
+                        },
+                        "council": {
+                            "type": "string"
+                        },
+                        "cp3": {
+                            "type": "string"
+                        },
+                        "cp4": {
+                            "type": "string"
+                        },
+                        "district": {
+                            "type": "string"
+                        },
+                        "firstPrep": {
+                            "type": "string"
+                        },
+                        "id": {
+                            "type": "string"
+                        },
+                        "locality": {
+                            "type": "string"
+                        },
+                        "number": {
+                            "type": "string"
+                        },
+                        "postalName": {
+                            "type": "string"
+                        },
+                        "secondPrep": {
+                            "type": "string"
+                        },
+                        "trocoDescription": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "standardized_name": "pt_postcodes"
+}

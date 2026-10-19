@@ -1,0 +1,32 @@
+{
+"user_query":"I want to surprise my partner with a romantic date night. Can you suggest some unique and intimate date ideas? Also, find me a list of local restaurants with candlelight dinner options. Additionally, I need to book a table for the date. Provide me with a short URL for table reservations.",
+"domain":"Tourism",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Generate unique and intimate date ideas for a romantic evening.",
+        "domain": "tourism",
+        "required_inputs": []
+    },
+    {
+        "id": 2,
+        "description": "Search for local restaurants that offer candlelight dinner options.",
+        "domain": "tourism",
+        "required_inputs": []
+    },
+    {
+        "id": 3,
+        "description": "Book a table at the selected restaurant for the date night.",
+        "domain": "tourism",
+        "required_inputs": ["restaurant_id", "date_time", "number_of_people"],
+        "dependency": 2
+    },
+    {
+        "id": 4,
+        "description": "Generate a short URL for the table reservation confirmation.",
+        "domain": "technology",
+        "required_inputs": ["reservation_confirmation_link"],
+        "dependency": 3
+    }
+]
+}

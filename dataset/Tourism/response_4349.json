@@ -1,0 +1,26 @@
+{
+"user_query":"I am planning a road trip from Seattle to Portland next week. Can you provide me with the current gas prices in Washington state? Additionally, I would like to know the train schedule between Seattle and Portland on the day of my journey. Lastly, could you suggest some good hotels in Portland for a comfortable stay? Thank you!",
+"domain":"Tourism",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Retrieve the current gas prices in Washington state.",
+        "domain": "travel",
+        "required_inputs": ["state"]
+    },
+    {
+        "id": 2,
+        "description": "Fetch the train schedule between Seattle and Portland for the chosen date.",
+        "domain": "travel",
+        "required_inputs": ["departure_city", "arrival_city", "travel_date"],
+        "dependencies": [1]
+    },
+    {
+        "id": 3,
+        "description": "Suggest good hotels in Portland based on customer reviews and comfort level.",
+        "domain": "travel",
+        "required_inputs": ["destination_city", "hotel_preference"],
+        "dependencies": [2]
+    }
+]
+}

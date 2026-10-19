@@ -1,0 +1,661 @@
+{
+    "product_id": "api_4ccddc78-8b7f-4e2a-b5eb-19f941fb65de",
+    "tool_description": "This API gives access to informations about a User / Channel, and Streams on Twitch.",
+    "home_url": "https://rapidapi.com/kingsizeblock/api/gwyo-twitch/",
+    "name": "gwyo-twitch",
+    "title": "gwyo-twitch",
+    "pricing": "FREEMIUM",
+    "tool_name": "gwyo-twitch",
+    "score": {
+        "avgServiceLevel": 98,
+        "avgLatency": 976,
+        "avgSuccessRate": 97,
+        "popularityScore": 9.8,
+        "__typename": "Score"
+    },
+    "host": "gwyo-twitch.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Get m3u8 Links",
+            "url": "https://gwyo-twitch.p.rapidapi.com/m3u8/samueletienne",
+            "description": "Get All resolutions m3u8 link URLs if the status is Online (by username or id)\n( return an empty JSON object if not currently LIVE )",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "userId",
+                    "type": "string",
+                    "description": "",
+                    "default": "samueletienne"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://gwyo-twitch.p.rapidapi.com/m3u8/samueletienne\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"gwyo-twitch.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://gwyo-twitch.p.rapidapi.com/m3u8/{userid}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"gwyo-twitch.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "quality": "1080p60 (source)",
+                    "resolution": "1920x1080",
+                    "url": "https://video-weaver.lhr03.hls.ttvnw.net/v1/playlist/CtEEKBhFpObclFYW-l0NlGbMaNo1VYvGwda_Ns7cjguNSmFGkuexxlXTUmEMcn3Owx8dWCekQnZ93eTk4JwBEblfgJC05hxCpmcI9QhLz9-d0D5cnDYa413vmWOEWKQtV0eVE-oX6UHWcNQRVqbf7hPuZsygBq7c6CdHro2HlOx7YQbalUXGP7hZ5wtIemo_J_x_6Lb3T_ks0JGiaWUiuw-2KQafmxi7UWYHON2I03YJYoUzwRbZDdRb2xNRtKUYGrV8uiPlNm8D2T1ZZ95HFk092Jd-48mtdTcBXL5HpTHMTqnR3s_i-YVn_m05D5_9-wELKQQ3XAwR7qVI8-Sn2X9zhaGkQlQAQ9D8Jd1EC5SyZOi3JSBF4bGtCn7-IXw6mbY6lBSJetKqV-aXYWY-59MweepVgzEmsehPeVg5CFmsZptO3DXx1BN4zpdPDDgPCdxMQtQDIQiaNoL-VpynAQOFS6KxrA7U8YPx3anZHeVmL08JLYIZHl4Mq_457rIfJ9Qdttle-Bl0RU9_kmscYA91J6aOc_Hqgze-Gr13WJRPiECIKcCds88uS8yIrrKnhgIYJMU5rVtaap2XmLRQ4VEHbwd2rDABqsfcJRTrIz6OTFmp6b25Ud09J3cnbUfI312IeYrdfnQXd_p9bzzbLzcD1M2n9foIjDWFkgRh64Hqmr81JmFwM7Kmaz39DmKaF6KYyxLqavm2NCmi9og_EvlZEWtTmHVr08M3MYIQsScV7vkNeIFdVW0MuzbRW3ZBbnrv8iwD3vAWG4fIUKZ9MmchRYgaDG1E1PSoENu63F1JdSABKglldS13ZXN0LTIw6QY.m3u8"
+                },
+                {
+                    "quality": "720p60",
+                    "resolution": "1280x720",
+                    "url": "https://video-weaver.lhr03.hls.ttvnw.net/v1/playlist/Cs8Emrc1my2BUL_MUV9i9ZACMukU7ybS-RAixlqPvFgA84WdyakaRc1Pb5y-H--HPJZJU0giyMZMCXtusBNSe-fqjUbNcn8VoMGzyrHf5cOOmCd5AiNuKMB6fPdnL5Q7OqvTB5rkWNrvmZNKoOo6bzeqEQbv6ofO0tdZRAOiH3-FKwvjeX4PIoxtdOVYhipereVqd_rUF5LzX6RvhiOKyddrbNw772Av6v8UOPAKdWxwAmv7pdYcsXEDKKvtp0iIb0ZHQc7HN3mvUlxrh45fw8_d6T6OHI4XBhL9amo59L0UaAej-KEgOz-RmJwjRA4IHmFd9PZhbBWmlRHACyHzDGPKNxnJ2ZeFYjbtu1JPLhyA_I20Qpnje_T4RcQk7s90njfqRISWNa9P2STzBARArSxcKOIay_Gb448cFEewpAB-9J_HsFbfaduV21z227U7y4_iv8E7LMHrlxZLq8ToZis1_Wo3DuiiZ-uP52v1r1NLsihJnqCjXisb4S2oJ_Yt-AMWuVBnWBFsajP7Jk0NRZvtqqyuVQ6SqlImZcoY8dIMPwG-TAx91YuIa_s8jHCTDZZfeVgT_LmrnZGvU36Ra4OJEoojHMtOlHLmuSUJLXivcCgXZbK1vlyju801TrKI2QTLyqDM1bdcqUVxBVOmb1CTDU5N3vykKYVJhVWmts6KYDCmc2k_6BaJa1VI4cNNxIitWCYvyk833xw6VhR_25h4GntghNFluD6Y-R_rA2ZZGRqfTL8-cDTtUOKt_hQqQFuvcruRbcPoi3JL5dE_PqGvGgx-gkwHHwsTzrkG_-UgASoJZXUtd2VzdC0yMOkG.m3u8"
+                },
+                {
+                    "quality": "480p",
+                    "resolution": "852x480",
+                    "url": "https://video-weaver.lhr03.hls.ttvnw.net/v1/playlist/Cs8ESbx7n4kFEeEUPT_NVMaBCsPisOcdtOs6tDuJJthAFLiDdOQfl3sruAC04oo87L1jQchL6nvIOTirOwp3iQxWVpPN_DMUIIUbn7cFfdM3pa-sOUhqdgpfMS2mFHycLX_qcmnH1eFo1wuFHZVD1ZsZl7XRNwxq4OjRbo9uRc6rVaZ6omIRIKZiLMb7Oi6yq8UGNem8hegCsg0gIaArBqAzP26Us2eAPMueQ7HTF7A7sOgK8J0cUrcnt2Re23nDhMHgiUn2FSjZBwhS8zd4q1oRPkxo5Kmz20zXkD9p4OWmGOdJEnU6K2XBQor8LFiccQ7rjWk3XV1UjMEfZDTu4gsMUfChol4hpao1OhV5AdvdqVLe9lwDQu10va9msKxnbxNgLcxHTJjqU7zE6Wb6UtCuIRv9YBNvKRSey4wJdCCZTeBqjmL4iw3Jpv5hVuwLk3ouFjdkLbThhFZuHjxMGte5NHAMnQXh1zzgRly-Ir0zJjbEWd-iUHIoEPLriwvrYH99riPsn63iX5hHVHZCGir5jqtKRkRsDErdvKwXyEf_5TrYKuUXAIy3a3tm9Mmta2FmtaUmKEh0IzUHWbfyZiYyAfx5V4kyPOnjIn97NVQoaa7IH5dENS_ukgd47j6OeOFBQhSXzQHpFdWQ62Q87zgzJzr7Ai7AqMtWthveyyvNSL-VSUmnrG7OXObwSSICWyeXcYN16xsd822TFF0drSJ2fD6rz24tjxU7A5vuv13S8ZSrxSyKS_Pvm7AyUJ95v-yvT8GJWeShPKT63n7mnBkrGgwyrZQ3YilKMKUwnBYgASoJZXUtd2VzdC0yMOkG.m3u8"
+                },
+                {
+                    "quality": "360p",
+                    "resolution": "640x360",
+                    "url": "https://video-weaver.lhr03.hls.ttvnw.net/v1/playlist/Cs8E0_RSbC7wzewYQOkVQDV3PCmL2gBY_VAHMontdZsPzXESt3BGC6hE5DKg6n-85KIjCy1yoQmGnhwFlLVlnk68kPazUOCPAzDQsV5xtNevMRYTiiiuCKGBxG0C6141lEJO9PxgDbxjXVdXdMPhaCMyhVXNhml-UPCWDfhBT0pkr34dKHlWwictFNaGl10yQVSgGVWL3vKvSeNyeHtGL6jl6nk6vc1JsdSeFfbOKOys4myIObLy4ozy5pkrdA1WhqCPsbDJLGHtemLviZgcosfaR3DkkR3GF5RxAazw6fiBwY5_mzS1hDwWpr_vudT1CVOxqnW7E0tMOCc7h9RyFzICAomNYvZtKcQX8iyxBXYbtN0NMKSzKVEymRW4duPeSebEYHamqP2exZ_XX6v7yg0gtSJSeqr_nMNSXi_GWGZvMx4cVtAApA7VlgEKj7dlCUbDSNdS8cqUwLi_aDzd3tMmxue-6Nvks0dxlaHE7v0g1kTgqcqvyF20T-_7VveNGzTbrmjannsOVoDe0_nuZdrsGR7ZO9c5lCOlwGA6oWkj-SM7783WsFb6DHPumcDo35_SfC9XKyUeIIXrMooh222H446276yH0npLRGZ5cLNIt06ZbH7hzCZDuwVCfpgxGnLeN9L8pHSeCrl1KgE2EYi9joBM9afgUXyF-agXGIWA6yBTA_uXvLUXRycpnE4WaX5XPoCWOael8O9uMsg7LirGNJs5p-EZOVPwhSzTNofOVLzPB3zwoyfcz8sO-oi4ncCdwAXFVL-Nehhep4E_FIdXGgyqpqoWT1eQydp4fawgASoJZXUtd2VzdC0yMOkG.m3u8"
+                },
+                {
+                    "quality": "160p",
+                    "resolution": "284x160",
+                    "url": "https://video-weaver.lhr03.hls.ttvnw.net/v1/playlist/Cs8EZwVXExdt_9WZsGpQem8ck8JXSPfH_3GfFTpbp6j75YY1D7Oca-qAIsGE88thXbCCmy_p9XdrQA3Lpk9BT2qg_rxmzRMViW7n9sE-_CiXNd_WQed-mghrdRkz9O8pvJR69umU-lZ3G06khd1NYoJAjZfgB1Jkqqmc2i6ZJHIlSITnTC3Kjp6iT6I4ZTT62h5RQUHPwHIxVlCRQtJd2l4A9LXvw15eo_CgDT1S4Hths9JEXG6NfIoihorR6viFmhWhY8Pzsgqg0i5N7meLc60UMnAvV7mQ7KVRkg6U4W8l_b7V8Hhz7YoMxEitvVbtZC1ukTZoGHGmm6EREVlV90b0ut8knmR9NzLcH4Hclxek4BhNqzIb48fnuzbOh5Bu5nQHK4MYl3W3X713cd6hgIUl_HZIZn416PcDuUUWlOagvOn7zSjtgXTtA_m03-IRmNGT4wjjQrDBr1bLZiukh2ubJrXlMw5EODvRIAbbpYHB4ynxrPx7ApnXeUdXAKZYHfUxkDZ-OMNpSQmamJfL3pSbk2b_wGPcurTskC3qwamzHP6PCkBvGsZC8A8y2lNxv3Efz5f6I_pfqpISRM3ZUizAx8yYGR_gGlGndwalz85iqfp_Sq3fgpZ9BalSmqlDIjOzSrwQcdiT6nJWBqxdeZOL9esFZiqGOjTaGZupKvvL_wWiBDeWy4OXeUmShfhOmcUFLpybWPv-XhFnd66WvBCHUinNmL6hmiOg-ZMZ4Hym7jLowfzzx05JHEs2q0zTBiD-bWUzk0Bu3NavMkPO2DjxGgxMm0-9kK56hehoXLsgASoJZXUtd2VzdC0yMOkG.m3u8"
+                },
+                {
+                    "quality": "audio_only",
+                    "resolution": null,
+                    "url": "https://video-weaver.lhr03.hls.ttvnw.net/v1/playlist/CtEE7kW7Tjk-8ZApzVSJwTOXJM7uXMnU45uiW59Al_IGLoU-LndSF6xU0PQwoTjBSuAeyQcsH51BHUMBn1UbO8Id9u9DrxaZF7e1L_1AcwibaQSr92XXbKF09rxfe6-TSCzbAcjzcpv5KXVSwaeQFXRtbgkkwj2S6DbXiHebM1hoPeTemJXw_syRdh3ktyjuoAYu264rjC2f_C-aymC4fUZ4BwrNqmdqmGavPzSiq58iTnK8uzrpXOUz7tF7-LUia4rUA6bMUb3b7WKkrzJb5Z7bt6n6cm-RtrurVKBIBlAVpU6A-qZ_3mznvoltfKZJbTP_LmZQ0gIMwVtEXXB1DEwPcc5sE8okNxfYtRjjxsAjC7wtY0xyrrgjBYX1q5aun3d9K3T--efLEIf1Aof0gTzIdU9Uob_pOXZZsuUlGjLXz2nYp5FZz_4fdS8W_feReRyKTjv8PQR6VU-ZRxoGXCgwsYBG6t7tkli7Put3sEMjreACr9d7XlOi4TjZX0QB9xWcpQEO2frAn5rsGpaPVGG-09B0KpJMJs2jjDn7V6WUiPLviqKZFNDgc_HdRvrUPHgbY3fcv4_GKb2G1nxa6ZqaEqiYkxpiOOfaMGXarts8ik0G2SoLhOSLdcdlx_7G_Ed1BwDY1XcKPSXj6sIFoWodeL6uHpJsrQWnv_fi4uz3Qov2zucKQydQ4bfMQk9G9s9ZXOp_2H-PH-qdUjsGHYgObuqjooQ213fBII7vZoi5I0wvqvusi_oQHSoRnbDFWCLk72tGxilOoWyqn0w438EfxlYaDIW4gkKRrbfSmRggISABKglldS13ZXN0LTIw6QY.m3u8"
+                }
+            ],
+            "statuscode": 200,
+            "schema": {
+                "type": "array",
+                "items": {
+                    "type": "object"
+                }
+            }
+        },
+        {
+            "name": "[NEW] Get Channel Followers Count",
+            "url": "https://gwyo-twitch.p.rapidapi.com/followerscount/zerator",
+            "description": "Get Channel Followers Count",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "userId",
+                    "type": "string",
+                    "description": "",
+                    "default": "zerator"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://gwyo-twitch.p.rapidapi.com/followerscount/zerator\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"gwyo-twitch.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://gwyo-twitch.p.rapidapi.com/followerscount/{userid}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"gwyo-twitch.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "followers_count": 1530456
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "followers_count": {
+                        "type": "integer"
+                    }
+                }
+            }
+        },
+        {
+            "name": "Get Channel Profile Pic HTML Element",
+            "url": "https://gwyo-twitch.p.rapidapi.com/userpic-img/Twitch",
+            "description": "Get Channel Profile Pictures as a HTML Element with <img/> tag (using username or id)\n( Sizes: 150x150, 300x300, 600x600 )",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "userId",
+                    "type": "string",
+                    "description": "",
+                    "default": "Twitch"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://gwyo-twitch.p.rapidapi.com/userpic-img/Twitch\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"gwyo-twitch.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://gwyo-twitch.p.rapidapi.com/userpic-img/{userid}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"gwyo-twitch.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "img_element": {
+                    "smallProfilePicture": "<img src='https://static-cdn.jtvnw.net/jtv_user_pictures/7f264cd5-7a34-4083-a0c7-eb1b01076499-profile_image-150x150.png' alt='thumbnail' />",
+                    "mediumProfilePicture": "<img src='https://static-cdn.jtvnw.net/jtv_user_pictures/7f264cd5-7a34-4083-a0c7-eb1b01076499-profile_image-300x300.png' alt='thumbnail' />",
+                    "bigProfilePicture": "<img src='https://static-cdn.jtvnw.net/jtv_user_pictures/7f264cd5-7a34-4083-a0c7-eb1b01076499-profile_image-600x600.png' alt='thumbnail' />"
+                }
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "img_element": {
+                        "type": "object",
+                        "properties": {
+                            "smallProfilePicture": {
+                                "type": "string"
+                            },
+                            "mediumProfilePicture": {
+                                "type": "string"
+                            },
+                            "bigProfilePicture": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Get Channel Profile Pic URL",
+            "url": "https://gwyo-twitch.p.rapidapi.com/userpic/Twitch",
+            "description": "Get Channel Profile Picture's URL (using username or id)\n( Sizes: 150x150, 300x300, 600x600 )",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "userId",
+                    "type": "string",
+                    "description": "",
+                    "default": "Twitch"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://gwyo-twitch.p.rapidapi.com/userpic/Twitch\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"gwyo-twitch.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://gwyo-twitch.p.rapidapi.com/userpic/{userid}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"gwyo-twitch.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "img_urls": {
+                    "smallProfilePicture": "https://static-cdn.jtvnw.net/jtv_user_pictures/7f264cd5-7a34-4083-a0c7-eb1b01076499-profile_image-150x150.png",
+                    "mediumProfilePicture": "https://static-cdn.jtvnw.net/jtv_user_pictures/7f264cd5-7a34-4083-a0c7-eb1b01076499-profile_image-300x300.png",
+                    "bigProfilePicture": "https://static-cdn.jtvnw.net/jtv_user_pictures/7f264cd5-7a34-4083-a0c7-eb1b01076499-profile_image-600x600.png"
+                }
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "img_urls": {
+                        "type": "object",
+                        "properties": {
+                            "smallProfilePicture": {
+                                "type": "string"
+                            },
+                            "mediumProfilePicture": {
+                                "type": "string"
+                            },
+                            "bigProfilePicture": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Get Stream Preview Url",
+            "url": "https://gwyo-twitch.p.rapidapi.com/preview/Twitch/350/200",
+            "description": "Get the Last Picture Preview's Url from a Live Stream\n( using optional width or width/height )\n( return an empty JSON object if not currently LIVE )",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "userId",
+                    "type": "string",
+                    "description": "",
+                    "default": "Twitch"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "width",
+                    "type": "NUMBER",
+                    "description": "width ( in px ) between 144 and 2048\n( default: 256px )",
+                    "default": "350"
+                },
+                {
+                    "name": "height",
+                    "type": "NUMBER",
+                    "description": "height ( in px ) between 81 and 1152\nauto adjust with the width if not specified",
+                    "default": "200"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://gwyo-twitch.p.rapidapi.com/preview/Twitch/350/200\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"gwyo-twitch.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://gwyo-twitch.p.rapidapi.com/preview/{userid}/{width}/{height}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"gwyo-twitch.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {},
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "preview_url": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        {
+            "name": "Get Stream Preview as HTML Element",
+            "url": "https://gwyo-twitch.p.rapidapi.com/preview-img/Twitch/350/200",
+            "description": "Get the Last Picture Preview as a HTML Element from a Live Stream\n( using optional width or width/height )\n( return an empty JSON object if not currently LIVE )",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "userId",
+                    "type": "string",
+                    "description": "",
+                    "default": "Twitch"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "width",
+                    "type": "NUMBER",
+                    "description": "width ( in px ) between 144 and 2048\n( default: 256px )",
+                    "default": "350"
+                },
+                {
+                    "name": "height",
+                    "type": "NUMBER",
+                    "description": "height ( in px ) between 81 and 1152\nauto adjust to the width if not specified",
+                    "default": "200"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://gwyo-twitch.p.rapidapi.com/preview-img/Twitch/350/200\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"gwyo-twitch.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://gwyo-twitch.p.rapidapi.com/preview-img/{userid}/{width}/{height}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"gwyo-twitch.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {},
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "preview_element": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        {
+            "name": "Get Stream Game Name",
+            "url": "https://gwyo-twitch.p.rapidapi.com/game/xqcow",
+            "description": "Get  Stream Game Name (by username or id)\n( return an empty JSON object if not currently LIVE )",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "userId",
+                    "type": "string",
+                    "description": "",
+                    "default": "xqcow"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://gwyo-twitch.p.rapidapi.com/game/xqcow\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"gwyo-twitch.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://gwyo-twitch.p.rapidapi.com/game/{userid}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"gwyo-twitch.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "game_name": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        {
+            "name": "Get Stream Mature Content Status",
+            "url": "https://gwyo-twitch.p.rapidapi.com/mature/julie",
+            "description": "Get Stream Mature Content Status (using username or id)\n( return an empty JSON object if not currently LIVE )",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "userId",
+                    "type": "string",
+                    "description": "",
+                    "default": "julie"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://gwyo-twitch.p.rapidapi.com/mature/julie\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"gwyo-twitch.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://gwyo-twitch.p.rapidapi.com/mature/{userid}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"gwyo-twitch.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {},
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "mature": {
+                        "type": "boolean"
+                    }
+                }
+            }
+        },
+        {
+            "name": "Get Stream Number of Viewers",
+            "url": "https://gwyo-twitch.p.rapidapi.com/viewers/pepipin",
+            "description": "Get Stream Number of Viewers (using username or id)\n( return an empty JSON object if not currently LIVE )",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "userId",
+                    "type": "string",
+                    "description": "",
+                    "default": "pepipin"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://gwyo-twitch.p.rapidapi.com/viewers/pepipin\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"gwyo-twitch.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://gwyo-twitch.p.rapidapi.com/viewers/{userid}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"gwyo-twitch.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {},
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "viewers": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        {
+            "name": "Get All Active Stream Infos",
+            "url": "https://gwyo-twitch.p.rapidapi.com/stream/asmongold",
+            "description": "Get a Stream Informations if the status is Online (by username or id)\n( return an empty JSON object if not currently LIVE )",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "userId",
+                    "type": "string",
+                    "description": "Username or Id can be used as UserId",
+                    "default": "asmongold"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://gwyo-twitch.p.rapidapi.com/stream/asmongold\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"gwyo-twitch.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://gwyo-twitch.p.rapidapi.com/stream/{userid}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"gwyo-twitch.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {},
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "user_id": {
+                        "type": "string"
+                    },
+                    "user_login": {
+                        "type": "string"
+                    },
+                    "user_name": {
+                        "type": "string"
+                    },
+                    "game_id": {
+                        "type": "string"
+                    },
+                    "game_name": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "string"
+                    },
+                    "title": {
+                        "type": "string"
+                    },
+                    "viewer_count": {
+                        "type": "integer"
+                    },
+                    "started_at": {
+                        "type": "string"
+                    },
+                    "language": {
+                        "type": "string"
+                    },
+                    "thumbnail_url": {
+                        "type": "string"
+                    },
+                    "tag_ids": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "is_mature": {
+                        "type": "boolean"
+                    },
+                    "game_img": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        {
+            "name": "Get Stream Language",
+            "url": "https://gwyo-twitch.p.rapidapi.com/lang/xqcow",
+            "description": "Get Stream Language (using username or id)\n( return an empty JSON object if not currently LIVE )",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "userId",
+                    "type": "string",
+                    "description": "",
+                    "default": "xqcow"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://gwyo-twitch.p.rapidapi.com/lang/xqcow\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"gwyo-twitch.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://gwyo-twitch.p.rapidapi.com/lang/{userid}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"gwyo-twitch.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "language": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        {
+            "name": "Get All Channel Infos",
+            "url": "https://gwyo-twitch.p.rapidapi.com/user/samueletienne",
+            "description": "Get Channel Infos (by username or id)",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "userId",
+                    "type": "string",
+                    "description": "",
+                    "default": "samueletienne"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://gwyo-twitch.p.rapidapi.com/user/samueletienne\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"gwyo-twitch.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://gwyo-twitch.p.rapidapi.com/user/{userid}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"gwyo-twitch.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "id": "505902512",
+                "login": "samueletienne",
+                "display_name": "samueletienne",
+                "type": "",
+                "broadcaster_type": "partner",
+                "description": "Le projet est simple : proposer sur Twitch plein d'\u00e9missions dont les titres sont des jeux de mots totalement claqu\u00e9s au sol \u00e0 partir de mon nom de famille : La Matin\u00e9e Est Tienne, L'Hebdo Est Tienne, La Rencontre Est Tienne, L'Exposition Est Tienne. Tu l'as ? Bravo, tu peux faire partie de la commu",
+                "profile_image_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/6a421038-d455-41ed-9705-b32909ca182a-profile_image-300x300.png",
+                "offline_image_url": "",
+                "view_count": 0,
+                "created_at": "2020-03-30T08:43:39Z"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "login": {
+                        "type": "string"
+                    },
+                    "display_name": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "string"
+                    },
+                    "broadcaster_type": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "profile_image_url": {
+                        "type": "string"
+                    },
+                    "offline_image_url": {
+                        "type": "string"
+                    },
+                    "view_count": {
+                        "type": "integer"
+                    },
+                    "created_at": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        {
+            "name": "Get Channel Description",
+            "url": "https://gwyo-twitch.p.rapidapi.com/description/julie",
+            "description": "Get Channel Description (using username or id)",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "userId",
+                    "type": "string",
+                    "description": "",
+                    "default": "julie"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://gwyo-twitch.p.rapidapi.com/description/julie\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"gwyo-twitch.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://gwyo-twitch.p.rapidapi.com/description/{userid}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"gwyo-twitch.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "description": "Can't stop the buzz \ud83d\udc1d"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "description": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        {
+            "name": "Get Channel Total Views",
+            "url": "https://gwyo-twitch.p.rapidapi.com/views/julie",
+            "description": "Get Channel Cumulated Views since its creation (using username or id)",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "userId",
+                    "type": "string",
+                    "description": "",
+                    "default": "julie"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://gwyo-twitch.p.rapidapi.com/views/julie\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"gwyo-twitch.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://gwyo-twitch.p.rapidapi.com/views/{userid}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"gwyo-twitch.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "total_views": "0"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "total_views": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        {
+            "name": "Get Channel Broadcaster Type",
+            "url": "https://gwyo-twitch.p.rapidapi.com/type/julie",
+            "description": "Get Channel Broadcaster Type (using username or id)",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "userId",
+                    "type": "string",
+                    "description": "",
+                    "default": "julie"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://gwyo-twitch.p.rapidapi.com/type/julie\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"gwyo-twitch.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://gwyo-twitch.p.rapidapi.com/type/{userid}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"gwyo-twitch.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "broadcaster_type": "partner"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "broadcaster_type": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        {
+            "name": "Get Stream Title",
+            "url": "https://gwyo-twitch.p.rapidapi.com/title/xqcow",
+            "description": "Get Stream Title (using username or id)\n( return an empty JSON object if not currently LIVE )",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "userId",
+                    "type": "string",
+                    "description": "",
+                    "default": "xqcow"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://gwyo-twitch.p.rapidapi.com/title/xqcow\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"gwyo-twitch.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://gwyo-twitch.p.rapidapi.com/title/{userid}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"gwyo-twitch.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "title": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        {
+            "name": "Get Channel Username by Id",
+            "url": "https://gwyo-twitch.p.rapidapi.com/username/192352389",
+            "description": "Get Channel Username by Id",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "userId",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "192352389"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://gwyo-twitch.p.rapidapi.com/username/192352389\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"gwyo-twitch.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://gwyo-twitch.p.rapidapi.com/username/{userid}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"gwyo-twitch.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "username": "Julie"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "username": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    ],
+    "standardized_name": "gwyo_twitch"
+}

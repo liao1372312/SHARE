@@ -1,0 +1,38 @@
+{
+"user_query":"I'm planning to start investing in the stock market and I need some insights on the performance of Facebook stock. Can you fetch the filtered time-series data for Facebook stock and provide me with the latest news articles related to the stock market? Additionally, recommend some hotels near my location for a comfortable stay during my investment journey.",
+"domain":"Cross-Domain",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Fetch filtered time-series data for Facebook stock performance.",
+        "domain": "finance",
+        "required_inputs": ["stock_symbol", "date_range", "filter_criteria"]
+    },
+    {
+        "id": 2,
+        "description": "Fetch the latest news articles related to the stock market.",
+        "domain": "finance",
+        "required_inputs": ["query", "source", "date_range"]
+    },
+    {
+        "id": 3,
+        "description": "Retrieve the user's current location to find nearby hotels.",
+        "domain": "tourism",
+        "required_inputs": ["user_location"]
+    },
+    {
+        "id": 4,
+        "description": "Recommend hotels near the user's location for a comfortable stay.",
+        "domain": "tourism",
+        "required_inputs": ["user_location", "hotel_preferences"]
+    }
+],
+"dependencies": {
+    "step_dependencies": [
+        {
+            "step": 4,
+            "depends_on": 3
+        }
+    ]
+}
+}

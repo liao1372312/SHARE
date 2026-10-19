@@ -1,0 +1,745 @@
+{
+    "product_id": "api_79faf241-4396-4599-a23c-d520720c28a3",
+    "tool_description": "The Tanzania API provides endpoints to lookup locations, find facilities and perform geospatial operations such as distance calculation and directions between two locations in Tanzania.",
+    "home_url": "https://rapidapi.com/kidddevs/api/tanzania-api/",
+    "name": "Tanzania API",
+    "title": "Tanzania API",
+    "pricing": "FREEMIUM",
+    "tool_name": "Tanzania API",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 617,
+        "avgSuccessRate": 100,
+        "popularityScore": 8.7,
+        "__typename": "Score"
+    },
+    "host": "tanzania-api.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Measure Distance",
+            "url": "https://tanzania-api.p.rapidapi.com/distance",
+            "description": "This endpoint calculates the distance between two locations based on their latitude and longitude coordinates, while allowing the user to specify the unit of measurement.\n\nBelow Example: **Distance from Arusha to Dar es Salaam**",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "lon1",
+                    "type": "NUMBER",
+                    "description": "Longitude of the first location (required)",
+                    "default": "36.6880794"
+                },
+                {
+                    "name": "lon2",
+                    "type": "NUMBER",
+                    "description": "Longitude of the second location (required)",
+                    "default": "39.2694784"
+                },
+                {
+                    "name": "lat2",
+                    "type": "NUMBER",
+                    "description": "Latitude of the second location (required)",
+                    "default": "-6.7785166"
+                },
+                {
+                    "name": "lat1",
+                    "type": "NUMBER",
+                    "description": "Latitude of the first location (required)",
+                    "default": "-3.3696827"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "unit",
+                    "type": "STRING",
+                    "description": "Unit of distance measurement, valid options are **km** (default), **mi**, **ft**, and **yd**.\n",
+                    "default": "km"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://tanzania-api.p.rapidapi.com/distance\"\nquerystring = {\"lon1\": \"36.6880794\", \"unit\": \"km\", \"lon2\": \"39.2694784\", \"lat2\": \"-6.7785166\", \"lat1\": \"-3.3696827\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"tanzania-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://tanzania-api.p.rapidapi.com/distance\"\nquerystring = {\"lon1\": \"36.6880794\", \"unit\": \"km\", \"lon2\": \"39.2694784\", \"lat2\": \"-6.7785166\", \"lat1\": \"-3.3696827\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"tanzania-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "distance": "621.19km",
+                "duration": "8h 47min",
+                "unit": "km"
+            }
+        },
+        {
+            "name": "Geocode",
+            "url": "https://tanzania-api.p.rapidapi.com/geofy",
+            "description": "This endpoint allows you to lookup locations in Tanzania by providing an address query parameter. It returns the latitude, longitude and city name of the location.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "address",
+                    "type": "STRING",
+                    "description": "Name of address",
+                    "default": "Arusha"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://tanzania-api.p.rapidapi.com/geofy\"\nquerystring = {\"address\": \"Arusha\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"tanzania-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://tanzania-api.p.rapidapi.com/geofy\"\nquerystring = {\"address\": \"Arusha\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"tanzania-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "display_name": "Arusha, Arusha Municipal, Arusha, Northern Zone, 23103, Tanzania",
+                "latitude": "-3.3696827",
+                "longitude": "36.6880794"
+            }
+        },
+        {
+            "name": "Directions Between 2 Locations",
+            "url": "https://tanzania-api.p.rapidapi.com/directions",
+            "description": "This endpoint returns information about the route between two locations in terms of distance, duration, and steps.\n\nBelow Example: **Directions from Arusha to Dar es Salaam**",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "start_lat",
+                    "type": "NUMBER",
+                    "description": "Latitude of the starting point (required)",
+                    "default": "-3.3696827"
+                },
+                {
+                    "name": "end_lon",
+                    "type": "NUMBER",
+                    "description": "Longitude of the ending point (required)",
+                    "default": "39.2694784"
+                },
+                {
+                    "name": "start_lon",
+                    "type": "NUMBER",
+                    "description": "Longitude of the starting point (required)",
+                    "default": "36.6880794"
+                },
+                {
+                    "name": "end_lat",
+                    "type": "NUMBER",
+                    "description": "Latitude of the ending point (required)",
+                    "default": "-6.7785166"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "distance_unit",
+                    "type": "STRING",
+                    "description": "Unit of distance measurement, valid options are **km** (default), and **mi**.",
+                    "default": "km"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://tanzania-api.p.rapidapi.com/directions\"\nquerystring = {\"distance_unit\": \"km\", \"start_lat\": \"-3.3696827\", \"end_lon\": \"39.2694784\", \"start_lon\": \"36.6880794\", \"end_lat\": \"-6.7785166\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"tanzania-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://tanzania-api.p.rapidapi.com/directions\"\nquerystring = {\"distance_unit\": \"km\", \"start_lat\": \"-3.3696827\", \"end_lon\": \"39.2694784\", \"start_lon\": \"36.6880794\", \"end_lat\": \"-6.7785166\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"tanzania-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "distance": "621.19km",
+                "duration": "8h 47min",
+                "steps": [
+                    {
+                        "direction": "depart",
+                        "distance": "0.11km",
+                        "duration": "0min:15s",
+                        "instruction": "",
+                        "location": [
+                            36.687857,
+                            -3.369554
+                        ]
+                    },
+                    {
+                        "direction": "exit rotary",
+                        "distance": "0.43km",
+                        "duration": "1min:7s",
+                        "instruction": "",
+                        "location": [
+                            36.688282,
+                            -3.36991
+                        ]
+                    },
+                    {
+                        "direction": "end of road",
+                        "distance": "0.65km",
+                        "duration": "0min:39s",
+                        "instruction": "",
+                        "location": [
+                            36.688578,
+                            -3.373778
+                        ]
+                    },
+                    {
+                        "direction": "rotary",
+                        "distance": "0.08km",
+                        "duration": "0min:8s",
+                        "instruction": "",
+                        "location": [
+                            36.694211,
+                            -3.372425
+                        ]
+                    },
+                    {
+                        "direction": "exit rotary",
+                        "distance": "1.07km",
+                        "duration": "0min:59s",
+                        "instruction": "",
+                        "location": [
+                            36.694575,
+                            -3.372422
+                        ]
+                    },
+                    {
+                        "direction": "rotary",
+                        "distance": "0.01km",
+                        "duration": "0min:0s",
+                        "instruction": "",
+                        "location": [
+                            36.702964,
+                            -3.377172
+                        ]
+                    },
+                    {
+                        "direction": "exit rotary",
+                        "distance": "0.04km",
+                        "duration": "0min:2s",
+                        "instruction": "",
+                        "location": [
+                            36.703016,
+                            -3.377153
+                        ]
+                    },
+                    {
+                        "direction": "new name",
+                        "distance": "1.32km",
+                        "duration": "1min:12s",
+                        "instruction": "",
+                        "location": [
+                            36.70326,
+                            -3.376829
+                        ]
+                    },
+                    {
+                        "direction": "end of road",
+                        "distance": "75.30km",
+                        "duration": "1h 16min",
+                        "instruction": "",
+                        "location": [
+                            36.707497,
+                            -3.36571
+                        ]
+                    },
+                    {
+                        "direction": "roundabout",
+                        "distance": "0.06km",
+                        "duration": "0min:2s",
+                        "instruction": "",
+                        "location": [
+                            37.335863,
+                            -3.346261
+                        ]
+                    },
+                    {
+                        "direction": "exit roundabout",
+                        "distance": "0.91km",
+                        "duration": "1min:19s",
+                        "instruction": "",
+                        "location": [
+                            37.336347,
+                            -3.34614
+                        ]
+                    },
+                    {
+                        "direction": "rotary",
+                        "distance": "0.05km",
+                        "duration": "0min:1s",
+                        "instruction": "",
+                        "location": [
+                            37.343834,
+                            -3.343011
+                        ]
+                    },
+                    {
+                        "direction": "exit rotary",
+                        "distance": "21.15km",
+                        "duration": "14min:55s",
+                        "instruction": "",
+                        "location": [
+                            37.34415,
+                            -3.342845
+                        ]
+                    },
+                    {
+                        "direction": "turn",
+                        "distance": "1.01km",
+                        "duration": "0min:43s",
+                        "instruction": "",
+                        "location": [
+                            37.513023,
+                            -3.409095
+                        ]
+                    },
+                    {
+                        "direction": "turn",
+                        "distance": "239.27km",
+                        "duration": "3h 8min",
+                        "instruction": "",
+                        "location": [
+                            37.521054,
+                            -3.405406
+                        ]
+                    },
+                    {
+                        "direction": "turn",
+                        "distance": "0.58km",
+                        "duration": "0min:24s",
+                        "instruction": "",
+                        "location": [
+                            38.462045,
+                            -5.163851
+                        ]
+                    },
+                    {
+                        "direction": "roundabout",
+                        "distance": "0.01km",
+                        "duration": "0min:0s",
+                        "instruction": "",
+                        "location": [
+                            38.46318,
+                            -5.168792
+                        ]
+                    },
+                    {
+                        "direction": "exit roundabout",
+                        "distance": "20.67km",
+                        "duration": "14min:34s",
+                        "instruction": "",
+                        "location": [
+                            38.463239,
+                            -5.168834
+                        ]
+                    },
+                    {
+                        "direction": "roundabout",
+                        "distance": "0.04km",
+                        "duration": "0min:1s",
+                        "instruction": "",
+                        "location": [
+                            38.554142,
+                            -5.323944
+                        ]
+                    },
+                    {
+                        "direction": "exit roundabout",
+                        "distance": "136.19km",
+                        "duration": "1h 36min",
+                        "instruction": "",
+                        "location": [
+                            38.554241,
+                            -5.324173
+                        ]
+                    },
+                    {
+                        "direction": "turn",
+                        "distance": "62.82km",
+                        "duration": "1h 25min",
+                        "instruction": "",
+                        "location": [
+                            38.389774,
+                            -6.332919
+                        ]
+                    },
+                    {
+                        "direction": "roundabout",
+                        "distance": "0.06km",
+                        "duration": "0min:2s",
+                        "instruction": "",
+                        "location": [
+                            38.907354,
+                            -6.457358
+                        ]
+                    },
+                    {
+                        "direction": "exit roundabout",
+                        "distance": "46.76km",
+                        "duration": "33min:6s",
+                        "instruction": "",
+                        "location": [
+                            38.907657,
+                            -6.457518
+                        ]
+                    },
+                    {
+                        "direction": "turn",
+                        "distance": "1.59km",
+                        "duration": "1min:28s",
+                        "instruction": "",
+                        "location": [
+                            39.207135,
+                            -6.700812
+                        ]
+                    },
+                    {
+                        "direction": "roundabout",
+                        "distance": "0.05km",
+                        "duration": "0min:3s",
+                        "instruction": "",
+                        "location": [
+                            39.221284,
+                            -6.701852
+                        ]
+                    },
+                    {
+                        "direction": "exit roundabout",
+                        "distance": "1.44km",
+                        "duration": "1min:19s",
+                        "instruction": "",
+                        "location": [
+                            39.221436,
+                            -6.702118
+                        ]
+                    },
+                    {
+                        "direction": "new name",
+                        "distance": "1.85km",
+                        "duration": "1min:42s",
+                        "instruction": "",
+                        "location": [
+                            39.229155,
+                            -6.711934
+                        ]
+                    },
+                    {
+                        "direction": "new name",
+                        "distance": "1.64km",
+                        "duration": "1min:31s",
+                        "instruction": "",
+                        "location": [
+                            39.232408,
+                            -6.727699
+                        ]
+                    },
+                    {
+                        "direction": "roundabout",
+                        "distance": "0.04km",
+                        "duration": "0min:2s",
+                        "instruction": "",
+                        "location": [
+                            39.237116,
+                            -6.741512
+                        ]
+                    },
+                    {
+                        "direction": "exit roundabout",
+                        "distance": "1.27km",
+                        "duration": "1min:10s",
+                        "instruction": "",
+                        "location": [
+                            39.237183,
+                            -6.741782
+                        ]
+                    },
+                    {
+                        "direction": "new name",
+                        "distance": "2.83km",
+                        "duration": "2min:36s",
+                        "instruction": "",
+                        "location": [
+                            39.24276,
+                            -6.751556
+                        ]
+                    },
+                    {
+                        "direction": "new name",
+                        "distance": "0.94km",
+                        "duration": "0min:52s",
+                        "instruction": "",
+                        "location": [
+                            39.261704,
+                            -6.76813
+                        ]
+                    },
+                    {
+                        "direction": "new name",
+                        "distance": "0.18km",
+                        "duration": "0min:17s",
+                        "instruction": "",
+                        "location": [
+                            39.263945,
+                            -6.77552
+                        ]
+                    },
+                    {
+                        "direction": "turn",
+                        "distance": "0.71km",
+                        "duration": "0min:33s",
+                        "instruction": "",
+                        "location": [
+                            39.26388,
+                            -6.777141
+                        ]
+                    },
+                    {
+                        "direction": "turn",
+                        "distance": "0.03km",
+                        "duration": "0min:5s",
+                        "instruction": "",
+                        "location": [
+                            39.270168,
+                            -6.77833
+                        ]
+                    },
+                    {
+                        "direction": "turn",
+                        "distance": "0.06km",
+                        "duration": "0min:13s",
+                        "instruction": "",
+                        "location": [
+                            39.270022,
+                            -6.778569
+                        ]
+                    },
+                    {
+                        "direction": "arrive",
+                        "distance": "0.00km",
+                        "duration": "0min:0s",
+                        "instruction": "",
+                        "location": [
+                            39.26954,
+                            -6.778369
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Facilities Lookup",
+            "url": "https://tanzania-api.p.rapidapi.com/facility",
+            "description": "This endpoint allows you to get facilities in Tanzania like hospital, bank, college, etc. by providing optional query parameters for facility type, region and city. It returns a list of facilities that match the query parameters.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "type",
+                    "type": "STRING",
+                    "description": "The type of amenity facility to search for (default: **hospital**)\nOptions:\n**aerodrome, bar, cafe, fast_food, pub, restaurant, college, driving_school, school, university, bank, atm, pharmacy,** etc..        \n\n[More options->](https://wiki.openstreetmap.org/wiki/Map_features#Amenity)",
+                    "default": "hospital"
+                },
+                {
+                    "name": "region",
+                    "type": "STRING",
+                    "description": "The region where the facility is located",
+                    "default": "Coastal Zone"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "limit",
+                    "type": "STRING",
+                    "description": "The number of facilities to query.",
+                    "default": "10"
+                },
+                {
+                    "name": "city",
+                    "type": "STRING",
+                    "description": "The city where the facility is located",
+                    "default": "Dar es Salaam"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://tanzania-api.p.rapidapi.com/facility\"\nquerystring = {\"limit\": \"10\", \"city\": \"Dar es Salaam\", \"type\": \"hospital\", \"region\": \"Coastal Zone\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"tanzania-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://tanzania-api.p.rapidapi.com/facility\"\nquerystring = {\"limit\": \"10\", \"city\": \"Dar es Salaam\", \"type\": \"hospital\", \"region\": \"Coastal Zone\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"tanzania-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "hospital": [
+                    {
+                        "ISO3166-2-lvl4": "TZ-02",
+                        "address": "Magengeni Road, Dar es Salaam, Tanzania",
+                        "amenity": "upendo modern dispensary",
+                        "city": "Dar es Salaam",
+                        "country_code": "tz",
+                        "display_name": "upendo modern dispensary, Magengeni Road, Kizinga, Mbagala, Temeke MC, Dar es Salaam, Coastal Zone, 17503, Tanzania",
+                        "latitude": "-6.8928407",
+                        "longitude": "39.265161112652066",
+                        "postcode": "17503",
+                        "region": "Coastal Zone",
+                        "road": "Magengeni Road",
+                        "subward": "Kizinga",
+                        "ward": "",
+                        "website": ""
+                    },
+                    {
+                        "ISO3166-2-lvl4": "TZ-02",
+                        "address": "Victoria Street, Dar es Salaam, Tanzania",
+                        "amenity": "upendo modern dispensary",
+                        "city": "Dar es Salaam",
+                        "country_code": "tz",
+                        "display_name": "upendo modern dispensary, Victoria Street, Kizinga, Mbagala, Temeke MC, Dar es Salaam, Coastal Zone, 17503, Tanzania",
+                        "latitude": "-6.8929091",
+                        "longitude": "39.26522372433879",
+                        "postcode": "17503",
+                        "region": "Coastal Zone",
+                        "road": "Victoria Street",
+                        "subward": "Kizinga",
+                        "ward": "",
+                        "website": ""
+                    },
+                    {
+                        "ISO3166-2-lvl4": "TZ-02",
+                        "address": "Viwandani Street, Dar es Salaam, Tanzania",
+                        "amenity": "Mbagala Dispensary-Kizuiani",
+                        "city": "Dar es Salaam",
+                        "country_code": "tz",
+                        "display_name": "Mbagala Dispensary-Kizuiani, Viwandani Street, Moringe, Mbagala, Temeke MC, Dar es Salaam, Coastal Zone, Tanzania",
+                        "latitude": "-6.9032766",
+                        "longitude": "39.2673537",
+                        "postcode": "",
+                        "region": "Coastal Zone",
+                        "road": "Viwandani Street",
+                        "subward": "Moringe",
+                        "ward": "",
+                        "website": ""
+                    },
+                    {
+                        "ISO3166-2-lvl4": "TZ-02",
+                        "address": "Jeshini Road, Dar es Salaam, Tanzania",
+                        "amenity": "Ideal Health Care Witness Centre",
+                        "city": "Dar es Salaam",
+                        "country_code": "tz",
+                        "display_name": "Ideal Health Care Witness Centre, Jeshini Road, Kizuiani, Mbagala Kuu, Temeke MC, Dar es Salaam, Coastal Zone, 15118, Tanzania",
+                        "latitude": "-6.90551705",
+                        "longitude": "39.271858812626235",
+                        "postcode": "15118",
+                        "region": "Coastal Zone",
+                        "road": "Jeshini Road",
+                        "subward": "Kizuiani",
+                        "ward": "Mbagala Kuu",
+                        "website": ""
+                    },
+                    {
+                        "ISO3166-2-lvl4": "TZ-02",
+                        "address": "Lusaka Road, Dar es Salaam, Tanzania",
+                        "amenity": "Medicins Dumonde",
+                        "city": "Dar es Salaam",
+                        "country_code": "tz",
+                        "display_name": "Medicins Dumonde, Lusaka Road, Mabatini, Tandika, Temeke MC, Dar es Salaam, Coastal Zone, 14129, Tanzania",
+                        "latitude": "-6.862852",
+                        "longitude": "39.253787",
+                        "postcode": "14129",
+                        "region": "Coastal Zone",
+                        "road": "Lusaka Road",
+                        "subward": "Mabatini",
+                        "ward": "Tandika",
+                        "website": ""
+                    },
+                    {
+                        "ISO3166-2-lvl4": "TZ-02",
+                        "address": "Kilwa Road, Dar es Salaam, Tanzania",
+                        "amenity": "Mbagala Plaza",
+                        "city": "Dar es Salaam",
+                        "country_code": "tz",
+                        "display_name": "Mbagala Plaza, Kilwa Road, Moringe, Mbagala, Temeke MC, Dar es Salaam, Coastal Zone, 15118, Tanzania",
+                        "latitude": "-6.910308000000001",
+                        "longitude": "39.26959040093051",
+                        "postcode": "15118",
+                        "region": "Coastal Zone",
+                        "road": "Kilwa Road",
+                        "subward": "Moringe",
+                        "ward": "",
+                        "website": ""
+                    },
+                    {
+                        "ISO3166-2-lvl4": "TZ-02",
+                        "address": "Kilwa Road, Dar es Salaam, Tanzania",
+                        "amenity": "AHP healthcare",
+                        "city": "Dar es Salaam",
+                        "country_code": "tz",
+                        "display_name": "AHP healthcare, Kilwa Road, Moringe, Mbagala, Temeke MC, Dar es Salaam, Coastal Zone, 15118, Tanzania",
+                        "latitude": "-6.9103096",
+                        "longitude": "39.2697504",
+                        "postcode": "15118",
+                        "region": "Coastal Zone",
+                        "road": "Kilwa Road",
+                        "subward": "Moringe",
+                        "ward": "",
+                        "website": ""
+                    },
+                    {
+                        "ISO3166-2-lvl4": "TZ-02",
+                        "address": "Hospitali Street, Dar es Salaam, Tanzania",
+                        "amenity": "KOICA Mbagala Rangi Tatu Hospital",
+                        "city": "Dar es Salaam",
+                        "country_code": "tz",
+                        "display_name": "KOICA Mbagala Rangi Tatu Hospital, Hospitali Street, Mpakani, Mbagala Kuu, Temeke MC, Dar es Salaam, Coastal Zone, 15118, Tanzania",
+                        "latitude": "-6.9142203",
+                        "longitude": "39.2707966",
+                        "postcode": "15118",
+                        "region": "Coastal Zone",
+                        "road": "Hospitali Street",
+                        "subward": "Mpakani",
+                        "ward": "Mbagala Kuu",
+                        "website": ""
+                    },
+                    {
+                        "ISO3166-2-lvl4": "TZ-02",
+                        "address": "Darlive Ndogo Street, Dar es Salaam, Tanzania",
+                        "amenity": "Bless dispensary",
+                        "city": "Dar es Salaam",
+                        "country_code": "tz",
+                        "display_name": "Bless dispensary, Darlive Ndogo Street, Moringe, Mbagala, Temeke MC, Dar es Salaam, Coastal Zone, 15113, Tanzania",
+                        "latitude": "-6.9156665",
+                        "longitude": "39.2634252",
+                        "postcode": "15113",
+                        "region": "Coastal Zone",
+                        "road": "Darlive Ndogo Street",
+                        "subward": "Moringe",
+                        "ward": "",
+                        "website": ""
+                    },
+                    {
+                        "ISO3166-2-lvl4": "TZ-02",
+                        "address": "Mpolwe Street, Dar es Salaam, Tanzania",
+                        "amenity": "Temeke District Referal Hospital",
+                        "city": "Dar es Salaam",
+                        "country_code": "tz",
+                        "display_name": "Temeke District Referal Hospital, Mpolwe Street, Matumbi, Temeke, Temeke MC, Dar es Salaam, Coastal Zone, 14129, Tanzania",
+                        "latitude": "-6.85992695",
+                        "longitude": "39.262690213293226",
+                        "postcode": "14129",
+                        "region": "Coastal Zone",
+                        "road": "Mpolwe Street",
+                        "subward": "Matumbi",
+                        "ward": "Temeke",
+                        "website": ""
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Reverse Geocode",
+            "url": "https://tanzania-api.p.rapidapi.com/georev",
+            "description": "This endpoint allows you to perform reverse geocoding in Tanzania by providing query parameters for latitude and longitude. It returns the name of the address where the location is located.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "lon",
+                    "type": "STRING",
+                    "description": "The longitude of the location.",
+                    "default": "36.6880794"
+                },
+                {
+                    "name": "lat",
+                    "type": "STRING",
+                    "description": "The latitude of the location.",
+                    "default": "-3.3696827"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://tanzania-api.p.rapidapi.com/georev\"\nquerystring = {\"lon\": \"36.6880794\", \"lat\": \"-3.3696827\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"tanzania-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://tanzania-api.p.rapidapi.com/georev\"\nquerystring = {\"lon\": \"36.6880794\", \"lat\": \"-3.3696827\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"tanzania-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "boundingbox": [
+                    "-3.3697548",
+                    "-3.3696548",
+                    "36.6880332",
+                    "36.6881332"
+                ],
+                "category": "historic",
+                "city": "Arusha",
+                "country": "Tanzania",
+                "display_name": "Arusha Declaration Monument, Uhuru Roundabout, Kaloleni Mashariki, Arusha, Arusha Municipal, Arusha, Northern Zone, 23103, Tanzania",
+                "name": "Arusha Declaration Monument",
+                "region": "Northern Zone",
+                "road": "Uhuru Roundabout"
+            }
+        }
+    ],
+    "standardized_name": "tanzania_api"
+}

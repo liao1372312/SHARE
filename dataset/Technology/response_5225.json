@@ -1,0 +1,26 @@
+{
+"user_query":"I want to compare the controls and CCIs in the Risk Management Framework. Retrieve the CCI and its definition for the identification number 000001. Additionally, display all the subcontrols owned by the control AC-1.",
+"domain":"Technology",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Retrieve the CCI and its definition for the identification number 000001.",
+        "domain": "technology",
+        "required_inputs": ["identification_number"]
+    },
+    {
+        "id": 2,
+        "description": "Display all the subcontrols owned by the control AC-1.",
+        "domain": "technology",
+        "required_inputs": ["control_identifier"],
+        "dependencies": [1]  
+    },
+    {
+        "id": 3,
+        "description": "Compare the retrieved CCI definition and the list of subcontrols.",
+        "domain": "technology",
+        "required_inputs": ["CCI_definition", "subcontrols_list"],
+        "dependencies": [1, 2]
+    }
+]
+}

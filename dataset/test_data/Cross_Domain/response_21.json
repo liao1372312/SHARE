@@ -1,0 +1,42 @@
+{
+"user_query":"I want to expand my shoe collection by finding unique and rare shoes along with their details and a reliable online store to purchase them.",
+"domain":"Cross-Domain",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Search for unique and rare shoe collections with prices, images, descriptions, quantities, and ratings.",
+        "domain": "e.g., e-commerce",
+        "required_inputs": ["keywords", "category", "filters"]
+    },
+    {
+        "id": 2,
+        "description": "Extract detailed information for each shoe found, including prices, images, descriptions, quantities, and ratings.",
+        "domain": "e.g., e-commerce",
+        "required_inputs": ["shoe_ids"]
+    },
+    {
+        "id": 3,
+        "description": "Identify reliable online stores that offer the shoes from the collected list.",
+        "domain": "e-commerce",
+        "required_inputs": ["shoe_details"]
+    },
+    {
+        "id": 4,
+        "description": "Gather reviews and ratings for the identified online stores to ensure reliability.",
+        "domain": "e-commerce",
+        "required_inputs": ["store_ids"]
+    },
+    {
+        "id": 5,
+        "description": "Compile a final list of shoes with their details and reliable online stores to purchase from.",
+        "domain": "e-commerce",
+        "required_inputs": ["shoe_details", "store_details"]
+    }
+],
+"dependencies": {
+    "Step 2": ["Step 1"],
+    "Step 3": ["Step 2"],
+    "Step 4": ["Step 3"],
+    "Step 5": ["Step 2", "Step 4"]
+}
+}

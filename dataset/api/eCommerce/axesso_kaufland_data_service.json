@@ -1,0 +1,195 @@
+{
+    "product_id": "api_fef398ef-f538-4e45-a165-2f884c729774",
+    "tool_description": "Our Kaufland Data Service API provides real-time data about product details and keyword search result from the online shop Kaufland.de.",
+    "home_url": "https://rapidapi.com/axesso/api/axesso-kaufland-data-service/",
+    "name": "Axesso - Kaufland Data Service",
+    "title": "Axesso - Kaufland Data Service",
+    "pricing": "FREEMIUM",
+    "tool_name": "Axesso - Kaufland Data Service",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 3259,
+        "avgSuccessRate": 95,
+        "popularityScore": 7.3,
+        "__typename": "Score"
+    },
+    "host": "axesso-kaufland-data-service.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Keyword search",
+            "url": "https://axesso-kaufland-data-service.p.rapidapi.com/kfl/kaufland-search-by-keyword",
+            "description": "Retrieve keyword search results.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "page",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "1"
+                },
+                {
+                    "name": "keyword",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "schuhe"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "sortBy",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "recommended"
+                },
+                {
+                    "name": "excludeSponsored",
+                    "type": "BOOLEAN",
+                    "description": "",
+                    "default": "false"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://axesso-kaufland-data-service.p.rapidapi.com/kfl/kaufland-search-by-keyword\"\nquerystring = {\"page\": \"1\", \"sortBy\": \"recommended\", \"keyword\": \"schuhe\", \"excludeSponsored\": \"false\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"axesso-kaufland-data-service.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://axesso-kaufland-data-service.p.rapidapi.com/kfl/kaufland-search-by-keyword\"\nquerystring = {\"page\": \"1\", \"sortBy\": \"recommended\", \"keyword\": \"schuhe\", \"excludeSponsored\": \"false\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"axesso-kaufland-data-service.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You are not subscribed to this API."
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Product details",
+            "url": "https://axesso-kaufland-data-service.p.rapidapi.com/kfl/kaufland-lookup-product",
+            "description": "Query product details information.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "url",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "https://www.kaufland.de/product/349303242/"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://axesso-kaufland-data-service.p.rapidapi.com/kfl/kaufland-lookup-product\"\nquerystring = {\"url\": \"https://www.kaufland.de/product/349303242/\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"axesso-kaufland-data-service.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://axesso-kaufland-data-service.p.rapidapi.com/kfl/kaufland-lookup-product\"\nquerystring = {\"url\": \"https://www.kaufland.de/product/349303242/\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"axesso-kaufland-data-service.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "responseStatus": "PRODUCT_FOUND_RESPONSE",
+                "responseMessage": "Product successfully found!",
+                "productTitle": "Selsey Ecksofa SELEFER Schlafsofa mit Bettkasten und abnehmbaren Rueckenkissen, Stoffbezug in Gelb, 216 cm breit",
+                "manufacturer": null,
+                "countReview": 2,
+                "productRating": "4.0",
+                "asin": "349303242",
+                "productId": "349303242",
+                "variationId": "349303242",
+                "url": "https://www.kaufland.de/product/349303242/",
+                "soldBy": "Verkauf durch Selsey",
+                "sellerId": "24655301",
+                "warehouseAvailability": "Auf Lager.",
+                "retailPrice": 0.0,
+                "price": 499.99,
+                "priceRange": null,
+                "shippingPrice": 0.0,
+                "priceSaving": null,
+                "features": null,
+                "imageUrlList": [
+                    "https://media.cdn.kaufland.de/product-images/1024x1024/76fe4deabc53fcf6fac6c1a69cdec70c.webp",
+                    "https://media.cdn.kaufland.de/product-images/1024x1024/19baac1b5f94b2f9827071d8a785ea17.webp",
+                    "https://media.cdn.kaufland.de/product-images/1024x1024/da589511a9973e1fe2890917496e6d93.webp",
+                    "https://media.cdn.kaufland.de/product-images/1024x1024/a2b24007bd1e61db8f6bbde3d2a76ab0.webp",
+                    "https://media.cdn.kaufland.de/product-images/1024x1024/d01814b48ddbd98cbc14792992f344e9.webp"
+                ],
+                "productDescription": "SELEFER ist ein geradliniges Ecksofa, das vor allem durch sein dezenten Minimalismus und seine hohe Funktionalit\u00e4t besticht. F\u00fcr den gew\u00fcnschten Sitzkomfort sorgen die Schaumpolsterung im Sitz, die einladend weichen R\u00fcckenkissen und die gro\u00dfz\u00fcgige, tiefe Sitzfl\u00e4che. Die Schlafcouch SELEFER l\u00e4sst sich mit ein paar einfachen Handgriffen in ein bequemes Bett umfunktionieren, auf dem problemlos zwei Personen Platz finden. Die Bettw\u00e4sche, Decken, Kissen und Co. haben Sie im Bettkasten unter der Sitzfl\u00e4che immer parat.\n nn Produktbesonderheiten:\n nn \nn \u2022Die Eckcouch bietet bequeme Sitzgelegenheit f\u00fcr 3 Personen\n n \u2022Volle Flexibilit\u00e4t bei der Stellung dank echt bezogenem R\u00fccken und beidseitig montierbarer Ottomane\n n \u2022Schlaffunktion f\u00fcr G\u00e4ste \u2013 schnelle Verwandlung von der Couch zum Doppelbett\n n \u2022Im Bettkasten unter der Sitzfl\u00e4che ist das Bettzeug bestens untergebracht\n n \u2022Das Gestell besteht aus Massivholz und hochwertigen Spanplatten, was es standfest, robust und langlebig macht\n n nn SELEFER in Zahlen: \n nn \nn \u2022H\u00f6he: 76 cm\n n \u2022Breite: 216 cm\n n \u2022Tiefe: 131 cm\n n \u2022Sitzh\u00f6he: 38 cm\n n \u2022Sitzbreite: 196 cm\n n \u2022Sitztiefe: 72 cm\n n \u2022Breite der Ottomane: 65 cm\n n \u2022Polsterung: Kaltschaum\n n \u2022Gestell: Holz, Spanplatte\n n \u2022Schlaffunktion: Ja\n n \u2022Ausziehtechnik: Hebetechnik\n n \u2022Liegefl\u00e4che: 199 x 133 cm\n n nn \nnM\u00f6bel zur Selbstmontage. Falls Sie keine Erfahrung im M\u00f6belaufbau haben, raten wir Ihnen dazu, sich an eine Fachperson zu wenden, da unkorrektes Handeln zu Besch\u00e4digungen f\u00fchren kann. \nnAufgrund unterschiedlicher Bildschirmeinstellungen und Raumbeleuchtung k\u00f6nnen Farbabweichungen auftreten.\n",
+                "productDetails": [
+                    {
+                        "name": "Materialzusammensetzung",
+                        "value": "Keine Angaben erforderlich"
+                    },
+                    {
+                        "name": "Breite",
+                        "value": "216 cm"
+                    },
+                    {
+                        "name": "H\u00f6he",
+                        "value": "76 cm"
+                    },
+                    {
+                        "name": "Tiefe",
+                        "value": "131 cm"
+                    },
+                    {
+                        "name": "Material",
+                        "value": "Holz"
+                    },
+                    {
+                        "name": "EAN",
+                        "value": "5903025371627"
+                    },
+                    {
+                        "name": "Herstellernummer",
+                        "value": "P-141-1061383"
+                    }
+                ],
+                "variations": [
+                    {
+                        "variationName": "Farbe",
+                        "values": [
+                            {
+                                "value": "Beige",
+                                "dpUrl": "https://www.kaufland.de/product/349301923/",
+                                "selected": false,
+                                "available": true,
+                                "price": 499.99,
+                                "retailPrice": 0.0,
+                                "imageUrl": "https://media.cdn.kaufland.de/product-images/1024x1024/f8618354aea142c32592d7272348aa90.webp",
+                                "asin": "349301923",
+                                "deliveryOptions": null
+                            },
+                            {
+                                "value": "Dunkelgrau",
+                                "dpUrl": "https://www.kaufland.de/product/349302583/",
+                                "selected": false,
+                                "available": true,
+                                "price": 499.99,
+                                "retailPrice": 0.0,
+                                "imageUrl": "https://media.cdn.kaufland.de/product-images/1024x1024/fc801da36e4191b7a9b72779c71c9086.webp",
+                                "asin": "349302583",
+                                "deliveryOptions": null
+                            },
+                            {
+                                "value": "Gelb",
+                                "dpUrl": "https://www.kaufland.de/product/349303242/",
+                                "selected": true,
+                                "available": true,
+                                "price": 499.99,
+                                "retailPrice": 0.0,
+                                "imageUrl": "https://media.cdn.kaufland.de/product-images/1024x1024/76fe4deabc53fcf6fac6c1a69cdec70c.webp",
+                                "asin": "349303242",
+                                "deliveryOptions": null
+                            },
+                            {
+                                "value": "Rosa",
+                                "dpUrl": "https://www.kaufland.de/product/349307177/",
+                                "selected": false,
+                                "available": true,
+                                "price": 529.99,
+                                "retailPrice": 0.0,
+                                "imageUrl": "https://media.cdn.kaufland.de/product-images/1024x1024/17fee9aecff9b0b77d69f72f5539001c.webp",
+                                "asin": "349307177",
+                                "deliveryOptions": null
+                            }
+                        ]
+                    }
+                ],
+                "deliveryMessage": null,
+                "mainImage": {
+                    "imageUrl": "https://media.cdn.kaufland.de/product-images/1024x1024/76fe4deabc53fcf6fac6c1a69cdec70c.jpg",
+                    "imageResolution": ""
+                }
+            },
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "axesso_kaufland_data_service"
+}

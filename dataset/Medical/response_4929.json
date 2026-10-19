@@ -1,0 +1,40 @@
+{
+"user_query":"I'm starting a research project on the health benefits of sports and I need specific cricket articles that discuss this topic. Additionally, I'm interested in finding out which chemical elements are associated with exercising, like increased iron (Fe) and its impact on bone marrow.",
+"domain":"Medical",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Search for and retrieve cricket articles focusing on the health benefits of sports.",
+        "domain": "medical",
+        "required_inputs": ["search_keywords", "publication_date_range"]
+    },
+    {
+        "id": 2,
+        "description": "Analyze the retrieved articles to extract relevant information regarding health benefits of cricket.",
+        "domain": "medical",
+        "required_inputs": ["article_content"]
+    },
+    {
+        "id": 3,
+        "description": "Research and compile information on chemical elements associated with exercise, particularly focusing on iron (Fe) and its effects on bone marrow.",
+        "domain": "medical",
+        "required_inputs": ["chemical_element", "health_effects"]
+    },
+    {
+        "id": 4,
+        "description": "Summarize findings from the articles and research into a comprehensive report.",
+        "domain": "medical",
+        "required_inputs": ["extracted_information", "research_data"]
+    }
+],
+"dependencies": [
+    {
+        "step": 2,
+        "depends_on": 1
+    },
+    {
+        "step": 4,
+        "depends_on": [2, 3]
+    }
+]
+}

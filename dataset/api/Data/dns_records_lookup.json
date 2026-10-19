@@ -1,0 +1,59 @@
+{
+    "product_id": "api_ec79878c-251c-490c-a6c4-7c522bb191f3",
+    "tool_description": "Fast DNS Records Lookup",
+    "home_url": "https://rapidapi.com/jibr/api/dns-records-lookup/",
+    "name": "DNS Records Lookup",
+    "title": "DNS Records Lookup",
+    "pricing": "FREEMIUM",
+    "tool_name": "DNS Records Lookup",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 105,
+        "avgSuccessRate": 76,
+        "popularityScore": 8.9,
+        "__typename": "Score"
+    },
+    "host": "dns-records-lookup.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "DNS Request",
+            "url": "https://dns-records-lookup.p.rapidapi.com/",
+            "description": "DNS Request\n\nType can be one of:\n'A', 'AAAA', 'AFSDB', 'APL', 'CAA', 'CDNSKEY', 'CDS', 'CERT', 'CNAME', 'CSYNC', 'DHCID', 'DLV', 'DNAME', 'DNSKEY', 'DS', 'EUI48', 'EUI64', 'HINFO', 'HIP', 'HTTPS', 'IPSECKEY', 'KEY', 'KX', 'LOC', 'MX', 'NAPTR', 'NS', 'NSEC', 'NSEC3', 'NSEC3PARAM', 'OPENPGPKEY', 'PTR', 'RP', 'SMIMEA', 'SOA', 'SPF', 'SRV', 'SSHFP', 'SVCB', 'TA', 'TKEY', 'TLSA', 'TXT', 'URI', 'ZONEMD'\n\nIDN domains should be converted before requesting.\n\nUse **xn--fuball-cta.de** instead of **fu\u00dfball.de**",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "type",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "A"
+                },
+                {
+                    "name": "domain",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "rapidapi.com"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://dns-records-lookup.p.rapidapi.com/\"\nquerystring = {\"type\": \"A\", \"domain\": \"rapidapi.com\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"dns-records-lookup.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://dns-records-lookup.p.rapidapi.com/\"\nquerystring = {\"type\": \"A\", \"domain\": \"rapidapi.com\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"dns-records-lookup.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "name": "rapidapi.com",
+                    "type": 1,
+                    "TTL": 300,
+                    "data": "172.66.41.24"
+                },
+                {
+                    "name": "rapidapi.com",
+                    "type": 1,
+                    "TTL": 300,
+                    "data": "172.66.42.232"
+                }
+            ],
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "dns_records_lookup"
+}

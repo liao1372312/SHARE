@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "kind": "share_swebench_verified_refinement_artifact",
+  "instance_id": "pallets__flask-5014",
+  "generated_at_utc": "2026-08-21T14:57:45.450579+00:00",
+  "started_at_utc": "2026-08-21T14:57:20.934536+00:00",
+  "profile": "primary",
+  "model": "gpt-5.4-mini",
+  "image": "swebench/sweb.eval.x86_64.pallets_1776_flask-5014:latest",
+  "image_id": "sha256:34e4d0c20d076d74a21221f79ae4cad1183f16dc989619a6bf627a7b9295d704",
+  "base_commit": "7ee9ceb71e868944a46e1ff00b506772a53a4f1d",
+  "container_network": "none",
+  "gold_patch_withheld": true,
+  "test_patch_withheld": true,
+  "benchmark_evaluation_feedback_used": false,
+  "initial_patch": {
+    "path": "datasets/share_swebench_r002_protocol_v1/observed_r002_ai/pallets__flask-5014/primary/raw/generation_model.patch",
+    "sha256": "165c0d5aca96068ddb66053d70b8a51a70edd79f8087216d290d41fdf6bb9300"
+  },
+  "turns_used": 8,
+  "test_verified_after_latest_edit": true,
+  "diff_inspected_after_latest_edit": true,
+  "final_summary": "Verified the patch and repository state. The only change is the Blueprint constructor check in `src/flask/blueprints.py` that raises `ValueError(\"'name' may not be empty.\")` before the existing dot check. I also ran `python -m pytest tests/test_blueprints.py -q` successfully (59 passed) and inspected `git diff` after the latest edit.",
+  "generation_error": null,
+  "patch_empty": false,
+  "protocol": {
+    "generator_source_sha256": "2c45e91a15a689a61ea0a0549d4178c685817908ccfb155c1f17fc85734a2428",
+    "system_prompt_sha256": "fdcab63cd133c46f4f82669985382e04ce6051ef10cf5940491c92aa1d1b276d",
+    "user_prompt_template_sha256": "f7e69bc82192edc80b352ec4007eb71e55eebbda0138ebd35c0be83ad3e00a2a",
+    "max_turns": 20,
+    "max_output_tokens": 4096,
+    "temperature": 0.0,
+    "profile_reasoning_effort": null
+  },
+  "files": {
+    "model_patch": {
+      "path": "model.patch",
+      "sha256": "165c0d5aca96068ddb66053d70b8a51a70edd79f8087216d290d41fdf6bb9300"
+    },
+    "prediction": {
+      "path": "prediction.jsonl",
+      "sha256": "b74e70d657de4393b79d29d892f1b2111e1f37816f9f734a7fb0e5d086ee6f24"
+    },
+    "transcript": {
+      "path": "transcript.jsonl",
+      "sha256": "c6028a1047a520a73be7048b53518a55482a0b5d190a57936fc460391fa4c5d2"
+    }
+  }
+}

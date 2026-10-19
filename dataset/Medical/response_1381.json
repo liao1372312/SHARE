@@ -1,0 +1,40 @@
+{
+"user_query":"Calculate Body Mass Index (BMI) and suggest meal plans for clients to maintain a healthy weight.",
+"domain":"Medical",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Collect client's weight and height data.",
+        "domain": "medical",
+        "required_inputs": ["client_id", "weight", "height"]
+    },
+    {
+        "id": 2,
+        "description": "Calculate Body Mass Index (BMI) using the collected weight and height.",
+        "domain": "medical",
+        "required_inputs": ["weight", "height"],
+        "dependencies": [1]  
+    },
+    {
+        "id": 3,
+        "description": "Determine the BMI range for the client.",
+        "domain": "medical",
+        "required_inputs": ["BMI"],
+        "dependencies": [2]  
+    },
+    {
+        "id": 4,
+        "description": "Fetch women's marks from the World Athletics Scoring Tables for the specific BMI range.",
+        "domain": "medical",
+        "required_inputs": ["BMI range"],
+        "dependencies": [3]  
+    },
+    {
+        "id": 5,
+        "description": "Suggest nutritious meal plans to help achieve weight goals.",
+        "domain": "medical",
+        "required_inputs": ["target weight", "dietary preferences"],
+        "dependencies": [2]  
+    }
+]
+}

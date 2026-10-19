@@ -1,0 +1,49 @@
+{
+    "product_id": "api_72ed1d19-3bb2-4ed4-a4f1-e6cd488912fa",
+    "tool_description": "MAC Address Lookup to find the hardware manufacturer and its postal address of a specific MAC Address",
+    "home_url": "https://rapidapi.com/web21services/api/mac-address-to-manufacturer/",
+    "name": "MAC Address to Manufacturer",
+    "title": "MAC Address to Manufacturer",
+    "pricing": "FREE",
+    "tool_name": "MAC Address to Manufacturer",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 75,
+        "avgSuccessRate": 13,
+        "popularityScore": 2.2,
+        "__typename": "Score"
+    },
+    "host": "mac-address-to-manufacturer.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "maclookup",
+            "url": "https://mac-address-to-manufacturer.p.rapidapi.com/maclookup/14-AB-C5-D5-DA-F9",
+            "description": "Enter MAC Address (string) to find the manufacturer. MAC Formats Allowed: ('xx-xx-xx-xx-xx-xx', 'xx:xx:xx:xx:xx:xx', 'xxxx.xxxx.xxxx', 'xxxxxxxxxxxx')",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "mac_number",
+                    "type": "STRING",
+                    "description": "MAC Address Number to Find Manufacturer",
+                    "default": "14-AB-C5-D5-DA-F9"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://mac-address-to-manufacturer.p.rapidapi.com/maclookup/14-AB-C5-D5-DA-F9\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"mac-address-to-manufacturer.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://mac-address-to-manufacturer.p.rapidapi.com/maclookup/{mac_number}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"mac-address-to-manufacturer.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "Data Found",
+                "data": {
+                    "0": {
+                        "MAC OUI Number": "14ABC5",
+                        "Vendor Manufacturer": "Intel Corporate",
+                        "Vendor Address": "Lot 8, Jalan Hi-Tech 2/3 Kulim Kedah MY 09000 "
+                    }
+                }
+            },
+            "statuscode": 1,
+            "schema": ""
+        }
+    ],
+    "standardized_name": "mac_address_to_manufacturer"
+}

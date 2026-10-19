@@ -1,0 +1,28 @@
+{
+"user_query":"I want to find the address, city, state, and zip code of a business in Brazil with tax ID 84447804000123, generate a street view, and view the map of the surrounding area.",
+"domain":"tourism",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Query the business information using the tax ID to find the address, city, state, and zip code.",
+        "domain": "tourism",
+        "required_inputs": ["tax ID"]
+    },
+    {
+        "id": 2,
+        "description": "Generate a street view of the establishment using the retrieved address.",
+        "domain": "tourism",
+        "required_inputs": ["address"]
+    },
+    {
+        "id": 3,
+        "description": "Display a map of the surrounding area using the retrieved address.",
+        "domain": "tourism",
+        "required_inputs": ["address"]
+    }
+],
+"dependencies": {
+    "2": ["1"],
+    "3": ["1"]
+}
+}

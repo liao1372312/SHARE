@@ -1,0 +1,193 @@
+{
+    "product_id": "api_07d40702-ec94-4edf-b06f-dec6e5eb7f1e",
+    "tool_description": "Amortized loan repayment schedule calculator",
+    "home_url": "https://rapidapi.com/olschafer/api/loan-amortization-schedule-calculator/",
+    "name": "Loan Amortization Schedule Calculator",
+    "title": "Loan Amortization Schedule Calculator",
+    "pricing": "FREEMIUM",
+    "tool_name": "Loan Amortization Schedule Calculator",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 558,
+        "avgSuccessRate": 99,
+        "popularityScore": 9.2,
+        "__typename": "Score"
+    },
+    "host": "loan-amortization-schedule-calculator.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Calculate repayment schedule",
+            "url": "https://loan-amortization-schedule-calculator.p.rapidapi.com/v1/",
+            "description": "Returns detailed loan repayment schedule",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "annualInterestRate",
+                    "type": "NUMBER",
+                    "description": "Decimal number: (annual interest rate in percent) / 100",
+                    "default": "0.06"
+                },
+                {
+                    "name": "installmentCount",
+                    "type": "NUMBER",
+                    "description": "Number of installments (payments)",
+                    "default": "12"
+                },
+                {
+                    "name": "startDate",
+                    "type": "DATE (YYYY-MM-DD)",
+                    "description": "Start date of the schedule",
+                    "default": "2020-01-01"
+                },
+                {
+                    "name": "principalAmount",
+                    "type": "NUMBER",
+                    "description": "Principal amount of the loan",
+                    "default": "100000"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "repaymentInterval",
+                    "type": "STRING",
+                    "description": "Allowed values: year, month, week, biweekly",
+                    "default": "month"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://loan-amortization-schedule-calculator.p.rapidapi.com/v1/\"\nquerystring = {\"annualInterestRate\": \"0.06\", \"installmentCount\": \"12\", \"repaymentInterval\": \"month\", \"startDate\": \"2020-01-01\", \"principalAmount\": \"100000\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"loan-amortization-schedule-calculator.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://loan-amortization-schedule-calculator.p.rapidapi.com/v1/\"\nquerystring = {\"annualInterestRate\": \"0.06\", \"installmentCount\": \"12\", \"repaymentInterval\": \"month\", \"startDate\": \"2020-01-01\", \"principalAmount\": \"100000\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"loan-amortization-schedule-calculator.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "principalAmount": "100000",
+                "annualInterestRate": "0.06",
+                "repaymentInterval": "month",
+                "installmentCount": "12",
+                "repaymentSchedule": {
+                    "installments": [
+                        {
+                            "installmentNumber": 0,
+                            "dueDate": "2020-01-01",
+                            "installmentAmount": "8606.64",
+                            "startingBalance": "100000",
+                            "principalAmount": "8106.64",
+                            "interestAmount": "500",
+                            "endingBalance": "91893.36",
+                            "extraPayment": ""
+                        },
+                        {
+                            "installmentNumber": 1,
+                            "dueDate": "2020-02-01",
+                            "installmentAmount": "8606.64",
+                            "startingBalance": "91893.36",
+                            "principalAmount": "8147.18",
+                            "interestAmount": "459.47",
+                            "endingBalance": "83746.18",
+                            "extraPayment": ""
+                        },
+                        {
+                            "installmentNumber": 2,
+                            "dueDate": "2020-03-01",
+                            "installmentAmount": "8606.64",
+                            "startingBalance": "83746.18",
+                            "principalAmount": "8187.91",
+                            "interestAmount": "418.73",
+                            "endingBalance": "75558.27",
+                            "extraPayment": ""
+                        },
+                        {
+                            "installmentNumber": 3,
+                            "dueDate": "2020-04-01",
+                            "installmentAmount": "8606.64",
+                            "startingBalance": "75558.27",
+                            "principalAmount": "8228.85",
+                            "interestAmount": "377.79",
+                            "endingBalance": "67329.42",
+                            "extraPayment": ""
+                        },
+                        {
+                            "installmentNumber": 4,
+                            "dueDate": "2020-05-01",
+                            "installmentAmount": "8606.64",
+                            "startingBalance": "67329.42",
+                            "principalAmount": "8270",
+                            "interestAmount": "336.65",
+                            "endingBalance": "59059.42",
+                            "extraPayment": ""
+                        },
+                        {
+                            "installmentNumber": 5,
+                            "dueDate": "2020-06-01",
+                            "installmentAmount": "8606.64",
+                            "startingBalance": "59059.42",
+                            "principalAmount": "8311.35",
+                            "interestAmount": "295.3",
+                            "endingBalance": "50748.08",
+                            "extraPayment": ""
+                        },
+                        {
+                            "installmentNumber": 6,
+                            "dueDate": "2020-07-01",
+                            "installmentAmount": "8606.64",
+                            "startingBalance": "50748.08",
+                            "principalAmount": "8352.9",
+                            "interestAmount": "253.74",
+                            "endingBalance": "42395.17",
+                            "extraPayment": ""
+                        },
+                        {
+                            "installmentNumber": 7,
+                            "dueDate": "2020-08-01",
+                            "installmentAmount": "8606.64",
+                            "startingBalance": "42395.17",
+                            "principalAmount": "8394.67",
+                            "interestAmount": "211.98",
+                            "endingBalance": "34000.51",
+                            "extraPayment": ""
+                        },
+                        {
+                            "installmentNumber": 8,
+                            "dueDate": "2020-09-01",
+                            "installmentAmount": "8606.64",
+                            "startingBalance": "34000.51",
+                            "principalAmount": "8436.64",
+                            "interestAmount": "170",
+                            "endingBalance": "25563.87",
+                            "extraPayment": ""
+                        },
+                        {
+                            "installmentNumber": 9,
+                            "dueDate": "2020-10-01",
+                            "installmentAmount": "8606.64",
+                            "startingBalance": "25563.87",
+                            "principalAmount": "8478.82",
+                            "interestAmount": "127.82",
+                            "endingBalance": "17085.04",
+                            "extraPayment": ""
+                        },
+                        {
+                            "installmentNumber": 10,
+                            "dueDate": "2020-11-01",
+                            "installmentAmount": "8606.64",
+                            "startingBalance": "17085.04",
+                            "principalAmount": "8521.22",
+                            "interestAmount": "85.43",
+                            "endingBalance": "8563.82",
+                            "extraPayment": ""
+                        },
+                        {
+                            "installmentNumber": 11,
+                            "dueDate": "2020-12-01",
+                            "installmentAmount": "8606.64",
+                            "startingBalance": "8563.82",
+                            "principalAmount": "8563.82",
+                            "interestAmount": "42.82",
+                            "endingBalance": "0",
+                            "extraPayment": ""
+                        }
+                    ]
+                },
+                "startDate": "2020-01-01"
+            }
+        }
+    ],
+    "standardized_name": "loan_amortization_schedule_calculator"
+}

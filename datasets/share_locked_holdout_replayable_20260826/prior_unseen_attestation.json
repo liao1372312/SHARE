@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "kind": "share_prior_unseen_attestation",
+  "created_at_utc": "2026-08-26T00:08:00Z",
+  "scope": "identity/provenance attestation against the declared local historical corpus; not a claim of global novelty",
+  "protocol_id": "share-locked-replayable-400-v3",
+  "episodes_path": "datasets/share_locked_holdout_replayable_20260826/episodes.jsonl",
+  "episodes_sha256": "a7e66906538a419d1be18e78120f998e3a70a8776d84897b34ffa7cdd301b74f",
+  "historical_sources": [
+    {
+      "path": "datasets/share_guard_development/historical_identifiers.json",
+      "sha256": "115f9242d9be9599f351771b1ec74d20b9eed880d4062909d53dbc699f95538e",
+      "kind": "metadata_only_identifier_index"
+    },
+    {
+      "path": "datasets/share_synthetic/episodes.jsonl",
+      "sha256": "174a2c387aa8fe4cece6374a54a9d23c5db062bde6349c71578384c386b5a694",
+      "kind": "episode_identifiers_and_metadata_only"
+    },
+    {
+      "path": "datasets/share_guard_development/episodes.jsonl",
+      "sha256": "865997bdf796b4eaec6b7a91110529677c23f721b48093d5ff57c878c5f4edfd",
+      "kind": "episode_identifiers_and_metadata_only"
+    },
+    {
+      "path": "datasets/share_synthetic_augmented_guard_development/episodes.jsonl",
+      "sha256": "e827caa999fe0d6dbac677ef99c99fecc5144117522c69a929773718cf0622de",
+      "kind": "episode_identifiers_and_metadata_only"
+    }
+  ],
+  "audit": {
+    "result": "PASS",
+    "zero_overlap": true,
+    "dimensions": {
+      "episode_id": {
+        "holdout_unique": 400,
+        "historical_unique": 7011,
+        "overlap_count": 0,
+        "overlap_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "workflow_id": {
+        "holdout_unique": 400,
+        "historical_unique": 0,
+        "overlap_count": 0,
+        "overlap_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "group_id": {
+        "holdout_unique": 400,
+        "historical_unique": 1778,
+        "overlap_count": 0,
+        "overlap_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "source_document_sha256": {
+        "holdout_unique": 400,
+        "historical_unique": 0,
+        "overlap_count": 0,
+        "overlap_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "normalized_source_fingerprint": {
+        "holdout_unique": 400,
+        "historical_unique": 0,
+        "overlap_count": 0,
+        "overlap_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  },
+  "duplicate_audit": {
+    "result": "PASS",
+    "duplicate_counts": {
+      "episode_id": 0,
+      "workflow_id": 0,
+      "group_id": 0,
+      "source_record_sha256": 0,
+      "normalized_source_fingerprint": 0
+    }
+  },
+  "attested_facts": {
+    "episodes": 400,
+    "unique_workflow_groups": 400,
+    "one_episode_per_group": true,
+    "zero_workflow_group_overlap_with_declared_development_data": true,
+    "zero_overlap_on_all_preregistered_dimensions": true,
+    "all_source_records_non_synthetic": true,
+    "all_generated_paired_outcomes_explicitly_synthetic": true,
+    "method_level_outcomes_not_accessed": true,
+    "locked_evaluator_not_bound_or_run": true
+  },
+  "limitation": "The source cases are real public-API documentation records, but the paired outcomes are deterministic simulations. This attestation does not convert them into observed executions."
+}

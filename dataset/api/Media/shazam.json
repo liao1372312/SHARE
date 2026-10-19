@@ -1,0 +1,1039 @@
+{
+    "product_id": "api_71113130-1629-476d-a3b0-396750a38179",
+    "tool_description": "Shazam API helps you to recognize any song from a music file, can fetch data from https://www.shazam.com/, extract information related to artist, track or give top songs by country.",
+    "home_url": "https://rapidapi.com/yashmakan261/api/shazam8/",
+    "name": "Shazam",
+    "title": "Shazam",
+    "pricing": "FREEMIUM",
+    "tool_name": "Shazam",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 8,
+        "avgSuccessRate": 100,
+        "popularityScore": 9.3,
+        "__typename": "Score"
+    },
+    "host": "shazam8.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Artist Top Tracks",
+            "url": "https://shazam8.p.rapidapi.com/artist/top_track",
+            "description": "This endpoint will return the top tracks of the artist",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "limit",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "5"
+                },
+                {
+                    "name": "artist_id",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "40543550"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://shazam8.p.rapidapi.com/artist/top_track\"\nquerystring = {\"limit\": \"5\", \"artist_id\": \"40543550\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"shazam8.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://shazam8.p.rapidapi.com/artist/top_track\"\nquerystring = {\"limit\": \"5\", \"artist_id\": \"40543550\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"shazam8.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "next": "https://cdn.shazam.com/shazam/v3/en/GB/web/-/tracks/artisttoptracks_40543550?pageSize=5&startFrom=5",
+                "properties": {},
+                "tracks": [
+                    {
+                        "artists": [
+                            {
+                                "adamid": "320569549",
+                                "alias": "justin-bieber",
+                                "follow": {
+                                    "followkey": "A_40543550"
+                                },
+                                "id": "40543550"
+                            }
+                        ],
+                        "highlightsurls": {
+                            "artisthighlightsurl": "https://cdn.shazam.com/video/v3/en/GB/web/320569549/highlights?affiliate=mttnagencyid%3Ds2n%26mttnsiteid%3D125115%26mttn3pid%3DApple-Shazam%26mttnsub1%3DShazam_web%26mttnsub2%3D5348615A-616D-3235-3830-44754D6D5973%26itscg%3D30201%26app%3Dmusic%26itsct%3DShazam_web&channel=",
+                            "relatedhighlightsurl": "https://cdn.shazam.com/video/v3/en/GB/web/40543550/artist-similarities-id-40543550/relatedhighlights?max_artists=5&affiliate=mttnagencyid%3Ds2n%26mttnsiteid%3D125115%26mttn3pid%3DApple-Shazam%26mttnsub1%3DShazam_web%26mttnsub2%3D5348615A-616D-3235-3830-44754D6D5973%26itscg%3D30201%26app%3Dmusic%26itsct%3DShazam_web&channel="
+                        },
+                        "hub": {
+                            "actions": [
+                                {
+                                    "id": "1440826328",
+                                    "name": "apple",
+                                    "type": "applemusicplay"
+                                },
+                                {
+                                    "name": "apple",
+                                    "type": "uri",
+                                    "uri": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/cd/03/21/cd032154-b564-6e87-4222-5020fea1fad4/mzaf_11541127985306645474.plus.aac.ep.m4a"
+                                }
+                            ],
+                            "displayname": "APPLE MUSIC",
+                            "explicit": false,
+                            "image": "https://images.shazam.com/static/icons/hub/web/v5/applemusic.png",
+                            "options": [
+                                {
+                                    "actions": [
+                                        {
+                                            "name": "hub:applemusic:deeplink",
+                                            "type": "applemusicopen",
+                                            "uri": "https://music.apple.com/gb/album/love-yourself/1440825845?i=1440826328&mttnagencyid=s2n&mttnsiteid=125115&mttn3pid=Apple-Shazam&mttnsub1=Shazam_web&mttnsub2=5348615A-616D-3235-3830-44754D6D5973&itscg=30201&app=music&itsct=Shazam_web"
+                                        },
+                                        {
+                                            "name": "hub:applemusic:deeplink",
+                                            "type": "uri",
+                                            "uri": "https://music.apple.com/gb/album/love-yourself/1440825845?i=1440826328&mttnagencyid=s2n&mttnsiteid=125115&mttn3pid=Apple-Shazam&mttnsub1=Shazam_web&mttnsub2=5348615A-616D-3235-3830-44754D6D5973&itscg=30201&app=music&itsct=Shazam_web"
+                                        }
+                                    ],
+                                    "beacondata": {
+                                        "providername": "applemusic",
+                                        "type": "open"
+                                    },
+                                    "caption": "OPEN",
+                                    "colouroverflowimage": false,
+                                    "image": "https://images.shazam.com/static/icons/hub/web/v5/overflow-open-option.png",
+                                    "listcaption": "Open in Apple Music",
+                                    "overflowimage": "https://images.shazam.com/static/icons/hub/web/v5/applemusic-overflow.png",
+                                    "providername": "applemusic",
+                                    "type": "open"
+                                }
+                            ],
+                            "type": "APPLEMUSIC"
+                        },
+                        "images": {
+                            "background": "https://is4-ssl.mzstatic.com/image/thumb/Features125/v4/3a/c1/a3/3ac1a308-06fe-f693-ea95-09ca2b2c88a1/pr_source.png/800x800cc.jpg",
+                            "coverart": "https://is2-ssl.mzstatic.com/image/thumb/Music124/v4/eb/c0/0a/ebc00ad6-3fa4-cecd-4a24-814d2fe6a551/00602547587411.rgb.jpg/400x400cc.jpg",
+                            "coverarthq": "https://is2-ssl.mzstatic.com/image/thumb/Music124/v4/eb/c0/0a/ebc00ad6-3fa4-cecd-4a24-814d2fe6a551/00602547587411.rgb.jpg/400x400cc.jpg",
+                            "joecolor": "b:1f1f1fp:f2f1efs:cfcec8t:c8c7c5q:acaba6"
+                        },
+                        "key": "296831279",
+                        "layout": "5",
+                        "properties": {},
+                        "share": {
+                            "avatar": "https://is4-ssl.mzstatic.com/image/thumb/Features125/v4/3a/c1/a3/3ac1a308-06fe-f693-ea95-09ca2b2c88a1/pr_source.png/800x800cc.jpg",
+                            "href": "https://www.shazam.com/track/296831279/love-yourself",
+                            "html": "https://www.shazam.com/snippets/email-share/296831279?lang=en&country=GB",
+                            "image": "https://is2-ssl.mzstatic.com/image/thumb/Music124/v4/eb/c0/0a/ebc00ad6-3fa4-cecd-4a24-814d2fe6a551/00602547587411.rgb.jpg/400x400cc.jpg",
+                            "snapchat": "https://www.shazam.com/partner/sc/track/296831279",
+                            "subject": "Love Yourself - Justin Bieber",
+                            "text": "I used Shazam to discover Love Yourself by Justin Bieber.",
+                            "twitter": "I used @Shazam to discover Love Yourself by Justin Bieber."
+                        },
+                        "subtitle": "Justin Bieber",
+                        "title": "Love Yourself",
+                        "type": "MUSIC",
+                        "url": "https://www.shazam.com/track/296831279/love-yourself"
+                    }
+                ]
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Top Track by City",
+            "url": "https://shazam8.p.rapidapi.com/track/top/city",
+            "description": "This endpoint will give the top song in specific city",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "city_name",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "Moscow"
+                },
+                {
+                    "name": "country_code",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "RU"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "limit",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "2"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://shazam8.p.rapidapi.com/track/top/city\"\nquerystring = {\"city_name\": \"Moscow\", \"country_code\": \"RU\", \"limit\": \"2\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"shazam8.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://shazam8.p.rapidapi.com/track/top/city\"\nquerystring = {\"city_name\": \"Moscow\", \"country_code\": \"RU\", \"limit\": \"2\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"shazam8.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "next": "https://cdn.shazam.com/shazam/v3/en/GB/web/-/tracks/ip-city-chart-524901?pageSize=2&startFrom=2",
+                "properties": {},
+                "tracks": [
+                    {
+                        "artists": [
+                            {
+                                "adamid": "259601382",
+                                "alias": "melisa",
+                                "follow": {
+                                    "followkey": "A_40764863"
+                                },
+                                "id": "40764863"
+                            }
+                        ],
+                        "highlightsurls": {
+                            "artisthighlightsurl": "https://cdn.shazam.com/video/v3/en/GB/web/259601382/highlights?affiliate=mttnagencyid%3Ds2n%26mttnsiteid%3D125115%26mttn3pid%3DApple-Shazam%26mttnsub1%3DShazam_web%26mttnsub2%3D5348615A-616D-3235-3830-44754D6D5973%26itscg%3D30201%26app%3Dmusic%26itsct%3DShazam_web",
+                            "relatedhighlightsurl": "https://cdn.shazam.com/video/v3/en/GB/web/40764863/artist-similarities-id-40764863/relatedhighlights?max_artists=5&affiliate=mttnagencyid%3Ds2n%26mttnsiteid%3D125115%26mttn3pid%3DApple-Shazam%26mttnsub1%3DShazam_web%26mttnsub2%3D5348615A-616D-3235-3830-44754D6D5973%26itscg%3D30201%26app%3Dmusic%26itsct%3DShazam_web"
+                        },
+                        "hub": {
+                            "actions": [
+                                {
+                                    "id": "1601999915",
+                                    "name": "apple",
+                                    "type": "applemusicplay"
+                                },
+                                {
+                                    "name": "apple",
+                                    "type": "uri",
+                                    "uri": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/b6/50/85/b650856f-78b4-334f-1369-8f1978f2420b/mzaf_2456541125317392210.plus.aac.ep.m4a"
+                                }
+                            ],
+                            "displayname": "APPLE MUSIC",
+                            "explicit": false,
+                            "image": "https://images.shazam.com/static/icons/hub/web/v5/applemusic.png",
+                            "options": [
+                                {
+                                    "actions": [
+                                        {
+                                            "name": "hub:applemusic:deeplink",
+                                            "type": "applemusicopen",
+                                            "uri": "https://music.apple.com/gb/album/im-alone/1601999913?i=1601999915&mttnagencyid=s2n&mttnsiteid=125115&mttn3pid=Apple-Shazam&mttnsub1=Shazam_web&mttnsub2=5348615A-616D-3235-3830-44754D6D5973&itscg=30201&app=music&itsct=Shazam_web"
+                                        },
+                                        {
+                                            "name": "hub:applemusic:deeplink",
+                                            "type": "uri",
+                                            "uri": "https://music.apple.com/gb/album/im-alone/1601999913?i=1601999915&mttnagencyid=s2n&mttnsiteid=125115&mttn3pid=Apple-Shazam&mttnsub1=Shazam_web&mttnsub2=5348615A-616D-3235-3830-44754D6D5973&itscg=30201&app=music&itsct=Shazam_web"
+                                        }
+                                    ],
+                                    "beacondata": {
+                                        "providername": "applemusic",
+                                        "type": "open"
+                                    },
+                                    "caption": "OPEN",
+                                    "colouroverflowimage": false,
+                                    "image": "https://images.shazam.com/static/icons/hub/web/v5/overflow-open-option.png",
+                                    "listcaption": "Open in Apple Music",
+                                    "overflowimage": "https://images.shazam.com/static/icons/hub/web/v5/applemusic-overflow.png",
+                                    "providername": "applemusic",
+                                    "type": "open"
+                                }
+                            ],
+                            "type": "APPLEMUSIC"
+                        },
+                        "images": {
+                            "background": "https://is3-ssl.mzstatic.com/image/thumb/Music126/v4/be/ec/3d/beec3d56-f4d8-a473-b843-64314ea888c8/cover.jpg/400x400cc.jpg",
+                            "coverart": "https://is3-ssl.mzstatic.com/image/thumb/Music126/v4/be/ec/3d/beec3d56-f4d8-a473-b843-64314ea888c8/cover.jpg/400x400cc.jpg",
+                            "coverarthq": "https://is3-ssl.mzstatic.com/image/thumb/Music126/v4/be/ec/3d/beec3d56-f4d8-a473-b843-64314ea888c8/cover.jpg/400x400cc.jpg",
+                            "joecolor": "b:c4d3eap:140702s:3d302bt:373030q:585051"
+                        },
+                        "key": "560551698",
+                        "layout": "5",
+                        "properties": {},
+                        "share": {
+                            "href": "https://www.shazam.com/track/560551698/im-alone",
+                            "html": "https://www.shazam.com/snippets/email-share/560551698?lang=en&country=GB",
+                            "image": "https://is3-ssl.mzstatic.com/image/thumb/Music126/v4/be/ec/3d/beec3d56-f4d8-a473-b843-64314ea888c8/cover.jpg/400x400cc.jpg",
+                            "snapchat": "https://www.shazam.com/partner/sc/track/560551698",
+                            "subject": "I'm Alone - Melisa & Tommo",
+                            "text": "I used Shazam to discover I'm Alone by Melisa & Tommo.",
+                            "twitter": "I used @Shazam to discover I'm Alone by Melisa & Tommo."
+                        },
+                        "subtitle": "Melisa & Tommo",
+                        "title": "I'm Alone",
+                        "type": "MUSIC",
+                        "url": "https://www.shazam.com/track/560551698/im-alone"
+                    },
+                    {
+                        "highlightsurls": {},
+                        "hub": {
+                            "displayname": "APPLE MUSIC",
+                            "explicit": false,
+                            "image": "https://images.shazam.com/static/icons/hub/web/v5/applemusic.png",
+                            "options": [
+                                {
+                                    "actions": [
+                                        {
+                                            "name": "hub:applemusic:subscribe",
+                                            "type": "applemusicopen",
+                                            "uri": "https://music.apple.com/subscribe?mttnagencyid=s2n&mttnsiteid=125115&mttn3pid=Apple-Shazam&mttnsub1=Shazam_web&mttnsub2=5348615A-616D-3235-3830-44754D6D5973&itscg=30201&app=music&itsct=Shazam_web"
+                                        },
+                                        {
+                                            "name": "hub:applemusic:subscribe",
+                                            "type": "uri",
+                                            "uri": "https://music.apple.com/subscribe?mttnagencyid=s2n&mttnsiteid=125115&mttn3pid=Apple-Shazam&mttnsub1=Shazam_web&mttnsub2=5348615A-616D-3235-3830-44754D6D5973&itscg=30201&app=music&itsct=Shazam_web"
+                                        }
+                                    ],
+                                    "beacondata": {
+                                        "providername": "applemusic",
+                                        "type": "open"
+                                    },
+                                    "caption": "OPEN",
+                                    "colouroverflowimage": false,
+                                    "image": "https://images.shazam.com/static/icons/hub/web/v5/overflow-open-option.png",
+                                    "listcaption": "Open in Apple Music",
+                                    "overflowimage": "https://images.shazam.com/static/icons/hub/web/v5/applemusic-overflow.png",
+                                    "providername": "applemusic",
+                                    "type": "open"
+                                }
+                            ],
+                            "type": "APPLEMUSIC"
+                        },
+                        "images": {
+                            "background": "https://images.shazam.com/coverart/t599420625_s800.jpg",
+                            "coverart": "https://images.shazam.com/coverart/t599420625_s400.jpg",
+                            "coverarthq": "https://images.shazam.com/coverart/t599420625_s800.jpg"
+                        },
+                        "key": "599420625",
+                        "layout": "5",
+                        "properties": {},
+                        "share": {
+                            "href": "https://www.shazam.com/track/599420625/internal",
+                            "html": "https://www.shazam.com/snippets/email-share/599420625?lang=en&country=GB",
+                            "image": "https://images.shazam.com/coverart/t599420625_s400.jpg",
+                            "snapchat": "https://www.shazam.com/partner/sc/track/599420625",
+                            "subject": "Internal - Rogue Dave",
+                            "text": "I used Shazam to discover Internal by Rogue Dave.",
+                            "twitter": "I used @Shazam to discover Internal by Rogue Dave."
+                        },
+                        "subtitle": "Rogue Dave",
+                        "title": "Internal",
+                        "type": "MUSIC",
+                        "url": "https://www.shazam.com/track/599420625/internal"
+                    }
+                ]
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Top Track by Country",
+            "url": "https://shazam8.p.rapidapi.com/track/top/country",
+            "description": "This endpoint will return the top tracks from a specific country",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "limit",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "2"
+                },
+                {
+                    "name": "country_code",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "RU"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://shazam8.p.rapidapi.com/track/top/country\"\nquerystring = {\"limit\": \"2\", \"country_code\": \"RU\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"shazam8.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://shazam8.p.rapidapi.com/track/top/country\"\nquerystring = {\"limit\": \"2\", \"country_code\": \"RU\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"shazam8.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "next": "https://cdn.shazam.com/shazam/v3/en/GB/web/-/tracks/ip-country-chart-RU?pageSize=2&startFrom=2",
+                "properties": {},
+                "tracks": [
+                    {
+                        "artists": [
+                            {
+                                "adamid": "259601382",
+                                "alias": "melisa",
+                                "follow": {
+                                    "followkey": "A_40764863"
+                                },
+                                "id": "40764863"
+                            }
+                        ],
+                        "highlightsurls": {
+                            "artisthighlightsurl": "https://cdn.shazam.com/video/v3/en/GB/web/259601382/highlights?affiliate=mttnagencyid%3Ds2n%26mttnsiteid%3D125115%26mttn3pid%3DApple-Shazam%26mttnsub1%3DShazam_web%26mttnsub2%3D5348615A-616D-3235-3830-44754D6D5973%26itscg%3D30201%26app%3Dmusic%26itsct%3DShazam_web",
+                            "relatedhighlightsurl": "https://cdn.shazam.com/video/v3/en/GB/web/40764863/artist-similarities-id-40764863/relatedhighlights?max_artists=5&affiliate=mttnagencyid%3Ds2n%26mttnsiteid%3D125115%26mttn3pid%3DApple-Shazam%26mttnsub1%3DShazam_web%26mttnsub2%3D5348615A-616D-3235-3830-44754D6D5973%26itscg%3D30201%26app%3Dmusic%26itsct%3DShazam_web"
+                        },
+                        "hub": {
+                            "actions": [
+                                {
+                                    "id": "1601999915",
+                                    "name": "apple",
+                                    "type": "applemusicplay"
+                                },
+                                {
+                                    "name": "apple",
+                                    "type": "uri",
+                                    "uri": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/b6/50/85/b650856f-78b4-334f-1369-8f1978f2420b/mzaf_2456541125317392210.plus.aac.ep.m4a"
+                                }
+                            ],
+                            "displayname": "APPLE MUSIC",
+                            "explicit": false,
+                            "image": "https://images.shazam.com/static/icons/hub/web/v5/applemusic.png",
+                            "options": [
+                                {
+                                    "actions": [
+                                        {
+                                            "name": "hub:applemusic:deeplink",
+                                            "type": "applemusicopen",
+                                            "uri": "https://music.apple.com/gb/album/im-alone/1601999913?i=1601999915&mttnagencyid=s2n&mttnsiteid=125115&mttn3pid=Apple-Shazam&mttnsub1=Shazam_web&mttnsub2=5348615A-616D-3235-3830-44754D6D5973&itscg=30201&app=music&itsct=Shazam_web"
+                                        },
+                                        {
+                                            "name": "hub:applemusic:deeplink",
+                                            "type": "uri",
+                                            "uri": "https://music.apple.com/gb/album/im-alone/1601999913?i=1601999915&mttnagencyid=s2n&mttnsiteid=125115&mttn3pid=Apple-Shazam&mttnsub1=Shazam_web&mttnsub2=5348615A-616D-3235-3830-44754D6D5973&itscg=30201&app=music&itsct=Shazam_web"
+                                        }
+                                    ],
+                                    "beacondata": {
+                                        "providername": "applemusic",
+                                        "type": "open"
+                                    },
+                                    "caption": "OPEN",
+                                    "colouroverflowimage": false,
+                                    "image": "https://images.shazam.com/static/icons/hub/web/v5/overflow-open-option.png",
+                                    "listcaption": "Open in Apple Music",
+                                    "overflowimage": "https://images.shazam.com/static/icons/hub/web/v5/applemusic-overflow.png",
+                                    "providername": "applemusic",
+                                    "type": "open"
+                                }
+                            ],
+                            "type": "APPLEMUSIC"
+                        },
+                        "images": {
+                            "background": "https://is3-ssl.mzstatic.com/image/thumb/Music126/v4/be/ec/3d/beec3d56-f4d8-a473-b843-64314ea888c8/cover.jpg/400x400cc.jpg",
+                            "coverart": "https://is3-ssl.mzstatic.com/image/thumb/Music126/v4/be/ec/3d/beec3d56-f4d8-a473-b843-64314ea888c8/cover.jpg/400x400cc.jpg",
+                            "coverarthq": "https://is3-ssl.mzstatic.com/image/thumb/Music126/v4/be/ec/3d/beec3d56-f4d8-a473-b843-64314ea888c8/cover.jpg/400x400cc.jpg",
+                            "joecolor": "b:c4d3eap:140702s:3d302bt:373030q:585051"
+                        },
+                        "key": "560551698",
+                        "layout": "5",
+                        "properties": {},
+                        "share": {
+                            "href": "https://www.shazam.com/track/560551698/im-alone",
+                            "html": "https://www.shazam.com/snippets/email-share/560551698?lang=en&country=GB",
+                            "image": "https://is3-ssl.mzstatic.com/image/thumb/Music126/v4/be/ec/3d/beec3d56-f4d8-a473-b843-64314ea888c8/cover.jpg/400x400cc.jpg",
+                            "snapchat": "https://www.shazam.com/partner/sc/track/560551698",
+                            "subject": "I'm Alone - Melisa & Tommo",
+                            "text": "I used Shazam to discover I'm Alone by Melisa & Tommo.",
+                            "twitter": "I used @Shazam to discover I'm Alone by Melisa & Tommo."
+                        },
+                        "subtitle": "Melisa & Tommo",
+                        "title": "I'm Alone",
+                        "type": "MUSIC",
+                        "url": "https://www.shazam.com/track/560551698/im-alone"
+                    },
+                    {
+                        "highlightsurls": {},
+                        "hub": {
+                            "displayname": "APPLE MUSIC",
+                            "explicit": false,
+                            "image": "https://images.shazam.com/static/icons/hub/web/v5/applemusic.png",
+                            "options": [
+                                {
+                                    "actions": [
+                                        {
+                                            "name": "hub:applemusic:subscribe",
+                                            "type": "applemusicopen",
+                                            "uri": "https://music.apple.com/subscribe?mttnagencyid=s2n&mttnsiteid=125115&mttn3pid=Apple-Shazam&mttnsub1=Shazam_web&mttnsub2=5348615A-616D-3235-3830-44754D6D5973&itscg=30201&app=music&itsct=Shazam_web"
+                                        },
+                                        {
+                                            "name": "hub:applemusic:subscribe",
+                                            "type": "uri",
+                                            "uri": "https://music.apple.com/subscribe?mttnagencyid=s2n&mttnsiteid=125115&mttn3pid=Apple-Shazam&mttnsub1=Shazam_web&mttnsub2=5348615A-616D-3235-3830-44754D6D5973&itscg=30201&app=music&itsct=Shazam_web"
+                                        }
+                                    ],
+                                    "beacondata": {
+                                        "providername": "applemusic",
+                                        "type": "open"
+                                    },
+                                    "caption": "OPEN",
+                                    "colouroverflowimage": false,
+                                    "image": "https://images.shazam.com/static/icons/hub/web/v5/overflow-open-option.png",
+                                    "listcaption": "Open in Apple Music",
+                                    "overflowimage": "https://images.shazam.com/static/icons/hub/web/v5/applemusic-overflow.png",
+                                    "providername": "applemusic",
+                                    "type": "open"
+                                }
+                            ],
+                            "type": "APPLEMUSIC"
+                        },
+                        "images": {
+                            "background": "https://images.shazam.com/coverart/t599420625_s800.jpg",
+                            "coverart": "https://images.shazam.com/coverart/t599420625_s400.jpg",
+                            "coverarthq": "https://images.shazam.com/coverart/t599420625_s800.jpg"
+                        },
+                        "key": "599420625",
+                        "layout": "5",
+                        "properties": {},
+                        "share": {
+                            "href": "https://www.shazam.com/track/599420625/internal",
+                            "html": "https://www.shazam.com/snippets/email-share/599420625?lang=en&country=GB",
+                            "image": "https://images.shazam.com/coverart/t599420625_s400.jpg",
+                            "snapchat": "https://www.shazam.com/partner/sc/track/599420625",
+                            "subject": "Internal - Rogue Dave",
+                            "text": "I used Shazam to discover Internal by Rogue Dave.",
+                            "twitter": "I used @Shazam to discover Internal by Rogue Dave."
+                        },
+                        "subtitle": "Rogue Dave",
+                        "title": "Internal",
+                        "type": "MUSIC",
+                        "url": "https://www.shazam.com/track/599420625/internal"
+                    }
+                ]
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Track Recommendations",
+            "url": "https://shazam8.p.rapidapi.com/track/recommedations",
+            "description": "This endpoint will return the recommendation or similar songs of the given track.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "track_id",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "296831279"
+                },
+                {
+                    "name": "limit",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "4"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://shazam8.p.rapidapi.com/track/recommedations\"\nquerystring = {\"track_id\": \"296831279\", \"limit\": \"4\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"shazam8.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://shazam8.p.rapidapi.com/track/recommedations\"\nquerystring = {\"track_id\": \"296831279\", \"limit\": \"4\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"shazam8.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "next": "https://cdn.shazam.com/shazam/v3/en/GB/web/-/tracks/track-similarities-id-296831279?pageSize=4&startFrom=4",
+                "properties": {},
+                "tracks": [
+                    {
+                        "artists": [
+                            {
+                                "adamid": "278873078",
+                                "alias": "bruno-mars",
+                                "follow": {
+                                    "followkey": "A_40767324"
+                                },
+                                "id": "40767324"
+                            }
+                        ],
+                        "highlightsurls": {},
+                        "hub": {},
+                        "images": {
+                            "background": "https://is3-ssl.mzstatic.com/image/thumb/Music126/v4/6d/ad/28/6dad2828-52c4-01dc-8e33-3ad3c05b73fd/pr_source.png/800x800cc.jpg",
+                            "coverart": "https://is5-ssl.mzstatic.com/image/thumb/Music115/v4/25/6d/95/256d95ea-c58c-074d-b6f1-18f5cb4e6b96/075679956293.jpg/400x400cc.jpg",
+                            "coverarthq": "https://is5-ssl.mzstatic.com/image/thumb/Music115/v4/25/6d/95/256d95ea-c58c-074d-b6f1-18f5cb4e6b96/075679956293.jpg/400x400cc.jpg",
+                            "joecolor": "b:f7bb25p:0a0506s:1d0f02t:3a290cq:483109"
+                        },
+                        "key": "52754376",
+                        "layout": "5",
+                        "properties": {},
+                        "share": {
+                            "avatar": "https://is3-ssl.mzstatic.com/image/thumb/Music126/v4/6d/ad/28/6dad2828-52c4-01dc-8e33-3ad3c05b73fd/pr_source.png/800x800cc.jpg",
+                            "href": "https://www.shazam.com/track/52754376/just-the-way-you-are",
+                            "html": "https://www.shazam.com/snippets/email-share/52754376?lang=en&country=GB",
+                            "image": "https://is5-ssl.mzstatic.com/image/thumb/Music115/v4/25/6d/95/256d95ea-c58c-074d-b6f1-18f5cb4e6b96/075679956293.jpg/400x400cc.jpg",
+                            "snapchat": "https://www.shazam.com/partner/sc/track/52754376",
+                            "subject": "Just The Way You Are - Bruno Mars",
+                            "text": "I used Shazam to discover Just The Way You Are by Bruno Mars.",
+                            "twitter": "I used @Shazam to discover Just The Way You Are by Bruno Mars."
+                        },
+                        "subtitle": "Bruno Mars",
+                        "title": "Just The Way You Are",
+                        "type": "MUSIC",
+                        "url": "https://www.shazam.com/track/52754376/just-the-way-you-are"
+                    },
+                    {
+                        "artists": [
+                            {
+                                "adamid": "1798556",
+                                "alias": "maroon-5",
+                                "follow": {
+                                    "followkey": "A_10197384"
+                                },
+                                "id": "10197384"
+                            }
+                        ],
+                        "highlightsurls": {
+                            "artisthighlightsurl": "https://cdn.shazam.com/video/v3/en/GB/web/1798556/highlights?affiliate=mttnagencyid%3Ds2n%26mttnsiteid%3D125115%26mttn3pid%3DApple-Shazam%26mttnsub1%3DShazam_web%26mttnsub2%3D5348615A-616D-3235-3830-44754D6D5973%26itscg%3D30201%26app%3Dmusic%26itsct%3DShazam_web&videoIdToFilter=1389794717&channel=",
+                            "relatedhighlightsurl": "https://cdn.shazam.com/video/v3/en/GB/web/10197384/artist-similarities-id-10197384/relatedhighlights?max_artists=5&affiliate=mttnagencyid%3Ds2n%26mttnsiteid%3D125115%26mttn3pid%3DApple-Shazam%26mttnsub1%3DShazam_web%26mttnsub2%3D5348615A-616D-3235-3830-44754D6D5973%26itscg%3D30201%26app%3Dmusic%26itsct%3DShazam_web&channel=",
+                            "trackhighlighturl": "https://cdn.shazam.com/video/v3/en/GB/web/highlights/1389794717?affiliate=mttnagencyid%3Ds2n%26mttnsiteid%3D125115%26mttn3pid%3DApple-Shazam%26mttnsub1%3DShazam_web%26mttnsub2%3D5348615A-616D-3235-3830-44754D6D5973%26itscg%3D30201%26app%3Dmusic%26itsct%3DShazam_web&channel="
+                        },
+                        "hub": {
+                            "actions": [
+                                {
+                                    "id": "1396384713",
+                                    "name": "apple",
+                                    "type": "applemusicplay"
+                                },
+                                {
+                                    "name": "apple",
+                                    "type": "uri",
+                                    "uri": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/5e/6d/cc/5e6dccfd-bad1-7d54-2299-24d67f6a028a/mzaf_5865009514457988741.plus.aac.ep.m4a"
+                                }
+                            ],
+                            "displayname": "APPLE MUSIC",
+                            "explicit": true,
+                            "image": "https://images.shazam.com/static/icons/hub/web/v5/applemusic.png",
+                            "options": [
+                                {
+                                    "actions": [
+                                        {
+                                            "name": "hub:applemusic:deeplink",
+                                            "type": "applemusicopen",
+                                            "uri": "https://music.apple.com/gb/album/girls-like-you-feat-cardi-b/1396383479?i=1396384713&mttnagencyid=s2n&mttnsiteid=125115&mttn3pid=Apple-Shazam&mttnsub1=Shazam_web&mttnsub2=5348615A-616D-3235-3830-44754D6D5973&itscg=30201&app=music&itsct=Shazam_web"
+                                        },
+                                        {
+                                            "name": "hub:applemusic:deeplink",
+                                            "type": "uri",
+                                            "uri": "https://music.apple.com/gb/album/girls-like-you-feat-cardi-b/1396383479?i=1396384713&mttnagencyid=s2n&mttnsiteid=125115&mttn3pid=Apple-Shazam&mttnsub1=Shazam_web&mttnsub2=5348615A-616D-3235-3830-44754D6D5973&itscg=30201&app=music&itsct=Shazam_web"
+                                        }
+                                    ],
+                                    "beacondata": {
+                                        "providername": "applemusic",
+                                        "type": "open"
+                                    },
+                                    "caption": "OPEN",
+                                    "colouroverflowimage": false,
+                                    "image": "https://images.shazam.com/static/icons/hub/web/v5/overflow-open-option.png",
+                                    "listcaption": "Open in Apple Music",
+                                    "overflowimage": "https://images.shazam.com/static/icons/hub/web/v5/applemusic-overflow.png",
+                                    "providername": "applemusic",
+                                    "type": "open"
+                                }
+                            ],
+                            "type": "APPLEMUSIC"
+                        },
+                        "images": {
+                            "background": "https://is5-ssl.mzstatic.com/image/thumb/Music115/v4/d6/33/bf/d633bfd3-f592-c582-2beb-d6768204001b/pr_source.png/800x800cc.jpg",
+                            "coverart": "https://is3-ssl.mzstatic.com/image/thumb/Music125/v4/1e/cf/97/1ecf9739-cd02-8e8f-77d8-165b2d560f95/17UM1IM32471.rgb.jpg/400x400cc.jpg",
+                            "coverarthq": "https://is3-ssl.mzstatic.com/image/thumb/Music125/v4/1e/cf/97/1ecf9739-cd02-8e8f-77d8-165b2d560f95/17UM1IM32471.rgb.jpg/400x400cc.jpg",
+                            "joecolor": "b:ffffffp:070516s:182123t:383744q:464e4f"
+                        },
+                        "key": "377495989",
+                        "layout": "5",
+                        "properties": {},
+                        "share": {
+                            "avatar": "https://is5-ssl.mzstatic.com/image/thumb/Music115/v4/d6/33/bf/d633bfd3-f592-c582-2beb-d6768204001b/pr_source.png/800x800cc.jpg",
+                            "href": "https://www.shazam.com/track/377495989/girls-like-you",
+                            "html": "https://www.shazam.com/snippets/email-share/377495989?lang=en&country=GB",
+                            "image": "https://is3-ssl.mzstatic.com/image/thumb/Music125/v4/1e/cf/97/1ecf9739-cd02-8e8f-77d8-165b2d560f95/17UM1IM32471.rgb.jpg/400x400cc.jpg",
+                            "snapchat": "https://www.shazam.com/partner/sc/track/377495989",
+                            "subject": "Girls Like You - Maroon 5",
+                            "text": "I used Shazam to discover Girls Like You by Maroon 5.",
+                            "twitter": "I used @Shazam to discover Girls Like You by Maroon 5."
+                        },
+                        "subtitle": "Maroon 5",
+                        "title": "Girls Like You",
+                        "type": "MUSIC",
+                        "url": "https://www.shazam.com/track/377495989/girls-like-you"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Search Track",
+            "url": "https://shazam8.p.rapidapi.com/track/search",
+            "description": "This endpoint will search for the name of any song and return similar songs with the name.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "limit",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "5"
+                },
+                {
+                    "name": "track",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "Love Yourself"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://shazam8.p.rapidapi.com/track/search\"\nquerystring = {\"limit\": \"5\", \"track\": \"Love Yourself\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"shazam8.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://shazam8.p.rapidapi.com/track/search\"\nquerystring = {\"limit\": \"5\", \"track\": \"Love Yourself\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"shazam8.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "tracks": {
+                    "hits": [
+                        {
+                            "actions": [
+                                {
+                                    "id": "296831279",
+                                    "name": "track:296831279",
+                                    "type": "track"
+                                }
+                            ],
+                            "alias": "love-yourself",
+                            "artists": [
+                                {
+                                    "adamid": "320569549",
+                                    "alias": "justin-bieber",
+                                    "follow": {
+                                        "followkey": "A_40543550"
+                                    },
+                                    "id": "40543550"
+                                }
+                            ],
+                            "heading": {
+                                "subtitle": "Justin Bieber",
+                                "title": "Love Yourself"
+                            },
+                            "images": {
+                                "blurred": "https://is2-ssl.mzstatic.com/image/thumb/Music124/v4/eb/c0/0a/ebc00ad6-3fa4-cecd-4a24-814d2fe6a551/00602547587411.rgb.jpg/400x400cc.jpg",
+                                "default": "https://is2-ssl.mzstatic.com/image/thumb/Music124/v4/eb/c0/0a/ebc00ad6-3fa4-cecd-4a24-814d2fe6a551/00602547587411.rgb.jpg/400x400cc.jpg",
+                                "play": "https://is2-ssl.mzstatic.com/image/thumb/Music124/v4/eb/c0/0a/ebc00ad6-3fa4-cecd-4a24-814d2fe6a551/00602547587411.rgb.jpg/400x400cc.jpg"
+                            },
+                            "key": "296831279",
+                            "share": {
+                                "avatar": "https://is4-ssl.mzstatic.com/image/thumb/Features125/v4/3a/c1/a3/3ac1a308-06fe-f693-ea95-09ca2b2c88a1/pr_source.png/800x800cc.jpg",
+                                "href": "https://www.shazam.com/track/296831279/love-yourself",
+                                "html": "https://www.shazam.com/snippets/email-share/296831279?lang=en&country=GB",
+                                "image": "https://is2-ssl.mzstatic.com/image/thumb/Music124/v4/eb/c0/0a/ebc00ad6-3fa4-cecd-4a24-814d2fe6a551/00602547587411.rgb.jpg/400x400cc.jpg",
+                                "snapchat": "https://www.shazam.com/partner/sc/track/296831279",
+                                "subject": "Love Yourself - Justin Bieber",
+                                "text": "I used Shazam to discover Love Yourself by Justin Bieber.",
+                                "twitter": "I used @Shazam to discover Love Yourself by Justin Bieber."
+                            },
+                            "stores": {
+                                "apple": {
+                                    "actions": [
+                                        {
+                                            "type": "uri",
+                                            "uri": "https://music.apple.com/gb/album/love-yourself/1440825845?i=1440826328&app=music&itsct=Shazam_1"
+                                        }
+                                    ],
+                                    "coverarturl": "https://is2-ssl.mzstatic.com/image/thumb/Music124/v4/eb/c0/0a/ebc00ad6-3fa4-cecd-4a24-814d2fe6a551/00602547587411.rgb.jpg/400x400cc.jpg",
+                                    "explicit": false,
+                                    "previewurl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/cd/03/21/cd032154-b564-6e87-4222-5020fea1fad4/mzaf_11541127985306645474.plus.aac.ep.m4a",
+                                    "productid": "1440825845",
+                                    "trackid": "1440826328"
+                                }
+                            },
+                            "streams": {},
+                            "type": "MUSIC",
+                            "url": "https://www.shazam.com/track/296831279/love-yourself",
+                            "urlparams": {}
+                        }
+                    ],
+                    "next": "https://cdn.shazam.com/search/v3/en/GB/web/search?query=Love%20Yourself&offset=2&numResults=2&types=songs"
+                }
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Track Info",
+            "url": "https://shazam8.p.rapidapi.com/track/info",
+            "description": "This endpoint will return info of any track from shazam.com",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "track_id",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "296831279"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://shazam8.p.rapidapi.com/track/info\"\nquerystring = {\"track_id\": \"296831279\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"shazam8.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://shazam8.p.rapidapi.com/track/info\"\nquerystring = {\"track_id\": \"296831279\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"shazam8.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "albumadamid": "1440825845",
+                "alias": "love-yourself",
+                "artists": [
+                    {
+                        "adamid": "320569549",
+                        "alias": "justin-bieber",
+                        "follow": {
+                            "followkey": "A_40543550"
+                        },
+                        "id": "40543550"
+                    }
+                ],
+                "genres": {
+                    "primary": "Pop"
+                },
+                "highlightsurls": {},
+                "hub": {
+                    "actions": [
+                        {
+                            "id": "1440826328",
+                            "name": "apple",
+                            "type": "applemusicplay"
+                        },
+                        {
+                            "name": "apple",
+                            "type": "uri",
+                            "uri": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/cd/03/21/cd032154-b564-6e87-4222-5020fea1fad4/mzaf_11541127985306645474.plus.aac.ep.m4a"
+                        }
+                    ],
+                    "displayname": "APPLE MUSIC",
+                    "explicit": false,
+                    "image": "https://images.shazam.com/static/icons/hub/web/v5/applemusic.png",
+                    "options": [],
+                    "type": "APPLEMUSIC"
+                },
+                "images": {
+                    "background": "https://is4-ssl.mzstatic.com/image/thumb/Features125/v4/3a/c1/a3/3ac1a308-06fe-f693-ea95-09ca2b2c88a1/pr_source.png/800x800cc.jpg",
+                    "coverart": "https://is2-ssl.mzstatic.com/image/thumb/Music124/v4/eb/c0/0a/ebc00ad6-3fa4-cecd-4a24-814d2fe6a551/00602547587411.rgb.jpg/400x400cc.jpg",
+                    "coverarthq": "https://is2-ssl.mzstatic.com/image/thumb/Music124/v4/eb/c0/0a/ebc00ad6-3fa4-cecd-4a24-814d2fe6a551/00602547587411.rgb.jpg/400x400cc.jpg",
+                    "joecolor": "b:1f1f1fp:f2f1efs:cfcec8t:c8c7c5q:acaba6"
+                },
+                "isrc": "USUM71516761",
+                "key": "296831279",
+                "layout": "5",
+                "relatedtracksurl": "https://cdn.shazam.com/shazam/v3/en/GB/web/-/tracks/track-similarities-id-296831279?startFrom=0&pageSize=20&connected=",
+                "releasedate": "09-11-2015",
+                "sections": [
+                    {
+                        "metadata": [
+                            {
+                                "text": "Purpose",
+                                "title": "Album"
+                            },
+                            {
+                                "text": "RBMG/Def Jam",
+                                "title": "Label"
+                            },
+                            {
+                                "text": "2015",
+                                "title": "Released"
+                            }
+                        ],
+                        "metapages": [
+                            {
+                                "caption": "Justin Bieber",
+                                "image": "https://is4-ssl.mzstatic.com/image/thumb/Features125/v4/3a/c1/a3/3ac1a308-06fe-f693-ea95-09ca2b2c88a1/pr_source.png/800x800cc.jpg"
+                            },
+                            {
+                                "caption": "Love Yourself",
+                                "image": "https://is2-ssl.mzstatic.com/image/thumb/Music124/v4/eb/c0/0a/ebc00ad6-3fa4-cecd-4a24-814d2fe6a551/00602547587411.rgb.jpg/400x400cc.jpg"
+                            }
+                        ],
+                        "tabname": "Song",
+                        "type": "SONG"
+                    },
+                    {
+                        "beacondata": {
+                            "commontrackid": "47297325",
+                            "lyricsid": "13156167",
+                            "providername": "musixmatch"
+                        },
+                        "footer": "Writer(s): Benjamin Levin, Edward Sheeran, Scott Braun, Justin Bieber Lyrics powered by www.musixmatch.com",
+                        "tabname": "Lyrics",
+                        "text": [
+                            "For all the times that you rain on my parade",
+                            "And all the clubs you get in using my name",
+                            "You think you broke my heart, oh girl for goodness sake",
+                            "You think I'm crying on my own, well I ain't",
+                            "",
+                            "And I didn't wanna write a song",
+                            "Cause I didn't want anyone thinking I still care",
+                            "I don't but, you still hit my phone up",
+                            "And baby I be movin' on",
+                            "And I think you should be somethin'",
+                            "I don't wanna hold back, maybe you should know that",
+                            "",
+                            "My mama don't like you and she likes everyone",
+                            "And I never like to admit that I was wrong",
+                            "And I've been so caught up in my job, didn't see what's going on",
+                            "But now I know, I'm better sleeping on my own",
+                            "",
+                            "Cause if you like the way you look that much",
+                            "Oh, baby, you should go and love yourself",
+                            "And if you think that I'm still holdin' on to somethin'",
+                            "You should go and love yourself",
+                            "",
+                            "And when you told me that you hated my friends",
+                            "The only problem was with you and not them",
+                            "And every time you told me my opinion was wrong",
+                            "And tried to make me forget where I came from",
+                            "",
+                            "And I didn't wanna write a song",
+                            "Cause I didn't want anyone thinking I still care",
+                            "I don't but, you still hit my phone up",
+                            "And baby I be movin' on",
+                            "And I think you should be somethin'",
+                            "I don't wanna hold back, maybe you should know that",
+                            "",
+                            "My mama don't like you and she likes everyone",
+                            "And I never like to admit that I was wrong",
+                            "And I've been so caught up in my job, didn't see what's going on",
+                            "But now I know, I'm better sleeping on my own...."
+                        ],
+                        "type": "LYRICS"
+                    },
+                    {
+                        "tabname": "Video",
+                        "type": "VIDEO",
+                        "youtubeurl": "https://cdn.shazam.com/video/v3/-/GB/web/296831279/youtube/video?q=Justin+Bieber+%22Love+Yourself%22&c=UCHkj014U2CQ2Nv0UZeYpE_A"
+                    },
+                    {
+                        "actions": [
+                            {
+                                "id": "40543550",
+                                "type": "artistposts"
+                            },
+                            {
+                                "id": "40543550",
+                                "type": "artist"
+                            }
+                        ],
+                        "avatar": "https://is4-ssl.mzstatic.com/image/thumb/Features125/v4/3a/c1/a3/3ac1a308-06fe-f693-ea95-09ca2b2c88a1/pr_source.png/800x800cc.jpg",
+                        "id": "40543550",
+                        "name": "Justin Bieber",
+                        "tabname": "Artist",
+                        "toptracks": {
+                            "url": "https://cdn.shazam.com/shazam/v3/en/GB/web/-/tracks/artisttoptracks_40543550?startFrom=0&pageSize=20&connected="
+                        },
+                        "type": "ARTIST",
+                        "url": "https://cdn.shazam.com/digest/v1/en/GB/web/artist/40543550/recentpost",
+                        "verified": false
+                    },
+                    {
+                        "tabname": "Related",
+                        "type": "RELATED",
+                        "url": "https://cdn.shazam.com/shazam/v3/en/GB/web/-/tracks/track-similarities-id-296831279?startFrom=0&pageSize=20&connected="
+                    }
+                ],
+                "share": {
+                    "avatar": "https://is4-ssl.mzstatic.com/image/thumb/Features125/v4/3a/c1/a3/3ac1a308-06fe-f693-ea95-09ca2b2c88a1/pr_source.png/800x800cc.jpg",
+                    "href": "https://www.shazam.com/track/296831279/love-yourself",
+                    "html": "https://www.shazam.com/snippets/email-share/296831279?lang=en&country=GB",
+                    "image": "https://is2-ssl.mzstatic.com/image/thumb/Music124/v4/eb/c0/0a/ebc00ad6-3fa4-cecd-4a24-814d2fe6a551/00602547587411.rgb.jpg/400x400cc.jpg",
+                    "snapchat": "https://www.shazam.com/partner/sc/track/296831279",
+                    "subject": "Love Yourself - Justin Bieber",
+                    "text": "I used Shazam to discover Love Yourself by Justin Bieber.",
+                    "twitter": "I used @Shazam to discover Love Yourself by Justin Bieber."
+                },
+                "subtitle": "Justin Bieber",
+                "title": "Love Yourself",
+                "trackadamid": "1440826328",
+                "type": "MUSIC",
+                "url": "https://www.shazam.com/track/296831279/love-yourself",
+                "urlparams": {}
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Artist Search",
+            "url": "https://shazam8.p.rapidapi.com/artist/search",
+            "description": "This endpoint let you search for an artist by their name. You can get a list of artists from its name.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "limit",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "5"
+                },
+                {
+                    "name": "artist",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "Justin Bieber"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://shazam8.p.rapidapi.com/artist/search\"\nquerystring = {\"limit\": \"5\", \"artist\": \"Justin Bieber\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"shazam8.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://shazam8.p.rapidapi.com/artist/search\"\nquerystring = {\"limit\": \"5\", \"artist\": \"Justin Bieber\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"shazam8.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "artists": {
+                    "hits": [
+                        {
+                            "actions": [
+                                {
+                                    "id": "40543550",
+                                    "name": "artist:40543550",
+                                    "type": "artist"
+                                }
+                            ],
+                            "alias": "justin-bieber",
+                            "avatar": {
+                                "blurred": "https://is4-ssl.mzstatic.com/image/thumb/Features125/v4/3a/c1/a3/3ac1a308-06fe-f693-ea95-09ca2b2c88a1/pr_source.png/800x800cc.jpg",
+                                "default": "https://is4-ssl.mzstatic.com/image/thumb/Features125/v4/3a/c1/a3/3ac1a308-06fe-f693-ea95-09ca2b2c88a1/pr_source.png/800x800cc.jpg",
+                                "play": "https://is4-ssl.mzstatic.com/image/thumb/Features125/v4/3a/c1/a3/3ac1a308-06fe-f693-ea95-09ca2b2c88a1/pr_source.png/800x800cc.jpg"
+                            },
+                            "follow": {
+                                "followkey": "A_40543550"
+                            },
+                            "id": "40543550",
+                            "name": "Justin Bieber",
+                            "url": "https://www.shazam.com/artist/40543550/justin-bieber",
+                            "verified": false
+                        }
+                    ]
+                }
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Artist Info",
+            "url": "https://shazam8.p.rapidapi.com/artist/info",
+            "description": "This endpoint will extract information of any artist from https://www.shazam.com.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "artist_id",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "40543550"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://shazam8.p.rapidapi.com/artist/info\"\nquerystring = {\"artist_id\": \"40543550\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"shazam8.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://shazam8.p.rapidapi.com/artist/info\"\nquerystring = {\"artist_id\": \"40543550\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"shazam8.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "actions": [
+                    {
+                        "id": "40543550",
+                        "type": "artistposts"
+                    },
+                    {
+                        "id": "40543550",
+                        "type": "artist"
+                    }
+                ],
+                "adamid": "320569549",
+                "alias": "justin-bieber",
+                "avatar": "https://is4-ssl.mzstatic.com/image/thumb/Features125/v4/3a/c1/a3/3ac1a308-06fe-f693-ea95-09ca2b2c88a1/pr_source.png/800x800cc.jpg",
+                "genres": {
+                    "primary": "Pop",
+                    "secondaries": [
+                        "Music",
+                        "Rock",
+                        "Dance",
+                        "Teen Pop",
+                        "R&B/Soul",
+                        "Contemporary R&B",
+                        "Holiday",
+                        "Christmas",
+                        "Electronic",
+                        "Vocal"
+                    ]
+                },
+                "id": "40543550",
+                "layout": "3",
+                "name": "Justin Bieber",
+                "share": {
+                    "href": "https://www.shazam.com/artist/40543550/justin-bieber",
+                    "image": "https://is4-ssl.mzstatic.com/image/thumb/Features125/v4/3a/c1/a3/3ac1a308-06fe-f693-ea95-09ca2b2c88a1/pr_source.png/400x400cc.jpg",
+                    "subject": "I discovered Justin Bieber using Shazam.",
+                    "text": "I discovered Justin Bieber using Shazam.",
+                    "twitter": "I discovered Justin Bieber using @Shazam."
+                },
+                "toptracks": {
+                    "url": "https://cdn.shazam.com/shazam/v3/en/GB/web/-/tracks/artisttoptracks_40543550?startFrom=0&pageSize=20&connected="
+                },
+                "url": "https://cdn.shazam.com/digest/v1/en/GB/web/artist/40543550/recentpost",
+                "verified": false,
+                "weburl": "https://www.shazam.com/artist/40543550/justin-bieber"
+            },
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "shazam"
+}

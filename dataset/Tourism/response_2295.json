@@ -1,0 +1,28 @@
+{
+"user_query":"I'm organizing a family reunion in New York City and need to find the nearest cities within a 50-mile radius for a day trip.",
+"domain":"tourism",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Identify cities within a 50-mile radius of New York City.",
+        "domain": "tourism",
+        "required_inputs": ["city_location", "radius"]
+    },
+    {
+        "id": 2,
+        "description": "For the cities identified, retrieve population data, country, and distances from New York City.",
+        "domain": "tourism",
+        "required_inputs": ["city_list"]
+    },
+    {
+        "id": 3,
+        "description": "Get local time and time zone information for each of the five largest cities.",
+        "domain": "tourism",
+        "required_inputs": ["city_data"]
+    }
+],
+"dependencies": {
+    "2": ["1"],
+    "3": ["2"]
+}
+}

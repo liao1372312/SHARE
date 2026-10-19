@@ -1,0 +1,555 @@
+{
+    "product_id": "api_20287f95-d24a-4fb7-9276-652032d508f6",
+    "tool_description": "The Uganda API provides endpoints to lookup locations, find facilities and perform geospatial operations such as distance calculation and directions between two locations in Uganda.",
+    "home_url": "https://rapidapi.com/kidddevs/api/uganda-api/",
+    "name": "Uganda API",
+    "title": "Uganda API",
+    "pricing": "FREEMIUM",
+    "tool_name": "Uganda API",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 457,
+        "avgSuccessRate": 100,
+        "popularityScore": 8.4,
+        "__typename": "Score"
+    },
+    "host": "uganda-api.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Directions Between 2 Locations",
+            "url": "https://uganda-api.p.rapidapi.com/directions",
+            "description": "This endpoint returns information about the route between two locations in terms of distance, duration, and steps.\n\nBelow Example: **Directions from a location in Nansana to Kampala**",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "end_lat",
+                    "type": "NUMBER",
+                    "description": "Latitude of the ending point (required)",
+                    "default": "0.32493795000000003"
+                },
+                {
+                    "name": "start_lat",
+                    "type": "NUMBER",
+                    "description": "Latitude of the starting point (required)",
+                    "default": "0.365816"
+                },
+                {
+                    "name": "end_lon",
+                    "type": "NUMBER",
+                    "description": "Longitude of the ending point (required)",
+                    "default": "32.57523607707668"
+                },
+                {
+                    "name": "start_lon",
+                    "type": "NUMBER",
+                    "description": "Longitude of the starting point (required)",
+                    "default": "32.529226"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "distance_unit",
+                    "type": "STRING",
+                    "description": "Unit of distance measurement, valid options are **km** (default), and **mi**.",
+                    "default": "km"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://uganda-api.p.rapidapi.com/directions\"\nquerystring = {\"end_lat\": \"0.32493795000000003\", \"start_lat\": \"0.365816\", \"end_lon\": \"32.57523607707668\", \"start_lon\": \"32.529226\", \"distance_unit\": \"km\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"uganda-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://uganda-api.p.rapidapi.com/directions\"\nquerystring = {\"end_lat\": \"0.32493795000000003\", \"start_lat\": \"0.365816\", \"end_lon\": \"32.57523607707668\", \"start_lon\": \"32.529226\", \"distance_unit\": \"km\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"uganda-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "distance": "8.84km",
+                "duration": "9min:3s",
+                "steps": [
+                    {
+                        "direction": "depart",
+                        "distance": "0.10km",
+                        "duration": "0min:18s",
+                        "instruction": "",
+                        "location": [
+                            32.530035,
+                            0.36558
+                        ]
+                    },
+                    {
+                        "direction": "turn",
+                        "distance": "0.27km",
+                        "duration": "0min:44s",
+                        "instruction": "",
+                        "location": [
+                            32.53074,
+                            0.365057
+                        ]
+                    },
+                    {
+                        "direction": "turn",
+                        "distance": "0.69km",
+                        "duration": "0min:38s",
+                        "instruction": "",
+                        "location": [
+                            32.528712,
+                            0.363875
+                        ]
+                    },
+                    {
+                        "direction": "new name",
+                        "distance": "1.59km",
+                        "duration": "1min:28s",
+                        "instruction": "",
+                        "location": [
+                            32.532311,
+                            0.358775
+                        ]
+                    },
+                    {
+                        "direction": "new name",
+                        "distance": "0.26km",
+                        "duration": "0min:14s",
+                        "instruction": "",
+                        "location": [
+                            32.54101,
+                            0.347319
+                        ]
+                    },
+                    {
+                        "direction": "on ramp",
+                        "distance": "0.31km",
+                        "duration": "0min:24s",
+                        "instruction": "",
+                        "location": [
+                            32.542652,
+                            0.345808
+                        ]
+                    },
+                    {
+                        "direction": "new name",
+                        "distance": "0.13km",
+                        "duration": "0min:10s",
+                        "instruction": "",
+                        "location": [
+                            32.545412,
+                            0.346221
+                        ]
+                    },
+                    {
+                        "direction": "merge",
+                        "distance": "1.47km",
+                        "duration": "0min:59s",
+                        "instruction": "",
+                        "location": [
+                            32.54655,
+                            0.346288
+                        ]
+                    },
+                    {
+                        "direction": "off ramp",
+                        "distance": "0.38km",
+                        "duration": "0min:30s",
+                        "instruction": "",
+                        "location": [
+                            32.559328,
+                            0.349088
+                        ]
+                    },
+                    {
+                        "direction": "rotary",
+                        "distance": "0.20km",
+                        "duration": "0min:11s",
+                        "instruction": "",
+                        "location": [
+                            32.562625,
+                            0.349931
+                        ]
+                    },
+                    {
+                        "direction": "exit rotary",
+                        "distance": "1.34km",
+                        "duration": "1min:15s",
+                        "instruction": "",
+                        "location": [
+                            32.56334,
+                            0.348975
+                        ]
+                    },
+                    {
+                        "direction": "roundabout",
+                        "distance": "0.10km",
+                        "duration": "0min:6s",
+                        "instruction": "",
+                        "location": [
+                            32.571561,
+                            0.340815
+                        ]
+                    },
+                    {
+                        "direction": "exit roundabout",
+                        "distance": "1.16km",
+                        "duration": "1min:4s",
+                        "instruction": "",
+                        "location": [
+                            32.571749,
+                            0.340391
+                        ]
+                    },
+                    {
+                        "direction": "new name",
+                        "distance": "0.21km",
+                        "duration": "0min:12s",
+                        "instruction": "",
+                        "location": [
+                            32.574102,
+                            0.330237
+                        ]
+                    },
+                    {
+                        "direction": "new name",
+                        "distance": "0.42km",
+                        "duration": "0min:24s",
+                        "instruction": "",
+                        "location": [
+                            32.574197,
+                            0.328376
+                        ]
+                    },
+                    {
+                        "direction": "turn",
+                        "distance": "0.09km",
+                        "duration": "0min:8s",
+                        "instruction": "",
+                        "location": [
+                            32.574096,
+                            0.324587
+                        ]
+                    },
+                    {
+                        "direction": "turn",
+                        "distance": "0.12km",
+                        "duration": "0min:12s",
+                        "instruction": "",
+                        "location": [
+                            32.574757,
+                            0.324079
+                        ]
+                    },
+                    {
+                        "direction": "arrive",
+                        "distance": "0.00km",
+                        "duration": "0min:0s",
+                        "instruction": "",
+                        "location": [
+                            32.574967,
+                            0.324939
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Reverse Geocode",
+            "url": "https://uganda-api.p.rapidapi.com/georev",
+            "description": "This endpoint allows you to perform reverse geocoding in Uganda by providing query parameters for latitude and longitude. It returns the name of the city where the location is located.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "lon",
+                    "type": "STRING",
+                    "description": "The longitude of the location.",
+                    "default": "32.57523607707668"
+                },
+                {
+                    "name": "lat",
+                    "type": "STRING",
+                    "description": "The latitude of the location.",
+                    "default": "0.32493795000000003"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://uganda-api.p.rapidapi.com/georev\"\nquerystring = {\"lon\": \"32.57523607707668\", \"lat\": \"0.32493795000000003\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"uganda-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://uganda-api.p.rapidapi.com/georev\"\nquerystring = {\"lon\": \"32.57523607707668\", \"lat\": \"0.32493795000000003\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"uganda-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "amenity": "",
+                "boundingbox": [
+                    "0.3248683",
+                    "0.3250061",
+                    "32.5750248",
+                    "32.5754186"
+                ],
+                "category": "building",
+                "city": "Kampala Capital City",
+                "country": "Uganda",
+                "display_name": "Joviro, Buganda Road, Bat Valley, Central, Kampala Capital City, Kampala, Central Region, Uganda",
+                "region": "Central Region",
+                "suburb": "Central"
+            }
+        },
+        {
+            "name": "Facilities Lookup",
+            "url": "https://uganda-api.p.rapidapi.com/facility",
+            "description": "This endpoint allows you to get facilities in Uganda like hospital, bank, college, etc. by providing optional query parameters for facility type, region and city. It returns a list of facilities that match the query parameters.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "region",
+                    "type": "STRING",
+                    "description": "The region where the facility is located",
+                    "default": "Central"
+                },
+                {
+                    "name": "type",
+                    "type": "STRING",
+                    "description": "The type of amenity facility to search for (default: **hospital**)\nOptions:\n**aerodrome, bar, cafe, fast_food, pub, restaurant, college, driving_school, school, university, bank, atm, pharmacy,** etc..        \n\n[More options->](https://wiki.openstreetmap.org/wiki/Map_features#Amenity)",
+                    "default": "hospital"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "limit",
+                    "type": "STRING",
+                    "description": "The number of facilities to query.",
+                    "default": "10"
+                },
+                {
+                    "name": "city",
+                    "type": "STRING",
+                    "description": "The city where the facility is located",
+                    "default": "Kampala"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://uganda-api.p.rapidapi.com/facility\"\nquerystring = {\"region\": \"Central\", \"type\": \"hospital\", \"limit\": \"10\", \"city\": \"Kampala\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"uganda-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://uganda-api.p.rapidapi.com/facility\"\nquerystring = {\"region\": \"Central\", \"type\": \"hospital\", \"limit\": \"10\", \"city\": \"Kampala\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"uganda-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "hospital": [
+                    {
+                        "ISO3166-2-lvl4": "",
+                        "address": "Kevina Road, Kampala Capital City, Uganda",
+                        "amenity": "Saint Francis Hospital & Nursing school Nsambya",
+                        "country_code": "ug",
+                        "county": "",
+                        "display_name": "Saint Francis Hospital & Nursing school Nsambya, Kevina Road, Kibuye, Makindye, Kampala Capital City, Kampala, Central Region, Uganda",
+                        "latitude": "0.30001245",
+                        "longitude": "32.58657864558823",
+                        "postcode": "",
+                        "region": "Central Region",
+                        "road": "Kevina Road",
+                        "suburb": "Kibuye",
+                        "village": "",
+                        "website": ""
+                    },
+                    {
+                        "ISO3166-2-lvl4": "",
+                        "address": "St. Barnabas Road, Kampala Capital City, Uganda",
+                        "amenity": "International Hospital Kampala",
+                        "country_code": "ug",
+                        "county": "",
+                        "display_name": "International Hospital Kampala, 4686, St. Barnabas Road, Kisugu, Makindye, Kampala Capital City, Kampala, Central Region, Uganda",
+                        "latitude": "0.30511055",
+                        "longitude": "32.61066466326686",
+                        "postcode": "",
+                        "region": "Central Region",
+                        "road": "St. Barnabas Road",
+                        "suburb": "Makindye",
+                        "village": "",
+                        "website": "https://ihk.img.co.ug/"
+                    },
+                    {
+                        "ISO3166-2-lvl4": "",
+                        "address": "Kibuli Road, Kampala Capital City, Uganda",
+                        "amenity": "Kibuli Muslim Hospital",
+                        "country_code": "ug",
+                        "county": "",
+                        "display_name": "Kibuli Muslim Hospital, Kibuli Road, Namuwongo, Makindye, Kampala Capital City, Kampala, Central Region, Uganda",
+                        "latitude": "0.30947935000000004",
+                        "longitude": "32.59534143443112",
+                        "postcode": "",
+                        "region": "Central Region",
+                        "road": "Kibuli Road",
+                        "suburb": "Makindye",
+                        "village": "",
+                        "website": ""
+                    },
+                    {
+                        "ISO3166-2-lvl4": "",
+                        "address": "Naguru Road, Kampala Capital City, Uganda",
+                        "amenity": "China-Uganda Friendship Hospital",
+                        "country_code": "ug",
+                        "county": "",
+                        "display_name": "China-Uganda Friendship Hospital, Naguru Road, Katalima, Nakawa, Kampala Capital City, Kampala, Central Region, Uganda",
+                        "latitude": "0.32944510000000005",
+                        "longitude": "32.606258691986014",
+                        "postcode": "",
+                        "region": "Central Region",
+                        "road": "Naguru Road",
+                        "suburb": "Nakawa",
+                        "village": "",
+                        "website": ""
+                    },
+                    {
+                        "ISO3166-2-lvl4": "",
+                        "address": "Akii Bua Road, Kampala Capital City, Uganda",
+                        "amenity": "Nakasero Hospital",
+                        "country_code": "ug",
+                        "county": "",
+                        "display_name": "Nakasero Hospital, Akii Bua Road, Kitante, Central, Kampala Capital City, Kampala, Central Region, Uganda",
+                        "latitude": "0.3268583",
+                        "longitude": "32.579493920331835",
+                        "postcode": "",
+                        "region": "Central Region",
+                        "road": "Akii Bua Road",
+                        "suburb": "Central",
+                        "village": "",
+                        "website": "http://www.nakaserohospital.com/"
+                    },
+                    {
+                        "ISO3166-2-lvl4": "",
+                        "address": "Buganda Road, Kampala Capital City, Uganda",
+                        "amenity": "Kampala Medical Chambers Hospital",
+                        "country_code": "ug",
+                        "county": "",
+                        "display_name": "Kampala Medical Chambers Hospital, Buganda Road, Bat Valley, Central, Kampala Capital City, Kampala, Central Region, Uganda",
+                        "latitude": "0.32493795000000003",
+                        "longitude": "32.57523607707668",
+                        "postcode": "",
+                        "region": "Central Region",
+                        "road": "Buganda Road",
+                        "suburb": "Central",
+                        "village": "",
+                        "website": ""
+                    },
+                    {
+                        "ISO3166-2-lvl4": "UG-102",
+                        "address": "Buganda Road, Kampala, Uganda",
+                        "amenity": "Case Hospital",
+                        "country_code": "ug",
+                        "county": "",
+                        "display_name": "Case Hospital, Buganda Road, Bat Valley, Central, Buganda Road, Kampala, Central Region, Uganda",
+                        "latitude": "0.32469695",
+                        "longitude": "32.57523755529337",
+                        "postcode": "",
+                        "region": "Central Region",
+                        "road": "Buganda Road",
+                        "suburb": "Central",
+                        "village": "Buganda Road",
+                        "website": "http://www.casemedcare.org/"
+                    },
+                    {
+                        "ISO3166-2-lvl4": "",
+                        "address": "Kisugu Road, Kampala Capital City, Uganda",
+                        "amenity": "International Health Sciences University",
+                        "country_code": "ug",
+                        "county": "",
+                        "display_name": "International Health Sciences University, Kisugu Road, Kisugu, Makindye, Kampala Capital City, Kampala, Central Region, Uganda",
+                        "latitude": "0.30569835",
+                        "longitude": "32.6110573002463",
+                        "postcode": "",
+                        "region": "Central Region",
+                        "road": "Kisugu Road",
+                        "suburb": "Makindye",
+                        "village": "",
+                        "website": ""
+                    },
+                    {
+                        "ISO3166-2-lvl4": "",
+                        "address": "Ggaba Road, Kampala Capital City, Uganda",
+                        "amenity": "Mukwaya General Hospital",
+                        "country_code": "ug",
+                        "county": "",
+                        "display_name": "Mukwaya General Hospital, Ggaba Road, Karunga, Makindye, Kampala Capital City, Kampala, Central Region, Uganda",
+                        "latitude": "0.3001997",
+                        "longitude": "32.5951909",
+                        "postcode": "",
+                        "region": "Central Region",
+                        "road": "Ggaba Road",
+                        "suburb": "Makindye",
+                        "village": "",
+                        "website": ""
+                    },
+                    {
+                        "ISO3166-2-lvl4": "",
+                        "address": "Naguru Road, Kampala Capital City, Uganda",
+                        "amenity": "Naguru Main Hospital",
+                        "country_code": "ug",
+                        "county": "",
+                        "display_name": "Naguru Main Hospital, Naguru Road, Katalima, Nakawa, Kampala Capital City, Kampala, Central Region, Uganda",
+                        "latitude": "0.3291942",
+                        "longitude": "32.6067317",
+                        "postcode": "",
+                        "region": "Central Region",
+                        "road": "Naguru Road",
+                        "suburb": "Nakawa",
+                        "village": "",
+                        "website": ""
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Geocode",
+            "url": "https://uganda-api.p.rapidapi.com/geofy",
+            "description": "This endpoint allows you to lookup locations in Uganda by providing an address query parameter. It returns the latitude, longitude and city name of the location.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "address",
+                    "type": "STRING",
+                    "description": "Name of address",
+                    "default": "Nansana"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://uganda-api.p.rapidapi.com/geofy\"\nquerystring = {\"address\": \"Nansana\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"uganda-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://uganda-api.p.rapidapi.com/geofy\"\nquerystring = {\"address\": \"Nansana\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"uganda-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "display_name": "Nansana, Wakiso, Central Region, Uganda",
+                "latitude": "0.365816",
+                "longitude": "32.529226"
+            }
+        },
+        {
+            "name": "Measure Distance",
+            "url": "https://uganda-api.p.rapidapi.com/distance",
+            "description": "This endpoint calculates the distance between two locations based on their latitude and longitude coordinates, while allowing the user to specify the unit of measurement.\n\nBelow Example: **Distance from Nansana to Kampala**",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "lat1",
+                    "type": "NUMBER",
+                    "description": "Latitude of the first location (required)",
+                    "default": "0.365816"
+                },
+                {
+                    "name": "lat2",
+                    "type": "NUMBER",
+                    "description": "Latitude of the second location (required)",
+                    "default": "0.32493795000000003"
+                },
+                {
+                    "name": "lon2",
+                    "type": "NUMBER",
+                    "description": "Longitude of the second location (required)",
+                    "default": "32.57523607707668"
+                },
+                {
+                    "name": "lon1",
+                    "type": "NUMBER",
+                    "description": "Longitude of the first location (required)",
+                    "default": "32.529226"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "unit",
+                    "type": "STRING",
+                    "description": "Unit of distance measurement, valid options are **km** (default), **mi**, **ft**, and **yd**.\n",
+                    "default": "km"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://uganda-api.p.rapidapi.com/distance\"\nquerystring = {\"lat1\": \"0.365816\", \"unit\": \"km\", \"lat2\": \"0.32493795000000003\", \"lon2\": \"32.57523607707668\", \"lon1\": \"32.529226\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"uganda-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://uganda-api.p.rapidapi.com/distance\"\nquerystring = {\"lat1\": \"0.365816\", \"unit\": \"km\", \"lat2\": \"0.32493795000000003\", \"lon2\": \"32.57523607707668\", \"lon1\": \"32.529226\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"uganda-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "distance": "8.84km",
+                "duration": "9min:3s",
+                "unit": "km"
+            }
+        }
+    ],
+    "standardized_name": "uganda_api"
+}

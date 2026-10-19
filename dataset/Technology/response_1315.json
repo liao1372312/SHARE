@@ -1,0 +1,32 @@
+{
+"user_query":"I'm planning a surprise anniversary party for my parents and I want to create a special playlist.",
+"domain":"Technology",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Search for songs similar to 'Can't Help Falling in Love' on Shazam.",
+        "domain": "technology",
+        "required_inputs": ["song_title"]
+    },
+    {
+        "id": 2,
+        "description": "Search for songs similar to 'Unchained Melody' on Shazam.",
+        "domain": "technology",
+        "required_inputs": ["song_title"]
+    },
+    {
+        "id": 3,
+        "description": "Gather the top 5 artists from the results of the previous Shazam searches.",
+        "domain": "technology",
+        "required_inputs": ["shazam_results"],
+        "dependency": "steps 1 and 2"
+    },
+    {
+        "id": 4,
+        "description": "Retrieve basic user information of the top 5 artists from Soundcloud.",
+        "domain": "technology",
+        "required_inputs": ["artist_names"],
+        "dependency": "step 3"
+    }
+]
+}

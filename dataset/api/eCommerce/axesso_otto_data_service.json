@@ -1,0 +1,757 @@
+{
+    "product_id": "api_3591c32c-d038-466d-ad26-1c148f0655c1",
+    "tool_description": "Our Otto Data Service API provides real-time data about product details, keyword search result and reviews from the german online shop Otto.de.",
+    "home_url": "https://rapidapi.com/axesso/api/axesso-otto-data-service/",
+    "name": "Axesso - Otto Data Service",
+    "title": "Axesso - Otto Data Service",
+    "pricing": "FREEMIUM",
+    "tool_name": "Axesso - Otto Data Service",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 3451,
+        "avgSuccessRate": 95,
+        "popularityScore": 8.7,
+        "__typename": "Score"
+    },
+    "host": "axesso-otto-data-service.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Reviews",
+            "url": "https://axesso-otto-data-service.p.rapidapi.com/ott/otto-lookup-reviews",
+            "description": "Query product reviews.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "page",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "1"
+                },
+                {
+                    "name": "productId",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "417479273"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "sortBy",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "newest"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://axesso-otto-data-service.p.rapidapi.com/ott/otto-lookup-reviews\"\nquerystring = {\"sortBy\": \"newest\", \"page\": \"1\", \"productId\": \"417479273\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"axesso-otto-data-service.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://axesso-otto-data-service.p.rapidapi.com/ott/otto-lookup-reviews\"\nquerystring = {\"sortBy\": \"newest\", \"page\": \"1\", \"productId\": \"417479273\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"axesso-otto-data-service.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You are not subscribed to this API."
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Keyword search",
+            "url": "https://axesso-otto-data-service.p.rapidapi.com/ott/otto-search-by-keyword",
+            "description": "Retrieve keyword search results.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "page",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "1"
+                },
+                {
+                    "name": "keyword",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "Laptop"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "sortBy",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "topseller"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://axesso-otto-data-service.p.rapidapi.com/ott/otto-search-by-keyword\"\nquerystring = {\"sortBy\": \"topseller\", \"page\": \"1\", \"keyword\": \"Laptop\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"axesso-otto-data-service.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://axesso-otto-data-service.p.rapidapi.com/ott/otto-search-by-keyword\"\nquerystring = {\"sortBy\": \"topseller\", \"page\": \"1\", \"keyword\": \"Laptop\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"axesso-otto-data-service.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "responseStatus": "PRODUCT_FOUND_RESPONSE",
+                "responseMessage": "Product successfully found!",
+                "sortStrategy": "topseller",
+                "domainCode": "de",
+                "keyword": "Laptop",
+                "numberOfProducts": 30,
+                "resultCount": 0,
+                "nextPage": 2,
+                "lastPage": 0,
+                "searchProductDetails": [
+                    {
+                        "productDescription": "Galaxy Book2 Pro 360 Convertible Notebook (33,78 cm/13,3 Zoll, Intel Core i7 1165G7, Iris\u00a9 Xe Graphics, 512 GB SSD)",
+                        "manufacturer": "Samsung",
+                        "asin": "1608353622",
+                        "productId": "1608353622",
+                        "variationId": "1608353623",
+                        "countReview": 0,
+                        "imgUrl": "https://i.otto.de/i/otto/a3aea29e-8613-527e-bdec-42a3c8d7f52f?$responsive_ft2$",
+                        "price": 1569.14,
+                        "retailPrice": 1599.0,
+                        "productRating": "5.0",
+                        "dpUrl": "/p/samsung-galaxy-book2-pro-360-convertible-notebook-33-78-cm-13-3-zoll-intel-core-i7-1165g7-iris-xe-graphics-512-gb-ssd-1608353622/#variationId=1608353623",
+                        "deliveryMessage": "lieferbar - in 6-7 Werktagen bei dir",
+                        "sponsored": false,
+                        "variations": []
+                    },
+                    {
+                        "productDescription": "Galaxy Book3 Ultra Notebook (40,62 cm/16 Zoll, Intel Core i9 13900H, GeForce RTX 4070, 1000 GB SSD)",
+                        "manufacturer": "Samsung",
+                        "asin": "1717202846",
+                        "productId": "1717202846",
+                        "variationId": "1717202847",
+                        "countReview": 0,
+                        "imgUrl": "https://i.otto.de/i/otto/434061a8-5ce0-589a-a283-e2162555f462?$responsive_ft2$",
+                        "price": 2999.0,
+                        "retailPrice": 3499.0,
+                        "productRating": null,
+                        "dpUrl": "/p/samsung-galaxy-book3-ultra-notebook-40-62-cm-16-zoll-intel-core-i9-13900h-geforce-rtx-4070-1000-gb-ssd-1717202846/#variationId=1717202847",
+                        "deliveryMessage": "lieferbar - in 6-7 Werktagen bei dir",
+                        "sponsored": false,
+                        "variations": []
+                    },
+                    {
+                        "productDescription": "C424MA-BV0305 Chromebook (35,6 cm/14 Zoll, Intel Celeron N4020, UHD Graphics 600)",
+                        "manufacturer": "Asus",
+                        "asin": "1726494604",
+                        "productId": "1726494604",
+                        "variationId": "1726494605",
+                        "countReview": 0,
+                        "imgUrl": "https://i.otto.de/i/otto/2b7031c1-217a-5fa0-9293-dfbdce24405e?$responsive_ft2$",
+                        "price": 187.0,
+                        "retailPrice": 299.0,
+                        "productRating": "4.5",
+                        "dpUrl": "/p/asus-c424ma-bv0305-chromebook-35-6-cm-14-zoll-intel-celeron-n4020-uhd-graphics-600-1726494604/#variationId=1726494605",
+                        "deliveryMessage": "lieferbar in 4 Wochen",
+                        "sponsored": false,
+                        "variations": []
+                    },
+                    {
+                        "productDescription": "15s-fq2226ng Notebook (39,6 cm/15,6 Zoll, Intel Pentium Gold 7505, UHD Graphics, 512 GB SSD)",
+                        "manufacturer": "HP",
+                        "asin": "1284091898",
+                        "productId": "1284091898",
+                        "variationId": "1284091899",
+                        "countReview": 0,
+                        "imgUrl": "https://i.otto.de/i/otto/e63c36df-fe26-5fd2-99a2-c273ac2e0242?$responsive_ft2$",
+                        "price": 379.0,
+                        "retailPrice": 479.0,
+                        "productRating": "4.5",
+                        "dpUrl": "/p/hp-15s-fq2226ng-notebook-39-6-cm-15-6-zoll-intel-pentium-gold-7505-uhd-graphics-512-gb-ssd-1284091898/#variationId=1284091899",
+                        "deliveryMessage": "lieferbar - in 2-3 Werktagen bei dir",
+                        "sponsored": false,
+                        "variations": []
+                    },
+                    {
+                        "productDescription": "17-cn0216ng Notebook (43,9 cm/17,3 Zoll, Intel Pentium Gold 7505, UHD Graphics, 512 GB SSD)",
+                        "manufacturer": "HP",
+                        "asin": "1355250412",
+                        "productId": "1355250412",
+                        "variationId": "1355250413",
+                        "countReview": 0,
+                        "imgUrl": "https://i.otto.de/i/otto/13c89944-0165-5ca7-81e3-aa8eea40095f?$responsive_ft2$",
+                        "price": 399.99,
+                        "retailPrice": 499.0,
+                        "productRating": "4.5",
+                        "dpUrl": "/p/hp-17-cn0216ng-notebook-43-9-cm-17-3-zoll-intel-pentium-gold-7505-uhd-graphics-512-gb-ssd-1355250412/#variationId=1355250413",
+                        "deliveryMessage": "lieferbar - in 2-3 Werktagen bei dir",
+                        "sponsored": false,
+                        "variations": []
+                    },
+                    {
+                        "productDescription": "CX1 CX1500CKA-EJ0161 Chromebook (39,6 cm/15,6 Zoll, Intel Pentium Silber N6000, UHD Graphics)",
+                        "manufacturer": "Asus",
+                        "asin": "1679145716",
+                        "productId": "1679145716",
+                        "variationId": "1679145717",
+                        "countReview": 0,
+                        "imgUrl": "https://i.otto.de/i/otto/4ebda088-7ab1-5b34-a2cc-9d8bcd38e155?$responsive_ft2$",
+                        "price": 279.0,
+                        "retailPrice": 429.0,
+                        "productRating": "4.0",
+                        "dpUrl": "/p/asus-cx1-cx1500cka-ej0161-chromebook-39-6-cm-15-6-zoll-intel-pentium-silber-n6000-uhd-graphics-1679145716/#variationId=1679145717",
+                        "deliveryMessage": "lieferbar - in 2-3 Werktagen bei dir",
+                        "sponsored": false,
+                        "variations": []
+                    },
+                    {
+                        "productDescription": "MacBook Air mit Apple M1 Chip Notebook (33,78 cm/13,3 Zoll, Apple M1, 7-Core GPU, 256 GB SSD, 8-core CPU)",
+                        "manufacturer": "Apple",
+                        "asin": "1256445559",
+                        "productId": "1256445559",
+                        "variationId": "1256445576",
+                        "countReview": 0,
+                        "imgUrl": "https://i.otto.de/i/otto/ada17cc3-faf1-5d5e-a97d-0817e14f1ec8?$responsive_ft2$",
+                        "price": 975.62,
+                        "retailPrice": 1199.0,
+                        "productRating": "5.0",
+                        "dpUrl": "/p/apple-macbook-air-mit-apple-m1-chip-notebook-33-78-cm-13-3-zoll-apple-m1-7-core-gpu-256-gb-ssd-8-core-cpu-1256445559/#variationId=1256445576",
+                        "deliveryMessage": "lieferbar - in 2-3 Werktagen bei dir",
+                        "sponsored": false,
+                        "variations": [
+                            {
+                                "variationId": "1256445560",
+                                "value": "Space Grau"
+                            },
+                            {
+                                "variationId": "1256445568",
+                                "value": "goldfarben"
+                            }
+                        ]
+                    },
+                    {
+                        "productDescription": "PIXMA TS3450 Multifunktionsdrucker, (WLAN (Wi-Fi)",
+                        "manufacturer": "Canon",
+                        "asin": "1291141896",
+                        "productId": "1291141896",
+                        "variationId": "1291141897",
+                        "countReview": 0,
+                        "imgUrl": "https://i.otto.de/i/otto/9a44a4ad-01ea-53e8-8d41-55e71479cf77?$responsive_ft2$",
+                        "price": 56.35,
+                        "retailPrice": 85.0,
+                        "productRating": "4.5",
+                        "dpUrl": "/p/canon-pixma-ts3450-multifunktionsdrucker-wlan-wi-fi-1291141896/#variationId=1291141897",
+                        "deliveryMessage": "lieferbar - in 2-3 Werktagen bei dir",
+                        "sponsored": false,
+                        "variations": []
+                    },
+                    {
+                        "productDescription": "Vivobook 15 F515EA-BQ2542W Notebook (39,6 cm/15,6 Zoll, Intel Core i3 1115G4, UHD Graphics, 512 GB SSD)",
+                        "manufacturer": "Asus",
+                        "asin": "1679145756",
+                        "productId": "1679145756",
+                        "variationId": "1679145757",
+                        "countReview": 0,
+                        "imgUrl": "https://i.otto.de/i/otto/869b675d-72c7-5530-9429-c083190bd9b4?$responsive_ft2$",
+                        "price": 389.99,
+                        "retailPrice": 499.0,
+                        "productRating": "4.5",
+                        "dpUrl": "/p/asus-vivobook-15-f515ea-bq2542w-notebook-39-6-cm-15-6-zoll-intel-core-i3-1115g4-uhd-graphics-512-gb-ssd-1679145756/#variationId=1679145757",
+                        "deliveryMessage": "lieferbar - in 2-3 Werktagen bei dir",
+                        "sponsored": false,
+                        "variations": []
+                    },
+                    {
+                        "productDescription": "F515JA-BQ1005W Notebook (39,6 cm/15,6 Zoll, Intel Core i7 1065G7, Iris Plus Graphics, 512 GB SSD)",
+                        "manufacturer": "Asus",
+                        "asin": "1679145726",
+                        "productId": "1679145726",
+                        "variationId": "1679145727",
+                        "countReview": 0,
+                        "imgUrl": "https://i.otto.de/i/otto/7f894772-a650-5fe0-8fce-af774d0c3fd5?$responsive_ft2$",
+                        "price": 554.82,
+                        "retailPrice": 749.0,
+                        "productRating": "4.5",
+                        "dpUrl": "/p/asus-f515ja-bq1005w-notebook-39-6-cm-15-6-zoll-intel-core-i7-1065g7-iris-plus-graphics-512-gb-ssd-1679145726/#variationId=1679145727",
+                        "deliveryMessage": "lieferbar - in 2-3 Werktagen bei dir",
+                        "sponsored": false,
+                        "variations": [
+                            {
+                                "variationId": "1679145727",
+                                "value": "NONE"
+                            }
+                        ]
+                    },
+                    {
+                        "productDescription": "15s-eq2208ng Notebook (39,6 cm/15,6 Zoll, AMD Ryzen 7 5700U, Radeon Graphics, 1000 GB SSD)",
+                        "manufacturer": "HP",
+                        "asin": "1284091879",
+                        "productId": "1284091879",
+                        "variationId": "1284091880",
+                        "countReview": 0,
+                        "imgUrl": "https://i.otto.de/i/otto/00401ab9-7f60-52a5-bac5-222c81a04e3a?$responsive_ft2$",
+                        "price": 599.0,
+                        "retailPrice": 749.0,
+                        "productRating": "4.5",
+                        "dpUrl": "/p/hp-15s-eq2208ng-notebook-39-6-cm-15-6-zoll-amd-ryzen-7-5700u-radeon-graphics-1000-gb-ssd-1284091879/#variationId=1284091880",
+                        "deliveryMessage": "lieferbar - in 2-3 Werktagen bei dir",
+                        "sponsored": false,
+                        "variations": [
+                            {
+                                "variationId": "1284091880",
+                                "value": "NONE"
+                            }
+                        ]
+                    },
+                    {
+                        "productDescription": "CX1 CX1700CKA-BX0115 Chromebook (43,9 cm/17,3 Zoll, Intel Pentium Silber N6000, UHD Graphics)",
+                        "manufacturer": "Asus",
+                        "asin": "1679145735",
+                        "productId": "1679145735",
+                        "variationId": "1679145736",
+                        "countReview": 0,
+                        "imgUrl": "https://i.otto.de/i/otto/3e9fc62a-f355-5e6e-83e1-b024740c1ab5?$responsive_ft2$",
+                        "price": 318.88,
+                        "retailPrice": 449.0,
+                        "productRating": "4.5",
+                        "dpUrl": "/p/asus-cx1-cx1700cka-bx0115-chromebook-43-9-cm-17-3-zoll-intel-pentium-silber-n6000-uhd-graphics-1679145735/#variationId=1679145736",
+                        "deliveryMessage": "lieferbar - in 2-3 Werktagen bei dir",
+                        "sponsored": false,
+                        "variations": [
+                            {
+                                "variationId": "1679145736",
+                                "value": "NONE"
+                            }
+                        ]
+                    },
+                    {
+                        "productDescription": "Galaxy Book3 360 Notebook (39,6 cm/15,6 Zoll, Intel Core i5 1340P, Iris\u00ae X\u1d49 Graphics, 512 GB SSD)",
+                        "manufacturer": "Samsung",
+                        "asin": "1717202883",
+                        "productId": "1717202883",
+                        "variationId": "1717202884",
+                        "countReview": 0,
+                        "imgUrl": "https://i.otto.de/i/otto/483dbfd0-f9b6-52a3-b069-14d7aefa06c1?$responsive_ft2$",
+                        "price": 1475.09,
+                        "retailPrice": 1499.0,
+                        "productRating": null,
+                        "dpUrl": "/p/samsung-galaxy-book3-360-notebook-39-6-cm-15-6-zoll-intel-core-i5-1340p-iris-xe-graphics-512-gb-ssd-1717202883/#variationId=1717202884",
+                        "deliveryMessage": "lieferbar - in 6-7 Werktagen bei dir",
+                        "sponsored": false,
+                        "variations": [
+                            {
+                                "variationId": "1717202884",
+                                "value": "NONE"
+                            }
+                        ]
+                    },
+                    {
+                        "productDescription": "Galaxy Book3 Pro Notebook (35,56 cm/14 Zoll, Intel Core i7 1360P, Iris\u00ae X\u1d49 Graphics, 512 GB SSD)",
+                        "manufacturer": "Samsung",
+                        "asin": "1717202924",
+                        "productId": "1717202924",
+                        "variationId": "1717202925",
+                        "countReview": 0,
+                        "imgUrl": "https://i.otto.de/i/otto/cb17f022-0548-59ec-a948-477800031032?$responsive_ft2$",
+                        "price": 1539.0,
+                        "retailPrice": 1899.0,
+                        "productRating": null,
+                        "dpUrl": "/p/samsung-galaxy-book3-pro-notebook-35-56-cm-14-zoll-intel-core-i7-1360p-iris-xe-graphics-512-gb-ssd-1717202924/#variationId=1717202925",
+                        "deliveryMessage": "lieferbar - in 6-7 Werktagen bei dir",
+                        "sponsored": false,
+                        "variations": [
+                            {
+                                "variationId": "1717202925",
+                                "value": "NONE"
+                            }
+                        ]
+                    },
+                    {
+                        "productDescription": "IdeaPad 3 17IAU7 Notebook (43,94 cm/17,3 Zoll, Intel Pentium Gold 8505, UHD Graphics, 512 GB SSD)",
+                        "manufacturer": "Lenovo",
+                        "asin": "1725485253",
+                        "productId": "1725485253",
+                        "variationId": "1725485254",
+                        "countReview": 0,
+                        "imgUrl": "https://i.otto.de/i/otto/6afeaec1-815c-530d-ab72-460bdc7e384e?$responsive_ft2$",
+                        "price": 408.23,
+                        "retailPrice": 499.0,
+                        "productRating": "4.5",
+                        "dpUrl": "/p/lenovo-ideapad-3-17iau7-notebook-43-94-cm-17-3-zoll-intel-pentium-gold-8505-uhd-graphics-512-gb-ssd-1725485253/#variationId=1725485254",
+                        "deliveryMessage": "lieferbar - in 2-3 Werktagen bei dir",
+                        "sponsored": false,
+                        "variations": [
+                            {
+                                "variationId": "1725485254",
+                                "value": "NONE"
+                            }
+                        ]
+                    },
+                    {
+                        "productDescription": "Stream 11-ak0226ng Notebook (29,5 cm/11,6 Zoll, Intel Celeron N4120, UHD Graphics 600)",
+                        "manufacturer": "HP",
+                        "asin": "1673373179",
+                        "productId": "1673373179",
+                        "variationId": "1673373180",
+                        "countReview": 0,
+                        "imgUrl": "https://i.otto.de/i/otto/3fc81f9c-1425-5db9-9aab-370b12090ca3?$responsive_ft2$",
+                        "price": 272.02,
+                        "retailPrice": 289.0,
+                        "productRating": "3.0",
+                        "dpUrl": "/p/hp-stream-11-ak0226ng-notebook-29-5-cm-11-6-zoll-intel-celeron-n4120-uhd-graphics-600-1673373179/#variationId=1673373180",
+                        "deliveryMessage": "lieferbar - in 2-3 Werktagen bei dir",
+                        "sponsored": false,
+                        "variations": [
+                            {
+                                "variationId": "1673373180",
+                                "value": "NONE"
+                            }
+                        ]
+                    },
+                    {
+                        "productDescription": "Pavilion x360 15-er1254ng Convertible Notebook (39,6 cm/15,6 Zoll, Intel Core i5 1135G7, Iris Xe Graphics, 512 GB SSD)",
+                        "manufacturer": "HP",
+                        "asin": "1717606497",
+                        "productId": "1717606497",
+                        "variationId": "1717606498",
+                        "countReview": 0,
+                        "imgUrl": "https://i.otto.de/i/otto/1899108b-255c-5632-8eba-68c71fc36038?$responsive_ft2$",
+                        "price": 649.99,
+                        "retailPrice": 749.0,
+                        "productRating": "4.5",
+                        "dpUrl": "/p/hp-pavilion-x360-15-er1254ng-convertible-notebook-39-6-cm-15-6-zoll-intel-core-i5-1135g7-iris-xe-graphics-512-gb-ssd-1717606497/#variationId=1717606498",
+                        "deliveryMessage": "lieferbar - in 2-3 Werktagen bei dir",
+                        "sponsored": false,
+                        "variations": [
+                            {
+                                "variationId": "1717606498",
+                                "value": "NONE"
+                            }
+                        ]
+                    },
+                    {
+                        "productDescription": "V15 G2 IJL Business-Notebook (37,40 cm/15.6 Zoll, Intel Celeron N4500, UHD, 256 GB SSD)",
+                        "manufacturer": "Lenovo",
+                        "asin": "S0V6D02I",
+                        "productId": "S0V6D02I",
+                        "variationId": "S0V6D02IQBOV",
+                        "countReview": 0,
+                        "imgUrl": "https://i.otto.de/i/otto/ce82bee6-3884-4e1c-8960-a339477bd43e?$responsive_ft2$",
+                        "price": 305.99,
+                        "retailPrice": 439.0,
+                        "productRating": "4.0",
+                        "dpUrl": "/p/lenovo-v15-g2-ijl-business-notebook-37-40-cm-15-6-zoll-intel-celeron-n4500-uhd-1024-gb-ssd-S0V6D02I/#variationId=S0V6D02IQBOV",
+                        "deliveryMessage": "lieferbar - in 2-3 Werktagen bei dir",
+                        "sponsored": false,
+                        "variations": [
+                            {
+                                "variationId": "S0V6D02IQBOV",
+                                "value": "NONE"
+                            }
+                        ]
+                    },
+                    {
+                        "productDescription": "TUF Gaming F15 FX506HC-HN004W Gaming-Notebook (39,6 cm/15,6 Zoll, Intel Core i5 11400H, GeForce RTX 3050, 512 GB SSD)",
+                        "manufacturer": "Asus",
+                        "asin": "1725199257",
+                        "productId": "1725199257",
+                        "variationId": "1725199258",
+                        "countReview": 0,
+                        "imgUrl": "https://i.otto.de/i/otto/0bd5d074-2ca6-541a-8f57-9e34dc947e54?$responsive_ft2$",
+                        "price": 799.0,
+                        "retailPrice": 999.0,
+                        "productRating": "5.0",
+                        "dpUrl": "/p/asus-tuf-gaming-f15-fx506hc-hn004w-gaming-notebook-39-6-cm-15-6-zoll-intel-core-i5-11400h-geforce-rtx-3050-512-gb-ssd-1725199257/#variationId=1725199258",
+                        "deliveryMessage": "lieferbar - in 2-3 Werktagen bei dir",
+                        "sponsored": false,
+                        "variations": [
+                            {
+                                "variationId": "1725199258",
+                                "value": "NONE"
+                            }
+                        ]
+                    },
+                    {
+                        "productDescription": "Vivobook 15 F515JA-EJ721W Notebook (39,6 cm/15,6 Zoll, Intel Core i3 1005G1, UHD Graphics, 512 GB SSD, Windows 11)",
+                        "manufacturer": "Asus",
+                        "asin": "1596375958",
+                        "productId": "1596375958",
+                        "variationId": "1596375961",
+                        "countReview": 0,
+                        "imgUrl": "https://i.otto.de/i/otto/af697f57-18ce-51e2-99ad-4e3a61e0c5f0?$responsive_ft2$",
+                        "price": 399.99,
+                        "retailPrice": 499.0,
+                        "productRating": "4.5",
+                        "dpUrl": "/p/asus-vivobook-15-f515ja-ej721w-notebook-39-6-cm-15-6-zoll-intel-core-i3-1005g1-uhd-graphics-512-gb-ssd-windows-11-1596375958/#variationId=1596375961",
+                        "deliveryMessage": "lieferbar - in 2-3 Werktagen bei dir",
+                        "sponsored": false,
+                        "variations": [
+                            {
+                                "variationId": "1596375961",
+                                "value": "NONE"
+                            }
+                        ]
+                    },
+                    {
+                        "productDescription": "14a-ca0218ng Chromebook (35,6 cm/14 Zoll, Intel Pentium Silber N5030, UHD Graphics 605, Plus Chromebook)",
+                        "manufacturer": "HP",
+                        "asin": "1392569764",
+                        "productId": "1392569764",
+                        "variationId": "1392569765",
+                        "countReview": 0,
+                        "imgUrl": "https://i.otto.de/i/otto/2c156bb6-93cf-59ea-9ec2-c15262063069?$responsive_ft2$",
+                        "price": 309.11,
+                        "retailPrice": 399.0,
+                        "productRating": "4.5",
+                        "dpUrl": "/p/hp-14a-ca0218ng-chromebook-35-6-cm-14-zoll-intel-pentium-silber-n5030-uhd-graphics-605-plus-chromebook-1392569764/#variationId=1392569765",
+                        "deliveryMessage": "lieferbar - in 2-3 Werktagen bei dir",
+                        "sponsored": false,
+                        "variations": [
+                            {
+                                "variationId": "1392569765",
+                                "value": "NONE"
+                            }
+                        ]
+                    },
+                    {
+                        "productDescription": "Slim 5 CB Gold 7505 Chromebook (35,56 cm/14 Zoll, Intel Pentium Gold 7505, UHD Graphics, 128 GB SSD, Plus Chromebook)",
+                        "manufacturer": "Lenovo",
+                        "asin": "1367415028",
+                        "productId": "1367415028",
+                        "variationId": "1367415029",
+                        "countReview": 0,
+                        "imgUrl": "https://i.otto.de/i/otto/b4ba147b-225e-50a7-9541-9eca84f7c74d?$responsive_ft2$",
+                        "price": 249.0,
+                        "retailPrice": 299.0,
+                        "productRating": "4.0",
+                        "dpUrl": "/p/lenovo-slim-5-cb-gold-7505-chromebook-35-56-cm-14-zoll-intel-pentium-gold-7505-uhd-graphics-128-gb-ssd-plus-chromebook-1367415028/#variationId=1367415029",
+                        "deliveryMessage": "lieferbar - in 2-3 Werktagen bei dir",
+                        "sponsored": false,
+                        "variations": [
+                            {
+                                "variationId": "1367415029",
+                                "value": "NONE"
+                            }
+                        ]
+                    },
+                    {
+                        "productDescription": "17-cp0232ng Notebook (43,9 cm/17,3 Zoll, AMD Ryzen 3 Ryzen 3 3250U dual, Radeon Graphics, 256 GB SSD)",
+                        "manufacturer": "HP",
+                        "asin": "1355250822",
+                        "productId": "1355250822",
+                        "variationId": "1355250823",
+                        "countReview": 0,
+                        "imgUrl": "https://i.otto.de/i/otto/d313e83a-1460-5432-b575-5fb4ae959c74?$responsive_ft2$",
+                        "price": 369.0,
+                        "retailPrice": 479.0,
+                        "productRating": "4.5",
+                        "dpUrl": "/p/hp-17-cp0232ng-notebook-43-9-cm-17-3-zoll-amd-ryzen-3-ryzen-3-3250u-dual-radeon-graphics-256-gb-ssd-1355250822/#variationId=1355250823",
+                        "deliveryMessage": "lieferbar - in 2-3 Werktagen bei dir",
+                        "sponsored": false,
+                        "variations": [
+                            {
+                                "variationId": "1355250823",
+                                "value": "NONE"
+                            }
+                        ]
+                    },
+                    {
+                        "productDescription": "MacBook Air Notebook (34,46 cm/13,6 Zoll, Apple M2, 8-Core GPU, 256 GB SSD)",
+                        "manufacturer": "Apple",
+                        "asin": "1651069728",
+                        "productId": "1651069728",
+                        "variationId": "1651069729",
+                        "countReview": 0,
+                        "imgUrl": "https://i.otto.de/i/otto/8febad03-1395-5fb8-823d-d38b2d133ff3?$responsive_ft2$",
+                        "price": 1189.0,
+                        "retailPrice": 1299.0,
+                        "productRating": "5.0",
+                        "dpUrl": "/p/apple-macbook-air-notebook-34-46-cm-13-6-zoll-apple-m2-8-core-gpu-256-gb-ssd-1651069728/#variationId=1651069729",
+                        "deliveryMessage": "lieferbar - in 2-3 Werktagen bei dir",
+                        "sponsored": false,
+                        "variations": [
+                            {
+                                "variationId": "1651069729",
+                                "value": "NONE"
+                            }
+                        ]
+                    },
+                    {
+                        "productDescription": "DeskJet 2720e Multifunktionsdrucker, (Bluetooth, WLAN (Wi-Fi), HP+ Instant Ink kompatibel)",
+                        "manufacturer": "HP",
+                        "asin": "1425848862",
+                        "productId": "1425848862",
+                        "variationId": "1425848863",
+                        "countReview": 0,
+                        "imgUrl": "https://i.otto.de/i/otto/51e34821-30eb-500b-b401-425a220e0423?$responsive_ft2$",
+                        "price": 66.35,
+                        "retailPrice": 84.9,
+                        "productRating": "4.5",
+                        "dpUrl": "/p/hp-deskjet-2720e-multifunktionsdrucker-bluetooth-wlan-wi-fi-hpplus-instant-ink-kompatibel-1425848862/#variationId=1425848863",
+                        "deliveryMessage": "lieferbar - in 2-3 Werktagen bei dir",
+                        "sponsored": false,
+                        "variations": [
+                            {
+                                "variationId": "1425848863",
+                                "value": "NONE"
+                            }
+                        ]
+                    },
+                    {
+                        "productDescription": "G713IC-HX041W Gaming-Notebook (43,9 cm/17,3 Zoll, AMD Ryzen 7 4800H, GeForce RTX\u2122 3050, 512 GB SSD)",
+                        "manufacturer": "Asus",
+                        "asin": "1692269282",
+                        "productId": "1692269282",
+                        "variationId": "1692269288",
+                        "countReview": 0,
+                        "imgUrl": "https://i.otto.de/i/otto/cabf8e48-e364-5466-a8ec-df33236212cd?$responsive_ft2$",
+                        "price": 1049.0,
+                        "retailPrice": 1199.0,
+                        "productRating": "4.5",
+                        "dpUrl": "/p/asus-g713ic-hx041w-gaming-notebook-43-9-cm-17-3-zoll-amd-ryzen-7-4800h-geforce-rtxtm-3050-512-gb-ssd-1692269282/#variationId=1692269288",
+                        "deliveryMessage": "lieferbar - in 2-3 Werktagen bei dir",
+                        "sponsored": false,
+                        "variations": [
+                            {
+                                "variationId": "1692269288",
+                                "value": "NONE"
+                            }
+                        ]
+                    },
+                    {
+                        "productDescription": "FX506HC-HN397W Gaming-Notebook (39,6 cm/15,6 Zoll, Intel Core i5 11400H, GeForce RTX 3050, 512 GB SSD)",
+                        "manufacturer": "Asus",
+                        "asin": "1711337068",
+                        "productId": "1711337068",
+                        "variationId": "1711337069",
+                        "countReview": 0,
+                        "imgUrl": "https://i.otto.de/i/otto/5b268b2d-f235-5273-863e-1b6d94c27c8b?$responsive_ft2$",
+                        "price": 877.89,
+                        "retailPrice": 1099.0,
+                        "productRating": "4.0",
+                        "dpUrl": "/p/asus-fx506hc-hn397w-gaming-notebook-39-6-cm-15-6-zoll-intel-core-i5-11400h-geforce-rtx-3050-512-gb-ssd-1711337068/#variationId=1711337069",
+                        "deliveryMessage": "lieferbar - in 2-3 Werktagen bei dir",
+                        "sponsored": false,
+                        "variations": [
+                            {
+                                "variationId": "1711337069",
+                                "value": "NONE"
+                            }
+                        ]
+                    },
+                    {
+                        "productDescription": "15s-fq3209ng Notebook (39,6 cm/15,6 Zoll, Intel Celeron N4500, UHD Graphics, 128 GB SSD)",
+                        "manufacturer": "HP",
+                        "asin": "1673373143",
+                        "productId": "1673373143",
+                        "variationId": "1673373144",
+                        "countReview": 0,
+                        "imgUrl": "https://i.otto.de/i/otto/0f3393a8-2fe8-5336-8d9c-381a8d49668f?$responsive_ft2$",
+                        "price": 289.32,
+                        "retailPrice": 0.0,
+                        "productRating": "3.5",
+                        "dpUrl": "/p/hp-15s-fq3209ng-notebook-39-6-cm-15-6-zoll-intel-celeron-n4500-uhd-graphics-128-gb-ssd-1673373143/#variationId=1673373144",
+                        "deliveryMessage": "lieferbar in 4 Wochen",
+                        "sponsored": false,
+                        "variations": [
+                            {
+                                "variationId": "1673373144",
+                                "value": "NONE"
+                            }
+                        ]
+                    },
+                    {
+                        "productDescription": "Pavilion x360 Convertible 14-dy0210ng Notebook (35,6 cm/14 Zoll, Intel Pentium Gold 7505, UHD Graphics, 256 GB SSD)",
+                        "manufacturer": "HP",
+                        "asin": "1284091733",
+                        "productId": "1284091733",
+                        "variationId": "1284091734",
+                        "countReview": 0,
+                        "imgUrl": "https://i.otto.de/i/otto/f74be75b-9016-5167-a2aa-d59dcdbb3bdf?$responsive_ft2$",
+                        "price": 531.66,
+                        "retailPrice": 549.0,
+                        "productRating": "4.5",
+                        "dpUrl": "/p/hp-pavilion-x360-convertible-14-dy0210ng-notebook-35-6-cm-14-zoll-intel-pentium-gold-7505-uhd-graphics-256-gb-ssd-1284091733/#variationId=1284091734",
+                        "deliveryMessage": "lieferbar - in 2-3 Werktagen bei dir",
+                        "sponsored": false,
+                        "variations": [
+                            {
+                                "variationId": "1284091734",
+                                "value": "NONE"
+                            }
+                        ]
+                    },
+                    {
+                        "productDescription": "17-cn0206ng Notebook (43,9 cm/17,3 Zoll, Intel Celeron N4120, UHD Graphics 600, 256 GB SSD)",
+                        "manufacturer": "HP",
+                        "asin": "1673373161",
+                        "productId": "1673373161",
+                        "variationId": "1673373162",
+                        "countReview": 0,
+                        "imgUrl": "https://i.otto.de/i/otto/ca5cec9d-ff4d-57f5-968c-34a6657d9c6c?$responsive_ft2$",
+                        "price": 364.75,
+                        "retailPrice": 379.0,
+                        "productRating": "4.5",
+                        "dpUrl": "/p/hp-17-cn0206ng-notebook-43-9-cm-17-3-zoll-intel-celeron-n4120-uhd-graphics-600-256-gb-ssd-1673373161/#variationId=1673373162",
+                        "deliveryMessage": "lieferbar in 6 Wochen",
+                        "sponsored": false,
+                        "variations": [
+                            {
+                                "variationId": "1673373162",
+                                "value": "NONE"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Product Details",
+            "url": "https://axesso-otto-data-service.p.rapidapi.com/ott/otto-lookup-product/",
+            "description": "Query product details information.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "url",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "https://www.otto.de/p/skechers-ultra-flex-simply-free-sneaker-mit-seitlichen-logo-C806891806/#variationId=1287533375"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://axesso-otto-data-service.p.rapidapi.com/ott/otto-lookup-product/\"\nquerystring = {\"url\": \"https://www.otto.de/p/skechers-ultra-flex-simply-free-sneaker-mit-seitlichen-logo-C806891806/#variationId=1287533375\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"axesso-otto-data-service.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://axesso-otto-data-service.p.rapidapi.com/ott/otto-lookup-product/\"\nquerystring = {\"url\": \"https://www.otto.de/p/skechers-ultra-flex-simply-free-sneaker-mit-seitlichen-logo-C806891806/#variationId=1287533375\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"axesso-otto-data-service.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "responseStatus": "PRODUCT_FOUND_RESPONSE",
+                "responseMessage": "Product successfully found!",
+                "productTitle": null,
+                "manufacturer": null,
+                "countReview": 0,
+                "productRating": null,
+                "asin": "1440395042",
+                "productId": "1440395042",
+                "variationId": "1287533375",
+                "url": "https://www.otto.de/p/skechers-ultra-flex-simply-free-sneaker-mit-seitlichen-logo-C806891806/#variationId=1287533375",
+                "soldBy": null,
+                "sellerId": null,
+                "warehouseAvailability": null,
+                "retailPrice": 0.0,
+                "price": 0.0,
+                "priceRange": null,
+                "shippingPrice": 0.0,
+                "priceSaving": null,
+                "features": [
+                    "Shoppe unsere nachhaltige Mode \u2013 von Jeans \u00fcber T-Shirts bis hin zu Unterw\u00e4sche.",
+                    "Achte beim M\u00f6bel-Kauf auf eine nachhaltige Kennzeichnung, wie z.B. auf das FSC\u00ae-Label. Es steht f\u00fcr einen verantwortungsvollen Umgang mit den globalen Waldressourcen.",
+                    "Nutze die \u201eKleiderspende im Paket\u201c und unterst\u00fctze damit wohlt\u00e4tige Zwecke.",
+                    "Die neuesten Angebote und Aktionen aufs Smartphone geliefert bekommen? Nichts leichter als das mit der OTTO App.",
+                    "Du shoppst regelm\u00e4\u00dfig in unserem Online-Shop? Dann hol dir die OTTO UP Lieferflat f\u00fcr nur 9,90 \u20ac und shoppe das ganze Jahr \u00fcber mit kostenlosem Versand.",
+                    "Du hast Fragen zu unseren Produkten und Services? Wir unterst\u00fctzen dich gerne unter anderem per Telefon, Chatbot oder E-Mail rund um die Uhr. Hier geht\u2019s zum Kontakt.",
+                    "Pausierte Bezahlung: Mit der Ratenzahlung mit 100 Tagen Zahlpause verschaffst du dir den n\u00f6tigen Puffer zum Begleichen deiner Rechnung."
+                ],
+                "imageUrlList": [
+                    null,
+                    "https://i.otto.de/i/otto/d7ac2266-afec-5635-a718-aef53bb851a6?h=380&w=739&sm=clamp&upscale=true&fmt=auto",
+                    "https://i.otto.de/i/otto/a6ef802d-2328-5359-8b34-0ec808eacc6b?h=380&w=739&sm=clamp&upscale=true&fmt=auto",
+                    "https://i.otto.de/i/otto/206b87c0-95b3-5cbe-a845-e136a6278c78?h=380&w=739&sm=clamp&upscale=true&fmt=auto",
+                    "https://i.otto.de/i/otto/4a821fb5-40b0-5bd9-a788-d46b55c0944a?h=380&w=739&sm=clamp&upscale=true&fmt=auto"
+                ],
+                "productDescription": null,
+                "productDetails": [],
+                "variations": [],
+                "deliveryMessage": null,
+                "mainImage": {
+                    "imageUrl": null,
+                    "imageResolution": null
+                }
+            },
+            "statuscode": 1,
+            "schema": ""
+        }
+    ],
+    "standardized_name": "axesso_otto_data_service"
+}

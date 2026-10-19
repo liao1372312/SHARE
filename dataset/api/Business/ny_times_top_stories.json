@@ -1,0 +1,47 @@
+{
+    "product_id": "api_82ab12f8-5785-4b39-9333-c430b9cd3bbd",
+    "tool_description": "Newyork times top stories API",
+    "home_url": "https://rapidapi.com/RapidDevRel/api/ny-times-top-stories/",
+    "name": "NY Times - Top Stories",
+    "title": "NY Times - Top Stories",
+    "pricing": "FREE",
+    "tool_name": "NY Times - Top Stories",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 822,
+        "avgSuccessRate": 0,
+        "popularityScore": 0.1,
+        "__typename": "Score"
+    },
+    "host": "ny-times-top-stories.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "List stories by section",
+            "url": "https://ny-times-top-stories.p.rapidapi.com/home.json",
+            "description": "The Top Stories API returns an array of articles currently on the specified section.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "section",
+                    "type": "STRING",
+                    "description": "The section the story appears in.",
+                    "default": "home"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://ny-times-top-stories.p.rapidapi.com/home.json\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ny-times-top-stories.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ny-times-top-stories.p.rapidapi.com/{section}.json\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ny-times-top-stories.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "fault": {
+                    "faultstring": "Failed to resolve API Key variable request.queryparam.api-key",
+                    "detail": {
+                        "errorcode": "steps.oauth.v2.FailedToResolveAPIKey"
+                    }
+                }
+            },
+            "statuscode": 1,
+            "schema": ""
+        }
+    ],
+    "standardized_name": "ny_times_top_stories"
+}

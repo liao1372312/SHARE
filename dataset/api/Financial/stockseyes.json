@@ -1,0 +1,227 @@
+{
+    "product_id": "api_92a0b1a8-6574-4f00-9d10-6e288539424c",
+    "tool_description": "stocksEyes is a comprehensive API that provides real-time candlestick data (OHLCV - open, high, low, close, volume) for stocks and other securities. With stocksEyes, you have access to live prices and last traded prices, as well as a wealth of historical data. This powerful tool is ideal for traders and investors looking to stay up-to-date on the latest market trends and make informed investment decisions. With its user-friendly interface and reliable data sources, stocksEyes is the go-to sol...",
+    "home_url": "https://rapidapi.com/singhaltushar903/api/stockseyes/",
+    "name": "StocksEyes",
+    "title": "StocksEyes",
+    "pricing": "FREEMIUM",
+    "tool_name": "StocksEyes",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 480,
+        "avgSuccessRate": 100,
+        "popularityScore": 8.4,
+        "__typename": "Score"
+    },
+    "host": "stockseyes.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Get Latest Quote",
+            "url": "https://stockseyes.p.rapidapi.com/latestQuote",
+            "description": "The /getLatestQuote API returns latest realtime quote for for given trading symbol. The tradingSymbol parameter lets you select any valid trading symbol of stocks that are part of the Nifty 500 or the top 500 stocks, giving you access to the data you need for the stocks you're interested in.\nSee the list of trading symbols [here](https://stockseyes.com/group/all).",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "tradingSymbol",
+                    "type": "STRING",
+                    "description": "Check the list of all supported tradingSymbols at [https://stockseyes.com/group/all](https://stockseyes.com/group/all) , you can download as csv also. Mainly, all major stocks which are part of nifty500, nifty 50, nifty next 50, nifty midcap50, nifty sector indices, nifty bank are supported. For exact details check the link.\n",
+                    "default": "RELIANCE"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://stockseyes.p.rapidapi.com/latestQuote\"\nquerystring = {\"tradingSymbol\": \"RELIANCE\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"stockseyes.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://stockseyes.p.rapidapi.com/latestQuote\"\nquerystring = {\"tradingSymbol\": \"RELIANCE\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"stockseyes.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "volume": 6126639,
+                "instrument_token": 738561,
+                "timestamp": "2023-06-14T10:00:00.000Z",
+                "last_price": 2546.25,
+                "timestampIST": "2023-06-14T15:30:00.000Z"
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "GET Last N Candles nse",
+            "url": "https://stockseyes.p.rapidapi.com/getLastNCandles",
+            "description": "The /getLastNCandles API returns latest n number of candles formed for given trading symbol and time frame. The timeFrame parameter allows you to select the time frame of candleStick, with options of 1m, 5m, 15m, or 1h for 1 minute candle, 5 minute candle, 15 minute candle, 1 hour candle respectively. The tradingSymbol parameter lets you select any valid trading symbol of stocks that are part of the Nifty 500 or the top 500 stocks, giving you access to the data you need for the stocks you're interested in.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "numberOfCandles",
+                    "type": "NUMBER",
+                    "description": "Number of candles to be fetched (max 100).",
+                    "default": "10"
+                },
+                {
+                    "name": "tradingSymbol",
+                    "type": "STRING",
+                    "description": "Check the list of all supported tradingSymbols at [https://stockseyes.com/group/all](https://stockseyes.com/group/all) , you can download as csv also. Mainly, all major stocks which are part of nifty500, nifty 50, nifty next 50, nifty midcap50, nifty sector indices, nifty bank are supported. For exact details check the link.\n",
+                    "default": "RELIANCE"
+                },
+                {
+                    "name": "timeFrame",
+                    "type": "STRING",
+                    "description": "1m -> 1 minute candle\n5m -> 5 minute candle\n15m -> 15 minute candle\n1h -> 1 hour candle",
+                    "default": "1m"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://stockseyes.p.rapidapi.com/getLastNCandles\"\nquerystring = {\"numberOfCandles\": \"10\", \"tradingSymbol\": \"RELIANCE\", \"timeFrame\": \"1m\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"stockseyes.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://stockseyes.p.rapidapi.com/getLastNCandles\"\nquerystring = {\"numberOfCandles\": \"10\", \"tradingSymbol\": \"RELIANCE\", \"timeFrame\": \"1m\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"stockseyes.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "tradingSymbol": "RELIANCE",
+                    "open": 2578.15,
+                    "high": 2579.05,
+                    "low": 2575,
+                    "close": 2578.45,
+                    "volume": 10319662.234567901,
+                    "startTimeIST": "2023-06-16T15:24:00.000Z",
+                    "endTimeIST": "2023-06-16T15:25:00.000Z",
+                    "startTimeUTC": "Fri, 16 Jun 2023 09:54:00 GMT",
+                    "endTimeUTC": "Fri, 16 Jun 2023 09:55:00 GMT"
+                },
+                {
+                    "tradingSymbol": "RELIANCE",
+                    "open": 2576.65,
+                    "high": 2578.55,
+                    "low": 2576.65,
+                    "close": 2578.1,
+                    "volume": 10121665.69736842,
+                    "startTimeIST": "2023-06-16T15:23:00.000Z",
+                    "endTimeIST": "2023-06-16T15:24:00.000Z",
+                    "startTimeUTC": "Fri, 16 Jun 2023 09:53:00 GMT",
+                    "endTimeUTC": "Fri, 16 Jun 2023 09:54:00 GMT"
+                },
+                {
+                    "tradingSymbol": "RELIANCE",
+                    "open": 2578.2,
+                    "high": 2578.55,
+                    "low": 2575.1,
+                    "close": 2576.65,
+                    "volume": 9952016.267605634,
+                    "startTimeIST": "2023-06-16T15:22:00.000Z",
+                    "endTimeIST": "2023-06-16T15:23:00.000Z",
+                    "startTimeUTC": "Fri, 16 Jun 2023 09:52:00 GMT",
+                    "endTimeUTC": "Fri, 16 Jun 2023 09:53:00 GMT"
+                },
+                {
+                    "tradingSymbol": "RELIANCE",
+                    "open": 2580.65,
+                    "high": 2581.9,
+                    "low": 2577.8,
+                    "close": 2577.8,
+                    "volume": 9785021.94936709,
+                    "startTimeIST": "2023-06-16T15:21:00.000Z",
+                    "endTimeIST": "2023-06-16T15:22:00.000Z",
+                    "startTimeUTC": "Fri, 16 Jun 2023 09:51:00 GMT",
+                    "endTimeUTC": "Fri, 16 Jun 2023 09:52:00 GMT"
+                },
+                {
+                    "tradingSymbol": "RELIANCE",
+                    "open": 2580.55,
+                    "high": 2581.45,
+                    "low": 2580.25,
+                    "close": 2580.55,
+                    "volume": 9564366.092105264,
+                    "startTimeIST": "2023-06-16T15:20:00.000Z",
+                    "endTimeIST": "2023-06-16T15:21:00.000Z",
+                    "startTimeUTC": "Fri, 16 Jun 2023 09:50:00 GMT",
+                    "endTimeUTC": "Fri, 16 Jun 2023 09:51:00 GMT"
+                },
+                {
+                    "tradingSymbol": "RELIANCE",
+                    "open": 2580.6,
+                    "high": 2581.65,
+                    "low": 2579.55,
+                    "close": 2581.1,
+                    "volume": 9341256.146666666,
+                    "startTimeIST": "2023-06-16T15:19:00.000Z",
+                    "endTimeIST": "2023-06-16T15:20:00.000Z",
+                    "startTimeUTC": "Fri, 16 Jun 2023 09:49:00 GMT",
+                    "endTimeUTC": "Fri, 16 Jun 2023 09:50:00 GMT"
+                },
+                {
+                    "tradingSymbol": "RELIANCE",
+                    "open": 2579.7,
+                    "high": 2580.95,
+                    "low": 2578.8,
+                    "close": 2580.2,
+                    "volume": 8757935.728571428,
+                    "startTimeIST": "2023-06-16T15:16:00.000Z",
+                    "endTimeIST": "2023-06-16T15:17:00.000Z",
+                    "startTimeUTC": "Fri, 16 Jun 2023 09:46:00 GMT",
+                    "endTimeUTC": "Fri, 16 Jun 2023 09:47:00 GMT"
+                },
+                {
+                    "tradingSymbol": "RELIANCE",
+                    "open": 2578.85,
+                    "high": 2579.85,
+                    "low": 2577.6,
+                    "close": 2579.45,
+                    "volume": 8555997.317460317,
+                    "startTimeIST": "2023-06-16T15:15:00.000Z",
+                    "endTimeIST": "2023-06-16T15:16:00.000Z",
+                    "startTimeUTC": "Fri, 16 Jun 2023 09:45:00 GMT",
+                    "endTimeUTC": "Fri, 16 Jun 2023 09:46:00 GMT"
+                },
+                {
+                    "tradingSymbol": "RELIANCE",
+                    "open": 2579.65,
+                    "high": 2580.25,
+                    "low": 2578.05,
+                    "close": 2578.9,
+                    "volume": 8346221.554054054,
+                    "startTimeIST": "2023-06-16T15:14:00.000Z",
+                    "endTimeIST": "2023-06-16T15:15:00.000Z",
+                    "startTimeUTC": "Fri, 16 Jun 2023 09:44:00 GMT",
+                    "endTimeUTC": "Fri, 16 Jun 2023 09:45:00 GMT"
+                },
+                {
+                    "tradingSymbol": "RELIANCE",
+                    "open": 2578.65,
+                    "high": 2580,
+                    "low": 2578.65,
+                    "close": 2579.3,
+                    "volume": 8160855.130434782,
+                    "startTimeIST": "2023-06-16T15:13:00.000Z",
+                    "endTimeIST": "2023-06-16T15:14:00.000Z",
+                    "startTimeUTC": "Fri, 16 Jun 2023 09:43:00 GMT",
+                    "endTimeUTC": "Fri, 16 Jun 2023 09:44:00 GMT"
+                }
+            ],
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Get Latest candle NSE",
+            "url": "https://stockseyes.p.rapidapi.com/getLatestCandle",
+            "description": "The /getLatestCandle API returns latest realtime candle formed for given trading symbol and time frame. The timeFrame parameter allows you to select the time frame of candleStick, with options of 1m, 5m, 15m, or 1h for 1 minute candle, 5 minute candle, 15 minute candle, 1 hour candle respectively. The tradingSymbol parameter lets you select any valid trading symbol of stocks that are part of the Nifty 500 or the top 500 stocks, giving you access to the data you need for the stocks you're interested in.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "tradingSymbol",
+                    "type": "STRING",
+                    "description": "Check the list of all supported tradingSymbols at [https://stockseyes.com/group/all](https://stockseyes.com/group/all) , you can download as csv also. Mainly, all major stocks which are part of nifty500, nifty 50, nifty next 50, nifty midcap50, nifty sector indices, nifty bank are supported. For exact details check the link.\n",
+                    "default": "RELIANCE"
+                },
+                {
+                    "name": "timeFrame",
+                    "type": "STRING",
+                    "description": "1m -> 1 minute candle\n5m -> 5 minute candle\n15m -> 15 minute candle\n1h -> 1 hour candle",
+                    "default": "1m"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://stockseyes.p.rapidapi.com/getLatestCandle\"\nquerystring = {\"tradingSymbol\": \"RELIANCE\", \"timeFrame\": \"1m\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"stockseyes.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://stockseyes.p.rapidapi.com/getLatestCandle\"\nquerystring = {\"tradingSymbol\": \"RELIANCE\", \"timeFrame\": \"1m\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"stockseyes.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per second for your plan, BASIC, by the API provider"
+            },
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "stockseyes"
+}

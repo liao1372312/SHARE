@@ -1,0 +1,222 @@
+{
+    "product_id": "api_e124c652-5934-4cb3-89a5-94afa3781cb2",
+    "tool_description": "Get Search Engine Results Pages from the most common search engine with simple and reliable API provided by Outscraper.\n\nSERP API supports the following fields: organic results, ads, shopping results, related questions, and more.",
+    "home_url": "https://rapidapi.com/outscraper-inc-outscraper-inc-default/api/serp-by-outscraper/",
+    "name": "SERP by Outscraper",
+    "title": "SERP by Outscraper",
+    "pricing": "FREEMIUM",
+    "tool_name": "SERP by Outscraper",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 120593,
+        "avgSuccessRate": 100,
+        "popularityScore": 6.4,
+        "__typename": "Score"
+    },
+    "host": "serp-by-outscraper.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Search",
+            "url": "https://serp-by-outscraper.p.rapidapi.com/serp-search",
+            "description": "Returns search results based on a given search query (or many queries). This endpoint is optimized for fast responses and can be used as a real-time API.\n\n[API Docs](https://app.outscraper.com/api-docs)",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "query",
+                    "type": "STRING",
+                    "description": "Queries to search (e.g., `bitcoin`, `37th president of USA`).\n\nIt supports batching by sending arrays with up to 25 queries (e.g., `query=text1&query=text2&query=text3`). It allows multiple queries to be sent in one request and to save on network latency time (each query will be counted as a different request in billing).\n",
+                    "default": "bitcoin"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "region",
+                    "type": "STRING",
+                    "description": "The parameter specifies the country to use.\n\nAvailable countries: `AF`, `AL`, `DZ`, `AS`, `AD`, `AO`, `AI`, `AG`, `AR`, `AM`, `AU`, `AT`, `AZ`, `BS`, `BH`, `BD`, `BY`, `BE`, `BZ`, `BJ`, `BT`, `BO`, `BA`, `BW`, `BR`, `VG`, `BN`, `BG`, `BF`, `BI`, `KH`, `CM`, `CA`, `CV`, `CF`, `TD`, `CL`, `CN`, `CO`, `CG`, `CD`, `CK`, `CR`, `CI`, `HR`, `CU`, `CY`, `CZ`, `DK`, `DJ`, `DM`, `DO`, `EC`, `EG`, `SV`, `EE`, `ET`, `FJ`, `FI`, `FR`, `GA`, `GM`, `GE`, `DE`, `GH`, `GI`, `GR`, `GL`, `GT`, `GG`, `GY`, `HT`, `HN`, `HK`, `HU`, `IS`, `IN`, `ID`, `IQ`, `IE`, `IM`, `IL`, `IT`, `JM`, `JP`, `JE`, `JO`, `KZ`, `KE`, `KI`, `KW`, `KG`, `LA`, `LV`, `LB`, `LS`, `LY`, `LI`, `LT`, `LU`, `MG`, `MW`, `MY`, `MV`, `ML`, `MT`, `MU`, `MX`, `FM`, `MD`, `MN`, `ME`, `MS`, `MA`, `MQ`, `MZ`, `MM`, `NA`, `NR`, `NP`, `NL`, `NZ`, `NI`, `NE`, `NG`, `NU`, `MK`, `NO`, `OM`, `PK`, `PS`, `PA`, `PG`, `PY`, `PE`, `PH`, `PN`, `PL`, `PT`, `PR`, `QA`, `RO`, `RU`, `RW`, `WS`, `SM`, `ST`, `SA`, `SN`, `RS`, `SC`, `SL`, `SG`, `SK`, `SI`, `SB`, `SO`, `ZA`, `KR`, `ES`, `LK`, `SH`, `VC`, `SR`, `SE`, `CH`, `TW`, `TJ`, `TZ`, `TH`, `TL`, `TG`, `TO`, `TT`, `TN`, `TR`, `TM`, `VI`, `UG`, `UA`, `AE`, `GB`, `US`, `UY`, `UZ`, `VU`, `VE`, `VN`, `ZM`, `ZW`.",
+                    "default": "US"
+                },
+                {
+                    "name": "language",
+                    "type": "STRING",
+                    "description": "The parameter specifies the language to use.\n\nAvailable languages: `en`, `de`, `es`, `es-419`, `fr`, `hr`, `it`, `nl`, `pl`, `pt-BR`, `pt-PT`, `vi`, `tr`, `ru`, `ar`, `th`, `ko`, `zh-CN`, `zh-TW`, `ja`, `ach`, `af`, `ak`, `ig`, `az`, `ban`, `ceb`, `xx-bork`, `bs`, `br`, `ca`, `cs`, `sn`, `co`, `cy`, `da`, `yo`, `et`, `xx-elmer`, `eo`, `eu`, `ee`, `tl`, `fil`, `fo`, `fy`, `gaa`, `ga`, `gd`, `gl`, `gn`, `xx-hacker`, `ht`, `ha`, `haw`, `bem`, `rn`, `id`, `ia`, `xh`, `zu`, `is`, `jw`, `rw`, `sw`, `tlh`, `kg`, `mfe`, `kri`, `la`, `lv`, `to`, `lt`, `ln`, `loz`, `lua`, `lg`, `hu`, `mg`, `mt`, `mi`, `ms`, `pcm`, `no`, `nso`, `ny`, `nn`, `uz`, `oc`, `om`, `xx-pirate`, `ro`, `rm`, `qu`, `nyn`, `crs`, `sq`, `sk`, `sl`, `so`, `st`, `sr-ME`, `sr-Latn`, `su`, `fi`, `sv`, `tn`, `tum`, `tk`, `tw`, `wo`, `el`, `be`, `bg`, `ky`, `kk`, `mk`, `mn`, `sr`, `tt`, `tg`, `uk`, `ka`, `hy`, `yi`, `iw`, `ug`, `ur`, `ps`, `sd`, `fa`, `ckb`, `ti`, `am`, `ne`, `mr`, `hi`, `bn`, `pa`, `gu`, `or`, `ta`, `te`, `kn`, `ml`, `si`, `lo`, `my`, `km`, `chr`.",
+                    "default": "en"
+                },
+                {
+                    "name": "pagesPerQuery",
+                    "type": "NUMBER",
+                    "description": "The parameter specifies the limit of pages to return from one query.",
+                    "default": "1"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://serp-by-outscraper.p.rapidapi.com/serp-search\"\nquerystring = {\"region\": \"US\", \"query\": \"bitcoin\", \"language\": \"en\", \"pagesPerQuery\": \"1\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"serp-by-outscraper.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://serp-by-outscraper.p.rapidapi.com/serp-search\"\nquerystring = {\"region\": \"US\", \"query\": \"bitcoin\", \"language\": \"en\", \"pagesPerQuery\": \"1\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"serp-by-outscraper.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "id": "a-07f14eba-febc-4497-a706-5b1206807876",
+                "status": "Success",
+                "data": [
+                    {
+                        "query": "bitcoin",
+                        "organic_results": [
+                            {
+                                "link": "https://bitcoin.org/",
+                                "title": "Bitcoin - Open source P2P money",
+                                "description": "Bitcoin.orgBitcoin.orgBitcoin is an innovative payment network and a new kind of money. Find all you need to know and get started with Bitcoin on bitcoin.org."
+                            },
+                            {
+                                "link": "https://www.bitcoin.com/",
+                                "title": "Buy Bitcoin & cryptocurrency | Wallet, news, education",
+                                "description": "Bitcoin.comBitcoin.comThe world's gateway to Bitcoin & cryptocurrency. Buy, sell, spend, swap, and invest in BTC, ETH, BCH, AVAX, MATIC & hundreds more digital assets."
+                            },
+                            {
+                                "link": "#",
+                                "title": "",
+                                "description": "\u00a0>\u00a0Bitcoin26,194.80USDFollow not completed, try again laterUnfollow not completed, try again later\u2212134.80 (0.51%)todaypast 5 dayspast monthpast 6 monthsyear to datepast yearpast 5 yearsall timeJun 17, 2:04\u202fAM UTC \u00b7 26,194.80 ()\u200e2:05\u202fAM26,15026,15026,20026,20026,25026,25026,30026,30026,35026,35012:00\u202fAM1:00\u202fAM2:00\u202fAMBTCUSDFeedback"
+                            },
+                            {
+                                "link": "https://en.wikipedia.org/wiki/Bitcoin",
+                                "title": "Bitcoin",
+                                "description": "WikipediaWikipediaBitcoin is a protocol which implements a public, permanent, and decentralized ledger. In order to add to the ledger, a user must prove they control an entry\u00a0...Ledger start: 3 January 2009 (14 years ago)Initial release: 0.1.0 / 9 January 2009 (14 years ..."
+                            },
+                            {
+                                "link": "https://www.coindesk.com/price/bitcoin/",
+                                "title": "Bitcoin Price | BTC Price Index and Live Chart",
+                                "description": "CoinDeskCoinDeskBitcoin USD price, real-time (live) charts, news and videos. Learn about BTC value, bitcoin cryptocurrency, crypto trading, and more."
+                            },
+                            {
+                                "link": "https://cointelegraph.com/bitcoin-price",
+                                "title": "Bitcoin (BTC) Price Index",
+                                "description": "CointelegraphCointelegraphThe Bitcoin (BTC) live price today is $26313, changes over 24H (+2.96%). Current market cup is $510.59 B. All given information about Bitcoin (BTC) updated\u00a0..."
+                            },
+                            {
+                                "link": "https://coinmarketcap.com/currencies/bitcoin/",
+                                "title": "Bitcoin price today, BTC to USD live price, marketcap and ...",
+                                "description": "CoinMarketCapCoinMarketCapThe live Bitcoin price today is $26,329.16 USD with a 24-hour trading volume of $16,323,519,167 USD. We update our BTC to USD price in real-time. Bitcoin is up\u00a0...Max. supply: 21,000,000 BTCMarket Cap: $1,061,026,522,218Market cap: 3.06%$511BFully diluted market cap: $552,912,452,856Rating: 4.4$26,329.75"
+                            },
+                            {
+                                "link": "https://finance.yahoo.com/quote/BTC-USD/",
+                                "title": "Bitcoin USD (BTC-USD) Price, Value, News & History",
+                                "description": "YahooYahooFind the latest Bitcoin USD (BTC-USD) price quote, history, news and other vital information to help you with your cryptocurrency trading and investing."
+                            }
+                        ],
+                        "ads": [],
+                        "shopping_results": [],
+                        "related_questions": [
+                            {
+                                "link": "https://www.forbes.com/advisor/money-transfer/currency-converter/btc-usd/#:~:text=1%20BTC%20%3D%2025%2C544.449936%20USD%20Jun%2016%2C%202023%2010%3A58%20UTC&text=The%20currency%20converter%20below%20is,currency%20rates%20are%20updated%20frequently.",
+                                "title": "BTC To USD: Convert Bitcoin to United States Dollar - Forbes Advisor",
+                                "question": "How much is $1 Bitcoin in US dollars?",
+                                "description": "1 BTC = 25,544.449936 USD Jun 16, 2023 10:58 UTC The currency converter below is easy to use and the currency rates are updated frequently."
+                            },
+                            {
+                                "link": "https://coincodex.com/convert/bitcoin/usd/100/",
+                                "title": "Convert 100 BTC to USD - Bitcoin to US Dollar Converter | CoinCodex",
+                                "question": "How much is $100 Bitcoin worth right now?",
+                                "description": ""
+                            },
+                            {
+                                "link": "https://www.unbiased.co.uk/discover/personal-finance/savings-investing/the-future-of-bitcoin-cryptocurrency-2022-and-beyond#:~:text=Overall%2C%20bitcoin%20and%20other%20digital,any%20of%20your%20money%20back.",
+                                "title": "The future of bitcoin & cryptocurrency: 2022 and beyond - Unbiased",
+                                "question": "Is Bitcoin worth doing?",
+                                "description": "Overall, bitcoin and other digital currencies are very risky investments. Whether you're buying bitcoin to purchase goods, or simply are hoping to hold this asset until you sell it for more money, there is no guarantee you will get any of your money back.May 15, 2023"
+                            },
+                            {
+                                "link": "https://www.nerdwallet.com/article/investing/is-bitcoin-a-good-investment#:~:text=It%20should%20only%20be%20considered,reduce%20your%20overall%20risk%20exposure.",
+                                "title": "Is Bitcoin a Good Investment? - NerdWallet",
+                                "question": "Should I just invest in Bitcoin?",
+                                "description": "It should only be considered if you have a high risk tolerance, are in a strong financial position and can afford to lose any money you invest in it. If you choose to invest, it's important to maintain a diversified portfolio that includes several different types of investments to reduce your overall risk exposure.Mar 29, 2023"
+                            }
+                        ],
+                        "search_information": {
+                            "total_results": 621000000
+                        }
+                    }
+                ]
+            },
+            "statuscode": 200,
+            "schema": {
+                "id": "c81b2bea-ffca-4739-b2f0-f9848830e182",
+                "status": "Success",
+                "data": [
+                    {
+                        "query": "bitcoin",
+                        "organic_results": [
+                            {
+                                "link": "https://bitcoin.org/",
+                                "title": "Bitcoin - Open source P2P money",
+                                "description": "Flag this as personal informationFlag this as personal informationBitcoin is an innovative payment network and a new kind of money. Find all you need to know and get started with Bitcoin on bitcoin.org."
+                            },
+                            {
+                                "link": "https://www.bitcoin.com/",
+                                "title": "Bitcoin.com | Buy BTC, ETH & BCH | Wallet, news, markets ...",
+                                "description": "Flag this as personal informationFlag this as personal informationYour gateway to Bitcoin & beyond. The tools and information you need to buy, sell, trade, invest, and spend cryptocurrencies. Get started."
+                            },
+                            {
+                                "link": "https://www.coindesk.com/price/bitcoin/",
+                                "title": "Bitcoin Price | BTC Price Index and Live Chart \u2014 CoinDesk 20",
+                                "description": "Flag this as personal informationFlag this as personal informationBitcoin USD price, real-time (live) charts, news and videos. Learn about BTC value, bitcoin cryptocurrency, crypto trading, and more."
+                            },
+                            {
+                                "link": "https://en.wikipedia.org/wiki/Bitcoin",
+                                "title": "Bitcoin - Wikipedia",
+                                "description": "Flag this as personal informationFlag this as personal informationBitcoin (abbreviation: BTC; sign: \u20bf) is a decentralized digital currency that can be transferred on the peer-to-peer bitcoin network.Ledger start: 3 January 2009 (13 years ago)Original author(s): Satoshi NakamotoSupply limit: \u20bf21,000,000Initial release: 0.1.0 / 9 January 2009 (13 years ..."
+                            },
+                            {
+                                "link": "https://coinmarketcap.com/currencies/bitcoin/",
+                                "title": "Bitcoin price today, BTC to USD live, marketcap and chart",
+                                "description": "Flag this as personal informationFlag this as personal informationThe live Bitcoin price today is $18,791.51 USD with a 24-hour trading volume of $28,163,405,304 USD. We update our BTC to USD price in real-time."
+                            },
+                            {
+                                "link": "https://www.coinbase.com/",
+                                "title": "Coinbase - Buy and Sell Bitcoin, Ethereum, and more with trust",
+                                "description": "Flag this as personal informationFlag this as personal information"
+                            },
+                            {
+                                "link": "https://twitter.com/bitcoin",
+                                "title": "Bitcoin - Twitter",
+                                "description": "Flag this as personal informationFlag this as personal informationBitcoin is an open source censorship-resistant peer-to-peer immutable network. Trackable digital gold. Don't trust; verify. Not your keys; not your coins."
+                            },
+                            {
+                                "link": "https://www.investopedia.com/terms/b/bitcoin.asp",
+                                "title": "What is Bitcoin? How to Mine, Buy, and Use It - Investopedia",
+                                "description": "Flag this as personal informationFlag this as personal informationBitcoin is a cryptocurrency, a virtual currency designed to act as money and a form of payment outside the control of any one person, group, or entity,\u00a0...How Does Bitcoin Make Money?Is Bitcoin a Good Investment?"
+                            },
+                            {
+                                "link": "https://finance.yahoo.com/quote/BTC-USD/",
+                                "title": "Bitcoin USD (BTC-USD) Price, Value, News & History",
+                                "description": "Flag this as personal informationFlag this as personal informationFind the latest Bitcoin USD (BTC-USD) price quote, history, news and other vital information to help you with your cryptocurrency trading and investing."
+                            }
+                        ],
+                        "ads": [],
+                        "shopping_results": [],
+                        "related_questions": [
+                            {
+                                "link": null,
+                                "title": "How much is $1 Bitcoin in US dollars?",
+                                "description": ""
+                            },
+                            {
+                                "link": null,
+                                "title": "How does Bitcoin make money?",
+                                "description": ""
+                            },
+                            {
+                                "link": null,
+                                "title": "Is Bitcoin a good investment?",
+                                "description": ""
+                            },
+                            {
+                                "link": null,
+                                "title": "How long does it take to mine 1 Bitcoin?",
+                                "description": ""
+                            }
+                        ],
+                        "search_information": {
+                            "total_results": 378000000
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "standardized_name": "serp_by_outscraper"
+}

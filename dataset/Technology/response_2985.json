@@ -1,0 +1,45 @@
+{
+"user_query":"I want to find a list of superhero movies available for streaming on Disney+ and Amazon Prime in the US and get the episodes of 'Game of Thrones' with their streaming sources.",
+"domain":"Technology",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Search for superhero movies available for streaming on Disney+ in the US.",
+        "domain": "technology",
+        "required_inputs": ["streaming_service", "region"]
+    },
+    {
+        "id": 2,
+        "description": "Search for superhero movies available for streaming on Amazon Prime in the US.",
+        "domain": "technology",
+        "required_inputs": ["streaming_service", "region"]
+    },
+    {
+        "id": 3,
+        "description": "Compile the lists of superhero movies from Disney+ and Amazon Prime.",
+        "domain": "technology",
+        "required_inputs": ["disney_movies_list", "amazon_movies_list"],
+        "dependencies": [1, 2]
+    },
+    {
+        "id": 4,
+        "description": "Fetch the episodes of the TV show 'Game of Thrones'.",
+        "domain": "technology",
+        "required_inputs": ["show_name"]
+    },
+    {
+        "id": 5,
+        "description": "Find streaming sources for each episode of 'Game of Thrones'.",
+        "domain": "technology",
+        "required_inputs": ["episode_list"],
+        "dependencies": [4]
+    },
+    {
+        "id": 6,
+        "description": "Provide a summary report of superhero movies from both platforms and the episodes of 'Game of Thrones' with their streaming sources.",
+        "domain": "technology",
+        "required_inputs": ["compiled_movies_list", "got_episodes_with_sources"],
+        "dependencies": [3, 5]
+    }
+]
+}

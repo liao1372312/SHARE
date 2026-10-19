@@ -1,0 +1,61 @@
+{
+    "product_id": "api_50edefcf-9b70-424b-80f8-61f57d4829fc",
+    "tool_description": "Data-driven and transparent historical ESG scores for over 17,000 companies",
+    "home_url": "https://rapidapi.com/gaialens-gaialens-default/api/gaialens-historical-esg-scores/",
+    "name": "GaiaLens Historical ESG Scores",
+    "title": "GaiaLens Historical ESG Scores",
+    "pricing": "FREEMIUM",
+    "tool_name": "GaiaLens Historical ESG Scores",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 2439,
+        "avgSuccessRate": 20,
+        "popularityScore": 2,
+        "__typename": "Score"
+    },
+    "host": "gaialens-historical-esg-scores.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "getHistoricalScoresByYear",
+            "url": "https://gaialens-historical-esg-scores.p.rapidapi.com/scores/historical/2020",
+            "description": "This API returns historical Environmental, Social, Governance and Overall scores for companies on a scale of 0 to 100 based on the year provided in the request.  In addition to this, the API also provides other relevant metrics like Global Rank, Industry Rank and more.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "year",
+                    "type": "string",
+                    "description": "<= 2020",
+                    "default": "2020"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "sedol",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "isin",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "companyname",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "Apple Inc."
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://gaialens-historical-esg-scores.p.rapidapi.com/scores/historical/2020\"\nquerystring = {\"sedol\": \"\", \"isin\": \"\", \"companyname\": \"Apple Inc.\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"gaialens-historical-esg-scores.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://gaialens-historical-esg-scores.p.rapidapi.com/scores/historical/{year}\"\nquerystring = {\"sedol\": \"\", \"isin\": \"\", \"companyname\": \"Apple Inc.\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"gaialens-historical-esg-scores.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "request_id": 34057,
+                "status": "Failed",
+                "message": "Bad request syntax or unsupported method - please remove extra parameter(s)"
+            }
+        }
+    ],
+    "standardized_name": "gaialens_historical_esg_scores"
+}

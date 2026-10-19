@@ -1,0 +1,26 @@
+{
+"user_query":"I'm interested in reading the latest articles about the global recession. Can you fetch the news from The Guardian and other publications? Please provide the titles, URLs, and sources of these articles.",
+"domain":"Finance",
+"TaskList": [
+{
+"id": 1,
+"description": "Fetch the latest articles about the global recession from The Guardian.",
+"domain": "finance",
+"required_inputs": ["source_name", "topic"]
+},
+{
+"id": 2,
+"description": "Fetch the latest articles about the global recession from other specified news publications.",
+"domain": "finance",
+"required_inputs": ["source_names", "topic"],
+"depends_on": [1]
+},
+{
+"id": 3,
+"description": "Aggregate the results from both The Guardian and other publications to compile a list of article titles, URLs, and sources.",
+"domain": "finance",
+"required_inputs": ["guardian_articles", "other_articles"],
+"depends_on": [1, 2]
+}
+]
+}

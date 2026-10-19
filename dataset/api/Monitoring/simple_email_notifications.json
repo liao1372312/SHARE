@@ -1,0 +1,47 @@
+{
+    "product_id": "api_a8d9f6f9-b63b-4206-9af1-c84a02b5f359",
+    "tool_description": "Notify on cronjob failure. Notify when command execution finished or failed. And more...",
+    "home_url": "https://rapidapi.com/leonkura/api/simple-email-notifications/",
+    "name": "Simple Email Notifications",
+    "title": "Simple Email Notifications",
+    "pricing": "FREEMIUM",
+    "tool_name": "Simple Email Notifications",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 269,
+        "avgSuccessRate": 100,
+        "popularityScore": 7.4,
+        "__typename": "Score"
+    },
+    "host": "simple-email-notifications.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Send Email Notification",
+            "url": "https://simple-email-notifications.p.rapidapi.com/Cronjob-finished",
+            "description": "Intended usage is as a one liner. For example like this:\nbackup.sh && curl https://simple-email-notifications.p.rapidapi.com/Backup finished \u2705 /?email=demo@example.com&rapidapi-key=<your-rapidapi-key>\n\nWe recommend to use your rapidapi key as a query parameter as to reduce the complexity of the curl call.\n\nSend a email notification to the specified recipient. Note that it's not possible to set a email body. It's only possible to set a subject, as this API is only supposed to be used as a notification tool for jobs or tasks that have finished or experienced errors. If you don't set a subject, \"\ud83d\udce9\" will be set automatically for you.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "email",
+                    "type": "STRING",
+                    "description": "The E-Mail address that should receive this notification. Please note that it is NOT ALLOWED TO USE THIS API TO SEND ANY KIND OF MARKETING E-MAILS OR ANY E-MAIL COMMUNICATION WITH PARTIES THAT HAVE NOT GIVEN THEIR CONSENT TO RECEIVE THOSE E-MAILS! ",
+                    "default": "demo@example.com"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "subject",
+                    "type": "string",
+                    "description": "The subject to set for the E-Mail. In case you don't set a subject \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"\ud83d\udce9\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\" will be set for you. The maximum allowed length is 50 characters.",
+                    "default": "Cronjob-finished"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://simple-email-notifications.p.rapidapi.com/Cronjob-finished\"\nquerystring = {\"email\": \"demo@example.com\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"simple-email-notifications.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://simple-email-notifications.p.rapidapi.com/{subject}\"\nquerystring = {\"email\": \"demo@example.com\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"simple-email-notifications.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 1,
+            "schema": ""
+        }
+    ],
+    "standardized_name": "simple_email_notifications"
+}

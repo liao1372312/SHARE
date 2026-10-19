@@ -1,0 +1,35 @@
+{
+  "user_query": "I'm a basketball fan and I want to stay updated on NBA news and player stats. Can you fetch me the latest NBA news and the list of all NBA players along with their teams? Also, provide me with interesting facts about the players and teams.",
+  "domain": "sports",
+  "TaskList": [
+    {
+      "id": 1,
+      "description": "查询最新的NBA新闻",
+      "domain": "sports",
+      "required_inputs": ["NBA新闻"]
+    },
+    {
+      "id": 2,
+      "description": "获取所有NBA球员及其所属球队信息",
+      "domain": "sports",
+      "required_inputs": ["球员名单", "球队信息"]
+    },
+    {
+      "id": 3,
+      "description": "获取每个球员的详细统计数据",
+      "domain": "sports",
+      "required_inputs": ["球员ID"]
+    },
+    {
+      "id": 4,
+      "description": "提供关于球员和球队的有趣事实",
+      "domain": "sports",
+      "required_inputs": ["球员信息", "球队信息"]
+    }
+  ],
+  "dependencies": [
+    {"from": 1, "to": 2},
+    {"from": 2, "to": 3},
+    {"from": 2, "to": 4}
+  ]
+}

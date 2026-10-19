@@ -1,0 +1,1018 @@
+{
+    "product_id": "api_545336a4-7ce2-4d4d-aa38-0de897cb89df",
+    "tool_description": "Extremely comprehensive and up-to-date local business search - get business reviews and rating, photos, phone, address / location, website, emails / social profiles and 30+ other fields.",
+    "home_url": "https://rapidapi.com/letscrape-6bRBa3QguO5/api/local-business-data/",
+    "name": "Local Business Data",
+    "title": "Local Business Data",
+    "pricing": "FREEMIUM",
+    "tool_name": "Local Business Data",
+    "score": {
+        "avgServiceLevel": 99,
+        "avgLatency": 1331,
+        "avgSuccessRate": 99,
+        "popularityScore": 9.9,
+        "__typename": "Score"
+    },
+    "host": "local-business-data.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Business Reviews",
+            "url": "https://local-business-data.p.rapidapi.com/business-reviews",
+            "description": "Get all business reviews. Supports pagination, query and several sort options.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "business_id",
+                    "type": "STRING",
+                    "description": "Unique Business Id of the business for which to get reviews.",
+                    "default": "0x89c259b5a9bd152b:0x31453e62a3be9f76"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "sort_by",
+                    "type": "ENUM",
+                    "description": "How to sort the reviews in the results.\n\n**Allowed values**: *`most_relevant, newest, highest_ranking, lowest_ranking`*.\n\n**Default**: *`most_relevant`*",
+                    "default": ""
+                },
+                {
+                    "name": "region",
+                    "type": "STRING",
+                    "description": "Query Google Maps from a particular region or country. For a list of supported region/country codes see https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes (Alpha-2 code).\n\n**Default:** *`us`*",
+                    "default": "us"
+                },
+                {
+                    "name": "language",
+                    "type": "STRING",
+                    "description": "Set the language of the results. For a list of supported language codes see https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes .\n\n**Default**: *`en`*",
+                    "default": "en"
+                },
+                {
+                    "name": "offset",
+                    "type": "NUMBER",
+                    "description": "Number of business reviews to skip (for pagination/scrolling).\n\n**Default**: *`0`*",
+                    "default": ""
+                },
+                {
+                    "name": "fields",
+                    "type": "STRING",
+                    "description": "A comma separated list of review fields to include in the response (field projection). By default all fields are returned.\n\n**e.g.** `review_id,review_text,rating`",
+                    "default": ""
+                },
+                {
+                    "name": "query",
+                    "type": "STRING",
+                    "description": "Return reviews matching a text query.",
+                    "default": ""
+                },
+                {
+                    "name": "limit",
+                    "type": "NUMBER",
+                    "description": "Maximum number of business reviews to return (1-150).\n\n**Default**: *`20`*",
+                    "default": "5"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://local-business-data.p.rapidapi.com/business-reviews\"\nquerystring = {\"sort_by\": \"\", \"region\": \"us\", \"business_id\": \"0x89c259b5a9bd152b:0x31453e62a3be9f76\", \"language\": \"en\", \"offset\": \"\", \"fields\": \"\", \"query\": \"\", \"limit\": \"5\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"local-business-data.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://local-business-data.p.rapidapi.com/business-reviews\"\nquerystring = {\"sort_by\": \"\", \"region\": \"us\", \"business_id\": \"0x89c259b5a9bd152b:0x31453e62a3be9f76\", \"language\": \"en\", \"offset\": \"\", \"fields\": \"\", \"query\": \"\", \"limit\": \"5\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"local-business-data.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per second for your plan, BASIC, by the API provider"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "type": "string"
+                    },
+                    "request_id": {
+                        "type": "string"
+                    },
+                    "data": {
+                        "type": "array",
+                        "items": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Business Photos",
+            "url": "https://local-business-data.p.rapidapi.com/business-photos",
+            "description": "Get all business photos.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "business_id",
+                    "type": "STRING",
+                    "description": "Unique Business Id of the business for which to get photos.",
+                    "default": "0x89c259b5a9bd152b:0x31453e62a3be9f76"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "fields",
+                    "type": "STRING",
+                    "description": "A comma separated list of review fields to include in the response (field projection). By default all fields are returned.\n\n**e.g.** `type,photo_url`",
+                    "default": ""
+                },
+                {
+                    "name": "limit",
+                    "type": "NUMBER",
+                    "description": "Maximum number of business photos to return (1-10000).\n\n**Default**: *`20`*",
+                    "default": "5"
+                },
+                {
+                    "name": "region",
+                    "type": "STRING",
+                    "description": "Query Google Maps from a particular region or country. For a list of supported region/country codes see https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes (Alpha-2 code).\n\n**Default:** *`us`*",
+                    "default": "us"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://local-business-data.p.rapidapi.com/business-photos\"\nquerystring = {\"fields\": \"\", \"limit\": \"5\", \"region\": \"us\", \"business_id\": \"0x89c259b5a9bd152b:0x31453e62a3be9f76\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"local-business-data.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://local-business-data.p.rapidapi.com/business-photos\"\nquerystring = {\"fields\": \"\", \"limit\": \"5\", \"region\": \"us\", \"business_id\": \"0x89c259b5a9bd152b:0x31453e62a3be9f76\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"local-business-data.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per second for your plan, BASIC, by the API provider"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "type": "string"
+                    },
+                    "request_id": {
+                        "type": "string"
+                    },
+                    "parameters": {
+                        "type": "object",
+                        "properties": {
+                            "business_id": {
+                                "type": "string"
+                            },
+                            "language": {
+                                "type": "string"
+                            },
+                            "region": {
+                                "type": "string"
+                            },
+                            "limit": {
+                                "type": "integer"
+                            }
+                        }
+                    },
+                    "data": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "photo_id": {
+                                    "type": "string"
+                                },
+                                "photo_url": {
+                                    "type": "string"
+                                },
+                                "photo_url_large": {
+                                    "type": "string"
+                                },
+                                "video_thumbnail_url": {
+                                    "type": "null"
+                                },
+                                "latitude": {
+                                    "type": "number"
+                                },
+                                "longitude": {
+                                    "type": "number"
+                                },
+                                "type": {
+                                    "type": "string"
+                                },
+                                "photo_datetime_utc": {
+                                    "type": "string"
+                                },
+                                "photo_timestamp": {
+                                    "type": "integer"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Business Details",
+            "url": "https://local-business-data.p.rapidapi.com/business-details",
+            "description": "Get full business details including emails and social contacts. Supports batching of up to 20 Business Ids.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "business_id",
+                    "type": "STRING",
+                    "description": "Unique Business Id. Batching of up to 20 Business Ids are supported in a single request using a comma separated list (e.g. business_id=id1,id2).",
+                    "default": "0x880fd393d427a591:0x8cba02d713a995ed"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "language",
+                    "type": "STRING",
+                    "description": "Set the language of the results. For a list of supported language codes see https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes .\n\n**Default**: *`en`*",
+                    "default": "en"
+                },
+                {
+                    "name": "fields",
+                    "type": "STRING",
+                    "description": "A comma separated list of business fields to include in the response (field projection). By default all fields are returned.\n\n**e.g.** `business_id,type,phone_number,full_address`",
+                    "default": ""
+                },
+                {
+                    "name": "extract_emails_and_contacts",
+                    "type": "BOOLEAN",
+                    "description": "Whether to extract emails, contacts and social profiles for the business. In case true, businesses will be enriched with a `emails_and_contacts` field, potentially containing emails, phones, Facebook, LinkedIn, Instagram and other social profiles.\n\n**Default**: *`true`*",
+                    "default": "true"
+                },
+                {
+                    "name": "extract_share_link",
+                    "type": "BOOLEAN",
+                    "description": "Whether to extract place's share link for the business. In case true, businesses will be enriched with a `share_link` field containing a shortened Google URL for sharing (e.g. https://goo.gl/maps/oxndE8SVaNU5CV6p6).\n\n**Default**: *`false`*",
+                    "default": "false"
+                },
+                {
+                    "name": "region",
+                    "type": "STRING",
+                    "description": "Query Google Maps from a particular region or country. For a list of supported region/country codes see https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes (Alpha-2 code).\n\n**Default:** *`us`*",
+                    "default": "us"
+                },
+                {
+                    "name": "coordinates",
+                    "type": "STRING",
+                    "description": "Geographic coordinates of the location from which the query is applied - recommended to use so that results are biased towards this location. Defaults to some central location in the region (see the `region` parameter).",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://local-business-data.p.rapidapi.com/business-details\"\nquerystring = {\"language\": \"en\", \"fields\": \"\", \"extract_emails_and_contacts\": \"true\", \"extract_share_link\": \"false\", \"business_id\": \"0x880fd393d427a591:0x8cba02d713a995ed\", \"region\": \"us\", \"coordinates\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"local-business-data.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://local-business-data.p.rapidapi.com/business-details\"\nquerystring = {\"language\": \"en\", \"fields\": \"\", \"extract_emails_and_contacts\": \"true\", \"extract_share_link\": \"false\", \"business_id\": \"0x880fd393d427a591:0x8cba02d713a995ed\", \"region\": \"us\", \"coordinates\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"local-business-data.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per second for your plan, BASIC, by the API provider"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "type": "string"
+                    },
+                    "request_id": {
+                        "type": "string"
+                    },
+                    "parameters": {
+                        "type": "object",
+                        "properties": {
+                            "business_id": {
+                                "type": "string"
+                            },
+                            "language": {
+                                "type": "string"
+                            },
+                            "region": {
+                                "type": "string"
+                            },
+                            "coordinates": {
+                                "type": "string"
+                            },
+                            "extract_emails_and_contacts": {
+                                "type": "boolean"
+                            },
+                            "extract_share_link": {
+                                "type": "boolean"
+                            }
+                        }
+                    },
+                    "data": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "business_id": {
+                                    "type": "string"
+                                },
+                                "google_id": {
+                                    "type": "string"
+                                },
+                                "place_id": {
+                                    "type": "string"
+                                },
+                                "phone_number": {
+                                    "type": "string"
+                                },
+                                "name": {
+                                    "type": "string"
+                                },
+                                "latitude": {
+                                    "type": "number"
+                                },
+                                "longitude": {
+                                    "type": "number"
+                                },
+                                "full_address": {
+                                    "type": "string"
+                                },
+                                "review_count": {
+                                    "type": "integer"
+                                },
+                                "rating": {
+                                    "type": "number"
+                                },
+                                "timezone": {
+                                    "type": "string"
+                                },
+                                "working_hours": {
+                                    "type": "object",
+                                    "properties": {
+                                        "Saturday": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "Sunday": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "Monday": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "Tuesday": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "Wednesday": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "Thursday": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "Friday": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "string"
+                                            }
+                                        }
+                                    }
+                                },
+                                "website": {
+                                    "type": "string"
+                                },
+                                "verified": {
+                                    "type": "boolean"
+                                },
+                                "place_link": {
+                                    "type": "string"
+                                },
+                                "cid": {
+                                    "type": "string"
+                                },
+                                "reviews_link": {
+                                    "type": "string"
+                                },
+                                "owner_id": {
+                                    "type": "string"
+                                },
+                                "owner_link": {
+                                    "type": "string"
+                                },
+                                "owner_name": {
+                                    "type": "string"
+                                },
+                                "booking_link": {
+                                    "type": "string"
+                                },
+                                "reservations_link": {
+                                    "type": "null"
+                                },
+                                "business_status": {
+                                    "type": "string"
+                                },
+                                "type": {
+                                    "type": "string"
+                                },
+                                "subtypes": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                },
+                                "photos_sample": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "photo_id": {
+                                                "type": "string"
+                                            },
+                                            "photo_url": {
+                                                "type": "string"
+                                            },
+                                            "photo_url_large": {
+                                                "type": "string"
+                                            },
+                                            "video_thumbnail_url": {
+                                                "type": "null"
+                                            },
+                                            "latitude": {
+                                                "type": "number"
+                                            },
+                                            "longitude": {
+                                                "type": "number"
+                                            },
+                                            "type": {
+                                                "type": "string"
+                                            },
+                                            "photo_datetime_utc": {
+                                                "type": "string"
+                                            },
+                                            "photo_timestamp": {
+                                                "type": "integer"
+                                            }
+                                        }
+                                    }
+                                },
+                                "global_plus_code": {
+                                    "type": "string"
+                                },
+                                "compound_plus_code": {
+                                    "type": "string"
+                                },
+                                "reviews_per_rating": {
+                                    "type": "object",
+                                    "properties": {
+                                        "1": {
+                                            "type": "integer"
+                                        },
+                                        "2": {
+                                            "type": "integer"
+                                        },
+                                        "3": {
+                                            "type": "integer"
+                                        },
+                                        "4": {
+                                            "type": "integer"
+                                        },
+                                        "5": {
+                                            "type": "integer"
+                                        }
+                                    }
+                                },
+                                "photo_count": {
+                                    "type": "integer"
+                                },
+                                "about": {
+                                    "type": "object",
+                                    "properties": {
+                                        "summary": {
+                                            "type": "null"
+                                        },
+                                        "details": {
+                                            "type": "object",
+                                            "properties": {
+                                                "Service options": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "Onsite services": {
+                                                            "type": "boolean"
+                                                        },
+                                                        "Online estimates": {
+                                                            "type": "boolean"
+                                                        }
+                                                    }
+                                                },
+                                                "Amenities": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "Gender-neutral restroom": {
+                                                            "type": "boolean"
+                                                        }
+                                                    }
+                                                },
+                                                "Crowd": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "LGBTQ+ friendly": {
+                                                            "type": "boolean"
+                                                        }
+                                                    }
+                                                },
+                                                "Planning": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "Appointment required": {
+                                                            "type": "boolean"
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "address": {
+                                    "type": "string"
+                                },
+                                "menu_link": {
+                                    "type": "null"
+                                },
+                                "order_link": {
+                                    "type": "null"
+                                },
+                                "price_level": {
+                                    "type": "null"
+                                },
+                                "district": {
+                                    "type": "string"
+                                },
+                                "street_address": {
+                                    "type": "string"
+                                },
+                                "city": {
+                                    "type": "string"
+                                },
+                                "zipcode": {
+                                    "type": "string"
+                                },
+                                "state": {
+                                    "type": "string"
+                                },
+                                "country": {
+                                    "type": "string"
+                                },
+                                "posts_sample": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object"
+                                    }
+                                },
+                                "posts_link": {
+                                    "type": "string"
+                                },
+                                "reviews_sample": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object"
+                                    }
+                                },
+                                "emails_and_contacts": {
+                                    "type": "object",
+                                    "properties": {
+                                        "emails": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "value": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "phone_numbers": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "value": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "facebook": {
+                                            "type": "string"
+                                        },
+                                        "instagram": {
+                                            "type": "null"
+                                        },
+                                        "twitter": {
+                                            "type": "null"
+                                        },
+                                        "linkedin": {
+                                            "type": "string"
+                                        },
+                                        "github": {
+                                            "type": "null"
+                                        },
+                                        "youtube": {
+                                            "type": "null"
+                                        },
+                                        "pinterest": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Search In Area",
+            "url": "https://local-business-data.p.rapidapi.com/search-in-area",
+            "description": "Search businesses in a specific geographic area defined by a center coordinate point and zoom level. To see it in action, make a query on Google Maps, wait for the results to show, move the map or change the zoom and click \"Search this area\" at the top.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "lat",
+                    "type": "STRING",
+                    "description": "Latitude of the center coordinate point of the area to search in.",
+                    "default": "37.359428"
+                },
+                {
+                    "name": "zoom",
+                    "type": "STRING",
+                    "description": "Zoom level on which to make the search (the search area / viewport is determined by lat, lng and zoom on a 1000x1000 screen).",
+                    "default": "13"
+                },
+                {
+                    "name": "query",
+                    "type": "STRING",
+                    "description": "Search query / keyword.\n\n**e.g.** `Bars and pubs`\n**e.g.** `Plumbers`",
+                    "default": "pizza"
+                },
+                {
+                    "name": "lng",
+                    "type": "STRING",
+                    "description": "Longitude of the center coordinate point of the area to search in.",
+                    "default": "-121.925337"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "region",
+                    "type": "STRING",
+                    "description": "Query Google Maps from a particular region or country. For a list of supported region/country codes see https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes (Alpha-2 code).\n\n**Default:** *`us`*",
+                    "default": "us"
+                },
+                {
+                    "name": "language",
+                    "type": "STRING",
+                    "description": "Set the language of the results. For a list of supported language codes see https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes .\n\n**Default**: *`en`*",
+                    "default": "en"
+                },
+                {
+                    "name": "subtypes",
+                    "type": "STRING",
+                    "description": "Find businesses with specific subtypes, specified as a comma separated list of types (business categories). For the complete list of types, see https://daltonluka.com/blog/google-my-business-categories.\n\n**e.g.** `Plumber,Carpenter,Electrician`\n**e.g.** `Night club,Dance club,Bar,Pub`",
+                    "default": ""
+                },
+                {
+                    "name": "fields",
+                    "type": "STRING",
+                    "description": "A comma separated list of business fields to include in the response (field projection). By default all fields are returned.\n\n**e.g.** `business_id,type,phone_number,full_address`",
+                    "default": ""
+                },
+                {
+                    "name": "limit",
+                    "type": "STRING",
+                    "description": "Maximum number of businesses to return (1-500).\n\n**Default**: *`20`*",
+                    "default": "20"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://local-business-data.p.rapidapi.com/search-in-area\"\nquerystring = {\"region\": \"us\", \"language\": \"en\", \"subtypes\": \"\", \"lat\": \"37.359428\", \"zoom\": \"13\", \"query\": \"pizza\", \"fields\": \"\", \"limit\": \"20\", \"lng\": \"-121.925337\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"local-business-data.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://local-business-data.p.rapidapi.com/search-in-area\"\nquerystring = {\"region\": \"us\", \"language\": \"en\", \"subtypes\": \"\", \"lat\": \"37.359428\", \"zoom\": \"13\", \"query\": \"pizza\", \"fields\": \"\", \"limit\": \"20\", \"lng\": \"-121.925337\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"local-business-data.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per second for your plan, BASIC, by the API provider"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "type": "string"
+                    },
+                    "request_id": {
+                        "type": "string"
+                    },
+                    "parameters": {
+                        "type": "object",
+                        "properties": {
+                            "query": {
+                                "type": "string"
+                            },
+                            "language": {
+                                "type": "string"
+                            },
+                            "region": {
+                                "type": "string"
+                            },
+                            "lat": {
+                                "type": "number"
+                            },
+                            "lng": {
+                                "type": "number"
+                            },
+                            "zoom": {
+                                "type": "integer"
+                            },
+                            "limit": {
+                                "type": "integer"
+                            }
+                        }
+                    },
+                    "data": {
+                        "type": "array",
+                        "items": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Search Nearby",
+            "url": "https://local-business-data.p.rapidapi.com/search-nearby",
+            "description": "Search businesses near by specific geographic coordinates. To see it in action, right click on a specific point in the map on Google Maps and select \"Search nearby\", enter a query and search.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "query",
+                    "type": "STRING",
+                    "description": "Search query / keyword.\n\n**e.g.** `Bars and pubs`\n**e.g.** `Plumbers`",
+                    "default": "plumbers"
+                },
+                {
+                    "name": "lng",
+                    "type": "NUMBER",
+                    "description": "Longitude of the geographic coordinates to search near by.",
+                    "default": "-121.925337"
+                },
+                {
+                    "name": "lat",
+                    "type": "NUMBER",
+                    "description": "Latitude of the geographic coordinates to search near by.",
+                    "default": "37.359428"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "language",
+                    "type": "STRING",
+                    "description": "Set the language of the results. For a list of supported language codes see https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes .\n\n**Default**: *`en`*",
+                    "default": "en"
+                },
+                {
+                    "name": "subtypes",
+                    "type": "STRING",
+                    "description": "Find businesses with specific subtypes, specified as a comma separated list of types (business categories). For the complete list of types, see https://daltonluka.com/blog/google-my-business-categories.\n\n**e.g.** `Plumber,Carpenter,Electrician`\n**e.g.** `Night club,Dance club,Bar,Pub`",
+                    "default": ""
+                },
+                {
+                    "name": "fields",
+                    "type": "STRING",
+                    "description": "A comma separated list of business fields to include in the response (field projection). By default all fields are returned.\n\n**e.g.** `business_id,type,phone_number,full_address`",
+                    "default": ""
+                },
+                {
+                    "name": "limit",
+                    "type": "STRING",
+                    "description": "Maximum number of businesses to return (1-500).\n\n**Default**: *`20`*",
+                    "default": "20"
+                },
+                {
+                    "name": "region",
+                    "type": "STRING",
+                    "description": "Query Google Maps from a particular region or country. For a list of supported region/country codes see https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes (Alpha-2 code).\n\n**Default:** *`us`*",
+                    "default": "us"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://local-business-data.p.rapidapi.com/search-nearby\"\nquerystring = {\"query\": \"plumbers\", \"language\": \"en\", \"subtypes\": \"\", \"lng\": \"-121.925337\", \"fields\": \"\", \"limit\": \"20\", \"lat\": \"37.359428\", \"region\": \"us\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"local-business-data.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://local-business-data.p.rapidapi.com/search-nearby\"\nquerystring = {\"query\": \"plumbers\", \"language\": \"en\", \"subtypes\": \"\", \"lng\": \"-121.925337\", \"fields\": \"\", \"limit\": \"20\", \"lat\": \"37.359428\", \"region\": \"us\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"local-business-data.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per second for your plan, BASIC, by the API provider"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "type": "string"
+                    },
+                    "request_id": {
+                        "type": "string"
+                    },
+                    "parameters": {
+                        "type": "object",
+                        "properties": {
+                            "query": {
+                                "type": "string"
+                            },
+                            "language": {
+                                "type": "string"
+                            },
+                            "region": {
+                                "type": "string"
+                            },
+                            "lat": {
+                                "type": "number"
+                            },
+                            "lng": {
+                                "type": "number"
+                            },
+                            "limit": {
+                                "type": "integer"
+                            }
+                        }
+                    },
+                    "data": {
+                        "type": "array",
+                        "items": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Search",
+            "url": "https://local-business-data.p.rapidapi.com/search",
+            "description": "Search local businesses on Google Maps.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "query",
+                    "type": "STRING",
+                    "description": "Search query / keyword.\n\n**e.g.** `Plumbers near New-York, USA`\n**e.g.** `Bars in 94102, USA`",
+                    "default": "Hotels in San Francisco, USA"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "subtypes",
+                    "type": "STRING",
+                    "description": "Find businesses with specific subtypes, specified as a comma separated list of types (business categories). For the complete list of types, see https://daltonluka.com/blog/google-my-business-categories.\n\n**e.g.** `Plumber,Carpenter,Electrician`\n**e.g.** `Night club,Dance club,Bar,Pub`",
+                    "default": ""
+                },
+                {
+                    "name": "limit",
+                    "type": "STRING",
+                    "description": "Maximum number of businesses to return (1-500).\n\n**Default**: *`20`*",
+                    "default": "20"
+                },
+                {
+                    "name": "lat",
+                    "type": "STRING",
+                    "description": "Latitude of the coordinates point from which the query is applied - recommended to use so that results are biased towards this location. Defaults to some central location in the region (see the `region` parameter).",
+                    "default": "37.359428"
+                },
+                {
+                    "name": "language",
+                    "type": "STRING",
+                    "description": "Set the language of the results. For a list of supported language codes see https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes .\n\n**Default**: *`en`*",
+                    "default": "en"
+                },
+                {
+                    "name": "lng",
+                    "type": "STRING",
+                    "description": "Longitude of the coordinates point from which the query is applied - recommended to use so that results are biased towards this location. Defaults to some central location in the region (see the `region` parameter).",
+                    "default": "-121.925337"
+                },
+                {
+                    "name": "fields",
+                    "type": "STRING",
+                    "description": "A comma separated list of business fields to include in the response (field projection). By default all fields are returned.\n\n**e.g.** `business_id,type,phone_number,full_address`",
+                    "default": ""
+                },
+                {
+                    "name": "region",
+                    "type": "STRING",
+                    "description": "Query Google Maps from a particular region or country. For a list of supported region/country codes see https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes (Alpha-2 code).\n\n**Default:** *`us`*",
+                    "default": "us"
+                },
+                {
+                    "name": "zoom",
+                    "type": "STRING",
+                    "description": "Zoom level on which to make the search (the viewport is determined by lat, lng and zoom).\n\n**Default**: *`13`*",
+                    "default": "13"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://local-business-data.p.rapidapi.com/search\"\nquerystring = {\"subtypes\": \"\", \"limit\": \"20\", \"lat\": \"37.359428\", \"language\": \"en\", \"lng\": \"-121.925337\", \"query\": \"Hotels in San Francisco, USA\", \"fields\": \"\", \"region\": \"us\", \"zoom\": \"13\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"local-business-data.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://local-business-data.p.rapidapi.com/search\"\nquerystring = {\"subtypes\": \"\", \"limit\": \"20\", \"lat\": \"37.359428\", \"language\": \"en\", \"lng\": \"-121.925337\", \"query\": \"Hotels in San Francisco, USA\", \"fields\": \"\", \"region\": \"us\", \"zoom\": \"13\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"local-business-data.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per second for your plan, BASIC, by the API provider"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "type": "string"
+                    },
+                    "request_id": {
+                        "type": "string"
+                    },
+                    "parameters": {
+                        "type": "object",
+                        "properties": {
+                            "query": {
+                                "type": "string"
+                            },
+                            "language": {
+                                "type": "string"
+                            },
+                            "region": {
+                                "type": "string"
+                            },
+                            "lat": {
+                                "type": "number"
+                            },
+                            "lng": {
+                                "type": "number"
+                            },
+                            "zoom": {
+                                "type": "integer"
+                            },
+                            "limit": {
+                                "type": "integer"
+                            }
+                        }
+                    },
+                    "data": {
+                        "type": "array",
+                        "items": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Autocomplete",
+            "url": "https://local-business-data.p.rapidapi.com/autocomplete",
+            "description": "Returns place/address, business and query predictions for text-based geographic queries.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "query",
+                    "type": "STRING",
+                    "description": "Free-text geographic query.",
+                    "default": "train sunnyval"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "language",
+                    "type": "STRING",
+                    "description": "Set the language of the results. For a list of supported language codes see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 .\nDefault: `en`",
+                    "default": "en"
+                },
+                {
+                    "name": "region",
+                    "type": "STRING",
+                    "description": "Return results biased to a particular region. For a list of supported region/country codes see https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes (Alpha-2 code).\nDefault: `us`",
+                    "default": "us"
+                },
+                {
+                    "name": "coordinates",
+                    "type": "STRING",
+                    "description": "Geographic coordinates of the location from which the query is applied - recommended to use so that results are biased towards this location. Defaults to some central location in the region (see the `region` parameter).",
+                    "default": "37.381315,-122.046148"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://local-business-data.p.rapidapi.com/autocomplete\"\nquerystring = {\"query\": \"train sunnyval\", \"language\": \"en\", \"region\": \"us\", \"coordinates\": \"37.381315,-122.046148\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"local-business-data.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://local-business-data.p.rapidapi.com/autocomplete\"\nquerystring = {\"query\": \"train sunnyval\", \"language\": \"en\", \"region\": \"us\", \"coordinates\": \"37.381315,-122.046148\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"local-business-data.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per second for your plan, BASIC, by the API provider"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "type": "string"
+                    },
+                    "request_id": {
+                        "type": "string"
+                    },
+                    "data": {
+                        "type": "array",
+                        "items": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "standardized_name": "local_business_data"
+}

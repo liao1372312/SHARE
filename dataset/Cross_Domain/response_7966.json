@@ -1,0 +1,36 @@
+{
+  "user_query": "I need to retrieve all document types available in the 360 Business Tool. Additionally, I want to obtain a list of companies modified since the timestamp 1635678900. Finally, fetch all cases modified since the timestamp 1635678900.",
+  "domain": "business",
+  "TaskList": [
+    {
+      "id": 1,
+      "description": "Retrieve all document types available in the 360 Business Tool.",
+      "domain": "business",
+      "required_inputs": ["API to query document types"]
+    },
+    {
+      "id": 2,
+      "description": "Obtain a list of companies modified since the timestamp 1635678900.",
+      "domain": "business",
+      "required_inputs": ["API to query companies with modification timestamp"]
+    },
+    {
+      "id": 3,
+      "description": "Fetch all cases modified since the timestamp 1635678900.",
+      "domain": "business",
+      "required_inputs": ["API to query cases with modification timestamp"]
+    }
+  ],
+  "dependencies": [
+    {
+      "from": 1,
+      "to": 2,
+      "relation": "sequential"
+    },
+    {
+      "from": 2,
+      "to": 3,
+      "relation": "sequential"
+    }
+  ]
+}

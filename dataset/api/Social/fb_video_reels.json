@@ -1,0 +1,73 @@
+{
+    "product_id": "api_a8963c79-f8af-496b-ac66-3b37d9fc9d5c",
+    "tool_description": "download facebook videos and reels in high quality",
+    "home_url": "https://rapidapi.com/emmanueldavidyou/api/fb-video-reels/",
+    "name": "fb-video-reels",
+    "title": "fb-video-reels",
+    "pricing": "FREEMIUM",
+    "tool_name": "fb-video-reels",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 2085,
+        "avgSuccessRate": 100,
+        "popularityScore": 7.1,
+        "__typename": "Score"
+    },
+    "host": "fb-video-reels.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "fb",
+            "url": "https://fb-video-reels.p.rapidapi.com/api/fb",
+            "description": "Get Facebook video",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "url",
+                    "type": "STRING",
+                    "description": "Facebook video url",
+                    "default": "https://www.facebook.com/reel/165180706514225/?mibextid=xM1NMCEE8qaB7NWz"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://fb-video-reels.p.rapidapi.com/api/fb\"\nquerystring = {\"url\": \"https://www.facebook.com/reel/165180706514225/?mibextid=xM1NMCEE8qaB7NWz\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"fb-video-reels.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://fb-video-reels.p.rapidapi.com/api/fb\"\nquerystring = {\"url\": \"https://www.facebook.com/reel/165180706514225/?mibextid=xM1NMCEE8qaB7NWz\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"fb-video-reels.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "error": {
+                        "type": "boolean"
+                    },
+                    "errorMessage": {
+                        "type": "null"
+                    },
+                    "url": {
+                        "type": "string"
+                    },
+                    "picture": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "links": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "quality": {
+                                    "type": "integer"
+                                },
+                                "link": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "standardized_name": "fb_video_reels"
+}

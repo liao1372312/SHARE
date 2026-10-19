@@ -1,0 +1,97 @@
+{
+    "product_id": "api_a35f58d6-c0b8-44ab-af28-254c2bca64e6",
+    "tool_description": "HRIS APIs for Personio, BambooHR and BobHR.",
+    "home_url": "https://rapidapi.com/akashdathan/api/hris/",
+    "name": "HRIS",
+    "title": "HRIS",
+    "pricing": "FREEMIUM",
+    "tool_name": "HRIS",
+    "score": {
+        "avgServiceLevel": 83,
+        "avgLatency": 1700,
+        "avgSuccessRate": 57,
+        "popularityScore": 7.4,
+        "__typename": "Score"
+    },
+    "host": "hris.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Get Employees",
+            "url": "https://hris.p.rapidapi.com/employees/testCustomer",
+            "description": "Get Employees for a specific customer",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "customerId",
+                    "type": "string",
+                    "description": "",
+                    "default": "testCustomer"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "searchString",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "Search Name and Email"
+                },
+                {
+                    "name": "limit",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "Response Count"
+                },
+                {
+                    "name": "statusFilter",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "Employee Status Filter"
+                },
+                {
+                    "name": "skip",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "Skip Count for Pagination"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://hris.p.rapidapi.com/employees/testCustomer\"\nquerystring = {\"searchString\": \"Search Name and Email\", \"limit\": \"Response Count\", \"statusFilter\": \"Employee Status Filter\", \"skip\": \"Skip Count for Pagination\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"hris.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://hris.p.rapidapi.com/employees/{customerid}\"\nquerystring = {\"searchString\": \"Search Name and Email\", \"limit\": \"Response Count\", \"statusFilter\": \"Employee Status Filter\", \"skip\": \"Skip Count for Pagination\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"hris.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "error": "Invalid access setting. HRIS type not found. Customer: testCustomer"
+            }
+        },
+        {
+            "name": "Get Access Settings",
+            "url": "https://hris.p.rapidapi.com/accessSettings/testCustomer",
+            "description": "Get stored Access Setting for a specific customer",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "customerId",
+                    "type": "string",
+                    "description": "",
+                    "default": "testCustomer"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://hris.p.rapidapi.com/accessSettings/testCustomer\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"hris.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://hris.p.rapidapi.com/accessSettings/{customerid}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"hris.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "Health Check",
+            "url": "https://hris.p.rapidapi.com/healthCheck",
+            "description": "Check API Health Status",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://hris.p.rapidapi.com/healthCheck\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"hris.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://hris.p.rapidapi.com/healthCheck\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"hris.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "statue": "LIVE",
+                "now": "2023-06-16T10:00:03.665Z"
+            }
+        }
+    ],
+    "standardized_name": "hris"
+}

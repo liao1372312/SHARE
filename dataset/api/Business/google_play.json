@@ -1,0 +1,656 @@
+{
+    "product_id": "api_5a75d275-e05d-4c80-abf1-718aa8721627",
+    "tool_description": "This is an API that retrieves information from Google API. You can search for applications, retrieve the information from developers, get reviews, retrieve permissions any many more different things directly from the API.",
+    "home_url": "https://rapidapi.com/epctex-epctex-default/api/google-play9/",
+    "name": "Google Play",
+    "title": "Google Play",
+    "pricing": "FREEMIUM",
+    "tool_name": "Google Play",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 3403,
+        "avgSuccessRate": 54,
+        "popularityScore": 8.7,
+        "__typename": "Score"
+    },
+    "host": "google-play9.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Get data safety attributes by app ID",
+            "url": "https://google-play9.p.rapidapi.com/apps/{appId}/datasafety",
+            "description": "Returns the data safety attributes of a single application by its ID",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "appId",
+                    "type": "STRING",
+                    "description": "Application ID",
+                    "default": ""
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://google-play9.p.rapidapi.com/apps/{appId}/datasafety\"\nquerystring = {\"appId\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"google-play9.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://google-play9.p.rapidapi.com/apps/{appId}/datasafety\"\nquerystring = {\"appId\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"google-play9.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "results": {
+                    "sharedData": [],
+                    "collectedData": [],
+                    "securityPractices": []
+                }
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "results": {
+                        "type": "object",
+                        "properties": {
+                            "sharedData": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "type": "string"
+                                        },
+                                        "purpose": {
+                                            "type": "string"
+                                        },
+                                        "type": {
+                                            "type": "string"
+                                        },
+                                        "optional": {
+                                            "type": "boolean"
+                                        }
+                                    }
+                                }
+                            },
+                            "collectedData": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "type": "string"
+                                        },
+                                        "purpose": {
+                                            "type": "string"
+                                        },
+                                        "type": {
+                                            "type": "string"
+                                        },
+                                        "optional": {
+                                            "type": "boolean"
+                                        }
+                                    }
+                                }
+                            },
+                            "securityPractices": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "practice": {
+                                            "type": "string"
+                                        },
+                                        "description": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            },
+                            "privacyPolicyUrl": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Get list of apps with pagination",
+            "url": "https://google-play9.p.rapidapi.com/apps",
+            "description": "Returns a list of apps and a pagination token",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "country",
+                    "type": "STRING",
+                    "description": "Country for the Google Play",
+                    "default": ""
+                },
+                {
+                    "name": "collection",
+                    "type": "STRING",
+                    "description": "Collection for the Google Play",
+                    "default": ""
+                },
+                {
+                    "name": "category",
+                    "type": "STRING",
+                    "description": "Category for the Google Play",
+                    "default": ""
+                },
+                {
+                    "name": "fullDetail",
+                    "type": "BOOLEAN",
+                    "description": "Include full detail of the applications",
+                    "default": "true"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://google-play9.p.rapidapi.com/apps\"\nquerystring = {\"country\": \"\", \"collection\": \"\", \"category\": \"\", \"fullDetail\": \"true\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"google-play9.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://google-play9.p.rapidapi.com/apps\"\nquerystring = {\"country\": \"\", \"collection\": \"\", \"category\": \"\", \"fullDetail\": \"true\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"google-play9.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "App not found (404)"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "results": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "title": {
+                                    "type": "string"
+                                },
+                                "appId": {
+                                    "type": "string"
+                                },
+                                "url": {
+                                    "type": "string"
+                                },
+                                "icon": {
+                                    "type": "string"
+                                },
+                                "currency": {
+                                    "type": "string"
+                                },
+                                "summary": {
+                                    "type": "string"
+                                },
+                                "scoreText": {
+                                    "type": "string"
+                                },
+                                "free": {
+                                    "type": "boolean"
+                                },
+                                "price": {
+                                    "type": "integer",
+                                    "format": "int64",
+                                    "minimum": -9223372036854776000,
+                                    "maximum": 9223372036854776000
+                                },
+                                "score": {
+                                    "type": "integer",
+                                    "format": "int64",
+                                    "minimum": -9223372036854776000,
+                                    "maximum": 9223372036854776000
+                                },
+                                "playstoreUrl": {
+                                    "type": "string"
+                                },
+                                "permissions": {
+                                    "type": "string"
+                                },
+                                "similar": {
+                                    "type": "string"
+                                },
+                                "reviews": {
+                                    "type": "string"
+                                },
+                                "datasafety": {
+                                    "type": "string"
+                                },
+                                "categories": {
+                                    "type": "string"
+                                },
+                                "developer": {
+                                    "type": "object",
+                                    "properties": {
+                                        "devId": {
+                                            "type": "string"
+                                        },
+                                        "url": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "next": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        {
+            "name": "Get permissions by app ID",
+            "url": "https://google-play9.p.rapidapi.com/apps/{appId}/permissions",
+            "description": "Returns the permissions of a single application by its ID",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "appId",
+                    "type": "STRING",
+                    "description": "Application ID",
+                    "default": ""
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://google-play9.p.rapidapi.com/apps/{appId}/permissions\"\nquerystring = {\"appId\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"google-play9.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://google-play9.p.rapidapi.com/apps/{appId}/permissions\"\nquerystring = {\"appId\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"google-play9.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "results": []
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "results": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "permission": {
+                                    "type": "string"
+                                },
+                                "type": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Get applications by developer ID",
+            "url": "https://google-play9.p.rapidapi.com/developers/{developerId}",
+            "description": "Returns the list of applications of a single developer by its ID",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "developerId",
+                    "type": "STRING",
+                    "description": "Developer ID",
+                    "default": ""
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://google-play9.p.rapidapi.com/developers/{developerId}\"\nquerystring = {\"developerId\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"google-play9.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://google-play9.p.rapidapi.com/developers/{developerId}\"\nquerystring = {\"developerId\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"google-play9.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "App not found (404)"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "title": {
+                        "type": "string"
+                    },
+                    "appId": {
+                        "type": "string"
+                    },
+                    "url": {
+                        "type": "string"
+                    },
+                    "icon": {
+                        "type": "string"
+                    },
+                    "currency": {
+                        "type": "string"
+                    },
+                    "summary": {
+                        "type": "string"
+                    },
+                    "scoreText": {
+                        "type": "string"
+                    },
+                    "free": {
+                        "type": "boolean"
+                    },
+                    "price": {
+                        "type": "integer",
+                        "format": "int64",
+                        "minimum": -9223372036854776000,
+                        "maximum": 9223372036854776000
+                    },
+                    "score": {
+                        "type": "integer",
+                        "format": "int64",
+                        "minimum": -9223372036854776000,
+                        "maximum": 9223372036854776000
+                    },
+                    "playstoreUrl": {
+                        "type": "string"
+                    },
+                    "permissions": {
+                        "type": "string"
+                    },
+                    "similar": {
+                        "type": "string"
+                    },
+                    "reviews": {
+                        "type": "string"
+                    },
+                    "datasafety": {
+                        "type": "string"
+                    },
+                    "categories": {
+                        "type": "string"
+                    },
+                    "developer": {
+                        "type": "object",
+                        "properties": {
+                            "devId": {
+                                "type": "string"
+                            },
+                            "url": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Get app by ID",
+            "url": "https://google-play9.p.rapidapi.com/apps/{appId}",
+            "description": "Returns a single application by its ID",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "appId",
+                    "type": "STRING",
+                    "description": "Application ID",
+                    "default": ""
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "lang",
+                    "type": "STRING",
+                    "description": "Language for the application",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://google-play9.p.rapidapi.com/apps/{appId}\"\nquerystring = {\"lang\": \"\", \"appId\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"google-play9.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://google-play9.p.rapidapi.com/apps/{appId}\"\nquerystring = {\"lang\": \"\", \"appId\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"google-play9.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "appId missing"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "title": {
+                        "type": "string"
+                    },
+                    "appId": {
+                        "type": "string"
+                    },
+                    "url": {
+                        "type": "string"
+                    },
+                    "icon": {
+                        "type": "string"
+                    },
+                    "currency": {
+                        "type": "string"
+                    },
+                    "summary": {
+                        "type": "string"
+                    },
+                    "scoreText": {
+                        "type": "string"
+                    },
+                    "free": {
+                        "type": "boolean"
+                    },
+                    "price": {
+                        "type": "integer",
+                        "format": "int64",
+                        "minimum": -9223372036854776000,
+                        "maximum": 9223372036854776000
+                    },
+                    "score": {
+                        "type": "integer",
+                        "format": "int64",
+                        "minimum": -9223372036854776000,
+                        "maximum": 9223372036854776000
+                    },
+                    "playstoreUrl": {
+                        "type": "string"
+                    },
+                    "permissions": {
+                        "type": "string"
+                    },
+                    "similar": {
+                        "type": "string"
+                    },
+                    "reviews": {
+                        "type": "string"
+                    },
+                    "datasafety": {
+                        "type": "string"
+                    },
+                    "categories": {
+                        "type": "string"
+                    },
+                    "developer": {
+                        "type": "object",
+                        "properties": {
+                            "devId": {
+                                "type": "string"
+                            },
+                            "url": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Get similar apps by ID",
+            "url": "https://google-play9.p.rapidapi.com/apps/{appId}/similar",
+            "description": "Returns list of applications that is similar to a single application by its ID",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "appId",
+                    "type": "STRING",
+                    "description": "Application ID",
+                    "default": ""
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://google-play9.p.rapidapi.com/apps/{appId}/similar\"\nquerystring = {\"appId\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"google-play9.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://google-play9.p.rapidapi.com/apps/{appId}/similar\"\nquerystring = {\"appId\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"google-play9.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "appId missing"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "title": {
+                        "type": "string"
+                    },
+                    "appId": {
+                        "type": "string"
+                    },
+                    "url": {
+                        "type": "string"
+                    },
+                    "icon": {
+                        "type": "string"
+                    },
+                    "currency": {
+                        "type": "string"
+                    },
+                    "summary": {
+                        "type": "string"
+                    },
+                    "scoreText": {
+                        "type": "string"
+                    },
+                    "free": {
+                        "type": "boolean"
+                    },
+                    "price": {
+                        "type": "integer",
+                        "format": "int64",
+                        "minimum": -9223372036854776000,
+                        "maximum": 9223372036854776000
+                    },
+                    "score": {
+                        "type": "integer",
+                        "format": "int64",
+                        "minimum": -9223372036854776000,
+                        "maximum": 9223372036854776000
+                    },
+                    "playstoreUrl": {
+                        "type": "string"
+                    },
+                    "permissions": {
+                        "type": "string"
+                    },
+                    "similar": {
+                        "type": "string"
+                    },
+                    "reviews": {
+                        "type": "string"
+                    },
+                    "datasafety": {
+                        "type": "string"
+                    },
+                    "categories": {
+                        "type": "string"
+                    },
+                    "developer": {
+                        "type": "object",
+                        "properties": {
+                            "devId": {
+                                "type": "string"
+                            },
+                            "url": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Get reviews by app ID",
+            "url": "https://google-play9.p.rapidapi.com/apps/{appId}/reviews",
+            "description": "Returns the reviews of a single application by its ID",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "appId",
+                    "type": "STRING",
+                    "description": "Application ID",
+                    "default": ""
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://google-play9.p.rapidapi.com/apps/{appId}/reviews\"\nquerystring = {\"appId\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"google-play9.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://google-play9.p.rapidapi.com/apps/{appId}/reviews\"\nquerystring = {\"appId\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"google-play9.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "appId missing"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "results": {
+                        "type": "object",
+                        "properties": {
+                            "data": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "id": {
+                                            "type": "string"
+                                        },
+                                        "userName": {
+                                            "type": "string"
+                                        },
+                                        "userImage": {
+                                            "type": "string"
+                                        },
+                                        "date": {
+                                            "type": "string"
+                                        },
+                                        "scoreText": {
+                                            "type": "string"
+                                        },
+                                        "url": {
+                                            "type": "string"
+                                        },
+                                        "title": {
+                                            "type": "string"
+                                        },
+                                        "text": {
+                                            "type": "string"
+                                        },
+                                        "replyDate": {
+                                            "type": "string"
+                                        },
+                                        "replyText": {
+                                            "type": "string"
+                                        },
+                                        "version": {
+                                            "type": "string"
+                                        },
+                                        "score": {
+                                            "type": "integer",
+                                            "format": "int64",
+                                            "minimum": -9223372036854776000,
+                                            "maximum": 9223372036854776000
+                                        },
+                                        "thumbsUp": {
+                                            "type": "integer",
+                                            "format": "int64",
+                                            "minimum": -9223372036854776000,
+                                            "maximum": 9223372036854776000
+                                        },
+                                        "criterias": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "criteria": {
+                                                        "type": "string"
+                                                    },
+                                                    "rating": {
+                                                        "type": "integer",
+                                                        "format": "int32",
+                                                        "minimum": -2147483648,
+                                                        "maximum": 2147483647
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "nextPaginationToken": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "standardized_name": "google_play"
+}

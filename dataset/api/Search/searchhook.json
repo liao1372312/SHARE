@@ -1,0 +1,1189 @@
+{
+    "product_id": "api_2931a5e4-5a6a-4fee-a233-68ce3caccbde",
+    "tool_description": "Websearch (SearX) with Webhooks on new results. Allows to automate brand, product, topic monitoring using tools like n8n or node-red.",
+    "home_url": "https://rapidapi.com/stromdao-stromdao-default/api/searchhook/",
+    "name": "searchhook",
+    "title": "searchhook",
+    "pricing": "FREEMIUM",
+    "tool_name": "searchhook",
+    "score": {
+        "avgServiceLevel": 40,
+        "avgLatency": 719,
+        "avgSuccessRate": 40,
+        "popularityScore": 8.3,
+        "__typename": "Score"
+    },
+    "host": "searchhook.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "search",
+            "url": "https://searchhook.p.rapidapi.com/search",
+            "description": "Search endpoint - Parameters compatible to SEARXNG  (see linked external documentation). \nIn addition, a parameter `url` might be given to specify a webhook URL (POST request will be sent).",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "q",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "SearchHook API"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "safesearch",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "0"
+                },
+                {
+                    "name": "categories",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "general"
+                },
+                {
+                    "name": "time_range",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "None"
+                },
+                {
+                    "name": "language",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "de-DE"
+                },
+                {
+                    "name": "queryId",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "0x02cAce04c8469580A2ADc20F57E143a3693c22bF"
+                },
+                {
+                    "name": "url",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "https://engine.corrently.cloud/webhook-test/44a17c5c-5087-483f-8398-dedbc8d713d4"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://searchhook.p.rapidapi.com/search\"\nquerystring = {\"safesearch\": \"0\", \"categories\": \"general\", \"time_range\": \"None\", \"language\": \"de-DE\", \"queryId\": \"0x02cAce04c8469580A2ADc20F57E143a3693c22bF\", \"url\": \"https://engine.corrently.cloud/webhook-test/44a17c5c-5087-483f-8398-dedbc8d713d4\", \"q\": \"SearchHook API\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"searchhook.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://searchhook.p.rapidapi.com/search\"\nquerystring = {\"safesearch\": \"0\", \"categories\": \"general\", \"time_range\": \"None\", \"language\": \"de-DE\", \"queryId\": \"0x02cAce04c8469580A2ADc20F57E143a3693c22bF\", \"url\": \"https://engine.corrently.cloud/webhook-test/44a17c5c-5087-483f-8398-dedbc8d713d4\", \"q\": \"SearchHook API\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"searchhook.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "query": "STROMDAO",
+                "number_of_results": 5060,
+                "results": [
+                    {
+                        "title": "STROMDAO GmbH",
+                        "url": "https://www.stromdao.de/",
+                        "content": "Erfrischende Wassertemperaturen bei STROMDAO 12.05.2023 akw , Atomkraftwerk , Kernfusion , Kernpolitik , Erneuerbaren Energie , Erneuerbare Energien , Politik , Letzte Generation , Wahl , Protest",
+                        "engine": "qwant",
+                        "parsed_url": [
+                            "https",
+                            "www.stromdao.de",
+                            "/",
+                            "",
+                            "",
+                            ""
+                        ],
+                        "template": "default.html",
+                        "engines": [
+                            "qwant"
+                        ],
+                        "positions": [
+                            1
+                        ],
+                        "score": 1,
+                        "category": "general",
+                        "pretty_url": "https://www.stromdao.de/",
+                        "open_group": true,
+                        "resultid": "0x02cAce04c8469580A2ADc20F57E143a3693c22bF_0x47b981Eec0d0144bE74C1e635E18766e8180ecc9",
+                        "isNew": false,
+                        "firstSeen": 1686132544479
+                    },
+                    {
+                        "title": "Photovoltaik \u2014 STROMDAO GmbH",
+                        "url": "https://www.stromdao.de/photovoltaik",
+                        "content": "Ich willige ein, dass die STROMDAO GmbH zum Zwecke der Pr\u00fcfung meiner oben genannten Daten f\u00fcr das Corrently \u00d6kosystem die angegebenen Daten speichern und verarbeiten, sowie mich unter den von mir genannten Kontaktdaten erreichen darf. Die Einwilligung kann zu jeder Zeit widerrufen werden, es gen\u00fcgt hierf\u00fcr eine eMail an kontakt@stromdao.com.",
+                        "engine": "qwant",
+                        "parsed_url": [
+                            "https",
+                            "www.stromdao.de",
+                            "/photovoltaik",
+                            "",
+                            "",
+                            ""
+                        ],
+                        "template": "default.html",
+                        "engines": [
+                            "qwant"
+                        ],
+                        "positions": [
+                            2
+                        ],
+                        "score": 0.5,
+                        "category": "general",
+                        "pretty_url": "https://www.stromdao.de/photovoltaik",
+                        "resultid": "0x02cAce04c8469580A2ADc20F57E143a3693c22bF_0x001D6f66A5657B1ebD8D1c522A43F7C08a5FE206",
+                        "isNew": true,
+                        "firstSeen": 1686909492582
+                    },
+                    {
+                        "title": "Gr\u00fcnstrom-Startup STROMDAO verspricht Revolution auf dem deutschen ...",
+                        "url": "https://www.stromdao.de/stromdao-news/2020-grnstrom-startup-stromdao-verspricht-revolution-auf-dem-deutschen-strommarkt",
+                        "content": "STROMDAO arbeitet daf\u00fcr mit Big Data, IT und Blockchain-Technologie. Das Unternehmen ist komplett CO2-neutral und von der UN als solches auch anerkannt. STROMDAO verspricht eine Revolution auf dem deutschen Strommarkt. Grund genug, bei Gr\u00fcnder und CEO Thorsten Zoerner nachzufragen.",
+                        "engine": "qwant",
+                        "parsed_url": [
+                            "https",
+                            "www.stromdao.de",
+                            "/stromdao-news/2020-grnstrom-startup-stromdao-verspricht-revolution-auf-dem-deutschen-strommarkt",
+                            "",
+                            "",
+                            ""
+                        ],
+                        "template": "default.html",
+                        "engines": [
+                            "qwant"
+                        ],
+                        "positions": [
+                            3
+                        ],
+                        "score": 0.3333333333333333,
+                        "category": "general",
+                        "pretty_url": "https://www.stromdao.de/stromdao-news/[...]evolution-auf-dem-deutschen-strommarkt",
+                        "resultid": "0x02cAce04c8469580A2ADc20F57E143a3693c22bF_0x4FBa45f228350e2C97FdF8B4131D7E0386014990",
+                        "isNew": false,
+                        "firstSeen": 1686132544541
+                    },
+                    {
+                        "title": "STROMDAO steigt ins Photovoltaik-Gesch\u00e4ft ein",
+                        "url": "https://www.stromdao.de/stromdao-news/2022-stromdao-steigt-ins-photovoltaik-geschft-ein",
+                        "content": "Zum Ende des Monats Mai 2022 wird der \u00d6kostromanbieter STROMDAO GmbH sein Angebot um Energiel\u00f6sungen zur Eigenerzeugung von \u00d6kostrom mit Photovoltaikanlagen erweitern. Interessierte und Kunden werden von STROMDAO kompetent zu den Themen Photovoltaik und Stromspeicher beraten.",
+                        "engine": "qwant",
+                        "parsed_url": [
+                            "https",
+                            "www.stromdao.de",
+                            "/stromdao-news/2022-stromdao-steigt-ins-photovoltaik-geschft-ein",
+                            "",
+                            "",
+                            ""
+                        ],
+                        "template": "default.html",
+                        "engines": [
+                            "qwant"
+                        ],
+                        "positions": [
+                            4
+                        ],
+                        "score": 0.25,
+                        "category": "general",
+                        "pretty_url": "https://www.stromdao.de/stromdao-news/[...]ao-steigt-ins-photovoltaik-geschft-ein",
+                        "resultid": "0x02cAce04c8469580A2ADc20F57E143a3693c22bF_0x98410021dEe056109214c2DB1c2549686eC1d428",
+                        "isNew": false,
+                        "firstSeen": 1686244145114
+                    },
+                    {
+                        "title": "Energieversorger \u2014 STROMDAO GmbH",
+                        "url": "https://www.stromdao.de/energieversorger",
+                        "content": "STROMDAO GmbH. 29 Gerhard-Weiser-Ring, Mauer, BW, 69256, Deutschland. 06226-9680090 kontakt@stromdao.de. Stunden. Mo 8am - 5pm . Di 8am - 5pm . Mi 8am - 5pm . Do 8am - 5pm . Fr 8am - 5pm ...",
+                        "engine": "qwant",
+                        "parsed_url": [
+                            "https",
+                            "www.stromdao.de",
+                            "/energieversorger",
+                            "",
+                            "",
+                            ""
+                        ],
+                        "template": "default.html",
+                        "engines": [
+                            "qwant"
+                        ],
+                        "positions": [
+                            5
+                        ],
+                        "score": 0.2,
+                        "category": "general",
+                        "pretty_url": "https://www.stromdao.de/energieversorger",
+                        "resultid": "0x02cAce04c8469580A2ADc20F57E143a3693c22bF_0x48D7b6ad415c7340102eEe8EdB6246557285e04f",
+                        "isNew": false,
+                        "firstSeen": 1686289421083
+                    },
+                    {
+                        "title": "Rechner f\u00fcr Strompreisbremse (Deutschland) - STROMDAO GmbH",
+                        "url": "https://preisbremse.stromdao.de/",
+                        "content": "Die Strompreisbremse in Deutschland 2023. Eine Strompreisbremse soll dazu beitragen, dass die Stromkosten insgesamt sinken. Der Strompreis f\u00fcr private Verbraucher sowie kleine Unternehmen wird daher bei 40 Cent pro Kilowattstunde gedeckelt.",
+                        "engine": "qwant",
+                        "parsed_url": [
+                            "https",
+                            "preisbremse.stromdao.de",
+                            "/",
+                            "",
+                            "",
+                            ""
+                        ],
+                        "template": "default.html",
+                        "engines": [
+                            "qwant"
+                        ],
+                        "positions": [
+                            6
+                        ],
+                        "score": 0.16666666666666666,
+                        "category": "general",
+                        "pretty_url": "https://preisbremse.stromdao.de/",
+                        "resultid": "0x02cAce04c8469580A2ADc20F57E143a3693c22bF_0x50ACB8D257503B4e0436c3c4712672048C41be2C",
+                        "isNew": false,
+                        "firstSeen": 1686289421018
+                    },
+                    {
+                        "title": "Unsere Verantwortung \u2014 STROMDAO GmbH",
+                        "url": "https://www.stromdao.de/verantwortung",
+                        "content": "Unsere Verantwortung \u2014 STROMDAO GmbH. Durch die Nutzung dieser Website erkl\u00e4ren Sie sich mit unserer Verwendung von Cookies einverstanden. Wir verwenden Cookies, um Ihnen ein tolles Erlebnis zu bieten und unsere Website wirksam zu betreiben.",
+                        "engine": "qwant",
+                        "parsed_url": [
+                            "https",
+                            "www.stromdao.de",
+                            "/verantwortung",
+                            "",
+                            "",
+                            ""
+                        ],
+                        "template": "default.html",
+                        "engines": [
+                            "qwant"
+                        ],
+                        "positions": [
+                            7
+                        ],
+                        "score": 0.14285714285714285,
+                        "category": "general",
+                        "pretty_url": "https://www.stromdao.de/verantwortung",
+                        "resultid": "0x02cAce04c8469580A2ADc20F57E143a3693c22bF_0x109254407DA913C20b3d41091d7596633d6ECC54",
+                        "isNew": false,
+                        "firstSeen": 1686289421045
+                    },
+                    {
+                        "title": "Bald gibt es Stecker-Solaranlagen bei der STROMDAO GmbH",
+                        "url": "https://www.stromdao.de/stromdao-news/2022-bald-gibt-es-stecker-solaranlagen-bei-der-stromdao-gmbh",
+                        "content": "Mit Stecker-Solaranlagen \u2013 auch als Balkon- oder Guerilla-Anlagen bekannt \u2013 werden Mieter und Besitzer von Eigentumswohnungen zu aktiven Gr\u00fcnstromerzeugern, sparen langfristig Geld, und noch mehr sch\u00fctzen sie das Klima. Deshalb hat sich STROMDAO entschlossen, Steckersolarsysteme in sein Portfolio au",
+                        "engine": "qwant",
+                        "parsed_url": [
+                            "https",
+                            "www.stromdao.de",
+                            "/stromdao-news/2022-bald-gibt-es-stecker-solaranlagen-bei-der-stromdao-gmbh",
+                            "",
+                            "",
+                            ""
+                        ],
+                        "template": "default.html",
+                        "engines": [
+                            "qwant"
+                        ],
+                        "positions": [
+                            8
+                        ],
+                        "score": 0.125,
+                        "category": "general",
+                        "pretty_url": "https://www.stromdao.de/stromdao-news/[...]ker-solaranlagen-bei-der-stromdao-gmbh",
+                        "resultid": "0x02cAce04c8469580A2ADc20F57E143a3693c22bF_0x69c406EFD76662DC96A73ccF57158E62ca346006",
+                        "isNew": true,
+                        "firstSeen": 1686909492620
+                    },
+                    {
+                        "title": "Optimierter Stromnetzbetrieb mit Gr\u00fcnstromIndex - STROMDAO GmbH",
+                        "url": "https://www.stromdao.de/stromdao-news/2020-optimierter-stromnetzbetrieb-mit-grnstromindex",
+                        "content": "Mit k\u00fcnstlicher Intelligenz und Blockchaintechnologie optimiert der Gr\u00fcnstromIndex von STROMDAO den Transport erneuerbarer Energien vom Erzeuger zum Verbraucher. Wir erkl\u00e4ren, welche Vorteile dies mit sich bringt.",
+                        "engine": "qwant",
+                        "parsed_url": [
+                            "https",
+                            "www.stromdao.de",
+                            "/stromdao-news/2020-optimierter-stromnetzbetrieb-mit-grnstromindex",
+                            "",
+                            "",
+                            ""
+                        ],
+                        "template": "default.html",
+                        "engines": [
+                            "qwant"
+                        ],
+                        "positions": [
+                            9
+                        ],
+                        "score": 0.1111111111111111,
+                        "category": "general",
+                        "pretty_url": "https://www.stromdao.de/stromdao-news/[...]ter-stromnetzbetrieb-mit-grnstromindex",
+                        "resultid": "0x02cAce04c8469580A2ADc20F57E143a3693c22bF_0x560c8f852bAB9c7cAD3cE98a691C81086aA43F58",
+                        "isNew": false,
+                        "firstSeen": 1686289421096
+                    },
+                    {
+                        "title": "Presse \u2014 STROMDAO GmbH",
+                        "url": "https://www.stromdao.de/presse",
+                        "content": "STROMDAO in der Kommunikation. Boilerplate Die STROM DAO GmbH steigert mit dynamischen Stromtarifen den Anteil Erneuerbarer Energien im Netz, entlastet durch regionalen Verbrauch die Stromnetze, erm\u00f6glicht Markteilnehmern regionalen Vertrieb und schafft mit intelligenten Stromprodukten f\u00fcr Endverbraucher bleibende Werte in Form von Anteilen ...",
+                        "engine": "qwant",
+                        "parsed_url": [
+                            "https",
+                            "www.stromdao.de",
+                            "/presse",
+                            "",
+                            "",
+                            ""
+                        ],
+                        "template": "default.html",
+                        "engines": [
+                            "qwant"
+                        ],
+                        "positions": [
+                            10
+                        ],
+                        "score": 0.1,
+                        "category": "general",
+                        "pretty_url": "https://www.stromdao.de/presse",
+                        "close_group": true,
+                        "resultid": "0x02cAce04c8469580A2ADc20F57E143a3693c22bF_0x7522536ED991F206DeFACB02Eb13bbEC748ADeF6",
+                        "isNew": true,
+                        "firstSeen": 1686909492636
+                    }
+                ],
+                "answers": [],
+                "corrections": [],
+                "infoboxes": [],
+                "suggestions": [
+                    "awattar deutschland",
+                    "energieserviceanbieter",
+                    "stromdao mikro direktvermarktung",
+                    "gr\u00fcnstromindex",
+                    "smarte stromtarife",
+                    "stromb\u00f6rse live",
+                    "tibber",
+                    "lition"
+                ],
+                "unresponsive_engines": [
+                    [
+                        "duckduckgo",
+                        "access denied"
+                    ]
+                ],
+                "queryId": "0x02cAce04c8469580A2ADc20F57E143a3693c22bF",
+                "new": [
+                    {
+                        "title": "Photovoltaik \u2014 STROMDAO GmbH",
+                        "url": "https://www.stromdao.de/photovoltaik",
+                        "content": "Ich willige ein, dass die STROMDAO GmbH zum Zwecke der Pr\u00fcfung meiner oben genannten Daten f\u00fcr das Corrently \u00d6kosystem die angegebenen Daten speichern und verarbeiten, sowie mich unter den von mir genannten Kontaktdaten erreichen darf. Die Einwilligung kann zu jeder Zeit widerrufen werden, es gen\u00fcgt hierf\u00fcr eine eMail an kontakt@stromdao.com.",
+                        "engine": "qwant",
+                        "parsed_url": [
+                            "https",
+                            "www.stromdao.de",
+                            "/photovoltaik",
+                            "",
+                            "",
+                            ""
+                        ],
+                        "template": "default.html",
+                        "engines": [
+                            "qwant"
+                        ],
+                        "positions": [
+                            2
+                        ],
+                        "score": 0.5,
+                        "category": "general",
+                        "pretty_url": "https://www.stromdao.de/photovoltaik",
+                        "resultid": "0x02cAce04c8469580A2ADc20F57E143a3693c22bF_0x001D6f66A5657B1ebD8D1c522A43F7C08a5FE206",
+                        "isNew": true,
+                        "firstSeen": 1686909492582
+                    },
+                    {
+                        "title": "Bald gibt es Stecker-Solaranlagen bei der STROMDAO GmbH",
+                        "url": "https://www.stromdao.de/stromdao-news/2022-bald-gibt-es-stecker-solaranlagen-bei-der-stromdao-gmbh",
+                        "content": "Mit Stecker-Solaranlagen \u2013 auch als Balkon- oder Guerilla-Anlagen bekannt \u2013 werden Mieter und Besitzer von Eigentumswohnungen zu aktiven Gr\u00fcnstromerzeugern, sparen langfristig Geld, und noch mehr sch\u00fctzen sie das Klima. Deshalb hat sich STROMDAO entschlossen, Steckersolarsysteme in sein Portfolio au",
+                        "engine": "qwant",
+                        "parsed_url": [
+                            "https",
+                            "www.stromdao.de",
+                            "/stromdao-news/2022-bald-gibt-es-stecker-solaranlagen-bei-der-stromdao-gmbh",
+                            "",
+                            "",
+                            ""
+                        ],
+                        "template": "default.html",
+                        "engines": [
+                            "qwant"
+                        ],
+                        "positions": [
+                            8
+                        ],
+                        "score": 0.125,
+                        "category": "general",
+                        "pretty_url": "https://www.stromdao.de/stromdao-news/[...]ker-solaranlagen-bei-der-stromdao-gmbh",
+                        "resultid": "0x02cAce04c8469580A2ADc20F57E143a3693c22bF_0x69c406EFD76662DC96A73ccF57158E62ca346006",
+                        "isNew": true,
+                        "firstSeen": 1686909492620
+                    },
+                    {
+                        "title": "Presse \u2014 STROMDAO GmbH",
+                        "url": "https://www.stromdao.de/presse",
+                        "content": "STROMDAO in der Kommunikation. Boilerplate Die STROM DAO GmbH steigert mit dynamischen Stromtarifen den Anteil Erneuerbarer Energien im Netz, entlastet durch regionalen Verbrauch die Stromnetze, erm\u00f6glicht Markteilnehmern regionalen Vertrieb und schafft mit intelligenten Stromprodukten f\u00fcr Endverbraucher bleibende Werte in Form von Anteilen ...",
+                        "engine": "qwant",
+                        "parsed_url": [
+                            "https",
+                            "www.stromdao.de",
+                            "/presse",
+                            "",
+                            "",
+                            ""
+                        ],
+                        "template": "default.html",
+                        "engines": [
+                            "qwant"
+                        ],
+                        "positions": [
+                            10
+                        ],
+                        "score": 0.1,
+                        "category": "general",
+                        "pretty_url": "https://www.stromdao.de/presse",
+                        "close_group": true,
+                        "resultid": "0x02cAce04c8469580A2ADc20F57E143a3693c22bF_0x7522536ED991F206DeFACB02Eb13bbEC748ADeF6",
+                        "isNew": true,
+                        "firstSeen": 1686909492636
+                    },
+                    {
+                        "title": "Blockchain: StromDAO \u2013 Strom in Kundenh\u00e4nden - Stiftung Energie und ...",
+                        "url": "https://www.energie-klimaschutz.de/blockchain-stromdao/",
+                        "content": "Die StromDAO stellt sich gegen Anbieter, die ihr Geld nur zur Ausgestaltung des Marketing-Mix erhalten. Statt um die Definition eines Stromtarifs mit Marketingstrategie k\u00fcmmert sich die \u201edezentrale, automatisierte Organisation\u201c um Kundenmitbestimmungsrechte in der Strombranche.",
+                        "engine": "qwant",
+                        "parsed_url": [
+                            "https",
+                            "www.energie-klimaschutz.de",
+                            "/blockchain-stromdao/",
+                            "",
+                            "",
+                            ""
+                        ],
+                        "template": "default.html",
+                        "engines": [
+                            "qwant"
+                        ],
+                        "positions": [
+                            2
+                        ],
+                        "score": 0.5,
+                        "category": "general",
+                        "pretty_url": "https://www.energie-klimaschutz.de/blockchain-stromdao/",
+                        "resultid": "0x02cAce04c8469580A2ADc20F57E143a3693c22bF_0x252A672D22b6A3b88297Fd4F9753fc303eA3e52A",
+                        "isNew": true,
+                        "firstSeen": 1686909493439
+                    },
+                    {
+                        "title": "STROMDAO Academy",
+                        "url": "https://training.stromdao.de/",
+                        "content": "Marble is a unique customer training builder. On Marble you can build your own academy embedded in your product or service and educate your customers",
+                        "engine": "qwant",
+                        "parsed_url": [
+                            "https",
+                            "training.stromdao.de",
+                            "/",
+                            "",
+                            "",
+                            ""
+                        ],
+                        "template": "default.html",
+                        "engines": [
+                            "qwant"
+                        ],
+                        "positions": [
+                            3
+                        ],
+                        "score": 0.3333333333333333,
+                        "category": "general",
+                        "pretty_url": "https://training.stromdao.de/",
+                        "resultid": "0x02cAce04c8469580A2ADc20F57E143a3693c22bF_0x4dFB9343E41796D3462dBB91FAbe42a619e56244",
+                        "isNew": true,
+                        "firstSeen": 1686909493449
+                    },
+                    {
+                        "title": "Stromio | Strom zum Discountpreis",
+                        "url": "https://www.stromio.de/",
+                        "content": "Strom. Kosten sparen - Dauerhaft mit eingeschr\u00e4nkter Preisgarantie. Kosten senken",
+                        "engine": "qwant",
+                        "parsed_url": [
+                            "https",
+                            "www.stromio.de",
+                            "/",
+                            "",
+                            "",
+                            ""
+                        ],
+                        "template": "default.html",
+                        "engines": [
+                            "qwant"
+                        ],
+                        "positions": [
+                            4
+                        ],
+                        "score": 0.25,
+                        "category": "general",
+                        "pretty_url": "https://www.stromio.de/",
+                        "resultid": "0x02cAce04c8469580A2ADc20F57E143a3693c22bF_0x598a87d45dd6CecB3682dD4DB5f8E5F7e0621d60",
+                        "isNew": true,
+                        "firstSeen": 1686909493454
+                    },
+                    {
+                        "title": "STROMDAO senkt Strompreis! \u2014 STROMDAO GmbH",
+                        "url": "https://www.stromdao.de/stromdao-news/2022-stromdao-senkt-strompreis",
+                        "content": "STROMDAO senkt Strompreis! Wir freuen uns mitteilen zu k\u00f6nnen, dass wir den Arbeitspreis aufgrund des Wegfallens der EEG-Umlage zum 01.07.2022 f\u00fcr alle Bestandskunden nach unten korrigieren werden. Durch die Abschaffung der EEG-Umlage verringert sich der Arbeitspreis f\u00fcr unseren \u00d6kostrom ab dem 1.",
+                        "engine": "qwant",
+                        "parsed_url": [
+                            "https",
+                            "www.stromdao.de",
+                            "/stromdao-news/2022-stromdao-senkt-strompreis",
+                            "",
+                            "",
+                            ""
+                        ],
+                        "template": "default.html",
+                        "engines": [
+                            "qwant"
+                        ],
+                        "positions": [
+                            5
+                        ],
+                        "score": 0.2,
+                        "category": "general",
+                        "pretty_url": "https://www.stromdao.de/stromdao-news/2022-stromdao-senkt-strompreis",
+                        "resultid": "0x02cAce04c8469580A2ADc20F57E143a3693c22bF_0xedDB4E41C4565B3010d2e6da4BA9528986Fa9757",
+                        "isNew": true,
+                        "firstSeen": 1686909493461
+                    },
+                    {
+                        "title": "Corrently - \u00d6kostrom",
+                        "url": "https://www.corrently.de/home.html",
+                        "content": "Ob Du einen Stromtarif f\u00fcr Deine Wohnung oder gleich ein ganzes Haus suchst \u2013 Corrently hilft Dir Deine eigene Stromerzeugung aufzubauen und bietet Dir M\u00f6glichkeiten Deinen Strom ganz neu zu erleben. Finde hier mehr \u00fcber Strom f\u00fcr Privatkunden heraus, oder lass Dir direkt ein unverbindliches Angebot erstellen.",
+                        "engine": "qwant",
+                        "parsed_url": [
+                            "https",
+                            "www.corrently.de",
+                            "/home.html",
+                            "",
+                            "",
+                            ""
+                        ],
+                        "template": "default.html",
+                        "engines": [
+                            "qwant"
+                        ],
+                        "positions": [
+                            6
+                        ],
+                        "score": 0.16666666666666666,
+                        "category": "general",
+                        "pretty_url": "https://www.corrently.de/home.html",
+                        "resultid": "0x02cAce04c8469580A2ADc20F57E143a3693c22bF_0x6575217573ff23e519786617d27a3d13cCFe1c64",
+                        "isNew": true,
+                        "firstSeen": 1686909493468
+                    },
+                    {
+                        "title": "\u00d6kostromanbieter mit st\u00fcndlichem Tarif - Discovergy GmbH",
+                        "url": "https://discovergy.com/blog/stromdao-okostromanbieter",
+                        "content": "Einer davon ist die STROMDAO GmbH, die einen zeitvariablen \u00d6kostromtarif anbietet. Der \u00d6kostromverbrauch wird dabei sogar mit dem Gr\u00fcnstromBonus belohnt, der gegen reale Solarzellen eingetauscht werden kann. Die schrittweise Einf\u00fchrung von Smart Metern wird das Stromtarifangebot in der jetzigen Form revolutionieren \u2013 das ...",
+                        "engine": "qwant",
+                        "parsed_url": [
+                            "https",
+                            "discovergy.com",
+                            "/blog/stromdao-okostromanbieter",
+                            "",
+                            "",
+                            ""
+                        ],
+                        "template": "default.html",
+                        "engines": [
+                            "qwant"
+                        ],
+                        "positions": [
+                            7
+                        ],
+                        "score": 0.14285714285714285,
+                        "category": "general",
+                        "pretty_url": "https://discovergy.com/blog/stromdao-okostromanbieter",
+                        "resultid": "0x02cAce04c8469580A2ADc20F57E143a3693c22bF_0x68E7F1231754Fff809be5a7026346071b12Ec902",
+                        "isNew": true,
+                        "firstSeen": 1686909493477
+                    },
+                    {
+                        "title": "Stromdao (Stromdao GmbH) - Startbase",
+                        "url": "https://www.startbase.de/organization/stromdao/",
+                        "content": "\u00dcber die Firma. Wir sind ein \u00d6kostromanbieter, der jedem anbietet, mit uns zu aktiven Klimasch\u00fctzern zu werden. Wir geben unseren Kunden die M\u00f6glichkeit, regional erzeugten Gr\u00fcnstrom regional zu nutzen und somit die fossilen Brennstoffe im Strombezug m\u00f6glichst lange au\u00dfen vor zu halten.",
+                        "engine": "qwant",
+                        "parsed_url": [
+                            "https",
+                            "www.startbase.de",
+                            "/organization/stromdao/",
+                            "",
+                            "",
+                            ""
+                        ],
+                        "template": "default.html",
+                        "engines": [
+                            "qwant"
+                        ],
+                        "positions": [
+                            8
+                        ],
+                        "score": 0.125,
+                        "category": "general",
+                        "pretty_url": "https://www.startbase.de/organization/stromdao/",
+                        "resultid": "0x02cAce04c8469580A2ADc20F57E143a3693c22bF_0xa90896c33751BC29C38A34b6D4c8cF6150f54E84",
+                        "isNew": true,
+                        "firstSeen": 1686909493485
+                    },
+                    {
+                        "title": "Strom - Stadtwerke Dachau",
+                        "url": "https://www.stadtwerke-dachau.de/strom/",
+                        "content": "Telefon: 08136 / 2289695. W\u00e4hrend der Schulferien ist die Zweigstelle geschlossen.",
+                        "engine": "qwant",
+                        "parsed_url": [
+                            "https",
+                            "www.stadtwerke-dachau.de",
+                            "/strom/",
+                            "",
+                            "",
+                            ""
+                        ],
+                        "template": "default.html",
+                        "engines": [
+                            "qwant"
+                        ],
+                        "positions": [
+                            9
+                        ],
+                        "score": 0.1111111111111111,
+                        "category": "general",
+                        "pretty_url": "https://www.stadtwerke-dachau.de/strom/",
+                        "resultid": "0x02cAce04c8469580A2ADc20F57E143a3693c22bF_0x4a000Ae8017207e025d594eC4306207edDE8B29d",
+                        "isNew": true,
+                        "firstSeen": 1686909493491
+                    }
+                ],
+                "webhookError": {
+                    "e": {
+                        "message": "Request failed with status code 404",
+                        "name": "Error",
+                        "stack": "Error: Request failed with status code 404\n    at createError (/opt/stromdao/corrently-backend/node_modules/axios/lib/core/createError.js:16:15)\n    at settle (/opt/stromdao/corrently-backend/node_modules/axios/lib/core/settle.js:17:12)\n    at IncomingMessage.handleStreamEnd (/opt/stromdao/corrently-backend/node_modules/axios/lib/adapters/http.js:269:11)\n    at IncomingMessage.emit (node:events:539:35)\n    at endReadableNT (node:internal/streams/readable:1345:12)\n    at processTicksAndRejections (node:internal/process/task_queues:83:21)",
+                        "config": {
+                            "url": "https://engine.corrently.cloud/webhook/searchHook",
+                            "method": "post",
+                            "data": "{\"results\":[{\"title\":\"Photovoltaik \u2014 STROMDAO GmbH\",\"url\":\"https://www.stromdao.de/photovoltaik\",\"content\":\"Ich willige ein, dass die STROMDAO GmbH zum Zwecke der Pr\u00fcfung meiner oben genannten Daten f\u00fcr das Corrently \u00d6kosystem die angegebenen Daten speichern und verarbeiten, sowie mich unter den von mir genannten Kontaktdaten erreichen darf. Die Einwilligung kann zu jeder Zeit widerrufen werden, es gen\u00fcgt hierf\u00fcr eine eMail an kontakt@stromdao.com.\",\"engine\":\"qwant\",\"parsed_url\":[\"https\",\"www.stromdao.de\",\"/photovoltaik\",\"\",\"\",\"\"],\"template\":\"default.html\",\"engines\":[\"qwant\"],\"positions\":[2],\"score\":0.5,\"category\":\"general\",\"pretty_url\":\"https://www.stromdao.de/photovoltaik\",\"resultid\":\"0x02cAce04c8469580A2ADc20F57E143a3693c22bF_0x001D6f66A5657B1ebD8D1c522A43F7C08a5FE206\",\"isNew\":true,\"firstSeen\":1686909492582},{\"title\":\"Bald gibt es Stecker-Solaranlagen bei der STROMDAO GmbH\",\"url\":\"https://www.stromdao.de/stromdao-news/2022-bald-gibt-es-stecker-solaranlagen-bei-der-stromdao-gmbh\",\"content\":\"Mit Stecker-Solaranlagen \u2013 auch als Balkon- oder Guerilla-Anlagen bekannt \u2013 werden Mieter und Besitzer von Eigentumswohnungen zu aktiven Gr\u00fcnstromerzeugern, sparen langfristig Geld, und noch mehr sch\u00fctzen sie das Klima. Deshalb hat sich STROMDAO entschlossen, Steckersolarsysteme in sein Portfolio au\",\"engine\":\"qwant\",\"parsed_url\":[\"https\",\"www.stromdao.de\",\"/stromdao-news/2022-bald-gibt-es-stecker-solaranlagen-bei-der-stromdao-gmbh\",\"\",\"\",\"\"],\"template\":\"default.html\",\"engines\":[\"qwant\"],\"positions\":[8],\"score\":0.125,\"category\":\"general\",\"pretty_url\":\"https://www.stromdao.de/stromdao-news/[...]ker-solaranlagen-bei-der-stromdao-gmbh\",\"resultid\":\"0x02cAce04c8469580A2ADc20F57E143a3693c22bF_0x69c406EFD76662DC96A73ccF57158E62ca346006\",\"isNew\":true,\"firstSeen\":1686909492620},{\"title\":\"Presse \u2014 STROMDAO GmbH\",\"url\":\"https://www.stromdao.de/presse\",\"content\":\"STROMDAO in der Kommunikation. Boilerplate Die STROM DAO GmbH steigert mit dynamischen Stromtarifen den Anteil Erneuerbarer Energien im Netz, entlastet durch regionalen Verbrauch die Stromnetze, erm\u00f6glicht Markteilnehmern regionalen Vertrieb und schafft mit intelligenten Stromprodukten f\u00fcr Endverbraucher bleibende Werte in Form von Anteilen ...\",\"engine\":\"qwant\",\"parsed_url\":[\"https\",\"www.stromdao.de\",\"/presse\",\"\",\"\",\"\"],\"template\":\"default.html\",\"engines\":[\"qwant\"],\"positions\":[10],\"score\":0.1,\"category\":\"general\",\"pretty_url\":\"https://www.stromdao.de/presse\",\"close_group\":true,\"resultid\":\"0x02cAce04c8469580A2ADc20F57E143a3693c22bF_0x7522536ED991F206DeFACB02Eb13bbEC748ADeF6\",\"isNew\":true,\"firstSeen\":1686909492636}],\"queryId\":\"0x02cAce04c8469580A2ADc20F57E143a3693c22bF\"}",
+                            "headers": {
+                                "Accept": "application/json, text/plain, */*",
+                                "Content-Type": "application/json",
+                                "User-Agent": "axios/0.21.4",
+                                "Content-Length": 2670
+                            },
+                            "transformRequest": [
+                                null
+                            ],
+                            "transformResponse": [
+                                null
+                            ],
+                            "timeout": 0,
+                            "xsrfCookieName": "XSRF-TOKEN",
+                            "xsrfHeaderName": "X-XSRF-TOKEN",
+                            "maxContentLength": -1,
+                            "maxBodyLength": -1,
+                            "transitional": {
+                                "silentJSONParsing": true,
+                                "forcedJSONParsing": true,
+                                "clarifyTimeoutError": false
+                            }
+                        }
+                    },
+                    "results": [
+                        {
+                            "title": "Photovoltaik \u2014 STROMDAO GmbH",
+                            "url": "https://www.stromdao.de/photovoltaik",
+                            "content": "Ich willige ein, dass die STROMDAO GmbH zum Zwecke der Pr\u00fcfung meiner oben genannten Daten f\u00fcr das Corrently \u00d6kosystem die angegebenen Daten speichern und verarbeiten, sowie mich unter den von mir genannten Kontaktdaten erreichen darf. Die Einwilligung kann zu jeder Zeit widerrufen werden, es gen\u00fcgt hierf\u00fcr eine eMail an kontakt@stromdao.com.",
+                            "engine": "qwant",
+                            "parsed_url": [
+                                "https",
+                                "www.stromdao.de",
+                                "/photovoltaik",
+                                "",
+                                "",
+                                ""
+                            ],
+                            "template": "default.html",
+                            "engines": [
+                                "qwant"
+                            ],
+                            "positions": [
+                                2
+                            ],
+                            "score": 0.5,
+                            "category": "general",
+                            "pretty_url": "https://www.stromdao.de/photovoltaik",
+                            "resultid": "0x02cAce04c8469580A2ADc20F57E143a3693c22bF_0x001D6f66A5657B1ebD8D1c522A43F7C08a5FE206",
+                            "isNew": true,
+                            "firstSeen": 1686909492582
+                        },
+                        {
+                            "title": "Bald gibt es Stecker-Solaranlagen bei der STROMDAO GmbH",
+                            "url": "https://www.stromdao.de/stromdao-news/2022-bald-gibt-es-stecker-solaranlagen-bei-der-stromdao-gmbh",
+                            "content": "Mit Stecker-Solaranlagen \u2013 auch als Balkon- oder Guerilla-Anlagen bekannt \u2013 werden Mieter und Besitzer von Eigentumswohnungen zu aktiven Gr\u00fcnstromerzeugern, sparen langfristig Geld, und noch mehr sch\u00fctzen sie das Klima. Deshalb hat sich STROMDAO entschlossen, Steckersolarsysteme in sein Portfolio au",
+                            "engine": "qwant",
+                            "parsed_url": [
+                                "https",
+                                "www.stromdao.de",
+                                "/stromdao-news/2022-bald-gibt-es-stecker-solaranlagen-bei-der-stromdao-gmbh",
+                                "",
+                                "",
+                                ""
+                            ],
+                            "template": "default.html",
+                            "engines": [
+                                "qwant"
+                            ],
+                            "positions": [
+                                8
+                            ],
+                            "score": 0.125,
+                            "category": "general",
+                            "pretty_url": "https://www.stromdao.de/stromdao-news/[...]ker-solaranlagen-bei-der-stromdao-gmbh",
+                            "resultid": "0x02cAce04c8469580A2ADc20F57E143a3693c22bF_0x69c406EFD76662DC96A73ccF57158E62ca346006",
+                            "isNew": true,
+                            "firstSeen": 1686909492620
+                        },
+                        {
+                            "title": "Presse \u2014 STROMDAO GmbH",
+                            "url": "https://www.stromdao.de/presse",
+                            "content": "STROMDAO in der Kommunikation. Boilerplate Die STROM DAO GmbH steigert mit dynamischen Stromtarifen den Anteil Erneuerbarer Energien im Netz, entlastet durch regionalen Verbrauch die Stromnetze, erm\u00f6glicht Markteilnehmern regionalen Vertrieb und schafft mit intelligenten Stromprodukten f\u00fcr Endverbraucher bleibende Werte in Form von Anteilen ...",
+                            "engine": "qwant",
+                            "parsed_url": [
+                                "https",
+                                "www.stromdao.de",
+                                "/presse",
+                                "",
+                                "",
+                                ""
+                            ],
+                            "template": "default.html",
+                            "engines": [
+                                "qwant"
+                            ],
+                            "positions": [
+                                10
+                            ],
+                            "score": 0.1,
+                            "category": "general",
+                            "pretty_url": "https://www.stromdao.de/presse",
+                            "close_group": true,
+                            "resultid": "0x02cAce04c8469580A2ADc20F57E143a3693c22bF_0x7522536ED991F206DeFACB02Eb13bbEC748ADeF6",
+                            "isNew": true,
+                            "firstSeen": 1686909492636
+                        },
+                        {
+                            "title": "Blockchain: StromDAO \u2013 Strom in Kundenh\u00e4nden - Stiftung Energie und ...",
+                            "url": "https://www.energie-klimaschutz.de/blockchain-stromdao/",
+                            "content": "Die StromDAO stellt sich gegen Anbieter, die ihr Geld nur zur Ausgestaltung des Marketing-Mix erhalten. Statt um die Definition eines Stromtarifs mit Marketingstrategie k\u00fcmmert sich die \u201edezentrale, automatisierte Organisation\u201c um Kundenmitbestimmungsrechte in der Strombranche.",
+                            "engine": "qwant",
+                            "parsed_url": [
+                                "https",
+                                "www.energie-klimaschutz.de",
+                                "/blockchain-stromdao/",
+                                "",
+                                "",
+                                ""
+                            ],
+                            "template": "default.html",
+                            "engines": [
+                                "qwant"
+                            ],
+                            "positions": [
+                                2
+                            ],
+                            "score": 0.5,
+                            "category": "general",
+                            "pretty_url": "https://www.energie-klimaschutz.de/blockchain-stromdao/",
+                            "resultid": "0x02cAce04c8469580A2ADc20F57E143a3693c22bF_0x252A672D22b6A3b88297Fd4F9753fc303eA3e52A",
+                            "isNew": true,
+                            "firstSeen": 1686909493439
+                        },
+                        {
+                            "title": "STROMDAO Academy",
+                            "url": "https://training.stromdao.de/",
+                            "content": "Marble is a unique customer training builder. On Marble you can build your own academy embedded in your product or service and educate your customers",
+                            "engine": "qwant",
+                            "parsed_url": [
+                                "https",
+                                "training.stromdao.de",
+                                "/",
+                                "",
+                                "",
+                                ""
+                            ],
+                            "template": "default.html",
+                            "engines": [
+                                "qwant"
+                            ],
+                            "positions": [
+                                3
+                            ],
+                            "score": 0.3333333333333333,
+                            "category": "general",
+                            "pretty_url": "https://training.stromdao.de/",
+                            "resultid": "0x02cAce04c8469580A2ADc20F57E143a3693c22bF_0x4dFB9343E41796D3462dBB91FAbe42a619e56244",
+                            "isNew": true,
+                            "firstSeen": 1686909493449
+                        },
+                        {
+                            "title": "Stromio | Strom zum Discountpreis",
+                            "url": "https://www.stromio.de/",
+                            "content": "Strom. Kosten sparen - Dauerhaft mit eingeschr\u00e4nkter Preisgarantie. Kosten senken",
+                            "engine": "qwant",
+                            "parsed_url": [
+                                "https",
+                                "www.stromio.de",
+                                "/",
+                                "",
+                                "",
+                                ""
+                            ],
+                            "template": "default.html",
+                            "engines": [
+                                "qwant"
+                            ],
+                            "positions": [
+                                4
+                            ],
+                            "score": 0.25,
+                            "category": "general",
+                            "pretty_url": "https://www.stromio.de/",
+                            "resultid": "0x02cAce04c8469580A2ADc20F57E143a3693c22bF_0x598a87d45dd6CecB3682dD4DB5f8E5F7e0621d60",
+                            "isNew": true,
+                            "firstSeen": 1686909493454
+                        },
+                        {
+                            "title": "STROMDAO senkt Strompreis! \u2014 STROMDAO GmbH",
+                            "url": "https://www.stromdao.de/stromdao-news/2022-stromdao-senkt-strompreis",
+                            "content": "STROMDAO senkt Strompreis! Wir freuen uns mitteilen zu k\u00f6nnen, dass wir den Arbeitspreis aufgrund des Wegfallens der EEG-Umlage zum 01.07.2022 f\u00fcr alle Bestandskunden nach unten korrigieren werden. Durch die Abschaffung der EEG-Umlage verringert sich der Arbeitspreis f\u00fcr unseren \u00d6kostrom ab dem 1.",
+                            "engine": "qwant",
+                            "parsed_url": [
+                                "https",
+                                "www.stromdao.de",
+                                "/stromdao-news/2022-stromdao-senkt-strompreis",
+                                "",
+                                "",
+                                ""
+                            ],
+                            "template": "default.html",
+                            "engines": [
+                                "qwant"
+                            ],
+                            "positions": [
+                                5
+                            ],
+                            "score": 0.2,
+                            "category": "general",
+                            "pretty_url": "https://www.stromdao.de/stromdao-news/2022-stromdao-senkt-strompreis",
+                            "resultid": "0x02cAce04c8469580A2ADc20F57E143a3693c22bF_0xedDB4E41C4565B3010d2e6da4BA9528986Fa9757",
+                            "isNew": true,
+                            "firstSeen": 1686909493461
+                        },
+                        {
+                            "title": "Corrently - \u00d6kostrom",
+                            "url": "https://www.corrently.de/home.html",
+                            "content": "Ob Du einen Stromtarif f\u00fcr Deine Wohnung oder gleich ein ganzes Haus suchst \u2013 Corrently hilft Dir Deine eigene Stromerzeugung aufzubauen und bietet Dir M\u00f6glichkeiten Deinen Strom ganz neu zu erleben. Finde hier mehr \u00fcber Strom f\u00fcr Privatkunden heraus, oder lass Dir direkt ein unverbindliches Angebot erstellen.",
+                            "engine": "qwant",
+                            "parsed_url": [
+                                "https",
+                                "www.corrently.de",
+                                "/home.html",
+                                "",
+                                "",
+                                ""
+                            ],
+                            "template": "default.html",
+                            "engines": [
+                                "qwant"
+                            ],
+                            "positions": [
+                                6
+                            ],
+                            "score": 0.16666666666666666,
+                            "category": "general",
+                            "pretty_url": "https://www.corrently.de/home.html",
+                            "resultid": "0x02cAce04c8469580A2ADc20F57E143a3693c22bF_0x6575217573ff23e519786617d27a3d13cCFe1c64",
+                            "isNew": true,
+                            "firstSeen": 1686909493468
+                        },
+                        {
+                            "title": "\u00d6kostromanbieter mit st\u00fcndlichem Tarif - Discovergy GmbH",
+                            "url": "https://discovergy.com/blog/stromdao-okostromanbieter",
+                            "content": "Einer davon ist die STROMDAO GmbH, die einen zeitvariablen \u00d6kostromtarif anbietet. Der \u00d6kostromverbrauch wird dabei sogar mit dem Gr\u00fcnstromBonus belohnt, der gegen reale Solarzellen eingetauscht werden kann. Die schrittweise Einf\u00fchrung von Smart Metern wird das Stromtarifangebot in der jetzigen Form revolutionieren \u2013 das ...",
+                            "engine": "qwant",
+                            "parsed_url": [
+                                "https",
+                                "discovergy.com",
+                                "/blog/stromdao-okostromanbieter",
+                                "",
+                                "",
+                                ""
+                            ],
+                            "template": "default.html",
+                            "engines": [
+                                "qwant"
+                            ],
+                            "positions": [
+                                7
+                            ],
+                            "score": 0.14285714285714285,
+                            "category": "general",
+                            "pretty_url": "https://discovergy.com/blog/stromdao-okostromanbieter",
+                            "resultid": "0x02cAce04c8469580A2ADc20F57E143a3693c22bF_0x68E7F1231754Fff809be5a7026346071b12Ec902",
+                            "isNew": true,
+                            "firstSeen": 1686909493477
+                        },
+                        {
+                            "title": "Stromdao (Stromdao GmbH) - Startbase",
+                            "url": "https://www.startbase.de/organization/stromdao/",
+                            "content": "\u00dcber die Firma. Wir sind ein \u00d6kostromanbieter, der jedem anbietet, mit uns zu aktiven Klimasch\u00fctzern zu werden. Wir geben unseren Kunden die M\u00f6glichkeit, regional erzeugten Gr\u00fcnstrom regional zu nutzen und somit die fossilen Brennstoffe im Strombezug m\u00f6glichst lange au\u00dfen vor zu halten.",
+                            "engine": "qwant",
+                            "parsed_url": [
+                                "https",
+                                "www.startbase.de",
+                                "/organization/stromdao/",
+                                "",
+                                "",
+                                ""
+                            ],
+                            "template": "default.html",
+                            "engines": [
+                                "qwant"
+                            ],
+                            "positions": [
+                                8
+                            ],
+                            "score": 0.125,
+                            "category": "general",
+                            "pretty_url": "https://www.startbase.de/organization/stromdao/",
+                            "resultid": "0x02cAce04c8469580A2ADc20F57E143a3693c22bF_0xa90896c33751BC29C38A34b6D4c8cF6150f54E84",
+                            "isNew": true,
+                            "firstSeen": 1686909493485
+                        },
+                        {
+                            "title": "Strom - Stadtwerke Dachau",
+                            "url": "https://www.stadtwerke-dachau.de/strom/",
+                            "content": "Telefon: 08136 / 2289695. W\u00e4hrend der Schulferien ist die Zweigstelle geschlossen.",
+                            "engine": "qwant",
+                            "parsed_url": [
+                                "https",
+                                "www.stadtwerke-dachau.de",
+                                "/strom/",
+                                "",
+                                "",
+                                ""
+                            ],
+                            "template": "default.html",
+                            "engines": [
+                                "qwant"
+                            ],
+                            "positions": [
+                                9
+                            ],
+                            "score": 0.1111111111111111,
+                            "category": "general",
+                            "pretty_url": "https://www.stadtwerke-dachau.de/strom/",
+                            "resultid": "0x02cAce04c8469580A2ADc20F57E143a3693c22bF_0x4a000Ae8017207e025d594eC4306207edDE8B29d",
+                            "isNew": true,
+                            "firstSeen": 1686909493491
+                        }
+                    ]
+                }
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "query": {
+                        "type": "string"
+                    },
+                    "number_of_results": {
+                        "type": "integer"
+                    },
+                    "results": {
+                        "type": "array",
+                        "items": {
+                            "type": "object"
+                        }
+                    },
+                    "answers": {
+                        "type": "array"
+                    },
+                    "corrections": {
+                        "type": "array"
+                    },
+                    "infoboxes": {
+                        "type": "array"
+                    },
+                    "suggestions": {
+                        "type": "array"
+                    },
+                    "unresponsive_engines": {
+                        "type": "array"
+                    },
+                    "queryid": {
+                        "type": "string"
+                    },
+                    "new": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "title": {
+                                    "type": "string"
+                                },
+                                "content": {
+                                    "type": "string"
+                                },
+                                "url": {
+                                    "type": "string"
+                                },
+                                "engine": {
+                                    "type": "string"
+                                },
+                                "parsed_url": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                },
+                                "template": {
+                                    "type": "string"
+                                },
+                                "engines": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                },
+                                "positions": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "score": {
+                                    "type": "number"
+                                },
+                                "category": {
+                                    "type": "string"
+                                },
+                                "pretty_url": {
+                                    "type": "string"
+                                },
+                                "resultid": {
+                                    "type": "string"
+                                },
+                                "isNew": {
+                                    "type": "boolean"
+                                },
+                                "firstSeen": {
+                                    "type": "integer"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "webhooks",
+            "url": "https://searchhook.p.rapidapi.com/webhooks",
+            "description": "Returns list of saved queries with associated  webhooks.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://searchhook.p.rapidapi.com/webhooks\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"searchhook.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://searchhook.p.rapidapi.com/webhooks\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"searchhook.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "queryId": "0x02cAce04c8469580A2ADc20F57E143a3693c22bF",
+                    "search": {
+                        "language": "de-DE",
+                        "categories": "general",
+                        "url": "https://engine.corrently.cloud/webhook/searchHook",
+                        "q": "STROMDAO",
+                        "time_range": "None",
+                        "safesearch": "0",
+                        "format": "json",
+                        "iteration": false
+                    },
+                    "url": "https://engine.corrently.cloud/webhook/searchHook",
+                    "expires": 1687514292708
+                }
+            ],
+            "statuscode": 200,
+            "schema": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "queryId": {
+                            "type": "string"
+                        },
+                        "search": {
+                            "type": "object",
+                            "properties": {
+                                "q": {
+                                    "type": "string"
+                                },
+                                "url": {
+                                    "type": "string"
+                                },
+                                "queryId": {
+                                    "type": "string"
+                                },
+                                "format": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "url": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "extend",
+            "url": "https://searchhook.p.rapidapi.com/extend",
+            "description": "Extend expiry of query identified with parameter `queryId` .",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "queryId",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "0x02cAce04c8469580A2ADc20F57E143a3693c22bF"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://searchhook.p.rapidapi.com/extend\"\nquerystring = {\"queryId\": \"0x02cAce04c8469580A2ADc20F57E143a3693c22bF\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"searchhook.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://searchhook.p.rapidapi.com/extend\"\nquerystring = {\"queryId\": \"0x02cAce04c8469580A2ADc20F57E143a3693c22bF\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"searchhook.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "This endpoint is disabled for your subscription"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    ],
+    "standardized_name": "searchhook"
+}

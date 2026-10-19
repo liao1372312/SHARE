@@ -1,0 +1,85 @@
+{
+    "product_id": "api_cbb4ed71-f59a-40e2-a91d-9fbbda6fc2dd",
+    "tool_description": "Google Jobs Scraper",
+    "home_url": "https://rapidapi.com/dodocr7/api/google-jobs/",
+    "name": "Google Jobs",
+    "title": "Google Jobs",
+    "pricing": "FREEMIUM",
+    "tool_name": "Google Jobs",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 394,
+        "avgSuccessRate": 100,
+        "popularityScore": 9.3,
+        "__typename": "Score"
+    },
+    "host": "google-jobs.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "OfferInfo",
+            "url": "https://google-jobs.p.rapidapi.com/",
+            "description": "get offer data",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "joburl",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "https://www.google.com/search?ibp=htl%3Bjobs&q=developer+newyork&hl=en-US&kgs=e473f607e23ae72f&shndl=-1&source=sh%2Fx%2Fim%2Ftextlists%2Fdetail%2F1&entrypoint=sh%2Fx%2Fim%2Ftextlists%2Fdetail&mysharpfpstate=tldetail&htivrt=jobs&htiq=developer+newyork&htidocid=6ak4txGw4C4AAAAAAAAAAA%3D%3D"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://google-jobs.p.rapidapi.com/\"\nquerystring = {\"joburl\": \"https://www.google.com/search?ibp=htl%3Bjobs&q=developer+newyork&hl=en-US&kgs=e473f607e23ae72f&shndl=-1&source=sh%2Fx%2Fim%2Ftextlists%2Fdetail%2F1&entrypoint=sh%2Fx%2Fim%2Ftextlists%2Fdetail&mysharpfpstate=tldetail&htivrt=jobs&htiq=developer+newyork&htidocid=6ak4txGw4C4AAAAAAAAAAA%3D%3D\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"google-jobs.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://google-jobs.p.rapidapi.com/\"\nquerystring = {\"joburl\": \"https://www.google.com/search?ibp=htl%3Bjobs&q=developer+newyork&hl=en-US&kgs=e473f607e23ae72f&shndl=-1&source=sh%2Fx%2Fim%2Ftextlists%2Fdetail%2F1&entrypoint=sh%2Fx%2Fim%2Ftextlists%2Fdetail&mysharpfpstate=tldetail&htivrt=jobs&htiq=developer+newyork&htidocid=6ak4txGw4C4AAAAAAAAAAA%3D%3D\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"google-jobs.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "error": "Cannot convert undefined or null to object"
+            }
+        },
+        {
+            "name": "SearchOffers",
+            "url": "https://google-jobs.p.rapidapi.com/",
+            "description": "get all offers url",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "offset",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "0"
+                },
+                {
+                    "name": "keyword",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "Secretary"
+                },
+                {
+                    "name": "location",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "Frankfurt"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://google-jobs.p.rapidapi.com/\"\nquerystring = {\"offset\": \"0\", \"keyword\": \"Secretary\", \"location\": \"Frankfurt\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"google-jobs.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://google-jobs.p.rapidapi.com/\"\nquerystring = {\"offset\": \"0\", \"keyword\": \"Secretary\", \"location\": \"Frankfurt\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"google-jobs.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "nextOffset": 10,
+                "currentOffset": "0",
+                "offers": [
+                    "https://www.google.com/search?ibp=htl%3Bjobs&q=Secretary+Frankfurt&htidocid=KvpE4JslqlUAAAAAAAAAAA%3D%3D&hl=en-US&kgs=32504aea7a6e6e42&shndl=-1&source=sh%2Fx%2Fim%2Ftextlists%2Fdetail%2F1&mysharpfpstate=tldetail&htivrt=jobs&htiq=Secretary+Frankfurt&htidocid=KvpE4JslqlUAAAAAAAAAAA%3D%3D",
+                    "https://www.google.com/search?ibp=htl%3Bjobs&q=Secretary+Frankfurt&htidocid=KvpE4JslqlUAAAAAAAAAAA%3D%3D&hl=en-US&kgs=32504aea7a6e6e42&shndl=-1&source=sh%2Fx%2Fim%2Ftextlists%2Fdetail%2F1&ibp=htl%3Bjobs&htidocid=_4oYqByM5q8AAAAAAAAAAA%3D%3D&mysharpfpstate=tldetail&htivrt=jobs&htiq=Secretary+Frankfurt&htidocid=_4oYqByM5q8AAAAAAAAAAA%3D%3D",
+                    "https://www.google.com/search?ibp=htl%3Bjobs&q=Secretary+Frankfurt&htidocid=KvpE4JslqlUAAAAAAAAAAA%3D%3D&hl=en-US&kgs=32504aea7a6e6e42&shndl=-1&source=sh%2Fx%2Fim%2Ftextlists%2Fdetail%2F1&ibp=htl%3Bjobs&htidocid=_4oYqByM5q8AAAAAAAAAAA%3D%3D&ibp=htl%3Bjobs&htidocid=l3TEk70zslkAAAAAAAAAAA%3D%3D&mysharpfpstate=tldetail&htivrt=jobs&htiq=Secretary+Frankfurt&htidocid=l3TEk70zslkAAAAAAAAAAA%3D%3D",
+                    "https://www.google.com/search?ibp=htl%3Bjobs&q=Secretary+Frankfurt&htidocid=KvpE4JslqlUAAAAAAAAAAA%3D%3D&hl=en-US&kgs=32504aea7a6e6e42&shndl=-1&source=sh%2Fx%2Fim%2Ftextlists%2Fdetail%2F1&ibp=htl%3Bjobs&htidocid=_4oYqByM5q8AAAAAAAAAAA%3D%3D&ibp=htl%3Bjobs&htidocid=l3TEk70zslkAAAAAAAAAAA%3D%3D&ibp=htl%3Bjobs&htidocid=y8B9zkyJQeoAAAAAAAAAAA%3D%3D&mysharpfpstate=tldetail&htivrt=jobs&htiq=Secretary+Frankfurt&htidocid=y8B9zkyJQeoAAAAAAAAAAA%3D%3D",
+                    "https://www.google.com/search?ibp=htl%3Bjobs&q=Secretary+Frankfurt&htidocid=KvpE4JslqlUAAAAAAAAAAA%3D%3D&hl=en-US&kgs=32504aea7a6e6e42&shndl=-1&source=sh%2Fx%2Fim%2Ftextlists%2Fdetail%2F1&ibp=htl%3Bjobs&htidocid=_4oYqByM5q8AAAAAAAAAAA%3D%3D&ibp=htl%3Bjobs&htidocid=l3TEk70zslkAAAAAAAAAAA%3D%3D&ibp=htl%3Bjobs&htidocid=y8B9zkyJQeoAAAAAAAAAAA%3D%3D&ibp=htl%3Bjobs&htidocid=ZjMdC-SpcgEAAAAAAAAAAA%3D%3D&mysharpfpstate=tldetail&htivrt=jobs&htiq=Secretary+Frankfurt&htidocid=ZjMdC-SpcgEAAAAAAAAAAA%3D%3D",
+                    "https://www.google.com/search?ibp=htl%3Bjobs&q=Secretary+Frankfurt&htidocid=KvpE4JslqlUAAAAAAAAAAA%3D%3D&hl=en-US&kgs=32504aea7a6e6e42&shndl=-1&source=sh%2Fx%2Fim%2Ftextlists%2Fdetail%2F1&ibp=htl%3Bjobs&htidocid=_4oYqByM5q8AAAAAAAAAAA%3D%3D&ibp=htl%3Bjobs&htidocid=l3TEk70zslkAAAAAAAAAAA%3D%3D&ibp=htl%3Bjobs&htidocid=y8B9zkyJQeoAAAAAAAAAAA%3D%3D&ibp=htl%3Bjobs&htidocid=ZjMdC-SpcgEAAAAAAAAAAA%3D%3D&ibp=htl%3Bjobs&htidocid=5DLzcLwO_3AAAAAAAAAAAA%3D%3D&mysharpfpstate=tldetail&htivrt=jobs&htiq=Secretary+Frankfurt&htidocid=5DLzcLwO_3AAAAAAAAAAAA%3D%3D",
+                    "https://www.google.com/search?ibp=htl%3Bjobs&q=Secretary+Frankfurt&htidocid=KvpE4JslqlUAAAAAAAAAAA%3D%3D&hl=en-US&kgs=32504aea7a6e6e42&shndl=-1&source=sh%2Fx%2Fim%2Ftextlists%2Fdetail%2F1&ibp=htl%3Bjobs&htidocid=_4oYqByM5q8AAAAAAAAAAA%3D%3D&ibp=htl%3Bjobs&htidocid=l3TEk70zslkAAAAAAAAAAA%3D%3D&ibp=htl%3Bjobs&htidocid=y8B9zkyJQeoAAAAAAAAAAA%3D%3D&ibp=htl%3Bjobs&htidocid=ZjMdC-SpcgEAAAAAAAAAAA%3D%3D&ibp=htl%3Bjobs&htidocid=5DLzcLwO_3AAAAAAAAAAAA%3D%3D&ibp=htl%3Bjobs&htidocid=F_iyjhukCxoAAAAAAAAAAA%3D%3D&mysharpfpstate=tldetail&htivrt=jobs&htiq=Secretary+Frankfurt&htidocid=F_iyjhukCxoAAAAAAAAAAA%3D%3D",
+                    "https://www.google.com/search?ibp=htl%3Bjobs&q=Secretary+Frankfurt&htidocid=KvpE4JslqlUAAAAAAAAAAA%3D%3D&hl=en-US&kgs=32504aea7a6e6e42&shndl=-1&source=sh%2Fx%2Fim%2Ftextlists%2Fdetail%2F1&ibp=htl%3Bjobs&htidocid=_4oYqByM5q8AAAAAAAAAAA%3D%3D&ibp=htl%3Bjobs&htidocid=l3TEk70zslkAAAAAAAAAAA%3D%3D&ibp=htl%3Bjobs&htidocid=y8B9zkyJQeoAAAAAAAAAAA%3D%3D&ibp=htl%3Bjobs&htidocid=ZjMdC-SpcgEAAAAAAAAAAA%3D%3D&ibp=htl%3Bjobs&htidocid=5DLzcLwO_3AAAAAAAAAAAA%3D%3D&ibp=htl%3Bjobs&htidocid=F_iyjhukCxoAAAAAAAAAAA%3D%3D&ibp=htl%3Bjobs&htidocid=ALwWJfCWKf0AAAAAAAAAAA%3D%3D&mysharpfpstate=tldetail&htivrt=jobs&htiq=Secretary+Frankfurt&htidocid=ALwWJfCWKf0AAAAAAAAAAA%3D%3D",
+                    "https://www.google.com/search?ibp=htl%3Bjobs&q=Secretary+Frankfurt&htidocid=KvpE4JslqlUAAAAAAAAAAA%3D%3D&hl=en-US&kgs=32504aea7a6e6e42&shndl=-1&source=sh%2Fx%2Fim%2Ftextlists%2Fdetail%2F1&ibp=htl%3Bjobs&htidocid=_4oYqByM5q8AAAAAAAAAAA%3D%3D&ibp=htl%3Bjobs&htidocid=l3TEk70zslkAAAAAAAAAAA%3D%3D&ibp=htl%3Bjobs&htidocid=y8B9zkyJQeoAAAAAAAAAAA%3D%3D&ibp=htl%3Bjobs&htidocid=ZjMdC-SpcgEAAAAAAAAAAA%3D%3D&ibp=htl%3Bjobs&htidocid=5DLzcLwO_3AAAAAAAAAAAA%3D%3D&ibp=htl%3Bjobs&htidocid=F_iyjhukCxoAAAAAAAAAAA%3D%3D&ibp=htl%3Bjobs&htidocid=ALwWJfCWKf0AAAAAAAAAAA%3D%3D&ibp=htl%3Bjobs&htidocid=UdW8FDs-IxQAAAAAAAAAAA%3D%3D&mysharpfpstate=tldetail&htivrt=jobs&htiq=Secretary+Frankfurt&htidocid=UdW8FDs-IxQAAAAAAAAAAA%3D%3D",
+                    "https://www.google.com/search?ibp=htl%3Bjobs&q=Secretary+Frankfurt&htidocid=KvpE4JslqlUAAAAAAAAAAA%3D%3D&hl=en-US&kgs=32504aea7a6e6e42&shndl=-1&source=sh%2Fx%2Fim%2Ftextlists%2Fdetail%2F1&ibp=htl%3Bjobs&htidocid=_4oYqByM5q8AAAAAAAAAAA%3D%3D&ibp=htl%3Bjobs&htidocid=l3TEk70zslkAAAAAAAAAAA%3D%3D&ibp=htl%3Bjobs&htidocid=y8B9zkyJQeoAAAAAAAAAAA%3D%3D&ibp=htl%3Bjobs&htidocid=ZjMdC-SpcgEAAAAAAAAAAA%3D%3D&ibp=htl%3Bjobs&htidocid=5DLzcLwO_3AAAAAAAAAAAA%3D%3D&ibp=htl%3Bjobs&htidocid=F_iyjhukCxoAAAAAAAAAAA%3D%3D&ibp=htl%3Bjobs&htidocid=ALwWJfCWKf0AAAAAAAAAAA%3D%3D&ibp=htl%3Bjobs&htidocid=UdW8FDs-IxQAAAAAAAAAAA%3D%3D&ibp=htl%3Bjobs&htidocid=7itAIWT6Yt4AAAAAAAAAAA%3D%3D&mysharpfpstate=tldetail&htivrt=jobs&htiq=Secretary+Frankfurt&htidocid=7itAIWT6Yt4AAAAAAAAAAA%3D%3D"
+                ]
+            }
+        }
+    ],
+    "standardized_name": "google_jobs"
+}

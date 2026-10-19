@@ -1,0 +1,56 @@
+{
+    "product_id": "api_827cbed5-2688-4ea7-8955-0a5f0636325e",
+    "tool_description": "Domain Reputation API lets you build a risk profile for a given domain or IP address with a single score based on multiple data sources.",
+    "home_url": "https://rapidapi.com/whoisapi/api/domain-reputation1/",
+    "name": "Domain Reputation",
+    "title": "Domain Reputation",
+    "pricing": "FREE",
+    "tool_name": "Domain Reputation",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 1108,
+        "avgSuccessRate": 42,
+        "popularityScore": 8.3,
+        "__typename": "Score"
+    },
+    "host": "domain-reputation1.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Domain Reputation",
+            "url": "https://domain-reputation1.p.rapidapi.com/api/v1",
+            "description": "Evaluate reputation of a domain or IP (v1)",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "domainName",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "whoisxmlapi.com"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "outputFormat",
+                    "type": "STRING",
+                    "description": "Response output format. Acceptable values: XML or JSON. Defaults to JSON.",
+                    "default": ""
+                },
+                {
+                    "name": "mode",
+                    "type": "STRING",
+                    "description": "API can check your domain in 2 modes: 'fast' - some heavy tests and data collectors will be disabled. 'full' - all the data and the tests will be processed. Default: fast",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://domain-reputation1.p.rapidapi.com/api/v1\"\nquerystring = {\"outputFormat\": \"\", \"mode\": \"\", \"domainName\": \"whoisxmlapi.com\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"domain-reputation1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://domain-reputation1.p.rapidapi.com/api/v1\"\nquerystring = {\"outputFormat\": \"\", \"mode\": \"\", \"domainName\": \"whoisxmlapi.com\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"domain-reputation1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "code": 403,
+                "messages": "Access restricted. Check credits balance or enter the correct API key."
+            },
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "domain_reputation"
+}

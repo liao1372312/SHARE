@@ -1,0 +1,170 @@
+{
+    "product_id": "api_2ed9d76b-0248-4ba2-a1d4-97261a23f5e7",
+    "tool_description": "Integrate receiving SMS message into your apps and applications, enabling automation based on incoming text messages.\n\nFor a simple demonstration, see https://www.tomwimmenhove.com/sms/\n",
+    "home_url": "https://rapidapi.com/tomwimmenhove/api/sms-receive/",
+    "name": "SMS Receive",
+    "title": "SMS Receive",
+    "pricing": "FREEMIUM",
+    "tool_name": "SMS Receive",
+    "score": {
+        "avgServiceLevel": 99,
+        "avgLatency": 4039,
+        "avgSuccessRate": 82,
+        "popularityScore": 9.1,
+        "__typename": "Score"
+    },
+    "host": "sms-receive.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "/GetNumbers",
+            "url": "https://sms-receive.p.rapidapi.com/GetNumbers",
+            "description": "Get a list of available numbers to receive messages from.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://sms-receive.p.rapidapi.com/GetNumbers\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sms-receive.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://sms-receive.p.rapidapi.com/GetNumbers\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sms-receive.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "success": true,
+                "numbers": [
+                    "+447878263244"
+                ]
+            }
+        },
+        {
+            "name": "/SetTag",
+            "url": "https://sms-receive.p.rapidapi.com/SetTag",
+            "description": "Change the current tag.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "tag",
+                    "type": "STRING",
+                    "description": "The value of the new tag with a maximum of 16 characters.",
+                    "default": ""
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://sms-receive.p.rapidapi.com/SetTag\"\nquerystring = {\"tag\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sms-receive.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://sms-receive.p.rapidapi.com/SetTag\"\nquerystring = {\"tag\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sms-receive.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "type": "https://tools.ietf.org/html/rfc7231#section-6.5.1",
+                "title": "One or more validation errors occurred.",
+                "status": 400,
+                "traceId": "0HMQ6L6H5MUCG:00000002",
+                "errors": {
+                    "tag": [
+                        "The tag field is required."
+                    ]
+                }
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean"
+                    }
+                },
+                "additionalProperties": false
+            }
+        },
+        {
+            "name": "/GetUpdates",
+            "url": "https://sms-receive.p.rapidapi.com/GetUpdates",
+            "description": "Get updates about newly received messages.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "start_id",
+                    "type": "NUMBER",
+                    "description": "The ID of the last received message plus one. Set to zero for the first call.",
+                    "default": "0"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "time_out",
+                    "type": "NUMBER",
+                    "description": "A time-out (in seconds) indicating how long the server should wait for an imcomming message before returning.",
+                    "default": "0"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://sms-receive.p.rapidapi.com/GetUpdates\"\nquerystring = {\"time_out\": \"0\", \"start_id\": \"0\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sms-receive.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://sms-receive.p.rapidapi.com/GetUpdates\"\nquerystring = {\"time_out\": \"0\", \"start_id\": \"0\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sms-receive.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "success": false,
+                "message": "No tag set. Please use the SetTag endpoint to set a tag first."
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean"
+                    },
+                    "messages": {
+                        "type": [
+                            "array",
+                            "null"
+                        ],
+                        "items": {
+                            "type": "integer",
+                            "format": "int32",
+                            "minimum": -2147483648,
+                            "maximum": 2147483647
+                        }
+                    }
+                },
+                "additionalProperties": false
+            }
+        },
+        {
+            "name": "/GetTag",
+            "url": "https://sms-receive.p.rapidapi.com/GetTag",
+            "description": "Get the current tag.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://sms-receive.p.rapidapi.com/GetTag\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sms-receive.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://sms-receive.p.rapidapi.com/GetTag\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sms-receive.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "success": false,
+                "message": "No tag set. Please use the SetTag endpoint to set a tag first."
+            },
+            "statuscode": 1,
+            "schema": ""
+        },
+        {
+            "name": "/GetMessage",
+            "url": "https://sms-receive.p.rapidapi.com/GetMessage",
+            "description": "Get message details.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "message_id",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": ""
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://sms-receive.p.rapidapi.com/GetMessage\"\nquerystring = {\"message_id\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sms-receive.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://sms-receive.p.rapidapi.com/GetMessage\"\nquerystring = {\"message_id\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sms-receive.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "type": "https://tools.ietf.org/html/rfc7231#section-6.5.1",
+                "title": "One or more validation errors occurred.",
+                "status": 400,
+                "traceId": "0HMQ6L6H5MUD4:00000001",
+                "errors": {
+                    "message_id": [
+                        "The value '' is invalid."
+                    ]
+                }
+            },
+            "statuscode": 1,
+            "schema": ""
+        }
+    ],
+    "standardized_name": "sms_receive"
+}

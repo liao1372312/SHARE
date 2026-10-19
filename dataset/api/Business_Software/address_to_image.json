@@ -1,0 +1,74 @@
+{
+    "product_id": "api_23bae179-4e90-4170-9e53-80b29ed88963",
+    "tool_description": "Shows an image of an address, using Google Street View.",
+    "home_url": "https://rapidapi.com/simpleapis/api/address-to-image/",
+    "name": "Address to Image",
+    "title": "Address to Image",
+    "pricing": "FREEMIUM",
+    "tool_name": "Address to Image",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 8667,
+        "avgSuccessRate": 100,
+        "popularityScore": 7.1,
+        "__typename": "Score"
+    },
+    "host": "address-to-image.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "getimage",
+            "url": "https://address-to-image.p.rapidapi.com/",
+            "description": "Generates an image for a given address. Images are output in JPEG as a base64 encoded string.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "output",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "image"
+                },
+                {
+                    "name": "type",
+                    "type": "STRING",
+                    "description": "Image type, either **png **or **jpeg**",
+                    "default": "jpeg"
+                },
+                {
+                    "name": "marker",
+                    "type": "NUMBER",
+                    "description": "Whether or not to display a marker on the image at the desired address, 0 or 1",
+                    "default": "0"
+                },
+                {
+                    "name": "zoom",
+                    "type": "NUMBER",
+                    "description": "The level of image zoom. Default is 1, range is 0-5",
+                    "default": "1"
+                },
+                {
+                    "name": "address",
+                    "type": "STRING",
+                    "description": "Address or location.",
+                    "default": "Times Square"
+                },
+                {
+                    "name": "width",
+                    "type": "NUMBER",
+                    "description": "Image width - maximum 1024px",
+                    "default": "1024"
+                },
+                {
+                    "name": "height",
+                    "type": "NUMBER",
+                    "description": "Image height- maximum 1024px",
+                    "default": "1024"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://address-to-image.p.rapidapi.com/\"\nquerystring = {\"output\": \"image\", \"type\": \"jpeg\", \"marker\": \"0\", \"zoom\": \"1\", \"address\": \"Times Square\", \"width\": \"1024\", \"height\": \"1024\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"address-to-image.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://address-to-image.p.rapidapi.com/\"\nquerystring = {\"output\": \"image\", \"type\": \"jpeg\", \"marker\": \"0\", \"zoom\": \"1\", \"address\": \"Times Square\", \"width\": \"1024\", \"height\": \"1024\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"address-to-image.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        }
+    ],
+    "standardized_name": "address_to_image"
+}

@@ -1,0 +1,67 @@
+{
+    "product_id": "api_b3fc686e-0b52-4dc6-a158-f9c37f57c32d",
+    "tool_description": "Return all known subdomains from root domain inquiry",
+    "home_url": "https://rapidapi.com/erie-data-systems-erie-data-systems-default/api/subdomains-lookup1/",
+    "name": "Subdomains lookup",
+    "title": "Subdomains lookup",
+    "pricing": "FREE",
+    "tool_name": "Subdomains lookup",
+    "score": {
+        "avgServiceLevel": 99,
+        "avgLatency": 824,
+        "avgSuccessRate": 99,
+        "popularityScore": 9.4,
+        "__typename": "Score"
+    },
+    "host": "subdomains-lookup1.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Subdomains lookup",
+            "url": "https://subdomains-lookup1.p.rapidapi.com/",
+            "description": "Query API with root domain to retrieve all known subdomains",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "type",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "SUBDOMAINS"
+                },
+                {
+                    "name": "pagenum",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "1"
+                },
+                {
+                    "name": "q",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "tumblr.com"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://subdomains-lookup1.p.rapidapi.com/\"\nquerystring = {\"type\": \"SUBDOMAINS\", \"pagenum\": \"1\", \"q\": \"tumblr.com\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"subdomains-lookup1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://subdomains-lookup1.p.rapidapi.com/\"\nquerystring = {\"type\": \"SUBDOMAINS\", \"pagenum\": \"1\", \"q\": \"tumblr.com\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"subdomains-lookup1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "rootDomain": "tumblr.com",
+                "numFound": "23310878",
+                "start": 1,
+                "numFoundExact": true,
+                "subdomains": [
+                    "zwcell.tumblr.com",
+                    "zwchichi.tumblr.com",
+                    "zwchr.tumblr.com",
+                    "zwcrll.tumblr.com",
+                    "zwd2.tumblr.com",
+                    "zwdexshlvffv-blog.tumblr.com",
+                    "zwdkrv3l9i.tumblr.com",
+                    "www.tumblr.com",
+                    "autumnalsoul.tumblr.com",
+                    "ms-mulberry.tumblr.com"
+                ]
+            }
+        }
+    ],
+    "standardized_name": "subdomains_lookup"
+}

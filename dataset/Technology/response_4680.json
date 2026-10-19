@@ -1,0 +1,26 @@
+{
+"user_query":"I want to stay updated on the latest news in the entertainment industry. Can you provide me with trending articles in English? Please retrieve ten articles at a time and exclude sources like variety.com and deadline.com.",
+"domain":"Technology",
+"TaskList": [
+{
+"id": 1,
+"description": "Fetch the latest trending articles in the entertainment industry in English.",
+"domain": "technology",
+"required_inputs": ["language=English", "category=entertainment"]
+},
+{
+"id": 2,
+"description": "Filter the retrieved articles to exclude those from variety.com and deadline.com.",
+"domain": "technology",
+"required_inputs": ["excluded_sources=[variety.com, deadline.com]"],
+"dependencies": [1]
+},
+{
+"id": 3,
+"description": "Limit the final list to ten articles and return them to the user.",
+"domain": "technology",
+"required_inputs": ["limit=10"],
+"dependencies": [2]
+}
+]
+}

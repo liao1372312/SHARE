@@ -1,0 +1,61 @@
+{
+    "product_id": "api_55699564-7f0c-4512-9b84-27c7735e69c4",
+    "tool_description": "Ermittlung der Postletzahl in Deutschland f\u00fcr eine Anschrift oder einen St\u00e4dtenamen.",
+    "home_url": "https://rapidapi.com/stromdao-stromdao-default/api/postleitzahl-zu-adresse/",
+    "name": "Postleitzahl zu Adresse",
+    "title": "Postleitzahl zu Adresse",
+    "pricing": "FREE",
+    "tool_name": "Postleitzahl zu Adresse",
+    "score": {
+        "avgServiceLevel": 4,
+        "avgLatency": 635,
+        "avgSuccessRate": 4,
+        "popularityScore": 0.3,
+        "__typename": "Score"
+    },
+    "host": "postleitzahl-zu-adresse.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "query",
+            "url": "https://postleitzahl-zu-adresse.p.rapidapi.com/query",
+            "description": "Suchanfrage. Zum Beispiel Anschrift, oder Ort oder POI.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "q",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "Kanzleramt Berlin "
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://postleitzahl-zu-adresse.p.rapidapi.com/query\"\nquerystring = {\"q\": \"Kanzleramt Berlin \"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"postleitzahl-zu-adresse.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://postleitzahl-zu-adresse.p.rapidapi.com/query\"\nquerystring = {\"q\": \"Kanzleramt Berlin \"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"postleitzahl-zu-adresse.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "q": "Kanzleramt Berlin ",
+                "zip": "10557",
+                "plz": "10557",
+                "postleitzahl": "10557"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "q": {
+                        "type": "string"
+                    },
+                    "zip": {
+                        "type": "string"
+                    },
+                    "plz": {
+                        "type": "string"
+                    },
+                    "postleitzahl": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    ],
+    "standardized_name": "postleitzahl_zu_adresse"
+}

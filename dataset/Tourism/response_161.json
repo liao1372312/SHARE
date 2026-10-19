@@ -1,0 +1,28 @@
+{
+"user_query":"I want to plan a weekend getaway with my friends and we need to find a resort in a scenic location.",
+"domain":"Tourism",
+"TaskList": [
+{
+"id": 1,
+"description": "Fetch the records of resorts in the Hill type with a limit of 5 in the Eastern region.",
+"domain": "tourism",
+"required_inputs": ["resort_type", "region", "limit"]
+},
+{
+"id": 2,
+"description": "Find the local timezone based on the latitude 40.7128 and longitude -74.0060.",
+"domain": "tourism",
+"required_inputs": ["latitude", "longitude"]
+},
+{
+"id": 3,
+"description": "Fetch the current local time based on the found timezone.",
+"domain": "tourism",
+"required_inputs": ["timezone"]
+}
+],
+"dependencies": {
+  "2": ["1"], 
+  "3": ["2"]
+}
+}

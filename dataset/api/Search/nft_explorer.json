@@ -1,0 +1,73 @@
+{
+    "product_id": "api_dbaa51f7-347c-4148-a92a-4890d51d4752",
+    "tool_description": "Gets all NFT collections that match a given metadata search in +20 networks and including testnets.",
+    "home_url": "https://rapidapi.com/saumarpe/api/nft-explorer/",
+    "name": "NFT Explorer",
+    "title": "NFT Explorer",
+    "pricing": "FREEMIUM",
+    "tool_name": "NFT Explorer",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 475,
+        "avgSuccessRate": 32,
+        "popularityScore": 8,
+        "__typename": "Score"
+    },
+    "host": "nft-explorer.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "NFTSearch",
+            "url": "https://nft-explorer.p.rapidapi.com/search",
+            "description": "Get NFTs that match a given metadata search in all widely used networks",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "filter",
+                    "type": "STRING",
+                    "description": "- To look into the entire metadata set the value to '*global*'. \n- To have a better response time you can look into a specific field like '*name*'\n",
+                    "default": "name"
+                },
+                {
+                    "name": "offset",
+                    "type": "NUMBER",
+                    "description": "Pagination index. Default is set to 0",
+                    "default": "0"
+                },
+                {
+                    "name": "chain",
+                    "type": "STRING",
+                    "description": "The chain to query:\n- eth\n- bsc\n- avalanche\n- polygon\n- 0x1\n- kovan\n- avalanche testnet\n- bsc testnet\n- mumbai\n- ropsten\n- 0x3\n- 0x4\n- goerli",
+                    "default": "eth"
+                },
+                {
+                    "name": "q",
+                    "type": "STRING",
+                    "description": "Term to look for.",
+                    "default": "ape"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "from_block",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "to_block",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://nft-explorer.p.rapidapi.com/search\"\nquerystring = {\"filter\": \"name\", \"from_block\": \"\", \"to_block\": \"\", \"offset\": \"0\", \"chain\": \"eth\", \"q\": \"ape\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"nft-explorer.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://nft-explorer.p.rapidapi.com/search\"\nquerystring = {\"filter\": \"name\", \"from_block\": \"\", \"to_block\": \"\", \"offset\": \"0\", \"chain\": \"eth\", \"q\": \"ape\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"nft-explorer.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "from_block must not be greater than 9007199254740991, from_block must not be less than 0, to_block must not be greater than 9007199254740991, to_block must not be less than 1"
+            },
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "nft_explorer"
+}

@@ -1,0 +1,78 @@
+{
+    "product_id": "api_a60e7176-4ae8-44d2-b581-86e682345f85",
+    "tool_description": "Returns the list of all optimal solutions ( QTM not HTM ) for a given pocket cube ( 2x2x2 ) position.",
+    "home_url": "https://rapidapi.com/pavankteja/api/pocket-cube-solver1/",
+    "name": "Pocket Cube Solver",
+    "title": "Pocket Cube Solver",
+    "pricing": "FREE",
+    "tool_name": "Pocket Cube Solver",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 1556,
+        "avgSuccessRate": 100,
+        "popularityScore": 7.4,
+        "__typename": "Score"
+    },
+    "host": "pocket-cube-solver1.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "getRandomSolution",
+            "url": "https://pocket-cube-solver1.p.rapidapi.com/GBWGYOGYRYOORWROBRWYGWBB/random",
+            "description": "Returns json data consisting of a random optimal solution of a given cube position.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "position",
+                    "type": "string",
+                    "description": "",
+                    "default": "GBWGYOGYRYOORWROBRWYGWBB"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://pocket-cube-solver1.p.rapidapi.com/GBWGYOGYRYOORWROBRWYGWBB/random\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"pocket-cube-solver1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://pocket-cube-solver1.p.rapidapi.com/{position}/random\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"pocket-cube-solver1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "position": "GBWGYOGYRYOORWROBRWYGWBB",
+                "depth": 11,
+                "sol": "F R U'F'U R'F'U R'U R'"
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "getAllSolutions",
+            "url": "https://pocket-cube-solver1.p.rapidapi.com/GBWGYOGYRYOORWROBRWYGWBB/all",
+            "description": "Returns json data consisting of all the solutions of a given cube position.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "position",
+                    "type": "string",
+                    "description": "",
+                    "default": "GBWGYOGYRYOORWROBRWYGWBB"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://pocket-cube-solver1.p.rapidapi.com/GBWGYOGYRYOORWROBRWYGWBB/all\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"pocket-cube-solver1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://pocket-cube-solver1.p.rapidapi.com/{position}/all\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"pocket-cube-solver1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "position": "GBWGYOGYRYOORWROBRWYGWBB",
+                "depth": 11,
+                "sols": [
+                    "R U'R U F'U F'R U F'R'",
+                    "R F'R F'U'R R U R'U F'",
+                    "R F'R F'U'R'R'U R'U F'",
+                    "U U R U'R'U R R F'R F'",
+                    "U U R U'R'U R'R'F'R F'",
+                    "U'U'R U'R'U R R F'R F'",
+                    "U'U'R U'R'U R'R'F'R F'",
+                    "F R U'F'U R'F'U R'U R'",
+                    "F'R'F U R'U F U'R U R'"
+                ]
+            },
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "pocket_cube_solver"
+}

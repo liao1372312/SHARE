@@ -1,0 +1,28 @@
+{
+  "user_query": "I am organizing a science-themed event for my company and need some jokes to entertain the attendees. Fetch a random manatee joke and a joke from the Jokes API, also provide some interesting manatee facts.",
+  "domain": "entertainment",
+  "TaskList": [
+    {
+      "id": 1,
+      "description": "调用API获取随机的海牛笑话",
+      "domain": "entertainment",
+      "required_inputs": ["joke_type: random", "animal: manatee"]
+    },
+    {
+      "id": 2,
+      "description": "调用Jokes API获取特定笑话",
+      "domain": "entertainment",
+      "required_inputs": ["category: science"]
+    },
+    {
+      "id": 3,
+      "description": "调用海牛笑话API获取海牛的有趣事实",
+      "domain": "entertainment",
+      "required_inputs": ["joke_type: fact", "animal: manatee"]
+    }
+  ],
+  "dependencies": [
+    {"from": 1, "to": 2},
+    {"from": 1, "to": 3}
+  ]
+}

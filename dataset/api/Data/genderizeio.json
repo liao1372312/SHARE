@@ -1,0 +1,61 @@
+{
+    "product_id": "api_f5e5c05b-12c2-48eb-a241-2a301a95fb07",
+    "tool_description": "Predict the gender of a person based on their name.",
+    "home_url": "https://rapidapi.com/AmirFischer/api/genderizeio/",
+    "name": "Genderizeio",
+    "title": "Genderizeio",
+    "pricing": "FREE",
+    "tool_name": "Genderizeio",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 1083,
+        "avgSuccessRate": 100,
+        "popularityScore": 7.1,
+        "__typename": "Score"
+    },
+    "host": "genderizeio.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "genderize",
+            "url": "https://genderizeio.p.rapidapi.com/",
+            "description": "Predict the gender of a person based on their name.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "name",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "amir"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://genderizeio.p.rapidapi.com/\"\nquerystring = {\"name\": \"amir\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"genderizeio.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://genderizeio.p.rapidapi.com/\"\nquerystring = {\"name\": \"amir\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"genderizeio.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "count": 151290,
+                "gender": "male",
+                "name": "amir",
+                "probability": 1.0
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "gender": {
+                        "type": "string"
+                    },
+                    "probability": {
+                        "type": "float"
+                    },
+                    "count": {
+                        "type": "float"
+                    }
+                }
+            }
+        }
+    ],
+    "standardized_name": "genderizeio"
+}

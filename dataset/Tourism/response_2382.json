@@ -1,0 +1,26 @@
+{
+"user_query":"I am planning a family vacation and would like to gather information about the user's document status summary for all the users in the system. Additionally, I need to get all the collections by the user and their corresponding images.",
+"domain":"Tourism",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Gather the user's document status summary for all users in the system.",
+        "domain": "tourism",
+        "required_inputs": ["user_id"]
+    },
+    {
+        "id": 2,
+        "description": "Retrieve all collections related to the user.",
+        "domain": "tourism",
+        "required_inputs": ["user_id"],
+        "dependencies": [1]
+    },
+    {
+        "id": 3,
+        "description": "Fetch corresponding images for the retrieved collections.",
+        "domain": "tourism",
+        "required_inputs": ["collection_ids"],
+        "dependencies": [2]
+    }
+]
+}

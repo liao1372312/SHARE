@@ -1,0 +1,1530 @@
+{
+    "product_id": "api_877278be-d472-4187-8a25-007191b7e15b",
+    "tool_description": "Our ML algorithm finds the most similar firms to any company. Find 10x more companies 10x faster!\n\nThe API will return up to 50 similar companies for any company domain that you provide. Data points provided for every company include: Name, # of employees, Revenue in USD, Revenue Growth, Description, Logo image URL, HQ Location, Country, and Linkedin URL.\n\nUse this API to power your web application with \"related companies\" sections, or use it to leverage internal databases with new data points.",
+    "home_url": "https://rapidapi.com/ComparableCompanies/api/comparable-companies/",
+    "name": "Comparable Companies",
+    "title": "Comparable Companies",
+    "pricing": "FREEMIUM",
+    "tool_name": "Comparable Companies",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 3411,
+        "avgSuccessRate": 96,
+        "popularityScore": 8.8,
+        "__typename": "Score"
+    },
+    "host": "comparable-companies.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "/logo",
+            "url": "https://comparable-companies.p.rapidapi.com/logo",
+            "description": "The Logo API is used to show company logos in the frontend. The API link is already included in results returned by the Similar companies API.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "domain",
+                    "type": "STRING",
+                    "description": "(Required) The company domain for which you want to retrieve a logo for",
+                    "default": "unilever.com"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://comparable-companies.p.rapidapi.com/logo\"\nquerystring = {\"domain\": \"unilever.com\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"comparable-companies.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://comparable-companies.p.rapidapi.com/logo\"\nquerystring = {\"domain\": \"unilever.com\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"comparable-companies.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "This endpoint is disabled for your subscription"
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "/similar",
+            "url": "https://comparable-companies.p.rapidapi.com/similar",
+            "description": "The key feature of the comparable-companies API. This endpoint will return a list of companies that are similar to the one that has been provided. The endpoint will also return information about the queried domain through the variable \"frontend_company_info\".\n\nOccasionally, the algorithm finds new information that will take longer to crawl and process. In these cases, it will return results with the \"further_crawling\" variable set to true, indicating that we will have better results available in the next 10-15 sec. There is a possibility to establish a WebSocket connection through the \"connectionID\" parameter to be notified of these new results. This is not covered in this documentation, but our engineers will happily assist you with it.\n\nQuerying the same domain multiple times will only cost you a single search credit.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "domain",
+                    "type": "STRING",
+                    "description": "(Required) The company domain for which you want to look up similar companies for (e.g. unilever.com). Providing a URL works as well, we will then parse the domain on our end.",
+                    "default": "unilever.com"
+                },
+                {
+                    "name": "limit",
+                    "type": "NUMBER",
+                    "description": "(Optional) Max number of results to return. A lower limit leads to faster response times. Results beyond that limit are included in the response field \\\"next_companies\\\" which only shows their domain name and similarity percentage.",
+                    "default": 50
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://comparable-companies.p.rapidapi.com/similar\"\nquerystring = {\"domain\": \"unilever.com\", \"limit\": 50}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"comparable-companies.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://comparable-companies.p.rapidapi.com/similar\"\nquerystring = {\"domain\": \"unilever.com\", \"limit\": 50}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"comparable-companies.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "status": 200,
+                "errors": null,
+                "query": "unilever.com",
+                "plan": "Pro",
+                "queries_left": 999999,
+                "total_queries": 1000000,
+                "companies": [
+                    {
+                        "domain_name": "nestle.com",
+                        "name": "Nestl\u00e9",
+                        "similarity": 100,
+                        "description": "As the world\u2019s largest food and beverage company we are driven by a simple aim: unlocking the power of food to enhance quality of life for everyone, today and for generations to come. To deliver on this, we serve with passion, with a spirit of excellence, offering products and services for all stages of life, every moment of the day, helping people care for themselves and their families. Our culture is based on our values rooted in respect: respect for ourselves, respect for others, respect for diversity and respect for the future. We can trace our origin back to 1866, when the first European condensed milk factory was opened in Cham, Switzerland, by the Anglo-Swiss Condensed Milk Company. One year later, Henri Nestl\u00e9, a trained pharmacist, launched one of the world\u2019s first prepared infant cereals \u2018Farine lact\u00e9e\u2019 in Vevey, Switzerland. Today, we employ around 273,000 people and have factories or operations in almost every country in the world. With our headquarters still based in the Swiss town of Vevey, we had sales of CHF 84.3 billion in 2020. Our portfolio covers almost every food and beverage category \u2013offering products and services for all stages of life, every moment of the day, helping people care for themselves and their families.",
+                        "country": "ch",
+                        "city": "Vevey",
+                        "result_url": "https://www.nestle.com",
+                        "lkn_url": "nestle-s-a-",
+                        "industry": "Food and Beverage Services",
+                        "sector": "Consumer Staples",
+                        "stock_ticker": "0QR4.IL",
+                        "employees": "276,000",
+                        "revenue": "$92bn",
+                        "growth": "-1.6%",
+                        "growth_trend": "down",
+                        "attrib": null,
+                        "img_link": "https://api.comparable-companies.com/v1/logo?domain=nestle.com",
+                        "website": "nestle.com",
+                        "rating_points": 79.5
+                    },
+                    {
+                        "domain_name": "loreal.com",
+                        "name": "L'Or\u00e9al",
+                        "similarity": 100,
+                        "description": "Leading the world in beauty and pioneering the world of beauty tech; we are 86K employees across 150 countries on five continents. Our 36 international brands are divided into four unique Divisions: Luxe, Consumer Products, Active Cosmetics, and Professional Products. Our 36 international brands include Kiehl\u2019s, Lanc\u00f4me, Giorgio Armani Beauty, Yves Saint Laurent Beaut\u00e9, Ralph Lauren, Clarisonic, Maybelline New York, Essie, K\u00e9rastase, IT Cosmetics, Prada Beauty, Biotherm, Shu Uemura, Viktor&Rolf, Maison Martin Margiela, Urban Decay, Redken, Vichy, La Roche-Posay, Diesel, Garnier, L\u2019Or\u00e9al Paris, and more. For more than a century, L\u2019Or\u00e9al has devoted itself solely to one business: beauty. We want to bring beauty to all people. Our is to win over another one billion consumers around the world by innovating and creating cosmetic and skincare products that meet the infinite diversity of their beauty needs and desires. That\u2019s about us\u2026 now what about you? You are driven and up for a challenge! You\u2019re passionate about putting your best foot forward, but you\u2019re not afraid to fail either. You love to learn, grow and make an impact on the world. You can be an intern, or at a senior level position, we\u2019re always looking for new people to join our teams. If you are ready to take charge of your career and join us, you\u2019re one click away: https://careers.loreal.com/en_US/content Interested about our quest to the next billion consumers, follow us here to get the insider scoop on our business, culture, and tips on how to join us to shape the future of beauty. Freedom to go beyond, that\u2019s the beauty of L\u2019Or\u00e9al.",
+                        "country": "fr",
+                        "city": "Paris",
+                        "result_url": "https://www.loreal.com/en",
+                        "lkn_url": "lor%C3%A9al",
+                        "industry": "Cosmetics",
+                        "sector": "Consumer Staples",
+                        "stock_ticker": "LRLCY",
+                        "employees": "85,412",
+                        "revenue": "$34bn",
+                        "growth": "6.2%",
+                        "growth_trend": "up",
+                        "attrib": null,
+                        "img_link": "https://api.comparable-companies.com/v1/logo?domain=loreal.com",
+                        "website": "loreal.com",
+                        "rating_points": 72.83333333333333
+                    },
+                    {
+                        "domain_name": "pepsico.com",
+                        "name": "PepsiCo",
+                        "website": "pepsico.com",
+                        "description": "PepsiCo, Inc. is an American multinational food, snack, and beverage corporation headquartered in Harrison, New York, in the hamlet of Purchase. PepsiCo's business encompasses all aspects of the food and beverage market. It oversees the manufacturing, distribution, and marketing of its products.",
+                        "country": "us",
+                        "city": "Purchase, New York",
+                        "result_url": "https://www.pepsico.com",
+                        "lkn_url": "pepsico",
+                        "industry": "Food & Beverages",
+                        "sector": "Consumer Staples",
+                        "stock_ticker": "PEP.BA",
+                        "employees": "309,000",
+                        "revenue": "$83bn",
+                        "growth": "7.1%",
+                        "growth_trend": "up",
+                        "attrib": null,
+                        "img_link": "https://api.comparable-companies.com/v1/logo?domain=pepsico.com",
+                        "similarity": 100,
+                        "rating_points": 67.0
+                    },
+                    {
+                        "domain_name": "coca-colacompany.com",
+                        "name": "The Coca-Cola Company",
+                        "website": "coca-colacompany.com",
+                        "description": "The Coca-Cola Company (NYSE: KO) is a total beverage company, offering over 500 brands in more than 200 countries and territories. In addition to the company\u2019s Coca-Cola brands, our portfolio includes some of the world\u2019s most valuable beverage brands, such as AdeS soy-based beverages, Ayataka green tea, Dasani waters, Del Valle juices and nectars, Fanta, Georgia coffee, Gold Peak teas and coffees, Honest Tea, innocent smoothies and juices, Minute Maid juices, Powerade sports drinks, Simply juices, smartwater, Sprite, vitaminwater and ZICO coconut water.",
+                        "country": "us",
+                        "city": "Atlanta, GA",
+                        "result_url": "https://www.coca-colacompany.com",
+                        "lkn_url": "the-coca-cola-company",
+                        "industry": "Food and Beverage Services",
+                        "sector": "Consumer Staples",
+                        "stock_ticker": "KO.BA",
+                        "employees": "79,000",
+                        "revenue": "$40bn",
+                        "growth": "4.1%",
+                        "growth_trend": "up",
+                        "attrib": null,
+                        "img_link": "https://api.comparable-companies.com/v1/logo?domain=coca-colacompany.com",
+                        "similarity": 100,
+                        "rating_points": 67.0
+                    },
+                    {
+                        "domain_name": "pg.com",
+                        "name": "Procter & Gamble",
+                        "website": "pg.com",
+                        "description": "our goal is to use every opportunity we have\u2014no matter how small\u2014to set change in motion. to be a force for good and a force for growth. for you, for the world, and for every generation to come.",
+                        "country": "us",
+                        "city": "Cincinnati, Ohio",
+                        "result_url": "https://us.pg.com",
+                        "lkn_url": "procter-and-gamble",
+                        "industry": "Consumer Goods",
+                        "sector": "Consumer Staples",
+                        "stock_ticker": "PG.BA",
+                        "employees": "101,000",
+                        "revenue": "$80bn",
+                        "growth": "4.4%",
+                        "growth_trend": "up",
+                        "attrib": null,
+                        "img_link": "https://api.comparable-companies.com/v1/logo?domain=pg.com",
+                        "similarity": 100,
+                        "rating_points": 48
+                    },
+                    {
+                        "domain_name": "jnj.com",
+                        "name": "Johnson & Johnson",
+                        "website": "jnj.com",
+                        "description": "for over 130 years, johnson & johnson has maintained a tradition of quality and innovation. learn about the products, people and history that make up our company.",
+                        "country": "us",
+                        "city": "New Brunswick, NJ",
+                        "result_url": "https://www.jnj.com",
+                        "lkn_url": "johnson-&-johnson",
+                        "industry": "Hospital & Health Care",
+                        "sector": "Health Care",
+                        "stock_ticker": "JNJ.BA",
+                        "employees": "144,000",
+                        "revenue": "$98bn",
+                        "growth": "3.5%",
+                        "growth_trend": "up",
+                        "attrib": null,
+                        "img_link": "https://api.comparable-companies.com/v1/logo?domain=jnj.com",
+                        "similarity": 100,
+                        "rating_points": 48
+                    },
+                    {
+                        "domain_name": "goo.gle",
+                        "name": "Google",
+                        "website": "goo.gle",
+                        "description": "A problem isn't truly solved until it's solved for all. Googlers build products that help create opportunities for everyone, whether down the street or across the globe. Bring your insight, imagination and a healthy disregard for the impossible.",
+                        "country": "us",
+                        "city": "Mountain View, CA",
+                        "result_url": "https://www.google.com",
+                        "lkn_url": "google",
+                        "industry": "Internet",
+                        "sector": "Information Technology",
+                        "stock_ticker": null,
+                        "employees": "257,167",
+                        "revenue": "$22bn",
+                        "growth": null,
+                        "attrib": null,
+                        "img_link": "https://api.comparable-companies.com/v1/logo?domain=goo.gle",
+                        "similarity": 100,
+                        "rating_points": 43
+                    },
+                    {
+                        "domain_name": "amazon.com",
+                        "name": "Amazon",
+                        "website": "amazon.com",
+                        "description": "Amazon.com, Inc. is an American multinational technology company which focuses on e-commerce, cloud computing, digital streaming, and artificial intelligence. It is one of the Big Five companies in the U.S. information technology industry, along with Google, Apple, Meta, and Microsoft.",
+                        "country": "us",
+                        "city": "Seattle, WA",
+                        "result_url": "https://www.amazon.com",
+                        "lkn_url": "amazon",
+                        "industry": "Publishing",
+                        "sector": "Consumer Discretionary",
+                        "stock_ticker": "AMZN.BA",
+                        "employees": "1,622,000",
+                        "revenue": "$495bn",
+                        "growth": "26.4%",
+                        "growth_trend": "up",
+                        "attrib": null,
+                        "img_link": "https://api.comparable-companies.com/v1/logo?domain=amazon.com",
+                        "similarity": 100,
+                        "rating_points": 39
+                    },
+                    {
+                        "domain_name": "generalmills.com",
+                        "name": "General Mills",
+                        "similarity": 100,
+                        "description": "We exist to make food the world loves. But we do more than that. General Mills is a place that prioritizes being a force for good, a place to expand learning, explore new perspectives and reimagine new possibilities, every day.",
+                        "country": "us",
+                        "city": "Minneapolis, Minnesota",
+                        "result_url": "https://www.generalmills.com",
+                        "lkn_url": "general-mills",
+                        "industry": "Consumer Goods",
+                        "sector": "Consumer Staples",
+                        "stock_ticker": "G1MI34.SA",
+                        "employees": "35,000",
+                        "revenue": "$19bn",
+                        "growth": "4.8%",
+                        "growth_trend": "up",
+                        "attrib": null,
+                        "img_link": "https://api.comparable-companies.com/v1/logo?domain=generalmills.com",
+                        "website": "generalmills.com",
+                        "rating_points": 37.0
+                    },
+                    {
+                        "domain_name": "mars.com",
+                        "name": "Mars",
+                        "similarity": 100,
+                        "description": "Mars is the fourth planet from the Sun and the second-smallest planet in the Solar System, being larger than only Mercury. In English, Mars carries the name of the Roman god of war and is often referred to as the \"Red Planet\".",
+                        "country": "us",
+                        "city": "McLean, Virginia",
+                        "result_url": "https://www.mars.com",
+                        "lkn_url": "mars",
+                        "industry": "Consumer Goods",
+                        "sector": "Consumer Staples",
+                        "stock_ticker": null,
+                        "employees": "44,931",
+                        "revenue": "$43bn",
+                        "growth": null,
+                        "attrib": null,
+                        "img_link": "https://api.comparable-companies.com/v1/logo?domain=mars.com",
+                        "website": "mars.com",
+                        "rating_points": 33.0
+                    },
+                    {
+                        "domain_name": "danone.com",
+                        "name": "Danone",
+                        "website": "danone.com",
+                        "description": "The Danone Ecosystem Fund co-creates inclusive business solutions that answer local challenges through the professional empowerment of vulnerable stakeholders in territories where Danone operates. Since 2009, the Fund has developed and helped finance 90 innovative projects across 30+ countries and impacting the lives of 4.",
+                        "country": "fr",
+                        "city": "Paris",
+                        "result_url": "https://www.danone.com",
+                        "lkn_url": "danone",
+                        "industry": "Food Production",
+                        "sector": "Industrials",
+                        "stock_ticker": "BNN.MX",
+                        "employees": "98,105",
+                        "revenue": "$25bn",
+                        "growth": "-0.5%",
+                        "growth_trend": "neutral",
+                        "attrib": null,
+                        "img_link": "https://api.comparable-companies.com/v1/logo?domain=danone.com",
+                        "similarity": 100,
+                        "rating_points": 32
+                    },
+                    {
+                        "domain_name": "unileverusa.com",
+                        "name": "Unilever",
+                        "similarity": 100,
+                        "description": "Be part of the world\u2019s most successful, purpose-led business. Work with brands that are well-loved around the world, that improve the lives of our consumers and the communities around us. We promote innovation, big and small, to make our business win and grow; and we believe in business as a force for good. Unleash your curiosity, challenge ideas and disrupt processes; use your energy to make this happen. Our brilliant business leaders and colleagues provide mentorship and inspiration, so you can be at your best. Our portfolio ranges from nutritionally balanced foods to indulgent ice creams, affordable soaps, luxurious shampoos and everyday household care products. We produce world-leading brands including Lipton, Knorr, Dove, Axe, Hellmann\u2019s and Omo, alongside trusted local names and innovative-forward thinking brands like Ben & Jerry\u2019s, The Dollar Shave Club and Dermalogica. Every individual here can bring their purpose to life through their work. Join us and you\u2019ll be surrounded by inspiring leaders and supportive peers. Among them, you\u2019ll channel your purpose, bring fresh ideas to the table, and simply be you. As you work to make a real impact on the business and the world, we\u2019ll work to help you become a better you.",
+                        "country": "gb",
+                        "city": "Blackfriars, London",
+                        "result_url": "https://www.unileverusa.com",
+                        "lkn_url": "unilever",
+                        "industry": "Consumer Goods",
+                        "sector": "Consumer Staples",
+                        "stock_ticker": "ULVR.L",
+                        "employees": "148,012",
+                        "revenue": "$39,545bn",
+                        "growth": "-1.8%",
+                        "growth_trend": "down",
+                        "attrib": null,
+                        "img_link": "https://api.comparable-companies.com/v1/logo?domain=unileverusa.com",
+                        "website": "unileverusa.com",
+                        "rating_points": 23
+                    },
+                    {
+                        "domain_name": "hul.co.in",
+                        "name": "Unilever",
+                        "similarity": 100,
+                        "description": "Be part of the world\u2019s most successful, purpose-led business. Work with brands that are well-loved around the world, that improve the lives of our consumers and the communities around us. We promote innovation, big and small, to make our business win and grow; and we believe in business as a force for good. Unleash your curiosity, challenge ideas and disrupt processes; use your energy to make this happen. Our brilliant business leaders and colleagues provide mentorship and inspiration, so you can be at your best. Our portfolio ranges from nutritionally balanced foods to indulgent ice creams, affordable soaps, luxurious shampoos and everyday household care products. We produce world-leading brands including Lipton, Knorr, Dove, Axe, Hellmann\u2019s and Omo, alongside trusted local names and innovative-forward thinking brands like Ben & Jerry\u2019s, The Dollar Shave Club and Dermalogica. Every individual here can bring their purpose to life through their work. Join us and you\u2019ll be surrounded by inspiring leaders and supportive peers. Among them, you\u2019ll channel your purpose, bring fresh ideas to the table, and simply be you. As you work to make a real impact on the business and the world, we\u2019ll work to help you become a better you.",
+                        "country": "gb",
+                        "city": "Blackfriars, London",
+                        "result_url": "https://www.hul.co.in",
+                        "lkn_url": "unilever",
+                        "industry": "Consumer Goods",
+                        "sector": "Consumer Staples",
+                        "stock_ticker": "ULVR.L",
+                        "employees": "148,012",
+                        "revenue": "$39,545bn",
+                        "growth": "-1.8%",
+                        "growth_trend": "down",
+                        "attrib": null,
+                        "img_link": "https://api.comparable-companies.com/v1/logo?domain=hul.co.in",
+                        "website": "hul.co.in",
+                        "rating_points": 20.333333333333332
+                    },
+                    {
+                        "domain_name": "reckitt.com",
+                        "name": "Reckitt",
+                        "similarity": 100,
+                        "description": "Every day, in everything we do, our purpose is to protect, heal and nurture in the relentless pursuit of a cleaner, healthier world. And we have a fight on our hands. A fight to make access to the highest quality hygiene, wellness and nourishment a right and not a privilege.",
+                        "country": "gb",
+                        "city": "Slough, Berkshire",
+                        "result_url": "https://www.reckitt.com",
+                        "lkn_url": "reckitt",
+                        "industry": "Consumer Goods",
+                        "sector": "Consumer Staples",
+                        "stock_ticker": "RKT.L",
+                        "employees": "40,000",
+                        "revenue": "$16bn",
+                        "growth": "1.7%",
+                        "growth_trend": "up",
+                        "attrib": null,
+                        "img_link": "https://api.comparable-companies.com/v1/logo?domain=reckitt.com",
+                        "website": "reckitt.com",
+                        "rating_points": 19
+                    },
+                    {
+                        "domain_name": "rb.com",
+                        "name": "Reckitt",
+                        "similarity": 100,
+                        "description": "Every day, in everything we do, our purpose is to protect, heal and nurture in the relentless pursuit of a cleaner, healthier world. And we have a fight on our hands. A fight to make access to the highest quality hygiene, wellness and nourishment a right and not a privilege. Each of our products is designed to do exactly this. Our well-loved brands have been making a difference to people\u2019s daily lives around the world for more than 200 years. Brands including: Durex, Dettol, Enfamil, Nurofen, Strepsils, Gaviscon, Mucinex, Nutramigen, Lysol, Harpic, Cillit Bang, Finish and Vanish. By 2030, our ambition is to reach half of the world, every year. We\u2019re a growing global community of over 43,000 people on a journey of transformation and sustainable growth. Together, our success will continue to positively impact communities everywhere, for a healthier planet and a fairer society. Want to learn more about us? Visit reckitt.com",
+                        "country": "gb",
+                        "city": "Slough, Berkshire",
+                        "result_url": "https://www.reckitt.com",
+                        "lkn_url": "reckitt",
+                        "industry": "Consumer Goods",
+                        "sector": "Consumer Staples",
+                        "stock_ticker": "RKT.L",
+                        "employees": "40,000",
+                        "revenue": "$16bn",
+                        "growth": "1.7%",
+                        "growth_trend": "up",
+                        "attrib": null,
+                        "img_link": "https://api.comparable-companies.com/v1/logo?domain=rb.com",
+                        "website": "rb.com",
+                        "rating_points": 19
+                    },
+                    {
+                        "domain_name": "ibm.com",
+                        "name": "IBM",
+                        "website": "ibm.com",
+                        "description": "for more than a century ibm has been dedicated to every client's success and to creating innovations that matter for the world",
+                        "country": "us",
+                        "city": "Armonk, New York, NY",
+                        "result_url": "https://www.ibm.com/us-en/?ar=1",
+                        "lkn_url": "ibm",
+                        "industry": "IT Services and IT Consulting",
+                        "sector": "Information Technology",
+                        "stock_ticker": "IBM.BA",
+                        "employees": "282,100",
+                        "revenue": "$60bn",
+                        "growth": "-10.3%",
+                        "growth_trend": "down",
+                        "attrib": null,
+                        "img_link": "https://api.comparable-companies.com/v1/logo?domain=ibm.com",
+                        "similarity": 100,
+                        "rating_points": 17
+                    },
+                    {
+                        "domain_name": "wpp.com",
+                        "name": "WPP",
+                        "similarity": 100,
+                        "description": "WPP plc is a British multinational communications, advertising, public relations, technology, and commerce holding company headquartered in London, England. It is considered the world's largest advertising company, as of 2019.",
+                        "country": "gb",
+                        "city": "London, London",
+                        "result_url": "https://www.wpp.com",
+                        "lkn_url": "wpp",
+                        "industry": "Marketing and Advertising",
+                        "sector": "Professional Services",
+                        "stock_ticker": "WPP.L",
+                        "employees": "109,382",
+                        "revenue": "$15bn",
+                        "growth": "-0.6%",
+                        "growth_trend": "neutral",
+                        "attrib": null,
+                        "img_link": "https://api.comparable-companies.com/v1/logo?domain=wpp.com",
+                        "website": "wpp.com",
+                        "rating_points": 15
+                    },
+                    {
+                        "domain_name": "mondelezinternational.com",
+                        "name": "Mondel\u0113z International",
+                        "similarity": 100,
+                        "description": "Mondel\u0113z International, Inc. (NASDAQ: MDLZ) is an American multinational confectionery, food, and beverage company based in Illinois which employs approximately 80,000 individuals around the world. Our Purpose Our purpose is to empower people to snack right.",
+                        "country": "us",
+                        "city": "Greater Chicago Area, IL",
+                        "result_url": "https://www.mondelezinternational.com",
+                        "lkn_url": "mondelezinternational",
+                        "industry": "Food Production",
+                        "sector": "Industrials",
+                        "stock_ticker": "MDLZ.MX",
+                        "employees": "79,000",
+                        "revenue": "$30bn",
+                        "growth": "3.5%",
+                        "growth_trend": "up",
+                        "attrib": null,
+                        "img_link": "https://api.comparable-companies.com/v1/logo?domain=mondelezinternational.com",
+                        "website": "mondelezinternational.com",
+                        "rating_points": 13.5
+                    },
+                    {
+                        "domain_name": "pginvestor.com",
+                        "name": "Procter & Gamble",
+                        "description": "P&G was founded over 180 years ago as a soap and candle company. Today, we\u2019re the world\u2019s largest consumer goods company and home to iconic, trusted brands, including Always\u00ae, Charmin\u00ae, Braun\u00ae, Fairy\u00ae, Febreze\u00ae, Gillette\u00ae, Head & Shoulders\u00ae, Oral B\u00ae, Pantene\u00ae, Pampers\u00ae, Tide\u00ae, and Vicks\u00ae. The design, development, growth and success of these products\u2014and many more\u2014is thanks to the innovative and insightful minds of our people. From Day 1, you\u2019ll help make everyday life easier for our 5 billion consumers through billion dollar brands. With our large global footprint, there are many opportunities to work with P&G in multiple locations. We offer opportunities in approximately 70 countries and continually aim to attract, reward and advance the finest people in the world. As a \"build from within\" organization, we see 95% of our people start at an entry level and progress through the organization. Here, we want you to get your career off to a fast start. That's why we don't have any rotational development programs or gradual ramping-up periods: you\u2019ll be able\u2014and encouraged\u2014to dive right in from day 1. Join us and help make life better through meaningful work that makes an impact from Day 1.",
+                        "country": "us",
+                        "city": "Cincinnati, Ohio",
+                        "result_url": "https://pginvestor.com",
+                        "lkn_url": "procter-and-gamble",
+                        "industry": "Consumer Goods",
+                        "sector": "Consumer Staples",
+                        "stock_ticker": "PG.BA",
+                        "employees": "101,000",
+                        "revenue": "$80bn",
+                        "growth": "4.4%",
+                        "growth_trend": "up",
+                        "attrib": null,
+                        "img_link": "https://api.comparable-companies.com/v1/logo?domain=pginvestor.com",
+                        "website": "pginvestor.com",
+                        "similarity": 100,
+                        "rating_points": 12.333333333333332
+                    },
+                    {
+                        "domain_name": "campaignlive.co.uk",
+                        "name": "Campaign Jobs (Marketing, Creative & Media Careers)",
+                        "similarity": 100,
+                        "description": "Campaign Jobs is the number one destination for industry professionals looking for their next career move in all aspects of marketing, digital and ad-land. If you are looking for your next challenge, you can browse all of the latest vacancies from leading brands in the industry.",
+                        "country": "gb",
+                        "city": "Twickenham, England",
+                        "result_url": "https://www.campaignlive.co.uk",
+                        "lkn_url": "campaign-jobs-marketing-creative-media-careers",
+                        "industry": "Marketing and Advertising",
+                        "sector": "Professional Services",
+                        "stock_ticker": null,
+                        "employees": null,
+                        "revenue": "$10m-100m",
+                        "growth": null,
+                        "attrib": null,
+                        "img_link": "https://api.comparable-companies.com/v1/logo?domain=campaignlive.co.uk",
+                        "website": "campaignlive.co.uk",
+                        "rating_points": 12
+                    },
+                    {
+                        "domain_name": "thedrum.com",
+                        "name": "The Drum",
+                        "similarity": 100,
+                        "description": "The Drum covers modern marketing, agency business, creativity & the future of media. We understand the industry's challenges and have your back. Problem Solved. Find out what's on at The Drum \ud83d\udc47",
+                        "country": "gb",
+                        "city": "London, England",
+                        "result_url": "https://www.thedrum.com",
+                        "lkn_url": "thedrum",
+                        "industry": "Publishing",
+                        "sector": "Consumer Discretionary",
+                        "stock_ticker": null,
+                        "employees": "145",
+                        "revenue": "$25m",
+                        "growth": "776.4%",
+                        "growth_trend": "up",
+                        "attrib": null,
+                        "img_link": "https://api.comparable-companies.com/v1/logo?domain=thedrum.com",
+                        "website": "thedrum.com",
+                        "rating_points": 12
+                    },
+                    {
+                        "domain_name": "marketingweek.com",
+                        "name": "Marketing Week",
+                        "similarity": 100,
+                        "description": "Marketing Week is a media brand that sits at the heart of the senior marketing community. Founded in 1978, we provide news, trends, intelligence, jobs and networking opportunities to the most senior marketing professionals.",
+                        "country": "gb",
+                        "city": "London",
+                        "result_url": "https://www.marketingweek.com",
+                        "lkn_url": "marketing-week",
+                        "industry": "Publishing",
+                        "sector": "Consumer Discretionary",
+                        "stock_ticker": null,
+                        "employees": "251",
+                        "revenue": "$21m",
+                        "growth": null,
+                        "attrib": null,
+                        "img_link": "https://api.comparable-companies.com/v1/logo?domain=marketingweek.com",
+                        "website": "marketingweek.com",
+                        "rating_points": 12
+                    },
+                    {
+                        "domain_name": "campaignlive.com",
+                        "name": "Campaign Jobs (Marketing, Creative & Media Careers)",
+                        "similarity": 100,
+                        "description": "Exploring bold, world changing ideas at the intersection of marketing, brands, advertising, and technology. Join the conversation here and also on: www.campaignlive.com/ www.facebook.com/CampaignUS www.twitter.com/Campaignliveus",
+                        "country": "gb",
+                        "city": "Twickenham, England",
+                        "result_url": "https://campaignlive.com",
+                        "lkn_url": "campaign-jobs-marketing-creative-media-careers",
+                        "industry": "Marketing and Advertising",
+                        "sector": "Professional Services",
+                        "stock_ticker": null,
+                        "employees": null,
+                        "revenue": "$1m-10m",
+                        "growth": null,
+                        "attrib": null,
+                        "img_link": "https://api.comparable-companies.com/v1/logo?domain=campaignlive.com",
+                        "website": "campaignlive.com",
+                        "rating_points": 12
+                    },
+                    {
+                        "domain_name": "retaildetail.eu",
+                        "name": "RetailDetail",
+                        "similarity": 100,
+                        "description": "Retailhub is the largest retail knowledge and inspiration center in the Benelux, 1250m\u00b2 of innovation and the place to be for every retailer professional. Retailers, brand manufacturers and service providers will get the chance to be immersed in our impressive 13,500 square feet experience hall.",
+                        "country": "be",
+                        "city": "Antwerp, Flemish Region",
+                        "result_url": "https://www.retaildetail.eu/en",
+                        "lkn_url": "retaildetail",
+                        "industry": "Retail",
+                        "sector": "Consumer Staples",
+                        "stock_ticker": null,
+                        "employees": "11",
+                        "revenue": "$3m",
+                        "growth": null,
+                        "attrib": null,
+                        "img_link": "https://api.comparable-companies.com/v1/logo?domain=retaildetail.eu",
+                        "website": "retaildetail.eu",
+                        "rating_points": 12
+                    },
+                    {
+                        "domain_name": "marketingdive.com",
+                        "name": "Marketing Dive",
+                        "similarity": 100,
+                        "description": "Marketing Dive provides in-depth journalism and insight into the most impactful news and trends shaping marketing and advertising. The daily email newsletter and website cover topics such as marketing technology, advertising creative, social media, video marketing, analytics and measurement, mobile marketing, and more. Marketing Dive is a leading industry publication operated by Industry Dive. Our business journalists spark ideas and shape agendas for 13+ million decision-makers in the most competitive industries.",
+                        "country": "us",
+                        "city": "New York",
+                        "result_url": "https://www.marketingdive.com",
+                        "lkn_url": "marketing-dive-digital-&-online-marketing-news-and-tips",
+                        "industry": "Online Audio and Video Media",
+                        "sector": null,
+                        "stock_ticker": null,
+                        "employees": null,
+                        "revenue": "$1m-10m",
+                        "growth": null,
+                        "attrib": null,
+                        "img_link": "https://api.comparable-companies.com/v1/logo?domain=marketingdive.com",
+                        "website": "marketingdive.com",
+                        "rating_points": 12
+                    },
+                    {
+                        "domain_name": "prweek.com",
+                        "name": "PRWeek",
+                        "similarity": 100,
+                        "description": "PRWeek is the leading publication for PR and communications professionals. PRWeek reflects an industry playing a more pivotal role than ever before, not only in the marketing strategies of companies, brands and organizations, but also within boardrooms and amongst the C-suite.",
+                        "country": "us",
+                        "city": "New York, NY",
+                        "result_url": "https://www.prweek.com/us",
+                        "lkn_url": "prweek",
+                        "industry": "Publishing",
+                        "sector": "Consumer Discretionary",
+                        "stock_ticker": null,
+                        "employees": "24",
+                        "revenue": "$3m",
+                        "growth": null,
+                        "attrib": null,
+                        "img_link": "https://api.comparable-companies.com/v1/logo?domain=prweek.com",
+                        "website": "prweek.com",
+                        "rating_points": 12
+                    },
+                    {
+                        "domain_name": "nielsen.com",
+                        "name": "Nielsen",
+                        "similarity": 100,
+                        "description": "uncover what people watch and listen to with nielsen\u2019s audience-driven data and insights.",
+                        "country": "us",
+                        "city": "New York, NY",
+                        "result_url": "https://nielsen.com",
+                        "lkn_url": "nielsen",
+                        "industry": "Information Technology and Services",
+                        "sector": "Information Technology",
+                        "stock_ticker": "NLSN",
+                        "employees": "14,000",
+                        "revenue": "$3bn",
+                        "growth": "-18.7%",
+                        "growth_trend": "down",
+                        "attrib": null,
+                        "img_link": "https://api.comparable-companies.com/v1/logo?domain=nielsen.com",
+                        "website": "nielsen.com",
+                        "rating_points": 12
+                    },
+                    {
+                        "domain_name": "rankingthebrands.com",
+                        "name": "rankingthebrands.com",
+                        "similarity": 100,
+                        "description": "ranking the brands. where brands become stars! find out the position of your brand or the competition in brand rankings from around the world. please submit your brand ranking if we dont have it yet!",
+                        "country": null,
+                        "city": null,
+                        "result_url": "https://www.rankingthebrands.com",
+                        "lkn_url": null,
+                        "industry": "",
+                        "sector": null,
+                        "stock_ticker": null,
+                        "employees": null,
+                        "revenue": "n.a.",
+                        "growth": null,
+                        "attrib": "class=\"no_flag\"",
+                        "img_link": "https://api.comparable-companies.com/v1/logo?domain=rankingthebrands.com",
+                        "website": "rankingthebrands.com",
+                        "rating_points": 12
+                    },
+                    {
+                        "domain_name": "advergize.com",
+                        "name": "Advergize",
+                        "similarity": 100,
+                        "description": "No description available",
+                        "country": "gb",
+                        "city": null,
+                        "result_url": "https://www.advergize.com",
+                        "lkn_url": "advergize",
+                        "industry": "",
+                        "sector": null,
+                        "stock_ticker": null,
+                        "employees": null,
+                        "revenue": "$1m-10m",
+                        "growth": null,
+                        "attrib": null,
+                        "img_link": "https://api.comparable-companies.com/v1/logo?domain=advergize.com",
+                        "website": "advergize.com",
+                        "rating_points": 12
+                    },
+                    {
+                        "domain_name": "warc.com",
+                        "name": "WARC",
+                        "similarity": 100,
+                        "description": "warc provides insight, intelligence, evidence, expertise, case studies, benchmarks and guidance to help marketers navigate any challenge with confidence.",
+                        "country": "gb",
+                        "city": "London, Greater London",
+                        "result_url": "https://www.warc.com/Welcome",
+                        "lkn_url": "warc",
+                        "industry": "Marketing and Advertising",
+                        "sector": "Professional Services",
+                        "stock_ticker": null,
+                        "employees": "184",
+                        "revenue": "$20m",
+                        "growth": null,
+                        "attrib": null,
+                        "img_link": "https://api.comparable-companies.com/v1/logo?domain=warc.com",
+                        "website": "warc.com",
+                        "rating_points": 12
+                    },
+                    {
+                        "domain_name": "cbndata.com",
+                        "name": "cbndata.com",
+                        "similarity": 100,
+                        "description": "No description available",
+                        "country": null,
+                        "city": null,
+                        "result_url": "https://www.cbndata.com",
+                        "lkn_url": null,
+                        "industry": "",
+                        "sector": null,
+                        "stock_ticker": null,
+                        "employees": null,
+                        "revenue": "n.a.",
+                        "growth": null,
+                        "attrib": "class=\"no_flag\"",
+                        "img_link": "https://api.comparable-companies.com/v1/logo?domain=cbndata.com",
+                        "website": "cbndata.com",
+                        "rating_points": 12
+                    },
+                    {
+                        "domain_name": "clarisonic.com",
+                        "name": "Clarisonic",
+                        "website": "clarisonic.com",
+                        "description": "Our mission is simple: to develop and market technically advanced and clinically proven products that make a clear difference in skin care. In 2001, Clarisonic was founded by a team of scientists and engineers in Seattle, WA, USA.",
+                        "country": "us",
+                        "city": "Redmond, WA",
+                        "result_url": "https://www.clarisonic.com/",
+                        "lkn_url": "clarisonic",
+                        "industry": "Consumer Goods",
+                        "sector": "Consumer Staples",
+                        "stock_ticker": null,
+                        "employees": "113",
+                        "revenue": "$68m",
+                        "growth": null,
+                        "attrib": null,
+                        "img_link": "https://api.comparable-companies.com/v1/logo?domain=clarisonic.com",
+                        "similarity": 100,
+                        "rating_points": 11.5
+                    },
+                    {
+                        "domain_name": "hormelfoods.com",
+                        "name": "hormelfoods.com",
+                        "website": "hormelfoods.com",
+                        "description": "",
+                        "similarity": 100,
+                        "attrib": "class=\"no_flag\"",
+                        "img_link": "https://api.comparable-companies.com/v1/logo?domain=hormelfoods.com",
+                        "result_url": "https://hormelfoods.com",
+                        "rating_points": 11.5
+                    },
+                    {
+                        "domain_name": "edgewell.com",
+                        "name": "Edgewell Personal Care",
+                        "website": "edgewell.com",
+                        "description": "We are a global team of 6,000 visionaries, doers, and makers. Our portfolio of over 25 brands includes Schick\u00ae, Wilkinson Sword\u00ae, Edge\u00ae, Skintimate\u00ae, Playtex\u00ae, Stayfree\u00ae, Carefree\u00ae, o.b.\u00ae, Banana Boat\u00ae, Hawaiian Tropic\u00ae, Bulldog\u00ae, Jack Black\u00ae, and Wet Ones\u00ae.",
+                        "country": "us",
+                        "city": "Shelton, Connecticut",
+                        "result_url": "https://edgewell.com",
+                        "lkn_url": "edgewell-personal-care",
+                        "industry": "Consumer Goods",
+                        "sector": "Consumer Staples",
+                        "stock_ticker": "EPC",
+                        "employees": "6,900",
+                        "revenue": "$2bn",
+                        "growth": "-2.2%",
+                        "growth_trend": "down",
+                        "attrib": null,
+                        "img_link": "https://api.comparable-companies.com/v1/logo?domain=edgewell.com",
+                        "similarity": 100,
+                        "rating_points": 11.5
+                    },
+                    {
+                        "domain_name": "mckinsey.com",
+                        "name": "McKinsey & Company",
+                        "similarity": 100,
+                        "description": "The center brings digital manufacturing to life through a functioning production line that makes a real-world product\u2013refrigerator compressors. You will experience the transformation of the line from its non-digital, lean \u201ccurrent state\u201d to a higher-performing, digitally-transformed \u201cfuture state.",
+                        "country": "us",
+                        "city": "New York",
+                        "result_url": "https://www.mckinsey.com",
+                        "lkn_url": "mckinsey",
+                        "industry": "Management Consulting",
+                        "sector": "Professional Services",
+                        "stock_ticker": null,
+                        "employees": "36,311",
+                        "revenue": "$4bn",
+                        "growth": null,
+                        "attrib": null,
+                        "img_link": "https://api.comparable-companies.com/v1/logo?domain=mckinsey.com",
+                        "website": "mckinsey.com",
+                        "rating_points": 11
+                    },
+                    {
+                        "domain_name": "pgcareers.com",
+                        "name": "Procter & Gamble",
+                        "similarity": 100,
+                        "description": "join p&g and help make life better through meaningful work \u2705 hr | engineering | it | sales | design | finance \u23e9 browse available job openings at procter and gamble!",
+                        "country": "de",
+                        "city": "Hessen",
+                        "result_url": "https://pgcareers.com",
+                        "lkn_url": null,
+                        "industry": "",
+                        "sector": null,
+                        "stock_ticker": null,
+                        "employees": null,
+                        "revenue": "$262m",
+                        "growth": "84.4%",
+                        "growth_trend": "up",
+                        "attrib": null,
+                        "img_link": "https://api.comparable-companies.com/v1/logo?domain=pgcareers.com",
+                        "website": "pgcareers.com",
+                        "rating_points": 10.333333333333332
+                    },
+                    {
+                        "domain_name": "generalmillslatinamerica.com",
+                        "name": "General Mills",
+                        "similarity": 100,
+                        "description": "We exist to make food the world loves. But we do more than that. General Mills is a place that prioritizes being a force for good, a place to expand learning, explore new perspectives and reimagine new possibilities, every day. We look for people who want to bring their best\u2014bold thinkers with big hearts who challenge one other and grow together. Because becoming the undisputed leader in food means surrounding ourselves with people who are hungry for what\u2019s next.",
+                        "country": "us",
+                        "city": "Minneapolis, Minnesota",
+                        "result_url": "https://www.generalmills.com",
+                        "lkn_url": "general-mills",
+                        "industry": "Consumer Goods",
+                        "sector": "Consumer Staples",
+                        "stock_ticker": "G1MI34.SA",
+                        "employees": "35,000",
+                        "revenue": "$19bn",
+                        "growth": "4.8%",
+                        "growth_trend": "up",
+                        "attrib": null,
+                        "img_link": "https://api.comparable-companies.com/v1/logo?domain=generalmillslatinamerica.com",
+                        "website": "generalmillslatinamerica.com",
+                        "rating_points": 9
+                    },
+                    {
+                        "domain_name": "conagrabrands.com",
+                        "name": "conagrabrands.com",
+                        "website": "conagrabrands.com",
+                        "description": "",
+                        "similarity": 100,
+                        "attrib": "class=\"no_flag\"",
+                        "img_link": "https://api.comparable-companies.com/v1/logo?domain=conagrabrands.com",
+                        "result_url": "https://conagrabrands.com",
+                        "rating_points": 8.5
+                    },
+                    {
+                        "domain_name": "tysonfoods.com",
+                        "name": "Tyson Foods",
+                        "website": "tysonfoods.com",
+                        "description": "Tyson Foods, Inc. is an American multinational corporation based in Springdale, Arkansas, that operates in the food industry. The company is the world's second largest processor and marketer of chicken, beef, and pork after JBS S.",
+                        "country": "us",
+                        "city": "Springdale, AR",
+                        "result_url": "https://www.tysonfoods.com",
+                        "lkn_url": "tyson-foods",
+                        "industry": "Food Production",
+                        "sector": "Industrials",
+                        "stock_ticker": "TSN.MX",
+                        "employees": "137,000",
+                        "revenue": "$49bn",
+                        "growth": "5.5%",
+                        "growth_trend": "up",
+                        "attrib": null,
+                        "img_link": "https://api.comparable-companies.com/v1/logo?domain=tysonfoods.com",
+                        "similarity": 100,
+                        "rating_points": 8.5
+                    },
+                    {
+                        "domain_name": "thehersheycompany.com",
+                        "name": "The Hershey Company",
+                        "website": "thehersheycompany.com",
+                        "description": "The Hershey Company, commonly known as Hershey's, is an American multinational company and one of the largest chocolate manufacturers in the world. It also manufactures baked products, such as cookies and cakes, and sells beverages like milkshakes, and many more that are produced globally.",
+                        "country": "us",
+                        "city": "Hershey, PA",
+                        "result_url": "https://www.thehersheycompany.com/en_us/home.html",
+                        "lkn_url": "the-hershey-company",
+                        "industry": "Manufacturing",
+                        "sector": "Industrials",
+                        "stock_ticker": "HSY.MX",
+                        "employees": "16,620",
+                        "revenue": "$9bn",
+                        "growth": "4.8%",
+                        "growth_trend": "up",
+                        "attrib": null,
+                        "img_link": "https://api.comparable-companies.com/v1/logo?domain=thehersheycompany.com",
+                        "similarity": 100,
+                        "rating_points": 8.5
+                    },
+                    {
+                        "domain_name": "unileverme.com",
+                        "name": "Unilever",
+                        "description": "Be part of the world\u2019s most successful, purpose-led business. Work with brands that are well-loved around the world, that improve the lives of our consumers and the communities around us. We promote innovation, big and small, to make our business win and grow; and we believe in business as a force for good. Unleash your curiosity, challenge ideas and disrupt processes; use your energy to make this happen. Our brilliant business leaders and colleagues provide mentorship and inspiration, so you can be at your best. Our portfolio ranges from nutritionally balanced foods to indulgent ice creams, affordable soaps, luxurious shampoos and everyday household care products. We produce world-leading brands including Lipton, Knorr, Dove, Axe, Hellmann\u2019s and Omo, alongside trusted local names and innovative-forward thinking brands like Ben & Jerry\u2019s, The Dollar Shave Club and Dermalogica. Every individual here can bring their purpose to life through their work. Join us and you\u2019ll be surrounded by inspiring leaders and supportive peers. Among them, you\u2019ll channel your purpose, bring fresh ideas to the table, and simply be you. As you work to make a real impact on the business and the world, we\u2019ll work to help you become a better you.",
+                        "country": "gb",
+                        "city": "Blackfriars, London",
+                        "result_url": "https://www.unileverme.com",
+                        "lkn_url": "unilever",
+                        "industry": "Consumer Goods",
+                        "sector": "Consumer Staples",
+                        "stock_ticker": null,
+                        "employees": "144,070",
+                        "revenue": "$139bn",
+                        "growth": null,
+                        "attrib": null,
+                        "img_link": "https://api.comparable-companies.com/v1/logo?domain=unileverme.com",
+                        "website": "unileverme.com",
+                        "similarity": 100,
+                        "rating_points": 8.333333333333334
+                    },
+                    {
+                        "domain_name": "unilever-ewa.com",
+                        "name": "Unilever",
+                        "description": "Be part of the world\u2019s most successful, purpose-led business. Work with brands that are well-loved around the world, that improve the lives of our consumers and the communities around us. We promote innovation, big and small, to make our business win and grow; and we believe in business as a force for good. Unleash your curiosity, challenge ideas and disrupt processes; use your energy to make this happen. Our brilliant business leaders and colleagues provide mentorship and inspiration, so you can be at your best. Our portfolio ranges from nutritionally balanced foods to indulgent ice creams, affordable soaps, luxurious shampoos and everyday household care products. We produce world-leading brands including Lipton, Knorr, Dove, Axe, Hellmann\u2019s and Omo, alongside trusted local names and innovative-forward thinking brands like Ben & Jerry\u2019s, The Dollar Shave Club and Dermalogica. Every individual here can bring their purpose to life through their work. Join us and you\u2019ll be surrounded by inspiring leaders and supportive peers. Among them, you\u2019ll channel your purpose, bring fresh ideas to the table, and simply be you. As you work to make a real impact on the business and the world, we\u2019ll work to help you become a better you.",
+                        "country": "gb",
+                        "city": "Blackfriars, London",
+                        "result_url": "https://www.unilever-ewa.com",
+                        "lkn_url": "unilever",
+                        "industry": "Consumer Goods",
+                        "sector": "Consumer Staples",
+                        "stock_ticker": null,
+                        "employees": "144,070",
+                        "revenue": "$50bn",
+                        "growth": null,
+                        "attrib": null,
+                        "img_link": "https://api.comparable-companies.com/v1/logo?domain=unilever-ewa.com",
+                        "website": "unilever-ewa.com",
+                        "similarity": 100,
+                        "rating_points": 8.333333333333334
+                    },
+                    {
+                        "domain_name": "statista.com",
+                        "name": "Statista",
+                        "similarity": 84,
+                        "description": "Statista aims to empower people worldwide to make better and faster fact-based business decisions by providing a simple-to-use and affordable global business-data platform. Our innovative spirit is strengthened by an international and diverse team of over 1,100 employees representing more than 70 nations working at 13 office locations around the globe including our HQ in Hamburg, New York City, London, Paris, Amsterdam, Warsaw, Milan, Singapore, Tokyo, Los Angeles, Madrid, Copenhagen and Berlin.",
+                        "country": "de",
+                        "city": "Hamburg",
+                        "result_url": "https://www.statista.com",
+                        "lkn_url": "statista",
+                        "industry": "IT Services and IT Consulting",
+                        "sector": "Information Technology",
+                        "stock_ticker": null,
+                        "employees": "933",
+                        "revenue": "$91m",
+                        "growth": "53.1%",
+                        "growth_trend": "up",
+                        "attrib": null,
+                        "img_link": "https://api.comparable-companies.com/v1/logo?domain=statista.com",
+                        "website": "statista.com",
+                        "rating_points": 7
+                    },
+                    {
+                        "domain_name": "zillow.com",
+                        "name": "Zillow",
+                        "similarity": 84,
+                        "description": "The leading real estate marketplace. Search millions of for-sale and rental listings, compare Zestimate\u00ae home values and connect with local professionals.",
+                        "country": "us",
+                        "city": "Seattle, Washington",
+                        "result_url": "https://www.zillow.com/captchaPerimeterX/?url=%2f&uuid=950045a6-92ba-11ec-bead-487050664755&vid=",
+                        "lkn_url": "zillow",
+                        "industry": "Real Estate",
+                        "sector": "Real Estate",
+                        "stock_ticker": null,
+                        "employees": "8,093",
+                        "revenue": "$1bn",
+                        "growth": null,
+                        "attrib": null,
+                        "img_link": "https://api.comparable-companies.com/v1/logo?domain=zillow.com",
+                        "website": "zillow.com",
+                        "rating_points": 7
+                    },
+                    {
+                        "domain_name": "accenture.com",
+                        "name": "Accenture",
+                        "similarity": 84,
+                        "description": "accenture embraces the power of change to create 360\u00b0 value and shared success in the u.s. for our clients, people, shareholders, partners and communities.",
+                        "country": "us",
+                        "city": "Dublin 2",
+                        "result_url": "https://www.accenture.com/us-en",
+                        "lkn_url": "accenture",
+                        "industry": "Information Technology and Services",
+                        "sector": "Information Technology",
+                        "stock_ticker": "ACNN.MX",
+                        "employees": "699,000",
+                        "revenue": "$53bn",
+                        "growth": "7.2%",
+                        "growth_trend": "up",
+                        "attrib": null,
+                        "img_link": "https://api.comparable-companies.com/v1/logo?domain=accenture.com",
+                        "website": "accenture.com",
+                        "rating_points": 7
+                    }
+                ],
+                "next_companies": [],
+                "nr_of_remaining_companies": 0,
+                "HMAC": null,
+                "further_crawling": false,
+                "frontend_company_info": [
+                    {
+                        "description": "Unilever PLC is a British multinational consumer goods company headquartered in London, England. Unilever products include food, condiments, ice cream, wellbeing vitamins, minerals and supplements, tea, ...",
+                        "country": "gb",
+                        "city": "Blackfriars, London",
+                        "name": "Unilever",
+                        "result_url": "https://www.unilever.com",
+                        "lkn_url": "unilever",
+                        "industry": "Consumer Goods",
+                        "sector": "Consumer Staples",
+                        "stock_ticker": "ULVR.L",
+                        "employees": "148,012",
+                        "revenue": "$39,545bn",
+                        "growth": "-1.8%",
+                        "growth_trend": "down",
+                        "attrib": null,
+                        "img_link": "https://api.comparable-companies.com/v1/logo?domain=unilever.com",
+                        "website": "unilever.com",
+                        "domain_name": "unilever.com",
+                        "is_queried_company": true
+                    }
+                ],
+                "connectionID": null
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "type": "integer",
+                        "description": "",
+                        "default": 200
+                    },
+                    "errors": {},
+                    "query": {
+                        "type": "string",
+                        "description": "",
+                        "default": "unilever.com"
+                    },
+                    "plan": {
+                        "type": "string",
+                        "description": "",
+                        "default": "Growth"
+                    },
+                    "queries_left": {
+                        "type": "integer",
+                        "description": "",
+                        "default": 495
+                    },
+                    "total_queries": {
+                        "type": "integer",
+                        "description": "",
+                        "default": 500
+                    },
+                    "companies": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "domain_name": {
+                                    "type": "string",
+                                    "description": "",
+                                    "default": "loreal.com"
+                                },
+                                "name": {
+                                    "type": "string",
+                                    "description": "",
+                                    "default": "L'Or\u00e9al"
+                                },
+                                "similarity": {
+                                    "type": "integer",
+                                    "description": "",
+                                    "default": 100
+                                },
+                                "description": {
+                                    "type": "string",
+                                    "description": "",
+                                    "default": "Leading the world in beauty and pioneering the world of beauty tech; we are 86K employees across 150 countries on five continents. Our 36 international brands are divided into four unique Divisions: Luxe, Consumer Products, Active Cosmetics, and Professional Products. Our 36 international brands include Kiehl\u2019s, Lanc\u00f4me, Giorgio Armani Beauty, Yves Saint Laurent Beaut\u00e9, Ralph Lauren, Clarisonic, Maybelline New York, Essie, K\u00e9rastase, IT Cosmetics, Prada Beauty, Biotherm, Shu Uemura, Viktor&Rolf, Maison Martin Margiela, Urban Decay, Redken, Vichy, La Roche-Posay, Diesel, Garnier, L\u2019Or\u00e9al Paris, and more. For more than a century, L\u2019Or\u00e9al has devoted itself solely to one business: beauty. We want to bring beauty to all people. Our is to win over another one billion consumers around the world by innovating and creating cosmetic and skincare products that meet the infinite diversity of their beauty needs and desires. That\u2019s about us\u2026 now what about you? You are driven and up for a challenge! You\u2019re passionate about putting your best foot forward, but you\u2019re not afraid to fail either. You love to learn, grow and make an impact on the world. You can be an intern, or at a senior level position, we\u2019re always looking for new people to join our teams. If you are ready to take charge of your career and join us, you\u2019re one click away: https://careers.loreal.com/en_US/content Interested about our quest to the next billion consumers, follow us here to get the insider scoop on our business, culture, and tips on how to join us to shape the future of beauty. Freedom to go beyond, that\u2019s the beauty of L\u2019Or\u00e9al."
+                                },
+                                "country": {
+                                    "type": "string",
+                                    "description": "",
+                                    "default": "fr"
+                                },
+                                "city": {
+                                    "type": "string",
+                                    "description": "",
+                                    "default": "Paris"
+                                },
+                                "result_url": {
+                                    "type": "string",
+                                    "description": "",
+                                    "default": "https://www.loreal.com/en"
+                                },
+                                "lkn_url": {
+                                    "type": "string",
+                                    "description": "",
+                                    "default": "lor%C3%A9al"
+                                },
+                                "industry": {
+                                    "type": "string",
+                                    "description": "",
+                                    "default": "Cosmetics"
+                                },
+                                "sector": {
+                                    "type": "string",
+                                    "description": "",
+                                    "default": "Consumer Staples"
+                                },
+                                "stock_ticker": {
+                                    "type": "string",
+                                    "description": "",
+                                    "default": "LRLCY"
+                                },
+                                "employees": {
+                                    "type": "string",
+                                    "description": "",
+                                    "default": "85,412"
+                                },
+                                "revenue": {
+                                    "type": "string",
+                                    "description": "",
+                                    "default": "$34bn"
+                                },
+                                "growth": {
+                                    "type": "string",
+                                    "description": "",
+                                    "default": "6.2%"
+                                },
+                                "growth_trend": {
+                                    "type": "string",
+                                    "description": "",
+                                    "default": "up"
+                                },
+                                "attrib": {},
+                                "img_link": {
+                                    "type": "string",
+                                    "description": "",
+                                    "default": "https://api.comparable-companies.com/v1/logo?domain=loreal.com"
+                                },
+                                "website": {
+                                    "type": "string",
+                                    "description": "",
+                                    "default": "loreal.com"
+                                },
+                                "rating_points": {
+                                    "type": "integer",
+                                    "description": "",
+                                    "default": 72.83333333333333
+                                }
+                            }
+                        }
+                    },
+                    "next_companies": {
+                        "type": "array",
+                        "items": {}
+                    },
+                    "nr_of_remaining_companies": {},
+                    "HMAC": {},
+                    "further_crawling": {},
+                    "frontend_company_info": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "description": {
+                                    "type": "string",
+                                    "description": "",
+                                    "default": "Unilever PLC is a British multinational consumer goods company headquartered in London, England. Unilever products include food, condiments, ice cream, wellbeing vitamins, minerals and supplements, tea, ..."
+                                },
+                                "country": {
+                                    "type": "string",
+                                    "description": "",
+                                    "default": "gb"
+                                },
+                                "city": {
+                                    "type": "string",
+                                    "description": "",
+                                    "default": "Blackfriars, London"
+                                },
+                                "name": {
+                                    "type": "string",
+                                    "description": "",
+                                    "default": "Unilever"
+                                },
+                                "result_url": {
+                                    "type": "string",
+                                    "description": "",
+                                    "default": "https://www.unilever.com"
+                                },
+                                "lkn_url": {
+                                    "type": "string",
+                                    "description": "",
+                                    "default": "unilever"
+                                },
+                                "industry": {
+                                    "type": "string",
+                                    "description": "",
+                                    "default": "Consumer Goods"
+                                },
+                                "sector": {
+                                    "type": "string",
+                                    "description": "",
+                                    "default": "Consumer Staples"
+                                },
+                                "stock_ticker": {
+                                    "type": "string",
+                                    "description": "",
+                                    "default": "ULVR.L"
+                                },
+                                "employees": {
+                                    "type": "string",
+                                    "description": "",
+                                    "default": "148,012"
+                                },
+                                "revenue": {
+                                    "type": "string",
+                                    "description": "",
+                                    "default": "$39,545bn"
+                                },
+                                "growth": {
+                                    "type": "string",
+                                    "description": "",
+                                    "default": "-1.8%"
+                                },
+                                "growth_trend": {
+                                    "type": "string",
+                                    "description": "",
+                                    "default": "down"
+                                },
+                                "attrib": {},
+                                "img_link": {
+                                    "type": "string",
+                                    "description": "",
+                                    "default": "https://api.comparable-companies.com/v1/logo?domain=unilever.com"
+                                },
+                                "website": {
+                                    "type": "string",
+                                    "description": "",
+                                    "default": "unilever.com"
+                                },
+                                "domain_name": {
+                                    "type": "string",
+                                    "description": "",
+                                    "default": "unilever.com"
+                                },
+                                "is_queried_company": {
+                                    "type": "boolean",
+                                    "description": "",
+                                    "default": true
+                                }
+                            }
+                        }
+                    },
+                    "connectionID": {}
+                }
+            }
+        },
+        {
+            "name": "/rating",
+            "url": "https://comparable-companies.p.rapidapi.com/rating",
+            "description": "Enables the user to rate the output returned by the /similar API. It is advisable to refresh results after ratings have been submitted as the algorithm fine-tunes its output based on them. Re-searching a company is always free of charge.\n\n*Example*: If a user searches similar companies for \"unilever.com\", and the first result is \"nestle.com\", then the user is able to rate how similar those companies are on a scale from 0-10 through this API. If the user submits a rating of 0, that comparable company (\"nestle.com\") will not show up when searching the same company (\"unilever.com\") in the future. If the user submits a rating higher than 5, then the algorithm will fine-tune its output to include more companies similar to that one (\"nestle.com\").\n\n*Including user ratings in the output is completely optional*.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "comp_company_id",
+                    "type": "STRING",
+                    "description": "(Required) domain_name of the comparable company which is being rated",
+                    "default": "nestle.com"
+                },
+                {
+                    "name": "rating",
+                    "type": "NUMBER",
+                    "description": "(Required) The rating given by the user ranging from 0 to 10. Ratings above 5 will fine-tune the algorithm to find more companies similar to that one.",
+                    "default": 10
+                },
+                {
+                    "name": "main_company_id",
+                    "type": "STRING",
+                    "description": "(Required) The company domain which was queried",
+                    "default": "unilever.com"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://comparable-companies.p.rapidapi.com/rating\"\nquerystring = {\"comp_company_id\": \"nestle.com\", \"rating\": 10, \"main_company_id\": \"unilever.com\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"comparable-companies.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://comparable-companies.p.rapidapi.com/rating\"\nquerystring = {\"comp_company_id\": \"nestle.com\", \"rating\": 10, \"main_company_id\": \"unilever.com\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"comparable-companies.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "This endpoint is disabled for your subscription"
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "/contacts",
+            "url": "https://comparable-companies.p.rapidapi.com/contacts",
+            "description": "Returns a list of contact persons (incl. email addresses) at a given company.\n\nQuerying the same domain multiple times will only cost a single search credit.\n\nQuerying a domain that you have already queried through the /similar endpoint will not cost any credit.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "domain",
+                    "type": "STRING",
+                    "description": "(Required) The company domain for which you want to look up contacts for (e.g. unilever.com). Providing a URL works as well, we will then parse the domain on our end.",
+                    "default": "unilever.com"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://comparable-companies.p.rapidapi.com/contacts\"\nquerystring = {\"domain\": \"unilever.com\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"comparable-companies.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://comparable-companies.p.rapidapi.com/contacts\"\nquerystring = {\"domain\": \"unilever.com\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"comparable-companies.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "This endpoint is disabled for your subscription"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "type": "integer",
+                        "description": "",
+                        "default": 200
+                    },
+                    "errors": {},
+                    "query": {
+                        "type": "string",
+                        "description": "",
+                        "default": "unilever.com"
+                    },
+                    "plan": {
+                        "type": "string",
+                        "description": "",
+                        "default": "Growth"
+                    },
+                    "queries_left": {
+                        "type": "integer",
+                        "description": "",
+                        "default": 495
+                    },
+                    "total_queries": {
+                        "type": "integer",
+                        "description": "",
+                        "default": 500
+                    },
+                    "companies": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "domain_name": {
+                                    "type": "string",
+                                    "description": "",
+                                    "default": "loreal.com"
+                                },
+                                "name": {
+                                    "type": "string",
+                                    "description": "",
+                                    "default": "L'Or\u00e9al"
+                                },
+                                "similarity": {
+                                    "type": "integer",
+                                    "description": "",
+                                    "default": 100
+                                },
+                                "description": {
+                                    "type": "string",
+                                    "description": "",
+                                    "default": "Leading the world in beauty and pioneering the world of beauty tech; we are 86K employees across 150 countries on five continents. Our 36 international brands are divided into four unique Divisions: Luxe, Consumer Products, Active Cosmetics, and Professional Products. Our 36 international brands include Kiehl\u2019s, Lanc\u00f4me, Giorgio Armani Beauty, Yves Saint Laurent Beaut\u00e9, Ralph Lauren, Clarisonic, Maybelline New York, Essie, K\u00e9rastase, IT Cosmetics, Prada Beauty, Biotherm, Shu Uemura, Viktor&Rolf, Maison Martin Margiela, Urban Decay, Redken, Vichy, La Roche-Posay, Diesel, Garnier, L\u2019Or\u00e9al Paris, and more. For more than a century, L\u2019Or\u00e9al has devoted itself solely to one business: beauty. We want to bring beauty to all people. Our is to win over another one billion consumers around the world by innovating and creating cosmetic and skincare products that meet the infinite diversity of their beauty needs and desires. That\u2019s about us\u2026 now what about you? You are driven and up for a challenge! You\u2019re passionate about putting your best foot forward, but you\u2019re not afraid to fail either. You love to learn, grow and make an impact on the world. You can be an intern, or at a senior level position, we\u2019re always looking for new people to join our teams. If you are ready to take charge of your career and join us, you\u2019re one click away: https://careers.loreal.com/en_US/content Interested about our quest to the next billion consumers, follow us here to get the insider scoop on our business, culture, and tips on how to join us to shape the future of beauty. Freedom to go beyond, that\u2019s the beauty of L\u2019Or\u00e9al."
+                                },
+                                "country": {
+                                    "type": "string",
+                                    "description": "",
+                                    "default": "fr"
+                                },
+                                "city": {
+                                    "type": "string",
+                                    "description": "",
+                                    "default": "Paris"
+                                },
+                                "result_url": {
+                                    "type": "string",
+                                    "description": "",
+                                    "default": "https://www.loreal.com/en"
+                                },
+                                "lkn_url": {
+                                    "type": "string",
+                                    "description": "",
+                                    "default": "lor%C3%A9al"
+                                },
+                                "industry": {
+                                    "type": "string",
+                                    "description": "",
+                                    "default": "Cosmetics"
+                                },
+                                "sector": {
+                                    "type": "string",
+                                    "description": "",
+                                    "default": "Consumer Staples"
+                                },
+                                "stock_ticker": {
+                                    "type": "string",
+                                    "description": "",
+                                    "default": "LRLCY"
+                                },
+                                "employees": {
+                                    "type": "string",
+                                    "description": "",
+                                    "default": "85,412"
+                                },
+                                "revenue": {
+                                    "type": "string",
+                                    "description": "",
+                                    "default": "$34bn"
+                                },
+                                "growth": {
+                                    "type": "string",
+                                    "description": "",
+                                    "default": "6.2%"
+                                },
+                                "growth_trend": {
+                                    "type": "string",
+                                    "description": "",
+                                    "default": "up"
+                                },
+                                "attrib": {},
+                                "img_link": {
+                                    "type": "string",
+                                    "description": "",
+                                    "default": "https://api.comparable-companies.com/v1/logo?domain=loreal.com"
+                                },
+                                "website": {
+                                    "type": "string",
+                                    "description": "",
+                                    "default": "loreal.com"
+                                },
+                                "rating_points": {
+                                    "type": "integer",
+                                    "description": "",
+                                    "default": 72.83333333333333
+                                }
+                            }
+                        }
+                    },
+                    "next_companies": {
+                        "type": "array",
+                        "items": {}
+                    },
+                    "nr_of_remaining_companies": {},
+                    "HMAC": {},
+                    "further_crawling": {},
+                    "frontend_company_info": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "description": {
+                                    "type": "string",
+                                    "description": "",
+                                    "default": "Unilever PLC is a British multinational consumer goods company headquartered in London, England. Unilever products include food, condiments, ice cream, wellbeing vitamins, minerals and supplements, tea, ..."
+                                },
+                                "country": {
+                                    "type": "string",
+                                    "description": "",
+                                    "default": "gb"
+                                },
+                                "city": {
+                                    "type": "string",
+                                    "description": "",
+                                    "default": "Blackfriars, London"
+                                },
+                                "name": {
+                                    "type": "string",
+                                    "description": "",
+                                    "default": "Unilever"
+                                },
+                                "result_url": {
+                                    "type": "string",
+                                    "description": "",
+                                    "default": "https://www.unilever.com"
+                                },
+                                "lkn_url": {
+                                    "type": "string",
+                                    "description": "",
+                                    "default": "unilever"
+                                },
+                                "industry": {
+                                    "type": "string",
+                                    "description": "",
+                                    "default": "Consumer Goods"
+                                },
+                                "sector": {
+                                    "type": "string",
+                                    "description": "",
+                                    "default": "Consumer Staples"
+                                },
+                                "stock_ticker": {
+                                    "type": "string",
+                                    "description": "",
+                                    "default": "ULVR.L"
+                                },
+                                "employees": {
+                                    "type": "string",
+                                    "description": "",
+                                    "default": "148,012"
+                                },
+                                "revenue": {
+                                    "type": "string",
+                                    "description": "",
+                                    "default": "$39,545bn"
+                                },
+                                "growth": {
+                                    "type": "string",
+                                    "description": "",
+                                    "default": "-1.8%"
+                                },
+                                "growth_trend": {
+                                    "type": "string",
+                                    "description": "",
+                                    "default": "down"
+                                },
+                                "attrib": {},
+                                "img_link": {
+                                    "type": "string",
+                                    "description": "",
+                                    "default": "https://api.comparable-companies.com/v1/logo?domain=unilever.com"
+                                },
+                                "website": {
+                                    "type": "string",
+                                    "description": "",
+                                    "default": "unilever.com"
+                                },
+                                "domain_name": {
+                                    "type": "string",
+                                    "description": "",
+                                    "default": "unilever.com"
+                                },
+                                "is_queried_company": {
+                                    "type": "boolean",
+                                    "description": "",
+                                    "default": true
+                                }
+                            }
+                        }
+                    },
+                    "connectionID": {}
+                }
+            }
+        }
+    ],
+    "standardized_name": "comparable_companies"
+}

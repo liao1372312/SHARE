@@ -1,0 +1,456 @@
+{
+    "product_id": "api_c4e2aef6-b2d2-4b40-aecc-9469679d3868",
+    "tool_description": "Web search API using best search engine",
+    "home_url": "https://rapidapi.com/datascraper/api/g-search/",
+    "name": "G Search",
+    "title": "G Search",
+    "pricing": "FREEMIUM",
+    "tool_name": "G Search",
+    "score": {
+        "avgServiceLevel": 93,
+        "avgLatency": 287,
+        "avgSuccessRate": 93,
+        "popularityScore": 9.8,
+        "__typename": "Score"
+    },
+    "host": "g-search.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "/location",
+            "url": "https://g-search.p.rapidapi.com/location",
+            "description": "The Location API lets you search for supported Google search locations. You can pass the `location_name` returned by the Location API as the `location_name` parameter and set the `location_parameters_auto` value to true in a Search API query to retrieve search results localized to that location.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "location_name",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "London"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "country_code",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "GB"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://g-search.p.rapidapi.com/location\"\nquerystring = {\"location_name\": \"London\", \"country_code\": \"GB\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"g-search.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://g-search.p.rapidapi.com/location\"\nquerystring = {\"location_name\": \"London\", \"country_code\": \"GB\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"g-search.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "status": 200,
+                "data": {
+                    "locations": [
+                        {
+                            "location_name": "London,England,United Kingdom",
+                            "location_type": "City",
+                            "country_code": "GB",
+                            "country_name": "United Kingdom"
+                        },
+                        {
+                            "location_name": "London TV Region,England,United Kingdom",
+                            "location_type": "TV Region",
+                            "country_code": "GB",
+                            "country_name": "United Kingdom"
+                        },
+                        {
+                            "location_name": "City of London,England,United Kingdom",
+                            "location_type": "County",
+                            "country_code": "GB",
+                            "country_name": "United Kingdom"
+                        },
+                        {
+                            "location_name": "London Colney,England,United Kingdom",
+                            "location_type": "City",
+                            "country_code": "GB",
+                            "country_name": "United Kingdom"
+                        },
+                        {
+                            "location_name": "Greater London,England,United Kingdom",
+                            "location_type": "County",
+                            "country_code": "GB",
+                            "country_name": "United Kingdom"
+                        },
+                        {
+                            "location_name": "London Borough of Lambeth,England,United Kingdom",
+                            "location_type": "Municipality",
+                            "country_code": "GB",
+                            "country_name": "United Kingdom"
+                        },
+                        {
+                            "location_name": "London Luton Airport,England,United Kingdom",
+                            "location_type": "Airport",
+                            "country_code": "GB",
+                            "country_name": "United Kingdom"
+                        },
+                        {
+                            "location_name": "London Southend Airport,England,United Kingdom",
+                            "location_type": "Airport",
+                            "country_code": "GB",
+                            "country_name": "United Kingdom"
+                        },
+                        {
+                            "location_name": "London Stansted Airport,England,United Kingdom",
+                            "location_type": "Airport",
+                            "country_code": "GB",
+                            "country_name": "United Kingdom"
+                        }
+                    ]
+                }
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "/search",
+            "url": "https://g-search.p.rapidapi.com/search",
+            "description": "Get Real-time Search Result Page",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "q",
+                    "type": "STRING",
+                    "description": "The parameter defines the query you want to search. You can use anything that you would use in a regular Google search. (e.g., `inurl:`, `site:`,` intitle:`, etc.) . You can also pass the absolute google search URL (**URL encoded**) here. For example, if you want to scrape the 2nd page of the SERP, you can pass the URL from the navigation field in the result response. If the absolute URL is passed here then others parameters will be ignored.",
+                    "default": "bitcoin"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "google_domain",
+                    "type": "STRING",
+                    "description": "The parameter defines the Google domain to use. It defaults to google.com",
+                    "default": ""
+                },
+                {
+                    "name": "cr",
+                    "type": "STRING",
+                    "description": "The `cr` parameter instructs Google to limit the results to websites in the specified country.",
+                    "default": ""
+                },
+                {
+                    "name": "tbs",
+                    "type": "STRING",
+                    "description": "(to be searched) the parameter defines advanced search parameters that aren't possible in the regular query field. (e.g., advanced search for patents, dates, news, videos, images, apps, or text contents).",
+                    "default": ""
+                },
+                {
+                    "name": "nfpr",
+                    "type": "STRING",
+                    "description": "The parameter defines the exclusion of results from an auto-corrected query that is spelled wrong. It can be set to 1 to exclude these results, or 0 to include them (default).",
+                    "default": ""
+                },
+                {
+                    "name": "gl",
+                    "type": "STRING",
+                    "description": "The `gl` parameter determines the Google country to use for the query.",
+                    "default": ""
+                },
+                {
+                    "name": "safe",
+                    "type": "STRING",
+                    "description": "The parameter defines the level of filtering for adult content. It can be set to active, or off (default).",
+                    "default": ""
+                },
+                {
+                    "name": "filter",
+                    "type": "STRING",
+                    "description": "The parameter defines if the filters for 'Similar Results' and 'Omitted Results' are on or off. It can be set to 1 (default) to enable these filters, or 0 to disable these filters.",
+                    "default": ""
+                },
+                {
+                    "name": "location_parameters_auto",
+                    "type": "STRING",
+                    "description": "If the `location_name` parameter is set to a location from the Location Endpoint, and `location_parameters_auto` is set to true (default) then the `google_domain`, `gl` and hl parameters are automatically updated to the domain, country, and language that match the location. Valid values are true (default) to enable this behavior or false to disable it.",
+                    "default": "true"
+                },
+                {
+                    "name": "location_name",
+                    "type": "STRING",
+                    "description": "Specifies the geographic location where the query is executed. You can enter `location_name` with free text or use the result from the `/location` endpoint for a more valid value. When you select a `location_name` and assign `true` to the `location_parameters_auto` parameter, then the values in google_domain, `gl` and `hl` are automatically updated to the domain, country, and language matching the default location (note that this behavior can be disabled via location_parameters_auto).",
+                    "default": "London,Ontario,Canada"
+                },
+                {
+                    "name": "num",
+                    "type": "STRING",
+                    "description": "The parameter defines the maximum number of results to return. (e.g., 10 (default) returns 10 results, 40 returns 40 results, and 100 returns 100 results).",
+                    "default": ""
+                },
+                {
+                    "name": "hl",
+                    "type": "STRING",
+                    "description": "The `hl` parameter determines the Google UI (display) language to return results.",
+                    "default": ""
+                },
+                {
+                    "name": "lr",
+                    "type": "STRING",
+                    "description": "The `lr` parameter limits the results to websites containing the specified language.",
+                    "default": ""
+                },
+                {
+                    "name": "start",
+                    "type": "STRING",
+                    "description": "`start` parameter defines the resulting offset. It skips the given number of results. It's used for pagination. (e.g., 0 (default) is the first page of results, 10 is the 2nd page of results, 20 is the 3rd page of results, etc.).",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://g-search.p.rapidapi.com/search\"\nquerystring = {\"google_domain\": \"\", \"cr\": \"\", \"tbs\": \"\", \"nfpr\": \"\", \"gl\": \"\", \"safe\": \"\", \"filter\": \"\", \"location_parameters_auto\": \"true\", \"location_name\": \"London,Ontario,Canada\", \"q\": \"bitcoin\", \"num\": \"\", \"hl\": \"\", \"lr\": \"\", \"start\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"g-search.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://g-search.p.rapidapi.com/search\"\nquerystring = {\"google_domain\": \"\", \"cr\": \"\", \"tbs\": \"\", \"nfpr\": \"\", \"gl\": \"\", \"safe\": \"\", \"filter\": \"\", \"location_parameters_auto\": \"true\", \"location_name\": \"London,Ontario,Canada\", \"q\": \"bitcoin\", \"num\": \"\", \"hl\": \"\", \"lr\": \"\", \"start\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"g-search.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "status": 200,
+                "data": {
+                    "result_stat": "About 617,000,000 results (0.48 seconds)",
+                    "organic_results": [
+                        {
+                            "title": "Bitcoin - Open source P2P money",
+                            "url": "https://bitcoin.org/",
+                            "desc": "Bitcoin is an innovative payment network and a new kind of money. Find all you need to know and get started with Bitcoin on bitcoin .org."
+                        },
+                        {
+                            "title": "Buy Bitcoin & cryptocurrency | Wallet, news, education",
+                            "url": "https://www.bitcoin.com/",
+                            "desc": "Search for: futures on bitcoin"
+                        },
+                        {
+                            "title": "Bitcoin",
+                            "url": "https://en.wikipedia.org/wiki/Bitcoin",
+                            "desc": "Search for: bitcoin costs"
+                        },
+                        {
+                            "title": "Bitcoin Price | BTC Price Index and Live Chart",
+                            "url": "https://www.coindesk.com/price/bitcoin/",
+                            "desc": "The world's gateway to Bitcoin & cryptocurrency. Buy, sell, spend, swap, and invest in BTC, ETH, BCH, AVAX, MATIC & hundreds more digital assets."
+                        },
+                        {
+                            "title": "Bitcoin price today, BTC to USD live price, marketcap and ...",
+                            "url": "https://coinmarketcap.com/currencies/bitcoin/",
+                            "desc": "Bitcoin is a protocol which implements a public, permanent, and decentralized ledger. In order to add to the ledger, a user must prove they control an entry\u00a0... Ledger start: 3 January 2009 (14 years ago) Initial release: 0.1.0 / 9 January 2009 (14 years ..."
+                        },
+                        {
+                            "title": "Bitcoin USD (BTC-USD) Price, Value, News & History",
+                            "url": "https://finance.yahoo.com/quote/BTC-USD/",
+                            "desc": "Bitcoin USD price, real-time (live) charts, news and videos. Learn about BTC value, bitcoin cryptocurrency, crypto trading, and more."
+                        },
+                        {
+                            "title": "BTC.CM=: Bitcoin/USD Coin Metrics - Stock Price, Quote ...",
+                            "url": "https://www.cnbc.com/quotes/BTC.CM=",
+                            "desc": "The live Bitcoin price today is $26,361.10 USD with a 24-hour trading volume of $17,278,471,455 USD. We update our BTC to USD price in real-time. Bitcoin is up\u00a0... Max. supply: 21,000,000 BTC Market Cap: $1,062,784,769,031 Market cap: 4.16%$512B Fully diluted market cap: $553,583,115,824 Rating: 4.4 \u00b7 \u200e US$26,363.32"
+                        },
+                        {
+                            "title": "Bitcoin Price | BTC Price Index, Live Chart and USD ...",
+                            "url": "https://www.binance.com/en/price/bitcoin",
+                            "desc": "Find the latest Bitcoin USD (BTC-USD) price quote, history, news and other vital information to help you with your cryptocurrency trading and investing."
+                        }
+                    ],
+                    "related_questions": [],
+                    "image_results": [],
+                    "image_filters": [],
+                    "video_results": [],
+                    "inline_products": [],
+                    "inline_cards": [],
+                    "inline_twitter": [
+                        {
+                            "url": "https://twitter.com/Bitcoin/status/1668843361250443264?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Etweet"
+                        },
+                        {
+                            "url": "https://twitter.com/Bitcoin/status/1668719316655800320?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Etweet"
+                        },
+                        {
+                            "url": "https://twitter.com/Bitcoin/status/1668655147713716229?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Etweet"
+                        },
+                        {
+                            "tweet": "$25,620.",
+                            "url": "https://twitter.com/Bitcoin/status/1667568157475885058?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Etweet"
+                        }
+                    ],
+                    "knowledge_graph": {
+                        "title": "Bitcoin",
+                        "subtitle": "Cryptocurrency",
+                        "description": "Bitcoin is a protocol which implements a public, permanent, and decentralized ledger. In order to add to the ledger, a user must prove they control an entry in the ledger. The protocol specifies that the entry indicates an amount of a token, bitcoin with a minuscule b.",
+                        "informations": [
+                            {
+                                "attribute": "hw:/collection/currencies:symbol",
+                                "value": {
+                                    "title": "Symbols",
+                                    "desc": "BTC, \u0e3f, \u20bf"
+                                }
+                            },
+                            {
+                                "attribute": "ss:/webfacts:block_reward",
+                                "value": {
+                                    "title": "Block reward",
+                                    "desc": "\u20bf6.25"
+                                }
+                            },
+                            {
+                                "attribute": "ss:/webfacts:circul_suppli",
+                                "value": {
+                                    "title": "Circulating supply",
+                                    "desc": "\u20bf18,925,000"
+                                }
+                            },
+                            {
+                                "attribute": "ss:/webfacts:code",
+                                "value": {
+                                    "title": "Code",
+                                    "desc": "BTC, XBT"
+                                }
+                            },
+                            {
+                                "attribute": "ss:/webfacts:exchang_rate",
+                                "value": {
+                                    "title": "Exchange rate",
+                                    "desc": "Floating"
+                                }
+                            },
+                            {
+                                "attribute": "ss:/webfacts:hash_function",
+                                "value": {
+                                    "title": "Hash function",
+                                    "desc": "SHA-256 (two rounds)"
+                                }
+                            },
+                            {
+                                "attribute": "ss:/webfacts:implement",
+                                "value": {
+                                    "title": "Implementation(s)",
+                                    "desc": "Bitcoin Core"
+                                }
+                            },
+                            {
+                                "attribute": "kc:/common:downwards",
+                                "value": "books Bitcoin View 5+ more The Basics of Bitcoins... Mastering Bitcoin: Program... The Bitcoin Standar... The Age of Cryptocu..."
+                            }
+                        ],
+                        "answer_panel": [
+                            {
+                                "question": "Future",
+                                "answer_html": "<div class=\"wDYxhc NFQFxe viOShc LKPcQc\" data-md=\"471\"><div class=\"V3FYCf\"></div></div>"
+                            },
+                            {
+                                "question": "Cost",
+                                "answer_html": "<div class=\"wDYxhc NFQFxe viOShc LKPcQc\" data-md=\"471\"><div class=\"V3FYCf\"></div></div>"
+                            }
+                        ]
+                    },
+                    "section_with_header": {
+                        "section_list": [
+                            {
+                                "url": "https://www.google.com/search?gl=CA&hl=en&q=bitcoin&tbm=nws&source=univ&tbo=u&sa=X&ved=2ahUKEwiPtPfp98j_AhUSJ30KHbaPDIIQt8YBKAF6BAgsEAY"
+                            }
+                        ]
+                    },
+                    "navigation": {
+                        "current_page": "1",
+                        "other_pages": [
+                            {
+                                "page": "2",
+                                "url": "https://www.google.ca/search?q=bitcoin&gl=CA&hl=en&ei=OO-MZI-4NpLO9AO2n7KQCA&start=10&sa=N&ved=2ahUKEwiPtPfp98j_AhUSJ30KHbaPDIIQ8tMDegQICBAE"
+                            },
+                            {
+                                "page": "3",
+                                "url": "https://www.google.ca/search?q=bitcoin&gl=CA&hl=en&ei=OO-MZI-4NpLO9AO2n7KQCA&start=20&sa=N&ved=2ahUKEwiPtPfp98j_AhUSJ30KHbaPDIIQ8tMDegQICBAG"
+                            },
+                            {
+                                "page": "4",
+                                "url": "https://www.google.ca/search?q=bitcoin&gl=CA&hl=en&ei=OO-MZI-4NpLO9AO2n7KQCA&start=30&sa=N&ved=2ahUKEwiPtPfp98j_AhUSJ30KHbaPDIIQ8tMDegQICBAI"
+                            },
+                            {
+                                "page": "5",
+                                "url": "https://www.google.ca/search?q=bitcoin&gl=CA&hl=en&ei=OO-MZI-4NpLO9AO2n7KQCA&start=40&sa=N&ved=2ahUKEwiPtPfp98j_AhUSJ30KHbaPDIIQ8tMDegQICBAK"
+                            },
+                            {
+                                "page": "6",
+                                "url": "https://www.google.ca/search?q=bitcoin&gl=CA&hl=en&ei=OO-MZI-4NpLO9AO2n7KQCA&start=50&sa=N&ved=2ahUKEwiPtPfp98j_AhUSJ30KHbaPDIIQ8tMDegQICBAM"
+                            },
+                            {
+                                "page": "7",
+                                "url": "https://www.google.ca/search?q=bitcoin&gl=CA&hl=en&ei=OO-MZI-4NpLO9AO2n7KQCA&start=60&sa=N&ved=2ahUKEwiPtPfp98j_AhUSJ30KHbaPDIIQ8tMDegQICBAO"
+                            },
+                            {
+                                "page": "8",
+                                "url": "https://www.google.ca/search?q=bitcoin&gl=CA&hl=en&ei=OO-MZI-4NpLO9AO2n7KQCA&start=70&sa=N&ved=2ahUKEwiPtPfp98j_AhUSJ30KHbaPDIIQ8tMDegQICBAQ"
+                            },
+                            {
+                                "page": "9",
+                                "url": "https://www.google.ca/search?q=bitcoin&gl=CA&hl=en&ei=OO-MZI-4NpLO9AO2n7KQCA&start=80&sa=N&ved=2ahUKEwiPtPfp98j_AhUSJ30KHbaPDIIQ8tMDegQICBAS"
+                            },
+                            {
+                                "page": "10",
+                                "url": "https://www.google.ca/search?q=bitcoin&gl=CA&hl=en&ei=OO-MZI-4NpLO9AO2n7KQCA&start=90&sa=N&ved=2ahUKEwiPtPfp98j_AhUSJ30KHbaPDIIQ8tMDegQICBAU"
+                            },
+                            {
+                                "page": "Next",
+                                "url": "https://www.google.ca/search?q=bitcoin&gl=CA&hl=en&ei=OO-MZI-4NpLO9AO2n7KQCA&start=10&sa=N&ved=2ahUKEwiPtPfp98j_AhUSJ30KHbaPDIIQ8NMDegQICBAW"
+                            }
+                        ]
+                    },
+                    "top_section": {
+                        "featured_snippet": {},
+                        "answer_box": {}
+                    },
+                    "query": {
+                        "auto_correction": {},
+                        "related_search": [
+                            {
+                                "query": "Shiba Inu coin",
+                                "url": "https://www.google.ca/search?gl=CA&hl=en&q=Shiba+Inu+coin&stick=H4sIAAAAAAAAAOOQUeLVT9c3NCw0zCpOKyvOMxJNyslPzk7OSMzMU0guLSpKzUvOTC2OYk_KLEnOz8w7xYiqHsZPiS8vKUs2zYbx04yzKtMy8oDynPq5-gaG5iUVeb8YRZ2wGb6IlS84IzMpUcEzr1QBZMktNkmGkmfXZn1c2tq1N_XcHq8ZPOlHrSYI72c5_QAAKSpCMLIAAAA&sa=X&ved=2ahUKEwiPtPfp98j_AhUSJ30KHbaPDIIQs9oBKAB6BAhmEAI"
+                            },
+                            {
+                                "query": "Bitcoin Cash",
+                                "url": "https://www.google.ca/search?gl=CA&hl=en&q=Bitcoin+Cash&stick=H4sIAAAAAAAAAOOQUeLVT9c3NEyJLy8pSzbNNhJNyslPzk7OSMzMU0guLSpKzUvOTC2OYk_KLEnOz8w7xQhRX2iYVZxWVgznw_TD-GnGWZVpGXlAeU79XH0DQ_OSirxfjKJO2AxfxMrjBDFdwTmxOOMWmyRDybNrsz4ube3am3puj9cMnvSjVhOE97OcfgAA-vf3V7AAAAA&sa=X&ved=2ahUKEwiPtPfp98j_AhUSJ30KHbaPDIIQs9oBKAF6BAhmEAM"
+                            },
+                            {
+                                "query": "Verge",
+                                "url": "https://www.google.ca/search?gl=CA&hl=en&q=Verge&stick=H4sIAAAAAAAAAOOQUeLVT9c3NEwzzqpMy8jLMxJNyslPzk7OSMzMU0guLSpKzUvOTC2OYk_KLEnOz8w7xQhRX2iYVZxWVgznp8SXl5Qlm2bD-DDzTjFy6ufqGxial1Tk_WIUdcJm-CJW1rDUovTUW2ySDCXPrs36uLS1a2_quT1eM3jSj1pNEN7PcvoBAHPydHypAAAA&sa=X&ved=2ahUKEwiPtPfp98j_AhUSJ30KHbaPDIIQs9oBKAJ6BAhmEAQ"
+                            },
+                            {
+                                "query": "Fiat money",
+                                "url": "https://www.google.ca/search?gl=CA&hl=en&q=Fiat+money&stick=H4sIAAAAAAAAAOOQUeLUz9U3MDQvqcgzEk3KyU_OTs5IzMxTSC4tKkrNS85MLY5iT8osSc7PzDvFyKufrm9oWGiYVZxWVgznp8SXl5Qlm2bD-GnGWZVpGXlAeYTZvxhFnbAZvoiVyy0zsUQhNz8vtfIWmyRDybNrsz4ube3am3puj9cMnvSjVhOE97OcfgAA0N5kUqoAAAA&sa=X&ved=2ahUKEwiPtPfp98j_AhUSJ30KHbaPDIIQs9oBKAN6BAhmEAU"
+                            }
+                        ]
+                    },
+                    "local_results": {
+                        "map": {},
+                        "places": [
+                            {
+                                "detail": "A",
+                                "image": ""
+                            },
+                            {
+                                "detail": "B",
+                                "image": ""
+                            },
+                            {
+                                "detail": "C",
+                                "image": ""
+                            }
+                        ],
+                        "hotels": []
+                    },
+                    "ads": {
+                        "top_text_ads": [],
+                        "bottom_text_ads": [],
+                        "product_ads": [],
+                        "sidebar_product_ads": []
+                    },
+                    "search_parameters": {
+                        "gl": "CA",
+                        "hl": "en",
+                        "google_domain": "google.ca",
+                        "auto_location": {
+                            "location_name": "London,Ontario,Canada",
+                            "location_type": "City",
+                            "country_code": "CA",
+                            "country_name": "Canada"
+                        }
+                    }
+                }
+            },
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "g_search"
+}

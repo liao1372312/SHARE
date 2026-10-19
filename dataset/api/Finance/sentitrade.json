@@ -1,0 +1,49 @@
+{
+    "product_id": "api_390542d7-d6e4-45a8-8aea-b0a072d0f439",
+    "tool_description": "JSON web API that performs NLP sentiment analysis on news headlines for stocks and cryptocurrencies, grading daily collective news sentiment. DISCLAIMER: this prototype version currently only supports Bitcoin (BTC) and Ethereum (ETH). Consider donating to support full development at main site: https://www.sentitrade.net/",
+    "home_url": "https://rapidapi.com/lukaziv/api/sentitrade/",
+    "name": "SentiTrade",
+    "title": "SentiTrade",
+    "pricing": "FREE",
+    "tool_name": "SentiTrade",
+    "score": {
+        "avgServiceLevel": 71,
+        "avgLatency": 520,
+        "avgSuccessRate": 47,
+        "popularityScore": 8.5,
+        "__typename": "Score"
+    },
+    "host": "sentitrade.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Daily Sentiment",
+            "url": "https://sentitrade.p.rapidapi.com/endpoint",
+            "description": "Returns asset ticker queried, sentiment score, date queried, and number of articles used to calculate the sentiment score.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "symbol",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "BTC"
+                },
+                {
+                    "name": "date",
+                    "type": "DATE (YYYY-MM-DD)",
+                    "description": "",
+                    "default": "2023-01-01"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://sentitrade.p.rapidapi.com/endpoint\"\nquerystring = {\"symbol\": \"BTC\", \"date\": \"2023-01-01\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sentitrade.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://sentitrade.p.rapidapi.com/endpoint\"\nquerystring = {\"symbol\": \"BTC\", \"date\": \"2023-01-01\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sentitrade.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "symbol": "BTC",
+                "score": 0.0658815369,
+                "num_articles": 188,
+                "date": "2023-01-01"
+            }
+        }
+    ],
+    "standardized_name": "sentitrade"
+}

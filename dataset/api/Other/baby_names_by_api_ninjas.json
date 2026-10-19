@@ -1,0 +1,55 @@
+{
+    "product_id": "api_e07f1e04-0a99-4679-98f1-a29a2c73acbd",
+    "tool_description": "Popular and unique baby name name generator for boys, girls, and gender-neutral names. See more info at https://api-ninjas.com/api/babynames",
+    "home_url": "https://rapidapi.com/apininjas/api/baby-names-by-api-ninjas/",
+    "name": "Baby Names by API-Ninjas",
+    "title": "Baby Names by API-Ninjas",
+    "pricing": "FREEMIUM",
+    "tool_name": "Baby Names by API-Ninjas",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 417,
+        "avgSuccessRate": 100,
+        "popularityScore": 9.1,
+        "__typename": "Score"
+    },
+    "host": "baby-names-by-api-ninjas.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "/v1/babynames",
+            "url": "https://baby-names-by-api-ninjas.p.rapidapi.com/v1/babynames",
+            "description": "API Ninjas Baby Names API endpoint. Returns 10 baby name results.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "popular_only",
+                    "type": "STRING",
+                    "description": "Whether to only return popular (top 10%) of names. Must be either true or false. If unset, default is true.",
+                    "default": ""
+                },
+                {
+                    "name": "gender",
+                    "type": "STRING",
+                    "description": "Baby name gender. Must be one of the following: boy, girl, neutral",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://baby-names-by-api-ninjas.p.rapidapi.com/v1/babynames\"\nquerystring = {\"popular_only\": \"\", \"gender\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"baby-names-by-api-ninjas.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://baby-names-by-api-ninjas.p.rapidapi.com/v1/babynames\"\nquerystring = {\"popular_only\": \"\", \"gender\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"baby-names-by-api-ninjas.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": [
+                "Kobi",
+                "Bella",
+                "Mitchell",
+                "Miya",
+                "Zoe",
+                "Rosa",
+                "Summer",
+                "Amara",
+                "Cassidy",
+                "Mateusz"
+            ]
+        }
+    ],
+    "standardized_name": "baby_names_by_api_ninjas"
+}

@@ -1,0 +1,1777 @@
+{
+    "product_id": "api_179cb272-38ec-4af6-bb9b-4f0acf51ef3d",
+    "tool_description": "Fetch alerts, traffic jams information and driving directions from Waze/Google in real-time.",
+    "home_url": "https://rapidapi.com/letscrape-6bRBa3QguO5/api/waze/",
+    "name": "Waze",
+    "title": "Waze",
+    "pricing": "FREEMIUM",
+    "tool_name": "Waze",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 2275,
+        "avgSuccessRate": 100,
+        "popularityScore": 9.6,
+        "__typename": "Score"
+    },
+    "host": "waze.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Autocomplete",
+            "url": "https://waze.p.rapidapi.com/autocomplete",
+            "description": "Waze/Google autocomplete/type-ahead for places, locations and addresses.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "q",
+                    "type": "STRING",
+                    "description": "Free-text geographic query",
+                    "default": "sunn"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "lang",
+                    "type": "STRING",
+                    "description": "The language of the results. See https://wazeopedia.waze.com/wiki/USA/Countries_and_Languages for a list of supported languages.",
+                    "default": "en"
+                },
+                {
+                    "name": "coordinates",
+                    "type": "STRING",
+                    "description": "Geographic coordinates (latitude, longitude) bias. Highly recommended to use for getting accurate results.",
+                    "default": "37.376754, -122.023350"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://waze.p.rapidapi.com/autocomplete\"\nquerystring = {\"q\": \"sunn\", \"lang\": \"en\", \"coordinates\": \"37.376754, -122.023350\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"waze.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://waze.p.rapidapi.com/autocomplete\"\nquerystring = {\"q\": \"sunn\", \"lang\": \"en\", \"coordinates\": \"37.376754, -122.023350\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"waze.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "status": "OK",
+                "request_id": "c62dd701-bbb0-4413-8a1f-fa2d4c44f83e",
+                "data": [
+                    {
+                        "name": "Sunnyvale",
+                        "address": "CA, USA",
+                        "latitude": 37.368829999999996,
+                        "longitude": -122.0363496
+                    },
+                    {
+                        "name": "Caltrain - Sunnyvale Station",
+                        "address": "W Evelyn Ave, Sunnyvale, USA",
+                        "latitude": 37.378609399999995,
+                        "longitude": -122.03110219999999
+                    },
+                    {
+                        "name": "Sunnyvale Public Library",
+                        "address": "West Olive Avenue, Sunnyvale, CA, USA",
+                        "latitude": 37.372005099999996,
+                        "longitude": -122.03890729999999
+                    },
+                    {
+                        "name": "Toyota Sunnyvale",
+                        "address": "W El Camino Real, Sunnyvale, USA",
+                        "latitude": 37.3706765,
+                        "longitude": -122.0443995
+                    },
+                    {
+                        "name": "Sunnyvale Municipal Golf Course",
+                        "address": "605 Macara Ave, Sunnyvale, USA",
+                        "latitude": 37.3986355,
+                        "longitude": -122.04178309999999
+                    },
+                    {
+                        "name": "Sunnyvale Ford Lincoln",
+                        "address": "E El Camino Real, Sunnyvale, USA",
+                        "latitude": 37.3604043,
+                        "longitude": -122.0241422
+                    },
+                    {
+                        "name": "Sunnyvale Department of Public Safety",
+                        "address": "All America Way, Sunnyvale, USA",
+                        "latitude": 37.3705232,
+                        "longitude": -122.03988820000001
+                    },
+                    {
+                        "name": "Sunnyvale West",
+                        "address": "Sunnyvale, CA, USA",
+                        "latitude": 37.3718602,
+                        "longitude": -122.0484814
+                    },
+                    {
+                        "name": "Sunnyvale Community Center",
+                        "address": "Sunnyvale, USA",
+                        "latitude": 37.358526499999996,
+                        "longitude": -122.02484259999999
+                    },
+                    {
+                        "name": "Sunnyvale City Hall",
+                        "address": "W Olive Ave, Sunnyvale, USA",
+                        "latitude": 37.3712496,
+                        "longitude": -122.03805039999999
+                    }
+                ]
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "type": "string"
+                    },
+                    "request_id": {
+                        "type": "string"
+                    },
+                    "data": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "name": {
+                                    "type": "string"
+                                },
+                                "address": {
+                                    "type": "string"
+                                },
+                                "latitude": {
+                                    "type": "number"
+                                },
+                                "longitude": {
+                                    "type": "number"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Driving Directions",
+            "url": "https://waze.p.rapidapi.com/driving-directions",
+            "description": "Get routes and driving directions from Waze/Google.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "source_coordinates",
+                    "type": "STRING",
+                    "description": "Geographic coordinates (latitude, longitude pair) of the starting point",
+                    "default": "32.0852999,34.78176759999999"
+                },
+                {
+                    "name": "destination_coordinates",
+                    "type": "STRING",
+                    "description": "Geographic coordinates (latitude, longitude pair) of the destination",
+                    "default": "32.7940463,34.989571"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "return_route_coordinates",
+                    "type": "BOOLEAN",
+                    "description": "Whether to return route coordinate pairs (`route_coordinates` field)",
+                    "default": ""
+                },
+                {
+                    "name": "arrival_timestamp",
+                    "type": "NUMBER",
+                    "description": "Unix-timestamp (seconds since epoch) of the arrival time (in case not specified directions will be returned for current time) ",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://waze.p.rapidapi.com/driving-directions\"\nquerystring = {\"source_coordinates\": \"32.0852999,34.78176759999999\", \"destination_coordinates\": \"32.7940463,34.989571\", \"return_route_coordinates\": \"\", \"arrival_timestamp\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"waze.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://waze.p.rapidapi.com/driving-directions\"\nquerystring = {\"source_coordinates\": \"32.0852999,34.78176759999999\", \"destination_coordinates\": \"32.7940463,34.989571\", \"return_route_coordinates\": \"\", \"arrival_timestamp\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"waze.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "status": "OK",
+                "request_id": "ce448492-8894-476f-a0f5-b556fcab8d29"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "type": "string"
+                    },
+                    "request_id": {
+                        "type": "string"
+                    },
+                    "data": {
+                        "type": "array",
+                        "items": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Alerts and Jams",
+            "url": "https://waze.p.rapidapi.com/alerts-and-jams",
+            "description": "Get real-time alerts and jams from Waze in a geographic rectangular area defined by bottom-left and top-right latitude, longitude pairs.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "top_right",
+                    "type": "STRING",
+                    "description": "Top-right corner of the geographic rectangular area for which to get alerts and traffic jams. Specified as latitude, longitude pair.",
+                    "default": "40.772787404902594,-73.76818084716798"
+                },
+                {
+                    "name": "bottom_left",
+                    "type": "STRING",
+                    "description": "Bottom-left corner of the geographic rectangular area for which to get alerts and traffic jams. Specified as latitude, longitude pair.",
+                    "default": "40.66615391742187,-74.13732147216798"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "max_alerts",
+                    "type": "NUMBER",
+                    "description": "Maximum number of alerts to fetch (to avoid fetching alerts set it to `0`).\nDefault: `20`",
+                    "default": "20"
+                },
+                {
+                    "name": "max_jams",
+                    "type": "NUMBER",
+                    "description": "Maximum number of traffic jams to fetch (to avoid fetching traffic jams, set it to `0`).\nDefault: `20`",
+                    "default": "20"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://waze.p.rapidapi.com/alerts-and-jams\"\nquerystring = {\"max_alerts\": \"20\", \"top_right\": \"40.772787404902594,-73.76818084716798\", \"max_jams\": \"20\", \"bottom_left\": \"40.66615391742187,-74.13732147216798\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"waze.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://waze.p.rapidapi.com/alerts-and-jams\"\nquerystring = {\"max_alerts\": \"20\", \"top_right\": \"40.772787404902594,-73.76818084716798\", \"max_jams\": \"20\", \"bottom_left\": \"40.66615391742187,-74.13732147216798\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"waze.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "status": "OK",
+                "request_id": "7c8e1eaa-bf8d-4807-9c26-b4f4a7695d5d",
+                "data": {
+                    "alerts": [
+                        {
+                            "alert_id": "1645166135",
+                            "type": "ROAD_CLOSED",
+                            "subtype": "ROAD_CLOSED_EVENT",
+                            "reported_by": "krzycholub",
+                            "description": "RTC",
+                            "image": null,
+                            "publish_datetime_utc": "2023-05-18T20:02:32.000Z",
+                            "country": "US",
+                            "city": "Jersey City, NJ",
+                            "street": "York St",
+                            "latitude": 40.717983,
+                            "longitude": -74.048125,
+                            "num_thumbs_up": 1,
+                            "alert_reliability": 7,
+                            "alert_confidence": 0,
+                            "near_by": null,
+                            "comments": [],
+                            "num_comments": 0
+                        },
+                        {
+                            "alert_id": "1822833654",
+                            "type": "HAZARD",
+                            "subtype": "HAZARD_ON_ROAD_POT_HOLE",
+                            "reported_by": "jose217217",
+                            "description": null,
+                            "image": null,
+                            "publish_datetime_utc": "2023-06-16T11:34:03.000Z",
+                            "country": "US",
+                            "city": "Brooklyn, NY",
+                            "street": "Madison St",
+                            "latitude": 40.687015,
+                            "longitude": -73.930621,
+                            "num_thumbs_up": 7,
+                            "alert_reliability": 10,
+                            "alert_confidence": 3,
+                            "near_by": null,
+                            "comments": [],
+                            "num_comments": 0
+                        },
+                        {
+                            "alert_id": "1822732335",
+                            "type": "ACCIDENT",
+                            "subtype": null,
+                            "reported_by": "TRANSCOM",
+                            "description": " Construction Ed Koch Queensboro Bridge Upper Level WB 1 Right lane closed",
+                            "image": null,
+                            "publish_datetime_utc": "2023-06-16T11:05:26.000Z",
+                            "country": "US",
+                            "city": "Queens, NY",
+                            "street": "Ed Koch Queensboro Br W (Upper Rd)",
+                            "latitude": 40.755307,
+                            "longitude": -73.950739,
+                            "num_thumbs_up": 3,
+                            "alert_reliability": 9,
+                            "alert_confidence": 1,
+                            "near_by": null,
+                            "comments": [],
+                            "num_comments": 0
+                        },
+                        {
+                            "alert_id": "1776920097",
+                            "type": "ROAD_CLOSED",
+                            "subtype": "ROAD_CLOSED_EVENT",
+                            "reported_by": "dhschneider",
+                            "description": "Construction",
+                            "image": null,
+                            "publish_datetime_utc": "2023-06-08T23:46:33.000Z",
+                            "country": "US",
+                            "city": "Queens, NY",
+                            "street": "to I-495 W \u2022 Long Island Expwy \u00bb Midtown Tun",
+                            "latitude": 40.738519,
+                            "longitude": -73.800191,
+                            "num_thumbs_up": 1,
+                            "alert_reliability": 7,
+                            "alert_confidence": 0,
+                            "near_by": null,
+                            "comments": [],
+                            "num_comments": 0
+                        },
+                        {
+                            "alert_id": "1786274551",
+                            "type": "ROAD_CLOSED",
+                            "subtype": "ROAD_CLOSED_HAZARD",
+                            "reported_by": "AkayCool3",
+                            "description": null,
+                            "image": null,
+                            "publish_datetime_utc": "2023-06-10T15:45:39.000Z",
+                            "country": "US",
+                            "city": "Queens, NY",
+                            "street": "Seabury St",
+                            "latitude": 40.735871,
+                            "longitude": -73.878205,
+                            "num_thumbs_up": 4,
+                            "alert_reliability": 9,
+                            "alert_confidence": 2,
+                            "near_by": null,
+                            "comments": [],
+                            "num_comments": 0
+                        },
+                        {
+                            "alert_id": "1824284263",
+                            "type": "JAM",
+                            "subtype": "JAM_HEAVY_TRAFFIC",
+                            "reported_by": null,
+                            "description": null,
+                            "image": null,
+                            "publish_datetime_utc": "2023-06-16T15:20:05.000Z",
+                            "country": "US",
+                            "city": "Queens, NY",
+                            "street": "I-495 W \u2022 Long Island Expwy",
+                            "latitude": 40.741521,
+                            "longitude": -73.842444,
+                            "num_thumbs_up": 0,
+                            "alert_reliability": 5,
+                            "alert_confidence": 0,
+                            "near_by": null,
+                            "comments": [],
+                            "num_comments": 0
+                        },
+                        {
+                            "alert_id": "1824222670",
+                            "type": "JAM",
+                            "subtype": "JAM_STAND_STILL_TRAFFIC",
+                            "reported_by": null,
+                            "description": null,
+                            "image": null,
+                            "publish_datetime_utc": "2023-06-16T15:11:51.000Z",
+                            "country": "US",
+                            "city": "Queens, NY",
+                            "street": "I-278 W \u2022 Grand Central Pkwy",
+                            "latitude": 40.769579,
+                            "longitude": -73.91386,
+                            "num_thumbs_up": 1,
+                            "alert_reliability": 6,
+                            "alert_confidence": 0,
+                            "near_by": null,
+                            "comments": [],
+                            "num_comments": 0
+                        },
+                        {
+                            "alert_id": "1824198312",
+                            "type": "JAM",
+                            "subtype": "JAM_HEAVY_TRAFFIC",
+                            "reported_by": null,
+                            "description": null,
+                            "image": null,
+                            "publish_datetime_utc": "2023-06-16T15:08:25.000Z",
+                            "country": "US",
+                            "city": "Jersey City, NJ",
+                            "street": "SR-139 E",
+                            "latitude": 40.730955,
+                            "longitude": -74.049037,
+                            "num_thumbs_up": 0,
+                            "alert_reliability": 5,
+                            "alert_confidence": 0,
+                            "near_by": null,
+                            "comments": [],
+                            "num_comments": 0
+                        },
+                        {
+                            "alert_id": "1824054967",
+                            "type": "ACCIDENT",
+                            "subtype": "ACCIDENT_MINOR",
+                            "reported_by": null,
+                            "description": null,
+                            "image": null,
+                            "publish_datetime_utc": "2023-06-16T14:49:07.000Z",
+                            "country": "US",
+                            "city": "Brooklyn, NY",
+                            "street": "I-278 E \u2022 Bklyn-Qns Expwy",
+                            "latitude": 40.698797,
+                            "longitude": -73.962093,
+                            "num_thumbs_up": 26,
+                            "alert_reliability": 10,
+                            "alert_confidence": 5,
+                            "near_by": null,
+                            "comments": [],
+                            "num_comments": 0
+                        },
+                        {
+                            "alert_id": "245427313",
+                            "type": "HAZARD",
+                            "subtype": "HAZARD_ON_ROAD",
+                            "reported_by": "The Port Authority of NY and NJ",
+                            "description": "Don't tailgate. Maintain safe distance.\n",
+                            "image": null,
+                            "publish_datetime_utc": "2022-07-24T16:00:00.000Z",
+                            "country": null,
+                            "city": null,
+                            "street": null,
+                            "latitude": 40.763494,
+                            "longitude": -74.01096,
+                            "num_thumbs_up": 75,
+                            "alert_reliability": 10,
+                            "alert_confidence": 5,
+                            "near_by": null,
+                            "comments": [
+                                {
+                                    "text": "Trump 2024",
+                                    "comment_by": "Carfull_Driver",
+                                    "timestamp": 1661473719,
+                                    "datetime_utc": "2022-08-26T00:28:39.000Z"
+                                },
+                                {
+                                    "text": "DeSantis 2024",
+                                    "comment_by": "usa_7kc0k2z3",
+                                    "timestamp": 1661481856,
+                                    "datetime_utc": "2022-08-26T02:44:16.000Z"
+                                },
+                                {
+                                    "text": "sapoooo \ud83d\udc38 ",
+                                    "comment_by": "Garyteroo",
+                                    "timestamp": 1661610032,
+                                    "datetime_utc": "2022-08-27T14:20:32.000Z"
+                                },
+                                {
+                                    "text": "Putin \ud83d\ude02",
+                                    "comment_by": "RR1306",
+                                    "timestamp": 1661650788,
+                                    "datetime_utc": "2022-08-28T01:39:48.000Z"
+                                },
+                                {
+                                    "text": "let's go Brandon ",
+                                    "comment_by": "WonderingYid",
+                                    "timestamp": 1661735198,
+                                    "datetime_utc": "2022-08-29T01:06:38.000Z"
+                                },
+                                {
+                                    "text": "hi loser insurrectionists, how's the nuclear secrets?",
+                                    "timestamp": 1661811013,
+                                    "datetime_utc": "2022-08-29T22:10:13.000Z"
+                                },
+                                {
+                                    "text": "losers your parents are unlucky with you girl",
+                                    "comment_by": "RR1306",
+                                    "timestamp": 1661813648,
+                                    "datetime_utc": "2022-08-29T22:54:08.000Z"
+                                },
+                                {
+                                    "text": "So dumb conversation not part of traffic issue",
+                                    "timestamp": 1661981012,
+                                    "datetime_utc": "2022-08-31T21:23:32.000Z"
+                                },
+                                {
+                                    "text": "trump 2024!",
+                                    "comment_by": "monieab",
+                                    "timestamp": 1662122893,
+                                    "datetime_utc": "2022-09-02T12:48:13.000Z"
+                                },
+                                {
+                                    "text": "yes!",
+                                    "comment_by": "yykhappyguy",
+                                    "timestamp": 1662136613,
+                                    "datetime_utc": "2022-09-02T16:36:53.000Z"
+                                },
+                                {
+                                    "text": "Support ",
+                                    "comment_by": "RR1306",
+                                    "timestamp": 1662165585,
+                                    "datetime_utc": "2022-09-03T00:39:45.000Z"
+                                }
+                            ],
+                            "num_comments": 11
+                        },
+                        {
+                            "alert_id": "1824249438",
+                            "type": "JAM",
+                            "subtype": "JAM_MODERATE_TRAFFIC",
+                            "reported_by": null,
+                            "description": null,
+                            "image": null,
+                            "publish_datetime_utc": "2023-06-16T15:15:22.000Z",
+                            "country": "US",
+                            "city": "Queens, NY",
+                            "street": "Flushing Ave",
+                            "latitude": 40.715618,
+                            "longitude": -73.912369,
+                            "num_thumbs_up": 0,
+                            "alert_reliability": 5,
+                            "alert_confidence": 0,
+                            "near_by": null,
+                            "comments": [],
+                            "num_comments": 0
+                        },
+                        {
+                            "alert_id": "1823503211",
+                            "type": "HAZARD",
+                            "subtype": "HAZARD_ON_ROAD_POT_HOLE",
+                            "reported_by": "PIGGYFINDERCOPSUCK",
+                            "description": null,
+                            "image": null,
+                            "publish_datetime_utc": "2023-06-16T13:28:25.000Z",
+                            "country": "US",
+                            "city": "Newark, NJ",
+                            "street": "Doremus Ave",
+                            "latitude": 40.730736,
+                            "longitude": -74.121058,
+                            "num_thumbs_up": 2,
+                            "alert_reliability": 7,
+                            "alert_confidence": 1,
+                            "near_by": null,
+                            "comments": [],
+                            "num_comments": 0
+                        },
+                        {
+                            "alert_id": "1321604560",
+                            "type": "ROAD_CLOSED",
+                            "subtype": "ROAD_CLOSED_EVENT",
+                            "reported_by": "krzycholub",
+                            "description": "Construction",
+                            "image": null,
+                            "publish_datetime_utc": "2023-03-15T17:00:52.000Z",
+                            "country": "US",
+                            "city": "Jersey City, NJ",
+                            "street": "Exit to Broadway",
+                            "latitude": 40.73634,
+                            "longitude": -74.08513,
+                            "num_thumbs_up": 16,
+                            "alert_reliability": 10,
+                            "alert_confidence": 5,
+                            "near_by": null,
+                            "comments": [
+                                {
+                                    "text": "construcci\u00f3n?",
+                                    "comment_by": "usaweb_ddrjuayp",
+                                    "timestamp": 1685669798,
+                                    "datetime_utc": "2023-06-02T01:36:38.000Z"
+                                }
+                            ],
+                            "num_comments": 1
+                        },
+                        {
+                            "alert_id": "1824256237",
+                            "type": "JAM",
+                            "subtype": "JAM_MODERATE_TRAFFIC",
+                            "reported_by": null,
+                            "description": null,
+                            "image": null,
+                            "publish_datetime_utc": "2023-06-16T15:16:14.000Z",
+                            "country": "US",
+                            "city": "Jersey City, NJ",
+                            "street": "US-1-9 TRUCK S",
+                            "latitude": 40.735539,
+                            "longitude": -74.080037,
+                            "num_thumbs_up": 0,
+                            "alert_reliability": 5,
+                            "alert_confidence": 0,
+                            "near_by": null,
+                            "comments": [],
+                            "num_comments": 0
+                        },
+                        {
+                            "alert_id": "1824192228",
+                            "type": "POLICE",
+                            "subtype": "POLICE_VISIBLE",
+                            "reported_by": null,
+                            "description": null,
+                            "image": null,
+                            "publish_datetime_utc": "2023-06-16T15:07:38.000Z",
+                            "country": "US",
+                            "city": "Queens, NY",
+                            "street": "182nd St",
+                            "latitude": 40.738621,
+                            "longitude": -73.791651,
+                            "num_thumbs_up": 0,
+                            "alert_reliability": 5,
+                            "alert_confidence": 0,
+                            "near_by": null,
+                            "comments": [],
+                            "num_comments": 0
+                        },
+                        {
+                            "alert_id": "1824159237",
+                            "type": "JAM",
+                            "subtype": "JAM_STAND_STILL_TRAFFIC",
+                            "reported_by": null,
+                            "description": null,
+                            "image": null,
+                            "publish_datetime_utc": "2023-06-16T15:03:01.000Z",
+                            "country": "US",
+                            "city": "Queens, NY",
+                            "street": "Belt Pkwy W",
+                            "latitude": 40.6674,
+                            "longitude": -73.778053,
+                            "num_thumbs_up": 0,
+                            "alert_reliability": 5,
+                            "alert_confidence": 0,
+                            "near_by": null,
+                            "comments": [],
+                            "num_comments": 0
+                        },
+                        {
+                            "alert_id": "1824172851",
+                            "type": "HAZARD",
+                            "subtype": "HAZARD_ON_SHOULDER_CAR_STOPPED",
+                            "reported_by": "Aley319",
+                            "description": null,
+                            "image": null,
+                            "publish_datetime_utc": "2023-06-16T15:04:54.000Z",
+                            "country": "US",
+                            "city": "Kearny, NJ",
+                            "street": null,
+                            "latitude": 40.756657,
+                            "longitude": -74.117063,
+                            "num_thumbs_up": 1,
+                            "alert_reliability": 7,
+                            "alert_confidence": 0,
+                            "near_by": null,
+                            "comments": [],
+                            "num_comments": 0
+                        },
+                        {
+                            "alert_id": "1824042704",
+                            "type": "HAZARD",
+                            "subtype": "HAZARD_ON_ROAD_CONSTRUCTION",
+                            "reported_by": null,
+                            "description": null,
+                            "image": null,
+                            "publish_datetime_utc": "2023-06-16T14:47:23.000Z",
+                            "country": "US",
+                            "city": "Jersey City, NJ",
+                            "street": "Palisade Ave",
+                            "latitude": 40.747275,
+                            "longitude": -74.042231,
+                            "num_thumbs_up": 5,
+                            "alert_reliability": 10,
+                            "alert_confidence": 2,
+                            "near_by": null,
+                            "comments": [],
+                            "num_comments": 0
+                        },
+                        {
+                            "alert_id": "1321599706",
+                            "type": "ROAD_CLOSED",
+                            "subtype": "ROAD_CLOSED_EVENT",
+                            "reported_by": "snhroc",
+                            "description": "Fire Truck Parking",
+                            "image": null,
+                            "publish_datetime_utc": "2023-03-15T17:00:41.000Z",
+                            "country": "US",
+                            "city": "Queens, NY",
+                            "street": "Seabury St",
+                            "latitude": 40.73587,
+                            "longitude": -73.878204,
+                            "num_thumbs_up": 7,
+                            "alert_reliability": 10,
+                            "alert_confidence": 3,
+                            "near_by": null,
+                            "comments": [],
+                            "num_comments": 0
+                        },
+                        {
+                            "alert_id": "1824293921",
+                            "type": "HAZARD",
+                            "subtype": null,
+                            "reported_by": "HAAS Alert",
+                            "description": "Responding ambulance nearby",
+                            "image": null,
+                            "publish_datetime_utc": "2023-06-16T15:21:19.000Z",
+                            "country": "US",
+                            "city": "Manhattan, NY",
+                            "street": "Grand St",
+                            "latitude": 40.714014,
+                            "longitude": -73.980099,
+                            "num_thumbs_up": 0,
+                            "alert_reliability": 6,
+                            "alert_confidence": 0,
+                            "near_by": null,
+                            "comments": [],
+                            "num_comments": 0
+                        },
+                        {
+                            "alert_id": "1823757360",
+                            "type": "HAZARD",
+                            "subtype": "HAZARD_ON_ROAD_POT_HOLE",
+                            "reported_by": null,
+                            "description": null,
+                            "image": null,
+                            "publish_datetime_utc": "2023-06-16T14:06:52.000Z",
+                            "country": "US",
+                            "city": "Queens, NY",
+                            "street": "Greene Ave",
+                            "latitude": 40.710498,
+                            "longitude": -73.906973,
+                            "num_thumbs_up": 1,
+                            "alert_reliability": 6,
+                            "alert_confidence": 0,
+                            "near_by": null,
+                            "comments": [],
+                            "num_comments": 0
+                        }
+                    ],
+                    "jams": [
+                        {
+                            "jam_id": "1240478140",
+                            "type": "NONE",
+                            "level": 4,
+                            "severity": 5,
+                            "line_coordinates": [
+                                {
+                                    "lat": 40.757964,
+                                    "lon": -73.985548
+                                },
+                                {
+                                    "lat": 40.758258,
+                                    "lon": -73.986246
+                                },
+                                {
+                                    "lat": 40.758353,
+                                    "lon": -73.986473
+                                },
+                                {
+                                    "lat": 40.759157,
+                                    "lon": -73.988382
+                                }
+                            ],
+                            "start_location": null,
+                            "end_location": null,
+                            "speed_kmh": 3.27,
+                            "length_meters": 273,
+                            "delay_seconds": 224,
+                            "block_alert_id": null,
+                            "block_alert_type": null,
+                            "block_alert_description": null,
+                            "block_alert_update_datetime_utc": null,
+                            "block_start_datetime_utc": null,
+                            "publish_datetime_utc": "2023-06-16T13:58:33.159Z",
+                            "update_datetime_utc": "2023-06-16T15:20:08.175Z",
+                            "country": "US",
+                            "city": "Manhattan, NY",
+                            "street": "W 45th St"
+                        },
+                        {
+                            "jam_id": "1241678408",
+                            "type": "NONE",
+                            "level": 3,
+                            "severity": 5,
+                            "line_coordinates": [
+                                {
+                                    "lat": 40.713178,
+                                    "lon": -74.060231
+                                },
+                                {
+                                    "lat": 40.712315,
+                                    "lon": -74.061428
+                                },
+                                {
+                                    "lat": 40.711451,
+                                    "lon": -74.062625
+                                }
+                            ],
+                            "start_location": null,
+                            "end_location": null,
+                            "speed_kmh": 7.47,
+                            "length_meters": 278,
+                            "delay_seconds": 95,
+                            "block_alert_id": null,
+                            "block_alert_type": null,
+                            "block_alert_description": null,
+                            "block_alert_update_datetime_utc": null,
+                            "block_start_datetime_utc": null,
+                            "publish_datetime_utc": "2023-06-16T15:20:13.325Z",
+                            "update_datetime_utc": "2023-06-16T15:20:13.325Z",
+                            "country": "US",
+                            "city": "Jersey City, NJ",
+                            "street": "Pacific Ave"
+                        },
+                        {
+                            "jam_id": "1241678406",
+                            "type": "NONE",
+                            "level": 4,
+                            "severity": 5,
+                            "line_coordinates": [
+                                {
+                                    "lat": 40.681056,
+                                    "lon": -73.849305
+                                },
+                                {
+                                    "lat": 40.680817,
+                                    "lon": -73.850152
+                                },
+                                {
+                                    "lat": 40.680577,
+                                    "lon": -73.850995
+                                }
+                            ],
+                            "start_location": null,
+                            "end_location": null,
+                            "speed_kmh": 3.5,
+                            "length_meters": 152,
+                            "delay_seconds": 130,
+                            "block_alert_id": null,
+                            "block_alert_type": null,
+                            "block_alert_description": null,
+                            "block_alert_update_datetime_utc": null,
+                            "block_start_datetime_utc": null,
+                            "publish_datetime_utc": "2023-06-16T15:20:13.278Z",
+                            "update_datetime_utc": "2023-06-16T15:20:13.278Z",
+                            "country": "US",
+                            "city": "Queens, NY",
+                            "street": "103rd Ave"
+                        },
+                        {
+                            "jam_id": "1241455022",
+                            "type": "NONE",
+                            "level": 3,
+                            "severity": 5,
+                            "line_coordinates": [
+                                {
+                                    "lat": 40.666251,
+                                    "lon": -73.925815
+                                },
+                                {
+                                    "lat": 40.666464,
+                                    "lon": -73.925828
+                                },
+                                {
+                                    "lat": 40.668299,
+                                    "lon": -73.925631
+                                },
+                                {
+                                    "lat": 40.668517,
+                                    "lon": -73.925607
+                                }
+                            ],
+                            "start_location": null,
+                            "end_location": null,
+                            "speed_kmh": 6.38,
+                            "length_meters": 252,
+                            "delay_seconds": 81,
+                            "block_alert_id": null,
+                            "block_alert_type": null,
+                            "block_alert_description": null,
+                            "block_alert_update_datetime_utc": null,
+                            "block_start_datetime_utc": null,
+                            "publish_datetime_utc": "2023-06-16T15:07:57.144Z",
+                            "update_datetime_utc": "2023-06-16T15:20:08.524Z",
+                            "country": "US",
+                            "city": "Brooklyn, NY",
+                            "street": "Buffalo Ave"
+                        },
+                        {
+                            "jam_id": "1241455072",
+                            "type": "NONE",
+                            "level": 3,
+                            "severity": 5,
+                            "line_coordinates": [
+                                {
+                                    "lat": 40.752821,
+                                    "lon": -73.979269
+                                },
+                                {
+                                    "lat": 40.752425,
+                                    "lon": -73.978366
+                                },
+                                {
+                                    "lat": 40.752179,
+                                    "lon": -73.977792
+                                },
+                                {
+                                    "lat": 40.752079,
+                                    "lon": -73.977555
+                                },
+                                {
+                                    "lat": 40.751441,
+                                    "lon": -73.976047
+                                },
+                                {
+                                    "lat": 40.750773,
+                                    "lon": -73.974463
+                                }
+                            ],
+                            "start_location": null,
+                            "end_location": null,
+                            "speed_kmh": 6.78,
+                            "length_meters": 466,
+                            "delay_seconds": 136,
+                            "block_alert_id": null,
+                            "block_alert_type": null,
+                            "block_alert_description": null,
+                            "block_alert_update_datetime_utc": null,
+                            "block_start_datetime_utc": null,
+                            "publish_datetime_utc": "2023-06-16T15:07:57.605Z",
+                            "update_datetime_utc": "2023-06-16T15:20:06.498Z",
+                            "country": "US",
+                            "city": "Manhattan, NY",
+                            "street": "E 42nd St"
+                        },
+                        {
+                            "jam_id": "1241676320",
+                            "type": "NONE",
+                            "level": 2,
+                            "severity": 5,
+                            "line_coordinates": [
+                                {
+                                    "lat": 40.754329,
+                                    "lon": -73.986895
+                                },
+                                {
+                                    "lat": 40.753533,
+                                    "lon": -73.98505
+                                },
+                                {
+                                    "lat": 40.752831,
+                                    "lon": -73.983353
+                                },
+                                {
+                                    "lat": 40.752196,
+                                    "lon": -73.981822
+                                }
+                            ],
+                            "start_location": null,
+                            "end_location": null,
+                            "speed_kmh": 10.05,
+                            "length_meters": 489,
+                            "delay_seconds": 45,
+                            "block_alert_id": null,
+                            "block_alert_type": null,
+                            "block_alert_description": null,
+                            "block_alert_update_datetime_utc": null,
+                            "block_start_datetime_utc": null,
+                            "publish_datetime_utc": "2023-06-16T15:20:10.483Z",
+                            "update_datetime_utc": "2023-06-16T15:20:10.483Z",
+                            "country": "US",
+                            "city": "Manhattan, NY",
+                            "street": "W 40th St"
+                        },
+                        {
+                            "jam_id": "1241430462",
+                            "type": "NONE",
+                            "level": 2,
+                            "severity": 5,
+                            "line_coordinates": [
+                                {
+                                    "lat": 40.71699,
+                                    "lon": -73.994474
+                                },
+                                {
+                                    "lat": 40.717915,
+                                    "lon": -73.994007
+                                },
+                                {
+                                    "lat": 40.718173,
+                                    "lon": -73.99384
+                                },
+                                {
+                                    "lat": 40.71907,
+                                    "lon": -73.993374
+                                },
+                                {
+                                    "lat": 40.719896,
+                                    "lon": -73.992955
+                                }
+                            ],
+                            "start_location": null,
+                            "end_location": null,
+                            "speed_kmh": 6.86,
+                            "length_meters": 347,
+                            "delay_seconds": 76,
+                            "block_alert_id": null,
+                            "block_alert_type": null,
+                            "block_alert_description": null,
+                            "block_alert_update_datetime_utc": null,
+                            "block_start_datetime_utc": null,
+                            "publish_datetime_utc": "2023-06-16T15:06:28.504Z",
+                            "update_datetime_utc": "2023-06-16T15:20:10.134Z",
+                            "country": "US",
+                            "city": "Manhattan, NY",
+                            "street": "Chrystie St"
+                        },
+                        {
+                            "jam_id": "1241356790",
+                            "type": "NONE",
+                            "level": 3,
+                            "severity": 5,
+                            "line_coordinates": [
+                                {
+                                    "lat": 40.680879,
+                                    "lon": -73.983711
+                                },
+                                {
+                                    "lat": 40.681523,
+                                    "lon": -73.983276
+                                },
+                                {
+                                    "lat": 40.682148,
+                                    "lon": -73.982855
+                                },
+                                {
+                                    "lat": 40.682783,
+                                    "lon": -73.982423
+                                },
+                                {
+                                    "lat": 40.683149,
+                                    "lon": -73.982174
+                                },
+                                {
+                                    "lat": 40.683417,
+                                    "lon": -73.981993
+                                },
+                                {
+                                    "lat": 40.684053,
+                                    "lon": -73.981562
+                                },
+                                {
+                                    "lat": 40.684689,
+                                    "lon": -73.981133
+                                }
+                            ],
+                            "start_location": null,
+                            "end_location": null,
+                            "speed_kmh": 4.3,
+                            "length_meters": 474,
+                            "delay_seconds": 270,
+                            "block_alert_id": null,
+                            "block_alert_type": null,
+                            "block_alert_description": null,
+                            "block_alert_update_datetime_utc": null,
+                            "block_start_datetime_utc": null,
+                            "publish_datetime_utc": "2023-06-16T15:01:56.348Z",
+                            "update_datetime_utc": "2023-06-16T15:20:09.274Z",
+                            "country": "US",
+                            "city": "Brooklyn, NY",
+                            "street": "3rd Ave"
+                        },
+                        {
+                            "jam_id": "1241678404",
+                            "type": "NONE",
+                            "level": 3,
+                            "severity": 5,
+                            "line_coordinates": [
+                                {
+                                    "lat": 40.7067,
+                                    "lon": -73.812115
+                                },
+                                {
+                                    "lat": 40.70705,
+                                    "lon": -73.81216
+                                },
+                                {
+                                    "lat": 40.709113,
+                                    "lon": -73.812428
+                                }
+                            ],
+                            "start_location": null,
+                            "end_location": null,
+                            "speed_kmh": 7.69,
+                            "length_meters": 269,
+                            "delay_seconds": 86,
+                            "block_alert_id": null,
+                            "block_alert_type": null,
+                            "block_alert_description": null,
+                            "block_alert_update_datetime_utc": null,
+                            "block_start_datetime_utc": null,
+                            "publish_datetime_utc": "2023-06-16T15:20:13.262Z",
+                            "update_datetime_utc": "2023-06-16T15:20:13.262Z",
+                            "country": "US",
+                            "city": "Queens, NY",
+                            "street": "144th St"
+                        },
+                        {
+                            "jam_id": "1241430496",
+                            "type": "NONE",
+                            "level": 3,
+                            "severity": 5,
+                            "line_coordinates": [
+                                {
+                                    "lat": 40.781664,
+                                    "lon": -74.021825
+                                },
+                                {
+                                    "lat": 40.781511,
+                                    "lon": -74.021952
+                                },
+                                {
+                                    "lat": 40.78107,
+                                    "lon": -74.02228
+                                },
+                                {
+                                    "lat": 40.780914,
+                                    "lon": -74.022413
+                                },
+                                {
+                                    "lat": 40.780493,
+                                    "lon": -74.02276
+                                },
+                                {
+                                    "lat": 40.780207,
+                                    "lon": -74.022975
+                                },
+                                {
+                                    "lat": 40.779424,
+                                    "lon": -74.023561
+                                },
+                                {
+                                    "lat": 40.778915,
+                                    "lon": -74.023972
+                                },
+                                {
+                                    "lat": 40.778685,
+                                    "lon": -74.024141
+                                },
+                                {
+                                    "lat": 40.778448,
+                                    "lon": -74.024336
+                                },
+                                {
+                                    "lat": 40.778104,
+                                    "lon": -74.024596
+                                },
+                                {
+                                    "lat": 40.777511,
+                                    "lon": -74.025066
+                                },
+                                {
+                                    "lat": 40.776945,
+                                    "lon": -74.025498
+                                },
+                                {
+                                    "lat": 40.776369,
+                                    "lon": -74.025939
+                                },
+                                {
+                                    "lat": 40.775801,
+                                    "lon": -74.026387
+                                },
+                                {
+                                    "lat": 40.77524,
+                                    "lon": -74.026824
+                                },
+                                {
+                                    "lat": 40.774697,
+                                    "lon": -74.027248
+                                },
+                                {
+                                    "lat": 40.774265,
+                                    "lon": -74.027568
+                                },
+                                {
+                                    "lat": 40.774114,
+                                    "lon": -74.027685
+                                },
+                                {
+                                    "lat": 40.773719,
+                                    "lon": -74.027999
+                                },
+                                {
+                                    "lat": 40.773549,
+                                    "lon": -74.028145
+                                },
+                                {
+                                    "lat": 40.773,
+                                    "lon": -74.02858
+                                },
+                                {
+                                    "lat": 40.772772,
+                                    "lon": -74.028775
+                                },
+                                {
+                                    "lat": 40.772243,
+                                    "lon": -74.029163
+                                },
+                                {
+                                    "lat": 40.772065,
+                                    "lon": -74.029231
+                                },
+                                {
+                                    "lat": 40.771645,
+                                    "lon": -74.029539
+                                },
+                                {
+                                    "lat": 40.771485,
+                                    "lon": -74.029668
+                                }
+                            ],
+                            "start_location": null,
+                            "end_location": null,
+                            "speed_kmh": 5.53,
+                            "length_meters": 1310,
+                            "delay_seconds": 554,
+                            "block_alert_id": null,
+                            "block_alert_type": null,
+                            "block_alert_description": null,
+                            "block_alert_update_datetime_utc": null,
+                            "block_start_datetime_utc": null,
+                            "publish_datetime_utc": "2023-06-16T15:06:28.965Z",
+                            "update_datetime_utc": "2023-06-16T15:20:06.484Z",
+                            "country": "US",
+                            "city": "Union City, NJ",
+                            "street": "Bergenline Ave"
+                        },
+                        {
+                            "jam_id": "1241508350",
+                            "type": "NONE",
+                            "level": 3,
+                            "severity": 5,
+                            "line_coordinates": [
+                                {
+                                    "lat": 40.708244,
+                                    "lon": -73.932498
+                                },
+                                {
+                                    "lat": 40.708651,
+                                    "lon": -73.932688
+                                },
+                                {
+                                    "lat": 40.709317,
+                                    "lon": -73.932997
+                                },
+                                {
+                                    "lat": 40.709987,
+                                    "lon": -73.933296
+                                },
+                                {
+                                    "lat": 40.710668,
+                                    "lon": -73.933602
+                                },
+                                {
+                                    "lat": 40.711335,
+                                    "lon": -73.933893
+                                },
+                                {
+                                    "lat": 40.712123,
+                                    "lon": -73.934257
+                                },
+                                {
+                                    "lat": 40.712754,
+                                    "lon": -73.934534
+                                },
+                                {
+                                    "lat": 40.713373,
+                                    "lon": -73.934801
+                                }
+                            ],
+                            "start_location": null,
+                            "end_location": null,
+                            "speed_kmh": 10.6,
+                            "length_meters": 602,
+                            "delay_seconds": 109,
+                            "block_alert_id": null,
+                            "block_alert_type": null,
+                            "block_alert_description": null,
+                            "block_alert_update_datetime_utc": null,
+                            "block_start_datetime_utc": null,
+                            "publish_datetime_utc": "2023-06-16T15:10:59.175Z",
+                            "update_datetime_utc": "2023-06-16T15:20:08.838Z",
+                            "country": "US",
+                            "city": "Brooklyn, NY",
+                            "street": "Morgan Ave"
+                        },
+                        {
+                            "jam_id": "1241614878",
+                            "type": "NONE",
+                            "level": 2,
+                            "severity": 5,
+                            "line_coordinates": [
+                                {
+                                    "lat": 40.685034,
+                                    "lon": -73.971241
+                                },
+                                {
+                                    "lat": 40.685443,
+                                    "lon": -73.972274
+                                },
+                                {
+                                    "lat": 40.685777,
+                                    "lon": -73.973106
+                                },
+                                {
+                                    "lat": 40.685885,
+                                    "lon": -73.973374
+                                },
+                                {
+                                    "lat": 40.686309,
+                                    "lon": -73.97444
+                                },
+                                {
+                                    "lat": 40.686757,
+                                    "lon": -73.97552
+                                },
+                                {
+                                    "lat": 40.687025,
+                                    "lon": -73.976205
+                                },
+                                {
+                                    "lat": 40.687183,
+                                    "lon": -73.976592
+                                },
+                                {
+                                    "lat": 40.687184,
+                                    "lon": -73.976592
+                                },
+                                {
+                                    "lat": 40.687535,
+                                    "lon": -73.977498
+                                },
+                                {
+                                    "lat": 40.687872,
+                                    "lon": -73.978347
+                                }
+                            ],
+                            "start_location": null,
+                            "end_location": null,
+                            "speed_kmh": 12.73,
+                            "length_meters": 679,
+                            "delay_seconds": 76,
+                            "block_alert_id": null,
+                            "block_alert_type": null,
+                            "block_alert_description": null,
+                            "block_alert_update_datetime_utc": null,
+                            "block_start_datetime_utc": null,
+                            "publish_datetime_utc": "2023-06-16T15:17:07.392Z",
+                            "update_datetime_utc": "2023-06-16T15:20:10.959Z",
+                            "country": "US",
+                            "city": "Brooklyn, NY",
+                            "street": "Fulton St"
+                        },
+                        {
+                            "jam_id": "1238921686",
+                            "type": "NONE",
+                            "level": 5,
+                            "severity": 5,
+                            "line_coordinates": [
+                                {
+                                    "lat": 40.756606,
+                                    "lon": -73.976503
+                                },
+                                {
+                                    "lat": 40.755979,
+                                    "lon": -73.975
+                                }
+                            ],
+                            "start_location": null,
+                            "end_location": null,
+                            "speed_kmh": 0,
+                            "length_meters": 145,
+                            "delay_seconds": 0,
+                            "block_alert_id": "1820884325",
+                            "block_alert_type": "ROAD_CLOSED_EVENT",
+                            "block_alert_description": "Train Shed Rehab Project",
+                            "block_alert_update_datetime_utc": "2023-06-15T23:00:39.722Z",
+                            "block_start_datetime_utc": "2023-06-16T11:00:00.000Z",
+                            "publish_datetime_utc": "2023-06-16T11:04:14.413Z",
+                            "update_datetime_utc": "2023-06-16T15:20:10.165Z",
+                            "country": "US",
+                            "city": "Manhattan, NY",
+                            "street": "E 48th St"
+                        },
+                        {
+                            "jam_id": "1241678368",
+                            "type": "NONE",
+                            "level": 2,
+                            "severity": 5,
+                            "line_coordinates": [
+                                {
+                                    "lat": 40.745513,
+                                    "lon": -73.888359
+                                },
+                                {
+                                    "lat": 40.747144,
+                                    "lon": -73.888667
+                                },
+                                {
+                                    "lat": 40.747537,
+                                    "lon": -73.888755
+                                },
+                                {
+                                    "lat": 40.749178,
+                                    "lon": -73.889066
+                                },
+                                {
+                                    "lat": 40.749257,
+                                    "lon": -73.889025
+                                },
+                                {
+                                    "lat": 40.749341,
+                                    "lon": -73.888979
+                                },
+                                {
+                                    "lat": 40.751297,
+                                    "lon": -73.889332
+                                },
+                                {
+                                    "lat": 40.753213,
+                                    "lon": -73.889677
+                                }
+                            ],
+                            "start_location": null,
+                            "end_location": null,
+                            "speed_kmh": 7.2,
+                            "length_meters": 865,
+                            "delay_seconds": 186,
+                            "block_alert_id": null,
+                            "block_alert_type": null,
+                            "block_alert_description": null,
+                            "block_alert_update_datetime_utc": null,
+                            "block_start_datetime_utc": null,
+                            "publish_datetime_utc": "2023-06-16T15:20:12.594Z",
+                            "update_datetime_utc": "2023-06-16T15:20:12.594Z",
+                            "country": "US",
+                            "city": "Queens, NY",
+                            "street": "77th St"
+                        },
+                        {
+                            "jam_id": "1241674242",
+                            "type": "NONE",
+                            "level": 3,
+                            "severity": 5,
+                            "line_coordinates": [
+                                {
+                                    "lat": 40.70396,
+                                    "lon": -73.895693
+                                },
+                                {
+                                    "lat": 40.704579,
+                                    "lon": -73.895992
+                                },
+                                {
+                                    "lat": 40.704578,
+                                    "lon": -73.895992
+                                },
+                                {
+                                    "lat": 40.705171,
+                                    "lon": -73.896282
+                                },
+                                {
+                                    "lat": 40.705273,
+                                    "lon": -73.896331
+                                },
+                                {
+                                    "lat": 40.705766,
+                                    "lon": -73.896573
+                                },
+                                {
+                                    "lat": 40.706499,
+                                    "lon": -73.89694
+                                }
+                            ],
+                            "start_location": null,
+                            "end_location": null,
+                            "speed_kmh": 7.93,
+                            "length_meters": 300,
+                            "delay_seconds": 98,
+                            "block_alert_id": null,
+                            "block_alert_type": null,
+                            "block_alert_description": null,
+                            "block_alert_update_datetime_utc": null,
+                            "block_start_datetime_utc": null,
+                            "publish_datetime_utc": "2023-06-16T15:20:06.749Z",
+                            "update_datetime_utc": "2023-06-16T15:20:06.749Z",
+                            "country": "US",
+                            "city": "Queens, NY",
+                            "street": "Fresh Pond Rd"
+                        },
+                        {
+                            "jam_id": "1241481684",
+                            "type": "NONE",
+                            "level": 2,
+                            "severity": 5,
+                            "line_coordinates": [
+                                {
+                                    "lat": 40.66364,
+                                    "lon": -73.868991
+                                },
+                                {
+                                    "lat": 40.665189,
+                                    "lon": -73.869385
+                                },
+                                {
+                                    "lat": 40.666727,
+                                    "lon": -73.869759
+                                },
+                                {
+                                    "lat": 40.667769,
+                                    "lon": -73.870032
+                                }
+                            ],
+                            "start_location": null,
+                            "end_location": null,
+                            "speed_kmh": 10.62,
+                            "length_meters": 467,
+                            "delay_seconds": 74,
+                            "block_alert_id": null,
+                            "block_alert_type": null,
+                            "block_alert_description": null,
+                            "block_alert_update_datetime_utc": null,
+                            "block_start_datetime_utc": null,
+                            "publish_datetime_utc": "2023-06-16T15:09:28.775Z",
+                            "update_datetime_utc": "2023-06-16T15:20:07.982Z",
+                            "country": "US",
+                            "city": "Brooklyn, NY",
+                            "street": "Euclid Ave"
+                        },
+                        {
+                            "jam_id": "1241614864",
+                            "type": "NONE",
+                            "level": 3,
+                            "severity": 5,
+                            "line_coordinates": [
+                                {
+                                    "lat": 40.732417,
+                                    "lon": -73.936052
+                                },
+                                {
+                                    "lat": 40.733762,
+                                    "lon": -73.93742
+                                },
+                                {
+                                    "lat": 40.734204,
+                                    "lon": -73.937876
+                                }
+                            ],
+                            "start_location": null,
+                            "end_location": null,
+                            "speed_kmh": 6.59,
+                            "length_meters": 251,
+                            "delay_seconds": 86,
+                            "block_alert_id": null,
+                            "block_alert_type": null,
+                            "block_alert_description": null,
+                            "block_alert_update_datetime_utc": null,
+                            "block_start_datetime_utc": null,
+                            "publish_datetime_utc": "2023-06-16T15:17:07.366Z",
+                            "update_datetime_utc": "2023-06-16T15:20:10.983Z",
+                            "country": "US",
+                            "city": "Queens, NY",
+                            "street": "Review Ave"
+                        },
+                        {
+                            "jam_id": "1240998356",
+                            "type": "NONE",
+                            "level": 4,
+                            "severity": 5,
+                            "line_coordinates": [
+                                {
+                                    "lat": 40.712914,
+                                    "lon": -73.986938
+                                },
+                                {
+                                    "lat": 40.713505,
+                                    "lon": -73.987024
+                                },
+                                {
+                                    "lat": 40.713649,
+                                    "lon": -73.987075
+                                },
+                                {
+                                    "lat": 40.714173,
+                                    "lon": -73.987164
+                                },
+                                {
+                                    "lat": 40.714328,
+                                    "lon": -73.987157
+                                },
+                                {
+                                    "lat": 40.714818,
+                                    "lon": -73.987172
+                                },
+                                {
+                                    "lat": 40.714837,
+                                    "lon": -73.98717
+                                },
+                                {
+                                    "lat": 40.715052,
+                                    "lon": -73.987138
+                                },
+                                {
+                                    "lat": 40.715455,
+                                    "lon": -73.986995
+                                },
+                                {
+                                    "lat": 40.715845,
+                                    "lon": -73.986795
+                                },
+                                {
+                                    "lat": 40.715962,
+                                    "lon": -73.986715
+                                },
+                                {
+                                    "lat": 40.716082,
+                                    "lon": -73.986628
+                                },
+                                {
+                                    "lat": 40.716901,
+                                    "lon": -73.9862
+                                }
+                            ],
+                            "start_location": null,
+                            "end_location": null,
+                            "speed_kmh": 3.43,
+                            "length_meters": 461,
+                            "delay_seconds": 350,
+                            "block_alert_id": null,
+                            "block_alert_type": null,
+                            "block_alert_description": null,
+                            "block_alert_update_datetime_utc": null,
+                            "block_start_datetime_utc": null,
+                            "publish_datetime_utc": "2023-06-16T14:42:13.570Z",
+                            "update_datetime_utc": "2023-06-16T15:20:10.335Z",
+                            "country": "US",
+                            "city": "Manhattan, NY",
+                            "street": "Clinton St"
+                        },
+                        {
+                            "jam_id": "1241616972",
+                            "type": "NONE",
+                            "level": 3,
+                            "severity": 5,
+                            "line_coordinates": [
+                                {
+                                    "lat": 40.766887,
+                                    "lon": -73.82395
+                                },
+                                {
+                                    "lat": 40.765826,
+                                    "lon": -73.823726
+                                },
+                                {
+                                    "lat": 40.764651,
+                                    "lon": -73.823483
+                                },
+                                {
+                                    "lat": 40.764357,
+                                    "lon": -73.823345
+                                },
+                                {
+                                    "lat": 40.763644,
+                                    "lon": -73.823011
+                                },
+                                {
+                                    "lat": 40.76276,
+                                    "lon": -73.8226
+                                }
+                            ],
+                            "start_location": null,
+                            "end_location": null,
+                            "speed_kmh": 8.25,
+                            "length_meters": 474,
+                            "delay_seconds": 117,
+                            "block_alert_id": null,
+                            "block_alert_type": null,
+                            "block_alert_description": null,
+                            "block_alert_update_datetime_utc": null,
+                            "block_start_datetime_utc": null,
+                            "publish_datetime_utc": "2023-06-16T15:17:09.323Z",
+                            "update_datetime_utc": "2023-06-16T15:20:12.824Z",
+                            "country": "US",
+                            "city": "Queens, NY",
+                            "street": "Parsons Blvd"
+                        },
+                        {
+                            "jam_id": "1241643604",
+                            "type": "NONE",
+                            "level": 2,
+                            "severity": 5,
+                            "line_coordinates": [
+                                {
+                                    "lat": 40.764267,
+                                    "lon": -73.771329
+                                },
+                                {
+                                    "lat": 40.765319,
+                                    "lon": -73.771896
+                                },
+                                {
+                                    "lat": 40.766555,
+                                    "lon": -73.772545
+                                },
+                                {
+                                    "lat": 40.768021,
+                                    "lon": -73.77329
+                                },
+                                {
+                                    "lat": 40.768975,
+                                    "lon": -73.773761
+                                },
+                                {
+                                    "lat": 40.769693,
+                                    "lon": -73.773941
+                                }
+                            ],
+                            "start_location": null,
+                            "end_location": null,
+                            "speed_kmh": 12.57,
+                            "length_meters": 643,
+                            "delay_seconds": 78,
+                            "block_alert_id": null,
+                            "block_alert_type": null,
+                            "block_alert_description": null,
+                            "block_alert_update_datetime_utc": null,
+                            "block_start_datetime_utc": null,
+                            "publish_datetime_utc": "2023-06-16T15:18:35.821Z",
+                            "update_datetime_utc": "2023-06-16T15:20:13.236Z",
+                            "country": "US",
+                            "city": "Queens, NY",
+                            "street": "Bell Blvd"
+                        }
+                    ]
+                }
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "type": "string"
+                    },
+                    "request_id": {
+                        "type": "string"
+                    },
+                    "data": {
+                        "type": "object",
+                        "properties": {
+                            "alerts": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object"
+                                }
+                            },
+                            "jams": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "standardized_name": "waze"
+}

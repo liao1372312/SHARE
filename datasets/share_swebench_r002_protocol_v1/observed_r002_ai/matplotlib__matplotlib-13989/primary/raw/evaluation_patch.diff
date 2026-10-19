@@ -1,0 +1,23 @@
+diff --git a/lib/matplotlib/axes/_axes.py b/lib/matplotlib/axes/_axes.py
+index 4b73d52293..f0cf9f9452 100644
+--- a/lib/matplotlib/axes/_axes.py
++++ b/lib/matplotlib/axes/_axes.py
+@@ -6594,6 +6594,18 @@ optional.
+         if bins is None:
+             bins = rcParams['hist.bins']
+ 
++        if not np.iterable(bins):
++            bin_range = (x[0], x[-1]) if bin_range is None else bin_range
++            if bin_range[0] > bin_range[1]:
++                raise ValueError(
++                    f'lower range bound must be less than or equal to '
++                    f'upper range bound')
++            if histtype.startswith('step') or density:
++                bins = np.linspace(bin_range[0], bin_range[1], bins + 1)
++            else:
++                bins = np.histogram_bin_edges(
++                    np.concatenate(x), bins, bin_range, weights)
++
+         # Validate string inputs here to avoid cluttering subsequent code.
+         cbook._check_in_list(['bar', 'barstacked', 'step', 'stepfilled'],
+                              histtype=histtype)

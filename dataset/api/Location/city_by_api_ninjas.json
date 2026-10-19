@@ -1,0 +1,95 @@
+{
+    "product_id": "api_ceb2412e-069f-4831-bde6-ecd1eec96a81",
+    "tool_description": "Get useful statistics on tens of thousands of cities around the world. See more info at https://api-ninjas.com/api/city.",
+    "home_url": "https://rapidapi.com/apininjas/api/city-by-api-ninjas/",
+    "name": "City by API-Ninjas",
+    "title": "City by API-Ninjas",
+    "pricing": "FREEMIUM",
+    "tool_name": "City by API-Ninjas",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 398,
+        "avgSuccessRate": 92,
+        "popularityScore": 9,
+        "__typename": "Score"
+    },
+    "host": "city-by-api-ninjas.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "/v1/city",
+            "url": "https://city-by-api-ninjas.p.rapidapi.com/v1/city",
+            "description": "API Ninjas City API endpoint.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "max_lat",
+                    "type": "NUMBER",
+                    "description": "Maximum latitude coordinate.",
+                    "default": ""
+                },
+                {
+                    "name": "min_population",
+                    "type": "NUMBER",
+                    "description": "Minimum city population.",
+                    "default": ""
+                },
+                {
+                    "name": "min_lon",
+                    "type": "NUMBER",
+                    "description": "Minimum longitude coordinate.",
+                    "default": ""
+                },
+                {
+                    "name": "country",
+                    "type": "STRING",
+                    "description": "Country filter. Must be an ISO-3166 alpha-2 code (e.g. **US**).",
+                    "default": "US"
+                },
+                {
+                    "name": "max_population",
+                    "type": "NUMBER",
+                    "description": "Maximum city population.",
+                    "default": ""
+                },
+                {
+                    "name": "min_lat",
+                    "type": "NUMBER",
+                    "description": "Minimum latitude coordinate.",
+                    "default": ""
+                },
+                {
+                    "name": "name",
+                    "type": "STRING",
+                    "description": "Name of city.",
+                    "default": "New York"
+                },
+                {
+                    "name": "max_lon",
+                    "type": "NUMBER",
+                    "description": "Maximum longitude coordinate.",
+                    "default": ""
+                },
+                {
+                    "name": "limit",
+                    "type": "NUMBER",
+                    "description": "How many results to return. Must be between **1** and **30**. Default is **1**.",
+                    "default": "1"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://city-by-api-ninjas.p.rapidapi.com/v1/city\"\nquerystring = {\"max_lat\": \"\", \"min_population\": \"\", \"min_lon\": \"\", \"country\": \"US\", \"max_population\": \"\", \"min_lat\": \"\", \"name\": \"New York\", \"max_lon\": \"\", \"limit\": \"1\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"city-by-api-ninjas.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://city-by-api-ninjas.p.rapidapi.com/v1/city\"\nquerystring = {\"max_lat\": \"\", \"min_population\": \"\", \"min_lon\": \"\", \"country\": \"US\", \"max_population\": \"\", \"min_lat\": \"\", \"name\": \"New York\", \"max_lon\": \"\", \"limit\": \"1\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"city-by-api-ninjas.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "name": "New York",
+                    "latitude": 40.6943,
+                    "longitude": -73.9249,
+                    "country": "US",
+                    "population": 18713220,
+                    "is_capital": false
+                }
+            ]
+        }
+    ],
+    "standardized_name": "city_by_api_ninjas"
+}

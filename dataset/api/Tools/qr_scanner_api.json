@@ -1,0 +1,71 @@
+{
+    "product_id": "api_21e4dad1-c417-480f-8a02-0f2ef3405204",
+    "tool_description": "Scan QR & Barcode images from files or URLs and return the equivalent QR-Text or Barcode-Number plus code format.",
+    "home_url": "https://rapidapi.com/ezzatelbadrawy/api/qr-scanner-api/",
+    "name": "QR-Scanner-Api",
+    "title": "QR-Scanner-Api",
+    "pricing": "FREEMIUM",
+    "tool_name": "QR-Scanner-Api",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 1646,
+        "avgSuccessRate": 93,
+        "popularityScore": 7.9,
+        "__typename": "Score"
+    },
+    "host": "qr-scanner-api.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "ScanImageUrl",
+            "url": "https://qr-scanner-api.p.rapidapi.com/api/QR/scanimageurl",
+            "description": "Scan image from URL and return QR text or Barcode number.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "imageUrl",
+                    "type": "STRING",
+                    "description": "Image URL which you want to scan",
+                    "default": "set-your-image-URL-here"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://qr-scanner-api.p.rapidapi.com/api/QR/scanimageurl\"\nquerystring = {\"imageUrl\": \"set-your-image-URL-here\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"qr-scanner-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://qr-scanner-api.p.rapidapi.com/api/QR/scanimageurl\"\nquerystring = {\"imageUrl\": \"set-your-image-URL-here\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"qr-scanner-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "status": "Failure",
+                "result": "Exception: An invalid request URI was provided. Either the request URI must be an absolute URI or BaseAddress must be set.",
+                "format": null
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "type": [
+                            "string",
+                            "null"
+                        ],
+                        "description": "Response Status : Success/Failure"
+                    },
+                    "result": {
+                        "type": [
+                            "string",
+                            "null"
+                        ],
+                        "description": "Respons Result : Expected output with 'Success' status OR error description with 'Failure' status"
+                    },
+                    "format": {
+                        "type": [
+                            "string",
+                            "null"
+                        ],
+                        "description": "QR/Barcode Format"
+                    }
+                },
+                "additionalProperties": false,
+                "description": "Custom Response Object"
+            }
+        }
+    ],
+    "standardized_name": "qr_scanner_api"
+}

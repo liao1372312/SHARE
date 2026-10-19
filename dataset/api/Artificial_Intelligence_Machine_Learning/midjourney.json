@@ -1,0 +1,92 @@
+{
+    "product_id": "api_2acad399-5ef7-4eeb-bb6b-585fc04ebc10",
+    "tool_description": "",
+    "home_url": "https://rapidapi.com/kashirinasandrey/api/midjourney4/",
+    "name": "MidJourney",
+    "title": "MidJourney",
+    "pricing": "FREEMIUM",
+    "tool_name": "MidJourney",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 737,
+        "avgSuccessRate": 85,
+        "popularityScore": 9.7,
+        "__typename": "Score"
+    },
+    "host": "midjourney4.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "get_upscaled_binary_image",
+            "url": "https://midjourney4.p.rapidapi.com/rapida/sets/a0f74cff-af05-4bd3-89eb-b4e74f148dc8/upscale",
+            "description": "returns requested binary image (\"image/png\") from the set",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "image_pos",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "LeftTop"
+                },
+                {
+                    "name": "set_id",
+                    "type": "string",
+                    "description": "",
+                    "default": "a0f74cff-af05-4bd3-89eb-b4e74f148dc8"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://midjourney4.p.rapidapi.com/rapida/sets/a0f74cff-af05-4bd3-89eb-b4e74f148dc8/upscale\"\nquerystring = {\"image_pos\": \"LeftTop\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"midjourney4.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://midjourney4.p.rapidapi.com/rapida/sets/{set_id}/upscale\"\nquerystring = {\"image_pos\": \"LeftTop\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"midjourney4.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "detail": "a0f74cff-af05-4bd3-89eb-b4e74f148dc8 not found"
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "get_binary_image_set",
+            "url": "https://midjourney4.p.rapidapi.com/rapida/sets/a0f74cff-af05-4bd3-89eb-b4e74f148dc8",
+            "description": "returns requested binary image (\"image/png\"). Full image set",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "set_id",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "a0f74cff-af05-4bd3-89eb-b4e74f148dc8"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://midjourney4.p.rapidapi.com/rapida/sets/a0f74cff-af05-4bd3-89eb-b4e74f148dc8\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"midjourney4.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://midjourney4.p.rapidapi.com/rapida/sets/{set_id}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"midjourney4.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "detail": "a0f74cff-af05-4bd3-89eb-b4e74f148dc8 not found"
+            },
+            "statuscode": 1,
+            "schema": ""
+        },
+        {
+            "name": "get_generation_status",
+            "url": "https://midjourney4.p.rapidapi.com/rapida/sets",
+            "description": "Get status of the previously posted job.\n\n- outcome - if Failure, then it comes from MJ, like censorship.\n- estimated_time - in seconds. based on previous generation.\n- percent - available when actual generation started",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "track_id",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "a0f74cff-af05-4bd3-89eb-b4e74f148dc8"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://midjourney4.p.rapidapi.com/rapida/sets\"\nquerystring = {\"track_id\": \"a0f74cff-af05-4bd3-89eb-b4e74f148dc8\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"midjourney4.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://midjourney4.p.rapidapi.com/rapida/sets\"\nquerystring = {\"track_id\": \"a0f74cff-af05-4bd3-89eb-b4e74f148dc8\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"midjourney4.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "detail": "a0f74cff-af05-4bd3-89eb-b4e74f148dc8 not found"
+            },
+            "statuscode": 1,
+            "schema": ""
+        }
+    ],
+    "standardized_name": "midjourney"
+}

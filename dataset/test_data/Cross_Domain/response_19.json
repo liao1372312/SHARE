@@ -1,0 +1,42 @@
+{
+"user_query":"I'm writing an article about famous artists in the music industry. Can you give me information about a specific artist, including their discography, popular songs, and albums? Additionally, provide me with some interesting trivia facts about the artist.",
+"domain":"Cross-Domain",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Fetch basic information about the specific artist, including their biography and background.",
+        "domain": "music",
+        "required_inputs": ["artist_name"]
+    },
+    {
+        "id": 2,
+        "description": "Retrieve the artist's discography including albums and release dates.",
+        "domain": "music",
+        "required_inputs": ["artist_name"],
+        "dependency": {
+            "depends_on": 1,
+            "description": "Step 2 requires the artist's information from Step 1."
+        }
+    },
+    {
+        "id": 3,
+        "description": "Get the list of popular songs by the artist.",
+        "domain": "music",
+        "required_inputs": ["artist_name"],
+        "dependency": {
+            "depends_on": 1,
+            "description": "Step 3 requires the artist's information from Step 1."
+        }
+    },
+    {
+        "id": 4,
+        "description": "Gather interesting trivia and facts about the artist.",
+        "domain": "music",
+        "required_inputs": ["artist_name"],
+        "dependency": {
+            "depends_on": 1,
+            "description": "Step 4 requires the artist's information from Step 1."
+        }
+    }
+]
+}

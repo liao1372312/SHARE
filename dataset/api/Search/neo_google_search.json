@@ -1,0 +1,357 @@
+{
+    "product_id": "api_588de285-dd66-4176-bc38-96ef590d9f99",
+    "tool_description": "API used to retrieve data from Google search results in real time. Support web search and image search",
+    "home_url": "https://rapidapi.com/neoscrap-net/api/neo-google-search/",
+    "name": "Neo Google Search",
+    "title": "Neo Google Search",
+    "pricing": "FREEMIUM",
+    "tool_name": "Neo Google Search",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 637,
+        "avgSuccessRate": 100,
+        "popularityScore": 8.9,
+        "__typename": "Score"
+    },
+    "host": "neo-google-search.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Web Search",
+            "url": "https://neo-google-search.p.rapidapi.com/search",
+            "description": "This endpoint is used for web searches",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "q",
+                    "type": "STRING",
+                    "description": "Search query",
+                    "default": "New York "
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "lr",
+                    "type": "STRING",
+                    "description": "Restricts the search to documents written in a particular language",
+                    "default": "lang_en"
+                },
+                {
+                    "name": "gl",
+                    "type": "STRING",
+                    "description": "The gl parameter value is a two-letter country code. The gl parameter boosts search results whose country of origin matches the parameter value",
+                    "default": "US"
+                },
+                {
+                    "name": "num",
+                    "type": "NUMBER",
+                    "description": "Number of search results to return.\nValid values are integers between 1 and 20, inclusive",
+                    "default": "10"
+                },
+                {
+                    "name": "start",
+                    "type": "NUMBER",
+                    "description": "The index of the first result to return.",
+                    "default": "0"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://neo-google-search.p.rapidapi.com/search\"\nquerystring = {\"lr\": \"lang_en\", \"gl\": \"US\", \"num\": \"10\", \"start\": \"0\", \"q\": \"New York \"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"neo-google-search.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://neo-google-search.p.rapidapi.com/search\"\nquerystring = {\"lr\": \"lang_en\", \"gl\": \"US\", \"num\": \"10\", \"start\": \"0\", \"q\": \"New York \"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"neo-google-search.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "status": "success",
+                "items": [
+                    {
+                        "title": "New York - Wikipedia",
+                        "htmlTitle": "<b>New York</b> - Wikipedia",
+                        "link": "https://en.m.wikipedia.org/wiki/New_York",
+                        "displayLink": "en.m.wikipedia.org",
+                        "snippet": "New York (state), a state in the northeastern United States; New York City, the most populous city in the United States, located in the state of New York.",
+                        "htmlSnippet": "<b>New York</b> (state), a state in the northeastern United States; <b>New York</b> City, the most populous city in the United States, located in the state of <b>New York</b>."
+                    },
+                    {
+                        "title": "Welcome to NYC.gov | City of New York",
+                        "htmlTitle": "Welcome to NYC.gov | City of <b>New York</b>",
+                        "link": "https://www.nyc.gov/",
+                        "displayLink": "www.nyc.gov",
+                        "snippet": "The official website of the City of New York. Find information about important alerts, 311 services, news, programs, events, government employment,\u00a0...",
+                        "htmlSnippet": "The official website of the City of <b>New York</b>. Find information about important alerts, 311 services, news, programs, events, government employment,\u00a0..."
+                    },
+                    {
+                        "title": "The Official Website of New York State",
+                        "htmlTitle": "The Official Website of <b>New York</b> State",
+                        "link": "https://www.ny.gov/",
+                        "displayLink": "www.ny.gov",
+                        "snippet": "1 hour ago \u00b7 The official website of the State of New York. Find information about state government agencies and learn more about our programs and\u00a0...",
+                        "htmlSnippet": "1 hour ago \u00b7 The official website of the State of <b>New York</b>. Find information about state government agencies and learn more about our programs and\u00a0..."
+                    },
+                    {
+                        "title": "NYC's Guide | NYCgo.com | Explore the Top Things to Do in NYC",
+                        "htmlTitle": "NYC's Guide | NYCgo.com | Explore the Top Things to Do in NYC",
+                        "link": "https://www.nycgo.com/",
+                        "displayLink": "www.nycgo.com",
+                        "snippet": "Experience the five boroughs of NYC with NYCgo. Find out what to do, where to go, where to stay, and what to eat in NYC from NYC's official guide.",
+                        "htmlSnippet": "Experience the five boroughs of NYC with NYCgo. Find out what to do, where to go, where to stay, and what to eat in NYC from NYC's official guide."
+                    },
+                    {
+                        "title": "New York Magazine",
+                        "htmlTitle": "<b>New York</b> Magazine",
+                        "link": "https://nymag.com/",
+                        "displayLink": "nymag.com",
+                        "snippet": "New York Magazine energizes people around shared interests, igniting important conversations on the news, politics, style, and culture that drive the world\u00a0...",
+                        "htmlSnippet": "<b>New York</b> Magazine energizes people around shared interests, igniting important conversations on the news, politics, style, and culture that drive the world\u00a0..."
+                    },
+                    {
+                        "title": "The New York Times - Breaking News, US News, World News and ...",
+                        "htmlTitle": "The <b>New York</b> Times - Breaking News, US News, World News and ...",
+                        "link": "https://www.nytimes.com/",
+                        "displayLink": "www.nytimes.com",
+                        "snippet": "Live news, investigations, opinion, photos and video by the journalists of The New York Times from more than 150 countries around the world.",
+                        "htmlSnippet": "Live news, investigations, opinion, photos and video by the journalists of The <b>New York</b> Times from more than 150 countries around the world."
+                    },
+                    {
+                        "title": "New York Hotels, Things To Do | Official Guide To New York State",
+                        "htmlTitle": "<b>New York</b> Hotels, Things To Do | Official Guide To <b>New York</b> State",
+                        "link": "https://www.iloveny.com/",
+                        "displayLink": "www.iloveny.com",
+                        "snippet": "New York State's official tourism site | Explore all the state of New York has to offer including fun things to do, year-round events and festivals,\u00a0...",
+                        "htmlSnippet": "<b>New York</b> State's official tourism site | Explore all the state of <b>New York</b> has to offer including fun things to do, year-round events and festivals,\u00a0..."
+                    },
+                    {
+                        "title": "The New York Public Library",
+                        "htmlTitle": "The <b>New York</b> Public Library",
+                        "link": "https://www.nypl.org/",
+                        "displayLink": "www.nypl.org",
+                        "snippet": "The New York Public Library (NYPL) has been an essential provider of free books, information, ideas, and education for all New Yorkers for more than 100 years.",
+                        "htmlSnippet": "The <b>New York</b> Public Library (NYPL) has been an essential provider of free books, information, ideas, and education for all <b>New York</b>ers for more than 100 years."
+                    },
+                    {
+                        "title": "New York Daily News: New York City breaking news, politics, sports ...",
+                        "htmlTitle": "<b>New York</b> Daily News: <b>New York</b> City breaking news, politics, sports ...",
+                        "link": "https://www.nydailynews.com/",
+                        "displayLink": "www.nydailynews.com",
+                        "snippet": "This website stores data such as cookies to enable essential site functionality, as well as marketing, personalization, and analytics.",
+                        "htmlSnippet": "This website stores data such as cookies to enable essential site functionality, as well as marketing, personalization, and analytics."
+                    },
+                    {
+                        "title": "NYCOURTS.GOV - New York State Unified Court System",
+                        "htmlTitle": "NYCOURTS.GOV - <b>New York</b> State Unified Court System",
+                        "link": "https://www.nycourts.gov/",
+                        "displayLink": "www.nycourts.gov",
+                        "snippet": "The official home page of the New York State Unified Court System. We hear more than three million cases a year involving almost every type of endeavor.",
+                        "htmlSnippet": "The official home page of the <b>New York</b> State Unified Court System. We hear more than three million cases a year involving almost every type of endeavor."
+                    }
+                ]
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "type": "string"
+                    },
+                    "items": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "title": {
+                                    "type": "string"
+                                },
+                                "htmlTitle": {
+                                    "type": "string"
+                                },
+                                "link": {
+                                    "type": "string"
+                                },
+                                "displayLink": {
+                                    "type": "string"
+                                },
+                                "snippet": {
+                                    "type": "string"
+                                },
+                                "htmlSnippet": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Image Search",
+            "url": "https://neo-google-search.p.rapidapi.com/imagesearch",
+            "description": "This endpoint is used for image searches",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "q",
+                    "type": "STRING",
+                    "description": "Search query",
+                    "default": "New York "
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "gl",
+                    "type": "STRING",
+                    "description": "The gl parameter value is a two-letter country code. The gl parameter boosts search results whose country of origin matches the parameter value",
+                    "default": "US"
+                },
+                {
+                    "name": "lr",
+                    "type": "STRING",
+                    "description": "Restricts the search to documents written in a particular language",
+                    "default": "lang_en"
+                },
+                {
+                    "name": "start",
+                    "type": "NUMBER",
+                    "description": "The index of the first result to return.",
+                    "default": "0"
+                },
+                {
+                    "name": "num",
+                    "type": "NUMBER",
+                    "description": "Number of search results to return.\nValid values are integers between 1 and 20, inclusive",
+                    "default": "10"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://neo-google-search.p.rapidapi.com/imagesearch\"\nquerystring = {\"gl\": \"US\", \"lr\": \"lang_en\", \"start\": \"0\", \"num\": \"10\", \"q\": \"New York \"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"neo-google-search.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://neo-google-search.p.rapidapi.com/imagesearch\"\nquerystring = {\"gl\": \"US\", \"lr\": \"lang_en\", \"start\": \"0\", \"num\": \"10\", \"q\": \"New York \"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"neo-google-search.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "status": "success",
+                "items": [
+                    {
+                        "title": "New York City - Wikipedia",
+                        "thumbnailImageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrZ2zhTTP5lx-n_WtDnSVZKmN5zr9cm480i0RMn075VG3P4ZCu&s",
+                        "originalImageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/View_of_Empire_State_Building_from_Rockefeller_Center_New_York_City_dllu_%28cropped%29.jpg/1200px-View_of_Empire_State_Building_from_Rockefeller_Center_New_York_City_dllu_%28cropped%29.jpg",
+                        "height": 655,
+                        "width": 1200,
+                        "size": "222KB",
+                        "contextLink": "https://en.wikipedia.org/wiki/New_York_City"
+                    },
+                    {
+                        "title": "New York City Travel Guide - Vacation Ideas",
+                        "thumbnailImageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjmRcKMUArc4wqaaeXdyK-YhHyEDowxYFpoBb_nljcH454_zbc&s",
+                        "originalImageUrl": "https://www.travelandleisure.com/thmb/91pb8LbDAUwUN_11wATYjx5oF8Q=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/new-york-city-evening-NYCTG0221-52492d6ccab44f328a1c89f41ac02aea.jpg",
+                        "height": 1000,
+                        "width": 1500,
+                        "size": "138KB",
+                        "contextLink": "https://www.travelandleisure.com/travel-guide/new-york-city"
+                    },
+                    {
+                        "title": "The 31 Best Things to Do in New York City, From Chinatown to ...",
+                        "thumbnailImageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlr7hsbKk1bSPUvOsSVjiiUb4yIMPexatn8fG5YdorgCk7NpAD&s",
+                        "originalImageUrl": "https://media.cntraveler.com/photos/63483e15ef943eff59de603a/3:2/w_3000,h_2000,c_limit/New%20York%20City_GettyImages-1347979016.jpg",
+                        "height": 2000,
+                        "width": 3000,
+                        "size": "1.9MB",
+                        "contextLink": "https://www.cntraveler.com/gallery/best-things-to-do-in-new-york"
+                    },
+                    {
+                        "title": "New York City is sinking due to weight of its skyscrapers, new ...",
+                        "thumbnailImageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1VlNv9ty0kMHJbnmic-BFTRE9xzW7eK5hyUO8ks3yTAV6NNtK&s",
+                        "originalImageUrl": "https://i.guim.co.uk/img/media/b3585cf7b5525c4f27b924754ed98b3b7fbdaf53/0_383_8048_4831/master/8048.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=d2677f61ec4d8f6c07784e442286b72a",
+                        "height": 900,
+                        "width": 1200,
+                        "size": "277KB",
+                        "contextLink": "https://www.theguardian.com/us-news/2023/may/19/new-york-city-sinking-skyscrapers-climate-crisis"
+                    },
+                    {
+                        "title": "New York City | Layout, Map, Economy, Culture, Facts, & History ...",
+                        "thumbnailImageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVOpmBRXGmXrPKrfAZQbHbYe76hmXQL7zr4EY4wSzffXiJ7hxQ&s",
+                        "originalImageUrl": "https://cdn.britannica.com/70/20070-050-C2E2045C/Central-Park-Manhattan-New-York-City-apartment.jpg",
+                        "height": 1009,
+                        "width": 1600,
+                        "size": "482KB",
+                        "contextLink": "https://www.britannica.com/place/New-York-City"
+                    },
+                    {
+                        "title": "Best Views in New York - NewYorkCity.ca",
+                        "thumbnailImageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQl0mTgWGEbLWaG8OOh3DNLB99DvKzozKdbbfwZifDMHvV-vVX&s",
+                        "originalImageUrl": "https://image.newyorkcity.ca/wp-content/uploads/2016/09/Best-Views-in-New-York.jpg",
+                        "height": 504,
+                        "width": 670,
+                        "size": "73KB",
+                        "contextLink": "https://www.newyorkcity.ca/best-views-in-new-york/"
+                    },
+                    {
+                        "title": "New York City Travel Guide",
+                        "thumbnailImageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhmXhvaGH1ElZfp8kM1BsituzB4bApp9UJ0ezy6BCg79Ifi7Yg&s",
+                        "originalImageUrl": "https://i.natgeofe.com/n/874df281-d3e0-489a-98c0-6b840023b828/newyork_NationalGeographic_2328428_square.jpg",
+                        "height": 3072,
+                        "width": 3072,
+                        "size": "2.4MB",
+                        "contextLink": "https://www.nationalgeographic.com/travel/destination/new-york-city"
+                    },
+                    {
+                        "title": "New York City Greenery Absorbing All Traffic Emissions on Many ...",
+                        "thumbnailImageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkAsh-aV5xn-EzkTIcXT5FntlYv0rEd1ibHMyPwspjFrLJiZKs&s",
+                        "originalImageUrl": "https://e360.yale.edu/assets/site/Green_In_The_Middle_Of_Concrete_Jungle_256972475.jpg",
+                        "height": 815,
+                        "width": 1260,
+                        "size": "422KB",
+                        "contextLink": "https://e360.yale.edu/digest/new-york-trees-emissions-climate-change"
+                    },
+                    {
+                        "title": "Your Complete Guide to New York City's Central Park",
+                        "thumbnailImageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyG_jSoojzfAOuou0wRqdj7wflgpbSnBLuLFjGVT5Lpo8-VJs&s",
+                        "originalImageUrl": "https://www.centralpark.com/downloads/10435/download/pickleball-wollman-rink.jpg?cb=cddd66261c790dacbe34b551cff6ac2c&w=640",
+                        "height": 426,
+                        "width": 640,
+                        "size": "112KB",
+                        "contextLink": "https://www.centralpark.com/"
+                    },
+                    {
+                        "title": "New York City Adds 629,000 People, Defying Predictions of Its ...",
+                        "thumbnailImageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjxp8ObItR5DVcGQozBOPT7PvRHTXTzuMqB_J3G6aNqlGL5R0&s",
+                        "originalImageUrl": "https://static01.nyt.com/images/2021/08/12/lens/12census-briefings-nyc1/merlin_189462357_a41cf263-7c3f-422f-88a7-38d9a7d4002a-articleLarge.jpg?quality=75&auto=webp&disable=upscale",
+                        "height": 400,
+                        "width": 600,
+                        "size": "76KB",
+                        "contextLink": "https://www.nytimes.com/2021/08/12/us/new-york-city-population-growth.html"
+                    }
+                ]
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "type": "string"
+                    },
+                    "items": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "title": {
+                                    "type": "string"
+                                },
+                                "thumbnailImageUrl": {
+                                    "type": "string"
+                                },
+                                "originalImageUrl": {
+                                    "type": "string"
+                                },
+                                "height": {
+                                    "type": "integer"
+                                },
+                                "width": {
+                                    "type": "integer"
+                                },
+                                "size": {
+                                    "type": "string"
+                                },
+                                "contextLink": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "standardized_name": "neo_google_search"
+}

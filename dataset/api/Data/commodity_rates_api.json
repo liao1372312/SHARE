@@ -1,0 +1,477 @@
+{
+    "product_id": "api_c3bad0c6-41f2-458d-8dbe-8cdb0a1717c1",
+    "tool_description": "The Commodity Rates API provides real-time and historical pricing data for various commodity markets, including metals, energy, and agricultural products. It allows users to access market data and perform advanced analytics, such as price forecasting and trend analysis. ",
+    "home_url": "https://rapidapi.com/zyla-labs-zyla-labs-default/api/commodity-rates-api/",
+    "name": "Commodity Rates API",
+    "title": "Commodity Rates API",
+    "pricing": "FREEMIUM",
+    "tool_name": "Commodity Rates API",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 1157,
+        "avgSuccessRate": 100,
+        "popularityScore": 9.1,
+        "__typename": "Score"
+    },
+    "host": "commodity-rates-api.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Open/High/Low/Close (OHLC) Price",
+            "url": "https://commodity-rates-api.p.rapidapi.com/open-high-low-close/2022-01-10",
+            "description": "Allows you to query the API to get the open, high, low, and close price.\nThis endpoint has a limitation of one symbol per request.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "symbols",
+                    "type": "STRING",
+                    "description": "Enter the three-letter currency code or commodity code of your preferred base currency",
+                    "default": "BRENTOIL"
+                },
+                {
+                    "name": "date",
+                    "type": "string",
+                    "description": "",
+                    "default": "2022-01-10"
+                },
+                {
+                    "name": "base",
+                    "type": "STRING",
+                    "description": "Enter the three-letter currency code or commodity code of your preferred base currency",
+                    "default": "USD"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://commodity-rates-api.p.rapidapi.com/open-high-low-close/2022-01-10\"\nquerystring = {\"symbols\": \"BRENTOIL\", \"base\": \"USD\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"commodity-rates-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://commodity-rates-api.p.rapidapi.com/open-high-low-close/{date}\"\nquerystring = {\"symbols\": \"BRENTOIL\", \"base\": \"USD\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"commodity-rates-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "success": true,
+                "timestamp": 1686959572,
+                "date": "2022-01-10",
+                "base": "USD",
+                "symbol": "BRENTOIL",
+                "rates": {
+                    "open": 0.012278944137508,
+                    "high": 0.012431197218082,
+                    "low": 0.012167376231602,
+                    "close": 0.012370471126499
+                },
+                "unit": "per berrel"
+            }
+        },
+        {
+            "name": "Time-Series",
+            "url": "https://commodity-rates-api.p.rapidapi.com/timeseries",
+            "description": "With this endpoint, you will be provided with daily historical rates between two dates of your choice. \n\nNote: This endpoint has a limitation of 365 days per range, and only can provide one symbol information per request.\n\nAll the commodities rates you get need using ANY currency as a base currency (base parameter) need to be divided by 1\nWe return the values based on the base currency. For example, for 1 USD the return is a number like 0.00055307742 for Gold (XAU).\nTo get the gold rate per troy ounce in USD: 1/0.00055307742 = 1808.06 USD",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "base",
+                    "type": "STRING",
+                    "description": "Enter the three-letter currency code or commodity code of your preferred base currency",
+                    "default": "USD"
+                },
+                {
+                    "name": "symbols",
+                    "type": "STRING",
+                    "description": "Enter the three-letter currency code or commodity code of your preferred base currency",
+                    "default": "BRENTOIL"
+                },
+                {
+                    "name": "end_date",
+                    "type": "STRING",
+                    "description": "The end date of your preferred timeframe.",
+                    "default": "2022-01-20"
+                },
+                {
+                    "name": "start_date",
+                    "type": "STRING",
+                    "description": "The start date of your preferred timeframe.",
+                    "default": "2022-01-10"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://commodity-rates-api.p.rapidapi.com/timeseries\"\nquerystring = {\"base\": \"USD\", \"symbols\": \"BRENTOIL\", \"end_date\": \"2022-01-20\", \"start_date\": \"2022-01-10\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"commodity-rates-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://commodity-rates-api.p.rapidapi.com/timeseries\"\nquerystring = {\"base\": \"USD\", \"symbols\": \"BRENTOIL\", \"end_date\": \"2022-01-20\", \"start_date\": \"2022-01-10\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"commodity-rates-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "data": {
+                    "success": true,
+                    "timeseries": true,
+                    "start_date": "2022-01-10",
+                    "end_date": "2022-01-20",
+                    "base": "USD",
+                    "rates": {
+                        "2022-01-10": {
+                            "BRENTOIL": 0.012278944137508,
+                            "USD": 1
+                        },
+                        "2022-01-11": {
+                            "BRENTOIL": 0.01236737974527,
+                            "USD": 1
+                        },
+                        "2022-01-12": {
+                            "BRENTOIL": 0.011955566172957,
+                            "USD": 1
+                        },
+                        "2022-01-13": {
+                            "BRENTOIL": 0.01181492854612,
+                            "USD": 1
+                        },
+                        "2022-01-14": {
+                            "BRENTOIL": 0.011896326239448,
+                            "USD": 1
+                        },
+                        "2022-01-15": {
+                            "BRENTOIL": 0.011624215663491,
+                            "USD": 1
+                        },
+                        "2022-01-16": {
+                            "BRENTOIL": 0.011630722751569,
+                            "USD": 1
+                        },
+                        "2022-01-17": {
+                            "BRENTOIL": 0.011561756210283,
+                            "USD": 1
+                        },
+                        "2022-01-18": {
+                            "BRENTOIL": 0.01156165491737,
+                            "USD": 1
+                        },
+                        "2022-01-19": {
+                            "BRENTOIL": 0.011436521540395,
+                            "USD": 1
+                        },
+                        "2022-01-20": {
+                            "BRENTOIL": 0.011310719131615,
+                            "USD": 1
+                        }
+                    },
+                    "unit": {
+                        "BRENTOIL": "per berrel"
+                    }
+                }
+            }
+        },
+        {
+            "name": "Historical Rates",
+            "url": "https://commodity-rates-api.p.rapidapi.com/2022-01-19",
+            "description": "Historical rates are available for most symbols all the way back to the year 2021. You can query the API for historical rates by appending a date (format YYYY-MM-DD) to the base URL.\n\nNote: All the commodities rates you get need using ANY currency as a base currency (base parameter) need to be divided by 1\nWe return the values based on the base currency. For example, for 1 USD the return is a number like 0.00055307742 for Gold (XAU).\nTo get the gold rate per troy ounce in USD: 1/0.00055307742 = 1808.06 USD",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "base",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "USD"
+                },
+                {
+                    "name": "symbols",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "COTTON"
+                },
+                {
+                    "name": "date",
+                    "type": "string",
+                    "description": "",
+                    "default": "2022-01-19"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://commodity-rates-api.p.rapidapi.com/2022-01-19\"\nquerystring = {\"base\": \"USD\", \"symbols\": \"COTTON\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"commodity-rates-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://commodity-rates-api.p.rapidapi.com/{date}\"\nquerystring = {\"base\": \"USD\", \"symbols\": \"COTTON\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"commodity-rates-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "data": {
+                    "success": true,
+                    "historical": true,
+                    "date": "2022-01-19",
+                    "base": "USD",
+                    "rates": {
+                        "COTTON": 0.80683064516129,
+                        "USD": 1
+                    },
+                    "unit": {
+                        "COTTON": "per lb"
+                    }
+                }
+            }
+        },
+        {
+            "name": "Latest Rates",
+            "url": "https://commodity-rates-api.p.rapidapi.com/latest",
+            "description": "Check the real-time exchange rate data updated every 60 seconds with this endpoint. \n \n\nNote: All the commodities rates you get need using ANY currency as a base currency (base parameter) need to be divided by 1\nWe return the values based on the base currency. For example, for 1 USD the return is a number like 0.00055307742 for Gold (XAU).\nTo get the gold rate per troy ounce in USD: 1/0.00055307742 = 1808.06 USD",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "symbols",
+                    "type": "STRING",
+                    "description": "Enter a list of comma-separated currency codes or commodity codes to limit output codes. Check Symbols endpoint",
+                    "default": "BRENTOIL"
+                },
+                {
+                    "name": "base",
+                    "type": "STRING",
+                    "description": "Enter the three-letter currency code or commodity code of your preferred base currency. Check Symbols endpoint",
+                    "default": "USD"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://commodity-rates-api.p.rapidapi.com/latest\"\nquerystring = {\"symbols\": \"BRENTOIL\", \"base\": \"USD\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"commodity-rates-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://commodity-rates-api.p.rapidapi.com/latest\"\nquerystring = {\"symbols\": \"BRENTOIL\", \"base\": \"USD\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"commodity-rates-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "data": {
+                    "success": true,
+                    "timestamp": 1686959520,
+                    "date": "2023-06-16",
+                    "base": "USD",
+                    "rates": {
+                        "BRENTOIL": 0.013053126223731,
+                        "USD": 1
+                    },
+                    "unit": {
+                        "BRENTOIL": "per berrel"
+                    }
+                }
+            }
+        },
+        {
+            "name": "Supported Symbols",
+            "url": "https://commodity-rates-api.p.rapidapi.com/symbols",
+            "description": "Check all the available symbols for your queries. This endpoint retrieves all the supported commodities and currencies as well.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://commodity-rates-api.p.rapidapi.com/symbols\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"commodity-rates-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://commodity-rates-api.p.rapidapi.com/symbols\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"commodity-rates-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "ADA": "Cardano",
+                "AED": "United Arab Emirates Dirham",
+                "AFN": "Afghan Afghani",
+                "ALL": "Albanian Lek",
+                "ALU": "Aluminum",
+                "AMD": "Armenian Dram",
+                "ANG": "Netherlands Antillean Gulden",
+                "AOA": "Angolan Kwanza",
+                "ARS": "Argentine Peso",
+                "AUD": "Australian Dollar",
+                "AWG": "Aruban Florin",
+                "AZN": "Azerbaijani Manat",
+                "BAM": "Bosnia and Herzegovina Convertible Mark",
+                "BBD": "Barbadian Dollar",
+                "BCH": "Bitcoin Cash",
+                "BDT": "Bangladeshi Taka",
+                "BGN": "Bulgarian Lev",
+                "BHD": "Bahraini Dinar",
+                "BIF": "Burundian Franc",
+                "BMD": "Bermudian Dollar",
+                "BND": "Brunei Dollar",
+                "BOB": "Bolivian Boliviano",
+                "BRENTOIL": "Brent Crude Oil",
+                "BRL": "Brazilian Real",
+                "BSD": "Bahamian Dollar",
+                "BTC": "Bitcoin",
+                "BTN": "Bhutanese Ngultrum",
+                "BWP": "Botswana Pula",
+                "BYN": "Belarusian Ruble",
+                "BYR": "Belarusian Ruble",
+                "BZD": "Belize Dollar",
+                "CAD": "Canadian Dollar",
+                "CANO": "Canola",
+                "CDF": "Congolese Franc",
+                "CHF": "Swiss Franc",
+                "CLF": "Unidad de Fomento",
+                "CLP": "Chilean Peso",
+                "CNH": "Chinese Renminbi Yuan Offshore",
+                "CNY": "Chinese Renminbi Yuan",
+                "COAL": "Coal",
+                "COCOA": "Cocoa",
+                "COFFEE": "Arabica Coffee",
+                "COP": "Colombian Peso",
+                "CORN": "Corn",
+                "COTTON": "Cotton",
+                "CPO": "Crude Palm Oil",
+                "CRC": "Costa Rican Col\u00f3n",
+                "CUC": "Cuban Convertible Peso",
+                "CVE": "Cape Verdean Escudo",
+                "CZK": "Czech Koruna",
+                "DJF": "Djiboutian Franc",
+                "DKK": "Danish Krone",
+                "DOP": "Dominican Peso",
+                "DZD": "Algerian Dinar",
+                "EEK": "Estonian Kroon",
+                "EGP": "Egyptian Pound",
+                "ERN": "Eritrean Nakfa",
+                "ETB": "Ethiopian Birr",
+                "ETH": "Ethereum",
+                "ETHANOL": "Ethanol",
+                "EUR": "Euro",
+                "FJD": "Fijian Dollar",
+                "FKP": "Falkland Pound",
+                "GBP": "British Pound",
+                "GEL": "Georgian Lari",
+                "GGP": "Guernsey Pound",
+                "GHS": "Ghanaian Cedi",
+                "GIP": "Gibraltar Pound",
+                "GMD": "Gambian Dalasi",
+                "GNF": "Guinean Franc",
+                "GTQ": "Guatemalan Quetzal",
+                "GYD": "Guyanese Dollar",
+                "HKD": "Hong Kong Dollar",
+                "HNL": "Honduran Lempira",
+                "HRK": "Croatian Kuna",
+                "HTG": "Haitian Gourde",
+                "HUF": "Hungarian Forint",
+                "IDR": "Indonesian Rupiah",
+                "ILS": "Israeli New Sheqel",
+                "IMP": "Isle of Man Pound",
+                "INR": "Indian Rupee",
+                "IQD": "Iraqi Dinar",
+                "IRD": "Iridium (Troy Ounce)",
+                "ISK": "Icelandic Kr\u00f3na",
+                "JEP": "Jersey Pound",
+                "JMD": "Jamaican Dollar",
+                "JOD": "Jordanian Dinar",
+                "JPY": "Japanese Yen",
+                "KCH23": "Arabica Coffee Mar 23",
+                "KCK23": "Arabica Coffee May 23",
+                "KCN22": "Arabica Coffee Jul 22",
+                "KCN23": "Arabica Coffee Jul 23",
+                "KCU22": "Arabica Coffee Sep 22",
+                "KCU23": "Arabica Coffee Sep 23",
+                "KCZ22": "Arabica Coffee Dec 22",
+                "KES": "Kenyan Shilling",
+                "KGS": "Kyrgyzstani Som",
+                "KHR": "Cambodian Riel",
+                "KMF": "Comorian Franc",
+                "KRW": "South Korean Won",
+                "KWD": "Kuwaiti Dinar",
+                "KYD": "Cayman Islands Dollar",
+                "KZT": "Kazakhstani Tenge",
+                "LAK": "Lao Kip",
+                "LBP": "Lebanese Pound",
+                "LCAT": "Live Cattle",
+                "LCO": "Cobalt (Troy Ounce)",
+                "LHOG": "Lean Hog",
+                "LINK": "Chainlink",
+                "LKR": "Sri Lankan Rupee",
+                "LRD": "Liberian Dollar",
+                "LSL": "Lesotho Loti",
+                "LTC": "Litecoin",
+                "LTL": "Lithuanian Litas",
+                "LUMBER": "Lumber",
+                "LVL": "Latvian Lats",
+                "LYD": "Libyan Dinar",
+                "MAD": "Moroccan Dirham",
+                "MDL": "Moldovan Leu",
+                "MGA": "Malagasy Ariary",
+                "MKD": "Macedonian Denar",
+                "MMK": "Myanmar Kyat",
+                "MNT": "Mongolian T\u00f6gr\u00f6g",
+                "MOP": "Macanese Pataca",
+                "MRO": "Mauritanian Ouguiya",
+                "MTL": "Maltese Lira",
+                "MUR": "Mauritian Rupee",
+                "MVR": "Maldivian Rufiyaa",
+                "MWK": "Malawian Kwacha",
+                "MXN": "Mexican Peso",
+                "MYR": "Malaysian Ringgit",
+                "MZN": "Mozambican Metical",
+                "NAD": "Namibian Dollar",
+                "NG": "Natural Gas",
+                "NGN": "Nigerian Naira",
+                "NI": "Nickel",
+                "NIO": "Nicaraguan C\u00f3rdoba",
+                "NOK": "Norwegian Krone",
+                "NPR": "Nepalese Rupee",
+                "NZD": "New Zealand Dollar",
+                "OAT": "Oat",
+                "OMR": "Omani Rial",
+                "PAB": "Panamanian Balboa",
+                "PEN": "Peruvian Sol",
+                "PGK": "Papua New Guinean Kina",
+                "PHP": "Philippine Peso",
+                "PKR": "Pakistani Rupee",
+                "PLN": "Polish Z\u0142oty",
+                "PYG": "Paraguayan Guaran\u00ed",
+                "QAR": "Qatari Riyal",
+                "RICE": "Rice",
+                "RMF23": "Robusta Coffee Jan 23",
+                "RMH23": "Robusta Coffee Mar 23",
+                "RMN22": "Robusta Coffee Jul 22",
+                "RMU22": "Robusta Coffee Sep 22",
+                "RMX22": "Robusta Coffee Nov 22",
+                "ROBUSTA": "Robusta Coffee",
+                "RON": "Romanian Leu",
+                "RSD": "Serbian Dinar",
+                "RUB": "Russian Ruble",
+                "RUBBER": "Rubber",
+                "RUTH": "Ruthenium",
+                "RWF": "Rwandan Franc",
+                "SAR": "Saudi Riyal",
+                "SBD": "Solomon Islands Dollar",
+                "SBH23": "Sugar Mar 23",
+                "SBK23": "Sugar May 23",
+                "SBN22": "Sugar Jul 22",
+                "SBV22": "Sugar Oct 22",
+                "SCR": "Seychellois Rupee",
+                "SEK": "Swedish Krona",
+                "SGD": "Singapore Dollar",
+                "SHP": "Saint Helenian Pound",
+                "SLL": "Sierra Leonean Leone",
+                "SOS": "Somali Shilling",
+                "SOYBEAN": "Soybeans",
+                "SRD": "Surinamese Dollar",
+                "SSP": "South Sudanese Pound",
+                "STD": "S\u00e3o Tom\u00e9 and Pr\u00edncipe Dobra",
+                "SUGAR": "Sugar",
+                "SVC": "Salvadoran Col\u00f3n",
+                "SZL": "Swazi Lilangeni",
+                "THB": "Thai Baht",
+                "TIN": "Tin",
+                "TJS": "Tajikistani Somoni",
+                "TMT": "Turkmenistani Manat",
+                "TND": "Tunisian Dinar",
+                "TOP": "Tongan Pa\u02bbanga",
+                "TRY": "Turkish Lira",
+                "TTD": "Trinidad and Tobago Dollar",
+                "TWD": "New Taiwan Dollar",
+                "TZS": "Tanzanian Shilling",
+                "UAH": "Ukrainian Hryvnia",
+                "UGX": "Ugandan Shilling",
+                "UNI": "Uniswap",
+                "USD": "United States Dollar",
+                "UYU": "Uruguayan Peso",
+                "UZS": "Uzbekistan Som",
+                "VEF": "Venezuelan Bol\u00edvar",
+                "VES": "Venezuelan Bol\u00edvar Soberano",
+                "VND": "Vietnamese \u0110\u1ed3ng",
+                "VUV": "Vanuatu Vatu",
+                "WHEAT": "Wheat",
+                "WST": "Samoan Tala",
+                "WTIOIL": "WTI Crude Oil",
+                "XAF": "Central African Cfa Franc",
+                "XAG": "Silver (Troy Ounce)",
+                "XAU": "Gold (Troy Ounce)",
+                "XCD": "East Caribbean Dollar",
+                "XCU": "Copper",
+                "XDR": "Special Drawing Rights",
+                "XLM": "Stellar",
+                "XOF": "West African Cfa Franc",
+                "XPD": "Palladium (Troy Ounce)",
+                "XPF": "Cfp Franc",
+                "XPT": "Platinum (Troy Ounce)",
+                "XRH": "Rhodium (Troy Ounce)",
+                "XRP": "Ripple",
+                "XRP2": "Ripple",
+                "YER": "Yemeni Rial",
+                "ZAR": "South African Rand",
+                "ZMK": "Zambian Kwacha",
+                "ZMW": "Zambian Kwacha",
+                "ZNC": "Zinc",
+                "ZWL": "Zimbabwean Dollar",
+                "ZWN2": "Wheat ZWN2",
+                "ZWU2": "Wheat ZWU2"
+            }
+        }
+    ],
+    "standardized_name": "commodity_rates_api"
+}

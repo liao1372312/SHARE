@@ -1,0 +1,28 @@
+{
+"user_query":"My company is organizing a conference in Croatia. Can you provide me with the public holidays in Croatia for the month of October? Also, I need to gather information about a specific company in Croatia. Please search the Croatian company register using the MBS identifier and expand the relations.",
+"domain":"Tourism",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Retrieve public holidays in Croatia for the month of October.",
+        "domain": "tourism",
+        "required_inputs": ["month", "year"]
+    },
+    {
+        "id": 2,
+        "description": "Search the Croatian company register using the MBS identifier to gather company information.",
+        "domain": "finance",
+        "required_inputs": ["MBS_identifier"]
+    },
+    {
+        "id": 3,
+        "description": "Expand the relations of the specific company retrieved from the Croatian company register.",
+        "domain": "finance",
+        "required_inputs": ["company_information"]
+    }
+],
+"dependencies": {
+    "step2": "step1 results are not required",
+    "step3": "step3 requires step2 results"
+}
+}

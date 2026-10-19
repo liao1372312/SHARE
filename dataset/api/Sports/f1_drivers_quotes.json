@@ -1,0 +1,951 @@
+{
+    "product_id": "api_7fa4d925-b7a3-4676-86ba-55a2b2e52539",
+    "tool_description": "An API that provides numerous quotes said by famous Formula 1 drivers and personalities.",
+    "home_url": "https://rapidapi.com/aleixalguero0/api/f1-drivers-quotes/",
+    "name": "F1 drivers quotes",
+    "title": "F1 drivers quotes",
+    "pricing": "FREEMIUM",
+    "tool_name": "F1 drivers quotes",
+    "score": {
+        "avgServiceLevel": 99,
+        "avgLatency": 9525,
+        "avgSuccessRate": 99,
+        "popularityScore": 9.1,
+        "__typename": "Score"
+    },
+    "host": "f1-drivers-quotes.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Author with his photo",
+            "url": "https://f1-drivers-quotes.p.rapidapi.com/authors/raikkonen",
+            "description": "Shows the author who have quotes saved in this API  with his photo and ID.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "driverId",
+                    "type": "string",
+                    "description": "",
+                    "default": "raikkonen"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://f1-drivers-quotes.p.rapidapi.com/authors/raikkonen\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"f1-drivers-quotes.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://f1-drivers-quotes.p.rapidapi.com/authors/{driverid}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"f1-drivers-quotes.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "name": "Kimi R\u00e4ikk\u00f6nen",
+                    "img": "https://raw.githubusercontent.com/sethvm/kimiquotes/main/kimi.gif",
+                    "id": "raikkonen"
+                }
+            ]
+        },
+        {
+            "name": "Driver's quotes with pagination of 10 quotes each page",
+            "url": "https://f1-drivers-quotes.p.rapidapi.com/quotes/ricciardo/p/6",
+            "description": "Gets 10 quotes of the driver depending on which page you input.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "driverId",
+                    "type": "string",
+                    "description": "",
+                    "default": "ricciardo"
+                },
+                {
+                    "name": "page",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "6"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://f1-drivers-quotes.p.rapidapi.com/quotes/ricciardo/p/6\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"f1-drivers-quotes.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://f1-drivers-quotes.p.rapidapi.com/quotes/{driverid}/p/{page}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"f1-drivers-quotes.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "id": 51,
+                    "quote": "People might call me a liar for this, but I want a fast teammate, I think for two reasons: it's always going to get more out of yourself, and it's always going to be a more true evaluation of where you stand.",
+                    "author": "Daniel Ricciardo"
+                },
+                {
+                    "id": 52,
+                    "quote": "If I win the title, I want to know I was the best guy that year, and to be the best, you've got to go against the best.",
+                    "author": "Daniel Ricciardo"
+                },
+                {
+                    "id": 53,
+                    "quote": "I like having as many team-mates as possible. It's great, because the more people you can learn off, the better I think it will make you as a driver.",
+                    "author": "Daniel Ricciardo"
+                },
+                {
+                    "id": 54,
+                    "quote": "When I joined Formula One, I knew that what I found is that the cars are so much faster, and it took me a little while to understand where to always put the car.",
+                    "author": "Daniel Ricciardo"
+                },
+                {
+                    "id": 55,
+                    "quote": "In racing, things start coming up quicker, and the slipstream is stronger, so even judging in the mirrors how quick the cars are approaching isn't always easy.",
+                    "author": "Daniel Ricciardo"
+                },
+                {
+                    "id": 56,
+                    "quote": "I've learned what F1 is like, and it is an extremely competitive sport on and off the track.",
+                    "author": "Daniel Ricciardo"
+                },
+                {
+                    "id": 57,
+                    "quote": "We know - relationships in this sport, it's very hard to have a really great relationship.",
+                    "author": "Daniel Ricciardo"
+                },
+                {
+                    "id": 58,
+                    "quote": "I like high speed corners, but with the F111, it is taking a little time to build up to that.",
+                    "author": "Daniel Ricciardo"
+                },
+                {
+                    "id": 59,
+                    "quote": "For my family, it was quite emotional because it has always been a dream of mine to be in Formula 1. For them, to see it come true was quite a special feeling.",
+                    "author": "Daniel Ricciardo"
+                },
+                {
+                    "id": 60,
+                    "quote": "In World Series, everything is a bit slower than F1. But each time I sit in the car, whether it is World Series or F1, once I am in the cockpit, I am mentally prepared for what the car is. I don't have to physically drive it to remember what it is doing.",
+                    "author": "Daniel Ricciardo"
+                }
+            ],
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Driver's quotes by ID",
+            "url": "https://f1-drivers-quotes.p.rapidapi.com/quotes/ricciardo/59",
+            "description": "Gets a quote by its ID.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "driverId",
+                    "type": "string",
+                    "description": "",
+                    "default": "ricciardo"
+                },
+                {
+                    "name": "quoteId",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "59"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://f1-drivers-quotes.p.rapidapi.com/quotes/ricciardo/59\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"f1-drivers-quotes.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://f1-drivers-quotes.p.rapidapi.com/quotes/{driverid}/{quoteid}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"f1-drivers-quotes.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "id": 59,
+                "quote": "For my family, it was quite emotional because it has always been a dream of mine to be in Formula 1. For them, to see it come true was quite a special feeling.",
+                "author": "Daniel Ricciardo"
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "List of authors with photos",
+            "url": "https://f1-drivers-quotes.p.rapidapi.com/authors",
+            "description": "Shows the list of F1 drivers and personalities who have quotes saved in this API  with they photos and IDs",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://f1-drivers-quotes.p.rapidapi.com/authors\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"f1-drivers-quotes.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://f1-drivers-quotes.p.rapidapi.com/authors\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"f1-drivers-quotes.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "name": "Alexander Albon",
+                    "img": "https://www.formula1.com/content/fom-website/en/drivers/alexander-albon/jcr:content/image.img.640.medium.jpg/1669044543947.jpg",
+                    "id": "albon"
+                },
+                {
+                    "name": "Jean Alesi",
+                    "img": "",
+                    "id": "alesi"
+                },
+                {
+                    "name": "Fernando Alonso",
+                    "img": "https://www.20minutos.es/uploads/imagenes/2022/08/10/los-hombres-de-fernando-alonso-para-aston-martin.jpeg",
+                    "id": "alonso"
+                },
+                {
+                    "name": "Mario Andretti",
+                    "img": "",
+                    "id": "andretti"
+                },
+                {
+                    "name": "Alberto Ascari",
+                    "img": "",
+                    "id": "ascari"
+                },
+                {
+                    "name": "Rubens Barrichello",
+                    "img": "",
+                    "id": "barrichello"
+                },
+                {
+                    "name": "Mattia Binotto",
+                    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Mattia_Binotto%2C_2022_%28cropped%29.jpg/1200px-Mattia_Binotto%2C_2022_%28cropped%29.jpg",
+                    "id": "binotto"
+                },
+                {
+                    "name": "Valtteri Bottas",
+                    "img": "https://www.formula1.com/content/fom-website/en/drivers/valtteri-bottas/jcr:content/image.img.1024.medium.jpg/1669046030327.jpg",
+                    "id": "bottas"
+                },
+                {
+                    "name": "Jack Brabham",
+                    "img": "",
+                    "id": "brabham"
+                },
+                {
+                    "name": "Ross Brawn",
+                    "img": "",
+                    "id": "brawn"
+                },
+                {
+                    "name": "Flavio Briatore",
+                    "img": "",
+                    "id": "briatore"
+                },
+                {
+                    "name": "Jenson Button",
+                    "img": "",
+                    "id": "button"
+                },
+                {
+                    "name": "David Coulthard",
+                    "img": "",
+                    "id": "coulthard"
+                },
+                {
+                    "name": "Ron Dennis",
+                    "img": "",
+                    "id": "dennis"
+                },
+                {
+                    "name": "Bernie Ecclestone",
+                    "img": "",
+                    "id": "ecclestone"
+                },
+                {
+                    "name": "Marcus Ericsson",
+                    "img": "",
+                    "id": "ericsson"
+                },
+                {
+                    "name": "Juan Manuel Fangio",
+                    "img": "",
+                    "id": "fangio"
+                },
+                {
+                    "name": "Giancarlo Fisichella",
+                    "img": "",
+                    "id": "fisichella"
+                },
+                {
+                    "name": "Emerson Fittipaldi",
+                    "img": "",
+                    "id": "fittipaldi"
+                },
+                {
+                    "name": "Pierre Gasly",
+                    "img": "",
+                    "id": "gasly"
+                },
+                {
+                    "name": "Romain Grosjean",
+                    "img": "",
+                    "id": "grosjean"
+                },
+                {
+                    "name": "Mika H\u00e4kkinen",
+                    "img": "",
+                    "id": "hakkinen"
+                },
+                {
+                    "name": "Lewis Hamilton",
+                    "img": "https://www.formula1.com/content/fom-website/en/drivers/lewis-hamilton/jcr:content/image.img.1920.medium.jpg/1647334259839.jpg",
+                    "id": "hamilton"
+                },
+                {
+                    "name": "Damon Hill",
+                    "img": "",
+                    "id": "damon-hill"
+                },
+                {
+                    "name": "Graham Hill",
+                    "img": "",
+                    "id": "graham-hill"
+                },
+                {
+                    "name": "Phil Hill",
+                    "img": "",
+                    "id": "phil-hill"
+                },
+                {
+                    "name": "Christian Horner",
+                    "img": "",
+                    "id": "horner"
+                },
+                {
+                    "name": "Nico H\u00fclkenberg",
+                    "img": "",
+                    "id": "hulkenberg"
+                },
+                {
+                    "name": "Jacky Ickx",
+                    "img": "",
+                    "id": "ickx"
+                },
+                {
+                    "name": "Eddie Irvine",
+                    "img": "",
+                    "id": "irvine"
+                },
+                {
+                    "name": "Kamui Kobayashi",
+                    "img": "",
+                    "id": "kobayashi"
+                },
+                {
+                    "name": "Heikki Kovalainen",
+                    "img": "",
+                    "id": "kovalainen"
+                },
+                {
+                    "name": "Robert Kubica",
+                    "img": "",
+                    "id": "kubica"
+                },
+                {
+                    "name": "Daniil Kvyat",
+                    "img": "",
+                    "id": "kvyat"
+                },
+                {
+                    "name": "Nicholas Latifi",
+                    "img": "https://www.unavozcontodos.mx/wp-content/uploads/2022/02/Nicholas-Latifi.png",
+                    "id": "latifi"
+                },
+                {
+                    "name": "Niki Lauda",
+                    "img": "",
+                    "id": "lauda"
+                },
+                {
+                    "name": "Charles Leclerc",
+                    "img": "https://www.formula1.com/content/fom-website/en/drivers/charles-leclerc/jcr:content/image.img.1024.medium.jpg/1670254511194.jpg",
+                    "id": "leclerc"
+                },
+                {
+                    "name": "Kevin Magnussen",
+                    "img": "https://www.formula1.com/content/fom-website/en/drivers/kevin-magnussen/jcr:content/image.img.1920.medium.jpg/1647447969295.jpg",
+                    "id": "magnussen"
+                },
+                {
+                    "name": "Pastor Maldonado",
+                    "img": "",
+                    "id": "maldonado"
+                },
+                {
+                    "name": "Nigel Mansell",
+                    "img": "",
+                    "id": "mansell"
+                },
+                {
+                    "name": "Helmut Marko",
+                    "img": "",
+                    "id": "marko"
+                },
+                {
+                    "name": "Felipe Massa",
+                    "img": "",
+                    "id": "massa"
+                },
+                {
+                    "name": "Nikita Mazepin",
+                    "img": "",
+                    "id": "mazepin"
+                },
+                {
+                    "name": "Juan Pablo Montoya",
+                    "img": "",
+                    "id": "montoya"
+                },
+                {
+                    "name": "Lando Norris",
+                    "img": "",
+                    "id": "norris"
+                },
+                {
+                    "name": "Sergio Perez",
+                    "img": "https://www.formula1.com/content/fom-website/en/drivers/sergio-perez/jcr:content/image.img.1024.medium.jpg/1669048529570.jpg",
+                    "id": "perez"
+                },
+                {
+                    "name": "Nelson Piquet",
+                    "img": "",
+                    "id": "piquet"
+                },
+                {
+                    "name": "Alain Prost",
+                    "img": "",
+                    "id": "prost"
+                },
+                {
+                    "name": "Kimi R\u00e4ikk\u00f6nen",
+                    "img": "https://raw.githubusercontent.com/sethvm/kimiquotes/main/kimi.gif",
+                    "id": "raikkonen"
+                },
+                {
+                    "name": "Daniel Ricciardo",
+                    "img": "",
+                    "id": "ricciardo"
+                },
+                {
+                    "name": "Nico Rosberg",
+                    "img": "",
+                    "id": "rosberg"
+                },
+                {
+                    "name": "Carlos Sainz Jr",
+                    "img": "https://www.formula1.com/content/fom-website/en/drivers/carlos-sainz/jcr:content/image.img.1024.medium.jpg/1669048713347.jpg",
+                    "id": "sainz"
+                },
+                {
+                    "name": "Takuma Sato",
+                    "img": "",
+                    "id": "sato"
+                },
+                {
+                    "name": "Jody Scheckter",
+                    "img": "",
+                    "id": "scheckter"
+                },
+                {
+                    "name": "Michael Schumacher",
+                    "img": "",
+                    "id": "michael-schumacher"
+                },
+                {
+                    "name": "Mick Schumacher",
+                    "img": "",
+                    "id": "mick-schumacher"
+                },
+                {
+                    "name": "Ralf Schumacher",
+                    "img": "",
+                    "id": "ralf-schumacher"
+                },
+                {
+                    "name": "Ayrton Senna",
+                    "img": "",
+                    "id": "senna"
+                },
+                {
+                    "name": "G\u00fcnther Steiner",
+                    "img": "",
+                    "id": "steiner"
+                },
+                {
+                    "name": "Jackie Stewart",
+                    "img": "",
+                    "id": "stewart"
+                },
+                {
+                    "name": "Lance Stroll",
+                    "img": "https://www.formula1.com/content/fom-website/en/drivers/lance-stroll/jcr:content/image.img.1920.medium.jpg/1648135171947.jpg",
+                    "id": "stroll"
+                },
+                {
+                    "name": "John Surtees",
+                    "img": "",
+                    "id": "surtees"
+                },
+                {
+                    "name": "Jarno Trulli",
+                    "img": "",
+                    "id": "trulli"
+                },
+                {
+                    "name": "Yuki Tsunoda",
+                    "img": "https://www.formula1.com/content/fom-website/en/drivers/yuki-tsunoda/jcr:content/image.img.1920.medium.jpg/1669044222425.jpg",
+                    "id": "tsunoda"
+                },
+                {
+                    "name": "Jos Verstappen",
+                    "img": "",
+                    "id": "jos-verstappen"
+                },
+                {
+                    "name": "Max Verstappen",
+                    "img": "https://www.formula1.com/content/fom-website/en/drivers/max-verstappen/jcr:content/image.img.1024.medium.jpg/1670841844162.jpg",
+                    "id": "verstappen"
+                },
+                {
+                    "name": "Sebastian Vettel",
+                    "img": "https://media.gq.com.mx/photos/62e28f535a8c1e60ded0d872/1:1/w_1999,h_1999,c_limit/Sebastian-Vettel-en-Aston-Martin.jpg",
+                    "id": "vettel"
+                },
+                {
+                    "name": "Gilles Villeneuve",
+                    "img": "",
+                    "id": "gilles-villeneuve"
+                },
+                {
+                    "name": "Jacques Villeneuve",
+                    "img": "",
+                    "id": "jacques-villeneuve"
+                },
+                {
+                    "name": "Mark Webber",
+                    "img": "",
+                    "id": "webber"
+                },
+                {
+                    "name": "Frank Williams",
+                    "img": "",
+                    "id": "williams"
+                },
+                {
+                    "name": "Susie Wolff",
+                    "img": "",
+                    "id": "susie-wolff"
+                },
+                {
+                    "name": "Toto Wolff",
+                    "img": "https://img.redbull.com/images/q_auto,f_auto/redbullcom/2021/6/29/twd4ehgggsydfabrr5v0/toto-wolff-nuerburgring",
+                    "id": "toto-wolff"
+                },
+                {
+                    "name": "Zhou Guanyu",
+                    "img": "https://www.formula1.com/content/fom-website/en/drivers/guanyu-zhou/jcr:content/image.img.1920.medium.jpg/1669046009526.jpg",
+                    "id": "zhou"
+                }
+            ]
+        },
+        {
+            "name": "List of drivers and personalities",
+            "url": "https://f1-drivers-quotes.p.rapidapi.com/",
+            "description": "Shows the list of F1 drivers and personalities who have quotes saved in this API, and their code to access them.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://f1-drivers-quotes.p.rapidapi.com/\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"f1-drivers-quotes.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://f1-drivers-quotes.p.rapidapi.com/\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"f1-drivers-quotes.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "Alexander_Albon": "albon",
+                "Jean_Alesi": "alesi",
+                "Fernando_Alonso": "alonso",
+                "Mario_Andretti": "andretti",
+                "Alberto_Ascari": "ascari",
+                "Rubens_Barrichello": "barrichello",
+                "Mattia_Binotto": "binotto",
+                "Valtteri_Bottas": "bottas",
+                "Jack_Brabham": "brabham",
+                "Ross_Brawn": "brawn",
+                "Flavio_Briatore": "briatore",
+                "Jenson_Button": "button",
+                "David_Coulthard": "coulthard",
+                "Ron_Dennis": "dennis",
+                "Bernie_Ecclestone": "ecclestone",
+                "Marcus_Ericsson": "ericsson",
+                "Juan_Manuel_Fangio": "fangio",
+                "Giancarlo_Fisichella": "fisichella",
+                "Emerson_Fittipaldi": "fittipaldi",
+                "Pierre_Gasly": "gasly",
+                "Romain_Grosjean": "grosjean",
+                "Mika_H\u00e4kkinen": "hakkinen",
+                "Lewis_Hamilton": "hamilton",
+                "Damon_Hill": "damon-hill",
+                "Graham_Hill": "graham-hill",
+                "Phil_Hill": "phil-hill",
+                "Christian_Horner": "horner",
+                "Nico_H\u00fclkenberg": "hulkenberg",
+                "Jacky_Ickx": "ickx",
+                "Eddie_Irvine": "irvine",
+                "Kamui_Kobayashi": "kobayashi",
+                "Heikki_Kovalainen": "kovalainen",
+                "Robert_Kubica": "kubica",
+                "Daniil_Kvyat": "kvyat",
+                "Nicholas_Latifi": "latifi",
+                "Niki_Lauda": "lauda",
+                "Charles_Leclerc": "leclerc",
+                "Kevin_Magnussen": "magnussen",
+                "Pastor_Maldonado": "maldonado",
+                "Nigel_Mansell": "mansell",
+                "Helmut_Marko": "marko",
+                "Felipe_Massa": "massa",
+                "Nikita_Mazepin": "mazepin",
+                "Juan_Pablo_Montoya": "montoya",
+                "Lando_Norris": "norris",
+                "Sergio_Perez": "perez",
+                "Nelson_Piquet": "piquet",
+                "Alain_Prost": "prost",
+                "Kimi_R\u00e4ikk\u00f6nen": "raikkonen",
+                "Daniel_Ricciardo": "ricciardo",
+                "Nico_Rosberg": "rosberg",
+                "Carlos_Sainz_Jr": "sainz",
+                "Takuma_Sato": "sato",
+                "Jody_Scheckter": "scheckter",
+                "Michael_Schumacher": "michael-schumacher",
+                "Mick_Schumacher": "mick-schumacher",
+                "Ralf_Schumacher": "ralf-schumacher",
+                "Ayrton_Senna": "senna",
+                "G\u00fcnther_Steiner": "steiner",
+                "Jackie_Stewart": "stewart",
+                "Lance_Stroll": "stroll",
+                "John_Surtees": "surtees",
+                "Jarno_Trulli": "trulli",
+                "Yuki_Tsunoda": "tsunoda",
+                "Jos_Verstappen": "jos-verstappen",
+                "Max_Verstappen": "verstappen",
+                "Sebastian_Vettel": "vettel",
+                "Gilles_Villeneuve": "gilles-villeneuve",
+                "Jacques_Villeneuve": "jacques-villeneuve",
+                "Mark_Webber": "webber",
+                "Frank_Williams": "williams",
+                "Susie_Wolff": "susie-wolff",
+                "Toto_Wolff": "toto-wolff",
+                "Zhou_Guanyu": "zhou"
+            }
+        },
+        {
+            "name": "10 interesting quotes",
+            "url": "https://f1-drivers-quotes.p.rapidapi.com/quotes",
+            "description": "Gets 10 interesting quotes said by famous F1 people.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://f1-drivers-quotes.p.rapidapi.com/quotes\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"f1-drivers-quotes.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://f1-drivers-quotes.p.rapidapi.com/quotes\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"f1-drivers-quotes.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "Driver's quotes",
+            "url": "https://f1-drivers-quotes.p.rapidapi.com/quotes/verstappen",
+            "description": "Gets the quotes of a specific driver.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "driverId",
+                    "type": "string",
+                    "description": "",
+                    "default": "verstappen"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://f1-drivers-quotes.p.rapidapi.com/quotes/verstappen\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"f1-drivers-quotes.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://f1-drivers-quotes.p.rapidapi.com/quotes/{driverid}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"f1-drivers-quotes.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "id": 1,
+                    "quote": "The only place that matters is first.",
+                    "author": "Max Verstappen"
+                },
+                {
+                    "id": 2,
+                    "quote": "In the end, I think in F1 it is very hard for a girl.",
+                    "author": "Max Verstappen"
+                },
+                {
+                    "id": 3,
+                    "quote": "I always try to get the best result out of it, I'm not there to just sit second or sit third. I'm a winner, and I want to win every single race, and I will always go for it.",
+                    "author": "Max Verstappen"
+                },
+                {
+                    "id": 4,
+                    "quote": "I don't need people shouting at me to tell me what I did wrong.",
+                    "author": "Max Verstappen"
+                },
+                {
+                    "id": 5,
+                    "quote": "I think you can improve on everything; you're never perfect.",
+                    "author": "Max Verstappen"
+                },
+                {
+                    "id": 6,
+                    "quote": "My career is more important than girls.",
+                    "author": "Max Verstappen"
+                },
+                {
+                    "id": 7,
+                    "quote": "The smell of fuel, driving on the limit on the edge of sliding, it just gives you a lot of adrenaline.",
+                    "author": "Max Verstappen"
+                },
+                {
+                    "id": 8,
+                    "quote": "Mistakes happen, and they happen to the best of us.",
+                    "author": "Max Verstappen"
+                },
+                {
+                    "id": 9,
+                    "quote": "You always try to fight for yourself, isn't it? You try to do the best possible job.",
+                    "author": "Max Verstappen"
+                },
+                {
+                    "id": 10,
+                    "quote": "To be honest, I never compare myself with the rookies.",
+                    "author": "Max Verstappen"
+                },
+                {
+                    "id": 11,
+                    "quote": "There is no such thing as a low risk lap in Monaco. It doesn't exist if you want to be fast, because you have to be on the limit.",
+                    "author": "Max Verstappen"
+                },
+                {
+                    "id": 12,
+                    "quote": "You always want to do better than last year.",
+                    "author": "Max Verstappen"
+                },
+                {
+                    "id": 13,
+                    "quote": "I just want to do the best I can every time.",
+                    "author": "Max Verstappen"
+                },
+                {
+                    "id": 14,
+                    "quote": "The thing is, all the time I press my radio button, it is broadcast, and sometimes it sounds a bit arrogant - especially the 'I'm not here to finish fourth' - and that is just what comes up in my mind.",
+                    "author": "Max Verstappen"
+                },
+                {
+                    "id": 15,
+                    "quote": "You always have to believe in yourself, and I had that from karting.",
+                    "author": "Max Verstappen"
+                },
+                {
+                    "id": 16,
+                    "quote": "That's what I enjoy, always driving on the limit of what you can do.",
+                    "author": "Max Verstappen"
+                },
+                {
+                    "id": 17,
+                    "quote": "Of course you learn from certain moments, and you always get more and more experience, so maybe in the future you will do some different things, but in general, the basics always stay the same.",
+                    "author": "Max Verstappen"
+                },
+                {
+                    "id": 18,
+                    "quote": "The world championship is what I am here for.",
+                    "author": "Max Verstappen"
+                },
+                {
+                    "id": 19,
+                    "quote": "If you start doubting yourself like that, thinking, 'Am I good enough?' - maybe there is a reason you're thinking that.",
+                    "author": "Max Verstappen"
+                },
+                {
+                    "id": 20,
+                    "quote": "I've raced at the Hungaroring in Formula 3, and it's a bit of a Mickey Mouse track.",
+                    "author": "Max Verstappen"
+                },
+                {
+                    "id": 21,
+                    "quote": "Many people ask, 'What do you need mentally to succeed in F1?' I say, 'What do you mean mentally?'",
+                    "author": "Max Verstappen"
+                },
+                {
+                    "id": 22,
+                    "quote": "I've always been good at realising what went wrong and stuff, and I was always being able to look at the positives from it.",
+                    "author": "Max Verstappen"
+                },
+                {
+                    "id": 23,
+                    "quote": "It's just racing. Sometimes you have difficult moments, and then you try to work hard, and you keep working hard, and you overcome the situation. It's as simple as that.",
+                    "author": "Max Verstappen"
+                },
+                {
+                    "id": 24,
+                    "quote": "My dad always told me you have to be as quick as you can straight away out of the box. Some people say, 'Feel your way into it; build it up.' No. My dad would say, 'Straight away, you have to be there.' And I think that helps to warm up your tyres and brakes to be on it a bit more from lap one.",
+                    "author": "Max Verstappen"
+                },
+                {
+                    "id": 25,
+                    "quote": "If you are not allowed to defend, what's racing about, then?",
+                    "author": "Max Verstappen"
+                },
+                {
+                    "id": 26,
+                    "quote": "I was never Mad Max. I was just Max who was trying to get the best result for the team.",
+                    "author": "Max Verstappen"
+                },
+                {
+                    "id": 27,
+                    "quote": "I tell my engineers that they should not overload me with information.",
+                    "author": "Max Verstappen"
+                },
+                {
+                    "id": 28,
+                    "quote": "It is very unfair, and on social media you have all these keyboard warriors who just type something, and they never say it to my face. That's very weak I find.",
+                    "author": "Max Verstappen"
+                },
+                {
+                    "id": 29,
+                    "quote": "I say what I think, and if somebody attacks me unfairly, I definitely tell them.",
+                    "author": "Max Verstappen"
+                },
+                {
+                    "id": 30,
+                    "quote": "If you are a bit weak in your head, maybe you can train your mind, but it will never be your strong point.",
+                    "author": "Max Verstappen"
+                },
+                {
+                    "id": 31,
+                    "quote": "I am not there to finish fourth at the end of the day. I am there to win as a racer, but on the radio, it sounds I am arrogant and not listening to the team, but it is not like that.",
+                    "author": "Max Verstappen"
+                },
+                {
+                    "id": 32,
+                    "quote": "It is not because others tell me I have to change my driving style that I will change.",
+                    "author": "Max Verstappen"
+                },
+                {
+                    "id": 33,
+                    "quote": "In general, the spotlight has been on me.",
+                    "author": "Max Verstappen"
+                },
+                {
+                    "id": 34,
+                    "quote": "Maybe I can drive until I'm 36 or 37. 40.",
+                    "author": "Max Verstappen"
+                },
+                {
+                    "id": 35,
+                    "quote": "I just want to be myself. You learn from yourself, and that doesn't mean you have to drive slower; it actually means you have to drive faster, but maybe with a little bit in control, and that's what I learned.",
+                    "author": "Max Verstappen"
+                },
+                {
+                    "id": 36,
+                    "quote": "I think it is very important to not be too much on social media. You have a lot of positive comments but also negative ones, and at the end of the day, that shouldn't affect you, but it is much more important not to read it so you just don't know.",
+                    "author": "Max Verstappen"
+                },
+                {
+                    "id": 37,
+                    "quote": "It is not only about just doing a fast lap. You also need to use your brains and be clever, and I think that is what makes you a complete driver at the end.",
+                    "author": "Max Verstappen"
+                },
+                {
+                    "id": 38,
+                    "quote": "I have good people around me, so I always have advice. A lot of people can talk to me, but it's me, of course, who still has to take that to the track and to perform.",
+                    "author": "Max Verstappen"
+                },
+                {
+                    "id": 39,
+                    "quote": "I never even think of the mental side of things because I never had any issues.",
+                    "author": "Max Verstappen"
+                },
+                {
+                    "id": 40,
+                    "quote": "Of course I think everybody has moments in their careers when they're frustrated, or you're not happy with the current situation.",
+                    "author": "Max Verstappen"
+                },
+                {
+                    "id": 41,
+                    "quote": "For me, it doesn't matter if you are fighting a world champion or not.",
+                    "author": "Max Verstappen"
+                },
+                {
+                    "id": 42,
+                    "quote": "Of course my dad went to Formula One, so I think that my dad is the better driver of the two. But I think, for a girl, my mom was not too bad, of course.",
+                    "author": "Max Verstappen"
+                },
+                {
+                    "id": 43,
+                    "quote": "My ultimate dream is just to become world champion, and not only once. So that's my dream, and it doesn't matter with which team it is.",
+                    "author": "Max Verstappen"
+                },
+                {
+                    "id": 44,
+                    "quote": "I have to say it was a very good start, a very good first season. I enjoyed it a lot, scored good points and gained a lot of experience.",
+                    "author": "Max Verstappen"
+                },
+                {
+                    "id": 45,
+                    "quote": "I want to rely on my gut feeling. Isn't that what made great race drivers in the end?",
+                    "author": "Max Verstappen"
+                },
+                {
+                    "id": 46,
+                    "quote": "At the end of the day, driving on the limit, sometimes over it to achieve the best out of it, especially at such high speeds... mistakes are easily done.",
+                    "author": "Max Verstappen"
+                },
+                {
+                    "id": 47,
+                    "quote": "I think if you show respect on the track to each other, and you do clean overtaking moves, then they get respect for you.",
+                    "author": "Max Verstappen"
+                },
+                {
+                    "id": 48,
+                    "quote": "To just slow yourself down, just to not do anything and drive around - I'm not like that. I'm not here to fill up the field.",
+                    "author": "Max Verstappen"
+                },
+                {
+                    "id": 49,
+                    "quote": "People always think they know better. In football, everybody thinks they can be head coach and do it better. It's the same in F1: they always know better, even if they have no experience of it.",
+                    "author": "Max Verstappen"
+                },
+                {
+                    "id": 50,
+                    "quote": "I want to win because I am the fastest out there instead, not by luck; then it means a lot more to you.",
+                    "author": "Max Verstappen"
+                },
+                {
+                    "id": 51,
+                    "quote": "This is what I have always done in my life, just racing and driving cars and go-karts fast.",
+                    "author": "Max Verstappen"
+                },
+                {
+                    "id": 52,
+                    "quote": "The biggest critic I have in my life is my dad, so everything else is just a breeze; it doesn't really matter to me.",
+                    "author": "Max Verstappen"
+                },
+                {
+                    "id": 53,
+                    "quote": "As a driver, it is important to focus on yourself and believe in yourself, and there shouldn't be a reason why, when you are in F1 and there is more attention, you change your approach.",
+                    "author": "Max Verstappen"
+                },
+                {
+                    "id": 54,
+                    "quote": "Of course there will be difficult times, and there will be more in the future, but I know what I have to do in the car.",
+                    "author": "Max Verstappen"
+                },
+                {
+                    "id": 55,
+                    "quote": "I get really tired of all the comments saying I should change my approach.",
+                    "author": "Max Verstappen"
+                },
+                {
+                    "id": 56,
+                    "quote": "You have to be patient: trust the team, that they can deliver a good job.",
+                    "author": "Max Verstappen"
+                },
+                {
+                    "id": 57,
+                    "quote": "If you haven't really raced a lot in lower categories, and you make the jump to Formula One, you have to learn in Formula One, and a lot more people are watching.",
+                    "author": "Max Verstappen"
+                },
+                {
+                    "id": 58,
+                    "quote": "I just enjoy it and drive as fast I can. But so many people think your psychology is such a massive thing. For me, it's not necessary.",
+                    "author": "Max Verstappen"
+                },
+                {
+                    "id": 59,
+                    "quote": "Of course I am doing a good job, but you can always improve, and I just leave it up to people outside, around me or whatever, to judge on that.",
+                    "author": "Max Verstappen"
+                },
+                {
+                    "id": 60,
+                    "quote": "Overtaking is one thing. That is an art. But defending as well. You should be able to defend your position.",
+                    "author": "Max Verstappen"
+                }
+            ],
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "f1_drivers_quotes"
+}

@@ -1,0 +1,40 @@
+{
+    "product_id": "api_a90ac9aa-8094-4ee9-9cf6-aebd998a31e7",
+    "tool_description": "An open-source API to access local walk scores and regional bike and transit data for any address recognized by US Census Geocoding.",
+    "home_url": "https://rapidapi.com/tmm6907-9UaCoMqGQi/api/opennwi/",
+    "name": "OpenNWI",
+    "title": "OpenNWI",
+    "pricing": "FREEMIUM",
+    "tool_name": "OpenNWI",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 532,
+        "avgSuccessRate": 85,
+        "popularityScore": 7.9,
+        "__typename": "Score"
+    },
+    "host": "opennwi.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "SearchByAddress",
+            "url": "https://opennwi.p.rapidapi.com/scores",
+            "description": "Search local walk scores and regional bike and transit data by address. NWI score range from 0-20.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "address",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "1600 Pennsylvania Ave. NW Washington, DC 20500"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://opennwi.p.rapidapi.com/scores\"\nquerystring = {\"address\": \"1600 Pennsylvania Ave. NW Washington, DC 20500\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"opennwi.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://opennwi.p.rapidapi.com/scores\"\nquerystring = {\"address\": \"1600 Pennsylvania Ave. NW Washington, DC 20500\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"opennwi.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "opennwi"
+}

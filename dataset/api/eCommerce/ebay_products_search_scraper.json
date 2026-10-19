@@ -1,0 +1,54 @@
+{
+    "product_id": "api_9e5d6ba4-6f55-443f-b45a-23d11fd78463",
+    "tool_description": "eBay products search scraper for getting search products data.\nYou can choose the Location: the US Only,  North America , Europe , Asia, or Default.\nYou will get 25 products per page .",
+    "home_url": "https://rapidapi.com/ikoaymen056/api/ebay-products-search-scraper/",
+    "name": "eBay products search scraper",
+    "title": "eBay products search scraper",
+    "pricing": "FREEMIUM",
+    "tool_name": "eBay products search scraper",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 4703,
+        "avgSuccessRate": 100,
+        "popularityScore": 8.3,
+        "__typename": "Score"
+    },
+    "host": "ebay-products-search-scraper.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "GET Search Products Data",
+            "url": "https://ebay-products-search-scraper.p.rapidapi.com/products",
+            "description": "GET Search Products Data",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "page",
+                    "type": "NUMBER",
+                    "description": "the number of the page",
+                    "default": "1"
+                },
+                {
+                    "name": "Item_Location",
+                    "type": "STRING",
+                    "description": "Item Location :  europe  , north___america.    , asia  ,us__only  , default",
+                    "default": "europe"
+                },
+                {
+                    "name": "query",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "xbox"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://ebay-products-search-scraper.p.rapidapi.com/products\"\nquerystring = {\"page\": \"1\", \"Item_Location\": \"europe\", \"query\": \"xbox\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ebay-products-search-scraper.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ebay-products-search-scraper.p.rapidapi.com/products\"\nquerystring = {\"page\": \"1\", \"Item_Location\": \"europe\", \"query\": \"xbox\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ebay-products-search-scraper.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You are not subscribed to this API."
+            },
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "ebay_products_search_scraper"
+}

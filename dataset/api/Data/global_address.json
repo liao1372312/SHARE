@@ -1,0 +1,189 @@
+{
+    "product_id": "api_dcb76c88-148f-45dc-b975-b74f0b72aab7",
+    "tool_description": "Easily verify, check or lookup address. The Global Address JSON API takes in any global address in one line or multiple lines, and matches it against the best postal reference sources (246 countries and territories) to correct, verify and standardize U.S., Canadian and international addresses.",
+    "home_url": "https://rapidapi.com/adminMelissa/api/global-address/",
+    "name": "Global Address",
+    "title": "Global Address",
+    "pricing": "FREE",
+    "tool_name": "Global Address",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 113,
+        "avgSuccessRate": 100,
+        "popularityScore": 9.2,
+        "__typename": "Score"
+    },
+    "host": "global-address.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Global Address",
+            "url": "https://global-address.p.rapidapi.com/V3/WEB/GlobalAddress/doGlobalAddress",
+            "description": "Validate, Standardize and Cleanse Addresses across the globe",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "ctry",
+                    "type": "STRING",
+                    "description": "Country Code / Country Name",
+                    "default": "DEU"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "format",
+                    "type": "STRING",
+                    "description": "Format of the Response (XML or JSON)",
+                    "default": "json"
+                },
+                {
+                    "name": "a5",
+                    "type": "STRING",
+                    "description": "Address Line 5",
+                    "default": ""
+                },
+                {
+                    "name": "a1",
+                    "type": "STRING",
+                    "description": "Address Line 1",
+                    "default": "Gie\u00dfener Str. 30"
+                },
+                {
+                    "name": "DeliveryLines",
+                    "type": "STRING",
+                    "description": "Specify if the Address Lines 1-8 should contain just the delivery address or entire address.",
+                    "default": "Off"
+                },
+                {
+                    "name": "a2",
+                    "type": "STRING",
+                    "description": "Address Line 2",
+                    "default": "Frankfurt am Main"
+                },
+                {
+                    "name": "a3",
+                    "type": "STRING",
+                    "description": "Address Line 3",
+                    "default": ""
+                },
+                {
+                    "name": "admarea",
+                    "type": "STRING",
+                    "description": "Administrative Area",
+                    "default": ""
+                },
+                {
+                    "name": "a7",
+                    "type": "STRING",
+                    "description": "Address Line 7",
+                    "default": ""
+                },
+                {
+                    "name": "a6",
+                    "type": "STRING",
+                    "description": "Address Line 6",
+                    "default": ""
+                },
+                {
+                    "name": "postal",
+                    "type": "STRING",
+                    "description": "Postal Code",
+                    "default": "60435"
+                },
+                {
+                    "name": "a8",
+                    "type": "STRING",
+                    "description": "Address Line 8",
+                    "default": ""
+                },
+                {
+                    "name": "loc",
+                    "type": "STRING",
+                    "description": "Locality",
+                    "default": ""
+                },
+                {
+                    "name": "a4",
+                    "type": "STRING",
+                    "description": "Address Line 4",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://global-address.p.rapidapi.com/V3/WEB/GlobalAddress/doGlobalAddress\"\nquerystring = {\"format\": \"json\", \"ctry\": \"DEU\", \"a5\": \"\", \"a1\": \"Gie\u00dfener Str. 30\", \"DeliveryLines\": \"Off\", \"a2\": \"Frankfurt am Main\", \"a3\": \"\", \"admarea\": \"\", \"a7\": \"\", \"a6\": \"\", \"postal\": \"60435\", \"a8\": \"\", \"loc\": \"\", \"a4\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"global-address.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://global-address.p.rapidapi.com/V3/WEB/GlobalAddress/doGlobalAddress\"\nquerystring = {\"format\": \"json\", \"ctry\": \"DEU\", \"a5\": \"\", \"a1\": \"Gie\u00dfener Str. 30\", \"DeliveryLines\": \"Off\", \"a2\": \"Frankfurt am Main\", \"a3\": \"\", \"admarea\": \"\", \"a7\": \"\", \"a6\": \"\", \"postal\": \"60435\", \"a8\": \"\", \"loc\": \"\", \"a4\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"global-address.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "Version": "3.0.1.174",
+                "TransmissionReference": "",
+                "TransmissionResults": "",
+                "TotalRecords": "1",
+                "Records": [
+                    {
+                        "RecordID": "1",
+                        "Results": "AC02,AC03,AC16,AC17,AV24,GS05",
+                        "FormattedAddress": "Gie\u00dfener Str. 30;60435 Frankfurt am Main;GERMANY",
+                        "Organization": "",
+                        "AddressLine1": "Gie\u00dfener Str. 30",
+                        "AddressLine2": "60435 Frankfurt am Main",
+                        "AddressLine3": "",
+                        "AddressLine4": "",
+                        "AddressLine5": "",
+                        "AddressLine6": "",
+                        "AddressLine7": "",
+                        "AddressLine8": "",
+                        "SubPremises": "",
+                        "DoubleDependentLocality": "",
+                        "DependentLocality": "",
+                        "Locality": "Frankfurt am Main",
+                        "SubAdministrativeArea": "Frankfurt am Main",
+                        "AdministrativeArea": "Darmstadt",
+                        "PostalCode": "60435",
+                        "PostalCodeType": "",
+                        "AddressType": "",
+                        "AddressKey": "",
+                        "SubNationalArea": "Hessen",
+                        "CountryName": "Germany",
+                        "CountryISO3166_1_Alpha2": "DE",
+                        "CountryISO3166_1_Alpha3": "DEU",
+                        "CountryISO3166_1_Numeric": "276",
+                        "CountrySubdivisionCode": "DE-HE",
+                        "Thoroughfare": "Gie\u00dfener Str.",
+                        "ThoroughfarePreDirection": "",
+                        "ThoroughfareLeadingType": "",
+                        "ThoroughfareName": "Gie\u00dfener",
+                        "ThoroughfareTrailingType": "Str.",
+                        "ThoroughfarePostDirection": "",
+                        "DependentThoroughfare": "",
+                        "DependentThoroughfarePreDirection": "",
+                        "DependentThoroughfareLeadingType": "",
+                        "DependentThoroughfareName": "",
+                        "DependentThoroughfareTrailingType": "",
+                        "DependentThoroughfarePostDirection": "",
+                        "Building": "",
+                        "PremisesType": "",
+                        "PremisesNumber": "30",
+                        "SubPremisesType": "",
+                        "SubPremisesNumber": "",
+                        "PostBox": "",
+                        "Latitude": "50.141440",
+                        "Longitude": "8.693720",
+                        "DeliveryIndicator": "U",
+                        "MelissaAddressKey": "7211874997",
+                        "MelissaAddressKeyBase": "",
+                        "PostOfficeLocation": "",
+                        "SubPremiseLevel": "",
+                        "SubPremiseLevelType": "",
+                        "SubPremiseLevelNumber": "",
+                        "SubBuilding": "",
+                        "SubBuildingType": "",
+                        "SubBuildingNumber": "",
+                        "UTC": "UTC+01:00",
+                        "DST": "Y",
+                        "DeliveryPointSuffix": "",
+                        "CensusKey": "",
+                        "Extras": {}
+                    }
+                ]
+            }
+        }
+    ],
+    "standardized_name": "global_address"
+}

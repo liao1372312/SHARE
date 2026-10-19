@@ -1,0 +1,502 @@
+{
+    "product_id": "api_de4b581c-fb2e-4993-be58-26ff1e699515",
+    "tool_description": "Nba api that returns latest news articles based on teams or players from espn, bleacher report, nba.com, yahoo, and slam",
+    "home_url": "https://rapidapi.com/savey03/api/nba-latest-news/",
+    "name": "Nba Latest News",
+    "title": "Nba Latest News",
+    "pricing": "FREE",
+    "tool_name": "Nba Latest News",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 4153,
+        "avgSuccessRate": 97,
+        "popularityScore": 9.5,
+        "__typename": "Score"
+    },
+    "host": "nba-latest-news.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Get all latest Nba articles",
+            "url": "https://nba-latest-news.p.rapidapi.com/articles",
+            "description": "GET /articles\nReturns a list of all the latest nba articles.\n\nOptional params:\n\nsource returns articles based on chosen source\n\noptions: nba-canada, nba, bleacher-report, yahoo, espn, slam\n\nExample /articles?source=bleacher-report\n\nteam returns articles based on chosen team\n\nExample /articles?team=lakers\n\nlimit returns the maximum number of articles desired\n\nExample /articles?limit=5\n\nplayer returns articles based on chosen player\n\nUse dash to seperate names\n\nSearching by players full name seperated by dash produces best results\n\nExample /articles?player=kevin-durant&limit=10",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "limit",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "player",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "team",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "source",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://nba-latest-news.p.rapidapi.com/articles\"\nquerystring = {\"limit\": \"\", \"player\": \"\", \"team\": \"\", \"source\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"nba-latest-news.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://nba-latest-news.p.rapidapi.com/articles\"\nquerystring = {\"limit\": \"\", \"player\": \"\", \"team\": \"\", \"source\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"nba-latest-news.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "title": "How much money will Ja Morant lose with latest suspension?",
+                    "url": "https://www.sportingnews.com/ca/nba/news/ja-morant-grizzlies-suspension-contract-salary-money/r661axohup3xijktrn3iidcj",
+                    "source": "nba_canada"
+                },
+                {
+                    "title": "Ranking Nuggets Against Last Five Champs \ud83d\udcca",
+                    "url": "https://bleacherreport.com/articles/10079042-ranking-the-denver-nuggets-against-every-nba-championship-team-of-the-last-5-years",
+                    "source": "bleacher_report"
+                },
+                {
+                    "title": "Updated 2023 NBA Mock Draft \ud83d\udd22",
+                    "url": "https://bleacherreport.com/articles/10077669-2023-nba-mock-draft-updated-full-2-round-predictions",
+                    "source": "bleacher_report"
+                },
+                {
+                    "title": "Latest Beal Trade Buzz \ud83d\udc42",
+                    "url": "https://bleacherreport.com/articles/10079557-nba-rumors-beal-granted-permission-to-speak-with-teams-top-prospect-to-meet-with-mj",
+                    "source": "bleacher_report"
+                },
+                {
+                    "title": "No One Can Question Joki\u0107's Legacy",
+                    "url": "https://bleacherreport.com/articles/10079083-no-one-can-question-nikola-jokics-legacy-ever-again",
+                    "source": "bleacher_report"
+                },
+                {
+                    "title": "Draft Lottery Trade Ideas \ud83c\udfb0",
+                    "url": "https://bleacherreport.com/articles/10078879-1-trade-for-almost-every-2023-nba-draft-lottery-pick",
+                    "source": "bleacher_report"
+                },
+                {
+                    "title": "Why LeBron Should Return to Cavs \ud83d\ude2e",
+                    "url": "https://bleacherreport.com/articles/10078942-why-lebron-james-should-end-his-career-with-the-cleveland-cavaliers",
+                    "source": "bleacher_report"
+                },
+                {
+                    "title": "Heat Expected to Trim Payroll in Offseason",
+                    "url": "https://bleacherreport.com/articles/10079052-rival-nba-execs-expect-miami-heat-to-trim-payroll-this-offseason",
+                    "source": "bleacher_report"
+                },
+                {
+                    "title": "What Heat must do to return to Finals",
+                    "url": "https://www.nba.com/news/what-heat-must-do-return-finals-2024",
+                    "source": "nba"
+                },
+                {
+                    "title": "2014 NBA Re-Draft \ud83d\udcdd",
+                    "url": "https://bleacherreport.com/articles/10078491-redrafting-nikola-jokic-joel-embiid-and-the-2014-nba-draft-lottery",
+                    "source": "bleacher_report"
+                },
+                {
+                    "title": "Nike 'Will Continue to Support' Ja",
+                    "url": "https://bleacherreport.com/articles/10079560-nike-will-continue-to-support-ja-morant-after-25-game-suspension-for-ig-live-video",
+                    "source": "bleacher_report"
+                },
+                {
+                    "title": "TSN's NBA Top-25: Where does Nikola Jokic rank all-time?",
+                    "url": "https://www.sportingnews.com/ca/nba/news/nikola-jokic-best-players-nba-history-top-25-all-time/k1n80x3w6iakd4rrcl1z22ei",
+                    "source": "nba_canada"
+                },
+                {
+                    "title": "Jordan set to sell majority ownership of Hornets",
+                    "url": "https://www.nba.com/news/michael-jordan-selling-ownership-stake-hornets",
+                    "source": "nba"
+                },
+                {
+                    "title": "Austin Reaves Shoe Deal \ud83d\udc5f",
+                    "url": "https://bleacherreport.com/articles/10079396-lakers-rumors-austin-reaves-rigorer-shoe-contract-expected-to-eclipse-1m-annually",
+                    "source": "bleacher_report"
+                },
+                {
+                    "title": "What to know about Ja Morant's suspension",
+                    "url": "https://www.sportingnews.com/ca/nba/news/ja-morant-suspended-games-timeline-suspension-grizzlies/mhpqrwjjerb2qectmyfny5ux",
+                    "source": "nba_canada"
+                },
+                {
+                    "title": "Get Ready for Game 1 of the NBA Finals with the SLAM x DraftKings BankShot",
+                    "url": "https://www.slamonline.com/news/draftkings/draftkings-bankshot/",
+                    "source": "slam"
+                },
+                {
+                    "title": "NBA Mailbag: Jamal Crawford has answers",
+                    "url": "https://www.nba.com/news/nba-mailbag-june-14-2023",
+                    "source": "nba"
+                },
+                {
+                    "title": "Who are the new Hornets owners? Michael Jordan selling majority stake to Gabe Plotkin and Rick Schnall",
+                    "url": "https://www.sportingnews.com/ca/nba/news/gabe-plotkin-rick-schnall-new-hornets-owners/dpkuxxlp4wtaoafikhlqhvj6",
+                    "source": "nba_canada"
+                },
+                {
+                    "title": "Grizzlies' Morant suspended 25 games by NBA",
+                    "url": "https://www.nba.com/news/ja-morant-suspended-25-games",
+                    "source": "nba"
+                },
+                {
+                    "title": "Jordan Selling Hornets",
+                    "url": "https://bleacherreport.com/articles/10079533-michael-jordan-sells-hornets-for-reported-3b-valuation-j-cole-among-investors",
+                    "source": "bleacher_report"
+                },
+                {
+                    "title": "NBA Draft Sleepers and Steals \ud83d\udc40",
+                    "url": "https://bleacherreport.com/articles/10079109-2023-nba-draft-sleepers-and-steals-to-keep-an-eye-on",
+                    "source": "bleacher_report"
+                },
+                {
+                    "title": "Warriors tab Dunleavy Jr. as next GM",
+                    "url": "https://www.nba.com/news/warriors-mike-dunleavy-jr-new-gm",
+                    "source": "nba"
+                },
+                {
+                    "title": "Victor Wembanyama comes up short in final French league game",
+                    "url": "https://www.sportingnews.com/ca/nba/news/victor-wembanyama-live-score-highlights-mets-92-lnb-finals/eghlwr9yzrg56wgcwqoi14kr",
+                    "source": "nba_canada"
+                },
+                {
+                    "title": "Meet the 2023 SLAM High School Girls All-Americans",
+                    "url": "https://www.slamonline.com/college-hs/2023-slam-high-school-girls-all-americans/",
+                    "source": "slam"
+                },
+                {
+                    "title": "Nikola Jokic says he lost his Finals MVP trophy",
+                    "url": "https://www.sportingnews.com/ca/nba/news/nikola-jokic-lost-finals-mvp-trophy-nuggets/ykvuecvgxsw4fn5fnkp8w1jl",
+                    "source": "nba_canada"
+                },
+                {
+                    "title": "Best moments from Nuggets' title parade",
+                    "url": "https://www.nba.com/news/best-moments-from-nuggets-2023-parade",
+                    "source": "nba"
+                },
+                {
+                    "title": "Dubs Promote Dunleavy Jr. to GM",
+                    "url": "https://bleacherreport.com/articles/10077728-report-mike-dunleavy-jr-agrees-to-contract-as-warriors-gm-after-bob-myers-exit",
+                    "source": "bleacher_report"
+                },
+                {
+                    "title": "Too-Early NBA Power Rankings \ud83d\udcca",
+                    "url": "https://bleacherreport.com/articles/10078844-way-too-soon-2023-24-nba-power-rankings-whos-the-favorite-to-dethrone-the-nuggets",
+                    "source": "bleacher_report"
+                },
+                {
+                    "title": "BS Meter for NBA Draft Rumors \ud83d\udc40",
+                    "url": "https://bleacherreport.com/articles/10079413-bs-meter-for-latest-2023-nba-draft-rumors",
+                    "source": "bleacher_report"
+                },
+                {
+                    "title": "Insider: Pels Would Trade Zion",
+                    "url": "https://bleacherreport.com/articles/10079272-zion-williamson-rumors-insider-thinks-pelicans-are-open-trade-for-scoot-henderson",
+                    "source": "bleacher_report"
+                },
+                {
+                    "title": "Bulls Quietly Shopping LaVine",
+                    "url": "https://bleacherreport.com/articles/10079419-zach-lavine-trade-rumors-bulls-quietly-gauging-interest-in-stars-market-value",
+                    "source": "bleacher_report"
+                },
+                {
+                    "title": "Ex-NBAer learns he's autistic after son diagnosed",
+                    "url": "https://www.espn.com/nba/story/_/id/37864547/ex-nbaer-tony-snell-learns-autistic-son-diagnosed",
+                    "source": "espn"
+                },
+                {
+                    "title": "What Nuggets must do to return to Finals",
+                    "url": "https://www.nba.com/news/what-nuggets-must-do-return-finals-2024",
+                    "source": "nba"
+                },
+                {
+                    "title": "NBA bans Morant 25 games for 'reckless' conduct",
+                    "url": "https://www.espn.com/nba/story/_/id/37863825/sources-grizzlies-ja-morant-suspended-25-games-nba",
+                    "source": "espn"
+                },
+                {
+                    "title": "Spurs May Push for CP3, FVV",
+                    "url": "https://bleacherreport.com/articles/10079329-nba-scout-believes-the-spurs-will-make-a-hard-push-for-chris-paul-or-fred-vanvleet",
+                    "source": "bleacher_report"
+                },
+                {
+                    "title": "KAT: I Changed the Game \ud83e\udd14",
+                    "url": "https://bleacherreport.com/articles/10079344-karl-anthony-towns-some-people-will-say-i-changed-the-game-after-i-retire",
+                    "source": "bleacher_report"
+                },
+                {
+                    "title": "JB Remains Priority over Beal Trade",
+                    "url": "https://bleacherreport.com/articles/10079326-celtics-rumors-jaylen-brown-contract-remains-priority-over-bradley-beal-trade",
+                    "source": "bleacher_report"
+                },
+                {
+                    "title": "Nuggets celebrate 1st NBA title with parade",
+                    "url": "https://www.nba.com/news/nuggets-host-2023-championship-parade",
+                    "source": "nba"
+                },
+                {
+                    "title": "Buy or Sell 2024 NBA Finals Odds \ud83e\uddd0",
+                    "url": "https://bleacherreport.com/articles/10079183-buy-or-sell-early-2023-24-nba-championship-odds",
+                    "source": "bleacher_report"
+                },
+                {
+                    "title": "Warriors stay in-house, turn to Dunleavy as GM",
+                    "url": "https://www.espn.com/nba/story/_/id/37863101/warriors-reach-deal-mike-dunleavy-jr-gm-sources-say",
+                    "source": "espn"
+                },
+                {
+                    "title": "When is the Nuggets' NBA championship parade?",
+                    "url": "https://www.sportingnews.com/ca/nba/news/nuggets-championship-parade-2023-date-time-route-watch/jgi59bxazm0fmpfrvhtfmjem",
+                    "source": "nba_canada"
+                },
+                {
+                    "title": "Bradley Beal Trade Packages \ud83d\udc40",
+                    "url": "https://bleacherreport.com/articles/10079301-realistic-trade-packages-for-washington-wizards-guard-bradley-beal",
+                    "source": "bleacher_report"
+                },
+                {
+                    "title": "Ranking Last 5 Finals MVPs \ud83d\udcca",
+                    "url": "https://bleacherreport.com/articles/10079073-ranking-nikola-jokic-and-every-nba-finals-mvp-of-the-last-5-years",
+                    "source": "bleacher_report"
+                },
+                {
+                    "title": "End of Jordan's rule: MJ completes Hornets sale",
+                    "url": "https://www.espn.com/nba/story/_/id/37863644/sources-michael-jordan-finalizing-charlotte-hornets-sale",
+                    "source": "espn"
+                },
+                {
+                    "title": "Sources: Weatherspoon no longer on Pels staff",
+                    "url": "https://www.espn.com/nba/story/_/id/37860262/sources-teresa-weatherspoon-no-longer-pelicans-staff",
+                    "source": "espn"
+                },
+                {
+                    "title": "Joki\u0107 Lost Finals MVP Trophy \ud83d\ude05",
+                    "url": "https://bleacherreport.com/articles/10079375-nuggets-nikola-jokic-lost-finals-mvp-trophy-after-title-left-it-in-staffers-room",
+                    "source": "bleacher_report"
+                },
+                {
+                    "title": "Nuggets title adds to owner Stan Kroenke's championship empire",
+                    "url": "https://www.sportingnews.com/ca/nba/news/stan-kroenke-teams-championship-nuggets-rams-avalanche/qqtjkmg8xc1ndwt4d03xnnai",
+                    "source": "nba_canada"
+                },
+                {
+                    "title": "10 numbers to know from 2022-23 season",
+                    "url": "https://www.nba.com/news/10-numbers-to-know-from-2022-23",
+                    "source": "nba"
+                },
+                {
+                    "title": "NBA draft 2023: 30 best prospects",
+                    "url": "https://www.espn.com/nba/insider/story/_/id/37847803/nba-draft-2023-breaking-30-best-prospects",
+                    "source": "espn"
+                },
+                {
+                    "title": "No-Brainer Trades for Contenders \ud83d\udd04",
+                    "url": "https://bleacherreport.com/articles/10078982-no-brainer-trades-for-2024-nba-title-contenders",
+                    "source": "bleacher_report"
+                },
+                {
+                    "title": "Best moments from Nuggets' championship parade in Denver",
+                    "url": "https://www.sportingnews.com/ca/nba/news/nuggets-championship-parade-updates-denver/bhq1hdjjfqrig7piizfv1x7h",
+                    "source": "nba_canada"
+                },
+                {
+                    "title": "Wade Interested in Investing in Chicago Sky",
+                    "url": "https://bleacherreport.com/articles/10079317-dwyane-wade-reportedly-expressed-interest-in-investing-in-wnbas-chicago-sky",
+                    "source": "bleacher_report"
+                },
+                {
+                    "title": "Pop 'Expected to Sign' 3-Yr Contract",
+                    "url": "https://bleacherreport.com/articles/10079322-nba-rumors-spurs-gregg-popovich-expected-to-sign-3-year-contract-around-14m-aav",
+                    "source": "bleacher_report"
+                },
+                {
+                    "title": "Worst Landing Spots for NBA Free Agents \ud83d\udeab",
+                    "url": "https://bleacherreport.com/articles/10078650-realistic-landing-spots-top-2023-nba-free-agents-should-avoid",
+                    "source": "bleacher_report"
+                },
+                {
+                    "title": "Will Amen or Ausar Thompson be drafted first? Breaking down the betting odds",
+                    "url": "https://www.sportingnews.com/ca/nba/news/betting-2023-nba-draft-amen-thompson-ausar-thompson-odds/pafolktgpdukjn4p3w60stxb",
+                    "source": "nba_canada"
+                },
+                {
+                    "title": "10 Things the NBA and Tennis Can Learn From Each Other",
+                    "url": "https://www.slamonline.com/news/nba/10-things-the-nba-and-tennis-can-learn-from-each-other/",
+                    "source": "slam"
+                },
+                {
+                    "title": "Timeline of Michael Jordan's ownership of Hornets",
+                    "url": "https://www.sportingnews.com/ca/nba/news/michael-jordan-hornets-ownershhip-timeline-value/hupakablmeqex5iwy5jcxpwz",
+                    "source": "nba_canada"
+                },
+                {
+                    "title": "Why Jalen Hood-Schifino is perfect for Raptors at pick No. 13",
+                    "url": "https://www.sportingnews.com/ca/nba/news/indiana-jalen-hood-schifino-raptors-2023-nba-draft/kjyajjihzclubzubknjvshlm",
+                    "source": "nba_canada"
+                },
+                {
+                    "title": "International Superstars are Now Dominating the Game More Than Ever Before",
+                    "url": "https://www.slamonline.com/the-magazine/fiba-244-slam/",
+                    "source": "slam"
+                },
+                {
+                    "title": "Top NBA Trade Chips This Offseason \ud83d\udd25",
+                    "url": "https://bleacherreport.com/articles/10079328-ranking-the-10-best-nba-trade-chips-this-offseason",
+                    "source": "bleacher_report"
+                },
+                {
+                    "title": "Zion Won't Be Traded",
+                    "url": "https://bleacherreport.com/articles/10079521-nba-rumors-zion-williamson-wont-be-traded-by-pelicans-amid-hornets-blazers-links",
+                    "source": "bleacher_report"
+                },
+                {
+                    "title": "Where Jokic-Murray rank among all-time NBA Finals duos",
+                    "url": "https://www.sportingnews.com/ca/nba/news/best-all-time-nba-duos-nikola-jokic-jamal-murray-finals/lku6y2qv3jvuo5n6mxti4e3g",
+                    "source": "nba_canada"
+                },
+                {
+                    "title": "Beal, Wizards Open to Trade",
+                    "url": "https://bleacherreport.com/articles/10079289-shams-bradley-beal-wizards-will-work-together-on-trade-if-team-opts-for-rebuild",
+                    "source": "bleacher_report"
+                },
+                {
+                    "title": "Pat Bev's Wild KAT Take \ud83d\ude33",
+                    "url": "https://bleacherreport.com/articles/10079285-patrick-beverley-says-karl-anthony-towns-is-nbas-best-center-over-jokic-embiid",
+                    "source": "bleacher_report"
+                },
+                {
+                    "title": "Michael Malone steals show at Nuggets championship parade",
+                    "url": "https://www.sportingnews.com/ca/nba/news/michael-malone-nuggets-championship-parade-denver-will-repeat/vallsdpjffo0hcowxy9n1mu9",
+                    "source": "nba_canada"
+                },
+                {
+                    "title": "NBPA Issues Statement on Ja",
+                    "url": "https://bleacherreport.com/articles/10079566-grizzlies-ja-morants-suspension-called-excessive-and-inappropriate-by-nbpa",
+                    "source": "bleacher_report"
+                },
+                {
+                    "title": "Ja Morant issues apology after 25-game suspension by NBA",
+                    "url": "https://www.sportingnews.com/ca/nba/news/ja-morant-suspension-statement-grizzlies-nba-punishment/h0z8l6usrmqtbqcaux1cefok",
+                    "source": "nba_canada"
+                },
+                {
+                    "title": "Why is Michael Jordan selling the Hornets?",
+                    "url": "https://www.sportingnews.com/ca/nba/news/michael-jordan-selling-hornets-franchise-valued/knuzuwfolurkpgh2lbzyrhwm",
+                    "source": "nba_canada"
+                },
+                {
+                    "title": "Every NBA Team's Biggest Fear \ud83d\ude33",
+                    "url": "https://bleacherreport.com/articles/10079243-every-nba-teams-biggest-fear-this-offseason",
+                    "source": "bleacher_report"
+                },
+                {
+                    "title": "Reign on: Nuggets soak up first NBA title parade",
+                    "url": "https://www.espn.com/nba/story/_/id/37858972/nuggets-celebrate-first-nba-title-parade-denver",
+                    "source": "espn"
+                },
+                {
+                    "title": "Why Nikola Jokic is ready to go home immediately after championship parade",
+                    "url": "https://www.sportingnews.com/ca/nba/news/nikola-jokic-nuggets-home-horses-sombor-serbia/vwvbnoftmzhuffwej9v80lt7",
+                    "source": "nba_canada"
+                },
+                {
+                    "title": "Explaining no-trade clauses in the NBA",
+                    "url": "https://www.sportingnews.com/ca/nba/news/no-trade-clause-nba-players-list-contract-details/p0mj9vllfh2qphmmuulsn4pt",
+                    "source": "nba_canada"
+                },
+                {
+                    "title": "Joki\u0107 Shades His Doubters \ud83d\ude24",
+                    "url": "https://bleacherreport.com/articles/10079168-nuggets-nikola-jokic-on-pre-draft-doubters-dont-bet-against-the-fat-boy",
+                    "source": "bleacher_report"
+                },
+                {
+                    "title": "2023 NBA Draft previews for all 30 teams",
+                    "url": "https://www.nba.com/news/2023-nba-draft-team-previews",
+                    "source": "nba"
+                },
+                {
+                    "title": "Hawks finalize coaching staff, add Kokoskov",
+                    "url": "https://www.nba.com/news/hawks-quin-snyder-finalize-coaching-staff-2023-24",
+                    "source": "nba"
+                },
+                {
+                    "title": "CP3 Wants to Stay with Suns",
+                    "url": "https://bleacherreport.com/articles/10079451-chris-paul-says-he-absolutely-wants-to-stay-with-suns-amid-trade-release-rumors",
+                    "source": "bleacher_report"
+                },
+                {
+                    "title": "2023 NBA Draft Betting Odds: Miller, Henderson top contenders for No. 2 overall pick",
+                    "url": "https://www.sportingnews.com/ca/nba/news/2023-nba-draft-odds-brandon-miller-scott-henderson-no-2-pick/sdjpponrzflgtrg7tf8uyxw1",
+                    "source": "nba_canada"
+                },
+                {
+                    "title": "Get Ready for Game 3 of the NBA Finals with the SLAM x DraftKings BankShot",
+                    "url": "https://www.slamonline.com/news/draftkings/get-ready-for-game-3-of-the-nba-finals-with-the-slam-x-draftkings-bankshot-2/",
+                    "source": "slam"
+                },
+                {
+                    "title": "2023 NBA Offseason Primer \ud83d\udc4f",
+                    "url": "https://bleacherreport.com/articles/10077538-complete-2023-offseason-guides-for-every-nba-team",
+                    "source": "bleacher_report"
+                },
+                {
+                    "title": "Ja Suspended 25 Games",
+                    "url": "https://bleacherreport.com/articles/10076072-report-grizzlies-ja-morant-suspended-25-games-after-ig-video-appearing-to-show-gun",
+                    "source": "bleacher_report"
+                },
+                {
+                    "title": "Every Team's Offseason To-Do List \ud83d\udcdd",
+                    "url": "https://bleacherreport.com/articles/10077980-every-nba-teams-offseason-to-do-list",
+                    "source": "bleacher_report"
+                },
+                {
+                    "title": "Marc Gasol is Entering a New Chapter as Both  Player and Owner of Spanish Basketball Club, B\u00e0squet Girona",
+                    "url": "https://www.slamonline.com/the-magazine/marc-gasol/",
+                    "source": "slam"
+                },
+                {
+                    "title": "Gallinari opts in for Celtics return in 2023-24",
+                    "url": "https://www.espn.com/nba/story/_/id/37858454/danilo-gallinari-picks-68m-option-stay-celtics",
+                    "source": "espn"
+                },
+                {
+                    "title": "NBA fathers reflect on joys of parenthood",
+                    "url": "https://www.nba.com/news/nba-fathers-reflect-joys-hopes-challenges-parenthood",
+                    "source": "nba"
+                },
+                {
+                    "title": "Team USA reportedly receives first FIBA World Cup commitments",
+                    "url": "https://www.sportingnews.com/ca/nba/news/team-usa-fiba-basketball-world-cup-2023-roster/iuikgk3hhiplytsuy6bsv8sx",
+                    "source": "nba_canada"
+                },
+                {
+                    "title": "Latest NBA Mock Draft Predictions \ud83d\udcdd",
+                    "url": "https://bleacherreport.com/articles/10079398-nba-draft-2023-latest-mock-predictions-from-industry-experts-after-nba-finals",
+                    "source": "bleacher_report"
+                },
+                {
+                    "title": "KAT: Wolves' Run > Nuggets' Title \ud83e\udd14",
+                    "url": "https://bleacherreport.com/articles/10079447-karl-anthony-towns-timberwolves-2022-run-more-special-than-nuggets-title",
+                    "source": "bleacher_report"
+                },
+                {
+                    "title": "How Grizzlies are impacted by Ja Morant suspension",
+                    "url": "https://www.sportingnews.com/ca/nba/news/ja-morant-suspension-grizzlies-impacted-2023-24-season/uixro3c8ophcuu60ryqsvvkq",
+                    "source": "nba_canada"
+                },
+                {
+                    "title": "'23 Finals Averaged 5.47M Viewers \ud83d\udd25",
+                    "url": "https://bleacherreport.com/articles/10079212-2023-nba-playoffs-averaged-547m-viewers-most-watched-postseason-in-5-years",
+                    "source": "bleacher_report"
+                }
+            ]
+        }
+    ],
+    "standardized_name": "nba_latest_news"
+}

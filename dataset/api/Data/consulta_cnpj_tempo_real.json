@@ -1,0 +1,2220 @@
+{
+    "product_id": "api_0d91a6dd-3d9d-411e-8f9c-f121770c041d",
+    "tool_description": "API Tempo Real de Consultas a Receita Federal, Simples Nacional e Cadastro de Contribuintes (SINTEGRA).",
+    "home_url": "https://rapidapi.com/cnpja/api/consulta-cnpj-tempo-real/",
+    "name": "Consulta CNPJ Tempo Real",
+    "title": "Consulta CNPJ Tempo Real",
+    "pricing": "FREEMIUM",
+    "tool_name": "Consulta CNPJ Tempo Real",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 3198,
+        "avgSuccessRate": 99,
+        "popularityScore": 8.8,
+        "__typename": "Score"
+    },
+    "host": "consulta-cnpj-tempo-real.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Gera Vis\u00e3o da Rua",
+            "url": "https://consulta-cnpj-tempo-real.p.rapidapi.com/office/37335118000180/street",
+            "description": "Gera Vis\u00e3o da Rua",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "CNPJ",
+                    "type": "string",
+                    "description": "",
+                    "default": "37335118000180"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "fov",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "height",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "width",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://consulta-cnpj-tempo-real.p.rapidapi.com/office/37335118000180/street\"\nquerystring = {\"fov\": \"\", \"height\": \"\", \"width\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"consulta-cnpj-tempo-real.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://consulta-cnpj-tempo-real.p.rapidapi.com/office/{cnpj}/street\"\nquerystring = {\"fov\": \"\", \"height\": \"\", \"width\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"consulta-cnpj-tempo-real.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "code": 400,
+                "message": "request validation failed",
+                "constraints": [
+                    "width must not be less than 80",
+                    "height must not be less than 80",
+                    "fov must not be less than 60"
+                ]
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Gera Mapa dos Arredores",
+            "url": "https://consulta-cnpj-tempo-real.p.rapidapi.com/office/37335118000180/map",
+            "description": "Gera Mapa dos Arredores",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "CNPJ",
+                    "type": "string",
+                    "description": "",
+                    "default": "37335118000180"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "height",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "zoom",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "width",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "scale",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "type",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "hybrid"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://consulta-cnpj-tempo-real.p.rapidapi.com/office/37335118000180/map\"\nquerystring = {\"height\": \"\", \"zoom\": \"\", \"width\": \"\", \"scale\": \"\", \"type\": \"hybrid\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"consulta-cnpj-tempo-real.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://consulta-cnpj-tempo-real.p.rapidapi.com/office/{cnpj}/map\"\nquerystring = {\"height\": \"\", \"zoom\": \"\", \"width\": \"\", \"scale\": \"\", \"type\": \"hybrid\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"consulta-cnpj-tempo-real.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "code": 400,
+                "message": "request validation failed",
+                "constraints": [
+                    "width must not be less than 80",
+                    "height must not be less than 80",
+                    "scale must not be less than 1",
+                    "zoom must not be less than 1"
+                ]
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Gera Comprovante RFB",
+            "url": "https://consulta-cnpj-tempo-real.p.rapidapi.com/rfb/certificate",
+            "description": "Gera Comprovante da Receita Federal em PDF",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "taxId",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "37335118000180"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "pages",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "REGISTRATION,MEMBERS"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://consulta-cnpj-tempo-real.p.rapidapi.com/rfb/certificate\"\nquerystring = {\"pages\": \"REGISTRATION,MEMBERS\", \"taxId\": \"37335118000180\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"consulta-cnpj-tempo-real.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://consulta-cnpj-tempo-real.p.rapidapi.com/rfb/certificate\"\nquerystring = {\"pages\": \"REGISTRATION,MEMBERS\", \"taxId\": \"37335118000180\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"consulta-cnpj-tempo-real.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "Consulta CEP",
+            "url": "https://consulta-cnpj-tempo-real.p.rapidapi.com/zip/01452922",
+            "description": "Consulta CEP",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "CEP",
+                    "type": "string",
+                    "description": "",
+                    "default": "01452922"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://consulta-cnpj-tempo-real.p.rapidapi.com/zip/01452922\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"consulta-cnpj-tempo-real.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://consulta-cnpj-tempo-real.p.rapidapi.com/zip/{cep}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"consulta-cnpj-tempo-real.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "zip": "01452922",
+                "municipality": 3550308,
+                "street": "Avenida Brigadeiro Faria Lima",
+                "district": "Jardim Paulistano",
+                "city": "S\u00e3o Paulo",
+                "state": "SP"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "zip": {
+                        "type": "string"
+                    },
+                    "municipality": {
+                        "type": "integer"
+                    },
+                    "street": {
+                        "type": "string"
+                    },
+                    "district": {
+                        "type": "string"
+                    },
+                    "city": {
+                        "type": "string"
+                    },
+                    "state": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        {
+            "name": "Consulta Estabelecimento",
+            "url": "https://consulta-cnpj-tempo-real.p.rapidapi.com/office/84447804000123",
+            "description": "Consulta CNPJ unificada a Receita Federal, Simples Nacional e Cadastro de Contribuintes",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "CNPJ",
+                    "type": "string",
+                    "description": "",
+                    "default": "84447804000123"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "maxAge",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "30"
+                },
+                {
+                    "name": "simplesHistory",
+                    "type": "BOOLEAN",
+                    "description": "",
+                    "default": "false"
+                },
+                {
+                    "name": "registrations",
+                    "type": "STRING",
+                    "description": "UFs separadas por v\u00edrgula para adicionar informa\u00e7\u00f5es do Cadastro de Contribuintes, utilize 'BR' para considerar todas.",
+                    "default": "BR"
+                },
+                {
+                    "name": "simples",
+                    "type": "BOOLEAN",
+                    "description": "",
+                    "default": "true"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://consulta-cnpj-tempo-real.p.rapidapi.com/office/84447804000123\"\nquerystring = {\"maxAge\": \"30\", \"simplesHistory\": \"false\", \"registrations\": \"BR\", \"simples\": \"true\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"consulta-cnpj-tempo-real.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://consulta-cnpj-tempo-real.p.rapidapi.com/office/{cnpj}\"\nquerystring = {\"maxAge\": \"30\", \"simplesHistory\": \"false\", \"registrations\": \"BR\", \"simples\": \"true\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"consulta-cnpj-tempo-real.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "updated": "2023-06-08T15:08:22Z",
+                "taxId": "84447804000123",
+                "alias": null,
+                "founded": "1992-09-30",
+                "head": true,
+                "statusDate": "2005-11-03",
+                "status": {
+                    "id": 2,
+                    "text": "Ativa"
+                },
+                "mainActivity": {
+                    "id": 3091101,
+                    "text": "Fabrica\u00e7\u00e3o de motocicletas"
+                },
+                "company": {
+                    "id": 84447804,
+                    "name": "J TOLEDO DA AMAZONIA INDUSTRIA E COMERCIO DE VEICULOS LTDA",
+                    "equity": 769080000,
+                    "nature": {
+                        "id": 2062,
+                        "text": "Sociedade Empres\u00e1ria Limitada"
+                    },
+                    "size": {
+                        "id": 5,
+                        "acronym": "DEMAIS",
+                        "text": "Demais"
+                    },
+                    "simples": {
+                        "optant": false,
+                        "since": null
+                    },
+                    "simei": {
+                        "optant": false,
+                        "since": null
+                    },
+                    "members": [
+                        {
+                            "since": "2004-04-14",
+                            "role": {
+                                "id": 22,
+                                "text": "S\u00f3cio"
+                            },
+                            "person": {
+                                "id": "424e385e-4aeb-4461-b7e1-c3e00f29d3dc",
+                                "name": "Joao Augusto Oliveira de Toledo",
+                                "type": "NATURAL",
+                                "taxId": "***595178**",
+                                "age": "31-40"
+                            }
+                        },
+                        {
+                            "since": "1992-09-30",
+                            "role": {
+                                "id": 49,
+                                "text": "S\u00f3cio-Administrador"
+                            },
+                            "person": {
+                                "id": "e03096bc-9106-4d2b-9797-88ab47d1f3b4",
+                                "name": "Joao Eduardo de Toledo",
+                                "type": "NATURAL",
+                                "taxId": "***511798**",
+                                "age": "71-80"
+                            }
+                        }
+                    ]
+                },
+                "address": {
+                    "municipality": 1302603,
+                    "street": "Rua Aninga",
+                    "number": "610",
+                    "details": null,
+                    "district": "Distrito Industrial ii",
+                    "city": "Manaus",
+                    "state": "AM",
+                    "zip": "69007200",
+                    "country": {
+                        "id": 76,
+                        "name": "Brasil"
+                    }
+                },
+                "phones": [
+                    {
+                        "area": "92",
+                        "number": "21257450"
+                    },
+                    {
+                        "area": "92",
+                        "number": "21257452"
+                    }
+                ],
+                "emails": [
+                    {
+                        "address": "aucinea.araujo@suzukimotos.com.br",
+                        "domain": "suzukimotos.com.br"
+                    }
+                ],
+                "sideActivities": [
+                    {
+                        "id": 2811900,
+                        "text": "Fabrica\u00e7\u00e3o de motores e turbinas, pe\u00e7as e acess\u00f3rios, exceto para avi\u00f5es e ve\u00edculos rodovi\u00e1rios"
+                    },
+                    {
+                        "id": 2869100,
+                        "text": "Fabrica\u00e7\u00e3o de m\u00e1quinas e equipamentos para uso industrial espec\u00edfico n\u00e3o especificados anteriormente, pe\u00e7as e acess\u00f3rios"
+                    },
+                    {
+                        "id": 3012100,
+                        "text": "Constru\u00e7\u00e3o de embarca\u00e7\u00f5es para esporte e lazer"
+                    },
+                    {
+                        "id": 4520001,
+                        "text": "Servi\u00e7os de manuten\u00e7\u00e3o e repara\u00e7\u00e3o mec\u00e2nica de ve\u00edculos automotores"
+                    },
+                    {
+                        "id": 4541201,
+                        "text": "Com\u00e9rcio por atacado de motocicletas e motonetas"
+                    },
+                    {
+                        "id": 4541202,
+                        "text": "Com\u00e9rcio por atacado de pe\u00e7as e acess\u00f3rios para motocicletas e motonetas"
+                    },
+                    {
+                        "id": 4649403,
+                        "text": "Com\u00e9rcio atacadista de bicicletas, triciclos e outros ve\u00edculos recreativos"
+                    },
+                    {
+                        "id": 6463800,
+                        "text": "Outras sociedades de participa\u00e7\u00e3o, exceto holdings"
+                    },
+                    {
+                        "id": 6810202,
+                        "text": "Aluguel de im\u00f3veis pr\u00f3prios"
+                    }
+                ],
+                "registrations": [
+                    {
+                        "state": "RN",
+                        "number": "203006747",
+                        "enabled": true
+                    },
+                    {
+                        "state": "AP",
+                        "number": "030178438",
+                        "enabled": false
+                    },
+                    {
+                        "state": "AL",
+                        "number": "245007016",
+                        "enabled": true
+                    },
+                    {
+                        "state": "RR",
+                        "number": "240070892",
+                        "enabled": true
+                    },
+                    {
+                        "state": "AM",
+                        "number": "070013993",
+                        "enabled": true
+                    },
+                    {
+                        "state": "MG",
+                        "number": "0358556720190",
+                        "enabled": true
+                    },
+                    {
+                        "state": "DF",
+                        "number": "0735866600172",
+                        "enabled": true
+                    },
+                    {
+                        "state": "ES",
+                        "number": "000013943",
+                        "enabled": true
+                    },
+                    {
+                        "state": "PR",
+                        "number": "0990238642",
+                        "enabled": true
+                    },
+                    {
+                        "state": "SE",
+                        "number": "270912355",
+                        "enabled": true
+                    },
+                    {
+                        "state": "PE",
+                        "number": "022174222",
+                        "enabled": true
+                    },
+                    {
+                        "state": "RS",
+                        "number": "0963288393",
+                        "enabled": false
+                    },
+                    {
+                        "state": "PB",
+                        "number": "169999920",
+                        "enabled": false
+                    },
+                    {
+                        "state": "AM",
+                        "number": "041226780",
+                        "enabled": true
+                    },
+                    {
+                        "state": "AM",
+                        "number": "041226798",
+                        "enabled": false
+                    },
+                    {
+                        "state": "AC",
+                        "number": "0100628400183",
+                        "enabled": true
+                    },
+                    {
+                        "state": "CE",
+                        "number": "069995451",
+                        "enabled": true
+                    },
+                    {
+                        "state": "SP",
+                        "number": "804000164110",
+                        "enabled": true
+                    },
+                    {
+                        "state": "TO",
+                        "number": "299996603",
+                        "enabled": true
+                    },
+                    {
+                        "state": "BA",
+                        "number": "044123664",
+                        "enabled": true
+                    },
+                    {
+                        "state": "AM",
+                        "number": "070003009",
+                        "enabled": false
+                    },
+                    {
+                        "state": "MT",
+                        "number": "00133726754",
+                        "enabled": true
+                    },
+                    {
+                        "state": "SC",
+                        "number": "253178096",
+                        "enabled": true
+                    },
+                    {
+                        "state": "RS",
+                        "number": "9000006010",
+                        "enabled": true
+                    },
+                    {
+                        "state": "RJ",
+                        "number": "91015412",
+                        "enabled": true
+                    },
+                    {
+                        "state": "PI",
+                        "number": "194350274",
+                        "enabled": true
+                    },
+                    {
+                        "state": "RO",
+                        "number": "00000000540650",
+                        "enabled": true
+                    },
+                    {
+                        "state": "MS",
+                        "number": "282902201",
+                        "enabled": true
+                    },
+                    {
+                        "state": "MA",
+                        "number": "126007489",
+                        "enabled": true
+                    },
+                    {
+                        "state": "AM",
+                        "number": "063008440",
+                        "enabled": true
+                    },
+                    {
+                        "state": "GO",
+                        "number": "104278684",
+                        "enabled": true
+                    },
+                    {
+                        "state": "AM",
+                        "number": "062003240",
+                        "enabled": true
+                    },
+                    {
+                        "state": "PA",
+                        "number": "151862915",
+                        "enabled": true
+                    }
+                ]
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "updated": {
+                        "type": "string"
+                    },
+                    "taxId": {
+                        "type": "string"
+                    },
+                    "alias": {
+                        "type": "null"
+                    },
+                    "founded": {
+                        "type": "string"
+                    },
+                    "head": {
+                        "type": "boolean"
+                    },
+                    "company": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "integer"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "equity": {
+                                "type": "integer"
+                            },
+                            "nature": {
+                                "type": "object",
+                                "properties": {
+                                    "id": {
+                                        "type": "integer"
+                                    },
+                                    "text": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "size": {
+                                "type": "object",
+                                "properties": {
+                                    "id": {
+                                        "type": "integer"
+                                    },
+                                    "acronym": {
+                                        "type": "string"
+                                    },
+                                    "text": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "simples": {
+                                "type": "object",
+                                "properties": {
+                                    "optant": {
+                                        "type": "boolean"
+                                    },
+                                    "since": {
+                                        "type": "null"
+                                    }
+                                }
+                            },
+                            "simei": {
+                                "type": "object",
+                                "properties": {
+                                    "optant": {
+                                        "type": "boolean"
+                                    },
+                                    "since": {
+                                        "type": "null"
+                                    }
+                                }
+                            },
+                            "members": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "since": {
+                                            "type": "string"
+                                        },
+                                        "person": {
+                                            "type": "object",
+                                            "properties": {
+                                                "id": {
+                                                    "type": "string"
+                                                },
+                                                "name": {
+                                                    "type": "string"
+                                                },
+                                                "type": {
+                                                    "type": "string"
+                                                },
+                                                "taxId": {
+                                                    "type": "string"
+                                                },
+                                                "age": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        },
+                                        "role": {
+                                            "type": "object",
+                                            "properties": {
+                                                "id": {
+                                                    "type": "integer"
+                                                },
+                                                "text": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "statusDate": {
+                        "type": "string"
+                    },
+                    "status": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "integer"
+                            },
+                            "text": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "address": {
+                        "type": "object",
+                        "properties": {
+                            "municipality": {
+                                "type": "integer"
+                            },
+                            "street": {
+                                "type": "string"
+                            },
+                            "number": {
+                                "type": "string"
+                            },
+                            "details": {
+                                "type": "null"
+                            },
+                            "district": {
+                                "type": "string"
+                            },
+                            "city": {
+                                "type": "string"
+                            },
+                            "state": {
+                                "type": "string"
+                            },
+                            "zip": {
+                                "type": "string"
+                            },
+                            "country": {
+                                "type": "object",
+                                "properties": {
+                                    "id": {
+                                        "type": "integer"
+                                    },
+                                    "name": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "phones": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "area": {
+                                    "type": "string"
+                                },
+                                "number": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "emails": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "address": {
+                                    "type": "string"
+                                },
+                                "domain": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "mainActivity": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "integer"
+                            },
+                            "text": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "sideActivities": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "id": {
+                                    "type": "integer"
+                                },
+                                "text": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "registrations": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "state": {
+                                    "type": "string"
+                                },
+                                "number": {
+                                    "type": "string"
+                                },
+                                "enabled": {
+                                    "type": "boolean"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Consulta Cadastro de Contribuintes",
+            "url": "https://consulta-cnpj-tempo-real.p.rapidapi.com/ccc",
+            "description": "Consulta as Inscri\u00e7\u00f5es Estaduais no Cadastro Centralizado de Contribuintes",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "taxId",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "84447804000123"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "maxAge",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "30"
+                },
+                {
+                    "name": "states",
+                    "type": "STRING",
+                    "description": "UFs separadas por v\u00edrgula para adicionar informa\u00e7\u00f5es do Cadastro de Contribuintes, utilize 'BR' para considerar todas.",
+                    "default": "BR"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://consulta-cnpj-tempo-real.p.rapidapi.com/ccc\"\nquerystring = {\"maxAge\": \"30\", \"states\": \"BR\", \"taxId\": \"84447804000123\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"consulta-cnpj-tempo-real.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://consulta-cnpj-tempo-real.p.rapidapi.com/ccc\"\nquerystring = {\"maxAge\": \"30\", \"states\": \"BR\", \"taxId\": \"84447804000123\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"consulta-cnpj-tempo-real.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "updated": "2023-06-14T20:28:39Z",
+                "taxId": "84447804000123",
+                "originState": "AM",
+                "registrations": [
+                    {
+                        "state": "RN",
+                        "number": "203006747",
+                        "enabled": true
+                    },
+                    {
+                        "state": "AP",
+                        "number": "030178438",
+                        "enabled": false
+                    },
+                    {
+                        "state": "AL",
+                        "number": "245007016",
+                        "enabled": true
+                    },
+                    {
+                        "state": "RR",
+                        "number": "240070892",
+                        "enabled": true
+                    },
+                    {
+                        "state": "AM",
+                        "number": "070013993",
+                        "enabled": true
+                    },
+                    {
+                        "state": "MG",
+                        "number": "0358556720190",
+                        "enabled": true
+                    },
+                    {
+                        "state": "DF",
+                        "number": "0735866600172",
+                        "enabled": true
+                    },
+                    {
+                        "state": "ES",
+                        "number": "000013943",
+                        "enabled": true
+                    },
+                    {
+                        "state": "PR",
+                        "number": "0990238642",
+                        "enabled": true
+                    },
+                    {
+                        "state": "SE",
+                        "number": "270912355",
+                        "enabled": true
+                    },
+                    {
+                        "state": "PE",
+                        "number": "022174222",
+                        "enabled": true
+                    },
+                    {
+                        "state": "RS",
+                        "number": "0963288393",
+                        "enabled": false
+                    },
+                    {
+                        "state": "PB",
+                        "number": "169999920",
+                        "enabled": false
+                    },
+                    {
+                        "state": "AM",
+                        "number": "041226780",
+                        "enabled": true
+                    },
+                    {
+                        "state": "AM",
+                        "number": "041226798",
+                        "enabled": false
+                    },
+                    {
+                        "state": "AC",
+                        "number": "0100628400183",
+                        "enabled": true
+                    },
+                    {
+                        "state": "CE",
+                        "number": "069995451",
+                        "enabled": true
+                    },
+                    {
+                        "state": "SP",
+                        "number": "804000164110",
+                        "enabled": true
+                    },
+                    {
+                        "state": "TO",
+                        "number": "299996603",
+                        "enabled": true
+                    },
+                    {
+                        "state": "BA",
+                        "number": "044123664",
+                        "enabled": true
+                    },
+                    {
+                        "state": "AM",
+                        "number": "070003009",
+                        "enabled": false
+                    },
+                    {
+                        "state": "MT",
+                        "number": "00133726754",
+                        "enabled": true
+                    },
+                    {
+                        "state": "SC",
+                        "number": "253178096",
+                        "enabled": true
+                    },
+                    {
+                        "state": "RS",
+                        "number": "9000006010",
+                        "enabled": true
+                    },
+                    {
+                        "state": "RJ",
+                        "number": "91015412",
+                        "enabled": true
+                    },
+                    {
+                        "state": "PI",
+                        "number": "194350274",
+                        "enabled": true
+                    },
+                    {
+                        "state": "RO",
+                        "number": "00000000540650",
+                        "enabled": true
+                    },
+                    {
+                        "state": "MS",
+                        "number": "282902201",
+                        "enabled": true
+                    },
+                    {
+                        "state": "MA",
+                        "number": "126007489",
+                        "enabled": true
+                    },
+                    {
+                        "state": "AM",
+                        "number": "063008440",
+                        "enabled": true
+                    },
+                    {
+                        "state": "GO",
+                        "number": "104278684",
+                        "enabled": true
+                    },
+                    {
+                        "state": "AM",
+                        "number": "062003240",
+                        "enabled": true
+                    },
+                    {
+                        "state": "PA",
+                        "number": "151862915",
+                        "enabled": true
+                    }
+                ]
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "updated": {
+                        "type": "string"
+                    },
+                    "taxId": {
+                        "type": "string"
+                    },
+                    "registrations": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "state": {
+                                    "type": "string"
+                                },
+                                "number": {
+                                    "type": "string"
+                                },
+                                "enabled": {
+                                    "type": "boolean"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Gera Comprovante Simples",
+            "url": "https://consulta-cnpj-tempo-real.p.rapidapi.com/simples/certificate",
+            "description": "Gera Comprovante em PDF do Simples Nacional",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "taxId",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "37335118000180"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://consulta-cnpj-tempo-real.p.rapidapi.com/simples/certificate\"\nquerystring = {\"taxId\": \"37335118000180\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"consulta-cnpj-tempo-real.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://consulta-cnpj-tempo-real.p.rapidapi.com/simples/certificate\"\nquerystring = {\"taxId\": \"37335118000180\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"consulta-cnpj-tempo-real.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "Consulta Simples Nacional",
+            "url": "https://consulta-cnpj-tempo-real.p.rapidapi.com/simples",
+            "description": "Consulta Simples Nacional",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "taxId",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "37335118000180"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "maxAge",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "30"
+                },
+                {
+                    "name": "history",
+                    "type": "BOOLEAN",
+                    "description": "",
+                    "default": "false"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://consulta-cnpj-tempo-real.p.rapidapi.com/simples\"\nquerystring = {\"maxAge\": \"30\", \"history\": \"false\", \"taxId\": \"37335118000180\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"consulta-cnpj-tempo-real.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://consulta-cnpj-tempo-real.p.rapidapi.com/simples\"\nquerystring = {\"maxAge\": \"30\", \"history\": \"false\", \"taxId\": \"37335118000180\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"consulta-cnpj-tempo-real.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "updated": "2023-06-16T14:50:06Z",
+                "taxId": "37335118000180",
+                "simples": {
+                    "optant": true,
+                    "since": "2020-06-05"
+                },
+                "simei": {
+                    "optant": false,
+                    "since": null
+                }
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "updated": {
+                        "type": "string"
+                    },
+                    "taxId": {
+                        "type": "string"
+                    },
+                    "simples": {
+                        "type": "object",
+                        "properties": {
+                            "optant": {
+                                "type": "boolean"
+                            },
+                            "since": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "simei": {
+                        "type": "object",
+                        "properties": {
+                            "optant": {
+                                "type": "boolean"
+                            },
+                            "since": {
+                                "type": "null"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Consulta Receita Federal",
+            "url": "https://consulta-cnpj-tempo-real.p.rapidapi.com/rfb",
+            "description": "Consulta Receita Federal",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "taxId",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "37335118000180"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "maxAge",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "30"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://consulta-cnpj-tempo-real.p.rapidapi.com/rfb\"\nquerystring = {\"maxAge\": \"30\", \"taxId\": \"37335118000180\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"consulta-cnpj-tempo-real.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://consulta-cnpj-tempo-real.p.rapidapi.com/rfb\"\nquerystring = {\"maxAge\": \"30\", \"taxId\": \"37335118000180\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"consulta-cnpj-tempo-real.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "updated": "2023-06-16T14:50:18Z",
+                "taxId": "37335118000180",
+                "name": "CNPJA TECNOLOGIA LTDA",
+                "alias": "CNPJA",
+                "founded": "2020-06-05",
+                "equity": 1000,
+                "head": true,
+                "nature": {
+                    "id": 2062,
+                    "text": "Sociedade Empres\u00e1ria Limitada"
+                },
+                "size": {
+                    "id": 1,
+                    "acronym": "ME",
+                    "text": "Microempresa"
+                },
+                "statusDate": "2020-06-05",
+                "status": {
+                    "id": 2,
+                    "text": "Ativa"
+                },
+                "address": {
+                    "municipality": 3550308,
+                    "street": "Avenida Brig Faria Lima",
+                    "number": "2369",
+                    "details": "Conj 1102",
+                    "district": "Jardim Paulistano",
+                    "city": "S\u00e3o Paulo",
+                    "state": "SP",
+                    "zip": "01452922",
+                    "country": {
+                        "id": 76,
+                        "name": "Brasil"
+                    }
+                },
+                "phones": [
+                    {
+                        "area": "41",
+                        "number": "96869828"
+                    }
+                ],
+                "emails": [
+                    {
+                        "address": "meucnpj@contabilizei.com.br",
+                        "domain": "contabilizei.com.br"
+                    }
+                ],
+                "mainActivity": {
+                    "id": 6311900,
+                    "text": "Tratamento de dados, provedores de servi\u00e7os de aplica\u00e7\u00e3o e servi\u00e7os de hospedagem na internet"
+                },
+                "sideActivities": [
+                    {
+                        "id": 6201501,
+                        "text": "Desenvolvimento de programas de computador sob encomenda"
+                    },
+                    {
+                        "id": 6201502,
+                        "text": "Web design"
+                    },
+                    {
+                        "id": 6202300,
+                        "text": "Desenvolvimento e licenciamento de programas de computador customiz\u00e1veis"
+                    },
+                    {
+                        "id": 6203100,
+                        "text": "Desenvolvimento e licenciamento de programas de computador n\u00e3o-customiz\u00e1veis"
+                    },
+                    {
+                        "id": 6204000,
+                        "text": "Consultoria em tecnologia da informa\u00e7\u00e3o"
+                    },
+                    {
+                        "id": 6209100,
+                        "text": "Suporte t\u00e9cnico, manuten\u00e7\u00e3o e outros servi\u00e7os em tecnologia da informa\u00e7\u00e3o"
+                    },
+                    {
+                        "id": 6319400,
+                        "text": "Portais, provedores de conte\u00fado e outros servi\u00e7os de informa\u00e7\u00e3o na internet"
+                    },
+                    {
+                        "id": 6399200,
+                        "text": "Outras atividades de presta\u00e7\u00e3o de servi\u00e7os de informa\u00e7\u00e3o n\u00e3o especificadas anteriormente"
+                    },
+                    {
+                        "id": 8599603,
+                        "text": "Treinamento em inform\u00e1tica"
+                    }
+                ],
+                "members": [
+                    {
+                        "since": "2020-06-05",
+                        "role": {
+                            "id": 49,
+                            "text": "S\u00f3cio-Administrador"
+                        },
+                        "person": {
+                            "name": "Etienne Rodrigues Bechara",
+                            "type": "NATURAL",
+                            "taxId": "***538418**",
+                            "age": "31-40"
+                        }
+                    },
+                    {
+                        "since": "2020-06-05",
+                        "role": {
+                            "id": 22,
+                            "text": "S\u00f3cio"
+                        },
+                        "person": {
+                            "name": "Camila Pedrosa Alves",
+                            "type": "NATURAL",
+                            "taxId": "***708668**",
+                            "age": "31-40"
+                        }
+                    }
+                ]
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "updated": {
+                        "type": "string"
+                    },
+                    "taxId": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "alias": {
+                        "type": "string"
+                    },
+                    "founded": {
+                        "type": "string"
+                    },
+                    "equity": {
+                        "type": "integer"
+                    },
+                    "head": {
+                        "type": "boolean"
+                    },
+                    "nature": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "integer"
+                            },
+                            "text": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "size": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "integer"
+                            },
+                            "acronym": {
+                                "type": "string"
+                            },
+                            "text": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "statusDate": {
+                        "type": "string"
+                    },
+                    "status": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "integer"
+                            },
+                            "text": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "address": {
+                        "type": "object",
+                        "properties": {
+                            "municipality": {
+                                "type": "integer"
+                            },
+                            "street": {
+                                "type": "string"
+                            },
+                            "number": {
+                                "type": "string"
+                            },
+                            "details": {
+                                "type": "string"
+                            },
+                            "district": {
+                                "type": "string"
+                            },
+                            "city": {
+                                "type": "string"
+                            },
+                            "state": {
+                                "type": "string"
+                            },
+                            "zip": {
+                                "type": "string"
+                            },
+                            "country": {
+                                "type": "object",
+                                "properties": {
+                                    "id": {
+                                        "type": "integer"
+                                    },
+                                    "name": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "phones": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "area": {
+                                    "type": "string"
+                                },
+                                "number": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "emails": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "address": {
+                                    "type": "string"
+                                },
+                                "domain": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "mainActivity": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "integer"
+                            },
+                            "text": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "sideActivities": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "id": {
+                                    "type": "integer"
+                                },
+                                "text": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "members": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "since": {
+                                    "type": "string"
+                                },
+                                "person": {
+                                    "type": "object",
+                                    "properties": {
+                                        "name": {
+                                            "type": "string"
+                                        },
+                                        "type": {
+                                            "type": "string"
+                                        },
+                                        "taxId": {
+                                            "type": "string"
+                                        },
+                                        "age": {
+                                            "type": "string"
+                                        }
+                                    }
+                                },
+                                "role": {
+                                    "type": "object",
+                                    "properties": {
+                                        "id": {
+                                            "type": "integer"
+                                        },
+                                        "text": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Consulta Pessoa",
+            "url": "https://consulta-cnpj-tempo-real.p.rapidapi.com/person/5af3f1d4-f889-4a95-8b8a-bc4cfeaf1a5a",
+            "description": "Consulta Pessoa",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "id",
+                    "type": "string",
+                    "description": "",
+                    "default": "5af3f1d4-f889-4a95-8b8a-bc4cfeaf1a5a"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://consulta-cnpj-tempo-real.p.rapidapi.com/person/5af3f1d4-f889-4a95-8b8a-bc4cfeaf1a5a\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"consulta-cnpj-tempo-real.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://consulta-cnpj-tempo-real.p.rapidapi.com/person/{id}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"consulta-cnpj-tempo-real.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "id": "5af3f1d4-f889-4a95-8b8a-bc4cfeaf1a5a",
+                "name": "Carlos Alberto Leal",
+                "type": "NATURAL",
+                "taxId": "***472907**",
+                "age": "51-60",
+                "membership": [
+                    {
+                        "since": "1999-02-09",
+                        "role": {
+                            "id": 49,
+                            "text": "S\u00f3cio-Administrador"
+                        },
+                        "company": {
+                            "id": 2974783,
+                            "name": "LUA CHEIA PRODUTOS NATURAIS LTDA",
+                            "equity": 0,
+                            "nature": {
+                                "id": 2062,
+                                "text": "Sociedade Empres\u00e1ria Limitada"
+                            },
+                            "size": {
+                                "id": 1,
+                                "acronym": "ME",
+                                "text": "Microempresa"
+                            }
+                        }
+                    },
+                    {
+                        "since": "1998-12-10",
+                        "role": {
+                            "id": 49,
+                            "text": "S\u00f3cio-Administrador"
+                        },
+                        "company": {
+                            "id": 2908857,
+                            "name": "QMS CONSULTORIA LTDA",
+                            "equity": 3000,
+                            "nature": {
+                                "id": 2240,
+                                "text": "Sociedade Simples Limitada"
+                            },
+                            "size": {
+                                "id": 1,
+                                "acronym": "ME",
+                                "text": "Microempresa"
+                            }
+                        }
+                    }
+                ]
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "string"
+                    },
+                    "taxId": {
+                        "type": "string"
+                    },
+                    "age": {
+                        "type": "string"
+                    },
+                    "membership": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "since": {
+                                    "type": "string"
+                                },
+                                "role": {
+                                    "type": "object",
+                                    "properties": {
+                                        "id": {
+                                            "type": "integer"
+                                        },
+                                        "text": {
+                                            "type": "string"
+                                        }
+                                    }
+                                },
+                                "company": {
+                                    "type": "object",
+                                    "properties": {
+                                        "id": {
+                                            "type": "integer"
+                                        },
+                                        "name": {
+                                            "type": "string"
+                                        },
+                                        "equity": {
+                                            "type": "integer"
+                                        },
+                                        "nature": {
+                                            "type": "object",
+                                            "properties": {
+                                                "id": {
+                                                    "type": "integer"
+                                                },
+                                                "text": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        },
+                                        "size": {
+                                            "type": "object",
+                                            "properties": {
+                                                "id": {
+                                                    "type": "integer"
+                                                },
+                                                "acronym": {
+                                                    "type": "string"
+                                                },
+                                                "text": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Consulta Empresa",
+            "url": "https://consulta-cnpj-tempo-real.p.rapidapi.com/company/37335118",
+            "description": "Consulta Empresa",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "id",
+                    "type": "string",
+                    "description": "8 primeiros d\u00edgitos do CNPJ",
+                    "default": "37335118"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://consulta-cnpj-tempo-real.p.rapidapi.com/company/37335118\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"consulta-cnpj-tempo-real.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://consulta-cnpj-tempo-real.p.rapidapi.com/company/{id}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"consulta-cnpj-tempo-real.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "updated": "2023-06-16T14:50:06.000Z",
+                "id": 37335118,
+                "name": "CNPJA TECNOLOGIA LTDA",
+                "equity": 1000,
+                "nature": {
+                    "id": 2062,
+                    "text": "Sociedade Empres\u00e1ria Limitada"
+                },
+                "size": {
+                    "id": 1,
+                    "acronym": "ME",
+                    "text": "Microempresa"
+                },
+                "simples": {
+                    "optant": true,
+                    "since": "2020-06-05"
+                },
+                "simei": {
+                    "optant": false,
+                    "since": null
+                },
+                "members": [
+                    {
+                        "since": "2020-06-05",
+                        "role": {
+                            "id": 49,
+                            "text": "S\u00f3cio-Administrador"
+                        },
+                        "person": {
+                            "id": "0ee5ad51-e58d-4400-a68a-1ae0aaf394c6",
+                            "name": "Etienne Rodrigues Bechara",
+                            "type": "NATURAL",
+                            "taxId": "***538418**",
+                            "age": "31-40"
+                        }
+                    },
+                    {
+                        "since": "2020-06-05",
+                        "role": {
+                            "id": 22,
+                            "text": "S\u00f3cio"
+                        },
+                        "person": {
+                            "id": "84cda86b-7b46-4be3-9b2e-4c374da9879b",
+                            "name": "Camila Pedrosa Alves",
+                            "type": "NATURAL",
+                            "taxId": "***708668**",
+                            "age": "31-40"
+                        }
+                    }
+                ],
+                "offices": [
+                    {
+                        "taxId": "37335118000180",
+                        "alias": "CNPJA",
+                        "founded": "2020-06-05",
+                        "head": true,
+                        "statusDate": "2020-06-05",
+                        "status": {
+                            "id": 2,
+                            "text": "Ativa"
+                        },
+                        "mainActivity": {
+                            "id": 6311900,
+                            "text": "Tratamento de dados, provedores de servi\u00e7os de aplica\u00e7\u00e3o e servi\u00e7os de hospedagem na internet"
+                        }
+                    }
+                ]
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "updated": {
+                        "type": "string"
+                    },
+                    "id": {
+                        "type": "integer"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "equity": {
+                        "type": "integer"
+                    },
+                    "nature": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "integer"
+                            },
+                            "text": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "size": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "integer"
+                            },
+                            "acronym": {
+                                "type": "string"
+                            },
+                            "text": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "simples": {
+                        "type": "object",
+                        "properties": {
+                            "optant": {
+                                "type": "boolean"
+                            },
+                            "since": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "simei": {
+                        "type": "object",
+                        "properties": {
+                            "optant": {
+                                "type": "boolean"
+                            },
+                            "since": {
+                                "type": "null"
+                            }
+                        }
+                    },
+                    "members": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "since": {
+                                    "type": "string"
+                                },
+                                "person": {
+                                    "type": "object",
+                                    "properties": {
+                                        "id": {
+                                            "type": "string"
+                                        },
+                                        "name": {
+                                            "type": "string"
+                                        },
+                                        "type": {
+                                            "type": "string"
+                                        },
+                                        "taxId": {
+                                            "type": "string"
+                                        },
+                                        "age": {
+                                            "type": "string"
+                                        }
+                                    }
+                                },
+                                "role": {
+                                    "type": "object",
+                                    "properties": {
+                                        "id": {
+                                            "type": "integer"
+                                        },
+                                        "text": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "offices": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "taxId": {
+                                    "type": "string"
+                                },
+                                "alias": {
+                                    "type": "string"
+                                },
+                                "founded": {
+                                    "type": "string"
+                                },
+                                "head": {
+                                    "type": "boolean"
+                                },
+                                "statusDate": {
+                                    "type": "string"
+                                },
+                                "status": {
+                                    "type": "object",
+                                    "properties": {
+                                        "id": {
+                                            "type": "integer"
+                                        },
+                                        "text": {
+                                            "type": "string"
+                                        }
+                                    }
+                                },
+                                "mainActivity": {
+                                    "type": "object",
+                                    "properties": {
+                                        "id": {
+                                            "type": "integer"
+                                        },
+                                        "text": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Consulta Unificada",
+            "url": "https://consulta-cnpj-tempo-real.p.rapidapi.com/companies/37335118000180",
+            "description": "Retorna todos os dados presentes no Comprovante de Inscri\u00e7\u00e3o do Cadastro Nacional da Pessoa Jur\u00eddica junto a Receita Federal",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "CNPJ",
+                    "type": "STRING",
+                    "description": "CNPJ da Empresa",
+                    "default": "37335118000180"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "company_max_age",
+                    "type": "NUMBER",
+                    "description": "Idade m\u00e1xima dos dados relativos da Receita Federal",
+                    "default": "30"
+                },
+                {
+                    "name": "simples_max_age",
+                    "type": "NUMBER",
+                    "description": "Ativa e define a idade m\u00e1xima dos dados relativos ao Simples Nacional",
+                    "default": "30"
+                },
+                {
+                    "name": "sintegra_max_age",
+                    "type": "NUMBER",
+                    "description": "Ativa e define a idade m\u00e1xima dos dados relativos ao Cadastro de Contribuintes",
+                    "default": "30"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://consulta-cnpj-tempo-real.p.rapidapi.com/companies/37335118000180\"\nquerystring = {\"company_max_age\": \"30\", \"simples_max_age\": \"30\", \"sintegra_max_age\": \"30\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"consulta-cnpj-tempo-real.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://consulta-cnpj-tempo-real.p.rapidapi.com/companies/{cnpj}\"\nquerystring = {\"company_max_age\": \"30\", \"simples_max_age\": \"30\", \"sintegra_max_age\": \"30\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"consulta-cnpj-tempo-real.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "last_update": "2023-06-16T14:50:18.000Z",
+                "name": "CNPJA TECNOLOGIA LTDA",
+                "alias": "CNPJA",
+                "tax_id": "37335118000180",
+                "type": "MATRIZ",
+                "founded": "2020-06-05",
+                "size": "ME",
+                "capital": 1000,
+                "email": "meucnpj@contabilizei.com.br",
+                "phone": "(41) 9686-9828",
+                "phone_alt": null,
+                "federal_entity": null,
+                "registration": {
+                    "status": "ATIVA",
+                    "status_date": "2020-06-05",
+                    "status_reason": null,
+                    "special_status": null,
+                    "special_status_date": null
+                },
+                "address": {
+                    "street": "AVENIDA BRIG FARIA LIMA",
+                    "number": "2369",
+                    "details": "CONJ 1102",
+                    "zip": "01452922",
+                    "neighborhood": "JARDIM PAULISTANO",
+                    "city": "S\u00c3O PAULO",
+                    "state": "SP",
+                    "city_ibge": "3550308",
+                    "state_ibge": "35"
+                },
+                "legal_nature": {
+                    "code": "2062",
+                    "description": "Sociedade Empres\u00e1ria Limitada"
+                },
+                "primary_activity": {
+                    "code": "6311900",
+                    "description": "Tratamento de dados, provedores de servi\u00e7os de aplica\u00e7\u00e3o e servi\u00e7os de hospedagem na internet"
+                },
+                "secondary_activities": [
+                    {
+                        "code": "6201501",
+                        "description": "Desenvolvimento de programas de computador sob encomenda"
+                    },
+                    {
+                        "code": "6201502",
+                        "description": "Web design"
+                    },
+                    {
+                        "code": "6202300",
+                        "description": "Desenvolvimento e licenciamento de programas de computador customiz\u00e1veis"
+                    },
+                    {
+                        "code": "6203100",
+                        "description": "Desenvolvimento e licenciamento de programas de computador n\u00e3o-customiz\u00e1veis"
+                    },
+                    {
+                        "code": "6204000",
+                        "description": "Consultoria em tecnologia da informa\u00e7\u00e3o"
+                    },
+                    {
+                        "code": "6209100",
+                        "description": "Suporte t\u00e9cnico, manuten\u00e7\u00e3o e outros servi\u00e7os em tecnologia da informa\u00e7\u00e3o"
+                    },
+                    {
+                        "code": "6319400",
+                        "description": "Portais, provedores de conte\u00fado e outros servi\u00e7os de informa\u00e7\u00e3o na internet"
+                    },
+                    {
+                        "code": "6399200",
+                        "description": "Outras atividades de presta\u00e7\u00e3o de servi\u00e7os de informa\u00e7\u00e3o n\u00e3o especificadas anteriormente"
+                    },
+                    {
+                        "code": "8599603",
+                        "description": "Treinamento em inform\u00e1tica"
+                    }
+                ],
+                "membership": [
+                    {
+                        "name": "ETIENNE RODRIGUES BECHARA",
+                        "tax_id": "***538418**",
+                        "role": {
+                            "code": "49",
+                            "description": "S\u00f3cio-Administrador"
+                        }
+                    },
+                    {
+                        "name": "CAMILA PEDROSA ALVES",
+                        "tax_id": "***708668**",
+                        "role": {
+                            "code": "22",
+                            "description": "S\u00f3cio"
+                        }
+                    }
+                ],
+                "partnership": [],
+                "simples_nacional": {
+                    "last_update": "2023-06-16T14:50:06.000Z",
+                    "simples_optant": true,
+                    "simples_included": "2020-06-05",
+                    "simples_excluded": null,
+                    "simei_optant": false
+                },
+                "sintegra": {
+                    "last_update": "2023-06-16T14:51:31.000Z",
+                    "home_state_registration": null,
+                    "registrations": []
+                },
+                "files": {
+                    "registration": "https://api.cnpja.com/rfb/certificate?taxId=37335118000180&pages=REGISTRATION&signature=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI3ZjVkZWIwMi0zYTljLTQwNDctYjVkMS00MmExNDI0Yzc5OWEiLCJ1cmwiOiIvcmZiL2NlcnRpZmljYXRlP3RheElkPTM3MzM1MTE4MDAwMTgwJnBhZ2VzPVJFR0lTVFJBVElPTiIsImlhdCI6MTY4Njk1ODg4MSwiZXhwIjoxNjk0NzM0ODgxLCJhdWQiOiJodHRwczovL2NucGphLmNvbS8iLCJpc3MiOiJodHRwczovL2NucGphLmNvbS8ifQ.UWtFXqbYbOZAOFFI9KOGtYegjbxxY9XxWQ7w-_tTjurw86W_fgJn0gbNbY0C28_0xVQJyNkpgDr5GPc_HHx-XJPUGcrqscGPvYwbnQZ0lvBcxbMea7rSRa8sycrr4FC-qXby1RiD9n9twoGKo_DmNHb1nQ68bbB03MZsdX_-l_U2UHYzZgmOiFjH1eYlVd-Hic0g2U-kT1t7gRvtIe5r8VAC35ZG32z4sTLG_4fvpCg9ntVQzri_JKyewgaoQyiTGb_LLH3HSuo0ozwE92ErF5QXFA0u8HBivE0Xaue9GJoRDFydkg01wbkh7802ZXdJu9xEeGvV34XIO1ZbJ69-DoAe4AkAu0b1FaoP091hOgBG1j-kY3ljtTc0OW56vIg-3cns9yq3F06htmZPJxvFJ3Lu8v9UCqonZ-37UBv5flVuqs35lLJUfNKtS8_j7E6B6XeK8VDf_c95reuUOmCG2kyCQkroaqT-2L1GHctlCQGviNfb_62i1Y7rLCT9ZUbczoMK3o5-eifttCYjZeHn9_YmY0wVx-Bjm6ZQqPcxf79UsBFhpXfDMm8Fi4YTjGEG_fIHwOeU2vq7DAXrg2KTzmz8f9hwAlFP3m0TzxM1amQXgpPEwo_R3fTWMdna4syxFbvjv1c0EzW5VMrTT5MdbyYxDt6ufuu67v8xoxByPNA",
+                    "membership": "https://api.cnpja.com/rfb/certificate?taxId=37335118000180&pages=MEMBERS&signature=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI3ZjVkZWIwMi0zYTljLTQwNDctYjVkMS00MmExNDI0Yzc5OWEiLCJ1cmwiOiIvcmZiL2NlcnRpZmljYXRlP3RheElkPTM3MzM1MTE4MDAwMTgwJnBhZ2VzPU1FTUJFUlMiLCJpYXQiOjE2ODY5NTg4ODEsImV4cCI6MTY5NDczNDg4MSwiYXVkIjoiaHR0cHM6Ly9jbnBqYS5jb20vIiwiaXNzIjoiaHR0cHM6Ly9jbnBqYS5jb20vIn0.H7-tKVvQYMdQws_7oLaJy_7xLLJzfnNSdhDnxPzwevZol3K5RNdsz9RlHdEhei4TKzjEOuP0KTvTF4HVDD0qisW8EqDaacf_AiueOw0RchLYFMeByJeBbBfUPjG168LVLc7100Lt7CzSc_mNRw2nAI0H1WM5uau3bDX4Y1ZLr3ZQtCvxKgSzYObdvnGvVunYB43L7cWTmYXJxlmPTa15awjeF3wHiE-vq7BIC-nLTKMXJs1hQPfLxEIQgKbSvT8UVAiWH8HaiZ_T0TVzl0S6mzEz6z0GFeQfwncKX5sEe-r1nKigRJVovo0TLa7dM1rCvN1W0nW3WrW8HyM29VMgFaTZ1kXzRL9fmxAxZokhQU7NZdbqLpM5Si8wvFhmafnhEoIOAcZCAyXnKQIFRZr0fmA5gvzV_idzms535LAdtLuGYDCsfuuYSpALfKi9-GPnOBWETWR4fW0PP5PRmlcu7PrxdU0RLY1Cw-P0KS-DYwM_n1aULLHbkXwgUnFoJlW_aOA35l-nT3Foi0le3I7g1O7cg7cjg6IxJsKXARFxcjP7zysQfXadVRgU2WmFgC8ewEURIw82mDgZ4mmvjW12ZBLhIDrQuUZj3_AzS0sC1a6xsob0siMpezAdCaUHVSujMSyD5VQZ-Hk5cDhWxp1oQHvP_nOpikO3TOrhKHgl2uA"
+                },
+                "maps": {
+                    "roads": "https://api.cnpja.com/office/37335118000180/map?signature=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI3ZjVkZWIwMi0zYTljLTQwNDctYjVkMS00MmExNDI0Yzc5OWEiLCJ1cmwiOiIvb2ZmaWNlLzM3MzM1MTE4MDAwMTgwL21hcCIsImlhdCI6MTY4Njk1ODg4MSwiZXhwIjoxNjk0NzM0ODgxLCJhdWQiOiJodHRwczovL2NucGphLmNvbS8iLCJpc3MiOiJodHRwczovL2NucGphLmNvbS8ifQ.YtxnWGKM9UyJyI8u0kgNxcpspHQBEezWpDr_yGEYUZHTD5fHCeFDiZCLQgnmCAPZNg4RkHuE85J7gF81dHymqWHJU4lf5ocadYljEvoHNnargquhlH6kGCM91-3R8Oq7jIk4NUQNEecS8ZGkc63OCiNnlbY29o7b_UHyVwgU7r4RzIidlGNxF0oiBwOO78nbfNTjlDvGsRxnxFFy35Dlx35iL8ODshv3OAMB06xQYLhcY7MFKssZlw782DCfc0l6sPIobFoJdQszscWTJaBDnftu7oFWC-H3edjtTTzXebUBC7ESnotWogVi5-6mixfxXdsLYS29qTgaSfYTPcjgDL2bPkkQQ0LTR0Zw81DSkaVacxv7EU0EAO93ktbksN-Aw5IBzjsCUCnGvH0-kqOSK0Svv05iWicad5GkOC1HotpU40VdCVbN-5O0L1KUd9j_M_Jo5HkN__c2jZZR_vIiiDeJGyoYKDZ0L5NAwDrvAKqe8IEU3o6HOqecf7WoewOi1Big3UR-4dvzt1veut9ZI1w2tIR0jhRByieEQ5XYVP7gQFMz_rm_1wnTXnyCamNn6ynWlH9HHSLtAXbPC79csk8q7XknEmSk-4pI0Bb3Mq8mqaPM000YX2aZ8f5GhW2WbD6HQejnJ9YuwrKYEmsNNpldd0_D9_xmKL652ssnZLs",
+                    "satellite": "https://api.cnpja.com/office/37335118000180/map?type=hybrid&signature=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI3ZjVkZWIwMi0zYTljLTQwNDctYjVkMS00MmExNDI0Yzc5OWEiLCJ1cmwiOiIvb2ZmaWNlLzM3MzM1MTE4MDAwMTgwL21hcD90eXBlPWh5YnJpZCIsImlhdCI6MTY4Njk1ODg4MSwiZXhwIjoxNjk0NzM0ODgxLCJhdWQiOiJodHRwczovL2NucGphLmNvbS8iLCJpc3MiOiJodHRwczovL2NucGphLmNvbS8ifQ.M9sCjpTyaDpqns7xAc-KZJzEeQAh7nJ1NfSDUkSA-SAss9UkpZedYJ0TxaCHsgfhSazA6Mv6SfHa6hYJp_xluIDo8kLT-yBhHqOxLy3mfCXYdvEmA7J6hMNhtcZXhvKe3gtzOCGyqZgb_aTVBV-WhCZyvJZRsEDW1yzVjxZ00A9cS2h-rIbKQJ8WxpKccHlhrlIvfEuaOSBqWM2dI8a5ZQtdzobhlbltKLm60gAVmWYe2C3vjdbkTrD_efLIYC4_nWoYpPnuUTMwOsRbF-RvOATuKyqg2RsEFUlM4l06wtJ4NGVVZVo1oKrvEKs_wUYCm9o4tdsEUClflO4F7UTvBLGXl7OckvA8pynxo6iknScEDW1wf20OD2vVxO6GY1hSi1_HS3W-eRr8eUMdf8uYUn77VAP8XxIU0mGO5mwbGAK6Cf_oTk8sD1-i6QlAsftnJbax5taLzU8lXN3rO_yfJezWPyVPOwVE2e1QwDHPV4F65DUG70qFJia3Gfi-UTOBn1TQ0mTVAb19S3xRRt4tkqA1k0x9AGWHHaHdCI35GtMvhubrmUkpMmavJ7XRbhpZsnNqPtvhQO4tsXcdIZt7ObeQ-3xF__n5PI9g1oI2A9f9vlN2C4xZ5cZfExLrf0TEhbBsFeos767TopzFfojslgZ4elCyhAdEVpUE0m8N0O0",
+                    "street": "https://api.cnpja.com/office/37335118000180/street?signature=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI3ZjVkZWIwMi0zYTljLTQwNDctYjVkMS00MmExNDI0Yzc5OWEiLCJ1cmwiOiIvb2ZmaWNlLzM3MzM1MTE4MDAwMTgwL3N0cmVldCIsImlhdCI6MTY4Njk1ODg4MSwiZXhwIjoxNjk0NzM0ODgxLCJhdWQiOiJodHRwczovL2NucGphLmNvbS8iLCJpc3MiOiJodHRwczovL2NucGphLmNvbS8ifQ.W7bnUHftt99sh3ca5QJPREzM8Ftk1SFXy7b3IGBUc-IiBC0wY1KrsDuCtrf9uYB-Lb1a1G1Vm0hMxYM4IDCQ1odAasdmocM-O9x7KzNBuwx8zXMBWItn9-xj4Tz3vttIcAYamU8Fl_ad2ZlWGURvPz2NfRa4SwKm_riTOrXuGoYD017sKGj7-X1FxOyHxkpeKc6iNPRdoCEOnHZKkASjNyK4IXTf2J_un8Aj1GO2PrwkBngBzmyg0lM6G-cUh5KjY5zbCMHoTa7rdeEBfiqvTeYk9fbGdA7NxCTOEfL7B0_rcpMmAIYVgAe8iKCM0OTIpSJAVgXpzJtex7q9RGtuQ1cETKRNqQL6H7epifZxt6XC7Wd2QbZPzyDmtPZDn0lfcNlgX1ce7JbhKFcHIZSZRQDQpinI4Net1QfEJA_AhzdECI53BiqZrL9A0k6DpBlT7Tt1EOExfrEVF3O7FjEuN7dEX2q25L04grgyHDrWcWuc_WC1Jm-avga4o_XR68fsktP6WnNF1I5mKGefRt3CR14TWYOeobaE1KVJiM_NapIYsZQJ5LNHAkJBxpDXhg3yCV2xsXIx86V61qQY1EJdIquGctuxyOhts6ib9TwVcweU7osC14VXej8SyFGFuRz0ijP2M2KvD-Axqn1wX7USh6vDQ719KKVSvxMFp1tOkS4"
+                }
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "last_update": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "alias": {
+                        "type": "string"
+                    },
+                    "tax_id": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "string"
+                    },
+                    "founded": {
+                        "type": "string"
+                    },
+                    "size": {
+                        "type": "string"
+                    },
+                    "capital": {
+                        "type": "integer"
+                    },
+                    "email": {
+                        "type": "string"
+                    },
+                    "phone": {
+                        "type": "string"
+                    },
+                    "phone_alt": {
+                        "type": "null"
+                    },
+                    "federal_entity": {
+                        "type": "null"
+                    },
+                    "registration": {
+                        "type": "object",
+                        "properties": {
+                            "status": {
+                                "type": "string"
+                            },
+                            "status_date": {
+                                "type": "string"
+                            },
+                            "status_reason": {
+                                "type": "null"
+                            },
+                            "special_status": {
+                                "type": "null"
+                            },
+                            "special_status_date": {
+                                "type": "null"
+                            }
+                        }
+                    },
+                    "address": {
+                        "type": "object",
+                        "properties": {
+                            "street": {
+                                "type": "string"
+                            },
+                            "number": {
+                                "type": "string"
+                            },
+                            "details": {
+                                "type": "string"
+                            },
+                            "zip": {
+                                "type": "string"
+                            },
+                            "neighborhood": {
+                                "type": "string"
+                            },
+                            "city": {
+                                "type": "string"
+                            },
+                            "state": {
+                                "type": "string"
+                            },
+                            "city_ibge": {
+                                "type": "string"
+                            },
+                            "state_ibge": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "legal_nature": {
+                        "type": "object",
+                        "properties": {
+                            "code": {
+                                "type": "string"
+                            },
+                            "description": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "primary_activity": {
+                        "type": "object",
+                        "properties": {
+                            "code": {
+                                "type": "string"
+                            },
+                            "description": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "secondary_activities": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "string"
+                                },
+                                "description": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "membership": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "name": {
+                                    "type": "string"
+                                },
+                                "tax_id": {
+                                    "type": "string"
+                                },
+                                "role": {
+                                    "type": "object",
+                                    "properties": {
+                                        "code": {
+                                            "type": "string"
+                                        },
+                                        "description": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "partnership": {
+                        "type": "array"
+                    },
+                    "simples_nacional": {
+                        "type": "object",
+                        "properties": {
+                            "last_update": {
+                                "type": "string"
+                            },
+                            "simples_optant": {
+                                "type": "boolean"
+                            },
+                            "simples_included": {
+                                "type": "string"
+                            },
+                            "simples_excluded": {
+                                "type": "null"
+                            },
+                            "simei_optant": {
+                                "type": "boolean"
+                            }
+                        }
+                    },
+                    "sintegra": {
+                        "type": "object",
+                        "properties": {
+                            "last_update": {
+                                "type": "string"
+                            },
+                            "home_state_registration": {
+                                "type": "null"
+                            },
+                            "registrations": {
+                                "type": "array"
+                            }
+                        }
+                    },
+                    "files": {
+                        "type": "object",
+                        "properties": {
+                            "registration": {
+                                "type": "string"
+                            },
+                            "membership": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "maps": {
+                        "type": "object",
+                        "properties": {
+                            "roads": {
+                                "type": "string"
+                            },
+                            "satellite": {
+                                "type": "string"
+                            },
+                            "street": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "standardized_name": "consulta_cnpj_tempo_real"
+}

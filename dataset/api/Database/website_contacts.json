@@ -1,0 +1,56 @@
+{
+    "product_id": "api_35c86357-f09b-46f2-9e6d-eaee866a9e17",
+    "tool_description": "Website Contacts API delivers well-structured contact information from domain owners based on data parsed from websites, social media, and SSL certificates in addition to other sources. Contact points gathered include phone numbers, emails, social media links, and others. ",
+    "home_url": "https://rapidapi.com/whoisapi/api/website-contacts/",
+    "name": "Website Contacts",
+    "title": "Website Contacts",
+    "pricing": "FREE",
+    "tool_name": "Website Contacts",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 689,
+        "avgSuccessRate": 0,
+        "popularityScore": 0.2,
+        "__typename": "Score"
+    },
+    "host": "website-contacts.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Website Contacts (v1)",
+            "url": "https://website-contacts.p.rapidapi.com/api/v1",
+            "description": "Get full contact information from page, domain or web (v1)",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "domainName",
+                    "type": "STRING",
+                    "description": "The website's domain name.",
+                    "default": "cnn.com"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "outputFormat",
+                    "type": "STRING",
+                    "description": "Response output format. Acceptable values: XML or JSON. Defaults to JSON.",
+                    "default": ""
+                },
+                {
+                    "name": "from",
+                    "type": "STRING",
+                    "description": "0 is used for getting the cached contacts information if there is one, 1 is used for demanding the website contacts information from scratch. Default: 0",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://website-contacts.p.rapidapi.com/api/v1\"\nquerystring = {\"outputFormat\": \"\", \"domainName\": \"cnn.com\", \"from\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"website-contacts.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://website-contacts.p.rapidapi.com/api/v1\"\nquerystring = {\"outputFormat\": \"\", \"domainName\": \"cnn.com\", \"from\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"website-contacts.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "code": 403,
+                "messages": "Access restricted. Check credits balance or enter the correct API key."
+            },
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "website_contacts"
+}

@@ -1,0 +1,64 @@
+{
+    "product_id": "api_d38e6c38-bd2c-4d64-9646-1ed2e989ea81",
+    "tool_description": "A FREE and simple OFAC scan that returns TRUE (if the target was found) or FALSE (if the target was not found).  Use \"Complete OFAC Scan\" by Intelitruth for detailed records response.",
+    "home_url": "https://rapidapi.com/Intelitruth/api/free-ofac-scan/",
+    "name": "Free OFAC Scan",
+    "title": "Free OFAC Scan",
+    "pricing": "FREE",
+    "tool_name": "Free OFAC Scan",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 468,
+        "avgSuccessRate": 100,
+        "popularityScore": 9.3,
+        "__typename": "Score"
+    },
+    "host": "free-ofac-scan.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "free_ofac.api",
+            "url": "https://free-ofac-scan.p.rapidapi.com/",
+            "description": "This API returns a simple TRUE (target found) or FALSE (target not found) value n response to an OFAC scan request.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "street_address",
+                    "type": "STRING",
+                    "description": "Street Address of individual or business entity target",
+                    "default": "79 ul. Sadovnicheskaya"
+                },
+                {
+                    "name": "business_name",
+                    "type": "STRING",
+                    "description": "Name of Business entity target.",
+                    "default": "SME Bank"
+                },
+                {
+                    "name": "first_name",
+                    "type": "STRING",
+                    "description": "First Name(s) of individual target.",
+                    "default": "Gener"
+                },
+                {
+                    "name": "last_name",
+                    "type": "STRING",
+                    "description": "Last Name(s) of individual target.",
+                    "default": "Garcia Molina"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://free-ofac-scan.p.rapidapi.com/\"\nquerystring = {\"street_address\": \"79 ul. Sadovnicheskaya\", \"business_name\": \"SME Bank\", \"first_name\": \"Gener\", \"last_name\": \"Garcia Molina\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"free-ofac-scan.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://free-ofac-scan.p.rapidapi.com/\"\nquerystring = {\"street_address\": \"79 ul. Sadovnicheskaya\", \"business_name\": \"SME Bank\", \"first_name\": \"Gener\", \"last_name\": \"Garcia Molina\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"free-ofac-scan.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "target": {
+                    "first_name": "Gener",
+                    "last_name": "Garcia Molina",
+                    "business_name": "SME Bank",
+                    "street_address": "79 ul. Sadovnicheskaya"
+                },
+                "records_found": "TRUE"
+            }
+        }
+    ],
+    "standardized_name": "free_ofac_scan"
+}

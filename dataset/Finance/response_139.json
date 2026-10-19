@@ -1,0 +1,32 @@
+{
+"user_query":"Generate a PDF certificate of Simples Nacional for the tax ID 37335118000180.",
+"domain":"Finance",
+"TaskList": [
+{
+"id": 1,
+"description": "Validate the tax ID to ensure it is correctly formatted and exists in the system.",
+"domain": "finance",
+"required_inputs": ["tax ID"]
+},
+{
+"id": 2,
+"description": "Retrieve the Simples Nacional certificate data related to the validated tax ID.",
+"domain": "finance",
+"required_inputs": ["validated tax ID"],
+"dependency": {
+  "from": 1,
+  "to": 2
+}
+},
+{
+"id": 3,
+"description": "Generate a PDF document containing the Simples Nacional certificate information.",
+"domain": "finance",
+"required_inputs": ["certificate data"],
+"dependency": {
+  "from": 2,
+  "to": 3
+}
+}
+]
+}

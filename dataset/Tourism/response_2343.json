@@ -1,0 +1,33 @@
+{
+"user_query":"I'm organizing a family reunion in Orlando and need to find the nearest cities within a 50-mile radius for a day trip.",
+"domain":"Tourism",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Calculate a list of cities within a 50-mile radius of Orlando.",
+        "domain": "tourism",
+        "required_inputs": ["Orlando coordinates", "radius"]
+    },
+    {
+        "id": 2,
+        "description": "Query for the five largest cities based on population from the list obtained in step 1.",
+        "domain": "tourism",
+        "required_inputs": ["city list"],
+        "dependency": "Step 1"
+    },
+    {
+        "id": 3,
+        "description": "Gather information for each of the five largest cities, including names, populations, countries, and distances from Orlando.",
+        "domain": "tourism",
+        "required_inputs": ["city names"],
+        "dependency": "Step 2"
+    },
+    {
+        "id": 4,
+        "description": "Obtain the local time and time zone information for each of the five cities.",
+        "domain": "tourism",
+        "required_inputs": ["city names"],
+        "dependency": "Step 3"
+    }
+]
+}

@@ -1,0 +1,84 @@
+{
+    "product_id": "api_b0bc3115-d940-4338-bd96-e22dcfe4ddc1",
+    "tool_description": "Real-time phone validation and data lookup for US numbers. All-in-one: carrier look-up, line type, portability status, geoIP, timezone, and routing.",
+    "home_url": "https://rapidapi.com/checkthatphone/api/checkthatphone/",
+    "name": "CheckThatPhone",
+    "title": "CheckThatPhone",
+    "pricing": "FREEMIUM",
+    "tool_name": "CheckThatPhone",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 787,
+        "avgSuccessRate": 96,
+        "popularityScore": 9,
+        "__typename": "Score"
+    },
+    "host": "checkthatphone.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "/checkthatphone",
+            "url": "https://checkthatphone.p.rapidapi.com/checkthatphone",
+            "description": "Validation, carrier look-up, line type, portability status, geoIP and timezone, routing.\nSimply provide a United States phone number and an ip (optional) to get a result.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "phone",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "7176401264"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "ip",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "134.70.235.74"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://checkthatphone.p.rapidapi.com/checkthatphone\"\nquerystring = {\"ip\": \"134.70.235.74\", \"phone\": \"7176401264\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"checkthatphone.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://checkthatphone.p.rapidapi.com/checkthatphone\"\nquerystring = {\"ip\": \"134.70.235.74\", \"phone\": \"7176401264\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"checkthatphone.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "phone": "7176401264",
+                "nanpType": "mobile",
+                "ipResult": "valid-v4",
+                "dip": "success",
+                "dipLrn": "7176401264",
+                "dipPorted": false,
+                "dipOcn": "6392",
+                "dipCarrier": "Verizon Wireless",
+                "dipCarrierSubType": "WIRELESS",
+                "dipCarrierType": "mobile",
+                "geoCountry": "US",
+                "geoSource": "ip",
+                "timezone": "America/Chicago",
+                "tzOffset": 6
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "get": {
+                        "type": "string"
+                    },
+                    "parameters": {
+                        "type": "array"
+                    },
+                    "errors": {
+                        "type": "array"
+                    },
+                    "results": {
+                        "type": "integer"
+                    },
+                    "response": {
+                        "type": "array",
+                        "items": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "standardized_name": "checkthatphone"
+}

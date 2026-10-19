@@ -1,0 +1,28 @@
+{
+  "user_query": "I want to fetch a random fact about a number between 10 and 20 and a chuck joke related to trivia.",
+  "domain": "entertainment",
+  "TaskList": [
+    {
+      "id": 1,
+      "description": "Generate a random number between 10 and 20.",
+      "domain": "entertainment",
+      "required_inputs": []
+    },
+    {
+      "id": 2,
+      "description": "Fetch a random fact related to the generated number.",
+      "domain": "entertainment",
+      "required_inputs": ["number"]
+    },
+    {
+      "id": 3,
+      "description": "Fetch a chuck joke related to trivia.",
+      "domain": "entertainment",
+      "required_inputs": ["category"]
+    }
+  ],
+  "dependencies": [
+    {"task_id": 2, "depends_on": 1},
+    {"task_id": 3, "depends_on": null}
+  ]
+}

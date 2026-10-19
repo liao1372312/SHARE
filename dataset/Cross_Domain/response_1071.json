@@ -1,0 +1,45 @@
+{
+"user_query":"I want to plan a movie marathon with suggestions for popular movies from different genres like comedy, horror, and romance, along with plot and cast information.",
+"domain":"Cross-Domain",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Fetch a list of popular comedy movies available on streaming platforms.",
+        "domain": "Cross-Domain",
+        "required_inputs": ["streaming_platforms"]
+    },
+    {
+        "id": 2,
+        "description": "Fetch a list of popular horror movies available on streaming platforms.",
+        "domain": "Cross-Domain",
+        "required_inputs": ["streaming_platforms"]
+    },
+    {
+        "id": 3,
+        "description": "Fetch a list of popular romance movies available on streaming platforms.",
+        "domain": "Cross-Domain",
+        "required_inputs": ["streaming_platforms"]
+    },
+    {
+        "id": 4,
+        "description": "Gather plot summaries and main cast information for the comedy movies identified in step 1.",
+        "domain": "Cross-Domain",
+        "required_inputs": ["comedy_movie_list"],
+        "dependencies": [1]
+    },
+    {
+        "id": 5,
+        "description": "Gather plot summaries and main cast information for the horror movies identified in step 2.",
+        "domain": "Cross-Domain",
+        "required_inputs": ["horror_movie_list"],
+        "dependencies": [2]
+    },
+    {
+        "id": 6,
+        "description": "Gather plot summaries and main cast information for the romance movies identified in step 3.",
+        "domain": "Cross-Domain",
+        "required_inputs": ["romance_movie_list"],
+        "dependencies": [3]
+    }
+]
+}

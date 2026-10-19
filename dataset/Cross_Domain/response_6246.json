@@ -1,0 +1,28 @@
+{
+  "user_query": "I want to organize a virtual game night for my friends and need some jokes to keep the atmosphere lively. Fetch a list of joke categories, get a random joke in the 'virtual games' category, and recommend a fun online game.",
+  "domain": "entertainment",
+  "TaskList": [
+    {
+      "id": 1,
+      "description": "Fetch a list of joke categories to choose from",
+      "domain": "entertainment",
+      "required_inputs": []
+    },
+    {
+      "id": 2,
+      "description": "Get a random joke from the 'virtual games' category",
+      "domain": "entertainment",
+      "required_inputs": ["category: virtual games"]
+    },
+    {
+      "id": 3,
+      "description": "Recommend a fun online game to play during the night",
+      "domain": "entertainment",
+      "required_inputs": []
+    }
+  ],
+  "dependencies": [
+    {"task_id": 2, "depends_on": 1},
+    {"task_id": 3, "depends_on": 1}
+  ]
+}

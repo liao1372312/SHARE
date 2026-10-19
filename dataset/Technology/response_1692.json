@@ -1,0 +1,39 @@
+{
+"user_query":"I am organizing a company conference and need to send out invitations to our clients. Before sending the emails, I want to verify the email addresses to ensure they are valid. Additionally, I would like to include the company's heartbeat status in the email.",
+"domain":"technology",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Gather the list of email addresses of clients.",
+        "domain": "technology",
+        "required_inputs": []
+    },
+    {
+        "id": 2,
+        "description": "Verify the validity of the email addresses collected.",
+        "domain": "technology",
+        "required_inputs": ["list_of_email_addresses"],
+        "dependencies": [1]
+    },
+    {
+        "id": 3,
+        "description": "Retrieve the current heartbeat status of the company.",
+        "domain": "technology",
+        "required_inputs": []
+    },
+    {
+        "id": 4,
+        "description": "Compose the invitation emails including the heartbeat status.",
+        "domain": "technology",
+        "required_inputs": ["valid_email_addresses", "heartbeat_status"],
+        "dependencies": [2, 3]
+    },
+    {
+        "id": 5,
+        "description": "Send the invitation emails to clients.",
+        "domain": "technology",
+        "required_inputs": ["composed_invitations"],
+        "dependencies": [4]
+    }
+]
+}

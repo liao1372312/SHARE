@@ -1,0 +1,73 @@
+{
+    "product_id": "api_c6a9bd2e-5f4a-45bd-9ef0-6e7ae0c15eb9",
+    "tool_description": "Diagnostics Code List",
+    "home_url": "https://rapidapi.com/mr.point96/api/diagnostics-code-list/",
+    "name": "Diagnostics Code List",
+    "title": "Diagnostics Code List",
+    "pricing": "FREE",
+    "tool_name": "Diagnostics Code List",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 1237,
+        "avgSuccessRate": 83,
+        "popularityScore": 7.6,
+        "__typename": "Score"
+    },
+    "host": "diagnostics-code-list.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "DiagnosticsCodeList\u0650",
+            "url": "https://diagnostics-code-list.p.rapidapi.com/A000/none/",
+            "description": "Diagnostics Code List\u0650  A lightweight API based on ICD-10-CM (International Classification of Diseases, Tenth Revision, Clinical Modification) that displays medical diagnoses data using the diagnostic code, the diagnosis name, or symptoms, which can be used by health care providers ( health information managers, nurses and other healthcare professionals ) clinics and hospitals in their own systems or be a part of prognosis and diagnosis systems, Search can be done using diagnostics Codes or the diagnosis name, symptoms, and procedure names.  ( result is JSON you can use it in your site or your own system )  DiagnosticsCode : String  DiagnosticsName : String",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "diagnosticscode",
+                    "type": "STRING",
+                    "description": "Diagnostics Code",
+                    "default": "A000"
+                },
+                {
+                    "name": "diagnosticsname",
+                    "type": "STRING",
+                    "description": "Diagnostics Name",
+                    "default": "none"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://diagnostics-code-list.p.rapidapi.com/A000/none/\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"diagnostics-code-list.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://diagnostics-code-list.p.rapidapi.com/{diagnosticscode}/{diagnosticsname}/\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"diagnostics-code-list.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "diagnosticscode": "A000",
+                    "diagnosticsname": "Cholera due to Vibrio cholerae 01, biovar cholera"
+                }
+            ],
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "get": {
+                        "type": "string"
+                    },
+                    "parameters": {
+                        "type": "array"
+                    },
+                    "errors": {
+                        "type": "array"
+                    },
+                    "results": {
+                        "type": "integer"
+                    },
+                    "response": {
+                        "type": "array",
+                        "items": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "standardized_name": "diagnostics_code_list"
+}

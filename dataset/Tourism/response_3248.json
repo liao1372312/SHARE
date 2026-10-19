@@ -1,0 +1,40 @@
+{
+"user_query":"I want to surprise my friends with a unique vacation. Can you provide me with the trending search keywords in Brazil and Argentina for the month of September? Additionally, recommend some hotels in these countries for our stay.",
+"domain":"Tourism",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Retrieve the trending search keywords for Brazil in September.",
+        "domain": "tourism",
+        "required_inputs": ["country: Brazil", "month: September"]
+    },
+    {
+        "id": 2,
+        "description": "Retrieve the trending search keywords for Argentina in September.",
+        "domain": "tourism",
+        "required_inputs": ["country: Argentina", "month: September"]
+    },
+    {
+        "id": 3,
+        "description": "Based on trending keywords in Brazil, recommend hotels suitable for the vacation.",
+        "domain": "tourism",
+        "required_inputs": ["trending_keywords_brazil"]
+    },
+    {
+        "id": 4,
+        "description": "Based on trending keywords in Argentina, recommend hotels suitable for the vacation.",
+        "domain": "tourism",
+        "required_inputs": ["trending_keywords_argentina"]
+    }
+],
+"dependencies": [
+    {
+        "dependent": 3,
+        "on": 1
+    },
+    {
+        "dependent": 4,
+        "on": 2
+    }
+]
+}

@@ -1,0 +1,39 @@
+{
+"user_query":"I want to monitor ocean conditions for my fishing trips, including swell wave heights, wind speed, and wave drift velocities.",
+"domain":"Cross-Domain",
+"TaskList": [
+{
+"id": 1,
+"description": "Retrieve ocean conditions based on latitude and longitude.",
+"domain": "technology",
+"required_inputs": ["latitude", "longitude"]
+},
+{
+"id": 2,
+"description": "Extract primary and secondary swell wave significant heights from the ocean conditions data.",
+"domain": "technology",
+"required_inputs": ["ocean_conditions_data"],
+"dependencies": [1]
+},
+{
+"id": 3,
+"description": "Extract wind speed from the ocean conditions data.",
+"domain": "technology",
+"required_inputs": ["ocean_conditions_data"],
+"dependencies": [1]
+},
+{
+"id": 4,
+"description": "Extract wave stokes drift velocities from the ocean conditions data.",
+"domain": "technology",
+"required_inputs": ["ocean_conditions_data"],
+"dependencies": [1]
+},
+{
+"id": 5,
+"description": "Generate global wave tiles to analyze overall wave patterns.",
+"domain": "technology",
+"required_inputs": ["global_wave_data"]
+}
+]
+}

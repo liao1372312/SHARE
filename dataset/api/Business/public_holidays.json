@@ -1,0 +1,60 @@
+{
+    "product_id": "api_43750b62-ed25-4b3e-955f-e5e015847928",
+    "tool_description": "Retrieve religious, non-public and public holidays for 200+ countries worldwide and for any specific year",
+    "home_url": "https://rapidapi.com/standingapi-standingapi-default/api/public-holidays3/",
+    "name": "Public Holidays",
+    "title": "Public Holidays",
+    "pricing": "FREEMIUM",
+    "tool_name": "Public Holidays",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 661,
+        "avgSuccessRate": 77,
+        "popularityScore": 8.7,
+        "__typename": "Score"
+    },
+    "host": "public-holidays3.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Public Holiday Endpoint",
+            "url": "https://public-holidays3.p.rapidapi.com/v1",
+            "description": "The Public Holiday API allows you to gett the public, local, religious, and other holidays of a particular country.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "day",
+                    "type": "STRING",
+                    "description": "he day to get the holiday(s) from, in the format of 1-31.",
+                    "default": "01"
+                },
+                {
+                    "name": "month",
+                    "type": "STRING",
+                    "description": "The month to get the holiday(s) from, in the format of 1-12 (e.g., 1 is January, 2 is February, etc).",
+                    "default": "01"
+                },
+                {
+                    "name": "year",
+                    "type": "STRING",
+                    "description": "The year to get the holiday(s) from.",
+                    "default": "2022"
+                },
+                {
+                    "name": "country",
+                    "type": "STRING",
+                    "description": "The country's two letter ISO 3166-1 alpha-2 code.",
+                    "default": "US"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://public-holidays3.p.rapidapi.com/v1\"\nquerystring = {\"day\": \"01\", \"month\": \"01\", \"year\": \"2022\", \"country\": \"US\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"public-holidays3.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://public-holidays3.p.rapidapi.com/v1\"\nquerystring = {\"day\": \"01\", \"month\": \"01\", \"year\": \"2022\", \"country\": \"US\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"public-holidays3.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per second for your plan, BASIC, by the API provider"
+            },
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "public_holidays"
+}

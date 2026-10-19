@@ -1,0 +1,285 @@
+{
+    "product_id": "api_177e9701-5001-480e-80cb-348be1ff61b4",
+    "tool_description": "Access to quality items and classifiers in regional energy markets (Regionale Herkunftsnachweise)  in Germany.",
+    "home_url": "https://rapidapi.com/stromdao-stromdao-default/api/regionalkonzept-strom-herkunft/",
+    "name": "Regionalkonzept Strom Herkunft",
+    "title": "Regionalkonzept Strom Herkunft",
+    "pricing": "FREEMIUM",
+    "tool_name": "Regionalkonzept Strom Herkunft",
+    "score": {
+        "avgServiceLevel": 0,
+        "avgLatency": 691,
+        "avgSuccessRate": 0,
+        "popularityScore": 0.2,
+        "__typename": "Score"
+    },
+    "host": "regionalkonzept-strom-herkunft.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "erzeugung",
+            "url": "https://regionalkonzept-strom-herkunft.p.rapidapi.com/erzeugung",
+            "description": "Endpunkt erlaubt eine Liste der Postleitzahlenbereiche zu erhalten, in denen Verbraucher sein d\u00fcrfen, die  von einer Erzeugungsanlage von angegebener Postleitzahl ihren Strom beziehen sollen.\n\n**Regionaler Herkunftsnachweis**\nBei Verwendung von Regionalnachweisen d\u00fcrfen Stromversorger nun in ihrer Stromkennzeichnung ausweisen, dass der von ihnen gelieferte EEG-Strom aus Anlagen in der Region der Verbraucherin oder des Verbrauchers kommt.  [weitere Informationen](https://www.umweltbundesamt.de/dokument/rnr-regionenkonzept-2021/)\n\n**Verwendung**\n`/erzeugung?postleitzahl=10117 `\n\nLiefert eine Liste der Postleitzahlen, an der eine Verbraucher sein darf, damit der Strom als regionaler \u00d6kostrom bezeichnet werden darf, wenn dessen Netzeinspeisung (Erzeuger) in der Postleitzahl `10117` stattfindet.\n\nDatenstand: 2021",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "postleitzahl",
+                    "type": "STRING",
+                    "description": "Postleitzahl der Erzeugungsanlage, f\u00fcr die eine Liste der Postleitzahlen von Verbrauchergebiete einers regionalen \u00d6kostrombezugs erstellt werden soll.",
+                    "default": "01609"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://regionalkonzept-strom-herkunft.p.rapidapi.com/erzeugung\"\nquerystring = {\"postleitzahl\": \"01609\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"regionalkonzept-strom-herkunft.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://regionalkonzept-strom-herkunft.p.rapidapi.com/erzeugung\"\nquerystring = {\"postleitzahl\": \"01609\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"regionalkonzept-strom-herkunft.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "source": {
+                        "type": "object",
+                        "properties": {
+                            "roles": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            },
+                            "postleitzahl": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "coordinates": {
+                                "type": "object",
+                                "properties": {
+                                    "type": {
+                                        "type": "string"
+                                    },
+                                    "coordinates": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "number"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "target": {
+                        "type": "object",
+                        "properties": {
+                            "roles": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "results": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Strommix",
+            "url": "https://regionalkonzept-strom-herkunft.p.rapidapi.com/strommix",
+            "description": "Resultierender Strommix nach Anwendung der regionalen \u00d6kostromerzeugung im Gebiet einer Postleitzahl.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "postleitzahl",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "69168"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://regionalkonzept-strom-herkunft.p.rapidapi.com/strommix\"\nquerystring = {\"postleitzahl\": \"69168\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"regionalkonzept-strom-herkunft.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://regionalkonzept-strom-herkunft.p.rapidapi.com/strommix\"\nquerystring = {\"postleitzahl\": \"69168\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"regionalkonzept-strom-herkunft.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "source": {
+                        "type": "object",
+                        "properties": {
+                            "roles": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            },
+                            "postleitzahl": {
+                                "type": "string"
+                            },
+                            "coordinates": {
+                                "type": "array",
+                                "items": {
+                                    "type": "number"
+                                }
+                            },
+                            "type": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "results": {
+                        "type": "object",
+                        "properties": {
+                            "avgYear": {
+                                "type": "object",
+                                "properties": {
+                                    "Solar": {
+                                        "type": "number"
+                                    },
+                                    "Wasser": {
+                                        "type": "number"
+                                    },
+                                    "Wind auf Land": {
+                                        "type": "number"
+                                    },
+                                    "Geothermie": {
+                                        "type": "number"
+                                    },
+                                    "Kl\ufffdrgas": {
+                                        "type": "number"
+                                    },
+                                    "Deponiegas": {
+                                        "type": "number"
+                                    },
+                                    "Biomasse": {
+                                        "type": "number"
+                                    }
+                                }
+                            },
+                            "avgLatest": {
+                                "type": "object",
+                                "properties": {
+                                    "Solar": {
+                                        "type": "number"
+                                    },
+                                    "Wasser": {
+                                        "type": "number"
+                                    },
+                                    "Wind auf Land": {
+                                        "type": "number"
+                                    },
+                                    "Geothermie": {
+                                        "type": "number"
+                                    },
+                                    "Kl\ufffdrgas": {
+                                        "type": "number"
+                                    },
+                                    "Deponiegas": {
+                                        "type": "number"
+                                    },
+                                    "Biomasse": {
+                                        "type": "number"
+                                    }
+                                }
+                            },
+                            "latest": {
+                                "type": "object",
+                                "properties": {
+                                    "start": {
+                                        "type": "integer"
+                                    },
+                                    "end": {
+                                        "type": "integer"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "entnahme",
+            "url": "https://regionalkonzept-strom-herkunft.p.rapidapi.com/entnahme",
+            "description": "Endpunkt erlaubt eine Liste der Postleitzahlenbereiche zu erhalten, in denen Erzeugungsanlagen sein d\u00fcrfen, die  f\u00fcr einen Verbraucher (Entnahme) an gegebener Postleitzahl ist.\n\n**Regionaler Herkunftsnachweis**\nBei Verwendung von Regionalnachweisen d\u00fcrfen Stromversorger nun in ihrer Stromkennzeichnung ausweisen, dass der von ihnen gelieferte EEG-Strom aus Anlagen in der Region der Verbraucherin oder des Verbrauchers kommt.  [weitere Informationen](https://www.umweltbundesamt.de/dokument/rnr-regionenkonzept-2021/)\n\n**Verwendung**\n`/entnahme?postleitzahl=10117 `\n\nLiefert eine Liste der Postleitzahlen, an der eine Erzeugungsanlage sein darf, damit der Strom als regionaler \u00d6kostrom bezeichnet werden darf, wenn die Netzentnahme (Verbrauch) in der Postleitzahl `10117` stattfindet.\n\nDatenstand: 2021",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "postleitzahl",
+                    "type": "STRING",
+                    "description": "Postleitzahl des Verbrauchers (Entnahmestelle)",
+                    "default": "09669"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://regionalkonzept-strom-herkunft.p.rapidapi.com/entnahme\"\nquerystring = {\"postleitzahl\": \"09669\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"regionalkonzept-strom-herkunft.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://regionalkonzept-strom-herkunft.p.rapidapi.com/entnahme\"\nquerystring = {\"postleitzahl\": \"09669\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"regionalkonzept-strom-herkunft.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "source": {
+                        "type": "object",
+                        "properties": {
+                            "roles": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            },
+                            "postleitzahl": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "coordinates": {
+                                "type": "object",
+                                "properties": {
+                                    "type": {
+                                        "type": "string"
+                                    },
+                                    "coordinates": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "number"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "target": {
+                        "type": "object",
+                        "properties": {
+                            "roles": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "results": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "standardized_name": "regionalkonzept_strom_herkunft"
+}

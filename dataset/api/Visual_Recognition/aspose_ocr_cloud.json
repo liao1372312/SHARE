@@ -1,0 +1,352 @@
+{
+    "product_id": "api_30c782ad-5e17-4d1f-8768-73cf8c2065e8",
+    "tool_description": "Text Extraction REST API that uses OCR to recognize and extract characters of various languages from images.",
+    "home_url": "https://rapidapi.com/asposecloud/api/aspose-ocr-cloud/",
+    "name": "Aspose OCR Cloud",
+    "title": "Aspose OCR Cloud",
+    "pricing": "FREEMIUM",
+    "tool_name": "Aspose OCR Cloud",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 408,
+        "avgSuccessRate": 0,
+        "popularityScore": 0.2,
+        "__typename": "Score"
+    },
+    "host": "aspose-ocr-cloud.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "StorageExists",
+            "url": "https://aspose-ocr-cloud.p.rapidapi.com/ocr/storage/{storageName}/exist",
+            "description": " ",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "storageName",
+                    "type": "STRING",
+                    "description": "Storage name",
+                    "default": ""
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://aspose-ocr-cloud.p.rapidapi.com/ocr/storage/{storageName}/exist\"\nquerystring = {\"storageName\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"aspose-ocr-cloud.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://aspose-ocr-cloud.p.rapidapi.com/ocr/storage/{storageName}/exist\"\nquerystring = {\"storageName\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"aspose-ocr-cloud.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "description": "Storage exists",
+                "additionalProperties": false,
+                "required": [
+                    "Exists"
+                ],
+                "properties": {
+                    "Exists": {
+                        "type": "boolean",
+                        "description": "Shows that the storage exists.\n            "
+                    }
+                }
+            }
+        },
+        {
+            "name": "HcPassThrough",
+            "url": "https://aspose-ocr-cloud.p.rapidapi.com/ocr/hc_full",
+            "description": " ",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://aspose-ocr-cloud.p.rapidapi.com/ocr/hc_full\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"aspose-ocr-cloud.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://aspose-ocr-cloud.p.rapidapi.com/ocr/hc_full\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"aspose-ocr-cloud.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {
+                "type": "string",
+                "format": "binary"
+            }
+        },
+        {
+            "name": "GetFileVersions",
+            "url": "https://aspose-ocr-cloud.p.rapidapi.com/ocr/storage/version/{path}",
+            "description": " ",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "path",
+                    "type": "STRING",
+                    "description": "File path e.g. '/file.ext'",
+                    "default": ""
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "storageName",
+                    "type": "STRING",
+                    "description": "Storage name",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://aspose-ocr-cloud.p.rapidapi.com/ocr/storage/version/{path}\"\nquerystring = {\"path\": \"\", \"storageName\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"aspose-ocr-cloud.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://aspose-ocr-cloud.p.rapidapi.com/ocr/storage/version/{path}\"\nquerystring = {\"path\": \"\", \"storageName\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"aspose-ocr-cloud.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "description": "File versions FileVersion.",
+                "additionalProperties": false,
+                "properties": {
+                    "Value": {
+                        "type": "array",
+                        "description": "File versions FileVersion.",
+                        "items": {
+                            "type": "object",
+                            "description": "File Version",
+                            "additionalProperties": false,
+                            "allOf": [
+                                {
+                                    "type": "object",
+                                    "description": "File or folder information",
+                                    "additionalProperties": false,
+                                    "required": [
+                                        "IsFolder",
+                                        "Size"
+                                    ],
+                                    "properties": {
+                                        "Name": {
+                                            "type": "string",
+                                            "description": "File or folder name."
+                                        },
+                                        "IsFolder": {
+                                            "type": "boolean",
+                                            "description": "True if it is a folder."
+                                        },
+                                        "ModifiedDate": {
+                                            "type": "string",
+                                            "description": "File or folder last modified DateTime.",
+                                            "format": "date-time"
+                                        },
+                                        "Size": {
+                                            "type": "integer",
+                                            "description": "File or folder size.",
+                                            "format": "int64",
+                                            "minimum": -9223372036854776000,
+                                            "maximum": 9223372036854776000
+                                        },
+                                        "Path": {
+                                            "type": "string",
+                                            "description": "File or folder path."
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "object",
+                                    "description": "File Version",
+                                    "additionalProperties": false,
+                                    "required": [
+                                        "IsLatest"
+                                    ],
+                                    "properties": {
+                                        "VersionId": {
+                                            "type": "string",
+                                            "description": "File Version ID."
+                                        },
+                                        "IsLatest": {
+                                            "type": "boolean",
+                                            "description": "Specifies whether the file is (true) or is not (false) the latest version of an file."
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "GetFilesList",
+            "url": "https://aspose-ocr-cloud.p.rapidapi.com/ocr/storage/folder/{path}",
+            "description": " ",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "path",
+                    "type": "STRING",
+                    "description": "Folder path e.g. '/folder'",
+                    "default": ""
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "storageName",
+                    "type": "STRING",
+                    "description": "Storage name",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://aspose-ocr-cloud.p.rapidapi.com/ocr/storage/folder/{path}\"\nquerystring = {\"storageName\": \"\", \"path\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"aspose-ocr-cloud.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://aspose-ocr-cloud.p.rapidapi.com/ocr/storage/folder/{path}\"\nquerystring = {\"storageName\": \"\", \"path\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"aspose-ocr-cloud.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 1,
+            "schema": ""
+        },
+        {
+            "name": "GetRecognizeDocument",
+            "url": "https://aspose-ocr-cloud.p.rapidapi.com/ocr/{name}/recognize",
+            "description": " ",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "name",
+                    "type": "STRING",
+                    "description": "Name of the file to recognize.",
+                    "default": ""
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "folder",
+                    "type": "STRING",
+                    "description": "The image folder.",
+                    "default": ""
+                },
+                {
+                    "name": "resultType",
+                    "type": "NUMBER",
+                    "description": "The type of result: Text, HOCR, PDF or their combinations",
+                    "default": 1
+                },
+                {
+                    "name": "skewCorrect",
+                    "type": "BOOLEAN",
+                    "description": "An option to switch skew correction algorithm",
+                    "default": true
+                },
+                {
+                    "name": "storage",
+                    "type": "STRING",
+                    "description": "The image storage.",
+                    "default": ""
+                },
+                {
+                    "name": "language",
+                    "type": "NUMBER",
+                    "description": "Language for OCR Core Aspose.OCR.Core.Transport \n                    BaseStructures.Language.LanguageGroup\n                \n            ",
+                    "default": 1
+                },
+                {
+                    "name": "dsrMode",
+                    "type": "NUMBER",
+                    "description": "An option to switch DSR algorithm",
+                    "default": 2
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://aspose-ocr-cloud.p.rapidapi.com/ocr/{name}/recognize\"\nquerystring = {\"folder\": \"\", \"resultType\": 1, \"skewCorrect\": true, \"storage\": \"\", \"language\": 1, \"dsrMode\": 2, \"name\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"aspose-ocr-cloud.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://aspose-ocr-cloud.p.rapidapi.com/ocr/{name}/recognize\"\nquerystring = {\"folder\": \"\", \"resultType\": 1, \"skewCorrect\": true, \"storage\": \"\", \"language\": 1, \"dsrMode\": 2, \"name\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"aspose-ocr-cloud.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 1,
+            "schema": ""
+        },
+        {
+            "name": "HcLocal",
+            "url": "https://aspose-ocr-cloud.p.rapidapi.com/ocr/hc_wrapper",
+            "description": " ",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://aspose-ocr-cloud.p.rapidapi.com/ocr/hc_wrapper\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"aspose-ocr-cloud.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://aspose-ocr-cloud.p.rapidapi.com/ocr/hc_wrapper\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"aspose-ocr-cloud.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {
+                "type": "string",
+                "format": "binary"
+            }
+        },
+        {
+            "name": "GetDiscUsage",
+            "url": "https://aspose-ocr-cloud.p.rapidapi.com/ocr/storage/disc",
+            "description": " ",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "storageName",
+                    "type": "STRING",
+                    "description": "Storage name",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://aspose-ocr-cloud.p.rapidapi.com/ocr/storage/disc\"\nquerystring = {\"storageName\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"aspose-ocr-cloud.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://aspose-ocr-cloud.p.rapidapi.com/ocr/storage/disc\"\nquerystring = {\"storageName\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"aspose-ocr-cloud.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 1,
+            "schema": ""
+        },
+        {
+            "name": "DownloadFile",
+            "url": "https://aspose-ocr-cloud.p.rapidapi.com/ocr/storage/file/{path}",
+            "description": " ",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "path",
+                    "type": "STRING",
+                    "description": "File path e.g. '/folder/file.ext'",
+                    "default": ""
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "storageName",
+                    "type": "STRING",
+                    "description": "Storage name",
+                    "default": ""
+                },
+                {
+                    "name": "versionId",
+                    "type": "STRING",
+                    "description": "File version ID to download",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://aspose-ocr-cloud.p.rapidapi.com/ocr/storage/file/{path}\"\nquerystring = {\"storageName\": \"\", \"path\": \"\", \"versionId\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"aspose-ocr-cloud.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://aspose-ocr-cloud.p.rapidapi.com/ocr/storage/file/{path}\"\nquerystring = {\"storageName\": \"\", \"path\": \"\", \"versionId\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"aspose-ocr-cloud.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 1,
+            "schema": ""
+        },
+        {
+            "name": "ObjectExists",
+            "url": "https://aspose-ocr-cloud.p.rapidapi.com/ocr/storage/exist/{path}",
+            "description": " ",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "path",
+                    "type": "STRING",
+                    "description": "File or folder path e.g. '/file.ext' or '/folder'",
+                    "default": ""
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "versionId",
+                    "type": "STRING",
+                    "description": "File version ID",
+                    "default": ""
+                },
+                {
+                    "name": "storageName",
+                    "type": "STRING",
+                    "description": "Storage name",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://aspose-ocr-cloud.p.rapidapi.com/ocr/storage/exist/{path}\"\nquerystring = {\"path\": \"\", \"versionId\": \"\", \"storageName\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"aspose-ocr-cloud.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://aspose-ocr-cloud.p.rapidapi.com/ocr/storage/exist/{path}\"\nquerystring = {\"path\": \"\", \"versionId\": \"\", \"storageName\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"aspose-ocr-cloud.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 1,
+            "schema": ""
+        }
+    ],
+    "standardized_name": "aspose_ocr_cloud"
+}

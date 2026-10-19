@@ -1,0 +1,38 @@
+{
+"user_query":"I need to retrieve the specific order with ID '12345'. Additionally, fetch the account details and all the orders associated with the account. Can you also provide me with the translation rates for English to French and English to Spanish?",
+"domain":"Finance",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Retrieve the specific order with ID '12345'.",
+        "domain": "finance",
+        "required_inputs": ["orderID"]
+    },
+    {
+        "id": 2,
+        "description": "Fetch account details associated with the retrieved order.",
+        "domain": "finance",
+        "required_inputs": ["accountID"],
+        "dependencies": [1]
+    },
+    {
+        "id": 3,
+        "description": "Retrieve all orders associated with the account obtained from the previous step.",
+        "domain": "finance",
+        "required_inputs": ["accountID"],
+        "dependencies": [2]
+    },
+    {
+        "id": 4,
+        "description": "Fetch translation rates for English to French.",
+        "domain": "finance",
+        "required_inputs": []
+    },
+    {
+        "id": 5,
+        "description": "Fetch translation rates for English to Spanish.",
+        "domain": "finance",
+        "required_inputs": []
+    }
+]
+}

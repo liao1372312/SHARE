@@ -1,0 +1,600 @@
+{
+    "product_id": "api_6f27c0fa-cd65-4b6a-9828-92e11b6efba9",
+    "tool_description": "Send SMS & text-to-speech messages, perform phone number lookups and much more via sms77.io.",
+    "home_url": "https://rapidapi.com/sms77io-sms77io-default/api/sms77io/",
+    "name": "sms77io",
+    "title": "sms77io",
+    "pricing": "FREE",
+    "tool_name": "sms77io",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 475,
+        "avgSuccessRate": 99,
+        "popularityScore": 9.6,
+        "__typename": "Score"
+    },
+    "host": "sms77io.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Get Contacts",
+            "url": "https://sms77io.p.rapidapi.com/contacts",
+            "description": "Retrieves all contacts for a given API key.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "p",
+                    "type": "STRING",
+                    "description": "API Key from [Sms77.io](https://sms77.io).",
+                    "default": ""
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "json",
+                    "type": "ENUM",
+                    "description": "Decides whether to return response as JSON or CSV (default).",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://sms77io.p.rapidapi.com/contacts\"\nquerystring = {\"p\": \"\", \"json\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sms77io.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://sms77io.p.rapidapi.com/contacts\"\nquerystring = {\"p\": \"\", \"json\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sms77io.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": 900,
+            "statuscode": 200,
+            "schema": {
+                "items": {
+                    "properties": {
+                        "ID": {
+                            "minLength": 1,
+                            "type": "string"
+                        },
+                        "Name": {
+                            "type": "string"
+                        },
+                        "Number": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "ID",
+                        "Name",
+                        "Number"
+                    ],
+                    "type": "object"
+                },
+                "type": "array"
+            }
+        },
+        {
+            "name": "Get Status",
+            "url": "https://sms77io.p.rapidapi.com/status",
+            "description": "Get a delivery report for a message ID sent with your API key.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "msg_id",
+                    "type": "NUMBER",
+                    "description": "The message ID of the SMS.\nCan be obtained by setting parameter *JSON*, *return_msg_id* or *details* to **1** when sending SMS via the API.\nAlternatively it can be retrieved from the message journal in the user area.",
+                    "default": ""
+                },
+                {
+                    "name": "p",
+                    "type": "STRING",
+                    "description": "API Key",
+                    "default": ""
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://sms77io.p.rapidapi.com/status\"\nquerystring = {\"msg_id\": \"\", \"p\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sms77io.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://sms77io.p.rapidapi.com/status\"\nquerystring = {\"msg_id\": \"\", \"p\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sms77io.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": 900,
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Get Pricing",
+            "url": "https://sms77io.p.rapidapi.com/pricing",
+            "description": "Retrieves pricing information for a single country or all.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "p",
+                    "type": "STRING",
+                    "description": "API Key from [Sms77.io](https://sms77.io).",
+                    "default": ""
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "country",
+                    "type": "STRING",
+                    "description": "An ISO Code of the country you wish to retrieve the pricing for.\n*Examples*:\n\n-  \\\"de\\\" for Germany \n- \\\"uk\\\" for Great Britain\n- \\\"fr\\\" for France\n\nIf this parameter is *not* specified, the prices of *all* countries are getting returned.",
+                    "default": ""
+                },
+                {
+                    "name": "format",
+                    "type": "ENUM",
+                    "description": "Whether to return the response as *JSON* or *CSV*. The **default** is *JSON*.",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://sms77io.p.rapidapi.com/pricing\"\nquerystring = {\"country\": \"\", \"p\": \"\", \"format\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sms77io.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://sms77io.p.rapidapi.com/pricing\"\nquerystring = {\"country\": \"\", \"p\": \"\", \"format\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sms77io.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": 900,
+            "statuscode": 200,
+            "schema": {
+                "properties": {
+                    "countCountries": {
+                        "minimum": 0,
+                        "type": "integer"
+                    },
+                    "countNetworks": {
+                        "minimum": 0,
+                        "type": "integer"
+                    },
+                    "countries": {
+                        "items": {
+                            "properties": {
+                                "countryCode": {
+                                    "type": "string"
+                                },
+                                "countryName": {
+                                    "minLength": 1,
+                                    "type": "string"
+                                },
+                                "countryPrefix": {
+                                    "type": "string"
+                                },
+                                "networks": {
+                                    "items": {
+                                        "properties": {
+                                            "comment": {
+                                                "type": "string"
+                                            },
+                                            "features": {
+                                                "items": {
+                                                    "minLength": 1,
+                                                    "type": "string"
+                                                },
+                                                "type": "array"
+                                            },
+                                            "mcc": {
+                                                "type": "string"
+                                            },
+                                            "mncs": {
+                                                "items": {
+                                                    "minLength": 1,
+                                                    "type": "string"
+                                                },
+                                                "type": "array"
+                                            },
+                                            "networkName": {
+                                                "type": "string"
+                                            },
+                                            "price": {
+                                                "minimum": 0,
+                                                "type": "number"
+                                            }
+                                        },
+                                        "required": [
+                                            "mcc",
+                                            "mncs",
+                                            "networkName",
+                                            "price",
+                                            "features",
+                                            "comment"
+                                        ],
+                                        "type": "object"
+                                    },
+                                    "type": "array"
+                                }
+                            },
+                            "required": [
+                                "countryCode",
+                                "countryName",
+                                "countryPrefix",
+                                "networks"
+                            ],
+                            "type": "object"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "countCountries",
+                    "countNetworks",
+                    "countries"
+                ],
+                "type": "object"
+            }
+        },
+        {
+            "name": "Get Balance",
+            "url": "https://sms77io.p.rapidapi.com/balance",
+            "description": "Retrieves the account balance for the given API key.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "p",
+                    "type": "STRING",
+                    "description": "Your API key from [Sms77.io](https://sms77.io).",
+                    "default": ""
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://sms77io.p.rapidapi.com/balance\"\nquerystring = {\"p\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sms77io.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://sms77io.p.rapidapi.com/balance\"\nquerystring = {\"p\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sms77io.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": 900,
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Outbound",
+            "url": "https://sms77io.p.rapidapi.com/journal?type=outbound",
+            "description": "Retrieves outbound messages history.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "p",
+                    "type": "STRING",
+                    "description": "API key from [Sms77.io](https://www.sms77.io)",
+                    "default": ""
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "date_from",
+                    "type": "STRING",
+                    "description": "Start date for performed search",
+                    "default": ""
+                },
+                {
+                    "name": "state",
+                    "type": "STRING",
+                    "description": "Message status - e.g. *completed* / *failed* for **Voice** or *DELIVERED* / *NOTDELIVERED* for **SMS**",
+                    "default": ""
+                },
+                {
+                    "name": "date_to",
+                    "type": "STRING",
+                    "description": "End date for performed search",
+                    "default": ""
+                },
+                {
+                    "name": "id",
+                    "type": "NUMBER",
+                    "description": "Message ID",
+                    "default": ""
+                },
+                {
+                    "name": "to",
+                    "type": "STRING",
+                    "description": "Receiver phone number in any format",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://sms77io.p.rapidapi.com/journal?type=outbound\"\nquerystring = {\"date_from\": \"\", \"state\": \"\", \"date_to\": \"\", \"p\": \"\", \"id\": \"\", \"to\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sms77io.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://sms77io.p.rapidapi.com/journal?type=outbound\"\nquerystring = {\"date_from\": \"\", \"state\": \"\", \"date_to\": \"\", \"p\": \"\", \"id\": \"\", \"to\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sms77io.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "Endpoint '/journal' does not exist"
+            }
+        },
+        {
+            "name": "Inbound",
+            "url": "https://sms77io.p.rapidapi.com/journal?type=inbound",
+            "description": "Retrieves inbound messages history.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "p",
+                    "type": "STRING",
+                    "description": "API key from [Sms77.io](https://www.sms77.io)",
+                    "default": ""
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "to",
+                    "type": "STRING",
+                    "description": "Receiver phone number in any format",
+                    "default": ""
+                },
+                {
+                    "name": "state",
+                    "type": "STRING",
+                    "description": "Message status - e.g. *completed* / *failed* for **Voice** or *DELIVERED* / *NOTDELIVERED* for **SMS**",
+                    "default": ""
+                },
+                {
+                    "name": "date_from",
+                    "type": "STRING",
+                    "description": "Start date for performed search",
+                    "default": ""
+                },
+                {
+                    "name": "date_to",
+                    "type": "STRING",
+                    "description": "End date for performed search",
+                    "default": ""
+                },
+                {
+                    "name": "id",
+                    "type": "NUMBER",
+                    "description": "Message ID",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://sms77io.p.rapidapi.com/journal?type=inbound\"\nquerystring = {\"to\": \"\", \"state\": \"\", \"date_from\": \"\", \"date_to\": \"\", \"id\": \"\", \"p\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sms77io.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://sms77io.p.rapidapi.com/journal?type=inbound\"\nquerystring = {\"to\": \"\", \"state\": \"\", \"date_from\": \"\", \"date_to\": \"\", \"id\": \"\", \"p\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sms77io.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "Endpoint '/journal' does not exist"
+            }
+        },
+        {
+            "name": "Replies",
+            "url": "https://sms77io.p.rapidapi.com/journal?type=replies",
+            "description": "Retrieves message replies history.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "p",
+                    "type": "STRING",
+                    "description": "API key from [Sms77.io](https://www.sms77.io)",
+                    "default": ""
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "id",
+                    "type": "NUMBER",
+                    "description": "Message ID",
+                    "default": ""
+                },
+                {
+                    "name": "date_from",
+                    "type": "STRING",
+                    "description": "Start date for performed search",
+                    "default": ""
+                },
+                {
+                    "name": "to",
+                    "type": "STRING",
+                    "description": "Receiver phone number in any format",
+                    "default": ""
+                },
+                {
+                    "name": "date_to",
+                    "type": "STRING",
+                    "description": "End date for performed search",
+                    "default": ""
+                },
+                {
+                    "name": "state",
+                    "type": "STRING",
+                    "description": "Message status - e.g. *completed* / *failed* for **Voice** or *DELIVERED* / *NOTDELIVERED* for **SMS**",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://sms77io.p.rapidapi.com/journal?type=replies\"\nquerystring = {\"id\": \"\", \"date_from\": \"\", \"to\": \"\", \"date_to\": \"\", \"state\": \"\", \"p\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sms77io.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://sms77io.p.rapidapi.com/journal?type=replies\"\nquerystring = {\"id\": \"\", \"date_from\": \"\", \"to\": \"\", \"date_to\": \"\", \"state\": \"\", \"p\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sms77io.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "Endpoint '/journal' does not exist"
+            }
+        },
+        {
+            "name": "Read",
+            "url": "https://sms77io.p.rapidapi.com/subaccounts?action=read",
+            "description": "Retrieves information regarding subacounts.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://sms77io.p.rapidapi.com/subaccounts?action=read\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sms77io.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://sms77io.p.rapidapi.com/subaccounts?action=read\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sms77io.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "Endpoint '/subaccounts' does not exist"
+            }
+        },
+        {
+            "name": "Get Analytics",
+            "url": "https://sms77io.p.rapidapi.com/analytics",
+            "description": "Get detailed statistics of your account directly through our API.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "p",
+                    "type": "STRING",
+                    "description": "API Key",
+                    "default": ""
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "start",
+                    "type": "DATE (YYYY-MM-DD)",
+                    "description": "Start date of the statistics in the format YYYY-MM-DD.\nBy default, the date of 30 days ago is set.",
+                    "default": ""
+                },
+                {
+                    "name": "label",
+                    "type": "STRING",
+                    "description": "Shows only data of a specific label.\nAllowed values: 'all' (default) or <label>.",
+                    "default": "all"
+                },
+                {
+                    "name": "end",
+                    "type": "DATE (YYYY-MM-DD)",
+                    "description": "End date of the statistics.\nBy default, the current day.",
+                    "default": ""
+                },
+                {
+                    "name": "subaccounts",
+                    "type": "STRING",
+                    "description": "Receive the data only for the main account, all your (sub-)accounts or only for specific subaccounts. Allowed values: 'only_main', 'all' or subaccount ID.",
+                    "default": "only_main"
+                },
+                {
+                    "name": "group_by",
+                    "type": "ENUM",
+                    "description": "Defines the grouping of the data.",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://sms77io.p.rapidapi.com/analytics\"\nquerystring = {\"start\": \"\", \"label\": \"all\", \"p\": \"\", \"end\": \"\", \"subaccounts\": \"only_main\", \"group_by\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sms77io.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://sms77io.p.rapidapi.com/analytics\"\nquerystring = {\"start\": \"\", \"label\": \"all\", \"p\": \"\", \"end\": \"\", \"subaccounts\": \"only_main\", \"group_by\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sms77io.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": 900,
+            "statuscode": 200,
+            "schema": {
+                "items": {
+                    "properties": {
+                        "date": {
+                            "format": "date",
+                            "type": "string"
+                        },
+                        "direct": {
+                            "minimum": 0,
+                            "type": "integer"
+                        },
+                        "economy": {
+                            "minimum": 0,
+                            "type": "integer"
+                        },
+                        "hlr": {
+                            "minimum": 0,
+                            "type": "integer"
+                        },
+                        "inbound": {
+                            "minimum": 0,
+                            "type": "integer"
+                        },
+                        "mnp": {
+                            "minimum": 0,
+                            "type": "integer"
+                        },
+                        "usage_eur": {
+                            "type": "number"
+                        },
+                        "voice": {
+                            "minimum": 0,
+                            "type": "integer"
+                        }
+                    },
+                    "required": [
+                        "economy",
+                        "direct",
+                        "voice",
+                        "hlr",
+                        "mnp",
+                        "inbound",
+                        "usage_eur"
+                    ],
+                    "type": "object"
+                },
+                "type": "array"
+            }
+        },
+        {
+            "name": "Get Webhooks",
+            "url": "https://sms77io.p.rapidapi.com/hooks",
+            "description": "Retrieves all existing webhooks.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "p",
+                    "type": "STRING",
+                    "description": "API key from [Sms77.io](https://www.sms77.io).",
+                    "default": ""
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://sms77io.p.rapidapi.com/hooks\"\nquerystring = {\"p\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sms77io.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://sms77io.p.rapidapi.com/hooks\"\nquerystring = {\"p\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sms77io.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": 900,
+            "statuscode": 200,
+            "schema": {
+                "properties": {
+                    "hooks": {
+                        "items": {
+                            "properties": {
+                                "created": {
+                                    "type": "string"
+                                },
+                                "event_type": {
+                                    "pattern": "\\b(sms_mo|dlr|voice_status)",
+                                    "type": "string"
+                                },
+                                "id": {
+                                    "minLength": 1,
+                                    "type": "string"
+                                },
+                                "request_method": {
+                                    "pattern": "\\b(GET|POST)",
+                                    "type": "string"
+                                },
+                                "target_url": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "type": "array"
+                    },
+                    "success": {
+                        "type": "boolean"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        {
+            "name": "Voice",
+            "url": "https://sms77io.p.rapidapi.com/journal?type=voice",
+            "description": "Retrieves voice messages history.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "p",
+                    "type": "STRING",
+                    "description": "API key from [Sms77.io](https://www.sms77.io)",
+                    "default": ""
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "date_to",
+                    "type": "STRING",
+                    "description": "End date for performed search",
+                    "default": ""
+                },
+                {
+                    "name": "id",
+                    "type": "NUMBER",
+                    "description": "Message ID",
+                    "default": ""
+                },
+                {
+                    "name": "state",
+                    "type": "STRING",
+                    "description": "Message status - e.g. *completed* / *failed* etc.",
+                    "default": ""
+                },
+                {
+                    "name": "to",
+                    "type": "STRING",
+                    "description": "Receiver phone number in any format",
+                    "default": ""
+                },
+                {
+                    "name": "date_from",
+                    "type": "STRING",
+                    "description": "Start date for performed search",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://sms77io.p.rapidapi.com/journal?type=voice\"\nquerystring = {\"date_to\": \"\", \"id\": \"\", \"p\": \"\", \"state\": \"\", \"to\": \"\", \"date_from\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sms77io.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://sms77io.p.rapidapi.com/journal?type=voice\"\nquerystring = {\"date_to\": \"\", \"id\": \"\", \"p\": \"\", \"state\": \"\", \"to\": \"\", \"date_from\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sms77io.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "Endpoint '/journal' does not exist"
+            }
+        }
+    ],
+    "standardized_name": "sms77io"
+}

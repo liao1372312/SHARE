@@ -1,0 +1,25 @@
+{
+"user_query":"My family and I are planning a movie night and we want to watch a movie that was released in the year 2000. Can you suggest a family-friendly movie with its IMDb ID? We would like to know the movie's runtime, plot, and ratings. Additionally, we would also like to get information about a specific movie with the TMDb ID '578'. Please provide us with details about the movie's cast, director, and genre.",
+"domain":"Technology",
+"TaskList": [
+    {
+        "id": 1,
+        "description": "Fetch a list of family-friendly movies released in the year 2000 along with their IMDb IDs.",
+        "domain": "technology",
+        "required_inputs": ["year", "genre"]
+    },
+    {
+        "id": 2,
+        "description": "Select one movie from the list obtained in step 1 and get its runtime, plot, and ratings.",
+        "domain": "technology",
+        "required_inputs": ["selected_movie_id"],
+        "dependencies": [1]
+    },
+    {
+        "id": 3,
+        "description": "Retrieve details about the movie with the TMDb ID '578', including cast, director, and genre.",
+        "domain": "technology",
+        "required_inputs": ["movie_tmdb_id"]
+    }
+]
+}

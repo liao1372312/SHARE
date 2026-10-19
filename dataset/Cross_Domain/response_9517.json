@@ -1,0 +1,35 @@
+{
+  "user_query": "I need to organize a basketball training camp for kids. Can you fetch me the list of all NBA teams and their players? Additionally, provide me with the contact details of the teams' coaches and the nearby administrative divisions. Thank you!",
+  "domain": "sports",
+  "TaskList": [
+    {
+      "id": 1,
+      "description": "查询所有NBA球队的列表",
+      "domain": "sports",
+      "required_inputs": []
+    },
+    {
+      "id": 2,
+      "description": "获取每支球队的球员名单",
+      "domain": "sports",
+      "required_inputs": ["NBA球队列表"]
+    },
+    {
+      "id": 3,
+      "description": "获取每支球队教练的联系方式",
+      "domain": "sports",
+      "required_inputs": ["NBA球队列表"]
+    },
+    {
+      "id": 4,
+      "description": "查找球队所在地区的行政区划信息",
+      "domain": "geography",
+      "required_inputs": ["球队位置"]
+    }
+  ],
+  "dependencies": [
+    {"from": 1, "to": 2},
+    {"from": 1, "to": 3},
+    {"from": 1, "to": 4}
+  ]
+}

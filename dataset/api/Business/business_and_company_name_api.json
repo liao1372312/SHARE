@@ -1,0 +1,299 @@
+{
+    "product_id": "api_2d717f74-b169-414e-9834-ff916b1d6875",
+    "tool_description": "Use this Know-Your-Business Process (KYB) API to validate registered companies and business names recognised by the Corporate Affairs Commission (CAC). You have enpoints to search, validate name availability and validate and fetch business and company registration numbers.",
+    "home_url": "https://rapidapi.com/propensterapi-propensterapi-default/api/business-and-company-name-api/",
+    "name": "Business and company name API",
+    "title": "Business and company name API",
+    "pricing": "FREEMIUM",
+    "tool_name": "Business and company name API",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 1390,
+        "avgSuccessRate": 93,
+        "popularityScore": 8.5,
+        "__typename": "Score"
+    },
+    "host": "business-and-company-name-api.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Search By Registration Number",
+            "url": "https://business-and-company-name-api.p.rapidapi.com/api/v1/cacctrlsrvc/companies/searchbyreg",
+            "description": "Search company information by the company or business' registration number issued by the CAC. It returns a single match if the registration number exists.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "regNumber",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "RC - 1754689"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://business-and-company-name-api.p.rapidapi.com/api/v1/cacctrlsrvc/companies/searchbyreg\"\nquerystring = {\"regNumber\": \"RC - 1754689\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"business-and-company-name-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://business-and-company-name-api.p.rapidapi.com/api/v1/cacctrlsrvc/companies/searchbyreg\"\nquerystring = {\"regNumber\": \"RC - 1754689\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"business-and-company-name-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "Success",
+                "generated_on": "2023-06-16T10:03:15.8651817+00:00",
+                "data": {
+                    "id": "714b05c4-32fd-45fa-a4c1-9a41efc5d5d3",
+                    "companyName": "RUTOB LIMITED",
+                    "registrationNumber": "RC - 1754689",
+                    "address": "IGBOGENE SCHOOL ROAD, ,",
+                    "status": "INACTIVE (Visit CAC and update your status)",
+                    "registrationDate": "Date of Registration - Feb 9, 2021",
+                    "type": "company",
+                    "registeredOn": null,
+                    "isDeleted": false,
+                    "isActive": false,
+                    "createdAt": "2022-10-08T19:45:11.102563Z",
+                    "updateAt": "2022-10-08T19:45:11.102563Z",
+                    "modifiedAt": "2023-06-16T10:03:15.8366832+00:00"
+                },
+                "api_version": "1.0",
+                "success": true
+            },
+            "statuscode": 1,
+            "schema": ""
+        },
+        {
+            "name": "Search Company By Name",
+            "url": "https://business-and-company-name-api.p.rapidapi.com/api/v1/cacctrlsrvc/companies/searchbyname",
+            "description": "Do you know the company name? you can make a search of company information with just the name. You will get hits of all companies and businesses that are matching that particular name.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "page",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "1"
+                },
+                {
+                    "name": "limit",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "10"
+                },
+                {
+                    "name": "companyName",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "ESK GLOBAL SERVICES LIMITED"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://business-and-company-name-api.p.rapidapi.com/api/v1/cacctrlsrvc/companies/searchbyname\"\nquerystring = {\"page\": \"1\", \"limit\": \"10\", \"companyName\": \"ESK GLOBAL SERVICES LIMITED\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"business-and-company-name-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://business-and-company-name-api.p.rapidapi.com/api/v1/cacctrlsrvc/companies/searchbyname\"\nquerystring = {\"page\": \"1\", \"limit\": \"10\", \"companyName\": \"ESK GLOBAL SERVICES LIMITED\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"business-and-company-name-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "api_version": "1.0",
+                "generated_on": "2023-06-16T10:03:17.0928521+00:00",
+                "count": 1,
+                "limit": 10,
+                "page": 1,
+                "items": [
+                    {
+                        "id": "d0a2fbde-11f5-4796-adbc-71b976e2d76b",
+                        "companyName": "ESK GLOBAL SERVICES LIMITED",
+                        "registrationNumber": "RC - 1855308",
+                        "address": "ASABA BENIN EXPRESS WAY, ,",
+                        "status": "ACTIVE",
+                        "registrationDate": "Date of Registration - Nov 1, 2021",
+                        "type": "company",
+                        "registeredOn": null,
+                        "isDeleted": false,
+                        "isActive": true,
+                        "createdAt": "2022-10-08T19:36:26.438242Z",
+                        "updateAt": "2022-10-08T19:36:26.438242Z",
+                        "modifiedAt": "2023-06-16T10:03:17.0745325+00:00"
+                    }
+                ]
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Get All Companies (Paginated)",
+            "url": "https://business-and-company-name-api.p.rapidapi.com/api/v1/cacctrlsrvc/companies/all",
+            "description": "This endpoint gets all the companies and business as in the CAC database.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "page",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "1"
+                },
+                {
+                    "name": "limit",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "10"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://business-and-company-name-api.p.rapidapi.com/api/v1/cacctrlsrvc/companies/all\"\nquerystring = {\"page\": \"1\", \"limit\": \"10\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"business-and-company-name-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://business-and-company-name-api.p.rapidapi.com/api/v1/cacctrlsrvc/companies/all\"\nquerystring = {\"page\": \"1\", \"limit\": \"10\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"business-and-company-name-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "api_version": "1.0",
+                "generated_on": "2023-06-16T10:03:18.9080698+00:00",
+                "count": 3209,
+                "limit": 10,
+                "page": 1,
+                "items": [
+                    {
+                        "id": "06f71a9c-8b5e-427a-b069-1c27990459eb",
+                        "companyName": "PEACECALL NIG LIMITED",
+                        "registrationNumber": "RC - 1771535",
+                        "address": "15/17 ABIMBOLA STREET,ISOLO INDUSTRIAL ESTATE,OPPOSITE JOHNSON WAX, ,",
+                        "status": "ACTIVE",
+                        "registrationDate": "Date of Registration - Mar 17, 2021",
+                        "type": "company",
+                        "registeredOn": "2021-03-17T23:00:00Z",
+                        "isDeleted": false,
+                        "isActive": true,
+                        "createdAt": "2022-10-08T19:35:59.286466Z",
+                        "updateAt": "2022-10-08T19:35:59.286582Z",
+                        "modifiedAt": "2023-06-16T10:03:18.3398542+00:00"
+                    },
+                    {
+                        "id": "59c748ff-bfdd-4636-8c10-2896a46cf597",
+                        "companyName": "ZARACO LIMITED",
+                        "registrationNumber": "RC - 1446095",
+                        "address": "Suite 003 Parkview Hotels Limited, Plot 2390 Takoradi street, Zone 1 Wuse Abuja, ,",
+                        "status": "INACTIVE (Visit CAC and update your status)",
+                        "registrationDate": "Date of Registration - Oct 17, 2017",
+                        "type": "company",
+                        "registeredOn": "2017-10-17T23:00:00Z",
+                        "isDeleted": false,
+                        "isActive": false,
+                        "createdAt": "2022-10-08T19:36:25.54061Z",
+                        "updateAt": "2022-10-08T19:36:25.54061Z",
+                        "modifiedAt": "2023-06-16T10:03:18.3401548+00:00"
+                    },
+                    {
+                        "id": "d06b26b5-e62d-4d42-a874-89310189a02c",
+                        "companyName": "ONECLASS LIMITED",
+                        "registrationNumber": "RC - NOT YET ASSIGNED",
+                        "address": "SUBSTATION 11, ,",
+                        "status": "INACTIVE (Visit CAC and update your status)",
+                        "registrationDate": "Date of Registration - UNDER REGISTRATION",
+                        "type": "company",
+                        "registeredOn": null,
+                        "isDeleted": false,
+                        "isActive": false,
+                        "createdAt": "2022-10-08T19:36:26.036827Z",
+                        "updateAt": "2022-10-08T19:36:26.036827Z",
+                        "modifiedAt": "2023-06-16T10:03:18.3401879+00:00"
+                    },
+                    {
+                        "id": "d0a2fbde-11f5-4796-adbc-71b976e2d76b",
+                        "companyName": "ESK GLOBAL SERVICES LIMITED",
+                        "registrationNumber": "RC - 1855308",
+                        "address": "ASABA BENIN EXPRESS WAY, ,",
+                        "status": "ACTIVE",
+                        "registrationDate": "Date of Registration - Nov 1, 2021",
+                        "type": "company",
+                        "registeredOn": null,
+                        "isDeleted": false,
+                        "isActive": true,
+                        "createdAt": "2022-10-08T19:36:26.438242Z",
+                        "updateAt": "2022-10-08T19:36:26.438242Z",
+                        "modifiedAt": "2023-06-16T10:03:18.3402081+00:00"
+                    },
+                    {
+                        "id": "17c0133f-2a77-4145-b074-fb83e98a5f23",
+                        "companyName": "ALL INK LIMITED",
+                        "registrationNumber": "RC - 1782729",
+                        "address": "Second Avenue, Greenland Estate, Beside Obasanjo Farms Limited, ,",
+                        "status": "ACTIVE",
+                        "registrationDate": "Date of Registration - Apr 13, 2021",
+                        "type": "company",
+                        "registeredOn": "2021-04-13T23:00:00Z",
+                        "isDeleted": false,
+                        "isActive": true,
+                        "createdAt": "2022-10-08T19:36:27.148743Z",
+                        "updateAt": "2022-10-08T19:36:27.148743Z",
+                        "modifiedAt": "2023-06-16T10:03:18.3402279+00:00"
+                    },
+                    {
+                        "id": "9b45b900-1240-477d-b210-5f0428b2b0fa",
+                        "companyName": "KEN JUNIOR INTERNATIONAL LIMITED",
+                        "registrationNumber": "RC - 90702",
+                        "address": "FEDERAL HOUSING ESTATE STR. 19, FLT 11, , BENIN LIMITED ,EDO , ,",
+                        "status": "INACTIVE (Visit CAC and update your status)",
+                        "registrationDate": "Date of Registration - Nov 3, 1986",
+                        "type": "company",
+                        "registeredOn": null,
+                        "isDeleted": false,
+                        "isActive": false,
+                        "createdAt": "2022-10-08T19:36:27.436031Z",
+                        "updateAt": "2022-10-08T19:36:27.436031Z",
+                        "modifiedAt": "2023-06-16T10:03:18.3402539+00:00"
+                    },
+                    {
+                        "id": "57e76bb5-54fa-46c6-86c1-e2b9954e1d8d",
+                        "companyName": "DEE-ADELS CONSTRUCTION MULTINATIONAL NGR. LIMITED",
+                        "registrationNumber": "RC - 1766358",
+                        "address": "PLOT 12/14, KORSTON MULLER LIMITED(SYSTEM-METAL INDUSTRY) IDU INDUSTRIAL LAYOUT, ABUJA, FCT., ,",
+                        "status": "ACTIVE",
+                        "registrationDate": "Date of Registration - Mar 7, 2021",
+                        "type": "company",
+                        "registeredOn": null,
+                        "isDeleted": false,
+                        "isActive": true,
+                        "createdAt": "2022-10-08T19:36:28.315641Z",
+                        "updateAt": "2022-10-08T19:36:28.315641Z",
+                        "modifiedAt": "2023-06-16T10:03:18.3402746+00:00"
+                    },
+                    {
+                        "id": "07b4077c-bfe9-42d5-89ac-f36e7ea515ec",
+                        "companyName": "CAPITAL NETWORTH INVESTMENT LIMITED",
+                        "registrationNumber": "RC - NOT YET ASSIGNED",
+                        "address": "No 13 Airport By Katsina Road, Opp. Bilu Ventures Limited, ,",
+                        "status": "INACTIVE (Visit CAC and update your status)",
+                        "registrationDate": "Date of Registration - UNDER REGISTRATION",
+                        "type": "company",
+                        "registeredOn": null,
+                        "isDeleted": false,
+                        "isActive": false,
+                        "createdAt": "2022-10-08T19:36:29.721267Z",
+                        "updateAt": "2022-10-08T19:36:29.721267Z",
+                        "modifiedAt": "2023-06-16T10:03:18.340293+00:00"
+                    },
+                    {
+                        "id": "b760b8d8-0dac-46e4-bc46-e51390e9c376",
+                        "companyName": "GOXY BAKERY & CONFECTIONERIES LIMITED",
+                        "registrationNumber": "RC - 1914323",
+                        "address": "Off Laraba Daggash Street, Edwin Clark Crescent, Guzape,, ,",
+                        "status": "ACTIVE",
+                        "registrationDate": "Date of Registration - Apr 4, 2022",
+                        "type": "company",
+                        "registeredOn": null,
+                        "isDeleted": false,
+                        "isActive": true,
+                        "createdAt": "2022-10-08T19:36:30.435019Z",
+                        "updateAt": "2022-10-08T19:36:30.435019Z",
+                        "modifiedAt": "2023-06-16T10:03:18.3403126+00:00"
+                    },
+                    {
+                        "id": "4f1ea65c-f97f-42cd-b62e-139cebd017af",
+                        "companyName": "YOUNG BONNY NIGERIA LIMITED",
+                        "registrationNumber": "RC - NOT YET ASSIGNED",
+                        "address": "ABAKALIKI ROAD, OKUKU JUNCTION, YALA LOCAL GOVERNMENT AREA, CROSS RIVER STATE , ,",
+                        "status": "INACTIVE (Visit CAC and update your status)",
+                        "registrationDate": "Date of Registration - UNDER REGISTRATION",
+                        "type": "company",
+                        "registeredOn": null,
+                        "isDeleted": false,
+                        "isActive": false,
+                        "createdAt": "2022-10-08T19:36:30.859234Z",
+                        "updateAt": "2022-10-08T19:36:30.859234Z",
+                        "modifiedAt": "2023-06-16T10:03:18.3403358+00:00"
+                    }
+                ]
+            },
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "business_and_company_name_api"
+}

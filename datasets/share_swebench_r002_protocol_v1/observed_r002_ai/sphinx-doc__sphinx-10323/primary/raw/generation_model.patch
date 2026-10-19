@@ -1,0 +1,40 @@
+diff --git a/sphinx/directives/code.py b/sphinx/directives/code.py
+index dc44ed314..1b6266168 100644
+--- a/sphinx/directives/code.py
++++ b/sphinx/directives/code.py
+@@ -355,11 +355,32 @@ class LiteralIncludeReader:
+         return lines
+ 
+     def dedent_filter(self, lines: List[str], location: Tuple[str, int] = None) -> List[str]:
+-        if 'dedent' in self.options:
+-            return dedent_lines(lines, self.options.get('dedent'), location=location)
+-        else:
++        if 'dedent' not in self.options:
++            return lines
++
++        dedent = self.options.get('dedent')
++        if dedent is None:
+             return lines
+ 
++        if 'prepend' in self.options or 'append' in self.options:
++            if dedent <= 0:
++                return lines
++
++            body = lines
++            prefix: List[str] = []
++            suffix: List[str] = []
++            if 'prepend' in self.options and body:
++                prefix = body[:1]
++                body = body[1:]
++            if 'append' in self.options and body:
++                suffix = body[-1:]
++                body = body[:-1]
++
++            body = dedent_lines(body, dedent, location=location)
++            return prefix + body + suffix
++
++        return dedent_lines(lines, dedent, location=location)
++
+ 
+ class LiteralInclude(SphinxDirective):
+     """

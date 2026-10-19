@@ -1,0 +1,42 @@
+{
+"user_query":"I'm planning a road trip with my family and we need some good music for the journey. Can you help me find the lyrics for the track 'Bohemian Rhapsody'? Additionally, fetch the album details for a popular male artist and create a playlist with his top tracks.",
+"domain":"Cross-Domain",
+"TaskList": [
+{
+"id": 1,
+"description": "Fetch the lyrics for the track 'Bohemian Rhapsody'.",
+"domain": "technology",
+"required_inputs": ["track_name"]
+},
+{
+"id": 2,
+"description": "Identify a popular male artist.",
+"domain": "technology",
+"required_inputs": []
+},
+{
+"id": 3,
+"description": "Fetch the album details for the identified popular male artist.",
+"domain": "technology",
+"required_inputs": ["artist_name"]
+},
+{
+"id": 4,
+"description": "Retrieve the top tracks for the identified popular male artist.",
+"domain": "technology",
+"required_inputs": ["artist_name"]
+},
+{
+"id": 5,
+"description": "Create a playlist using the top tracks retrieved.",
+"domain": "technology",
+"required_inputs": ["top_tracks"]
+}
+],
+"dependencies": {
+    "2": [],
+    "3": ["2"],
+    "4": ["2"],
+    "5": ["4"]
+}
+}
